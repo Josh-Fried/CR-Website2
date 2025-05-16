@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Test</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" /> 
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="slick-1.8.1/slick/slick-theme.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>  -->
+ </head>
+    <style>
+    /* Minimal styles to see the carousel */
+    .center-mode-carousel { margin: 50px; background: #f0f0f0; }
+    .center-mode-carousel div {
+        height: 200px; /* Give slides a height */
+        background: #ddd;
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2em;
+        border: 1px solid #ccc;
+    }
+    /* Add your carousel's fixed height from your main CSS if applicable */
+    .center-mode-carousel.five-wide { height: 450px; /* Your example height */ }
+</style>
+</head>
+<body>
+
+<div class="center-mode-carousel five-wide">
+    <div><h3>1</h3></div>
+    <div><h3>2</h3></div>
+    <div><h3>3</h3></div>
+    <div><h3>4</h3></div>
+    <div><h3>5</h3></div>
+    <div><h3>6</h3></div>
+    <div><h3>7</h3></div>
+</div>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="slick-1.8.1/slick/slick.min.js"></script>
+  <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('.center-mode-carousel.five-wide').slick({
+            centerMode: true,
+            centerPadding: '60px', // Your value
+            slidesToShow: 3,       // Your value (or dynamic logic simplified)
+            arrows: true,
+            infinite: true,
+            speed: 300
+        });
+    });
+</script>
+
+
+</body>
+</html>

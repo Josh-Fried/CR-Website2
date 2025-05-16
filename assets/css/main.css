@@ -7,6 +7,13 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+:root {
+	--main-background-color: #ffffff;
+	--main-text-color: #212931;
+	--secondary-color: #eeeeee;
+	--hover-color: #18bfef;
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -31,6 +38,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	color: var(--secondary-color);
 }
 
 ol, ul {
@@ -144,7 +152,7 @@ input, select, textarea {
 		}
 
 	body {
-		color: #212931;
+		color: var(--main-text-color);
 	}
 
 	body, input, select, textarea {
@@ -288,38 +296,38 @@ input, select, textarea {
 	}
 
 	input, select, textarea {
-		color: #212931;
+		color: var(--main-text-color);
 	}
 
 	a {
-		color: #212931;
+		color: var(--main-text-color);
 		border-bottom-color: rgba(33, 41, 49, 0.5);
 	}
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #18bfef !important;
+			color: var(--hover-color) !important;
 		}
 
 	strong, b {
-		color: #212931;
+		color: var(--main-text-color);
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #212931;
+		color: var(--main-text-color);
 	}
 
 	blockquote {
-		border-left-color: #eeeeee;
+		border-left-color: var(--secondary-color);
 	}
 
 	code {
 		background: rgba(220, 220, 220, 0.25);
-		border-color: #eeeeee;
+		border-color: var(--secondary-color);
 	}
 
 	hr {
-		border-bottom-color: #eeeeee;
+		border-bottom-color: var(--secondary-color);
 	}
 
 /* Row */
@@ -2035,11 +2043,11 @@ input, select, textarea {
 
 		}
 
-/* Box */
+/* Box Class */
 
 	.box {
 		border: solid 2px;
-		margin-bottom: 2rem;
+		margin: 2rem 0rem;
 		padding: 1.5rem;
 	}
 
@@ -2056,7 +2064,7 @@ input, select, textarea {
 		}
 
 	.box {
-		border-color: #eeeeee;
+		border-color: var(--secondary-color);
 	}
 
 /* Button */
@@ -2206,8 +2214,8 @@ input, select, textarea {
 	button,
 	.button {
 		background-color: transparent;
-		box-shadow: inset 0 0 0 2px #212931;
-		color: #212931 !important;
+		box-shadow: inset 0 0 0 2px var(--main-text-color);
+		color: var(--main-text-color) !important;
 	}
 
 		input[type="submit"]:hover,
@@ -2215,8 +2223,8 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			box-shadow: inset 0 0 0 2px #18bfef;
-			color: #18bfef !important;
+			box-shadow: inset 0 0 0 2px var(--hover-color);
+			color: var(--hover-color) !important;
 		}
 
 		input[type="submit"].primary,
@@ -2224,9 +2232,9 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #212931;
+			background-color: var(--main-text-color);
 			box-shadow: none;
-			color: #ffffff !important;
+			color: var(--main-background-color) !important;
 		}
 
 			input[type="submit"].primary:hover,
@@ -2234,7 +2242,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #18bfef;
+				background-color: var(--hover-color);
 			}
 
 /* Form */
@@ -2475,7 +2483,7 @@ input, select, textarea {
 	}
 
 	label {
-		color: #212931;
+		color: var(--main-text-color);
 	}
 
 	input[type="text"],
@@ -2483,7 +2491,7 @@ input, select, textarea {
 	input[type="email"],
 	select,
 	textarea {
-		border-color: #eeeeee;
+		border-color: var(--secondary-color);
 	}
 
 		input[type="text"]:focus,
@@ -2491,7 +2499,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #18bfef;
+			border-color: var(--hover-color);
 		}
 
 	select {
@@ -2499,34 +2507,34 @@ input, select, textarea {
 	}
 
 		select option {
-			background-color: #ffffff;
-			color: #212931;
+			background-color: var(--main-background-color);
+			color: var(--main-text-color);
 		}
 
 	.select-wrapper:before {
-		color: #eeeeee;
+		color: var(--secondary-color);
 	}
 
 	input[type="checkbox"] + label,
 	input[type="radio"] + label {
-		color: #212931;
+		color: var(--main-text-color);
 	}
 
 		input[type="checkbox"] + label:before,
 		input[type="radio"] + label:before {
-			border-color: #eeeeee;
+			border-color: var(--secondary-color);
 		}
 
 	input[type="checkbox"]:checked + label:before,
 	input[type="radio"]:checked + label:before {
-		background-color: #212931;
-		border-color: #212931;
-		color: #ffffff;
+		background-color: var(--main-text-color);
+		border-color: var(--main-text-color);
+		color: var(--main-background-color);
 	}
 
 	input[type="checkbox"]:focus + label:before,
 	input[type="radio"]:focus + label:before {
-		border-color: #18bfef;
+		border-color: var(--hover-color);
 	}
 
 	::-webkit-input-placeholder {
@@ -2607,6 +2615,10 @@ input, select, textarea {
 				width: 100%;
 			}
 
+			.image.left.smaller25, .image.right.smaller25 {
+				max-width: 25%;
+			}
+
 			.image.left.larger75, .image.right.larger75 {
 				max-width: 75%;
 			}
@@ -2637,6 +2649,21 @@ input, select, textarea {
 			.image.fit img {
 				width: 100%;
 			}
+
+		image.block {
+			display: block;
+			margin: 2.5rem 0;
+			width: 100%;
+		}
+
+			.image.block:first-child {
+				margin-top: 0;
+			}
+
+			.image.block img {
+				width: 100%;
+			}
+		
 
 		.image.main {
 			display: block;
@@ -2682,6 +2709,39 @@ input, select, textarea {
 			transform: scale(1.05);
 		}
 
+	/* Container for the 3x3 grid */
+	.gallery-grid-3x3 {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
+		gap: 10px; /* Adjust the space between images as you like (e.g., 5px, 15px, or 0px) */
+		/* You might want to add some padding around the whole grid too */
+		/* padding: 10px; */
+	}
+
+	/* Each item in the grid - this will be our square container */
+	.gallery-item {
+		position: relative; /* For potential future absolute positioned elements inside, not strictly needed for this image setup */
+		width: 100%;      /* Takes the full width of its grid column */
+		aspect-ratio: 1 / 1; /* <<< This is the magic for making it square! (Height will equal width) */
+		overflow: hidden;    /* Ensures any part of the image that 'object-fit: cover' might push out of bounds is clipped */
+		background-color: #f0f0f0; /* Optional: A light background for cells if images don't load or have transparency */
+	}
+
+	/* The image itself within the square item */
+	.gallery-item img {
+		display: block;  /* Removes any extra space below inline images */
+		width: 100%;     /* Make the image fill the width of the .gallery-item */
+		height: 100%;    /* Make the image fill the height of the .gallery-item */
+		object-fit: cover; /* <<< This is the other piece of magic! */
+						/* It scales the image to maintain its aspect ratio while
+							filling the element's entire content box. If the image's
+							aspect ratio doesn't match the square box, the image
+							will be clipped to fit (either width or height). */
+		object-position: center center; /* (Default) Ensures the image is centered before being cropped.
+										You can change this (e.g., 'center top', '25% 50%')
+										if you want to control which part of a non-square
+										image is prioritized. */
+	}
 		/* Video */
 
 	.video {
@@ -2982,19 +3042,19 @@ input, select, textarea {
 		}
 
 	ul.divided li {
-		border-top-color: #eeeeee;
+		border-top-color: var(--secondary-color);
 	}
 
 	ul.icons li a.icon:hover:before {
-		color: #18bfef;
+		color: var(--hover-color);
 	}
 
 	ul.icons.alt li .icon:before {
-		box-shadow: inset 0 0 0 2px #eeeeee;
+		box-shadow: inset 0 0 0 2px var(--secondary-color);
 	}
 
 	ul.icons.alt li a.icon:hover:before {
-		box-shadow: inset 0 0 0 2px #18bfef;
+		box-shadow: inset 0 0 0 2px var(--hover-color);
 	}
 
 /* Section/Article */
@@ -3093,7 +3153,7 @@ input, select, textarea {
 		}
 
 	header.major .date:before, header.major .date:after {
-		border-top-color: #eeeeee;
+		border-top-color: var(--secondary-color);
 	}
 
 /* Table */
@@ -3172,7 +3232,7 @@ input, select, textarea {
 			}
 
 	table tbody tr {
-		border-color: #eeeeee;
+		border-color: var(--secondary-color);
 	}
 
 		table tbody tr:nth-child(2n + 1) {
@@ -3180,19 +3240,19 @@ input, select, textarea {
 		}
 
 	table th {
-		color: #212931;
+		color: var(--main-text-color);
 	}
 
 	table thead {
-		border-bottom-color: #eeeeee;
+		border-bottom-color: var(--secondary-color);
 	}
 
 	table tfoot {
-		border-top-color: #eeeeee;
+		border-top-color: var(--secondary-color);
 	}
 
 	table.alt tbody tr td {
-		border-color: #eeeeee;
+		border-color: var(--secondary-color);
 	}
 
 /* Pagination */
@@ -3285,30 +3345,30 @@ input, select, textarea {
 		}
 
 	.pagination a, .pagination span {
-		border-color: #eeeeee;
+		border-color: var(--secondary-color);
 	}
 
 	.pagination a {
-		color: #212931 !important;
+		color: var(--main-text-color) !important;
 	}
 
 		.pagination a:hover {
-			color: #18bfef !important;
-			border-color: #18bfef;
+			color: var(--hover-color) !important;
+			border-color: var(--hover-color);
 			z-index: 1;
 		}
 
 			.pagination a:hover + a,
 			.pagination a:hover + span {
-				border-left-color: #18bfef;
+				border-left-color: var(--hover-color);
 			}
 
 		.pagination a.active {
-			background-color: #eeeeee;
+			background-color: var(--secondary-color);
 		}
 
 	.pagination span {
-		color: #eeeeee;
+		color: var(--secondary-color);
 	}
 
 /* Wrapper */
@@ -3329,13 +3389,14 @@ input, select, textarea {
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: #212931;
-			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/Bay1.jpg");
+			background-color: var(--main-background-color);
+			/* background-color: var(--main-text-color); */
+			/* background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/Bay1.jpg"); */
 			background-size: auto,								auto,														100% auto;
 			background-position: center,								center,														top center;
 			background-repeat: repeat,								no-repeat,													no-repeat;
 			background-attachment: scroll,								scroll,														scroll;
-			z-index: -1;
+			z-index: -2; /* Behind the Video */
 		}
 
 			#wrapper > .bg.fixed {
@@ -3369,13 +3430,54 @@ input, select, textarea {
 			opacity: 1;
 		} */
 
+		#wrapper > .video-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden; /* Clip the video if it overflows (shouldn't with object-fit) */
+		z-index: -1; /* Keep it behind other content in the wrapper */
+		}
+		
+		#wrapper > .video-background video {
+		display: block; /* Remove any potential bottom spacing */
+		width: 100%;
+		height: auto;
+		object-fit: cover; /* Scale the video to cover the container */
+		}
+		
+		#wrapper > .video-background .video-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		/* Apply your overlay styles here */
+		background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+		background-size: auto, auto;
+		background-position: center, center;
+		background-repeat: repeat, no-repeat;
+		pointer-events: none; /* Make the overlay non-interactive so clicks go through to the video (if needed) */
+		}
+
 		@media screen and (orientation: portrait) {
 
 		/* #wrapper > .bg {
 			background-size: auto,								auto,														auto 175%;
 		} */
 
-		#wrapper > .video-background {
+		}
+
+		/* Header Video  */
+
+		.header-video { 
+			position: relative;
+			min-height: 100vh;
+			overflow: hidden;
+		}
+
+		.video-background {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -3383,35 +3485,44 @@ input, select, textarea {
 			height: 100%;
 			overflow: hidden; /* Clip the video if it overflows (shouldn't with object-fit) */
 			z-index: -1; /* Keep it behind other content in the wrapper */
-			}
-			
-			#wrapper > .video-background video {
+		}
+		
+		.video-background video {
 			display: block; /* Remove any potential bottom spacing */
 			width: 100%;
 			height: 100%;
 			object-fit: cover; /* Scale the video to cover the container */
-			}
-			
-			#wrapper > .video-background .video-overlay {
+		}
+		
+		.video-background .video-overlay {
 			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
 			height: 100%;
 			/* Apply your overlay styles here */
-			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+			background-image: url("../../images/overlay.png"), 
+
+			/* Black at bottom */
+			linear-gradient(0deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.1));
+
+			/* linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5));*/
+
+			/* Initial - Basically No Gradient Below */
+			/* linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); */
+
 			background-size: auto, auto;
 			background-position: center, center;
 			background-repeat: repeat, no-repeat;
 			pointer-events: none; /* Make the overlay non-interactive so clicks go through to the video (if needed) */
-			}
-
 		}
+
+
 
 /* Intro */
 
 	#intro {
-		color: #ffffff;
+		color: var(--main-background-color);
 		padding: 8rem 4rem 6rem 4rem ;
 		-moz-align-items: center;
 		-webkit-align-items: center;
@@ -3441,38 +3552,38 @@ input, select, textarea {
 	}
 
 		#intro input, #intro select, #intro textarea {
-			color: #ffffff;
+			color: var(--main-background-color);
 		}
 
 		#intro a {
-			color: #ffffff;
+			color: var(--main-background-color);
 			border-bottom-color: rgba(255, 255, 255, 0.5);
 		}
 
 			#intro a:hover {
 				border-bottom-color: transparent;
-				color: #18bfef !important;
+				color: var(--hover-color) !important;
 			}
 
 		#intro strong, #intro b {
-			color: #ffffff;
+			color: var(--main-background-color);
 		}
 
 		#intro h1, #intro h2, #intro h3, #intro h4, #intro h5, #intro h6 {
-			color: #ffffff;
+			color: var(--main-background-color);
 		}
 
 		#intro blockquote {
-			border-left-color: #ffffff;
+			border-left-color: var(--main-background-color);
 		}
 
 		#intro code {
 			background: rgba(255, 255, 255, 0.075);
-			border-color: #ffffff;
+			border-color: var(--main-background-color);
 		}
 
 		#intro hr {
-			border-bottom-color: #ffffff;
+			border-bottom-color: var(--main-background-color);
 		}
 
 		#intro input[type="submit"],
@@ -3481,8 +3592,8 @@ input, select, textarea {
 		#intro button,
 		#intro .button {
 			background-color: transparent;
-			box-shadow: inset 0 0 0 2px #ffffff;
-			color: #ffffff !important;
+			box-shadow: inset 0 0 0 2px var(--main-background-color);
+			color: var(--main-background-color) !important;
 		}
 
 			#intro input[type="submit"]:hover,
@@ -3490,8 +3601,8 @@ input, select, textarea {
 			#intro input[type="button"]:hover,
 			#intro button:hover,
 			#intro .button:hover {
-				box-shadow: inset 0 0 0 2px #18bfef;
-				color: #18bfef !important;
+				box-shadow: inset 0 0 0 2px var(--hover-color);
+				color: var(--hover-color) !important;
 			}
 
 			#intro input[type="submit"].primary,
@@ -3499,7 +3610,7 @@ input, select, textarea {
 			#intro input[type="button"].primary,
 			#intro button.primary,
 			#intro .button.primary {
-				background-color: #ffffff;
+				background-color: var(--main-background-color);
 				box-shadow: none;
 				color: #1e252d !important;
 			}
@@ -3509,7 +3620,7 @@ input, select, textarea {
 				#intro input[type="button"].primary:hover,
 				#intro button.primary:hover,
 				#intro .button.primary:hover {
-					background-color: #18bfef;
+					background-color: var(--hover-color);
 				}
 
 		#intro h1 {
@@ -3617,10 +3728,50 @@ input, select, textarea {
 
 		}
 
+		#intro > .video-background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden; /* Clip the video if it overflows (shouldn't with object-fit) */
+		z-index: -1; /* Keep it behind other content in the wrapper */
+		}
+		
+		#intro > .video-background video {
+		display: block; /* Remove any potential bottom spacing */
+		width: 100%;
+		height: auto;
+		object-fit: cover; /* Scale the video to cover the container */
+		}
+		
+		#intro > .video-background .video-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		/* Apply your overlay styles here */
+		background-image: url("../../images/overlay.png"), 
+
+		/* Black at bottom */
+		linear-gradient(0deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.1));
+
+		/* linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5));*/
+
+		/* Initial - Basically No Gradient Below */
+		/* linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); */
+
+		background-size: auto, auto;
+		background-position: center, center;
+		background-repeat: repeat, no-repeat;
+		pointer-events: none; /* Make the overlay non-interactive so clicks go through to the video (if needed) */
+		} 
+
 /* Header */
 
 	#header {
-		color: #ffffff;
+		color: var(--main-background-color);
 		-moz-align-items: center;
 		-webkit-align-items: center;
 		-ms-align-items: center;
@@ -3650,38 +3801,38 @@ input, select, textarea {
 	}
 
 		#header input, #header select, #header textarea {
-			color: #ffffff;
+			color: var(--main-background-color);
 		}
 
 		#header a {
-			color: #ffffff;
+			color: var(--main-background-color);
 			border-bottom-color: rgba(255, 255, 255, 0.5);
 		}
 
 			#header a:hover {
 				border-bottom-color: transparent;
-				color: #18bfef !important;
+				color: var(--hover-color) !important;
 			}
 
 		#header strong, #header b {
-			color: #ffffff;
+			color: var(--main-background-color);
 		}
 
 		#header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
-			color: #ffffff;
+			color: var(--main-background-color);
 		}
 
 		#header blockquote {
-			border-left-color: #ffffff;
+			border-left-color: var(--main-background-color);
 		}
 
 		#header code {
 			background: rgba(255, 255, 255, 0.075);
-			border-color: #ffffff;
+			border-color: var(--main-background-color);
 		}
 
 		#header hr {
-			border-bottom-color: #ffffff;
+			border-bottom-color: var(--main-background-color);
 		}
 
 		#header .logo {
@@ -3691,7 +3842,7 @@ input, select, textarea {
 			transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
 			pointer-events: auto;
 			border-style: solid;
-			border-color: #ffffff;
+			border-color: var(--main-background-color);
 			border-width: 5px !important;
 			font-family: "Source Sans Pro", Helvetica, sans-serif;
 			font-size: 2.25rem;
@@ -3704,8 +3855,8 @@ input, select, textarea {
 		}
 
 			#header .logo:hover {
-				border-color: #18bfef !important;
-				color: #18bfef !important;
+				border-color: var(--hover-color) !important;
+				color: var(--hover-color) !important;
 			}
 
 		@media screen and (max-width: 980px) {
@@ -3733,7 +3884,7 @@ input, select, textarea {
 /* Nav */
 
 	#nav {
-		color: #ffffff;
+		color: var(--main-background-color);
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -3755,54 +3906,54 @@ input, select, textarea {
 	}
 
 		#nav ul.divided li {
-			border-top-color: #ffffff;
+			border-top-color: var(--main-background-color);
 		}
 
 		#nav ul.icons li a.icon:hover:before {
-			color: #18bfef;
+			color: var(--hover-color);
 		}
 
 		#nav ul.icons.alt li .icon:before {
-			box-shadow: inset 0 0 0 2px #ffffff;
+			box-shadow: inset 0 0 0 2px var(--main-background-color);
 		}
 
 		#nav ul.icons.alt li a.icon:hover:before {
-			box-shadow: inset 0 0 0 2px #18bfef;
+			box-shadow: inset 0 0 0 2px var(--hover-color);
 		}
 
 		#nav input, #nav select, #nav textarea {
-			color: #ffffff;
+			color: var(--main-background-color);
 		}
 
 		#nav a {
-			color: #ffffff;
+			color: var(--main-background-color);
 			border-bottom-color: rgba(255, 255, 255, 0.5);
 		}
 
 			#nav a:hover {
 				border-bottom-color: transparent;
-				color: #18bfef !important;
+				color: var(--hover-color) !important;
 			}
 
 		#nav strong, #nav b {
-			color: #ffffff;
+			color: var(--main-background-color);
 		}
 
 		#nav h1, #nav h2, #nav h3, #nav h4, #nav h5, #nav h6 {
-			color: #ffffff;
+			color: var(--main-background-color);
 		}
 
 		#nav blockquote {
-			border-left-color: #ffffff;
+			border-left-color: var(--main-background-color);
 		}
 
 		#nav code {
 			background: rgba(255, 255, 255, 0.075);
-			border-color: #ffffff;
+			border-color: var(--main-background-color);
 		}
 
 		#nav hr {
-			border-bottom-color: #ffffff;
+			border-bottom-color: var(--main-background-color);
 		}
 
 		#nav ul.links {
@@ -3849,7 +4000,7 @@ input, select, textarea {
 					}
 
 				#nav ul.links li.active {
-					background-color: #ffffff;
+					background-color: var(--main-background-color);
 				}
 
 					#nav ul.links li.active a {
@@ -3857,7 +4008,7 @@ input, select, textarea {
 					}
 
 						#nav ul.links li.active a:hover {
-							color: #18bfef !important;
+							color: var(--hover-color) !important;
 						}
 
 		#nav ul.icons {
@@ -3883,7 +4034,7 @@ input, select, textarea {
 /* Main */
 
 	#main {
-		background-color: #ffffff;
+		background-color: var(--main-background-color);
 		position: relative;
 		margin: 0 auto;
 		width: 100%;
@@ -3892,7 +4043,7 @@ input, select, textarea {
 
 		#main > * {
 			padding: 4rem 4rem 2rem 4rem ;
-			border-top: solid 2px #eeeeee;
+			border-top: solid 2px var(--secondary-color);
 			margin: 0;
 		}
 
@@ -3920,6 +4071,75 @@ input, select, textarea {
 
 			#main > .post.featured {
 				text-align: center;
+			}
+
+
+			.custom-grey-box-section {
+				display: flex;
+				justify-content: center; /* Horizontally center the .intro.box */
+				align-items: center;    /* Vertically center the .intro.box (if section has height) */
+				padding: 40px 20px;     /* Space around the grey box */
+				/* background-color: #f0f0f0; */ /* Optional: If the page background behind the grey box needs a specific color */
+				box-sizing: border-box;
+				/* min-height: 50vh; */ /* Optional: Give the section some height for vertical centering demo */
+			}
+			
+			/* Styles for your article.intro.box to make it a grey box */
+			.custom-grey-box-section .intro.box {
+				background-color: #e9e9e9; /* The GREY background for the box */
+				padding: 30px 40px;        /* Padding inside the grey box */
+				border-radius: 8px;        /* Optional: rounded corners for the grey box */
+				max-width: 700px;          /* Max width of the grey box */
+				width: 100%;               /* Makes the box responsive */
+				text-align: center;        /* Center the text content inside the grey box */
+				box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Optional: a subtle shadow for depth */
+				color: #333;               /* Default text color for content inside the grey box */
+				font-family: Arial, sans-serif; /* Example font, change as needed */
+			}
+			
+			/* Styling for the H2 heading inside the grey box */
+			.custom-grey-box-section .intro.box header.major h2 {
+				font-size: 2.2em;          /* Adjust as needed */
+				font-weight: bold;
+				text-transform: uppercase; /* As per the image style inspiration */
+				color: #2c3e50;            /* A darker color for the heading for good contrast */
+				margin-top: 0;
+				margin-bottom: 20px;
+				line-height: 1.3;
+			}
+			
+			/* Styling for the paragraph inside the grey box */
+			.custom-grey-box-section .intro.box header.major p {
+				font-size: 1em;            /* Adjust as needed */
+				color: #454545;            /* Ensure good contrast on grey background */
+				line-height: 1.6;
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+			
+			/* Responsive adjustments (optional but recommended) */
+			@media (max-width: 768px) {
+				.custom-grey-box-section .intro.box {
+					padding: 25px 30px;
+				}
+				.custom-grey-box-section .intro.box header.major h2 {
+					font-size: 1.8em;
+				}
+				.custom-grey-box-section .intro.box header.major p {
+					font-size: 0.95em;
+				}
+			}
+			
+			@media (max-width: 480px) {
+				.custom-grey-box-section .intro.box {
+					padding: 20px;
+				}
+				.custom-grey-box-section .intro.box header.major h2 {
+					font-size: 1.6em;
+				}
+				.custom-grey-box-section .intro.box header.major p {
+					font-size: 0.9em;
+				}
 			}
 
 			@media screen and (max-width: 1280px) {
@@ -3988,7 +4208,7 @@ input, select, textarea {
 			}
 
 			#main > .posts > article {
-				border-color: #eeeeee;
+				border-color: var(--secondary-color);
 				border-left-width: 2px;
 				border-style: solid;
 				border-top-width: 2px;
@@ -4102,7 +4322,7 @@ input, select, textarea {
 
 			#footer a:hover {
 				border-bottom-color: transparent;
-				color: #18bfef !important;
+				color: var(--hover-color) !important;
 			}
 
 		#footer strong, #footer b {
@@ -4145,8 +4365,8 @@ input, select, textarea {
 			#footer input[type="button"]:hover,
 			#footer button:hover,
 			#footer .button:hover {
-				box-shadow: inset 0 0 0 2px #18bfef;
-				color: #18bfef !important;
+				box-shadow: inset 0 0 0 2px var(--hover-color);
+				color: var(--hover-color) !important;
 			}
 
 			#footer input[type="submit"].primary,
@@ -4164,7 +4384,7 @@ input, select, textarea {
 				#footer input[type="button"].primary:hover,
 				#footer button.primary:hover,
 				#footer .button.primary:hover {
-					background-color: #18bfef;
+					background-color: var(--hover-color);
 				}
 
 		#footer label {
@@ -4184,7 +4404,7 @@ input, select, textarea {
 			#footer input[type="email"]:focus,
 			#footer select:focus,
 			#footer textarea:focus {
-				border-color: #18bfef;
+				border-color: var(--hover-color);
 			}
 
 		#footer select {
@@ -4219,7 +4439,7 @@ input, select, textarea {
 
 		#footer input[type="checkbox"]:focus + label:before,
 		#footer input[type="radio"]:focus + label:before {
-			border-color: #18bfef;
+			border-color: var(--hover-color);
 		}
 
 		#footer ::-webkit-input-placeholder {
@@ -4247,7 +4467,7 @@ input, select, textarea {
 		}
 
 		#footer ul.icons li a.icon:hover:before {
-			color: #18bfef;
+			color: var(--hover-color);
 		}
 
 		#footer ul.icons.alt li .icon:before {
@@ -4255,7 +4475,7 @@ input, select, textarea {
 		}
 
 		#footer ul.icons.alt li a.icon:hover:before {
-			box-shadow: inset 0 0 0 2px #18bfef;
+			box-shadow: inset 0 0 0 2px var(--hover-color);
 		}
 
 		#footer header.major .date:before, #footer header.major .date:after {
@@ -4295,14 +4515,14 @@ input, select, textarea {
 		}
 
 			#footer .pagination a:hover {
-				color: #18bfef !important;
-				border-color: #18bfef;
+				color: var(--hover-color) !important;
+				border-color: var(--hover-color);
 				z-index: 1;
 			}
 
 				#footer .pagination a:hover + a,
 				#footer .pagination a:hover + span {
-					border-left-color: #18bfef;
+					border-left-color: var(--hover-color);
 				}
 
 			#footer .pagination a.active {
@@ -4511,9 +4731,9 @@ input, select, textarea {
 		}
 
 	#copyright {
-		color: #ffffff;
+		color: var(--main-text-color);
 		position: relative;
-		color: rgba(255, 255, 255, 0.25);
+		/* color: rgba(255, 255, 255, 1); */
 		cursor: default;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 0.8rem;
@@ -4529,38 +4749,38 @@ input, select, textarea {
 	}
 
 		#copyright input, #copyright select, #copyright textarea {
-			color: #ffffff;
+			color: var(--main-text-color);
 		}
 
 		#copyright a {
-			color: #ffffff;
+			color: var(--main-text-color);
 			border-bottom-color: rgba(255, 255, 255, 0.5);
 		}
 
 			#copyright a:hover {
 				border-bottom-color: transparent;
-				color: #18bfef !important;
+				color: var(--hover-color) !important;
 			}
 
 		#copyright strong, #copyright b {
-			color: #ffffff;
+			color: var(--main-text-color);
 		}
 
 		#copyright h1, #copyright h2, #copyright h3, #copyright h4, #copyright h5, #copyright h6 {
-			color: #ffffff;
+			color: var(--main-text-color);
 		}
 
 		#copyright blockquote {
-			border-left-color: #ffffff;
+			border-left-color: var(--main-text-color);
 		}
 
 		#copyright code {
 			background: rgba(255, 255, 255, 0.075);
-			border-color: #ffffff;
+			border-color: var(--main-background-color);
 		}
 
 		#copyright hr {
-			border-bottom-color: #ffffff;
+			border-bottom-color: var(--main-text-color);
 		}
 
 		#copyright a {
@@ -4624,7 +4844,7 @@ input, select, textarea {
 		top: 0.75rem;
 		right: 0.75rem;
 		border: 0;
-		color: #ffffff;
+		color: var(--main-background-color);
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 0.9rem;
 		font-weight: 900;
@@ -4655,11 +4875,11 @@ input, select, textarea {
 		#navPanelToggle.alt {
 			background-color: rgba(255, 255, 255, 0.875);
 			box-shadow: 0 0.125rem 0.75rem 0 rgba(30, 37, 45, 0.25);
-			color: #212931;
+			color: var(--main-text-color);
 		}
 
 			#navPanelToggle.alt:hover {
-				background-color: #ffffff;
+				background-color: var(--main-background-color);
 			}
 
 		@media screen and (max-width: 980px) {
@@ -4690,9 +4910,9 @@ input, select, textarea {
 		transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		display: none;
 		-webkit-overflow-scrolling: touch;
-		background: #ffffff;
+		background: var(--main-background-color);
 		box-shadow: none;
-		color: #212931;
+		color: var(--main-text-color);
 		height: 100%;
 		max-width: 80%;
 		overflow-y: auto;
@@ -4711,7 +4931,7 @@ input, select, textarea {
 		}
 
 			#navPanel .links li {
-				border-top: solid 2px #eeeeee;
+				border-top: solid 2px var(--secondary-color);
 			}
 
 				#navPanel .links li a {
@@ -4771,7 +4991,7 @@ input, select, textarea {
 			}
 
 			#navPanel .close:hover {
-				color: #212931;
+				color: var(--main-text-color);
 			}
 
 			@media screen and (max-width: 736px) {
@@ -4830,7 +5050,7 @@ input, select, textarea {
     font-size: 20px;
     line-height: 1;
     opacity: .75;
-    color: green; /* Adjust arrow color */
+    color: white; /* Adjust arrow color */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -4841,20 +5061,22 @@ input, select, textarea {
 }
 
 .slick-slide {
-    transition:  opacity 0.3s ease-in-out; /* Removed transform */
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 20px; /* Adjust top margin for spacing */
+    margin-top: 20px; 
     background-color: transparent;
-    opacity: 0.6; /* Slightly reduce opacity of non-centered slides */
     display: flex; /* Use flexbox for vertical centering */
     flex-direction: column; /* Stack image, title, description */
     align-items: center; /* Center items horizontally */
-    height: auto; /* Let the height adjust based on content */
+    height: auto; 
+
+    /* padding: 20px;              */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);                                        
+    border-radius: 8px;    
+    box-sizing: border-box;
 }
 
 .slick-slide.slick-center {
-    /* transform: scale(1);  Removed transform */
     opacity: 1;
 }
 
@@ -4886,24 +5108,49 @@ input, select, textarea {
 
 /* Center Five Wide */
 
+#main > .center-mode-carousel-wrapper {
+	position: relative;
+	padding-bottom: 120px; 
+}
+
+.center-mode-carousel-wrapper > h2 {
+	text-align: center;
+}
+
 .center-mode-carousel.five-wide {
     /* width: 80%; Adjust as needed for the overall width of the five-wide carousel */
     margin: 0 auto;
-    position: relative; /* For positioning elements within */
+    position: relative; 
+	height: 600px; 
+	/* overflow: hidden; */
+}
+
+.center-mode-carousel.five-wide .slide.has-full-content {
+	width: 100%; /* Or a specific width if you prefer */
+    text-align: center; /* If you want title centered under image */
+    margin-bottom: 15px;
+}
+
+.center-mode-carousel.five-wide .slick-track {
+    display: flex; /* Slick usually sets this already */
+    align-items: center; /* <<< THIS IS THE KEY FOR VERTICAL ALIGNMENT OF SLIDES */
+    min-height: 100%; /* Ensure track itself can fill the .slick-list height */
 }
 
 .center-mode-carousel.five-wide .slick-list {
-    padding: 0 50px; /* Adjust to control the visibility of side slides */
+	height: 100%; 
+    /* padding: 0 50px; Adjust to control the visibility of side slides */
 }
 
 .center-mode-carousel.five-wide .slick-slide:not(.slick-center) { /* Target only non-centered slides */
     /* transform: scale(1); Removed transform */
     opacity: 0.6; /* Slightly reduce opacity of non-centered slides */
-    transition: opacity 0.3s ease-in-out; /* Removed transform from transition */
+    /* transition: opacity 0.3s ease-in-out;  */
     display: flex; /* Use flexbox for vertical centering */
     flex-direction: column; /* Stack image, title, description */
     align-items: center; /* Center items horizontally */
     height: auto; /* Let the height adjust based on content */
+	
 }
 
 .center-mode-carousel.five-wide .slide .image-title-wrapper {
@@ -4914,7 +5161,7 @@ input, select, textarea {
 
 .center-mode-carousel.five-wide .slide:not(.slick-center) .image-container { /* Target non-centered image containers */
     width: 100%; /* Make image container full width */
-    height: 200px; /* Fixed height for non-centered images */
+    height: 350px; /* Fixed height for non-centered images */
     overflow: hidden;
     position: relative;
     margin-bottom: 5px;
@@ -4938,17 +5185,15 @@ input, select, textarea {
 
 .center-mode-carousel.five-wide .slide:not(.slick-center) p.description { /* Target non-centered descriptions */
     display: none; /* Hide description on non-centered slides */
-    font-size: 0.9em;
-    line-height: 1.2;
-    margin-top: 5px;
-    width: 100%; /* Ensure description takes full width */
-    text-align: center;
+}
+.center-mode-carousel.five-wide .slide:not(.slick-center) .actions { /* Target non-centered descriptions */
+    display: none; /* Hide description on non-centered slides */
 }
 
-/* Styling for the centered slide */
 .center-mode-carousel.five-wide .slick-center {
     /* transform: scale(1.1); Removed transform */
     opacity: 1;
+	/* transition: opacity 1.0s ease-out;  */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -4961,7 +5206,7 @@ input, select, textarea {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%; /* Ensure the slide itself takes full width */
+    width: 100%; /* Ensure the slide itself takes full width */    
 }
 
 .center-mode-carousel.five-wide .slick-center .image-title-wrapper {
@@ -4972,15 +5217,16 @@ input, select, textarea {
 
 .center-mode-carousel.five-wide .slick-center .image-container {
     width: 100%; /* Make image container full width */
-    height: auto; /* Auto adjust height to contain the full image */
-    overflow: hidden; /* To contain potential overflow */
-    margin-bottom: 10px;
+    height: ; /* auto or 100% */
+    overflow: hidden; 
+    margin-bottom: 0px;
+	background-color: rebeccapurple;
 }
 
 .center-mode-carousel.five-wide .slick-center .image-container img {
     position: static; /* Show the full image */
     width: 100%;
-    height: auto;
+    height: auto; /* New Didn't change wanted 100%*/
     object-fit: contain; /* Ensure the full image is visible within the container */
 }
 
@@ -5003,11 +5249,172 @@ input, select, textarea {
 .center-mode-carousel.five-wide .slick-center .actions {
     text-align: center;
     width: 100%; /* Ensure actions take full width */
+	/* background-color: palegoldenrod; */
+	padding: 10px;
 }
 
-.center-mode-carousel.five-wide .slick-center .actions button {
-    padding: 8px 15px;
-    margin: 0 5px;
+/* Carousel Counter & Arrows */
+.center-mode-carousel.five-wide .slick-arrow {
+    position: absolute;
+    top: auto; /* Override default top positioning */
+    /* This positions the ARROWS' BOTTOM EDGE relative to the CAROUSEL'S BOTTOM EDGE.
+       If .custom-slick-wrapper has padding-bottom: 80px, and arrows are 40px high,
+       bottom: -60px; places the arrow starting 60px below the carousel's content bottom,
+       landing it centered vertically in the 80px padding area.
+       (80px space - 40px arrow height = 40px free. 20px above, 20px below arrow).
+       So, bottom of arrow is at - (20px padding_below_arrow + 40px arrow_height) = -60px.
+    */
+    bottom: -60px; /* Adjust this value based on your wrapper's padding-bottom and arrow height */
+    width: 0px;
+    height: 0px;
+    z-index: 100; /* High z-index to ensure they are on top and clickable */
+
+    /* --- VISIBILITY STYLES (IMPORTANT) --- */
+    background-color: rgba(255, 255, 255, 0.8); /* Light semi-transparent background */
+    border: 0px solid #ccc; 
+    border-radius: 50%;     
+	/* border: none;
+	border-radius: 0%; */
     cursor: pointer;
-    color: green;
+    display: block !important; /* Ensure they are displayed */
+    opacity: 1 !important;   /* Ensure they are not transparent */
+    /* Reset any transforms that might hide them or misposition them from CDN */
+    transform: none;
+}
+
+.center-mode-carousel.five-wide .slick-arrow::before {
+    font-family: 'slick'; /* This is Slick's default font for icons */
+    font-size: 20px;      /* Size of the icon character */
+    color: #333333;       /* Dark color for the icon for visibility */
+    opacity: 1 !important;/* Ensure icon itself is visible */
+    line-height: 1;       /* Reset from CDN if it causes issues */
+
+    display: flex;	/* Centering the icon in the button */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.center-mode-carousel.five-wide .slick-arrow:hover {
+    background-color: rgba(255, 255, 255, 1); /* Slightly more opaque on hover */
+    border-color: #aaa;
+}
+.center-mode-carousel.five-wide .slick-arrow:hover::before {
+    color: #000000;
+}
+
+.center-mode-carousel.five-wide .slick-prev {
+    left: 50%; /* Start at the horizontal center of the carousel */
+    /* Then, move it left by its own width PLUS half the desired gap between arrows.
+       If arrow is 40px wide and you want a 20px gap, move left by (40px + 10px) = 50px.
+       So, transform: translateX(-50px);
+       A more robust way: transform it left by 100% of its own width (to align its right edge with 50% mark)
+       and then another few pixels for the gap.
+    */
+    transform: translateX(calc(-100% - 50px)); /* -100% of its own width, then -10px (half of a 20px gap) */
+}
+
+.center-mode-carousel.five-wide .slick-next {
+    left: 50%; /* Start at the horizontal center of the carousel */
+    /* Then, move it right by half the desired gap. */
+    transform: translateX(50px); /* 10px (half of a 20px gap) */
+}
+
+.custom-slick-controls {
+    position: absolute;
+    bottom: 35px; 
+    left: 50%;
+    transform: translateX(-50%); /* Center the counter div */
+    z-index: 90; /* Below arrows if they might overlap, but above other content */
+}
+
+.slick-counter {
+    font-size: 16px;
+    color: #444;
+    background-color: rgba(240, 240, 240, 0.7);
+    padding: 6px 12px;
+    border-radius: 15px;
+    white-space: nowrap; /* Prevent wrapping if numbers get long */
+}
+
+@media screen and (max-width: 1280px) {
+    .center-mode-carousel.five-wide {
+        height: 600px; /* 460 */
+    }
+    .center-mode-carousel.five-wide .slick-center .image-container {
+        height: 450px; /* 320 */
+    }
+    .center-mode-carousel.five-wide .slide:not(.slick-center) .image-container {
+        height: 455px;
+    }
+}
+
+@media screen and (max-width: 980px) { /* Switched to 1 slide */
+    .center-mode-carousel.five-wide {
+        height: 480px; /* 420 */
+    }
+    .center-mode-carousel.five-wide .slick-center .image-container {
+        height: 355px; /* 295 */
+    }
+    .center-mode-carousel.five-wide .slide:not(.slick-center) .image-container {
+        height: 360px;
+    }
+}
+
+@media screen and (max-width: 736px) { /* Switched to 1 slide */
+    .center-mode-carousel.five-wide {
+        height: 550px; /* 380 */
+    }
+    .center-mode-carousel.five-wide .slick-center .image-container {
+        height: 390px; /* 265 */
+
+    }
+    .center-mode-carousel.five-wide .slide:not(.slick-center) .image-container {
+        height: 395px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .center-mode-carousel.five-wide {
+        height: 400px; /* 340 */
+    }
+    .center-mode-carousel.five-wide .slick-center .image-container {
+        height: 145px; /* 240 */
+    }
+    .center-mode-carousel.five-wide .slide:not(.slick-center) .image-container {
+        height: 150px; 
+    }
+}
+
+@media screen and (max-width: 360px) { /* Switched to 1 slide */
+    .center-mode-carousel.five-wide {
+        height: 360px; /* 300 */
+    }
+    .center-mode-carousel.five-wide .slick-center .image-container {
+        height: 140px; /* 210 */
+    }
+    .center-mode-carousel.five-wide .slide:not(.slick-center) .image-container {
+        height: 145px; 
+    }
+}
+
+.title-with-underline {
+    position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
+    padding-bottom: 15px;  
+    margin-bottom: 20px;   
+    text-align: center;    
+}
+
+.title-with-underline::after {
+    content: '';          /* Required for pseudo-elements to be generated */
+    display: block;      
+    width: 300px;          
+    height: 1px;          
+    background-color: #333; 
+
+    position: absolute;   
+    left: 50%;            /* Start the left edge at the center of the title element */
+    transform: translateX(-50%); /* Shift it left by half its own width to truly center it */
+    bottom: 0;            
 }
