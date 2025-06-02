@@ -8,7 +8,7 @@
 */
 
 :root {
-	--main-background-color: #ffffff;
+	--main-background-color: #f4ece2;
 	--main-text-color: #212931;
 	--secondary-color: #eeeeee;
 	--hover-color: #18bfef;
@@ -39,6 +39,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	color: var(--secondary-color);
+	
 }
 
 ol, ul {
@@ -105,6 +106,16 @@ input, select, textarea {
 	*, *:before, *:after {
 		box-sizing: inherit;
 	}
+
+	
+	html, body {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		/* Prevent "bounce" scroll effect at the top/bottom of the page */
+		overscroll-behavior-y: contain;
+	}
+
 
 	body {
 		background-color: #1e252d;
@@ -3381,6 +3392,7 @@ input, select, textarea {
 		position: relative;
 		z-index: 1;
 		overflow: hidden;
+		background-color: var(--main-background-color);
 	}
 
 		#wrapper > .bg {
@@ -4030,6 +4042,85 @@ input, select, textarea {
 			}
 
 		}
+
+
+/* Nav Menu */
+
+.nav-header {
+    background-color: transparent; 
+    padding: 1em 0;
+    position: fixed; 
+    width: 100%;
+    top: 0;
+    z-index: 1000; 
+}
+
+.nav-header.scrolled {
+	background-color: var(--main-background-color); 
+}
+
+.nav-header.scrolled .menu ul li a {
+	color:#333
+}
+
+.nav-header.scrolled .nav-logo {
+	color:#333
+}
+
+.nav-header.scrolled 
+.menu ul li a:hover,
+.menu ul li a:focus { /* Added focus for accessibility */
+    color: #ddd !important;
+}
+
+.nav-menu {
+    width: 90%; /* Adjust as needed */
+    /* max-width: 1200px;  */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Pushes logo to left and nav to right */
+    align-items: center;
+}
+
+.nav-menu a {
+    border-bottom: none;
+}
+
+.nav-logo {
+    margin: 0;
+    font-size: 1.8em; 
+	color: white;
+	text-align: center;
+}
+
+
+.menu ul {
+    list-style-type: none; /* Removes bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Aligns nav items horizontally */
+}
+
+.menu ul li {
+    margin-left: 20px; /* Space between nav items */
+}
+
+.menu ul li:first-child {
+    margin-left: 0;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em; /* Adjust as needed */
+    padding: 0.5em;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.menu ul li a:hover,
+.menu ul li a:focus { /* Added focus for accessibility */
+    color: #333 !important;
+}
 
 /* Main */
 
@@ -5418,4 +5509,24 @@ input, select, textarea {
     left: 50%;            /* Start the left edge at the center of the title element */
     transform: translateX(-50%); /* Shift it left by half its own width to truly center it */
     bottom: 0;            
+}
+
+.side-title {
+	position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
+    padding-bottom: 15px;  
+    margin-bottom: 20px;   
+    text-align: center;    
+}
+
+.center-text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center-text p {
+	text-align: center;
 }
