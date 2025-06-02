@@ -5530,3 +5530,18 @@ input, select, textarea {
 .center-text p {
 	text-align: center;
 }
+
+
+.offering-memorandum p {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 0.8em;
+	line-height: 1.4; /* spacing out the lines a bit */
+	max-width: 800px;
+}
+
+.offering-memorandum strong {
+    color: #333; /* Make the bold text a bit darker */
+	font-size: 1.2em;
+}
