@@ -2080,6 +2080,7 @@ input, select, textarea {
 
 /* Button */
 
+
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
@@ -4055,6 +4056,15 @@ input, select, textarea {
     z-index: 1000; 
 }
 
+.nav-header.active {
+	color: white;
+}
+
+.nav-header.scrolled.active {
+	color: var(--main-text-color);
+}
+
+
 .nav-header.scrolled {
 	background-color: var(--main-background-color); 
 }
@@ -4067,9 +4077,9 @@ input, select, textarea {
 	color:#333
 }
 
+
 .nav-header.scrolled 
-.menu ul li a:hover,
-.menu ul li a:focus { /* Added focus for accessibility */
+.menu ul li a:hover { /* Added focus for accessibility */
     color: #ddd !important;
 }
 
@@ -4117,8 +4127,7 @@ input, select, textarea {
     transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.menu ul li a:hover,
-.menu ul li a:focus { /* Added focus for accessibility */
+.menu ul li a:hover { /* Added focus for accessibility */
     color: #333 !important;
 }
 
@@ -4146,8 +4155,9 @@ input, select, textarea {
 			text-align: center;
 		}
 
-		#main > .post {
-			padding: 8rem 8rem 6rem 8rem ;
+		.post {
+			/* padding: 8rem 8rem 6rem 8rem ; */
+			display: flow-root;
 		}
 
 			#main > .post header.major > .date {
