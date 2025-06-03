@@ -2754,6 +2754,50 @@ input, select, textarea {
 										if you want to control which part of a non-square
 										image is prioritized. */
 	}
+
+	.gallery-item .text-overlay {
+		position: absolute; /* Positions the overlay relative to .gallery-item */
+		top: 0;             /* Starts the overlay at the top of the .gallery-item */
+		left: 0;            /* Starts the overlay at the left of the .gallery-item */
+		width: 100%;        /* Makes the overlay take the full width of .gallery-item */
+		height: 100%;       /* Makes the overlay take the full height of .gallery-item */
+
+		/* --- For centering the text content within the overlay --- */
+		display: flex;
+		flex-direction: column; /* Stacks children (like h2 and p) vertically */
+		justify-content: center; /* Vertically centers the text block */
+		align-items: center;   /* Horizontally centers the text block */
+		/* --- End of centering styles --- */
+
+		/* --- Text appearance --- */
+		color: white;         /* Example: white text */
+		text-align: center;   /* Centers the lines of text if they wrap */
+		padding: 15px;        /* Adds some space around the text inside the overlay */
+		box-sizing: border-box; /* Ensures padding doesn't make the overlay bigger than 100% width/height */
+		z-index: 1;           
+	}
+
+		/* --- Optional: Example to show text overlay on hover of the gallery item --- */
+		/*
+		.gallery-item:hover .text-overlay {
+			opacity: 1;
+		}
+		*/
+
+	/* Style for any text elements inside the overlay, if needed */
+	.gallery-item .text-overlay h2 {
+		margin-top: 0;
+		margin-bottom: 0.5em; /* Space below the h2 if there's a p tag */
+		color: white;
+	}
+
+	.gallery-item .text-overlay p {
+		margin: 0;
+		font-size: 0.9em; /* Example smaller font for descriptive text */
+		color: white;
+	}
+
+
 		/* Video */
 
 	.video {
