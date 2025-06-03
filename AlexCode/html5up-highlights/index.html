@@ -16,125 +16,130 @@
 		<link rel="stylesheet" href="assets/slick-1.8.1/slick/slick-theme.css" />
 	
 		<style>
-			/* Basic styling for slides (customize as needed) */
+			/* Container for each slide's content */
 			.center-mode-slider .slide-content {
-				background-color: #f0f0f0; /* Light gray background for slides */
-				border: 0px solid #ccc;
-				height: 250px; /* Adjust height as needed */
 				display: flex;
-				justify-content: center;
-				align-items: center;
-				font-size: 24px;
-				margin: 0 15px; /* Space between slides */
-				color: #120f0f;
-				transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for scaling */
+				justify-content: center; /* Centers the slideshow-card horizontally */
+				align-items: center;   /* Centers the slideshow-card vertically */
+				padding: 0px 0;       /* Padding around the card if it's smaller than this container */
+				margin: 0 0px;        /* Space between slides (handled by Slick) */
+				transition: transform 0.3s ease; /* For Slick's scaling of the slide area */
+				height: auto;          /* Allow height to be determined by the card */
 			}
-	
-			/* Style for the active (center) slide */
+
+			/* Style for the active (center) slide's container - scales the whole area */
 			.center-mode-slider .slick-center .slide-content {
-				transform: scale(1.1); /* Make the center slide a bit larger */
-				background-color: white; /* A primary color for the center slide */
-				color: white;
-				border-color: white;
+				transform: scale(1); /* Slightly enlarge the area of the centered slide. Adjust as preferred. */
+				height: 70%;
+										/* If you prefer all scaling on the card, set this to scale(1) */
 			}
-	
-			/* Optional: Adjust arrow positioning if needed */
+
+			/* Styles for the card itself (image + text) */
+			.slideshow-card {
+				align-items: stretch; /* Makes image and card-info stretch to the card's height */
+				background-color: #ffffff;
+				border-radius: 10px;
+				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				overflow: hidden;
+				width: 90%; /* Default width for non-centered cards */
+				max-width: 750px; /* Adjust as needed */
+				height: 500px; /* Default height for non-centered cards - adjust as you like */
+				opacity: 0.75;
+				transform: scale(0.8); /* Non-centered cards are slightly smaller */
+				transition: opacity 0.6s ease-in-out,
+							transform 0.6s ease-in-out,
+							width 0.6s ease-in-out,
+							height 0.6s ease-in-out,
+							box-shadow 0.6s ease-in-out;
+			}
+
+			/* Styles for the card when it is in the .slick-center slide */
+			.center-mode-slider .slick-center .slideshow-card {
+				opacity: 1;
+				transform: scale(1); /* Card is its 'normal' scale within the (potentially scaled) slide-content */
+				width: 100%;   /* Expand width for centered card */
+				max-width: 900px; /* Adjust as needed */
+				height: 500px;  /* Expand height for centered card - adjust to your original 400px if preferred */
+				box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for centered card */
+			}
+
+			.slideshow-card img {
+				width: 100%; /* Percentage of the card's width for the image */
+				height: 85%;
+				object-fit: cover; /* Ensures image covers the area, might crop */
+				transition: height 0.6s ease-in-out; /* Smooth transition for height change */
+			}
+
+			.slick-center .slideshow-card img {
+				height: 60%;
+				transition: height 0.6s ease-in-out; /* Smooth transition for height change */
+			}
+
+			.slideshow-card .card-info {
+				padding: 25px 30px;
+				width: 100%; /* Percentage of the card's width for the text info */
+				box-sizing: border-box;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between; /* Distributes space between title, p, and button */
+			}
+
+			.slideshow-card .card-info h2 {
+				margin-top: 0;
+				margin-bottom: 10px; /* Space below heading */
+				color: #333;
+				font-size: 1.6em; /* Adjust as needed */
+				font-weight: bold; /* Makes the title stand out */
+			}
+
+			.slideshow-card .card-info p {
+				color: #666;
+				line-height: 1.5;
+				font-size: 0.95em; /* Adjust as needed */
+				flex-grow: 1; /* Allows paragraph to take available vertical space */
+				margin-bottom: 15px; /* Space above button */
+			}
+
+			.slideshow-card .card-info button {
+				display: inline-flex; /* Allows for centering text */
+				padding: 12px 18px;
+				background-color: black; /* Example primary button color */
+				color: white;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				text-transform: uppercase;
+				font-weight: bold;
+				font-size: 0.85em;
+				align-self: center; /* Aligns button to the left */
+				margin-top: auto; /* Pushes button to the bottom if content is short */
+				align-items: center; /* Centers button text */
+			}
+			.slideshow-card .card-info button:hover {
+				background-color: white; /* Darker shade on hover */
+				color: black;
+			}
+
+
+			/* Optional: Adjust arrow positioning if needed (from your original CSS) */
 			.center-mode-slider .slick-prev,
 			.center-mode-slider .slick-next {
-				z-index: 1; /* Ensure arrows are above slides */
+				z-index: 10; /* Ensure arrows are above slides */
 			}
-			/* You might need to adjust top/left/right for arrows based on your slide height and preference */
 			.center-mode-slider .slick-prev {
-				left: 25px; /* Adjust as needed */
+				left: 10px; /* Adjust as needed, e.g., closer to the edge of the carousel */
 			}
 			.center-mode-slider .slick-next {
-				right: -25px; /* Adjust as needed */
+				right: 10px; /* Adjust as needed */
 			}
-	
-			/* Ensure the carousel section has some padding if it's full width in the template */
+
+			/* Ensure the carousel section has some padding (from your original CSS) */
 			#carousel-section {
 				padding-top: 3em;
 				padding-bottom: 3em;
 				/* background: #f7f7f7; */ /* Optional: different background for this section */
+				overflow: hidden; /* Helps contain elements if arrows are positioned absolutely outside */
 			}
-			#carousel-section .container {
-				/* The HTML5 UP template uses a .container. If your slider is inside it, great.
-				   If you want the slider to be wider, you might place the slider div outside the .container
-				   or give the .container a max-width: none; for this specific section. */
-			}
-
-			.slideshow {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			padding: 50px 0;
-			}
-
-			.slideshow-card {
-			display: flex;
-			align-items: center;
-			background-color: #ffffff;
-			border-radius: 10px;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-			margin-bottom: 100px;
-			overflow: hidden;
-			width: 80%;
-			max-width: 900px;
-			/* --- Initial state for animations --- */
-			height: 200px; /* Example initial smaller height */
-			opacity: 0.8;
-			transform: scale(0.95);
-			transition: height 0.5s ease-in-out,
-						opacity 0.5s ease-in-out,
-						transform 0.5s ease-in-out,
-						width 0.5s ease-in-out;
-			}
-
-			/* Styles for when a card is "active" or in its "normal" expanded state */
-			.slideshow-card.active {
-			height: 400px; /* Example expanded height */
-			opacity: 1;
-			transform: scale(1);
-			width: 90%; /* Example expanded width */
-			}
-
-			.slideshow-card img {
-			width: 40%;
-			height: 100%;
-			object-fit: cover;
-			border-radius: 10px 0 0 10px;
-			}
-
-			.slideshow-card .card-info {
-			padding: 20px 30px;
-			width: 60%;
-			box-sizing: border-box;
-			}
-
-			.slideshow-card .card-info h2 {
-			margin-top: 0;
-			color: #333;
-			}
-
-			.slideshow-card .card-info p {
-			color: #666;
-			line-height: 1.6;
-			}
-
-			/* Specific classes for different card types (mostly for JS targeting) */
-			.intro-card {
-			/* Could have slightly different initial styles if desired,
-				though the .active state will likely override them */
-			}
-
-			.normal-card {
-			/* Styles specific to normal cards, if any */
-			}
-
-			.end-card {
-			/* Styles specific to the end card, if any */
-			}
-	
 		</style>
 	</head>
 	<body class="is-preload">
@@ -175,35 +180,70 @@
 		
 		<section id="carousel-section" class="main special block-bg my-solid-color-section">
 			<div class="content-inner">
-				<header class="major"> <h2>Our Photo Gallery</h2>
+				<header class="major">
+					<h2>Our Photo Gallery</h2>
 					<p>A glimpse into Papagayo Bay</p>
 				</header>
 			</div>
-		
-			<div class="center-mode-slider-wrapper"> <div class="center-mode-slider">
+
+			<div class="center-mode-slider-wrapper">
+				<div class="center-mode-slider">
+
 					<div>
 						<div class="slide-content">
-							<img src="images/BayPic.jpg" alt="Papagayo Bay View 1" style="width:100%; height:auto; display:block;">
+							<div class="slideshow-card">
+								<img src="images/BayPic.jpg" alt="Scenic view of Papagayo Bay">
+								<div class="card-info">
+									<h2>Bay View</h2>
+									<p>Expansive views of the serene Papagayo Bay, showcasing its natural beauty.</p>
+									<button>More Info</button>
+								</div>
+							</div>
 						</div>
 					</div>
+
 					<div>
 						<div class="slide-content">
-							<img src="images/Land.jpg" alt="Lush Landscape" style="width:100%; height:auto; display:block;">
+							<div class="slideshow-card">
+								<img src="images/Land.jpg" alt="Lush green landscape">
+								<div class="card-info">
+									<h2>Lush Landscape</h2>
+									<p>Discover the vibrant green foliage and rich terrain surrounding the area.</p>
+									<button>Explore</button>
+								</div>
+							</div>
 						</div>
 					</div>
+
 					<div>
 						<div class="slide-content">
-							<img src="images/Town.jpg" alt="Infinity Pool" style="width:100%; height:auto; display:block;">
+							<div class="slideshow-card">
+								<img src="images/Town.jpg" alt="View over a coastal town or resort area">
+								<div class="card-info">
+									<h2>Coastal Living</h2>
+									<p>A glimpse of the charming local architecture nestled by the sea.</p>
+									<button>Details</button>
+								</div>
+							</div>
 						</div>
 					</div>
+
 					<div>
 						<div class="slide-content">
-							<img src="images/RiverToBeach.jpg" alt="River meeting the Beach" style="width:100%; height:auto; display:block;">
+							<div class="slideshow-card">
+								<img src="images/RiverToBeach.jpg" alt="River meeting the ocean beach">
+								<div class="card-info">
+									<h2>River Meets Ocean</h2>
+									<p>The unique convergence where the freshwater river flows into the sandy beach.</p>
+									<button>Discover</button>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
+
+					</div>
 			</div>
-		
+
 			<div class="content-inner" style="text-align: center; padding-top: 2em; padding-bottom: 2em;">
 				<a href="#two" class="button primary scrolly">Next Section</a>
 			</div>
@@ -662,8 +702,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					centerPadding: '60px', // Adjust for how much of the prev/next slides you want to show
 					slidesToShow: 3,       // Number of slides to show at once (odd number is best for center mode)
 					infinite: true,        // Loop the slides
-					dots: true,            // Show navigation dots
-					arrows: true,          // Show navigation arrows
+					dots: false,            // Show navigation dots
+					arrows: false,          // Show navigation arrows
 					focusOnSelect: true,   // Center the slide when it's clicked
 					responsive: [
 						{
