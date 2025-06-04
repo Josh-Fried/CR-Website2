@@ -5269,11 +5269,11 @@ input, select, textarea {
 	margin-bottom: 15px; /* Space above button */
 }
 
-.slideshow-card .card-info button {
+#carousel-section > .slideshow-card .card-info button {
 	display: inline-flex; /* Allows for centering text */
 	padding: 12px 18px;
 	background-color: black; /* Example primary button color */
-	color: white;
+	color: red; 
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
@@ -5284,8 +5284,8 @@ input, select, textarea {
 	margin-top: auto; /* Pushes button to the bottom if content is short */
 	align-items: center; /* Centers button text */
 }
-.slideshow-card .card-info button:hover {
-	background-color: white; /* Darker shade on hover */
+#carousel-section > .slideshow-card .card-info button:hover {
+	background-color: purple; /* Darker shade on hover */
 	color: black;
 }
 
