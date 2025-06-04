@@ -5263,13 +5263,20 @@ input, select, textarea {
 
 .slideshow-card .card-info p {
 	color: black;
+	opacity: 0; /* Full opacity for text */
 	line-height: 1.5;
 	font-size: 0.95em; /* Adjust as needed */
 	flex-grow: 1; /* Allows paragraph to take available vertical space */
 	margin-bottom: 15px; /* Space above button */
+	transition: opacity .6s ease-in-out; /* Smooth transition for opacity change */
 }
 
-.slideshow-card .card-info button {
+.slick-center .slideshow-card .card-info p {
+	opacity: 1; /* Full opacity for text when centered */
+	transition: all .8s ease-in-out; /* Smooth transition for opacity change */
+}
+
+.slideshow-card .card-info .slide-button {
 	display: inline-flex; /* Allows for centering text */
 	padding: 12px 18px;
 	background-color: black; /* Example primary button color */
@@ -5284,7 +5291,7 @@ input, select, textarea {
 	margin-top: auto; /* Pushes button to the bottom if content is short */
 	align-items: center; /* Centers button text */
 }
-.slideshow-card .card-info button:hover {
+.slideshow-card .card-info .slide-button:hover {
 	background-color: white; /* Darker shade on hover */
 	color: black;
 }
@@ -5567,6 +5574,7 @@ input, select, textarea {
     background-color: rgba(240, 240, 240, 0.7);
     padding: 6px 12px;
     border-radius: 15px;
+	
     white-space: nowrap; /* Prevent wrapping if numbers get long */
 }
 
