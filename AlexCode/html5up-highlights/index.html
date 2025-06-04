@@ -22,8 +22,8 @@
 				justify-content: center; /* Centers the slideshow-card horizontally */
 				align-items: center;   /* Centers the slideshow-card vertically */
 				padding: 0px 0;       /* Padding around the card if it's smaller than this container */
-				margin: 0 0px;        /* Space between slides (handled by Slick) */
-				transition: transform 0.3s ease; /* For Slick's scaling of the slide area */
+				margin: 0px;        /* Space between slides (handled by Slick) */
+				transition: transform 0.s ease; /* For Slick's scaling of the slide area */
 				height: auto;          /* Allow height to be determined by the card */
 			}
 
@@ -38,10 +38,9 @@
 			.slideshow-card {
 				align-items: stretch; /* Makes image and card-info stretch to the card's height */
 				background-color: #ffffff;
-				border-radius: 10px;
-				box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				border-radius: 0px;
 				overflow: hidden;
-				width: 90%; /* Default width for non-centered cards */
+				width: 100%; /* Default width for non-centered cards */
 				max-width: 750px; /* Adjust as needed */
 				height: 500px; /* Default height for non-centered cards - adjust as you like */
 				opacity: 0.75;
@@ -60,7 +59,6 @@
 				width: 100%;   /* Expand width for centered card */
 				max-width: 900px; /* Adjust as needed */
 				height: 500px;  /* Expand height for centered card - adjust to your original 400px if preferred */
-				box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for centered card */
 			}
 
 			.slideshow-card img {
@@ -68,6 +66,7 @@
 				height: 85%;
 				object-fit: cover; /* Ensures image covers the area, might crop */
 				transition: height 0.6s ease-in-out; /* Smooth transition for height change */
+				margin-bottom: -5px;
 			}
 
 			.slick-center .slideshow-card img {
@@ -85,15 +84,15 @@
 			}
 
 			.slideshow-card .card-info h2 {
-				margin-top: 0;
-				margin-bottom: 10px; /* Space below heading */
-				color: #333;
+				margin-top: 0; /* No space above heading */
+				margin-bottom: 11px; /* Space below heading */
+				color: black;
 				font-size: 1.6em; /* Adjust as needed */
 				font-weight: bold; /* Makes the title stand out */
 			}
 
 			.slideshow-card .card-info p {
-				color: #666;
+				color: black;
 				line-height: 1.5;
 				font-size: 0.95em; /* Adjust as needed */
 				flex-grow: 1; /* Allows paragraph to take available vertical space */
@@ -133,8 +132,16 @@
 				right: 10px; /* Adjust as needed */
 			}
 
+			.custom-slick-controls {
+				position: absolute;
+				bottom: 35px;
+				left: 50%;
+				transform: translateX(-50%); /* Center the counter div */
+				z-index: 90; /* Below arrows if they might overlap, but above other content */
+			}
+
 			/* Ensure the carousel section has some padding (from your original CSS) */
-			#carousel-section {
+			.carousel-section {
 				padding-top: 3em;
 				padding-bottom: 3em;
 				/* background: #f7f7f7; */ /* Optional: different background for this section */
@@ -187,8 +194,7 @@
 			</div>
 
 			<div class="center-mode-slider-wrapper">
-				<div class="center-mode-slider">
-
+				<div class="center-mode-slider ">
 					<div>
 						<div class="slide-content">
 							<div class="slideshow-card">
@@ -240,13 +246,11 @@
 							</div>
 						</div>
 					</div>
-
-					</div>
+				</div>
 			</div>
-
-			<div class="content-inner" style="text-align: center; padding-top: 2em; padding-bottom: 2em;">
-				<a href="#two" class="button primary scrolly">Next Section</a>
-			</div>
+			<div class="custom-slick-controls">
+				<div class="slick-counter"></div>
+]			</div>
 		</section>
 		<!-- Two -->
 			<section id="two" class="main special">
@@ -699,12 +703,13 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			$(document).ready(function(){
 				$('.center-mode-slider').slick({
 					centerMode: true,
-					centerPadding: '60px', // Adjust for how much of the prev/next slides you want to show
+					centerPadding: '150px', // Adjust for how much of the prev/next slides you want to show
 					slidesToShow: 3,       // Number of slides to show at once (odd number is best for center mode)
 					infinite: true,        // Loop the slides
 					dots: false,            // Show navigation dots
 					arrows: false,          // Show navigation arrows
 					focusOnSelect: true,   // Center the slide when it's clicked
+					infinite: true,        // Loop the slides
 					responsive: [
 						{
 							breakpoint: 980, // Matches HTML5 UP's 'large' breakpoint roughly

@@ -5184,46 +5184,132 @@ input, select, textarea {
 
 /* Carousel */
 
-.slick-center {
-    /* Styling for the centered slide */
+/* Center mode slider */
+/* Container for each slide's content */
+
+.center-mode-slider .slide-content {
+	display: flex;
+	justify-content: center; /* Centers the slideshow-card horizontally */
+	align-items: center;   /* Centers the slideshow-card vertically */
+	padding: 0px 0;       /* Padding around the card if it's smaller than this container */
+	margin: 0px;        /* Space between slides (handled by Slick) */
+	transition: transform 0.s ease; /* For Slick's scaling of the slide area */
+	height: auto;          /* Allow height to be determined by the card */
 }
 
-/* Optional: Style the navigation arrows */
-.slick-prev:before,
-.slick-next:before {
-    font-family: 'slick';
-    font-size: 20px;
-    line-height: 1;
-    opacity: .75;
-    color: white; /* Adjust arrow color */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+/* Style for the active (center) slide's container - scales the whole area */
+.center-mode-slider .slick-center .slide-content {
+	transform: scale(1); /* Slightly enlarge the area of the centered slide. Adjust as preferred. */
+	height: 70%;
+							/* If you prefer all scaling on the card, set this to scale(1) */
 }
 
-/* Adjust padding for center mode */
-.slick-list {
-    padding: 0 30px; /* Adjust this to control how much of the side slides you see */
+/* Styles for the card itself (image + text) */
+.slideshow-card {
+	align-items: stretch; /* Makes image and card-info stretch to the card's height */
+	background-color: #ffffff;
+	border-radius: 0px;
+	overflow: hidden;
+	width: 100%; /* Default width for non-centered cards */
+	max-width: 750px; /* Adjust as needed */
+	height: 500px; /* Default height for non-centered cards - adjust as you like */
+	opacity: 0.75;
+	transform: scale(0.8); /* Non-centered cards are slightly smaller */
+	transition: opacity 0.6s ease-in-out,
+				transform 0.6s ease-in-out,
+				width 0.6s ease-in-out,
+				height 0.6s ease-in-out,
+				box-shadow 0.6s ease-in-out;
 }
 
-.slick-slide {
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 20px; 
-    background-color: transparent;
-    display: flex; /* Use flexbox for vertical centering */
-    flex-direction: column; /* Stack image, title, description */
-    align-items: center; /* Center items horizontally */
-    height: auto; 
-
-    /* padding: 20px;              */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);                                        
-    border-radius: 8px;    
-    box-sizing: border-box;
+/* Styles for the card when it is in the .slick-center slide */
+.center-mode-slider .slick-center .slideshow-card {
+	opacity: 1;
+	transform: scale(1); /* Card is its 'normal' scale within the (potentially scaled) slide-content */
+	width: 100%;   /* Expand width for centered card */
+	max-width: 900px; /* Adjust as needed */
+	height: 500px;  /* Expand height for centered card - adjust to your original 400px if preferred */
 }
 
-.slick-slide.slick-center {
-    opacity: 1;
+.slideshow-card img {
+	width: 100%; /* Percentage of the card's width for the image */
+	height: 85%;
+	object-fit: cover; /* Ensures image covers the area, might crop */
+	transition: height 0.6s ease-in-out; /* Smooth transition for height change */
+	margin-bottom: -2px;
 }
+
+.slick-center .slideshow-card img {
+	height: 60%;
+	transition: height 0.6s ease-in-out; /* Smooth transition for height change */
+}
+
+.slideshow-card .card-info {
+	padding: 25px 30px;
+	width: 100%; /* Percentage of the card's width for the text info */
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between; /* Distributes space between title, p, and button */
+}
+
+.slideshow-card .card-info h2 {
+	margin-top: 0; /* No space above heading */
+	margin-bottom: 15px; /* Space below heading */
+	color: black;
+	font-size: 1.6em; /* Adjust as needed */
+	font-weight: bold; /* Makes the title stand out */
+}
+
+.slideshow-card .card-info p {
+	color: black;
+	line-height: 1.5;
+	font-size: 0.95em; /* Adjust as needed */
+	flex-grow: 1; /* Allows paragraph to take available vertical space */
+	margin-bottom: 15px; /* Space above button */
+}
+
+.slideshow-card .card-info button {
+	display: inline-flex; /* Allows for centering text */
+	padding: 12px 18px;
+	background-color: black; /* Example primary button color */
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 0.85em;
+	align-self: center; /* Aligns button to the left */
+	margin-top: auto; /* Pushes button to the bottom if content is short */
+	align-items: center; /* Centers button text */
+}
+.slideshow-card .card-info button:hover {
+	background-color: white; /* Darker shade on hover */
+	color: black;
+}
+
+
+/* Optional: Adjust arrow positioning if needed (from your original CSS) */
+.center-mode-slider .slick-prev,
+.center-mode-slider .slick-next {
+	z-index: 10; /* Ensure arrows are above slides */
+}
+.center-mode-slider .slick-prev {
+	left: 10px; /* Adjust as needed, e.g., closer to the edge of the carousel */
+}
+.center-mode-slider .slick-next {
+	right: 10px; /* Adjust as needed */
+}
+
+/* Ensure the carousel section has some padding (from your original CSS) */
+.carousel-section {
+	padding-top: 3em;
+	padding-bottom: 3em;
+	/* background: #f7f7f7; */ /* Optional: different background for this section */
+	overflow: hidden; /* Helps contain elements if arrows are positioned absolutely outside */
+}
+
 
 /* Center Carousel */
 
@@ -5400,7 +5486,7 @@ input, select, textarea {
 }
 
 /* Carousel Counter & Arrows */
-.center-mode-carousel.five-wide .slick-arrow {
+.center-mode-slider .slick-arrow {
     position: absolute;
     top: auto; /* Override default top positioning */
     /* This positions the ARROWS' BOTTOM EDGE relative to the CAROUSEL'S BOTTOM EDGE.
@@ -5428,7 +5514,7 @@ input, select, textarea {
     transform: none;
 }
 
-.center-mode-carousel.five-wide .slick-arrow::before {
+.center-mode-slider .slick-arrow::before {
     font-family: 'slick'; /* This is Slick's default font for icons */
     font-size: 20px;      /* Size of the icon character */
     color: #333333;       /* Dark color for the icon for visibility */
@@ -5442,15 +5528,15 @@ input, select, textarea {
     height: 100%;
 }
 
-.center-mode-carousel.five-wide .slick-arrow:hover {
+.center-mode-slider .slick-arrow:hover {
     background-color: rgba(255, 255, 255, 1); /* Slightly more opaque on hover */
     border-color: #aaa;
 }
-.center-mode-carousel.five-wide .slick-arrow:hover::before {
+.center-mode-slider .slick-arrow:hover::before {
     color: #000000;
 }
 
-.center-mode-carousel.five-wide .slick-prev {
+.center-mode-slider .slick-prev {
     left: 50%; /* Start at the horizontal center of the carousel */
     /* Then, move it left by its own width PLUS half the desired gap between arrows.
        If arrow is 40px wide and you want a 20px gap, move left by (40px + 10px) = 50px.
@@ -5461,7 +5547,7 @@ input, select, textarea {
     transform: translateX(calc(-100% - 50px)); /* -100% of its own width, then -10px (half of a 20px gap) */
 }
 
-.center-mode-carousel.five-wide .slick-next {
+.center-mode-slider .slick-next {
     left: 50%; /* Start at the horizontal center of the carousel */
     /* Then, move it right by half the desired gap. */
     transform: translateX(50px); /* 10px (half of a 20px gap) */
