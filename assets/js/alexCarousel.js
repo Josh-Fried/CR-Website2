@@ -1,6 +1,4 @@
 // carousel.js
-
-// carousel.js
 $(document).ready(function() {
   $('.center-mode-slider').each(function() { // Process each carousel on the page
       var $thisCarousel = $(this); // Current carousel instance
@@ -8,7 +6,7 @@ $(document).ready(function() {
       // --- Find the counter associated with THIS specific carousel ---
       // Adjust this selector based on your HTML structure.
       // Example: If .custom-slick-controls is a sibling of the carousel div:
-      var $thisSlickCounter = $thisCarousel.siblings('.custom-slick-controls').find('.slick-counter');
+      var $thisSlickCounter = $thisCarousel.parent().siblings('.custom-slick-controls').find('.slick-counter');
       
       // Example: If .custom-slick-controls is inside a common parent wrapper of the carousel:
       // var $thisSlickCounter = $thisCarousel.closest('.your-carousel-wrapper-class').find('.custom-slick-controls .slick-counter');
