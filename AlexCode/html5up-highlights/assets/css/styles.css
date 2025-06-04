@@ -1,0 +1,239 @@
+ :root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-gray-100: #f8f9fa;
+    --color-gray-700: #495057;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* body {
+    font-family: var(--font-body);
+    background-color: var(--color-white);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } */
+  
+  .carousel-container {
+    width: 100%;
+    max-width: 1400px;
+    position: relative;
+    padding: 0 60px;
+  }
+  
+  .carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 30px;
+  }
+  
+  .carousel-card {
+    flex: 0 0 auto;
+    width: 400px;
+    background: var(--color-white);
+    opacity: 0.3;
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+  
+  .carousel-card.active {
+    opacity: 1;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 30px 0;
+    text-align: center;
+  }
+  
+  .card-title {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  
+  .card-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-gray-700);
+    margin-bottom: 30px;
+  }
+  
+  .card-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .btn {
+    padding: 12px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background: var(--color-black);
+    color: var(--color-white);
+  }
+  
+  .btn-secondary {
+    border: 1px solid var(--color-black);
+    color: var(--color-black);
+  }
+  
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .carousel-nav-prev {
+    left: 0;
+  }
+  
+  .carousel-nav-next {
+    right: 0;
+  }
+  
+  .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+  
+  .carousel-counter {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  
+/* In your main.css or carousel-specific CSS file */
+
+.carousel-list-container { /* This is your #carousel element */
+    /* ... your existing styles for layout (display: flex, etc.) ... */
+    /* Add perspective if you plan to use 3D transforms on cards, e.g., for a coverflow effect */
+    /* perspective: 1000px; */
+}
+
+.carousel-card {
+    /* ... your existing styles for a single card ... */
+    transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease; /* Smooth transitions */
+    opacity: 0.6; /* Default opacity for non-active cards */
+    transform: scale(0.9); /* Slightly smaller by default */
+    /* filter: grayscale(50%); */ /* Optional: make non-active cards less vibrant */
+}
+
+.carousel-card.active {
+    opacity: 1; /* Fully opaque */
+    transform: scale(1); /* Normal size, or even slightly larger e.g., scale(1.05) */
+    /* filter: grayscale(0%); */ /* Full color */
+    /* You might add a more prominent box-shadow here if you like */
+    /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); */
+}
+
+/* Styling for content within the card that might change based on active state */
+.carousel-card .card-description,
+.carousel-card .card-buttons {
+    /* By default, these might be less prominent or even hidden for non-active cards */
+    /* For simplicity, let's assume they are always present in HTML,
+       and we control their emphasis through opacity or height. */
+    opacity: 0; /* Hide description and buttons on non-active cards by default */
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.4s ease-out;
+}
+
+.carousel-card.active .card-description,
+.carousel-card.active .card-buttons {
+    opacity: 1; /* Show them on the active card */
+    max-height: 500px; /* Adjust to a value large enough to contain the content */
+    /* any other styles to make them appear fully */
+}
+
+/* Ensure titles are always somewhat visible */
+.carousel-card .card-title { /* Assuming your title has a class like .card-title */
+    opacity: 1; /* Or adjust as needed, maybe slightly less for non-active if desired */
+}
+
+/*
+   Make sure your .card-image, .card-title, .card-description, .card-buttons
+   classes are actually what you have inside each dynamically generated card
+   by carousel.js's createCardElement method.
+   Your createCardElement in carousel.js makes:
+   <div class="carousel-card" data-index="${index}">
+     <img src="${property.image}" alt="${property.title}">
+     <h3>${property.title}</h3>
+     <p class="description">${property.description}</p> // This is the description
+     <div class="buttons"> // This contains buttons
+       <button class="check-rates">CHECK RATES</button>
+       <button class="details">DETAILS</button>
+     </div>
+   </div>
+   So, target .description and .buttons
+*/
+
+.carousel-card .description,
+.carousel-card .buttons {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease 0.1s, max-height 0.4s ease-out; /* Added a slight delay to opacity */
+    /* margin-top: 0; remove any margin that might cause jump */
+}
+
+.carousel-card.active .description,
+.carousel-card.active .buttons {
+    opacity: 1;
+    max-height: 500px; /* Or an appropriate height */
+    /* margin-top: 10px; or whatever your design requires */
+}
+
+/* Adjust button styling if needed */
+.carousel-card .buttons button {
+    /* Your default button styles */
+    margin: 5px;
+}
+
+/* You might need to ensure the overall #carousel container allows for
+   the active card to scale without being clipped, or adjust margins. */
+
+
+  @media (max-width: 768px) {
+    .carousel-container {
+      padding: 0 30px;
+    }
+    
+    .carousel-card {
+      width: 300px;
+    }
+    
+    .card-image {
+      height: 200px;
+    }
+  } 
