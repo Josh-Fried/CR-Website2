@@ -5265,11 +5265,18 @@ input, select, textarea {
 
 .slideshow-card .card-info p {
 	color: black;
+	opacity: 0; /* Full opacity for text */
 	line-height: 1.5;
 	font-size: 0.95em; /* Adjust as needed */
 	flex-grow: 1; /* Allows paragraph to take available vertical space */
 	margin-bottom: 15px; /* Space above button */
+	transition: opacity .6s ease-in-out; /* Smooth transition for opacity change */
 	text-align: center;
+}
+
+.slick-center .slideshow-card .card-info p {
+	opacity: 1; /* Full opacity for text when centered */
+	transition: all .8s ease-in-out; /* Smooth transition for opacity change */
 }
 
 #main .slideshow-card .card-info button {
@@ -5571,6 +5578,7 @@ input, select, textarea {
     background-color: rgba(240, 240, 240, 0.7);
     padding: 6px 12px;
     border-radius: 15px;
+	
     white-space: nowrap; /* Prevent wrapping if numbers get long */
 }
 
