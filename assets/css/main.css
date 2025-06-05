@@ -5693,3 +5693,43 @@ input, select, textarea {
     color: #333; /* Make the bold text a bit darker */
 	font-size: 1.2em;
 }
+/* About Section */
+
+#about {
+    opacity: 1; /* Default state: visible */
+    transform: translateY(0); /* Default state: original position */
+
+    /* Define transitions for opacity and transform (mirroring #intro's entrance) */
+    -moz-transition: opacity 1s ease, -moz-transform 1s ease;
+    -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+    -ms-transition: opacity 1s ease, -ms-transform 1s ease;
+    transition: opacity 1s ease, transform 1s ease;
+    /* Any other existing #about styles would go here */
+}
+
+/* Initial state for #about when the page is preloading */
+/* This creates the "pop up and fade in" effect when 'is-preload' is removed */
+body.is-preload #about {
+    opacity: 0; /* Start transparent */
+    -moz-transform: translateY(2rem); /* Start 2rem lower (adjust as needed) */
+    -webkit-transform: translateY(2rem);
+    -ms-transform: translateY(2rem);
+    transform: translateY(2rem);
+}
+
+/* Styles for when #about is explicitly hidden */
+/* This creates the "pop out and fade out" effect when '.hidden' is added */
+#about.hidden {
+    opacity: 0; /* Fade out */
+    visibility: hidden; /* Make it non-interactive and non-visible like #intro.hidden */
+    -moz-transform: translateY(2rem); /* Move down 2rem (or adjust as needed) */
+    -webkit-transform: translateY(2rem);
+    -ms-transform: translateY(2rem);
+    transform: translateY(2rem);
+
+    /* Apply a similar faster transition for the hiding action, like #intro.hidden */
+    -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, visibility 0.5s;
+    -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, visibility 0.5s;
+    -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, visibility 0.5s;
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+}
