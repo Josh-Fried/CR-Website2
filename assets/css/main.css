@@ -5685,3 +5685,91 @@ input, select, textarea {
     color: #333; /* Make the bold text a bit darker */
 	font-size: 1.2em;
 }
+
+/* Rectangle Section  */
+
+.rectangle-section {
+    width: 100%;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.rectangle-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.rectangle-item {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rectangle-header {
+    display: flex;
+    align-items: flex-start; /* Correct alignment for the container */
+    margin-bottom: 12px;
+    min-height: 3.5em;
+}
+
+
+/* --- ICON STYLES --- */
+
+.rectangle-icon {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rectangle-icon.has-background {
+    width: 40px;
+    height: 40px;
+    background-color: #8a817c; /* Your original background color */
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Restoring your original icon color logic */
+.rectangle-icon i {
+    font-size: 1.25rem; /* Your original icon font size */
+    color: var(--main-background-color);
+}
+
+.rectangle-icon.has-background i {
+    color: #f4ece2; /* Your original icon color for the background version */
+}
+
+
+/* --- TEXT STYLES --- */
+
+.rectangle-title {
+    font-size: 1.25rem; /* Your original font size */
+    line-height: 1.5em; /* Your original line-height */
+    margin: 0;
+    color: #1c1e21;
+}
+
+.rectangle-subtitle {
+    font-size: 2.0rem; /* Your original font size */
+    margin: 0 0 10px 0; /* Your original margin */
+    color: #606770;
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.rectangle-description {
+    font-size: 0.5rem; /* Your original font size */
+    line-height: 1.6;
+    margin: 0;
+    color: #606770;
+}
+
