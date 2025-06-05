@@ -317,7 +317,7 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: var(--hover-color) !important;
+			color: var(--hover-color);
 		}
 
 	strong, b {
@@ -2227,7 +2227,7 @@ input, select, textarea {
 	.button {
 		background-color: transparent;
 		box-shadow: inset 0 0 0 2px var(--main-text-color);
-		color: var(--main-text-color) !important;
+		color: var(--main-text-color);
 	}
 
 		input[type="submit"]:hover,
@@ -2236,7 +2236,7 @@ input, select, textarea {
 		button:hover,
 		.button:hover {
 			box-shadow: inset 0 0 0 2px var(--hover-color);
-			color: var(--hover-color) !important;
+			color: var(--hover-color);
 		}
 
 		input[type="submit"].primary,
@@ -2246,7 +2246,7 @@ input, select, textarea {
 		.button.primary {
 			background-color: var(--main-text-color);
 			box-shadow: none;
-			color: var(--main-background-color) !important;
+			color: var(--main-background-color);
 		}
 
 			input[type="submit"].primary:hover,
@@ -3650,7 +3650,7 @@ input, select, textarea {
 		#intro .button {
 			background-color: transparent;
 			box-shadow: inset 0 0 0 2px var(--main-background-color);
-			color: var(--main-background-color) !important;
+			color: var(--main-background-color);
 		}
 
 			#intro input[type="submit"]:hover,
@@ -3659,7 +3659,7 @@ input, select, textarea {
 			#intro button:hover,
 			#intro .button:hover {
 				box-shadow: inset 0 0 0 2px var(--hover-color);
-				color: var(--hover-color) !important;
+				color: var(--hover-color);
 			}
 
 			#intro input[type="submit"].primary,
@@ -3669,7 +3669,7 @@ input, select, textarea {
 			#intro .button.primary {
 				background-color: var(--main-background-color);
 				box-shadow: none;
-				color: #1e252d !important;
+				color: #1e252d;
 			}
 
 				#intro input[type="submit"].primary:hover,
@@ -3868,7 +3868,7 @@ input, select, textarea {
 
 			#header a:hover {
 				border-bottom-color: transparent;
-				color: var(--hover-color) !important;
+				color: var(--hover-color);
 			}
 
 		#header strong, #header b {
@@ -3912,8 +3912,8 @@ input, select, textarea {
 		}
 
 			#header .logo:hover {
-				border-color: var(--hover-color) !important;
-				color: var(--hover-color) !important;
+				border-color: var(--hover-color);
+				color: var(--hover-color);
 			}
 
 		@media screen and (max-width: 980px) {
@@ -3989,7 +3989,7 @@ input, select, textarea {
 
 			#nav a:hover {
 				border-bottom-color: transparent;
-				color: var(--hover-color) !important;
+				color: var(--hover-color);
 			}
 
 		#nav strong, #nav b {
@@ -4065,7 +4065,7 @@ input, select, textarea {
 					}
 
 						#nav ul.links li.active a:hover {
-							color: var(--hover-color) !important;
+							color: var(--hover-color);
 						}
 
 		#nav ul.icons {
@@ -4111,6 +4111,8 @@ input, select, textarea {
 
 .nav-header.scrolled {
 	background-color: var(--main-background-color); 
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+	
 }
 
 .nav-header.scrolled .menu ul li a {
@@ -4467,7 +4469,7 @@ input, select, textarea {
 
 			#footer a:hover {
 				border-bottom-color: transparent;
-				color: var(--hover-color) !important;
+				color: var(--hover-color);
 			}
 
 		#footer strong, #footer b {
@@ -4511,7 +4513,7 @@ input, select, textarea {
 			#footer button:hover,
 			#footer .button:hover {
 				box-shadow: inset 0 0 0 2px var(--hover-color);
-				color: var(--hover-color) !important;
+				color: var(--hover-color);
 			}
 
 			#footer input[type="submit"].primary,
@@ -4521,7 +4523,7 @@ input, select, textarea {
 			#footer .button.primary {
 				background-color: #717981;
 				box-shadow: none;
-				color: #f5f5f5 !important;
+				color: #f5f5f5;
 			}
 
 				#footer input[type="submit"].primary:hover,
@@ -4660,7 +4662,7 @@ input, select, textarea {
 		}
 
 			#footer .pagination a:hover {
-				color: var(--hover-color) !important;
+				color: var(--hover-color);
 				border-color: var(--hover-color);
 				z-index: 1;
 			}
@@ -4904,7 +4906,7 @@ input, select, textarea {
 
 			#copyright a:hover {
 				border-bottom-color: transparent;
-				color: var(--hover-color) !important;
+				color: var(--hover-color);
 			}
 
 		#copyright strong, #copyright b {
@@ -5263,17 +5265,25 @@ input, select, textarea {
 
 .slideshow-card .card-info p {
 	color: black;
+	opacity: 0; /* Full opacity for text */
 	line-height: 1.5;
 	font-size: 0.95em; /* Adjust as needed */
 	flex-grow: 1; /* Allows paragraph to take available vertical space */
 	margin-bottom: 15px; /* Space above button */
+	transition: opacity .6s ease-in-out; /* Smooth transition for opacity change */
+	text-align: center;
 }
 
-#carousel-section > .slideshow-card .card-info button {
+.slick-center .slideshow-card .card-info p {
+	opacity: 1; /* Full opacity for text when centered */
+	transition: all .8s ease-in-out; /* Smooth transition for opacity change */
+}
+
+#main .slideshow-card .card-info button {
 	display: inline-flex; /* Allows for centering text */
 	padding: 12px 18px;
-	background-color: black; /* Example primary button color */
-	color: red; 
+	background-color: white; /* Example primary button color */
+	color: var(--main-text-color); 
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
@@ -5284,9 +5294,10 @@ input, select, textarea {
 	margin-top: auto; /* Pushes button to the bottom if content is short */
 	align-items: center; /* Centers button text */
 }
-#carousel-section > .slideshow-card .card-info button:hover {
-	background-color: purple; /* Darker shade on hover */
-	color: black;
+#main .slideshow-card .card-info button:hover {
+	background-color: #333; /* Darker shade on hover */
+	color: white;
+	box-shadow: inset 0 0 0 2px #333;
 }
 
 
@@ -5567,6 +5578,7 @@ input, select, textarea {
     background-color: rgba(240, 240, 240, 0.7);
     padding: 6px 12px;
     border-radius: 15px;
+	
     white-space: nowrap; /* Prevent wrapping if numbers get long */
 }
 
@@ -5773,3 +5785,44 @@ input, select, textarea {
     color: #606770;
 }
 
+
+/* About Section */
+
+#about {
+    opacity: 1; /* Default state: visible */
+    transform: translateY(0); /* Default state: original position */
+
+    /* Define transitions for opacity and transform (mirroring #intro's entrance) */
+    -moz-transition: opacity 1s ease, -moz-transform 1s ease;
+    -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+    -ms-transition: opacity 1s ease, -ms-transform 1s ease;
+    transition: opacity 1s ease, transform 1s ease;
+    /* Any other existing #about styles would go here */
+}
+
+/* Initial state for #about when the page is preloading */
+/* This creates the "pop up and fade in" effect when 'is-preload' is removed */
+body.is-preload #about {
+    opacity: 0; /* Start transparent */
+    -moz-transform: translateY(2rem); /* Start 2rem lower (adjust as needed) */
+    -webkit-transform: translateY(2rem);
+    -ms-transform: translateY(2rem);
+    transform: translateY(2rem);
+}
+
+/* Styles for when #about is explicitly hidden */
+/* This creates the "pop out and fade out" effect when '.hidden' is added */
+#about.hidden {
+    opacity: 0; /* Fade out */
+    visibility: hidden; /* Make it non-interactive and non-visible like #intro.hidden */
+    -moz-transform: translateY(2rem); /* Move down 2rem (or adjust as needed) */
+    -webkit-transform: translateY(2rem);
+    -ms-transform: translateY(2rem);
+    transform: translateY(2rem);
+
+    /* Apply a similar faster transition for the hiding action, like #intro.hidden */
+    -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, visibility 0.5s;
+    -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, visibility 0.5s;
+    -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, visibility 0.5s;
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+}
