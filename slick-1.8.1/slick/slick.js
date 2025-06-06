@@ -6,7 +6,7 @@
 |___/_|_|\___|_|\_(_)/ |___/
                    |__/
 
- Version: 1.8.0
+ Version: 1.8.1
   Author: Ken Wheeler
  Website: http://kenwheeler.github.io
     Docs: http://kenwheeler.github.io/slick
@@ -2309,6 +2309,9 @@
 
             if (_.options.infinite === true) {
 
+                var cloneIndex;
+                indexOffset = _.options.slidesToShow + index;
+
                 if (index >= centerOffset && index <= (_.slideCount - 1) - centerOffset) {
                     _.$slides
                         .slice(index - centerOffset + evenCoef, index + centerOffset + 1)
@@ -2316,28 +2319,22 @@
                         .attr('aria-hidden', 'false');
 
                 } else {
-
-                    indexOffset = _.options.slidesToShow + index;
                     allSlides
                         .slice(indexOffset - centerOffset + 1 + evenCoef, indexOffset + centerOffset + 2)
                         .addClass('slick-active')
                         .attr('aria-hidden', 'false');
-
                 }
 
-                if (index === 0) {
-
-                    allSlides
-                        .eq(allSlides.length - 1 - _.options.slidesToShow)
-                        .addClass('slick-center');
-
-                } else if (index === _.slideCount - 1) {
-
-                    allSlides
-                        .eq(_.options.slidesToShow)
-                        .addClass('slick-center');
-
+                cloneIndex = indexOffset + 1 + evenCoef;
+                if(index > centerOffset) {
+                    cloneIndex -= _.slideCount;   
+                } else {
+                    cloneIndex += _.slideCount;
                 }
+
+                allSlides
+                    .eq(cloneIndex)
+                    .addClass('slick-center')
 
             }
 
