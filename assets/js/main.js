@@ -196,6 +196,62 @@
     //              $navPanel
     //                  .css('transition', 'none');
 
+    // Nav Header
+
+    // --- Responsive Logic for your ".nav-header" ---
+
+// Configuration: Define the elements we're working with based on your HTML.
+var $sourceNavContainer = $('nav.menu'); // This is your <nav class="menu"> which holds the links.
+var $toggleAppendTarget = $('.nav-header'); // We will add the "Menu" button inside your main header.
+
+// --- Main Setup (No need to edit below this line) ---
+
+if ($sourceNavContainer.length > 0 && $toggleAppendTarget.length > 0) {
+
+    var $window = $(window),
+        $body = $('body');
+
+    // 1. Create the "Menu" toggle button and add it to your header.
+    var $navPanelToggle = $('<a href="#navPanel" id="navPanelToggle">Menu</a>')
+                            .appendTo($toggleAppendTarget);
+
+    // 2. Create the hidden slide-out panel.
+    var $navPanel = $(
+        '<div id="navPanel">' +
+            '<nav></nav>' + // This <nav> is the destination for our links on mobile.
+            '<a href="#navPanel" class="close"></a>' +
+        '</div>'
+    )
+    .appendTo($body)
+    .panel({
+        delay: 500,
+        hideOnClick: true,
+        hideOnSwipe: true,
+        resetScroll: true,
+        resetForms: true,
+        side: 'right',
+        target: $body,
+        visibleClass: 'is-navPanel-visible'
+    });
+
+    // 3. Get references to the new panel's inner nav and the content (the <ul>) of our source nav.
+    var $navPanelInner = $navPanel.children('nav');
+    var $navContent = $sourceNavContainer.children();
+
+    // 4. Set up the breakpoint logic to move the content.
+    breakpoints.on('>medium', function() {
+        // When the screen is larger than 'medium'...
+        // Move the content (your <ul>) back to its original desktop location.
+        $navContent.appendTo($sourceNavContainer);
+    });
+
+    breakpoints.on('<=medium', function() {
+        // When the screen is 'medium' or smaller...
+        // Move the content (your <ul>) into the hidden slide-out panel.
+        $navContent.appendTo($navPanelInner);
+    });
+}
+
     // Intro.
         var $intro = $('#intro');
 
