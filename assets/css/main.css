@@ -2723,9 +2723,11 @@ input, select, textarea {
 
 	/* Container for the 3x3 grid */
 	.gallery-grid-3x3 {
+		width: 80%;
+		justify-self: center;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
-		gap: 10px; /* Adjust the space between images as you like (e.g., 5px, 15px, or 0px) */
+		gap: 30px; /* Adjust the space between images as you like (e.g., 5px, 15px, or 0px) */
 		/* You might want to add some padding around the whole grid too */
 		/* padding: 10px; */
 	}
