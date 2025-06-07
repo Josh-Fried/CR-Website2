@@ -106,6 +106,7 @@ $(document).ready(function() {
         arrows: true,          // Show navigation arrows
         focusOnSelect: true,   // Center the slide when it's clicked
         infinite: true,        // Loop the slides
+        speed: 600,
         responsive: [
             {
                 breakpoint: 980, // Matches HTML5 UP's 'large' breakpoint roughly
