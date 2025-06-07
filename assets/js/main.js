@@ -331,7 +331,7 @@ if ($sourceNavContainer.length > 0 && $toggleAppendTarget.length > 0) {
             const videoBottomPosition = videoElement.offsetTop + videoElement.offsetHeight;
 
             // Check if the window has been scrolled past the bottom of the video
-            if (window.scrollY > videoBottomPosition - 40) {
+            if (window.scrollY > videoBottomPosition - 1) {
                 shouldBeScrolled = true;
             }
         } else {
