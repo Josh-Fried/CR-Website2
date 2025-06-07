@@ -4123,7 +4123,7 @@ input, select, textarea {
 .nav-header.scrolled {
 	background-color: var(--main-background-color); 
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
-
+	
 	/* Visible  */
 	opacity: 1;
 	visibility: visible;
