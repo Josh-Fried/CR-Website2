@@ -316,35 +316,13 @@ if ($sourceNavContainer.length > 0 && $toggleAppendTarget.length > 0) {
         // Use a unique variable name to avoid any potential conflict.
         // This should target the <header class="nav-header"> we created.
         const headerElementForScrollEffect = document.querySelector('.nav-header');
-        const videoElement = document.querySelector('#hero-video'); // Your video element
 
         if (!headerElementForScrollEffect) {
             // If the specific nav-header isn't found, do nothing further for this function.
             return;
         }
 
-        let shouldBeScrolled = false;
-
-        if (videoElement) {
-            // Calculate the position of the bottom of the video element
-            // relative to the top of the document.
-            const videoBottomPosition = videoElement.offsetTop + videoElement.offsetHeight;
-
-            // Check if the window has been scrolled past the bottom of the video
-            if (window.scrollY > videoBottomPosition - 1) {
-                shouldBeScrolled = true;
-            }
-        } else {
-            // Fallback behavior: If no element with id="hero-video" is found on the page,
-            // use a simple scroll threshold (e.g., 50px).
-            const defaultScrollThreshold = 50; // Pixels
-            if (window.scrollY > defaultScrollThreshold) {
-                shouldBeScrolled = true;
-            }
-        }
-
-        // Apply or remove the 'scrolled' class based on the determination
-        if (shouldBeScrolled) {
+        if (window.scrollY > 1) {
             headerElementForScrollEffect.classList.add('scrolled');
         } else {
             headerElementForScrollEffect.classList.remove('scrolled');
