@@ -4099,24 +4099,43 @@ input, select, textarea {
     width: 100%;
     top: 0;
     z-index: 1000; 
+	/* transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out; */
+
+	/* Hidden  */
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-120%);
+	/* transition: opacity 0.6s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out;  */
+	transition: transform 0.8s ease-in, visibility 0.8s ease-in; 
+
+
 }
 
-.nav-header.active {
+/* .nav-header.active {
 	color: white;
 }
 
 .nav-header.scrolled.active {
 	color: var(--main-text-color);
-}
+} */
 
 
 .nav-header.scrolled {
 	background-color: var(--main-background-color); 
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
-	
+
+	/* Visible  */
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+	transition: transform 0.8s ease-out, visibility 0.8s ease-out; 	
 }
 
 .nav-header.scrolled .menu ul li a {
+	color:#333
+}
+
+.nav-header.scrolled .nav-title {
 	color:#333
 }
 
@@ -4143,11 +4162,25 @@ input, select, textarea {
     border-bottom: none;
 }
 
-.nav-logo {
+.nav-title {
     margin: 0;
     font-size: 1.8em; 
-	color: white;
+	/* color: white; */
+	color: transparent;
 	text-align: center;
+}
+
+.logo-link {
+    display: flex;         /* This is the key! It turns the link into a flex container. */
+    align-items: center;   /* This vertically centers the image and the text with each other. */
+    text-decoration: none; /* Removes the default underline from the link. */
+}
+
+/* 2. This styles your SVG image */
+.nav-logo {
+    height: 40px;      /* Set a specific height for your logo. Adjust as needed. */
+    width: auto;       /* Allows the width to scale automatically to maintain aspect ratio. */
+    margin-right: 15px; /* Creates a clean space between the logo and the text. */
 }
 
 
@@ -4167,7 +4200,8 @@ input, select, textarea {
 }
 
 .menu ul li a {
-    color: white;
+    /* color: white; */
+	color: transparent;
     text-decoration: none;
     font-size: 1em; /* Adjust as needed */
     padding: 0.5em;
@@ -4177,6 +4211,14 @@ input, select, textarea {
 .menu ul li a:hover { /* Added focus for accessibility */
     color: #333 !important;
 }
+
+/* Test  */
+
+/* .menu ul li a,
+.nav-title,
+.nav-logo {
+	display: none;
+} */
 
 /* Main */
 
