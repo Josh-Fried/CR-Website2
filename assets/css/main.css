@@ -4093,22 +4093,23 @@ input, select, textarea {
 /* Nav Menu */
 
 .nav-header {
-    background-color: transparent; 
+    background-color: var(--main-background-color); 
     padding: 1em 0;
     position: fixed; 
     width: 100%;
     top: 0;
     z-index: 1000; 
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+
 	/* transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out; */
 
 	/* Hidden  */
-	opacity: 0;
+	/* opacity: 1; */
 	visibility: hidden;
 	transform: translateY(-120%);
 	/* transition: opacity 0.6s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out;  */
-	transition: transform 0.8s ease-in, visibility 0.8s ease-in; 
-
-
+	transition:	transform .6s ease-in-out,
+				visibility .6s ease-in-out;
 }
 
 /* .nav-header.active {
@@ -4128,7 +4129,6 @@ input, select, textarea {
 	opacity: 1;
 	visibility: visible;
 	transform: translateY(0);
-	transition: transform 0.8s ease-out, visibility 0.8s ease-out; 	
 }
 
 .nav-header.scrolled .menu ul li a {
@@ -4201,7 +4201,7 @@ input, select, textarea {
 
 .menu ul li a {
     /* color: white; */
-	color: transparent;
+	color: #333;
     text-decoration: none;
     font-size: 1em; /* Adjust as needed */
     padding: 0.5em;
