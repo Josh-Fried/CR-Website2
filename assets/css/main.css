@@ -5933,3 +5933,36 @@ body.is-preload #about {
     /* Move it back to its original position */
     transform: translateY(0);
 }
+
+
+
+#investments p {
+#why-invest p {
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    line-height: 2;
+}
+
+#investments .image.left,
+#investments .image.right {
+#why-invest .image.left,
+#why-invest .image.right {
+    max-width: 46%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    #investments .image.left,
+    #investments .image.right {
+    #why-invest .image.left,
+    #why-invest .image.right {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem;
+        max-width: 100%;
+    }
+
+    #investments p {
+    #why-invest p {
+        text-align: left; /* or justify, as preferred */
+    }
+}
