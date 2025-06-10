@@ -5937,12 +5937,15 @@ body.is-preload #about {
 
 
 #investments p {
+#why-invest p {
     font-size: clamp(1rem, 1.4vw, 1.25rem);
     line-height: 2;
 }
 
 #investments .image.left,
 #investments .image.right {
+#why-invest .image.left,
+#why-invest .image.right {
     max-width: 46%;
     height: auto;
 }
@@ -5950,6 +5953,8 @@ body.is-preload #about {
 @media screen and (max-width: 768px) {
     #investments .image.left,
     #investments .image.right {
+    #why-invest .image.left,
+    #why-invest .image.right {
         float: none;
         display: block;
         margin: 0 auto 1rem;
@@ -5957,6 +5962,7 @@ body.is-preload #about {
     }
 
     #investments p {
+    #why-invest p {
         text-align: left; /* or justify, as preferred */
     }
 }
