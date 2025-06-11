@@ -5960,3 +5960,34 @@ body.is-preload #about {
         text-align: left; /* or justify, as preferred */
     }
 }
+
+/* Sticky */
+
+.sticky-container {
+    display: flex;              /* Use flexbox to create two columns */
+    flex-direction: row-reverse;/* Puts the image column on the right */
+    align-items: flex-start;    /* Aligns columns to the top */
+    gap: 2em;                   /* Creates space between the image and text */
+    margin-top: 4em;            /* Adds some space above this new section */
+}
+
+.scrolling-text-column {
+    flex: 1;                    /* Allows the text column to take up available space */
+}
+
+.sticky-image-column {
+    flex: 1;                    /* Allows the image column to take up available space */
+    max-width: 50%;             /* Ensures the image column isn't too wide */
+}
+
+.image-wrapper-sticky {
+    position: -webkit-sticky;   /* For Safari compatibility */
+    position: sticky;           /* The magic! */
+    top: 100px;                 /* Sticks the image 100px from the top of the viewport */
+}
+
+.image-wrapper-sticky img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
