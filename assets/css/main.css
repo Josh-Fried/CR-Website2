@@ -4099,23 +4099,23 @@ input, select, textarea {
 /* Nav Menu */
 
 .nav-header {
-    background-color: var(--main-background-color); 
+    background-color: transparent; 
     padding: 1em 0;
     position: fixed; 
     width: 100%;
     top: 0;
     z-index: 1000; 
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+	/* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);  */
 
 	/* transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out; */
 
 	/* Hidden  */
 	/* opacity: 1; */
-	visibility: hidden;
-	transform: translateY(-120%);
+	/* visibility: hidden; */
+	/* transform: translateY(-120%); */
 	/* transition: opacity 0.6s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out;  */
-	transition:	transform .6s ease-in-out,
-				visibility .6s ease-in-out;
+	/* transition:	transform .6s ease-in-out,
+				visibility .6s ease-in-out; */
 }
 
 /* .nav-header.active {
@@ -4146,7 +4146,7 @@ input, select, textarea {
 }
 
 .nav-header.scrolled .nav-logo {
-	color:#333
+	filter: invert(0);
 }
 
 
@@ -4171,8 +4171,8 @@ input, select, textarea {
 .nav-title {
     margin: 0;
     font-size: 1.8em; 
-	/* color: white; */
-	color: transparent;
+	color: white;
+	/* color: transparent; */
 	text-align: center;
 }
 
@@ -4187,6 +4187,8 @@ input, select, textarea {
     height: 40px;      /* Set a specific height for your logo. Adjust as needed. */
     width: auto;       /* Allows the width to scale automatically to maintain aspect ratio. */
     margin-right: 15px; /* Creates a clean space between the logo and the text. */
+	filter: invert(1);
+
 }
 
 
@@ -4206,8 +4208,8 @@ input, select, textarea {
 }
 
 .menu ul li a {
-    /* color: white; */
-	color: #333;
+    color: white;
+	/* color: #333; */
     text-decoration: none;
     font-size: 1em; /* Adjust as needed */
     padding: 0.5em;
@@ -5994,3 +5996,196 @@ body.is-preload #about {
     height: auto;
     display: block;
 }
+
+
+/* General Properties Section Styling */
+#properties-section {
+    padding: 6rem 4rem 4rem 4rem; /* Match existing section padding */
+    background-color: var(--main-background-color); /* Use your defined background color */
+    border-top: solid 2px var(--secondary-color); /* Match existing section border */
+}
+
+#properties-section .post {
+    padding: 0; /* Remove extra padding from .post if it's already on the article */
+}
+
+/* Header Styling */
+.properties-header-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.properties-header-icons svg {
+    color: #DAA520; /* Gold-like color for icons, adjust if you have a variable */
+    margin-right: 0.5rem;
+}
+
+.properties-header-icons span {
+    color: #B8860B; /* Darker gold-like color for text */
+    font-size: 0.875rem; /* Equivalent to text-sm */
+    font-weight: 500; /* Equivalent to font-medium */
+    text-transform: uppercase;
+    letter-spacing: 0.05em; /* Equivalent to tracking-wider */
+}
+
+#properties-section h2.title-with-underline {
+    color: var(--main-text-color); /* Your main text color */
+    font-size: 2.5rem; /* Equivalent to text-3xl md:text-4xl */
+    font-weight: 900; /* Equivalent to font-bold */
+    margin-bottom: 1.5rem;
+}
+
+#properties-section .center-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50rem; /* Equivalent to max-w-3xl */
+    color: #4A5568; /* Gray-600 */
+    font-size: 1.125rem; /* Equivalent to text-xl */
+    line-height: 1.6;
+}
+
+/* Properties Grid */
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* md:grid-cols-2 lg:grid-cols-3, responsive */
+    gap: 2rem; /* Equivalent to gap-8 */
+}
+
+.property-card {
+    background-color: white;
+    border-radius: 0.5rem; /* rounded-lg */
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    transition: transform 0.3s ease; /* transition-transform duration-300 */
+}
+
+.property-card:hover {
+    transform: translateY(-0.5rem); /* hover:-translate-y-2 */
+}
+
+.property-card-image-wrapper {
+    position: relative;
+}
+
+.property-card-image-wrapper img {
+    width: 100%;
+    height: 16rem; /* h-64 */
+    object-fit: cover;
+}
+
+.property-price-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #DAA520; /* Gold-500 */
+    color: white;
+    padding: 0.25rem 1rem; /* px-4 py-1 */
+    border-radius: 0.125rem; /* rounded-sm */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 700; /* font-bold */
+}
+
+.property-card-info {
+    padding: 1.5rem; /* p-6 */
+}
+
+.property-card-info h3 {
+    color: var(--main-text-color);
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.property-card-info p {
+    color: #4A5568; /* Gray-600 */
+    margin-bottom: 1rem; /* mb-4 */
+    line-height: 1.5; /* Default paragraph line-height */
+}
+
+.property-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* grid-cols-2 */
+    gap: .5rem; /* gap-4 */
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.property-details-grid .flex {
+    display: flex;
+    align-items: center;
+}
+
+.property-details-grid .text-ocean-700 {
+    color: #0851A6; /* Ocean-700 */
+    margin-right: 0.5rem; /* mr-2 */
+    font-weight: 500; /* font-medium */
+}
+
+.property-details-grid .text-gray-500 {
+    color: #6B7280; /* Gray-500 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+.property-details-grid svg {
+    color: #0A66C2; /* Ocean-600 */
+    margin-right: 0.5rem; /* mr-2 */
+}
+
+.property-tags-and-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.property-type-tag {
+    font-size: 0.75rem; /* text-xs */
+    padding: 0.25rem 0.5rem; /* px-2 py-1 */
+    background-color: #FDFCEF; /* Sand-100 */
+    color: #8C6A00; /* Sand-800 */
+    border-radius: 0.25rem; /* rounded */
+    white-space: nowrap;
+}
+
+.property-tags-and-link a {
+    color: #0A66C2; /* Ocean-600 */
+    font-weight: 500; /* font-medium */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-bottom: none; /* Remove dotted underline */
+}
+
+.property-tags-and-link a:hover {
+    color: #0851A6; /* Ocean-800 */
+}
+
+.property-tags-and-link a svg {
+    margin-left: 0.25rem; /* ml-1 */
+}
+
+
+/* Responsive adjustments */
+@media (min-width: 768px) { /* md */
+    .properties-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .property-search-banner {
+        flex-direction: row; /* md:flex-row */
+        text-align: left;
+    }
+    .property-search-banner > div:last-child {
+        flex-grow: 1;
+    }
+    .contact-team-btn {
+        margin-left: auto; /* md:ml-auto */
+    }
+}
+
+@media (min-width: 1024px) { /* lg */
+    .properties-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
