@@ -5288,8 +5288,9 @@ input, select, textarea {
 	border-radius: 0px;
 	overflow: hidden;
 	width: 100%; /* Default width for non-centered cards */
-	max-width: 750px; /* Adjust as needed */
-	height: 500px; /* Default height for non-centered cards - adjust as you like */
+	max-width: 500px; /* Adjust as needed */
+	/* min-width: 300px; Ensures cards don't shrink too small */
+	height: 700px; /* Default height for non-centered cards - adjust as you like */
 	opacity: 0.75;
 	transform: scale(0.8); /* Non-centered cards are slightly smaller */
 	transition: opacity 0.6s ease-in-out,
@@ -5305,20 +5306,22 @@ input, select, textarea {
 	transform: scale(1); /* Card is its 'normal' scale within the (potentially scaled) slide-content */
 	width: 100%;   /* Expand width for centered card */
 	max-width: 900px; /* Adjust as needed */
-	height: 500px;  /* Expand height for centered card - adjust to your original 400px if preferred */
+	max-height: 500px;  /* Expand height for centered card - adjust to your original 400px if preferred */
 }
 
 .slideshow-card img {
 	width: 100%; /* Percentage of the card's width for the image */
 	height: 85%;
 	object-fit: cover; /* Ensures image covers the area, might crop */
-	transition: height 0.6s ease-in-out; /* Smooth transition for height change */
+	transition: height 0.6s ease-in-out,
+				width 0.6s ease-in-out; /* Smooth transition for height change */
 	margin-bottom: -2px;
 }
 
 .slick-center .slideshow-card img {
 	height: 50%;
-	transition: height 0.6s ease-in-out; /* Smooth transition for height change */
+	transition: height 0.6s ease-in-out,
+				width 0.6s ease-in-out; /* Smooth transition for height change */
 }
 
 .slideshow-card .card-info {
@@ -5342,8 +5345,8 @@ input, select, textarea {
 	color: black;
 	opacity: 0; /* Full opacity for text */
 	line-height: 1.5;
-	font-size: 0.95em; /* Adjust as needed */
-	flex-grow: 1; /* Allows paragraph to take available vertical space */
+	font-size: 0.9em; /* Adjust as needed */
+	flex-grow: 0; /* Allows paragraph to take available vertical space */
 	margin-bottom: 15px; /* Space above button */
 	transition: opacity .6s ease-in-out; /* Smooth transition for opacity change */
 	text-align: center;
@@ -5409,7 +5412,7 @@ input, select, textarea {
 	overflow: hidden; /* Helps contain elements if arrows are positioned absolutely outside */
 }
 
-
+/* ===================== */
 /* Center Carousel */
 
 .center-mode-carousel {
