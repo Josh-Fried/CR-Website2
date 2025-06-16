@@ -2647,6 +2647,51 @@ input, select, textarea {
 			top: 0.75rem;
 		}
 
+		.image.bar {
+			/* Sizing: Full width and about 40% of the viewport height */
+            width: 100%;
+            min-height: 40vh; /* Adjust this value to make it taller or shorter */
+
+            /* Fallback in case the image fails to load */
+            background-color: #4682B4; /* Steel Blue */
+            
+            /* 2. Fix the background image relative to the viewport */
+            /* background-attachment: fixed; */
+
+            /* 3. Position and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* --- For the Text Overlay --- */
+            /* 4. Use relative positioning for the overlay */
+            /* position: relative; */
+            
+            /* 5. Use Flexbox to center the content vertically and horizontally */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			padding-left: 0px;
+			padding-right: 0px;
+			margin-left: 0px;
+		}
+
+		.image.bar.parallax {
+            background-attachment: fixed;
+			
+		}
+
+		.image.bar .title {
+            color: var(--main-background-color);
+            font-size: 3rem; /* Large, bold title */
+            font-weight: bold;
+            text-align: center;
+            z-index: 2; /* Ensures text is on top of the overlay */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Makes text pop */
+            padding: 0 20px; /* Prevents text from touching screen edges */
+        }
+
+
 		.image.fit {
 			display: block;
 			margin: 2.5rem 0;
@@ -4114,18 +4159,10 @@ input, select, textarea {
 	visibility: hidden;
 	transform: translateY(-120%);
 	/* transition: opacity 0.6s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out;  */
-	transition:	transform .6s ease-in-out,
-				visibility .6s ease-in-out;
+	/* transition:	transform .6s ease-in-out,
+				background-color .6s ease-in-out; */
+	transition: background-color .6s ease-in-out;
 }
-
-/* .nav-header.active {
-	color: white;
-}
-
-.nav-header.scrolled.active {
-	color: var(--main-text-color);
-} */
-
 
 .nav-header.scrolled {
 	background-color: var(--main-background-color); 
@@ -4134,7 +4171,8 @@ input, select, textarea {
 	/* Visible  */
 	opacity: 1;
 	visibility: visible;
-	transform: translateY(0);
+	/* transform: translateY(0); */
+
 }
 
 .nav-header.scrolled .menu ul li a {
@@ -4146,7 +4184,17 @@ input, select, textarea {
 }
 
 .nav-header.scrolled .nav-logo {
-	color:#333
+	filter: invert(0);
+	transition: filter .6s ease-in-out;
+}
+
+.nav-header.scrolled .logo-link span {
+	padding-right: 20px;
+	color: #333;
+}
+
+.nav-header.scrolled .logo-link span:hover {
+	color: #ddd;
 }
 
 
@@ -4182,11 +4230,21 @@ input, select, textarea {
     text-decoration: none; /* Removes the default underline from the link. */
 }
 
+.logo-link span {
+	padding-right: 20px;
+	color: white;
+}
+
+.logo-link span:hover {
+	color: #333;
+}
+
 /* 2. This styles your SVG image */
 .nav-logo {
     height: 40px;      /* Set a specific height for your logo. Adjust as needed. */
     width: auto;       /* Allows the width to scale automatically to maintain aspect ratio. */
     margin-right: 15px; /* Creates a clean space between the logo and the text. */
+	filter: invert(1);
 }
 
 
@@ -5760,6 +5818,14 @@ input, select, textarea {
     bottom: 0;            
 }
 
+.subtitle {
+	position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
+    margin-bottom: 20px;   
+    text-align: center; 
+	font-style: italic;
+	color: #333;
+}
+
 .side-title {
 	position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
     padding-bottom: 15px;  
@@ -5875,6 +5941,76 @@ input, select, textarea {
     margin: 0;
     color: #606770;
 }
+
+/* Perks Section  */
+	.perks-section {
+		max-width: 1200px;
+		margin: 0 auto; /* Center the section on the page */
+		padding: 20px;
+		text-align: center;
+		justify-self: center;
+	}
+
+	.perks-section h2 {
+		font-size: 2.5rem;
+		margin-bottom: 40px;
+		color: #333;
+	}
+
+	/* --- Grid Layout for the Perks --- */
+	.perks-grid {
+		display: grid;
+		/* On larger screens, create 4 equal columns */
+		grid-template-columns: repeat(4, 1fr); 
+		gap: 30px; /* Space between the blocks */
+	}
+
+	/* --- Individual Perk Block Styling --- */
+	.perk-block {
+		background-color: #ffffff;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px; /* Rounded corners */
+		padding: 40px 20px;
+		display: flex;
+		flex-direction: column; /* Stack icon and title vertically */
+		align-items: center; /* Center horizontally */
+		justify-content: center; /* Center vertically */
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+	
+	.perk-block:hover {
+		transform: translateY(-10px); /* Lifts the block up on hover */
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Adds a shadow on hover */
+	}
+
+	/* --- Icon Styling --- */
+	.perk-block .icon {
+		font-size: 3rem; /* Adjust icon size */
+		color: #333;  /* A nice blue color, change as you like */
+		margin-bottom: 20px;
+	}
+
+	/* --- Title Styling --- */
+	.perk-block h3 {
+		font-size: 1.2rem;
+		color: #333;
+		margin: 0;
+	}
+
+	/* --- Responsive Design --- */
+	/* For tablets: 2 columns */
+	@media (max-width: 992px) {
+		.perks-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	/* For mobile phones: 1 column */
+	@media (max-width: 576px) {
+		.perks-grid {
+			grid-template-columns: 1fr;
+		}
+	}
 
 
 /* About Section */
