@@ -4188,20 +4188,20 @@ input, select, textarea {
 /* Nav Menu */
 
 .nav-header {
-    background-color: transparent; 
+    background-color: var(--main-background-color); 
     padding: 1em 0;
     position: fixed; 
     width: 100%;
     top: 0;
     z-index: 1000; 
-	/* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);  */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
 
 	/* transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out; */
 
 	/* Hidden  */
 	/* opacity: 1; */
-	/* visibility: hidden; */
-	/* transform: translateY(-120%); */
+	visibility: hidden;
+	transform: translateY(-120%);
 	/* transition: opacity 0.6s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out;  */
 	/* transition:	transform .6s ease-in-out,
 				background-color .6s ease-in-out; */
@@ -4263,8 +4263,8 @@ input, select, textarea {
 .nav-title {
     margin: 0;
     font-size: 1.8em; 
-	color: white;
-	/* color: transparent; */
+	/* color: white; */
+	color: transparent;
 	text-align: center;
 }
 
@@ -4308,8 +4308,8 @@ input, select, textarea {
 }
 
 .menu ul li a {
-    color: white;
-	/* color: #333; */
+    /* color: white; */
+	color: #333;
     text-decoration: none;
     font-size: 1em; /* Adjust as needed */
     padding: 0.5em;
@@ -5386,14 +5386,14 @@ input, select, textarea {
 
 /* Styles for the card itself (image + text) */
 .slideshow-card {
+	
 	align-items: stretch; /* Makes image and card-info stretch to the card's height */
 	background-color: #ffffff;
 	border-radius: 0px;
 	overflow: hidden;
 	width: 100%; /* Default width for non-centered cards */
-	max-width: 500px; /* Adjust as needed */
-	/* min-width: 300px; Ensures cards don't shrink too small */
-	height: 700px; /* Default height for non-centered cards - adjust as you like */
+	max-width: 750px; /* Adjust as needed */
+	height: 65vh; /* Default height for non-centered cards - adjust as you like */
 	opacity: 0.75;
 	transform: scale(0.8); /* Non-centered cards are slightly smaller */
 	transition: opacity 0.6s ease-in-out,
@@ -5409,31 +5409,32 @@ input, select, textarea {
 	transform: scale(1); /* Card is its 'normal' scale within the (potentially scaled) slide-content */
 	width: 100%;   /* Expand width for centered card */
 	max-width: 900px; /* Adjust as needed */
-	max-height: 500px;  /* Expand height for centered card - adjust to your original 400px if preferred */
 }
 
 .slideshow-card img {
 	width: 100%; /* Percentage of the card's width for the image */
 	height: 85%;
 	object-fit: cover; /* Ensures image covers the area, might crop */
-	transition: height 0.6s ease-in-out,
-				width 0.6s ease-in-out; /* Smooth transition for height change */
+	transition: height 0.6s ease-in-out; /* Smooth transition for height change */
 	margin-bottom: -2px;
+	flex-shrink: 0; /* Prevents image from shrinking */
 }
 
 .slick-center .slideshow-card img {
 	height: 50%;
-	transition: height 0.6s ease-in-out,
-				width 0.6s ease-in-out; /* Smooth transition for height change */
+	transition: height 0.6s ease-in-out; /* Smooth transition for height change */
 }
 
 .slideshow-card .card-info {
-	padding: 25px 30px;
-	width: 100%; /* Percentage of the card's width for the text info */
+	padding: 3vh 30px;
+	width:100%; /*Percentage of the card's width for the text info*/
+	height: 50%; /* Full height of the card */
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between; /* Distributes space between title, p, and button */
+	align-items: center; /* Centers content horizontally */
+	flex-grow: 1; /* Allows card-info to take available vertical space */
 }
 
 .slideshow-card .card-info h2 {
@@ -5442,15 +5443,16 @@ input, select, textarea {
 	color: black;
 	font-size: 1.6em; /* Adjust as needed */
 	font-weight: bold; /* Makes the title stand out */
+	flex-shrink: 0;
 }
 
 .slideshow-card .card-info p {
 	color: black;
 	opacity: 0; /* Full opacity for text */
 	line-height: 1.5;
-	font-size: 0.9em; /* Adjust as needed */
-	flex-grow: 0; /* Allows paragraph to take available vertical space */
-	margin-bottom: 15px; /* Space above button */
+	font-size: 0.95em; /* Adjust as needed */
+	flex-grow: 1; /* Allows paragraph to take available vertical space */
+	margin-bottom: 0px; /* Space above button */
 	transition: opacity .6s ease-in-out; /* Smooth transition for opacity change */
 	text-align: center;
 }
@@ -5471,6 +5473,7 @@ input, select, textarea {
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 0.85em;
+	flex-shrink: 0;
 	align-self: center; /* Aligns button to the left */
 	margin-top: auto; /* Pushes button to the bottom if content is short */
 	align-items: center; /* Centers button text */
@@ -5515,7 +5518,7 @@ input, select, textarea {
 	overflow: hidden; /* Helps contain elements if arrows are positioned absolutely outside */
 }
 
-/* ===================== */
+
 /* Center Carousel */
 
 .center-mode-carousel {
