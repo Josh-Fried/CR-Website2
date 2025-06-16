@@ -2878,7 +2878,7 @@ input, select, textarea {
 			grid-template-columns: repeat(2, 1fr); 
 		}
 		.gallery-item .text-overlay h2 {
-			font-size: 0.8em;
+			/* font-size: 0.8em; */
 		}
 	.gallery-item:last-child:nth-child(odd) {
 		grid-column: 1 / -1;
@@ -4188,20 +4188,20 @@ input, select, textarea {
 /* Nav Menu */
 
 .nav-header {
-    background-color: var(--main-background-color); 
+    background-color: transparent; 
     padding: 1em 0;
     position: fixed; 
     width: 100%;
     top: 0;
     z-index: 1000; 
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+	/* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);  */
 
 	/* transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out; */
 
 	/* Hidden  */
 	/* opacity: 1; */
-	visibility: hidden;
-	transform: translateY(-120%);
+	/* visibility: hidden; */
+	/* transform: translateY(-120%); */
 	/* transition: opacity 0.6s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out;  */
 	/* transition:	transform .6s ease-in-out,
 				background-color .6s ease-in-out; */
@@ -4220,10 +4220,15 @@ input, select, textarea {
 }
 
 .nav-header.scrolled .menu ul li a {
-	color:#333
+	color:#333;
+	transition: color .6s ease-in-out;
 }
 
 .nav-header.scrolled .nav-title {
+	color:#333
+}
+
+.nav-header.scrolled .nav-logo-title {
 	color:#333
 }
 
@@ -4263,20 +4268,33 @@ input, select, textarea {
 .nav-title {
     margin: 0;
     font-size: 1.8em; 
-	/* color: white; */
-	color: transparent;
+	color: white;
+	/* color: transparent; */
 	text-align: center;
+}
+
+.nav-logo-title {
+	font-size: 0.8em;
+	color: white;
+	margin: 0;
 }
 
 .logo-link {
     display: flex;         /* This is the key! It turns the link into a flex container. */
     align-items: center;   /* This vertically centers the image and the text with each other. */
     text-decoration: none; /* Removes the default underline from the link. */
+    margin-right: 15px; 
+
+
+	/* for title under */
+	/* flex-direction: column; */
+
 }
 
 .logo-link span {
 	padding-right: 20px;
 	color: white;
+
 }
 
 .logo-link span:hover {
@@ -4285,9 +4303,8 @@ input, select, textarea {
 
 /* 2. This styles your SVG image */
 .nav-logo {
-    height: 40px;      /* Set a specific height for your logo. Adjust as needed. */
+    height: 50px;      /* Set a specific height for your logo. Adjust as needed. */
     width: auto;       /* Allows the width to scale automatically to maintain aspect ratio. */
-    margin-right: 15px; /* Creates a clean space between the logo and the text. */
 	filter: invert(1);
 }
 
@@ -4308,8 +4325,8 @@ input, select, textarea {
 }
 
 .menu ul li a {
-    /* color: white; */
-	color: #333;
+    color: white;
+	/* color: #333; */
     text-decoration: none;
     font-size: 1em; /* Adjust as needed */
     padding: 0.5em;
@@ -5137,9 +5154,10 @@ input, select, textarea {
 		-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		display: none;
-		position: fixed;
-		top: 0.75rem;
-		right: 0.75rem;
+		position: absolute;
+		top: 50%; /* Move the top of the button down to the vertical center */
+		right: 1rem;
+		transform: translateY(-50%);
 		border: 0;
 		color: white;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -5149,6 +5167,8 @@ input, select, textarea {
 		padding: 0.375rem 1.25rem;
 		text-transform: uppercase;
 		z-index: 10001;
+		align-self: center;
+		justify-self: center;
 	}
 
 		#navPanelToggle:before {
@@ -5197,6 +5217,7 @@ input, select, textarea {
 
 		.nav-header.scrolled #navPanelToggle {
     		color: #333;
+			transition: color .6s ease-in-out;
 		}
 
 	#navPanel {
