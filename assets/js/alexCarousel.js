@@ -27,13 +27,14 @@ $(document).ready(function() {
     // The 'init' event above will fire as soon as this next block of code is finished.
     $carousel.slick({
         centerMode: true,
-        centerPadding: '150px',
-        slidesToShow: 3,
-        focusOnSelect: true,
+        centerPadding: '150px', // Adjust for how much of the prev/next slides you want to show
+        slidesToShow: 3,       // Number of slides to show at once (odd number is best for center mode)
+        infinite: true,        // Loop the slides
+        dots: false,            // Show navigation dots
+        arrows: true,          // Show navigation arrows
+        focusOnSelect: true,   // Center the slide when it's clicked
+        infinite: true,        // Loop the slides
         speed: 600,
-        arrows: true,
-        dots: false,
-        infinite: true,
         adaptiveHeight: true,
         responsive: [
             {

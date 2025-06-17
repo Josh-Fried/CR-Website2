@@ -201,55 +201,138 @@
     // --- Responsive Logic for your ".nav-header" ---
 
 // Configuration: Define the elements we're working with based on your HTML.
-var $sourceNavContainer = $('nav.menu'); // This is your <nav class="menu"> which holds the links.
-var $toggleAppendTarget = $('.nav-header'); // We will add the "Menu" button inside your main header.
+// var $sourceNavContainer = $('nav.menu'); // This is your <nav class="menu"> which holds the links.
+// var $toggleAppendTarget = $('.nav-header'); // We will add the "Menu" button inside your main header.
 
-// --- Main Setup (No need to edit below this line) ---
+// // --- Main Setup (No need to edit below this line) ---
 
-if ($sourceNavContainer.length > 0 && $toggleAppendTarget.length > 0) {
+// if ($sourceNavContainer.length > 0 && $toggleAppendTarget.length > 0) {
+
+//     var $window = $(window),
+//         $body = $('body');
+
+//     // 1. Create the "Menu" toggle button and add it to your header.
+//     var $navPanelToggle = $('<a href="#navPanel" id="navPanelToggle">Menu</a>')
+//                             .appendTo($toggleAppendTarget);
+
+//     // 2. Create the hidden slide-out panel.
+//     var $navPanel = $(
+//         '<div id="navPanel">' +
+//             '<nav></nav>' + // This <nav> is the destination for our links on mobile.
+//             '<a href="#navPanel" class="close"></a>' +
+//         '</div>'
+//     )
+//     .appendTo($body)
+//     .panel({
+//         delay: 500,
+//         hideOnClick: true,
+//         hideOnSwipe: true,
+//         resetScroll: true,
+//         resetForms: true,
+//         side: 'right',
+//         target: $body,
+//         visibleClass: 'is-navPanel-visible'
+//     });
+
+//     // 3. Get references to the new panel's inner nav and the content (the <ul>) of our source nav.
+//     var $navPanelInner = $navPanel.children('nav');
+//     var $navContent = $sourceNavContainer.children();
+
+//     // 4. Set up the breakpoint logic to move the content.
+//     breakpoints.on('>medium', function() {
+//         // When the screen is larger than 'medium'...
+//         // Move the content (your <ul>) back to its original desktop location.
+//         $navContent.appendTo($sourceNavContainer);
+//     });
+
+//     breakpoints.on('<=medium', function() {
+//         // When the screen is 'medium' or smaller...
+//         // Move the content (your <ul>) into the hidden slide-out panel.
+//         $navContent.appendTo($navPanelInner);
+//     });
+// }
+
+// --- FINAL DYNAMIC NAVIGATION SCRIPT ---
+
+// --- Configuration ---
+var $desktopNavList = $('nav.menu > ul'); // The <ul> list of links.
+var $desktopNavContainer = $('nav.menu');   // The original <nav> container for the list.
+var $toggleAppendTarget = $('.nav-header'); // Where the "Menu" button will be placed.
+var mobileBreakpoint = 768; // The screen width to always force mobile view.
+
+// --- Main Setup ---
+
+if ($desktopNavList.length > 0 && $toggleAppendTarget.length > 0) {
 
     var $window = $(window),
         $body = $('body');
 
-    // 1. Create the "Menu" toggle button and add it to your header.
+    // Create the button and panel from your original code.
     var $navPanelToggle = $('<a href="#navPanel" id="navPanelToggle">Menu</a>')
+                            .hide()
                             .appendTo($toggleAppendTarget);
 
-    // 2. Create the hidden slide-out panel.
-    var $navPanel = $(
-        '<div id="navPanel">' +
-            '<nav></nav>' + // This <nav> is the destination for our links on mobile.
-            '<a href="#navPanel" class="close"></a>' +
-        '</div>'
-    )
-    .appendTo($body)
-    .panel({
-        delay: 500,
-        hideOnClick: true,
-        hideOnSwipe: true,
-        resetScroll: true,
-        resetForms: true,
-        side: 'right',
-        target: $body,
-        visibleClass: 'is-navPanel-visible'
-    });
+    var $navPanel = 
+    $('<div id="navPanel"><nav></nav><a href="#navPanel" class="close"></a></div>')
+        .appendTo($body)
+        .panel({
+            delay: 500, hideOnClick: true, hideOnSwipe: true, resetScroll: true, resetForms: true,
+            side: 'right', target: $body, visibleClass: 'is-navPanel-visible'
+        });
 
-    // 3. Get references to the new panel's inner nav and the content (the <ul>) of our source nav.
     var $navPanelInner = $navPanel.children('nav');
-    var $navContent = $sourceNavContainer.children();
 
-    // 4. Set up the breakpoint logic to move the content.
-    breakpoints.on('>medium', function() {
-        // When the screen is larger than 'medium'...
-        // Move the content (your <ul>) back to its original desktop location.
-        $navContent.appendTo($sourceNavContainer);
-    });
+    // ============================================================================
+    //  THE ROBUST MEASUREMENT TECHNIQUE
+    // ============================================================================
+    // 1. Create an invisible clone to get the true single-line height.
+    var $clone = $desktopNavList.clone()
+        .css({
+            // Position it off-screen so it's invisible
+            'position': 'absolute',
+            'top': '-9999px',
+            'left': '-9999px',
+            'z-index': '-100',
 
-    breakpoints.on('<=medium', function() {
-        // When the screen is 'medium' or smaller...
-        // Move the content (your <ul>) into the hidden slide-out panel.
-        $navContent.appendTo($navPanelInner);
-    });
+            // Force all the correct layout styles
+            'display': 'flex',
+            'flex-direction': 'row',
+            'flex-wrap': 'nowrap',
+            'list-style-type': 'none',
+            'margin': '0',
+            'padding': '0',
+            'width': 'auto',
+            'height': 'auto'
+        })
+        .appendTo('body');
+
+    // 2. Measure the clone to get our reliable baseline height.
+    var initialListHeight = $clone.height();
+    
+
+    // 3. Immediately remove the clone. This is instantaneous.
+    $clone.remove();
+    // ============================================================================
+
+    // The function that decides whether to show the desktop or mobile menu.
+    function checkNavLayout() {
+        // The Condition: Has the list wrapped OR is the window too narrow?
+        if (($desktopNavList.height() > initialListHeight + 5) || ($window.width() < mobileBreakpoint)) {
+            // --- Switch to Mobile Menu ---
+            $desktopNavContainer.hide();
+            $navPanelToggle.show();
+            $desktopNavList.appendTo($navPanelInner);
+        } else {
+            // --- Switch to Desktop Menu ---
+            $navPanelToggle.hide();
+            $desktopNavContainer.show();
+            $desktopNavList.appendTo($desktopNavContainer);
+        }
+    }
+
+    // Run the check on load and on every window resize.
+    $window.on('resize', checkNavLayout);
+    checkNavLayout();
 }
 
     // Intro.
