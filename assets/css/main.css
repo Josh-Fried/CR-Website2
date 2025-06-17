@@ -198,6 +198,10 @@ input, select, textarea {
 		margin: 0 0 2rem 0;
 	}
 
+	/* p, li, dl, dt, dd {
+    	font-size: clamp(1rem, 0.9rem + 0.25vw, 1.125rem); /* 16px -> 18px 
+	}		 */
+
 	h1, h2, h3, h4, h5, h6 {
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-weight: 900;
@@ -213,25 +217,27 @@ input, select, textarea {
 			text-decoration: none;
 		}
 
+	
 	h1 {
-		font-size: 4rem;
+		font-size: clamp(2.5rem, 1.75rem + 3.5vw, 4rem);
 		line-height: 1.1;
-		margin: 0 0 2rem 0;
+		margin-bottom: 2rem;
 	}
 
 	h2 {
-		font-size: 1.75rem;
+		font-size: clamp(1.5rem, 1.35rem + 0.5vw, 1.75rem);
 		line-height: 1.3;
-		margin: 0 0 1.5rem 0;
+		margin-bottom: 1.5rem;
 	}
 
 	h3 {
-		font-size: 1.25rem;
+		font-size: clamp(1.1rem, 1rem + 0.5vw, 1.25rem);
 		margin: 0 0 1.5rem 0;
+
 	}
 
 	h4 {
-		font-size: 1rem;
+		font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1rem);
 	}
 
 	h5 {
@@ -2765,14 +2771,18 @@ input, select, textarea {
 			transform: scale(1.05);
 		}
 
+
+	.gallery-grid-3x3-container {
+		display: flex;
+		justify-content: center;
+	}
+
 	/* Container for the 3x3 grid */
 	.gallery-grid-3x3 {
 		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
-		gap: 10px; /* Adjust the space between images as you like (e.g., 5px, 15px, or 0px) */
-		/* You might want to add some padding around the whole grid too */
-		/* padding: 10px; */
+		gap: 10px; 
 	}
 
 	/* Each item in the grid - this will be our square container */
@@ -2783,6 +2793,7 @@ input, select, textarea {
 		overflow: hidden;    /* Ensures any part of the image that 'object-fit: cover' might push out of bounds is clipped */
 		background-color: #f0f0f0; /* Optional: A light background for cells if images don't load or have transparency */
 	}
+	
 
 	/* The image itself within the square item */
 	.gallery-item img {
@@ -2834,6 +2845,7 @@ input, select, textarea {
 		margin-top: 0;
 		margin-bottom: 0.5em; /* Space below the h2 if there's a p tag */
 		color: white;
+		font-size: clamp(1.1rem, 0.8rem + 1vw, 1.5rem);
 	}
 
 	.gallery-item .text-overlay p {
@@ -2842,6 +2854,38 @@ input, select, textarea {
 		color: white;
 	}
 
+	/* @media (max-width: 845px) {
+    	.gallery-grid-3x3 {
+        	grid-template-columns: repeat(2, 1fr); 
+			gap: 10px !important;
+    	}
+	} */
+
+	/* For Mobile Phones (screens LESS than 600px wide) */
+	/* @media (max-width: 530px) {
+		.gallery-grid-3x3 {
+			width: 100% !important;
+			gap: 10px !important;
+		}
+		.gallery-item .text-overlay h2 {
+			font-size: 0.8em;
+	}
+	} */
+
+	@media (max-width: 600px) {
+		.gallery-grid-3x3 {
+			/* grid-template-columns: 1fr;   */
+			grid-template-columns: repeat(2, 1fr); 
+		}
+		.gallery-item .text-overlay h2 {
+			font-size: 0.8em;
+		}
+	.gallery-item:last-child:nth-child(odd) {
+		grid-column: 1 / -1;
+		justify-self: center;
+		width: 50%;
+		}
+	}
 
 		/* Video */
 
@@ -4296,7 +4340,6 @@ input, select, textarea {
 
 		#main > * {
 			padding: 4rem 4rem 2rem 4rem ;
-			border-top: solid 2px var(--secondary-color);
 			margin: 0;
 		}
 
@@ -4462,7 +4505,7 @@ input, select, textarea {
 			}
 
 			#main > .posts > article {
-				border-color: var(--secondary-color);
+				border-color: var(--main-background-color);
 				border-left-width: 2px;
 				border-style: solid;
 				border-top-width: 2px;
@@ -5200,7 +5243,6 @@ input, select, textarea {
 					display: block;
 					font-family: "Source Sans Pro", Helvetica, sans-serif;
 					font-size: 0.9rem;
-					font-size: 0.9rem;
 					font-weight: 900;
 					letter-spacing: 0.075em;
 					padding: 0.75rem 0;
@@ -5856,7 +5898,8 @@ input, select, textarea {
 .slideshow-card .card-title-with-underline::after {
     content: '';          /* Required for pseudo-elements to be generated */
     display: block;      
-    width: 5vw;          
+    width: 5vw;
+	min-width: 40px;          
     height: 3px;          
     background-color: #333; 
     position: absolute;   
@@ -5997,12 +6040,14 @@ input, select, textarea {
 }
 
 /* Perks Section  */
-	.perks-section {
+
+	
+
+	#perks {
 		max-width: 1200px;
-		margin: 0 auto; /* Center the section on the page */
-		padding: 20px;
 		text-align: center;
-		justify-self: center;
+		margin: 0 auto; 
+		padding: 20px;
 	}
 
 	.perks-section h2 {
@@ -6011,12 +6056,11 @@ input, select, textarea {
 		color: #333;
 	}
 
-	/* --- Grid Layout for the Perks --- */
 	.perks-grid {
 		display: grid;
 		/* On larger screens, create 4 equal columns */
 		grid-template-columns: repeat(4, 1fr); 
-		gap: 30px; /* Space between the blocks */
+		gap: 30px; 
 	}
 
 	/* --- Individual Perk Block Styling --- */
@@ -6176,6 +6220,10 @@ body.is-preload #about {
     max-width: 50%;             /* Ensures the image column isn't too wide */
 }
 
+.scrolling-image-column {
+    flex: 1;                    /* Allows the text column to take up available space */
+}
+
 .image-wrapper-sticky {
     position: -webkit-sticky;   /* For Safari compatibility */
     position: sticky;           /* The magic! */
@@ -6241,8 +6289,42 @@ body.is-preload #about {
 /* Properties Grid */
 .properties-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* md:grid-cols-2 lg:grid-cols-3, responsive */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Default for smaller screens, single column */
     gap: 2rem; /* Equivalent to gap-8 */
+    justify-content: center; /* Center items if they don't fill a row */
+}
+
+@media (min-width: 768px) { /* For medium screens (2 columns) */
+    .properties-grid {
+        grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
+    }
+    /* This rule targets the 5th (last) card and makes it span both columns to center it */
+    .properties-grid .property-card:nth-child(5):last-child {
+        grid-column: 1 / -1; /* Span from the first column line to the last */
+        max-width: 400px; /* Adjust max-width to keep it reasonably sized when centered */
+        margin-left: auto; /* Center horizontally */
+        margin-right: auto; /* Center horizontally */
+    }
+}
+
+@media (min-width: 1024px) { /* For large screens (3 columns, then adjusted for 5) */
+    .properties-grid {
+        grid-template-columns: repeat(3, 1fr); /* Try for 3 columns first */
+    }
+    /* Overrides for 5 items to go back to 2 columns for better centering */
+    .properties-grid {
+        grid-template-columns: repeat(2, minmax(280px, 1fr)); /* Adjust to 2 columns for 5 items */
+        max-width: 1000px; /* Constrain grid width to make centering more noticeable */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Make the 5th card span two columns and center */
+    .properties-grid .property-card:nth-child(5):last-child {
+        grid-column: 1 / -1; /* Span across two columns */
+        max-width: 400px; /* Keep consistent with medium screen adjustment */
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .property-card {
