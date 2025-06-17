@@ -5332,25 +5332,26 @@ input, select, textarea {
 	padding: 0px 0;       /* Padding around the card if it's smaller than this container */
 	margin: 0px;        /* Space between slides (handled by Slick) */
 	transition: transform 0.s ease; /* For Slick's scaling of the slide area */
-	height: auto;          /* Allow height to be determined by the card */
+	height: 100%;          /* Allow height to be determined by the card */
 }
 
 /* Style for the active (center) slide's container - scales the whole area */
 .center-mode-slider .slick-center .slide-content {
 	transform: scale(1); /* Slightly enlarge the area of the centered slide. Adjust as preferred. */
-	height: 70%;
+	height: 100%;
 							/* If you prefer all scaling on the card, set this to scale(1) */
 }
 
 /* Styles for the card itself (image + text) */
 .slideshow-card {
-	
+	display: flex;
+	flex-direction: column; /* Stack image and card-info vertically */
 	align-items: stretch; /* Makes image and card-info stretch to the card's height */
 	background-color: #ffffff;
 	border-radius: 0px;
 	overflow: hidden;
 	width: 100%; /* Default width for non-centered cards */
-	max-width: 750px; /* Adjust as needed */
+	max-width: height; /* Adjust as needed */
 	height: 65vh; /* Default height for non-centered cards - adjust as you like */
 	opacity: 0.75;
 	transform: scale(0.8); /* Non-centered cards are slightly smaller */
@@ -5366,7 +5367,7 @@ input, select, textarea {
 	opacity: 1;
 	transform: scale(1); /* Card is its 'normal' scale within the (potentially scaled) slide-content */
 	width: 100%;   /* Expand width for centered card */
-	max-width: 900px; /* Adjust as needed */
+	max-width: height; /* Adjust as needed */
 }
 
 .slideshow-card img {
@@ -5374,7 +5375,7 @@ input, select, textarea {
 	height: 85%;
 	object-fit: cover; /* Ensures image covers the area, might crop */
 	transition: height 0.6s ease-in-out; /* Smooth transition for height change */
-	margin-bottom: -2px;
+	margin-bottom: 0px;
 	flex-shrink: 0; /* Prevents image from shrinking */
 }
 
@@ -5384,7 +5385,7 @@ input, select, textarea {
 }
 
 .slideshow-card .card-info {
-	padding: 3vh 30px;
+	padding: 3vh 2vw;
 	width:100%; /*Percentage of the card's width for the text info*/
 	height: 50%; /* Full height of the card */
 	box-sizing: border-box;
@@ -5397,9 +5398,9 @@ input, select, textarea {
 
 .slideshow-card .card-info h2 {
 	margin-top: 0; /* No space above heading */
-	margin-bottom: 15px; /* Space below heading */
+	margin-bottom: 2vh; /* Space below heading */
 	color: black;
-	font-size: 1.6em; /* Adjust as needed */
+	font-size: 3vh; /* Adjust as needed */
 	font-weight: bold; /* Makes the title stand out */
 	flex-shrink: 0;
 }
@@ -5408,11 +5409,12 @@ input, select, textarea {
 	color: black;
 	opacity: 0; /* Full opacity for text */
 	line-height: 1.5;
-	font-size: 0.95em; /* Adjust as needed */
+	font-size: 2vh; /* Adjust as needed */
 	flex-grow: 1; /* Allows paragraph to take available vertical space */
-	margin-bottom: 0px; /* Space above button */
+	margin-bottom: 2vh; /* Space above button */
 	transition: opacity .6s ease-in-out; /* Smooth transition for opacity change */
 	text-align: center;
+	align-items: center; 
 }
 
 .slick-center .slideshow-card .card-info p {
@@ -5433,16 +5435,16 @@ input, select, textarea {
 	font-size: 0.85em;
 	flex-shrink: 0;
 	align-self: center; /* Aligns button to the left */
-	margin-top: auto; /* Pushes button to the bottom if content is short */
+	margin-top: 0; /* Pushes button to the bottom if content is short */
 	align-items: center; /* Centers button text */
 	box-shadow: inset 0 0 0 2px #333;
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 0.8rem;
+		font-size: 1.5vh;
 		font-weight: 900;
-		letter-spacing: 0.075em;
-		height: 3rem;
+		letter-spacing: .1vh;
+		height: 5vh;
 		line-height: 3rem;
-		padding: 0 2rem;
+		padding: 2vh 3vh;
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
