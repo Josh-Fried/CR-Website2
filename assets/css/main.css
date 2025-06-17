@@ -2878,7 +2878,7 @@ input, select, textarea {
 			grid-template-columns: repeat(2, 1fr); 
 		}
 		.gallery-item .text-overlay h2 {
-			font-size: 0.8em;
+			/* font-size: 0.8em; */
 		}
 	.gallery-item:last-child:nth-child(odd) {
 		grid-column: 1 / -1;
@@ -4188,20 +4188,20 @@ input, select, textarea {
 /* Nav Menu */
 
 .nav-header {
-    background-color: var(--main-background-color); 
+    background-color: transparent; 
     padding: 1em 0;
     position: fixed; 
     width: 100%;
     top: 0;
     z-index: 1000; 
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+	/* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);  */
 
 	/* transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out; */
 
 	/* Hidden  */
 	/* opacity: 1; */
-	visibility: hidden;
-	transform: translateY(-120%);
+	/* visibility: hidden; */
+	/* transform: translateY(-120%); */
 	/* transition: opacity 0.6s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out;  */
 	/* transition:	transform .6s ease-in-out,
 				background-color .6s ease-in-out; */
@@ -4220,10 +4220,15 @@ input, select, textarea {
 }
 
 .nav-header.scrolled .menu ul li a {
-	color:#333
+	color:#333;
+	transition: color .6s ease-in-out;
 }
 
 .nav-header.scrolled .nav-title {
+	color:#333
+}
+
+.nav-header.scrolled .nav-logo-title {
 	color:#333
 }
 
@@ -4263,20 +4268,33 @@ input, select, textarea {
 .nav-title {
     margin: 0;
     font-size: 1.8em; 
-	/* color: white; */
-	color: transparent;
+	color: white;
+	/* color: transparent; */
 	text-align: center;
+}
+
+.nav-logo-title {
+	font-size: 0.8em;
+	color: white;
+	margin: 0;
 }
 
 .logo-link {
     display: flex;         /* This is the key! It turns the link into a flex container. */
     align-items: center;   /* This vertically centers the image and the text with each other. */
     text-decoration: none; /* Removes the default underline from the link. */
+    margin-right: 15px; 
+
+
+	/* for title under */
+	/* flex-direction: column; */
+
 }
 
 .logo-link span {
 	padding-right: 20px;
 	color: white;
+
 }
 
 .logo-link span:hover {
@@ -4285,9 +4303,8 @@ input, select, textarea {
 
 /* 2. This styles your SVG image */
 .nav-logo {
-    height: 40px;      /* Set a specific height for your logo. Adjust as needed. */
+    height: 50px;      /* Set a specific height for your logo. Adjust as needed. */
     width: auto;       /* Allows the width to scale automatically to maintain aspect ratio. */
-    margin-right: 15px; /* Creates a clean space between the logo and the text. */
 	filter: invert(1);
 }
 
@@ -4308,8 +4325,8 @@ input, select, textarea {
 }
 
 .menu ul li a {
-    /* color: white; */
-	color: #333;
+    color: white;
+	/* color: #333; */
     text-decoration: none;
     font-size: 1em; /* Adjust as needed */
     padding: 0.5em;
@@ -4320,13 +4337,243 @@ input, select, textarea {
     color: #333 !important;
 }
 
-/* Test  */
+/* Nav Panel */
 
-/* .menu ul li a,
-.nav-title,
-.nav-logo {
-	display: none;
-} */
+	#navPanelToggle {
+		text-decoration: none;
+		-moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		display: none;
+		position: absolute;
+		top: 50%; /* Move the top of the button down to the vertical center */
+		right: 1rem;
+		transform: translateY(-50%);
+		border: 0;
+		color: white;
+		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-size: 0.9rem;
+		font-weight: 900;
+		letter-spacing: 0.075em;
+		padding: 0.375rem 1.25rem;
+		text-transform: uppercase;
+		z-index: 10001;
+		align-self: center;
+		justify-self: center;
+	}
+
+		#navPanelToggle:before {
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			display: inline-block;
+			font-style: normal;
+			font-variant: normal;
+			text-rendering: auto;
+			line-height: 1;
+			text-transform: none !important;
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 900;
+		}
+
+		#navPanelToggle:before {
+			content: '\f0c9';
+			margin-right: 0.5rem;
+		}
+
+		#navPanelToggle.alt {
+			background-color: rgba(255, 255, 255, 0.875);
+			box-shadow: 0 0.125rem 0.75rem 0 rgba(30, 37, 45, 0.25);
+		}
+
+			#navPanelToggle.alt:hover {
+				background-color: var(--main-background-color);
+			}
+
+		@media screen and (max-width: 980px) {
+
+			#navPanelToggle {
+				display: block;
+			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#navPanelToggle {
+				font-size: 0.8rem;
+				padding: 0.25rem 1rem;
+			}
+
+		}
+
+		.nav-header.scrolled #navPanelToggle {
+    		color: #333;
+			transition: color .6s ease-in-out;
+		}
+
+	#navPanel {
+		-moz-transform: translateX(20rem);
+		-webkit-transform: translateX(20rem);
+		-ms-transform: translateX(20rem);
+		transform: translateX(20rem);
+		-moz-transition: -moz-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+		-webkit-transition: -webkit-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+		-ms-transition: -ms-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+		transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+		display: none;
+		-webkit-overflow-scrolling: touch;
+		background: var(--main-background-color);
+		box-shadow: none;
+		color: var(--main-text-color);
+		height: 100%;
+		max-width: 80%;
+		overflow-y: auto;
+		padding: 3rem 2rem;
+		position: fixed;
+		right: 0;
+		top: 0;
+		visibility: hidden;
+		width: 20rem;
+		z-index: 10002;
+	}
+
+	#navPanel ul{
+		list-style: none;
+	}
+
+		#navPanel .links {
+			list-style: none;
+			padding-left: 0;
+		}
+
+			#navPanel .links li {
+				border-top: solid 2px var(--secondary-color);
+			}
+
+				#navPanel .links li a {
+					border-bottom: 0;
+					display: block;
+					font-family: "Source Sans Pro", Helvetica, sans-serif;
+					font-size: 0.9rem;
+					font-weight: 900;
+					letter-spacing: 0.075em;
+					padding: 0.75rem 0;
+					text-transform: uppercase;
+					border-bottom: none;
+				}
+
+				#navPanel li a{
+					border-bottom: none;
+				}
+
+				#navPanel li a:hover{
+					color: #ddd;
+				}
+
+				#navPanel .links li:first-child {
+					border-top: 0;
+				}
+
+		.nav-menu {
+			width: 90%; /* Adjust as needed */
+			/* max-width: 1200px;  */
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between; /* Pushes logo to left and nav to right */
+			align-items: center;
+		}
+
+		.nav-menu a #navPanel{
+			border-bottom: none;
+		}
+
+		#navPanel .close {
+			text-decoration: none;
+			-moz-transition: color 0.2s ease-in-out;
+			-webkit-transition: color 0.2s ease-in-out;
+			-ms-transition: color 0.2s ease-in-out;
+			transition: color 0.2s ease-in-out;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			border: 0;
+			color: #909498;
+			cursor: pointer;
+			display: block;
+			height: 3.25rem;
+			line-height: 3.25rem;
+			padding-right: 1.25rem;
+			position: absolute;
+			right: 0;
+			text-align: right;
+			top: 0;
+			vertical-align: middle;
+			width: 7rem;
+		}
+
+			#navPanel .close:before {
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: antialiased;
+				display: inline-block;
+				font-style: normal;
+				font-variant: normal;
+				text-rendering: auto;
+				line-height: 1;
+				text-transform: none !important;
+				font-family: 'Font Awesome 5 Free';
+				font-weight: 900;
+			}
+
+			#navPanel .close:before {
+				content: '\f00d';
+				font-size: 1.25rem;
+			}
+
+			#navPanel .close:hover {
+				color: var(--main-text-color);
+			}
+
+			@media screen and (max-width: 736px) {
+
+				#navPanel .close {
+					height: 4rem;
+					line-height: 4rem;
+				}
+
+			}
+
+		@media screen and (max-width: 980px) {
+
+			#navPanel {
+				display: block;
+			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#navPanel {
+				padding: 2.5rem 1.75rem;
+			}
+
+		}
+
+	@media screen and (max-width: 980px) {
+
+		body.is-navPanel-visible #wrapper {
+			opacity: 0.5;
+		}
+
+		body.is-navPanel-visible #navPanel {
+			-moz-transform: translateX(0);
+			-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+			transform: translateX(0);
+			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);
+			visibility: visible;
+		}
+
+
+	}
 
 /* Main */
 
@@ -5128,240 +5375,6 @@ input, select, textarea {
 
 		}
 
-/* Nav Panel */
-
-	#navPanelToggle {
-		text-decoration: none;
-		-moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		display: none;
-		position: fixed;
-		top: 0.75rem;
-		right: 0.75rem;
-		border: 0;
-		color: white;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 0.9rem;
-		font-weight: 900;
-		letter-spacing: 0.075em;
-		padding: 0.375rem 1.25rem;
-		text-transform: uppercase;
-		z-index: 10001;
-	}
-
-		#navPanelToggle:before {
-			-moz-osx-font-smoothing: grayscale;
-			-webkit-font-smoothing: antialiased;
-			display: inline-block;
-			font-style: normal;
-			font-variant: normal;
-			text-rendering: auto;
-			line-height: 1;
-			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
-			font-weight: 900;
-		}
-
-		#navPanelToggle:before {
-			content: '\f0c9';
-			margin-right: 0.5rem;
-		}
-
-		#navPanelToggle.alt {
-			background-color: rgba(255, 255, 255, 0.875);
-			box-shadow: 0 0.125rem 0.75rem 0 rgba(30, 37, 45, 0.25);
-		}
-
-			#navPanelToggle.alt:hover {
-				background-color: var(--main-background-color);
-			}
-
-		@media screen and (max-width: 980px) {
-
-			#navPanelToggle {
-				display: block;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			#navPanelToggle {
-				font-size: 0.8rem;
-				padding: 0.25rem 1rem;
-			}
-
-		}
-
-		.nav-header.scrolled #navPanelToggle {
-    		color: #333;
-		}
-
-	#navPanel {
-		-moz-transform: translateX(20rem);
-		-webkit-transform: translateX(20rem);
-		-ms-transform: translateX(20rem);
-		transform: translateX(20rem);
-		-moz-transition: -moz-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
-		-webkit-transition: -webkit-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
-		-ms-transition: -ms-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
-		transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
-		display: none;
-		-webkit-overflow-scrolling: touch;
-		background: var(--main-background-color);
-		box-shadow: none;
-		color: var(--main-text-color);
-		height: 100%;
-		max-width: 80%;
-		overflow-y: auto;
-		padding: 3rem 2rem;
-		position: fixed;
-		right: 0;
-		top: 0;
-		visibility: hidden;
-		width: 20rem;
-		z-index: 10002;
-	}
-
-	#navPanel ul{
-		list-style: none;
-	}
-
-		#navPanel .links {
-			list-style: none;
-			padding-left: 0;
-		}
-
-			#navPanel .links li {
-				border-top: solid 2px var(--secondary-color);
-			}
-
-				#navPanel .links li a {
-					border-bottom: 0;
-					display: block;
-					font-family: "Source Sans Pro", Helvetica, sans-serif;
-					font-size: 0.9rem;
-					font-weight: 900;
-					letter-spacing: 0.075em;
-					padding: 0.75rem 0;
-					text-transform: uppercase;
-					border-bottom: none;
-				}
-
-				#navPanel li a{
-					border-bottom: none;
-				}
-
-				#navPanel li a:hover{
-					color: #ddd;
-				}
-
-				#navPanel .links li:first-child {
-					border-top: 0;
-				}
-
-		.nav-menu {
-			width: 90%; /* Adjust as needed */
-			/* max-width: 1200px;  */
-			margin: 0 auto;
-			display: flex;
-			justify-content: space-between; /* Pushes logo to left and nav to right */
-			align-items: center;
-		}
-
-		.nav-menu a #navPanel{
-			border-bottom: none;
-		}
-
-		#navPanel .close {
-			text-decoration: none;
-			-moz-transition: color 0.2s ease-in-out;
-			-webkit-transition: color 0.2s ease-in-out;
-			-ms-transition: color 0.2s ease-in-out;
-			transition: color 0.2s ease-in-out;
-			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-			border: 0;
-			color: #909498;
-			cursor: pointer;
-			display: block;
-			height: 3.25rem;
-			line-height: 3.25rem;
-			padding-right: 1.25rem;
-			position: absolute;
-			right: 0;
-			text-align: right;
-			top: 0;
-			vertical-align: middle;
-			width: 7rem;
-		}
-
-			#navPanel .close:before {
-				-moz-osx-font-smoothing: grayscale;
-				-webkit-font-smoothing: antialiased;
-				display: inline-block;
-				font-style: normal;
-				font-variant: normal;
-				text-rendering: auto;
-				line-height: 1;
-				text-transform: none !important;
-				font-family: 'Font Awesome 5 Free';
-				font-weight: 900;
-			}
-
-			#navPanel .close:before {
-				content: '\f00d';
-				font-size: 1.25rem;
-			}
-
-			#navPanel .close:hover {
-				color: var(--main-text-color);
-			}
-
-			@media screen and (max-width: 736px) {
-
-				#navPanel .close {
-					height: 4rem;
-					line-height: 4rem;
-				}
-
-			}
-
-		@media screen and (max-width: 980px) {
-
-			#navPanel {
-				display: block;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			#navPanel {
-				padding: 2.5rem 1.75rem;
-			}
-
-		}
-
-	@media screen and (max-width: 980px) {
-
-		body.is-navPanel-visible #wrapper {
-			opacity: 0.5;
-		}
-
-		body.is-navPanel-visible #navPanel {
-			-moz-transform: translateX(0);
-			-webkit-transform: translateX(0);
-			-ms-transform: translateX(0);
-			transform: translateX(0);
-			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);
-			visibility: visible;
-		}
-
-
-	}
-
 /* Carousel */
 
 /* Center mode slider */
@@ -5374,26 +5387,25 @@ input, select, textarea {
 	padding: 0px 0;       /* Padding around the card if it's smaller than this container */
 	margin: 0px;        /* Space between slides (handled by Slick) */
 	transition: transform 0.s ease; /* For Slick's scaling of the slide area */
-	height: 100%;          /* Allow height to be determined by the card */
+	height: auto;          /* Allow height to be determined by the card */
 }
 
 /* Style for the active (center) slide's container - scales the whole area */
 .center-mode-slider .slick-center .slide-content {
 	transform: scale(1); /* Slightly enlarge the area of the centered slide. Adjust as preferred. */
-	height: 100%;
+	height: 70%;
 							/* If you prefer all scaling on the card, set this to scale(1) */
 }
 
 /* Styles for the card itself (image + text) */
 .slideshow-card {
-	display: flex;
-	flex-direction: column; /* Stack image and card-info vertically */
+	
 	align-items: stretch; /* Makes image and card-info stretch to the card's height */
 	background-color: #ffffff;
 	border-radius: 0px;
 	overflow: hidden;
 	width: 100%; /* Default width for non-centered cards */
-	max-width: 65vh; /* Adjust as needed */
+	max-width: 750px; /* Adjust as needed */
 	height: 65vh; /* Default height for non-centered cards - adjust as you like */
 	opacity: 0.75;
 	transform: scale(0.8); /* Non-centered cards are slightly smaller */
@@ -5409,7 +5421,7 @@ input, select, textarea {
 	opacity: 1;
 	transform: scale(1); /* Card is its 'normal' scale within the (potentially scaled) slide-content */
 	width: 100%;   /* Expand width for centered card */
-	max-width: 65vh; /* Adjust as needed */
+	max-width: 900px; /* Adjust as needed */
 }
 
 .slideshow-card img {
@@ -5417,7 +5429,7 @@ input, select, textarea {
 	height: 85%;
 	object-fit: cover; /* Ensures image covers the area, might crop */
 	transition: height 0.6s ease-in-out; /* Smooth transition for height change */
-	margin-bottom: 0px;
+	margin-bottom: -2px;
 	flex-shrink: 0; /* Prevents image from shrinking */
 }
 
@@ -5427,7 +5439,7 @@ input, select, textarea {
 }
 
 .slideshow-card .card-info {
-	padding: 3vh 2vw;
+	padding: 3vh 30px;
 	width:100%; /*Percentage of the card's width for the text info*/
 	height: 50%; /* Full height of the card */
 	box-sizing: border-box;
@@ -5440,9 +5452,9 @@ input, select, textarea {
 
 .slideshow-card .card-info h2 {
 	margin-top: 0; /* No space above heading */
-	margin-bottom: 2vh; /* Space below heading */
+	margin-bottom: 15px; /* Space below heading */
 	color: black;
-	font-size: 3vh; /* Adjust as needed */
+	font-size: 1.6em; /* Adjust as needed */
 	font-weight: bold; /* Makes the title stand out */
 	flex-shrink: 0;
 }
@@ -5451,12 +5463,11 @@ input, select, textarea {
 	color: black;
 	opacity: 0; /* Full opacity for text */
 	line-height: 1.5;
-	font-size: 2vh; /* Adjust as needed */
+	font-size: 0.95em; /* Adjust as needed */
 	flex-grow: 1; /* Allows paragraph to take available vertical space */
-	margin-bottom: 2vh; /* Space above button */
+	margin-bottom: 0px; /* Space above button */
 	transition: opacity .6s ease-in-out; /* Smooth transition for opacity change */
 	text-align: center;
-	align-items: center; 
 }
 
 .slick-center .slideshow-card .card-info p {
@@ -5477,16 +5488,16 @@ input, select, textarea {
 	font-size: 0.85em;
 	flex-shrink: 0;
 	align-self: center; /* Aligns button to the left */
-	margin-top: 0; /* Pushes button to the bottom if content is short */
+	margin-top: auto; /* Pushes button to the bottom if content is short */
 	align-items: center; /* Centers button text */
 	box-shadow: inset 0 0 0 2px #333;
 	font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 1.5vh;
+		font-size: 0.8rem;
 		font-weight: 900;
-		letter-spacing: .1vh;
-		height: 5vh;
+		letter-spacing: 0.075em;
+		height: 3rem;
 		line-height: 3rem;
-		padding: 2vh 3vh;
+		padding: 0 2rem;
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -5862,59 +5873,6 @@ input, select, textarea {
     bottom: 0;            
 }
 
-.slideshow-card .card-title-with-underline {
-    position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
-    padding-bottom: 15px;  
-    margin-bottom: 0px;   
-    text-align: center;    
-}
-
-.slideshow-card .card-title-with-underline::after {
-    content: '';          /* Required for pseudo-elements to be generated */
-    display: block;      
-    width: 5vw;          
-    height: 3px;          
-    background-color: #333; 
-    position: absolute;   
-    left: 50%;            /* Start the left edge at the center of the title element */
-    transform: translateX(-50%); /* Shift it left by half its own width to truly center it */
-    bottom: 0;   
-    opacity: 0; /* Initially hidden */         
-    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
-}
-
-.slick-center .slideshow-card .card-title-with-underline::after {
-    opacity: 1; /* Adjust width for centered card */
-    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
-}
-
-.slideshow-card .card-title-with-underline {
-    position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
-    padding-bottom: 15px;  
-    margin-bottom: 0px;   
-    text-align: center;    
-}
-
-.slideshow-card .card-title-with-underline::after {
-    content: '';          /* Required for pseudo-elements to be generated */
-    display: block;      
-    width: 5vw;
-	min-width: 40px;          
-    height: 3px;          
-    background-color: #333; 
-    position: absolute;   
-    left: 50%;            /* Start the left edge at the center of the title element */
-    transform: translateX(-50%); /* Shift it left by half its own width to truly center it */
-    bottom: 0;   
-    opacity: 0; /* Initially hidden */         
-    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
-}
-
-.slick-center .slideshow-card .card-title-with-underline::after {
-    opacity: 1; /* Adjust width for centered card */
-    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
-}
-
 .subtitle {
 	position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
     margin-bottom: 20px;   
@@ -6220,10 +6178,6 @@ body.is-preload #about {
     max-width: 50%;             /* Ensures the image column isn't too wide */
 }
 
-.scrolling-image-column {
-    flex: 1;                    /* Allows the text column to take up available space */
-}
-
 .image-wrapper-sticky {
     position: -webkit-sticky;   /* For Safari compatibility */
     position: sticky;           /* The magic! */
@@ -6289,42 +6243,8 @@ body.is-preload #about {
 /* Properties Grid */
 .properties-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Default for smaller screens, single column */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* md:grid-cols-2 lg:grid-cols-3, responsive */
     gap: 2rem; /* Equivalent to gap-8 */
-    justify-content: center; /* Center items if they don't fill a row */
-}
-
-@media (min-width: 768px) { /* For medium screens (2 columns) */
-    .properties-grid {
-        grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
-    }
-    /* This rule targets the 5th (last) card and makes it span both columns to center it */
-    .properties-grid .property-card:nth-child(5):last-child {
-        grid-column: 1 / -1; /* Span from the first column line to the last */
-        max-width: 400px; /* Adjust max-width to keep it reasonably sized when centered */
-        margin-left: auto; /* Center horizontally */
-        margin-right: auto; /* Center horizontally */
-    }
-}
-
-@media (min-width: 1024px) { /* For large screens (3 columns, then adjusted for 5) */
-    .properties-grid {
-        grid-template-columns: repeat(3, 1fr); /* Try for 3 columns first */
-    }
-    /* Overrides for 5 items to go back to 2 columns for better centering */
-    .properties-grid {
-        grid-template-columns: repeat(2, minmax(280px, 1fr)); /* Adjust to 2 columns for 5 items */
-        max-width: 1000px; /* Constrain grid width to make centering more noticeable */
-        margin-left: auto;
-        margin-right: auto;
-    }
-    /* Make the 5th card span two columns and center */
-    .properties-grid .property-card:nth-child(5):last-child {
-        grid-column: 1 / -1; /* Span across two columns */
-        max-width: 400px; /* Keep consistent with medium screen adjustment */
-        margin-left: auto;
-        margin-right: auto;
-    }
 }
 
 .property-card {
