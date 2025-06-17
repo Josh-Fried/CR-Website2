@@ -3614,6 +3614,7 @@ input, select, textarea {
 		} */
 
 		}
+		
 
 		/* Header Video  */
 
@@ -5434,14 +5435,14 @@ input, select, textarea {
 }
 
 .slick-center .slideshow-card img {
-	height: 50%;
+	height: 60%;
 	transition: height 0.6s ease-in-out; /* Smooth transition for height change */
 }
 
 .slideshow-card .card-info {
 	padding: 3vh 30px;
 	width:100%; /*Percentage of the card's width for the text info*/
-	height: 50%; /* Full height of the card */
+	height: 40%; /* Full height of the card */
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
@@ -6234,7 +6235,7 @@ body.is-preload #about {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    max-width: 50rem; /* Equivalent to max-w-3xl */
+    max-width: 500rem; /* Equivalent to max-w-3xl */
     color: #4A5568; /* Gray-600 */
     font-size: 1.125rem; /* Equivalent to text-xl */
     line-height: 1.6;
@@ -6245,6 +6246,40 @@ body.is-preload #about {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* md:grid-cols-2 lg:grid-cols-3, responsive */
     gap: 2rem; /* Equivalent to gap-8 */
+    justify-content: center; /* Center items if they don't fill a row */
+}
+
+@media (min-width: 768px) { /* For medium screens (2 columns) */
+    .properties-grid {
+        grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
+    }
+    /* This rule targets the 5th (last) card and makes it span both columns to center it */
+    .properties-grid .property-card:nth-child(5):last-child {
+        grid-column: 1 / -1; /* Span from the first column line to the last */
+        max-width: 400px; /* Adjust max-width to keep it reasonably sized when centered */
+        margin-left: auto; /* Center horizontally */
+        margin-right: auto; /* Center horizontally */
+    }
+}
+
+@media (min-width: 1024px) { /* For large screens (3 columns, then adjusted for 5) */
+    .properties-grid {
+        grid-template-columns: repeat(3, 1fr); /* Try for 3 columns first */
+    }
+    /* Overrides for 5 items to go back to 2 columns for better centering */
+    .properties-grid {
+        grid-template-columns: repeat(2, minmax(280px, 1fr)); /* Adjust to 2 columns for 5 items */
+        max-width: 1500px; /* Constrain grid width to make centering more noticeable */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* Make the 5th card span two columns and center */
+    .properties-grid .property-card:nth-child(5):last-child {
+        grid-column: 1 / -1; /* Span across two columns */
+        max-width: 400px; /* Keep consistent with medium screen adjustment */
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .property-card {
