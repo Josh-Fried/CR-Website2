@@ -3614,6 +3614,7 @@ input, select, textarea {
 		} */
 
 		}
+		
 
 		/* Header Video  */
 
@@ -5435,14 +5436,14 @@ input, select, textarea {
 }
 
 .slick-center .slideshow-card img {
-	height: 50%;
+	height: 60%;
 	transition: height 0.6s ease-in-out; /* Smooth transition for height change */
 }
 
 .slideshow-card .card-info {
 	padding: 3vh 2vw;
 	width:100%; /*Percentage of the card's width for the text info*/
-	height: 50%; /* Full height of the card */
+	height: 40%; /* Full height of the card */
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
@@ -6240,7 +6241,7 @@ body.is-preload #about {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    max-width: 50rem; /* Equivalent to max-w-3xl */
+    max-width: 500rem; /* Equivalent to max-w-3xl */
     color: #4A5568; /* Gray-600 */
     font-size: 1.125rem; /* Equivalent to text-xl */
     line-height: 1.6;
@@ -6274,7 +6275,7 @@ body.is-preload #about {
     /* Overrides for 5 items to go back to 2 columns for better centering */
     .properties-grid {
         grid-template-columns: repeat(2, minmax(280px, 1fr)); /* Adjust to 2 columns for 5 items */
-        max-width: 1000px; /* Constrain grid width to make centering more noticeable */
+        max-width: 1500px; /* Constrain grid width to make centering more noticeable */
         margin-left: auto;
         margin-right: auto;
     }
@@ -6420,4 +6421,33 @@ body.is-preload #about {
     .properties-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+/**
+ * Simple fade transition,
+ */
+ .mfp-fade.mfp-bg {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
 }
