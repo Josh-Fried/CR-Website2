@@ -42,7 +42,6 @@ $(document).ready(function() {
                 settings: {
                     slidesToShow: 3,
                     centerPadding: '100px', // A good, balanced "peek" for most laptops
-                    height: '700px'
                 }
             },
             {
@@ -50,14 +49,13 @@ $(document).ready(function() {
                 breakpoint: 1280,
                 settings: {
                     slidesToShow: 3,
-                    centerPadding: '80px', // Reduces the peek a bit more
-                    height: '600px'
+                    centerPadding: '100px', // Reduces the peek a bit more
                 }
             },
             {
                 // --- TABLET VIEW (980px and below) ---
                 // Here we switch to showing only one slide
-                breakpoint: 980,
+                breakpoint: 1025,
                 settings: {
                     slidesToShow: 1,
                     centerPadding: '120px'
