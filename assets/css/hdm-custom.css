@@ -21,8 +21,9 @@ body {
 
 #main > section,
 #main article.post {
-    margin-bottom: 40px; /* This creates the *transparent* gap */
-}
+    margin-bottom: 40px !important; /* This creates the *transparent* gap */
+} 
+
 
 .header-video {
     /* This is the outer container. Make it opaque if it needs to hide the body background. */
@@ -66,11 +67,7 @@ body {
     background-color: transparent;
 }
 
-/* Add space between scrolling divs to see the fixed body background */
-#main > section,
-#main article.post {
-    margin-bottom: 40px !important; /* Adjust as desired for the gap */
-}
+
 
 #main > section:last-of-type,
 #main article.post:last-of-type {
