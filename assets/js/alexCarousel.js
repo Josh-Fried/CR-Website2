@@ -58,7 +58,7 @@ $(document).ready(function() {
                 // Here we switch to showing only one slide
                 breakpoint: 1025,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 3,
                     centerPadding: '120px'
                 }
             },
