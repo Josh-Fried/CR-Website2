@@ -6451,3 +6451,26 @@ body.is-preload #about {
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
 	opacity: 0;
 }
+
+/* Custom style for images in the Lot Layout section */
+#lot-layout .image.fit {
+    /* Use aspect-ratio for modern browsers */
+    aspect-ratio: 1 / 1; /* Makes the container perfectly square */
+    width: 100%; /* Ensure it takes full width of its column */
+    overflow: hidden; /* Important to clip overflowing image parts */
+    display: block; /* Ensures aspect-ratio applies correctly */
+}
+
+#lot-layout .image.fit img {
+    width: 100%;
+    height: 100%; /* Make image fill its parent container */
+    object-fit: cover; /* Crucial: crops the image to fit without distortion */
+    object-position: center; /* Centers the image within the container */
+}
+
+/* You can remove or modify the general .image.fit img rule if it's conflicting
+   or if you want all .image.fit images to behave like this.
+   If you had:
+   .image.fit img { height: 300px; object-fit: cover; }
+   you should remove that for #lot-layout or specify a different selector.
+*/
