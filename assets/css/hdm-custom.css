@@ -1,0 +1,65 @@
+/* Custom styles for hdm.html only */
+
+/* 1. Set the fixed background on the body */
+body {
+    background-image: url('../images/Bay1.jpg'); /* This image will be stationary */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Ensure body itself has no background-color so the image is visible */
+    background-color: transparent;
+}
+
+/* 2. Make the initial header-video section fully opaque with its own background */
+/* It already uses an <img> for its background, so we just need to ensure it blocks the body background */
+.header-video {
+    /* Ensure this section itself has a solid background color to cover the body background */
+    background-color: #1e252d; /* Or whatever solid color matches LivingRoom1.webp if it has transparent parts.
+                                  Based on your main.css, #intro is on top of a video/image with an overlay,
+                                  so ensuring the .video-background is opaque is key. */
+}
+
+.header-video .video-background {
+    /* The img inside is already covering this. Ensure no unwanted transparency here. */
+    background-color: transparent; /* Assuming the img inside will provide the visuals */
+}
+
+/* Ensure the img inside .video-background is visible, NOT hidden by custom CSS */
+.header-video .video-background img {
+    display: block; /* Make sure it's visible */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Make sure the intro overlay (if present) is also opaque on top of the image */
+#intro {
+    background-color: transparent; /* Ensure intro doesn't add its own background color, rely on header-video img */
+}
+
+
+/* 3. Give the main content area (which scrolls) its tan opaque background */
+#main {
+    background-color: var(--main-background-color); /* This is your tan color, makes #main opaque */
+    position: relative; /* Keep relative to contain its scrolling content */
+    z-index: 1; /* Ensure it stacks above the body background */
+}
+
+/* Apply tan background to direct children of main as well, if they are meant to be separate blocks */
+#main > *,
+.post,
+.rectangle-section {
+    background-color: var(--main-background-color); /* Ensures these blocks are tan and opaque */
+}
+
+/* Add space between scrolling divs to see the fixed body background */
+#main > section,
+#main article.post {
+    margin-bottom: 40px; /* Adjust as desired for the gap */
+}
+
+#main > section:last-of-type,
+#main article.post:last-of-type {
+    margin-bottom: 0;
+}
