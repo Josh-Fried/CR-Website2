@@ -87,6 +87,7 @@ body {
 
 #main {
     background-color: transparent !important;
+    z-index: 0;
 }
 
 /* Make the dynamically generated .bg element inside #wrapper transparent */
