@@ -68,6 +68,7 @@ html {
     background-position: center center !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
+    /* background-color: transparent !important; */
     background-color: var(--main-background-color) !important;
     height: 100%;
     width: 100%;
@@ -140,6 +141,8 @@ body {
     background-color: var(--main-background-color) !important;
     margin-top: 100px;
 }
+
+
 
 #intro {
     background-color: transparent !important;
