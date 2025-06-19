@@ -1,75 +1,154 @@
 /* Custom styles for hdm.html only */
 
-/* 1. Set the fixed background on the body */
+/* Universal Reset for Backgrounds (Keep this as a safeguard) */
+* {
+    background-color: transparent !important;
+}
+
+/* --- Nav Bar Fix: Force background color on scrolled nav-header --- */
+.nav-header.scrolled {
+    background-color: var(--main-background-color) !important; /* Force tan background when scrolled */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important; /* Re-apply box shadow if needed */
+}
+/* Ensure the text and logo also change color when scrolled, if they don't already */
+.nav-header.scrolled .menu ul li a,
+.nav-header.scrolled .nav-title,
+.nav-header.scrolled .nav-logo-title,
+.nav-header.scrolled .logo-link span {
+    color: var(--main-text-color) !important; /* Force dark text color */
+}
+.nav-header.scrolled .nav-logo {
+    filter: invert(0) !important; /* Force logo to its non-inverted state */
+}
+/* Ensure hover state still works */
+.nav-header.scrolled .menu ul li a:hover,
+.nav-header.scrolled .logo-link span:hover {
+    color: var(--hover-color) !important; /* Maintain hover color */
+}
+
+
+/* --- GAP FIX: Add margin-top to the first content section under the header --- */
+/* Target the first section or article.post directly under #main */
+#main > article.post:first-of-type { /*#main > section:first-of-type, #main article.post:first-of-type {*/
+    /* padding: 0rem; */
+    margin-top: 200px; /* Add desired gap here, e.g., 40px */
+    margin-bottom: 200px;
+    margin-left: 200px;
+    margin-right: 200px;
+    /* All other !important rules from previous versions should remain for these elements */
+}
+
+#main > section.post:first-of-type { /*#main > section:first-of-type, #main article.post:first-of-type {*/
+    /* padding: 0rem; */
+    margin-top: 200px; /* Add desired gap here, e.g., 40px */
+    margin-bottom: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    /* All other !important rules from previous versions should remain for these elements */
+}
+
+/* --- Existing Background & Layout Rules (from previous successful versions) --- */
+
+/* Put the fixed Bay image on the HTML element */
+html {
+    background-image: url('../../images/Bay1.jpg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-color: transparent !important;
+    height: 100%;
+    width: 100%;
+}
+
+/* Ensure body is completely transparent and spans full height/width to reveal html background */
 body {
-    background-image: url('../../images/Bay1.jpg'); /* This image will be stationary */
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* Ensure body itself has no background-color so the image is visible */
-    background-color: transparent;
+    background-color: transparent !important;
+    min-height: 100vh;
+    width: 100%;
 }
 
-#wrapper,
-#main,
-#main > *,
-.post,
-.rectangle-section {
-    background-color: var(--main-background-color); /* This is correct for the blocks */
+/* Force #wrapper and #main to be transparent */
+#wrapper {
+    background-color: transparent !important;
 }
 
-#main > section,
-#main article.post {
-    margin-bottom: 40px !important; /* This creates the *transparent* gap */
-} 
+#main {
+    background-color: transparent !important;
+}
 
+/* Make the dynamically generated .bg element inside #wrapper transparent */
+#wrapper > .bg {
+    background-color: transparent !important;
+}
 
+/* REVISIONS FOR HEADER-VIDEO */
+/* This section should have LivingRoom1.webp as its background for the initial viewport. */
 .header-video {
-    /* This is the outer container. Make it opaque if it needs to hide the body background. */
-    /* If it's already using its contained image, then transparent is fine. */
-    background-color: transparent; /* Let the img or video within define the background */
-}
-
-
-/* 2. Make the initial header-video section fully opaque with its own background */
-/* It already uses an <img> for its background, so we just need to ensure it blocks the body background */
-.header-video {
-    /* Ensure this section itself has a solid background color to cover the body background */
-    background-color: #1e252d; /* Or whatever solid color matches LivingRoom1.webp if it has transparent parts.
-                                  Based on your main.css, #intro is on top of a video/image with an overlay,
-                                  so ensuring the .video-background is opaque is key. */
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url('../../images/HouseRenderings/LivingRoom1.webp') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important; /* This background scrolls with the content */
+    background-color: transparent !important;
+    z-index: 1;
 }
 
 .header-video .video-background {
-    /* The img inside is already covering this. Ensure no unwanted transparency here. */
-    background-color: transparent; /* Assuming the img inside will provide the visuals */
+    background-color: transparent !important;
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
 }
 
-/* Ensure the img inside .video-background is visible, NOT hidden by custom CSS */
-.header-video .video-background img {
-    display: block; /* Make sure it's visible */
-    width: 100%;
-    height: 100%; /* Force image to fill 100% of its parent's height */
-    object-fit: cover; /* Crucial for maintaining aspect ratio and filling space */
-    object-position: center;
-    z-index: 1; /* Ensure it's above any default video-background color */
-}
-
-/* Make sure the intro overlay (if present) is also opaque on top of the image */
 #intro {
-    background-color: transparent; /* Ensure intro doesn't add its own background color, rely on header-video img */
+    background-color: transparent !important;
 }
 
-
-/* Make sure the intro text section is transparent over the hero image */
-#intro {
-    background-color: transparent;
+/* Apply the tan background to the direct children elements of #main that hold your content */
+#main > section,
+#main article.post {
+    background-color: var(--main-background-color) !important;
+    margin-bottom: 100px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 100px;
+    padding: 4rem 4rem 4rem 4rem !important;
+    position: relative;
+    z-index: 2;
 }
 
+/* Responsive adjustments for padding on content sections */
+@media screen and (max-width: 1280px) {
+    #main > section,
+    #main article.post {
+        padding: 4rem 4rem 4rem 4rem !important;
+    }
+}
 
+@media screen and (max-width: 736px) {
+    #main > section,
+    #main article.post {
+        padding: 4rem 2rem 2rem 2rem !important;
+    }
+}
+
+/* Keep previous first/last child margin overrides to prevent doubling or unwanted gaps */
+/* Make sure these are placed AFTER the main margin-top rule for :first-of-type */
+#main > section:not(:first-of-type),
+#main article.post:not(:first-of-type) {
+    /* If you had a default margin-top from previous steps that you want to keep only for subsequent sections,
+       you might need to adjust or remove the specific 'margin-top: 0 !important;' from
+       #main > section:first-of-type if it was previously intended to be a universal reset.
+       Given the new requirement for a gap, we ensure :first-of-type gets its margin,
+       and other sections will rely on margin-bottom from the main rule.
+    */
+}
 
 #main > section:last-of-type,
 #main article.post:last-of-type {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 }
