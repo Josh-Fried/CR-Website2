@@ -12,6 +12,7 @@
 	--main-text-color: #212931;
 	--secondary-color: #eeeeee;
 	--hover-color: #18bfef;
+	--green-color: #166534;
 }
 
 html, body, div, span, applet, object,
@@ -6364,6 +6365,10 @@ body.is-preload #about {
     overflow: hidden;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
     transition: transform 0.3s ease; /* transition-transform duration-300 */
+
+	display: flex;
+    flex-direction: column;
+    position: relative; 
 }
 
 .property-card:hover {
@@ -6385,6 +6390,7 @@ body.is-preload #about {
     top: 1rem;
     right: 1rem;
     background-color: #DAA520; /* Gold-500 */
+	background-color: var(--green-color);
     color: white;
     padding: 0.25rem 1rem; /* px-4 py-1 */
     border-radius: 0.125rem; /* rounded-sm */
@@ -6409,11 +6415,19 @@ body.is-preload #about {
     line-height: 1.5; /* Default paragraph line-height */
 }
 
+/* .property-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    gap: .5rem; 
+    margin-bottom: 1.5rem; 
+} */
+
 .property-details-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* grid-cols-2 */
-    gap: .5rem; /* gap-4 */
-    margin-bottom: 1.5rem; /* mb-6 */
+    /* THE FIX: Forcing 2 columns instead of auto-fitting */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1rem; 
+    margin-bottom: 5rem; 
 }
 
 .property-details-grid .flex {
@@ -6437,36 +6451,97 @@ body.is-preload #about {
     margin-right: 0.5rem; /* mr-2 */
 }
 
-.property-tags-and-link {
+/* .property-tags-and-link {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .property-type-tag {
-    font-size: 0.75rem; /* text-xs */
-    padding: 0.25rem 0.5rem; /* px-2 py-1 */
-    background-color: #FDFCEF; /* Sand-100 */
-    color: #8C6A00; /* Sand-800 */
-    border-radius: 0.25rem; /* rounded */
+    font-size: 0.75rem; 
+    padding: 0.25rem 0.5rem; 
+    background-color: #FDFCEF; 
+    color: #8C6A00;
+    border-radius: 0.25rem; 
     white-space: nowrap;
 }
 
 .property-tags-and-link a {
-    color: #0A66C2; /* Ocean-600 */
-    font-weight: 500; /* font-medium */
+    color: #0A66C2; 
+    font-weight: 500; 
     display: flex;
     align-items: center;
     text-decoration: none;
-    border-bottom: none; /* Remove dotted underline */
+    border-bottom: none; 
 }
 
 .property-tags-and-link a:hover {
-    color: #0851A6; /* Ocean-800 */
+    color: #0851A6; 
 }
 
 .property-tags-and-link a svg {
-    margin-left: 0.25rem; /* ml-1 */
+    margin-left: 0.25rem;
+} */
+
+.details-button-wrapper {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+
+/* This targets your new <a> tag with the class .details-button */
+.details-button {
+    background-color: #2d6a4f; /* Primary Green */
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
+    background-color: #40916c; /* Lighter green on hover */
+    color: white; 
+}
+
+/* Styles the arrow icon inside the button */
+.details-button svg {
+	color: currentColor;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.details-button:hover svg {
+    transform: translateX(3px);
+}
+
+/* --- View More Button Styles --- */
+.view-more-wrapper {
+    text-align: center; /* Centers the button horizontally */
+    margin-top: 3rem;   /* Adds space between the grid and the button */
+    padding-bottom: 2rem; /* Ensures space at the very bottom */
+}
+
+.view-more-button {
+    display: inline-block; /* Necessary for padding and margin */
+    background-color: #2d6a4f; /* Primary green from your theme */
+    color: white;
+    padding: 1rem 2.5rem; /* A large, clickable button */
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.view-more-button:hover {
+    background-color: #40916c; /* Lighter green on hover */
+	color: white;
+    transform: translateY(-3px); /* Gives a slight lift effect */
 }
 
 
@@ -6591,7 +6666,7 @@ body.is-preload #about {
 		margin-bottom: 1rem; /* Equivalent to mb-4 */
 		background-color: #dcfce7; /* Equivalent to bg-green-100 */
 		border-radius: 9999px; /* Equivalent to rounded-full */
-		color: #166534; /* Equivalent to text-green-700 */
+		color: var(--green-color); /* Equivalent to text-green-700 */
 	}
 
 	.icon-wrapper i {
@@ -6615,6 +6690,7 @@ body.is-preload #about {
 		color: #15803d; /* Equivalent to text-green-700 */
 		text-decoration: none;
 		transition: color 0.2s ease-in-out;
+		border-bottom: none;
 	}
 
 	.contact-item a:hover {
