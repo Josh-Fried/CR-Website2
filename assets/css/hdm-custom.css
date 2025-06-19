@@ -50,9 +50,9 @@
     /* All other !important rules from previous versions should remain for these elements */
 }
 
-#main > section.post:first-of-type { /*#main > section:first-of-type, #main article.post:first-of-type {*/
+#main section.post { /*#main > section:first-of-type, #main article.post:first-of-type {*/
     /* padding: 0rem; */
-    margin-top: 200px; /* Add desired gap here, e.g., 40px */
+    margin-top: 100px; /* Add desired gap here, e.g., 40px */
     margin-bottom: 100px;
     margin-left: 100px;
     margin-right: 100px;
@@ -120,6 +120,20 @@ body {
 .contact-card {
     border-radius: 5rem;
     box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+}
+
+
+.hdm-bar-info {
+    color: var(--main-background-color);
+    background-color: var(--main-background-color) !important;
+	margin-top: 0px;
+    margin: 0;
+	padding: 20px;
+	border: 0;
+	font-size: 100%;
+    width: 100%;
+	font: inherit;
+    display: block;
 }
 
 #contact {
