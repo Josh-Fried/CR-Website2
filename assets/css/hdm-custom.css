@@ -1,3 +1,4 @@
+
 /* Custom styles for hdm.html only */
 
 /* Universal Reset for Backgrounds (Keep this as a safeguard) */
@@ -5,10 +6,21 @@
     background-color: transparent !important;
 }
 
+.nav-header {
+    /* Main.css already has position: fixed and z-index: 1000.
+       We'll reinforce z-index to be absolutely sure it's on top of everything else. */
+    z-index: 100010 !important; /* Make this extremely high to guarantee it's on top */
+    position: fixed !important; /* Reconfirm fixed position, though main.css already sets it */
+    width: 100% !important; /* Ensure it spans full width */
+    top: 0 !important; /* Ensure it's at the very top */
+    /* Other nav-header styles are managed by main.css and .nav-header.scrolled */
+}
+
 /* --- Nav Bar Fix: Force background color on scrolled nav-header --- */
 .nav-header.scrolled {
     background-color: var(--main-background-color) !important; /* Force tan background when scrolled */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important; /* Re-apply box shadow if needed */
+    z-index: 100011 !important;
 }
 /* Ensure the text and logo also change color when scrolled, if they don't already */
 .nav-header.scrolled .menu ul li a,
@@ -56,7 +68,7 @@ html {
     background-position: center center !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
-    background-color: transparent !important;
+    background-color: var(--main-background-color) !important;
     height: 100%;
     width: 100%;
 }
@@ -102,6 +114,16 @@ body {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     z-index: -1;
+}
+
+.contact-card {
+    border-radius: 5rem;
+    box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+}
+
+#contact {
+    background-color: var(--main-background-color) !important;
+    margin-top: 100px;
 }
 
 #intro {
@@ -151,4 +173,62 @@ body {
 #main > section:last-of-type,
 #main article.post:last-of-type {
     margin-bottom: 0 !important;
+}
+
+
+/* Target the span.image.fit container within lot layout sections */
+#main section.post .image.fit {
+    /* Remove fixed height to allow image's natural aspect ratio to define container height */
+    height: auto; /* Allow height to be determined by content */
+    
+    /* --- CRITICAL CHANGE HERE --- */
+    /* Set a consistent aspect ratio for all your image containers in these sections.
+       Choose a ratio that is closest to the average of your actual image files.
+       Common ratios:
+       1 / 1 (square)
+       4 / 3 (standard photo)
+       16 / 9 (widescreen)
+       3 / 2 (some photography)
+    */
+    aspect-ratio: 4 / 3; /* EXAMPLE: Adjust this value based on your typical image aspect ratio */
+    /* If your images are more vertical, try 3 / 4. If they are mostly square, use 1 / 1. */
+    /* You will need to determine the best average ratio for YOUR images. */
+
+
+    display: block;
+    overflow: hidden; 
+    position: relative; 
+}
+
+/* Target the image directly inside span.image.fit */
+#main section.post .image.fit img {
+    width: 100%;
+    height: 100%; /* Make the image fill the aspect-ratio defined by its parent */
+    
+    /* --- KEY CHANGE HERE --- */
+    object-fit: contain; /* Scales the entire image to fit within the container, letterboxing if aspect ratios differ */
+    object-position: center center; 
+}
+
+/* --- Ensure lightboxes/popups work correctly with Magnific Popup (if applicable) --- */
+#main section.post .image.fit a {
+    display: block;
+    width: 100%;
+    height: 100%; /* Important for the anchor to be clickable over the whole image area */
+    border-bottom: none;
+    text-decoration: none;
+}
+
+/* --- Responsive Adjustments for Image Sections (now adjusting max-height instead of height) --- */
+/* You might want to constrain the maximum height images can take, so they don't get too large. */
+@media screen and (max-width: 1280px) {
+    #main section.post .image.fit {
+        max-height: 400px; /* Example: Limit height on medium screens */
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #main section.post .image.fit {
+        max-height: 300px; /* Example: Limit height on small screens */
+    }
 }
