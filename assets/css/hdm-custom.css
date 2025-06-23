@@ -2,9 +2,9 @@
 /* Custom styles for hdm.html only */
 
 /* Universal Reset for Backgrounds (Keep this as a safeguard) */
-* {
+/* * {
     background-color: transparent !important;
-}
+} */
 
 .nav-header {
     /* Main.css already has position: fixed and z-index: 1000.
@@ -118,10 +118,7 @@ body {
     z-index: -1;
 }
 
-.contact-card {
-    border-radius: 5rem;
-    box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
-}
+
 
 
 .hdm-bar-info {
@@ -149,8 +146,8 @@ body {
 }
 
 /* Apply the tan background to the direct children elements of #main that hold your content */
-#main > section,
-#main article.post {
+#main > section:not([id^="lot-5-"]),
+#main article.post:not([id^="lot-5-"]) {
     background-color: var(--main-background-color) !important;
     margin-bottom: 100px;
     margin-left: 100px;
