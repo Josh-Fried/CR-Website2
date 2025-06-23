@@ -6326,37 +6326,26 @@ body.is-preload #about {
     justify-content: center; /* Center items if they don't fill a row */
 }
 
-@media (min-width: 768px) { /* For medium screens (2 columns) */
+@media (min-width: 768px) and (max-width: 1023px) {
     .properties-grid {
         grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
     }
-    /* This rule targets the 5th (last) card and makes it span both columns to center it */
+
+    /* This rule will now ONLY apply on tablet-sized screens */
     .properties-grid .property-card:nth-child(5):last-child {
         grid-column: 1 / -1; /* Span from the first column line to the last */
-        max-width: 400px; /* Adjust max-width to keep it reasonably sized when centered */
-        margin-left: auto; /* Center horizontally */
-        margin-right: auto; /* Center horizontally */
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
-@media (min-width: 1024px) { /* For large screens (3 columns, then adjusted for 5) */
+/* --- Large Screens (1024px and up) --- */
+@media (min-width: 1024px) {
     .properties-grid {
-        grid-template-columns: repeat(3, 1fr); /* Try for 3 columns first */
+        grid-template-columns: repeat(3, 1fr); /* Force 3 columns */
     }
-    /* Overrides for 5 items to go back to 2 columns for better centering */
-    .properties-grid {
-        grid-template-columns: repeat(2, minmax(280px, 1fr)); /* Adjust to 2 columns for 5 items */
-        max-width: 1500px; /* Constrain grid width to make centering more noticeable */
-        margin-left: auto;
-        margin-right: auto;
-    }
-    /* Make the 5th card span two columns and center */
-    .properties-grid .property-card:nth-child(5):last-child {
-        grid-column: 1 / -1; /* Span across two columns */
-        max-width: 400px; /* Keep consistent with medium screen adjustment */
-        margin-left: auto;
-        margin-right: auto;
-    }
+    /* No special rules are needed here. The cards will flow naturally. */
 }
 
 .property-card {
@@ -6711,3 +6700,87 @@ body.is-preload #about {
 		}
 	}
 
+	 .image-container {
+            width: 100%;
+            overflow: hidden; /* Ensures images don't spill out */
+            margin-bottom: 3rem;
+            border-radius: 0.5rem;
+            /* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This is the general default */
+        }
+        
+        /* --- 1. SINGLE IMAGE VIEW (Cover) --- */
+        .single-image-view {
+            height: 40vh; /* Takes up 40% of the viewport height */
+        }
+
+
+        /* --- 2. TWO IMAGE VIEW (Desktop) --- */
+        .two-image-view {
+            /* height: 40vh;  */
+			aspect-ratio: 16 / 7;
+            display: flex;
+            flex-direction: row; /* Side-by-side by default */
+            gap: 0.5rem; /* Optional: adds a small gap between images */
+        }
+
+        .two-image-view .image-wrapper {
+            flex: 1; /* Each wrapper takes up equal space */
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--main-background-color); /* A subtle background for letterboxing */
+        }
+        
+        /* --- FIX: New rule to make images 'contain' inside the two-image-view --- */
+        .two-image-view .image-wrapper img {
+            object-fit: contain;
+        }
+
+
+        /* --- 3. TWO IMAGE VIEW (Mobile) --- */
+        @media (max-width: 768px) {
+            .two-image-view {
+                flex-direction: column; /* Stack images on top of each other */
+                height: auto; /* Let height be determined by content */
+				aspect-ratio: auto;
+            }
+
+            .two-image-view .image-wrapper {
+                height: 30vh; /* Each image now gets its own 30vh height */
+                width: 100%;
+            }
+			/* --- FIX for underline on linked images --- */
+			.two-image-view .image-wrapper a {
+				/* display: block;
+				height: 100%;
+				text-decoration: none; */
+				border-bottom: none;
+			}
+        }
+        
+        /* --- 4. IMAGE CONTAIN VIEW --- */
+        .image-contain-view {
+             height: 80vh; /* Set a large, but not full-screen, height */
+             background-color: var(--main-background-color); /* A subtle background for letterboxing */
+             
+             /* --- FIX: Add flex properties to center the image --- */
+             display: flex;
+             justify-content: center; /* Horizontally center */
+             align-items: center;    /* Vertically center */
+        }
+
+        .image-contain-view img {
+            object-fit: contain; /* This is the key: it scales the image down to fit without cropping */
+            
+            /* --- FIX: Ensure the image itself doesn't overflow its flex container --- */
+            /* These override the generic width/height 100% for this specific case */
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
