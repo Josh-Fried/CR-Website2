@@ -6604,352 +6604,377 @@ body.is-preload #about {
 /* Contact Section Card */
 
 /* Main container to center the content */
-	.contact-container {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+.contact-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-	.contact-card {
-		width: 100%;
-		max-width: 56rem; /* Equivalent to max-w-4xl */
-		padding: 2rem; /* Equivalent to p-8 */
-		background-color: #ffffff;
-		border-radius: 0.75rem; /* Equivalent to rounded-xl */
-		box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
-	}
-	
-	.contact-header {
-		text-align: center;
-	}
+.contact-card {
+	width: 100%;
+	max-width: 56rem; /* Equivalent to max-w-4xl */
+	padding: 2rem; /* Equivalent to p-8 */
+	background-color: #ffffff;
+	border-radius: 0.75rem; /* Equivalent to rounded-xl */
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+}
 
+.contact-header {
+	text-align: center;
+}
+
+.contact-header h2 {
+	font-size: 1.875rem; /* Equivalent to text-3xl */
+	font-weight: 700; /* Equivalent to font-bold */
+	color: #1f2937; /* Equivalent to text-gray-800 */
+}
+
+.contact-header p {
+	margin-top: 1rem; /* Equivalent to mt-4 */
+	color: #4b5563; /* Equivalent to text-gray-600 */
+}
+
+/* Grid for contact details */
+.contact-grid {
+	margin-top: 3rem; /* Equivalent to mt-12 */
+	display: grid;
+	grid-template-columns: 1fr; /* Default to one column */
+	gap: 2rem; /* Equivalent to gap-8 */
+	text-align: center;
+}
+
+/* Icon wrapper styles */
+.icon-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 4rem; /* Equivalent to w-16 */
+	height: 4rem; /* Equivalent to h-16 */
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1rem; /* Equivalent to mb-4 */
+	background-color: #dcfce7; /* Equivalent to bg-green-100 */
+	border-radius: 9999px; /* Equivalent to rounded-full */
+	color: var(--green-color); /* Equivalent to text-green-700 */
+}
+
+.icon-wrapper i {
+	font-size: 2em; /* Makes the icon larger */
+}
+
+.contact-item h3 {
+	font-size: 1.25rem; /* Equivalent to text-xl */
+	font-weight: 600; /* Equivalent to font-semibold */
+	color: #1f2937; /* Equivalent to text-gray-800 */
+	text-align: center;
+}
+
+.contact-item p {
+	margin-top: 0.5rem; /* Equivalent to mt-2 */
+	color: #4b5563; /* Equivalent to text-gray-600 */
+	text-align: center;
+}
+
+.contact-item a {
+	color: #15803d; /* Equivalent to text-green-700 */
+	text-decoration: none;
+	transition: color 0.2s ease-in-out;
+	border-bottom: none;
+}
+
+.contact-item a:hover {
+	color: #14532d; /* Equivalent to hover:text-green-900 */
+	text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (min-width: 640px) { /* sm breakpoint */
 	.contact-header h2 {
-		font-size: 1.875rem; /* Equivalent to text-3xl */
-		font-weight: 700; /* Equivalent to font-bold */
-		color: #1f2937; /* Equivalent to text-gray-800 */
+		font-size: 2.25rem; /* Equivalent to sm:text-4xl */
 	}
+}
 
-	.contact-header p {
-		margin-top: 1rem; /* Equivalent to mt-4 */
-		color: #4b5563; /* Equivalent to text-gray-600 */
-	}
-	
-	/* Grid for contact details */
+@media (min-width: 768px) { /* md breakpoint */
 	.contact-grid {
-		margin-top: 3rem; /* Equivalent to mt-12 */
-		display: grid;
-		grid-template-columns: 1fr; /* Default to one column */
-		gap: 2rem; /* Equivalent to gap-8 */
-		text-align: center;
+		grid-template-columns: repeat(3, 1fr); /* Equivalent to md:grid-cols-3 */
 	}
-	
-	/* Icon wrapper styles */
-	.icon-wrapper {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 4rem; /* Equivalent to w-16 */
-		height: 4rem; /* Equivalent to h-16 */
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 1rem; /* Equivalent to mb-4 */
-		background-color: #dcfce7; /* Equivalent to bg-green-100 */
-		border-radius: 9999px; /* Equivalent to rounded-full */
-		color: var(--green-color); /* Equivalent to text-green-700 */
+}
+
+
+.contact-card-hdm-custom {
+	border-radius: 5rem;
+	box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+}
+
+.layout-card {
+	background-color: var(--main-background-color); /* semi-transparent tan */
+	border: 1px solid var(--secondary-color);
+	padding: 1rem;
+	margin: 1rem 0;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 10px rgba(0,0,0,0.05);
+	transition: transform 0.2s ease;
+}
+
+.layout-card.shrink-width {
+	padding: 30px;
+	display: inline-block;
+	/* margin: 0 auto; */
+	text-align: center;
+}
+
+.layout-card:hover {
+	transform: scale(1.01);
+}
+
+.two-column-list {
+	display: inline-flex;
+	text-align: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 40px;
+}
+
+.two-column-list ul {
+	list-style-type: disc;
+	text-align: left;
+	margin: 0;
+	padding: 0 1rem;
+}
+
+
+.contact-card-hdm-custom {
+	border-radius: 5rem;
+	box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+}
+
+.layout-card {
+	background-color: var(--main-background-color); /* semi-transparent tan */
+	border: 1px solid var(--secondary-color);
+	padding: 1rem;
+	margin: 1rem 0;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 10px rgba(0,0,0,0.05);
+	transition: transform 0.2s ease;
+}
+
+.layout-card.shrink-width {
+	padding: 30px;
+	display: inline-block;
+	/* margin: 0 auto; */
+	text-align: center;
+}
+
+.layout-card:hover {
+	transform: scale(1.01);
+}
+
+.two-column-list {
+	display: inline-flex;
+	text-align: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 40px;
+}
+
+.two-column-list ul {
+	list-style-type: disc;
+	text-align: left;
+	margin: 0;
+	padding: 0 1rem;
+}
+
+
+.contact-card-hdm-custom {
+	border-radius: 5rem;
+	box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+}
+
+.layout-card {
+	background-color: var(--main-background-color); /* semi-transparent tan */
+	border: 1px solid var(--secondary-color);
+	padding: 1rem;
+	margin: 1rem 0;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 10px rgba(0,0,0,0.05);
+	transition: transform 0.2s ease;
+}
+
+.layout-card.shrink-width {
+	padding: 30px;
+	display: inline-block;
+	/* margin: 0 auto; */
+	text-align: center;
+}
+
+.layout-card:hover {
+	transform: scale(1.01);
+}
+
+.two-column-list {
+	display: inline-flex;
+	text-align: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 40px;
+}
+
+.two-column-list ul {
+	list-style-type: disc;
+	text-align: left;
+	margin: 0;
+	padding: 0 1rem;
+}
+
+
+.contact-card-hdm-custom {
+	border-radius: 5rem;
+	box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+}
+
+.layout-card {
+	background-color: var(--main-background-color); /* semi-transparent tan */
+	border: 1px solid var(--secondary-color);
+	padding: 1rem;
+	margin: 1rem 0;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 10px rgba(0,0,0,0.05);
+	transition: transform 0.2s ease;
+}
+
+.layout-card.shrink-width {
+	padding: 30px;
+	display: inline-block;
+	/* margin: 0 auto; */
+	text-align: center;
+}
+
+.layout-card:hover {
+	transform: scale(1.01);
+}
+
+.two-column-list {
+	display: inline-flex;
+	text-align: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 40px;
+}
+
+.two-column-list ul {
+	list-style-type: disc;
+	text-align: left;
+	margin: 0;
+	padding: 0 1rem;
+}
+
+
+.image-container {
+	width: 100%;
+	overflow: hidden; /* Ensures images don't spill out */
+	margin-bottom: 3rem;
+	border-radius: 0.5rem;
+	/* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); */
+}
+
+.image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* This is the general default */
+}
+
+/* --- 1. SINGLE IMAGE VIEW (Cover) --- */
+.single-image-view {
+	height: 40vh; /* Takes up 40% of the viewport height */
+}
+
+
+/* --- 2. TWO IMAGE VIEW (Desktop) --- */
+.two-image-view {
+	/* height: 40vh;  */
+	aspect-ratio: 16 / 7;
+	display: flex;
+	flex-direction: row; /* Side-by-side by default */
+	gap: 0.5rem; /* Optional: adds a small gap between images */
+}
+
+.two-image-view .image-wrapper {
+	flex: 1; /* Each wrapper takes up equal space */
+	height: 100%;
+	overflow: hidden;
+	background-color: var(--main-background-color); /* A subtle background for letterboxing */
+}
+
+/* --- FIX: New rule to make images 'contain' inside the two-image-view --- */
+.two-image-view .image-wrapper img {
+	object-fit: contain;
+}
+
+
+/* --- 3. TWO IMAGE VIEW (Mobile) --- */
+@media (max-width: 768px) {
+	.two-image-view {
+		flex-direction: column; /* Stack images on top of each other */
+		height: auto; /* Let height be determined by content */
+		aspect-ratio: auto;
 	}
 
-	.icon-wrapper i {
-		font-size: 2em; /* Makes the icon larger */
+	.two-image-view .image-wrapper {
+		height: 30vh; /* Each image now gets its own 30vh height */
+		width: 100%;
 	}
-
-	.contact-item h3 {
-		font-size: 1.25rem; /* Equivalent to text-xl */
-		font-weight: 600; /* Equivalent to font-semibold */
-		color: #1f2937; /* Equivalent to text-gray-800 */
-		text-align: center;
-	}
-
-	.contact-item p {
-		margin-top: 0.5rem; /* Equivalent to mt-2 */
-		color: #4b5563; /* Equivalent to text-gray-600 */
-		text-align: center;
-	}
-
-	.contact-item a {
-		color: #15803d; /* Equivalent to text-green-700 */
-		text-decoration: none;
-		transition: color 0.2s ease-in-out;
+	/* --- FIX for underline on linked images --- */
+	.two-image-view .image-wrapper a {
+		/* display: block;
+		height: 100%;
+		text-decoration: none; */
 		border-bottom: none;
 	}
+}
 
-	.contact-item a:hover {
-		color: #14532d; /* Equivalent to hover:text-green-900 */
-		text-decoration: underline;
-	}
+/* --- 4. IMAGE CONTAIN VIEW --- */
+.image-contain-view {
+		height: 80vh; /* Set a large, but not full-screen, height */
+		background-color: var(--main-background-color); /* A subtle background for letterboxing */
+		
+		/* --- FIX: Add flex properties to center the image --- */
+		display: flex;
+		justify-content: center; /* Horizontally center */
+		align-items: center;    /* Vertically center */
+}
 
-	/* Responsive Styles */
-	@media (min-width: 640px) { /* sm breakpoint */
-		.contact-header h2 {
-			font-size: 2.25rem; /* Equivalent to sm:text-4xl */
-		}
-	}
+.image-contain-view img {
+	object-fit: contain; /* This is the key: it scales the image down to fit without cropping */
 	
-	@media (min-width: 768px) { /* md breakpoint */
-		.contact-grid {
-			grid-template-columns: repeat(3, 1fr); /* Equivalent to md:grid-cols-3 */
-		}
-	}
+	/* --- FIX: Ensure the image itself doesn't overflow its flex container --- */
+	/* These override the generic width/height 100% for this specific case */
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+}
 
+.property-specs-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem 2rem;
+	text-align: center;
+	justify-content: center;
+	font-size: 1.2vw;
+	max-width: 600px;
+	margin: 0 auto;
+}
 
-	.contact-card-hdm-custom {
-		border-radius: 5rem;
-		box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
-	}
-	
-	.layout-card {
-		background-color: var(--main-background-color); /* semi-transparent tan */
-		border: 1px solid var(--secondary-color);
-		padding: 1rem;
-		margin: 1rem 0;
-		border-radius: 0.5rem;
-		box-shadow: 0 0 10px rgba(0,0,0,0.05);
-		transition: transform 0.2s ease;
-	}
-	
-	.layout-card.shrink-width {
-		padding: 30px;
-		display: inline-block;
-		/* margin: 0 auto; */
-		text-align: center;
-	}
-	
-	.layout-card:hover {
-		transform: scale(1.01);
-	}
+.spec {
+	background-color: rgba(244, 236, 226, 0.5); /* semi-transparent tan */
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
 
-	.two-column-list {
-		display: inline-flex;
-		text-align: center;
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: 40px;
-	}
-	
-	.two-column-list ul {
-		list-style-type: disc;
-		text-align: left;
-		margin: 0;
-		padding: 0 1rem;
-	}
+.label {
+	font-weight: 600;
+	color: #3b2f25; /* dark text for contrast, or use a var */
+	margin-right: 0.5rem;
+}
 
-
-	.contact-card-hdm-custom {
-		border-radius: 5rem;
-		box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
-	}
-	
-	.layout-card {
-		background-color: var(--main-background-color); /* semi-transparent tan */
-		border: 1px solid var(--secondary-color);
-		padding: 1rem;
-		margin: 1rem 0;
-		border-radius: 0.5rem;
-		box-shadow: 0 0 10px rgba(0,0,0,0.05);
-		transition: transform 0.2s ease;
-	}
-	
-	.layout-card.shrink-width {
-		padding: 30px;
-		display: inline-block;
-		/* margin: 0 auto; */
-		text-align: center;
-	}
-	
-	.layout-card:hover {
-		transform: scale(1.01);
-	}
-
-	.two-column-list {
-		display: inline-flex;
-		text-align: center;
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: 40px;
-	}
-	
-	.two-column-list ul {
-		list-style-type: disc;
-		text-align: left;
-		margin: 0;
-		padding: 0 1rem;
-	}
-
-
-	.contact-card-hdm-custom {
-		border-radius: 5rem;
-		box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
-	}
-	
-	.layout-card {
-		background-color: var(--main-background-color); /* semi-transparent tan */
-		border: 1px solid var(--secondary-color);
-		padding: 1rem;
-		margin: 1rem 0;
-		border-radius: 0.5rem;
-		box-shadow: 0 0 10px rgba(0,0,0,0.05);
-		transition: transform 0.2s ease;
-	}
-	
-	.layout-card.shrink-width {
-		padding: 30px;
-		display: inline-block;
-		/* margin: 0 auto; */
-		text-align: center;
-	}
-	
-	.layout-card:hover {
-		transform: scale(1.01);
-	}
-
-	.two-column-list {
-		display: inline-flex;
-		text-align: center;
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: 40px;
-	}
-	
-	.two-column-list ul {
-		list-style-type: disc;
-		text-align: left;
-		margin: 0;
-		padding: 0 1rem;
-	}
-
-
-	.contact-card-hdm-custom {
-		border-radius: 5rem;
-		box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
-	}
-	
-	.layout-card {
-		background-color: var(--main-background-color); /* semi-transparent tan */
-		border: 1px solid var(--secondary-color);
-		padding: 1rem;
-		margin: 1rem 0;
-		border-radius: 0.5rem;
-		box-shadow: 0 0 10px rgba(0,0,0,0.05);
-		transition: transform 0.2s ease;
-	}
-	
-	.layout-card.shrink-width {
-		padding: 30px;
-		display: inline-block;
-		/* margin: 0 auto; */
-		text-align: center;
-	}
-	
-	.layout-card:hover {
-		transform: scale(1.01);
-	}
-
-	.two-column-list {
-		display: inline-flex;
-		text-align: center;
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: 40px;
-	}
-	
-	.two-column-list ul {
-		list-style-type: disc;
-		text-align: left;
-		margin: 0;
-		padding: 0 1rem;
-	}
-
-
-	 .image-container {
-            width: 100%;
-            overflow: hidden; /* Ensures images don't spill out */
-            margin-bottom: 3rem;
-            border-radius: 0.5rem;
-            /* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); */
-        }
-
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* This is the general default */
-        }
-        
-        /* --- 1. SINGLE IMAGE VIEW (Cover) --- */
-        .single-image-view {
-            height: 40vh; /* Takes up 40% of the viewport height */
-        }
-
-
-        /* --- 2. TWO IMAGE VIEW (Desktop) --- */
-        .two-image-view {
-            /* height: 40vh;  */
-			aspect-ratio: 16 / 7;
-            display: flex;
-            flex-direction: row; /* Side-by-side by default */
-            gap: 0.5rem; /* Optional: adds a small gap between images */
-        }
-
-        .two-image-view .image-wrapper {
-            flex: 1; /* Each wrapper takes up equal space */
-            height: 100%;
-            overflow: hidden;
-            background-color: var(--main-background-color); /* A subtle background for letterboxing */
-        }
-        
-        /* --- FIX: New rule to make images 'contain' inside the two-image-view --- */
-        .two-image-view .image-wrapper img {
-            object-fit: contain;
-        }
-
-
-        /* --- 3. TWO IMAGE VIEW (Mobile) --- */
-        @media (max-width: 768px) {
-            .two-image-view {
-                flex-direction: column; /* Stack images on top of each other */
-                height: auto; /* Let height be determined by content */
-				aspect-ratio: auto;
-            }
-
-            .two-image-view .image-wrapper {
-                height: 30vh; /* Each image now gets its own 30vh height */
-                width: 100%;
-            }
-			/* --- FIX for underline on linked images --- */
-			.two-image-view .image-wrapper a {
-				/* display: block;
-				height: 100%;
-				text-decoration: none; */
-				border-bottom: none;
-			}
-        }
-        
-        /* --- 4. IMAGE CONTAIN VIEW --- */
-        .image-contain-view {
-             height: 80vh; /* Set a large, but not full-screen, height */
-             background-color: var(--main-background-color); /* A subtle background for letterboxing */
-             
-             /* --- FIX: Add flex properties to center the image --- */
-             display: flex;
-             justify-content: center; /* Horizontally center */
-             align-items: center;    /* Vertically center */
-        }
-
-        .image-contain-view img {
-            object-fit: contain; /* This is the key: it scales the image down to fit without cropping */
-            
-            /* --- FIX: Ensure the image itself doesn't overflow its flex container --- */
-            /* These override the generic width/height 100% for this specific case */
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 100%;
-        }
