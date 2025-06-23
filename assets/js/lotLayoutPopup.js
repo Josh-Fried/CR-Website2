@@ -1,6 +1,5 @@
 $(document).ready(function() {
-    // Initialize Magnific Popup for the "Gallery" section (if not already done elsewhere)
-    // If you already have this in alexCarousel.js or main.js, no need to duplicate
+    // Initialize Magnific Popup for the "Gallery" section
     $('.gallery-grid-3x3').magnificPopup({
         delegate: 'a',
         type: 'image',
@@ -12,11 +11,11 @@ $(document).ready(function() {
         }
     });
 
-    // Initialize Magnific Popup for the "Lot 5-1 Layout" section
-    $('#lot-layout .image.fit a').magnificPopup({
+    $('.image-container.two-image-view').magnificPopup({
+        delegate: 'a', // Use delegate since the links are inside this container
         type: 'image',
         gallery: {
-            enabled: true // Allows navigation between the two images in this section
+            enabled: true
         },
         image: {
             titleSrc: 'title'
