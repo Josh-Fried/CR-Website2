@@ -5309,6 +5309,7 @@ input, select, textarea {
 		width: calc(100% - 4rem);
 		max-width: 72rem;
 		z-index: 2;
+		margin: 4rem auto;
 	}
 
 		#copyright input, #copyright select, #copyright textarea {
@@ -6413,12 +6414,14 @@ body.is-preload #about {
     font-size: 1.25rem; /* text-xl */
     font-weight: 700; /* font-bold */
     margin-bottom: 0.5rem; /* mb-2 */
+	text-align: center;
 }
 
 .property-card-info p {
     color: #4A5568; /* Gray-600 */
     margin-bottom: 1rem; /* mb-4 */
     line-height: 1.5; /* Default paragraph line-height */
+	text-align: center;
 }
 
 /* .property-details-grid {
@@ -6433,7 +6436,7 @@ body.is-preload #about {
     /* THE FIX: Forcing 2 columns instead of auto-fitting */
     grid-template-columns: repeat(2, 1fr); 
     gap: 1rem; 
-    margin-bottom: 5rem; 
+    margin-bottom: 5.5rem; 
 }
 
 .property-details-grid .flex {
@@ -6489,10 +6492,49 @@ body.is-preload #about {
     margin-left: 0.25rem;
 } */
 
-.details-button-wrapper {
+.detail-item {
+	display: flex;
+	flex-direction: column; /* Stack label and value vertically */
+    align-items: center;
+}
+
+.detail-label {
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: #7f8c8d; /* A muted gray for the label */
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-bottom: 0.25rem;
+}
+
+.detail-value {
+	display: flex;
+	align-items: center;
+	font-size: 1rem;
+	color: #34495e;
+	font-weight: 500;
+}
+
+.detail-value .fas, .detail-value .lucide {
+	margin-right: 0.5rem;
+	color: #3498db; 
+    color: #0A66C2; 
+	width: 16px;
+	text-align: center;
+}
+
+.details-button-wrapper.right {
     position: absolute;
     bottom: 1.5rem;
     right: 1.5rem;
+}
+
+.details-button-wrapper.center {
+    position: absolute;
+    bottom: 1.5rem; /* Keeps it at the same distance from the bottom */
+    left: 50%; /* Moves the left edge of the button to the center */
+    transform: translateX(-50%); /* Shifts the button left by half its own width */
+    right: auto; /* It's good practice to reset the opposite property */
 }
 
 /* This targets your new <a> tag with the class .details-button */
@@ -6506,6 +6548,7 @@ body.is-preload #about {
     display: inline-flex;
     align-items: center;
     transition: background-color 0.3s ease;
+	white-space: nowrap;
 }
 
 .details-button:hover {
