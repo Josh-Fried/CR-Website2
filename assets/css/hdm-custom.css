@@ -1,99 +1,42 @@
 
-/* Custom styles for hdm.html only */
-
-/* Universal Reset for Backgrounds (Keep this as a safeguard) */
-/* * {
-    background-color: transparent !important;
-} */
-
-.nav-header {
-    /* Main.css already has position: fixed and z-index: 1000.
-       We'll reinforce z-index to be absolutely sure it's on top of everything else. */
-    z-index: 100010 !important; /* Make this extremely high to guarantee it's on top */
-    position: fixed !important; /* Reconfirm fixed position, though main.css already sets it */
-    width: 100% !important; /* Ensure it spans full width */
-    top: 0 !important; /* Ensure it's at the very top */
-    /* Other nav-header styles are managed by main.css and .nav-header.scrolled */
-}
-
-/* --- Nav Bar Fix: Force background color on scrolled nav-header --- */
-.nav-header.scrolled {
-    background-color: var(--main-background-color) !important; /* Force tan background when scrolled */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important; /* Re-apply box shadow if needed */
-    z-index: 100011 !important;
-}
-/* Ensure the text and logo also change color when scrolled, if they don't already */
-.nav-header.scrolled .menu ul li a,
-.nav-header.scrolled .nav-title,
-.nav-header.scrolled .nav-logo-title,
-.nav-header.scrolled .logo-link span {
-    color: var(--main-text-color) !important; /* Force dark text color */
-}
-.nav-header.scrolled .nav-logo {
-    filter: invert(0) !important; /* Force logo to its non-inverted state */
-}
-/* Ensure hover state still works */
-.nav-header.scrolled .menu ul li a:hover,
-.nav-header.scrolled .logo-link span:hover {
-    color: var(--hover-color) !important; /* Maintain hover color */
-}
-
-
-/* --- GAP FIX: Add margin-top to the first content section under the header --- */
-/* Target the first section or article.post directly under #main */
-#main > article.post:first-of-type { /*#main > section:first-of-type, #main article.post:first-of-type {*/
-    /* padding: 0rem; */
-    margin-top: 200px; /* Add desired gap here, e.g., 40px */
-    margin-bottom: 200px;
-    margin-left: 200px;
-    margin-right: 200px;
-    /* All other !important rules from previous versions should remain for these elements */
-}
-
 #main section.post { /*#main > section:first-of-type, #main article.post:first-of-type {*/
     /* padding: 0rem; */
-    margin-top: 100px; /* Add desired gap here, e.g., 40px */
-    margin-bottom: 100px;
-    margin-left: 100px;
-    margin-right: 100px;
-    /* All other !important rules from previous versions should remain for these elements */
+    margin-top: 10vh; /* Add desired gap here, e.g., 40px */
+    margin-bottom: 10vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    /* All other rules from previous versions should remain for these elements */
 }
-
-/* --- Existing Background & Layout Rules (from previous successful versions) --- */
 
 /* Put the fixed Bay image on the HTML element */
 html {
-    background-image: url('../../images/Bay1.jpg') !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
-    /* background-color: transparent !important; */
-    background-color: var(--main-background-color) !important;
+    background-image: url('../../images/Bay1.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background-color: transparent; */
+    background-color: var(--main-background-color);
     height: 100%;
     width: 100%;
 }
 
 /* Ensure body is completely transparent and spans full height/width to reveal html background */
 body {
-    background-color: transparent !important;
+    background-color: transparent;
     min-height: 100vh;
     width: 100%;
 }
 
-/* Force #wrapper and #main to be transparent */
-#wrapper {
-    background-color: transparent !important;
-}
-
 #main {
-    background-color: transparent !important;
+    background-color: transparent;
     z-index: 0;
 }
 
 /* Make the dynamically generated .bg element inside #wrapper transparent */
 #wrapper > .bg {
-    background-color: transparent !important;
+    z-index: -1;
+    background-color: transparent;
 }
 
 /* REVISIONS FOR HEADER-VIDEO */
@@ -102,17 +45,17 @@ body {
     position: relative;
     min-height: 100vh;
     overflow: hidden;
-    background-image: url('../../images/HouseRenderings/LivingRoom1.webp') !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: scroll !important; /* This background scrolls with the content */
-    background-color: transparent !important;
+    background-image: url('../../images/HouseRenderings/LivingRoom1.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* This background scrolls with the content */
+    background-color: transparent;
     z-index: 1;
 }
 
 .header-video .video-background {
-    background-color: transparent !important;
+    background-color: transparent;
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     z-index: -1;
@@ -123,7 +66,7 @@ body {
 
 .hdm-bar-info {
     color: var(--main-background-color);
-    background-color: var(--main-background-color) !important;
+    background-color: var(--main-background-color);
 	margin-top: 0px;
     margin: 0;
 	padding: 20px;
@@ -135,25 +78,25 @@ body {
 }
 
 #contact {
-    background-color: var(--main-background-color) !important;
+    background-color: var(--main-background-color);
     margin-top: 100px;
 }
 
 
 
 #intro {
-    background-color: transparent !important;
+    background-color: transparent;
 }
 
 /* Apply the tan background to the direct children elements of #main that hold your content */
 #main > section:not([id^="lot-5-"]),
 #main article.post:not([id^="lot-5-"]) {
-    background-color: var(--main-background-color) !important;
+    background-color: var(--main-background-color);
     margin-bottom: 100px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 10vw;
+    margin-right: 10vw;
     margin-top: 100px;
-    padding: 4rem 4rem 4rem 4rem !important;
+    padding: 4rem 4rem 4rem 4rem;
     position: relative;
     z-index: 2;
 }
@@ -162,34 +105,16 @@ body {
 @media screen and (max-width: 1280px) {
     #main > section,
     #main article.post {
-        padding: 4rem 4rem 4rem 4rem !important;
+        padding: 4rem 4rem 4rem 4rem;
     }
 }
 
 @media screen and (max-width: 736px) {
     #main > section,
     #main article.post {
-        padding: 4rem 2rem 2rem 2rem !important;
+        padding: 4rem 2rem 2rem 2rem;
     }
 }
-
-/* Keep previous first/last child margin overrides to prevent doubling or unwanted gaps */
-/* Make sure these are placed AFTER the main margin-top rule for :first-of-type */
-#main > section:not(:first-of-type),
-#main article.post:not(:first-of-type) {
-    /* If you had a default margin-top from previous steps that you want to keep only for subsequent sections,
-       you might need to adjust or remove the specific 'margin-top: 0 !important;' from
-       #main > section:first-of-type if it was previously intended to be a universal reset.
-       Given the new requirement for a gap, we ensure :first-of-type gets its margin,
-       and other sections will rely on margin-bottom from the main rule.
-    */
-}
-
-#main > section:last-of-type,
-#main article.post:last-of-type {
-    margin-bottom: 0 !important;
-}
-
 
 /* Target the span.image.fit container within lot layout sections */
 #main section.post .image.fit {
