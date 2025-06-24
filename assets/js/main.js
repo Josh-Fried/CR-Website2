@@ -118,7 +118,35 @@
         });
 
     // Scrolly.
-        $('.scrolly').scrolly();
+
+    // 1. Get the dynamic height of the navigation bar.
+    var navHeight = $('.nav-header').innerHeight(); // Use the height function you confirmed works best.
+
+    // 2. Get the root font size of the document to convert rem to pixels.
+    // This makes the calculation dynamic and robust.
+    var rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+
+    // 3. Define the section's top padding in rem units.
+    var sectionPaddingInRem = 2; //Sometimes it 4rem but this seems to work!!!!!
+
+    // 4. Calculate what that rem value is in pixels.
+    var sectionPaddingInPixels = sectionPaddingInRem * rootFontSize;
+
+    // 5. Calculate the final offset by subtracting the padding from the nav height.
+    var finalOffset = navHeight - sectionPaddingInPixels;
+
+
+    // --- CONSOLE LOGS FOR TESTING ---
+    console.log('Nav Bar Height:', navHeight);
+    console.log('Root Font Size:', rootFontSize + 'px');
+    console.log('Section Padding (' + sectionPaddingInRem + 'rem) in Pixels:', sectionPaddingInPixels);
+    console.log('Final Scroll Offset (Nav Height - Padding):', finalOffset);
+
+
+    // 6. Initialize scrolly with the new, precisely calculated offset.
+    $('.scrolly').scrolly({
+        offset: finalOffset
+    });
 
     // Background.
         $wrapper._parallax(0.925);
