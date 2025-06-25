@@ -5309,7 +5309,6 @@ input, select, textarea {
 		width: calc(100% - 4rem);
 		max-width: 72rem;
 		z-index: 2;
-		margin: 4rem auto;
 	}
 
 		#copyright input, #copyright select, #copyright textarea {
@@ -5375,7 +5374,7 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			#copyright {
-				margin: 4rem auto;
+				/* margin: 4rem auto; */
 			}
 
 		}
@@ -6338,32 +6337,10 @@ body.is-preload #about {
 
 /* Properties Grid */
 .properties-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* md:grid-cols-2 lg:grid-cols-3, responsive */
-    gap: 2rem; /* Equivalent to gap-8 */
-    justify-content: center; /* Center items if they don't fill a row */
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-    .properties-grid {
-        grid-template-columns: repeat(2, 1fr); /* Force 2 columns */
-    }
-
-    /* This rule will now ONLY apply on tablet-sized screens */
-    .properties-grid .property-card:nth-child(5):last-child {
-        grid-column: 1 / -1; /* Span from the first column line to the last */
-        max-width: 400px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-/* --- Large Screens (1024px and up) --- */
-@media (min-width: 1024px) {
-    .properties-grid {
-        grid-template-columns: repeat(3, 1fr); /* Force 3 columns */
-    }
-    /* No special rules are needed here. The cards will flow naturally. */
+    display: flex;         /* Activates Flexbox */
+    flex-wrap: wrap;       /* Allows items to wrap to the next line */
+    justify-content: center; /* This is the key: It centers all items, including the last row */
+    gap: 1.5rem;           /* Sets the space between your cards */
 }
 
 .property-card {
@@ -6376,6 +6353,26 @@ body.is-preload #about {
 	display: flex;
     flex-direction: column;
     position: relative; 
+	flex-basis: calc(33.333% - 1.5rem);
+    min-width: 320px; /* Prevents cards from becoming too narrow */
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* For tablets (e.g., screen widths up to 980px) */
+@media (max-width: 1121px) {
+    .properties-grid .property-card {
+        /* This will create a 2-column layout */
+        flex-basis: calc(50% - 1.5rem);
+    }
+}
+
+/* For mobile devices (e.g., screen widths up to 768px) */
+@media (max-width: 779px) {
+    .properties-grid .property-card {
+        /* This will create a 1-column layout */
+        flex-basis: 100%;
+    }
 }
 
 .property-card:hover {
@@ -6897,6 +6894,7 @@ body.is-preload #about {
 /* This class reverses the order for the second section */
 .feature-split-section.reverse-layout {
 	flex-direction: row-reverse;
+	margin-bottom: 0rem;
 }
 
 /* The container for the image column */
