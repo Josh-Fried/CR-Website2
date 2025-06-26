@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // This part for your main gallery is correct and can stay as is.
+    // Main gallery
     $('.gallery-grid-3x3').magnificPopup({
         delegate: 'a',
         type: 'image',
@@ -11,19 +11,39 @@ $(document).ready(function() {
         }
     });
 
-    // --- CORRECTED CODE FOR YOUR TWO-IMAGE CONTAINERS ---
-    // Loop through each container that holds a two-image gallery.
-    $('.image-container').each(function() {
-        // Initialize Magnific Popup on *this specific container*.
-        // This creates a separate gallery for each one.
-        $(this).magnificPopup({
-            delegate: 'a', // The items are the 'a' tags within THIS container
+    // Two-image containers
+    $('.image-container.two-image-view').each(function() {
+        var $container = $(this);
+        
+        $container.magnificPopup({
+            delegate: 'a',
             type: 'image',
             gallery: {
-                enabled: true // The gallery is enabled, but only for items within THIS container
+                enabled: true
             },
             image: {
-                titleSrc: 'title'
+                titleSrc: 'title',
+                verticalFit: false // This prevents forced height adjustment
+            },
+            callbacks: {
+                beforeOpen: function() {
+                    // Store original dimensions
+                    $container.find('img').each(function() {
+                        $(this).data('original-width', $(this).width());
+                        $(this).data('original-height', $(this).height());
+                    });
+                },
+                close: function() {
+                    // Restore original dimensions
+                    $container.find('img').each(function() {
+                        $(this).css({
+                            'width': $(this).data('original-width') + 'px',
+                            'height': $(this).data('original-height') + 'px'
+                        });
+                    });
+                    // Force reflow
+                    $container.hide().show();
+                }
             }
         });
     });
