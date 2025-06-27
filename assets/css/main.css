@@ -13,6 +13,8 @@
 	--secondary-color: #eeeeee;
 	--hover-color: #18bfef;
 	--green-color: #166534;
+
+	--rough-nav-bar-height: 79px;
 }
 
 html, body, div, span, applet, object,
@@ -178,13 +180,8 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		border-bottom: dotted 1px;
 		text-decoration: none;
 	}
-
-		a:hover {
-			border-bottom-color: transparent;
-		}
 
 	strong, b {
 		font-weight: 600;
@@ -6799,7 +6796,6 @@ body.is-preload #about {
 	padding: 0 1rem;
 }
 
-
 .image-container {
 	width: 100%;
 	overflow: hidden; /* Ensures images don't spill out */
@@ -6836,11 +6832,17 @@ body.is-preload #about {
 	background-color: var(--main-background-color); /* A subtle background for letterboxing */
 }
 
-/* --- FIX: New rule to make images 'contain' inside the two-image-view --- */
-.two-image-view .image-wrapper img {
-	object-fit: contain;
+.two-image-view .image-wrapper a {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
+.two-image-view .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* This will now work correctly */
+}
 
 /* --- 3. TWO IMAGE VIEW (Mobile) --- */
 @media (max-width: 768px) {
@@ -6854,28 +6856,37 @@ body.is-preload #about {
 		height: 30vh; /* Each image now gets its own 30vh height */
 		width: 100%;
 	}
-	/* --- FIX for underline on linked images --- */
-	.two-image-view .image-wrapper a {
-		/* display: block;
-		height: 100%;
-		text-decoration: none; */
-		border-bottom: none;
-	}
 }
 
 /* --- 4. IMAGE CONTAIN VIEW --- */
 .image-contain-view {
-		height: 80vh; /* Set a large, but not full-screen, height */
-		background-color: var(--main-background-color); /* A subtle background for letterboxing */
-		
-		/* --- FIX: Add flex properties to center the image --- */
-		display: flex;
-		justify-content: center; /* Horizontally center */
-		align-items: center;    /* Vertically center */
+	height: 80vh; /* Set a large, but not full-screen, height */
+	background-color: var(--main-background-color); /* A subtle background for letterboxing */
+	
+	/* --- FIX: Add flex properties to center the image --- */
+	display: flex;
+	justify-content: center; /* Horizontally center */
+	align-items: center;    /* Vertically center */
+
+}
+
+.image-contain-view a {
+    display: flex; 
+    width: 100%;
+    height: 100%;
+	justify-content: center; /* Horizontally center */
+	align-items: center;    /* Vertically center */
+    /* The font-size and text-decoration lines prevent odd underlines */
+    font-size: 0; 
+    text-decoration: none;
+	border-bottom: none;
+
 }
 
 .image-contain-view img {
 	object-fit: contain; /* This is the key: it scales the image down to fit without cropping */
+	justify-content: center; /* Horizontally center */
+	align-items: center;    /* Vertically center */
 	
 	/* --- FIX: Ensure the image itself doesn't overflow its flex container --- */
 	/* These override the generic width/height 100% for this specific case */
@@ -6883,7 +6894,38 @@ body.is-preload #about {
 	height: auto;
 	max-width: 100%;
 	max-height: 100%;
+
 }
+
+.onescreen-section {
+    height: calc(95vh - var(--rough-nav-bar-height));
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+}
+
+/* This is the key to making the layout fit */
+.onescreen-section .image-contain-view {
+    /* This makes the image container flexible, taking up remaining space */
+    flex: 1; 
+    
+    /* This prevents the container from overflowing if its content is large */
+    min-height: 0;
+
+    /* Ensure it uses the available width */
+    width: 100%; 
+}
+
+@media (max-width: 768px) {
+    /* --- Add these rules to disable the one-screen effect --- */
+
+    .onescreen-section {
+        /* Revert the height to be determined by content, not the viewport */
+        height: auto;
+    }
+}
+
+
 
 .feature-split-section {
 	display: flex; /* Enables Flexbox layout */
@@ -6953,8 +6995,9 @@ body.is-preload #about {
 	gap: 1rem 2rem;
 	text-align: center;
 	justify-content: center;
-	font-size: 1.2em;
+	font-size: 0.9em;
 	max-width: 600px;
+	/* width: 100%; */
 	margin: 0 auto;
 }
 
@@ -6963,6 +7006,7 @@ body.is-preload #about {
 	padding: 0.5rem 1rem;
 	border-radius: 0.5rem;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+	line-height: 1.3;
 }
 
 .label {
@@ -6997,30 +7041,49 @@ body.is-preload #about {
 	}
 }
 
-/* For two-image-view containers */
-.image-container.two-image-view {
+
+
+/* This is the main container that holds everything */
+.condo-layout-container {
     display: flex;
-    gap: 20px;
-    width: 100%;
-	align-items: flex-start; /* Align items to top */
-    /* margin-bottom: 2rem; */
+    justify-content: center; /* Centers the items */
+    align-items: flex-start; /* Aligns items to the top */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 40px; /* The space between the two items */
 }
-/* Replace your existing .image-wrapper styles with these */
-.image-container.two-image-view .image-wrapper {
+
+/* This is each individual card (Image + Specs) */
+.condo-item {
+    /* You might want to set a max-width consistent with your images/specs */
+    max-width: 500px;
+	margin-top: 2rem;
+}
+
+/* Add a media query for smaller screens */
+@media (max-width: 1024px) { /* Adjust this breakpoint as needed */
+    .condo-layout-container {
+        /* This will stack the .property-item divs vertically */
+        flex-direction: column;
+        align-items: center; /* Center the stacked items */
+    }
+}
+
+.condo-item .image-wrapper {
     flex: 1;
     min-width: 0;
     display: flex;
     flex-direction: column;
     align-items: center; /* Centers content horizontally */
 	height: auto;
+	margin-bottom: 2rem;
 }
-.image-container.two-image-view .image-wrapper h3 {
+.condo-item .image-wrapper h3 {
     /* margin-bottom: 1rem; */
 	flex-grow: 1; /* Let title take remaining space */
     text-align: center;
 }
 
-.image-container.two-image-view .image-wrapper a {
+.condo-item .image-wrapper a {
     display: block;
     width: 100%;
     position: relative;
@@ -7028,20 +7091,9 @@ body.is-preload #about {
     /* Remove padding-bottom and let height be natural */
 }
 
-.image-container.two-image-view .image-wrapper img {
+.condo-item .image-wrapper img {
     width: 100%;
     height: auto;
     display: block;
     max-width: 100%; /* Prevent overflow */
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .image-container.two-image-view {
-        flex-direction: column;
-    }
-    
-    .image-container.two-image-view .image-wrapper a {
-        padding-bottom: 75%; /* Adjust for mobile */
-    }
 }
