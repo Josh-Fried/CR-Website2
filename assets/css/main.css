@@ -6812,7 +6812,11 @@ body.is-preload #about {
 
 /* --- 1. SINGLE IMAGE VIEW (Cover) --- */
 .single-image-view {
-	height: 40vh; /* Takes up 40% of the viewport height */
+	height: auto; 
+	width: 50%; 
+	margin-left: auto; 
+	margin-right: auto;
+	margin-top: -2.3rem;
 }
 
 
@@ -6855,6 +6859,11 @@ body.is-preload #about {
 	.two-image-view .image-wrapper {
 		height: 30vh; /* Each image now gets its own 30vh height */
 		width: 100%;
+	}
+
+	.single-image-view {
+		width: 100%; 
+		margin-top: -1.3rem;
 	}
 }
 
