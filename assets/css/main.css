@@ -7105,3 +7105,33 @@ body.is-preload #about {
     display: block;
     max-width: 100%; /* Prevent overflow */
 }
+
+.button.special-disabled {
+	background: #e7e7e7;
+	color: #a0a0a0;
+	border: none;
+	box-shadow: inset 2px 2px 5px #c4c4c4,
+				inset -2px -2px 5px #ffffff;
+	cursor: not-allowed;
+	position: relative;
+	pointer-events: none;
+	display: inline-block;
+
+	/* --- Larger Button Styles --- */
+	font-size: 1rem;      /* Increased font size */
+	height: 4rem;         /* Increased height */
+	line-height: 4rem;    /* Match height for vertical centering */
+	padding: 0 3rem 0 4rem; /* Increased padding, especially on the left for the icon */
+}
+
+.button.special-disabled::before {
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	content: '\f023'; /* lock icon */
+	position: absolute;
+	left: 1.5rem; /* Adjusted icon position */
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.2rem; /* Increased icon size */
+	color: #a0a0a0;
+}
