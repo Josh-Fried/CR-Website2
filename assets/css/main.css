@@ -6959,7 +6959,7 @@ body.is-preload #about {
 	display: block;
 	border-radius: 8px; /* Slightly rounded corners for a modern look */
 	/* box-shadow: 0 10px 25px rgba(0,0,0,0.1);  */
-	background-color: lightblue;
+	background-color: #c6dff7;
 }
 
 /* The container for the text content column */
@@ -7134,4 +7134,45 @@ body.is-preload #about {
 	transform: translateY(-50%);
 	font-size: 1.2rem; /* Increased icon size */
 	color: #a0a0a0;
+}
+
+#map-section {
+    position: relative; /* Essential for positioning the highlight overlay */
+    display: inline-block; /* To make sure the parent container wraps the image correctly */
+}
+
+#community-map {
+    display: block; /* Remove extra space below image */
+    max-width: 100%; /* Make the image responsive */
+    height: auto;
+}
+
+/* Highlight overlay (initially hidden) */
+.lot-highlight {
+    position: absolute;
+    background-color: rgba(0, 123, 255, 0.5); /* Blue with 50% opacity */
+    border: 2px solid #007bff;
+    pointer-events: none; /* Allows clicks to pass through to the image map areas */
+    display: none; /* Hidden by default */
+    z-index: 10; /* Make sure it appears above the image */
+}
+
+.lot-highlight-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover the entire image area */
+    height: 100%; /* Cover the entire image area */
+    pointer-events: none; /* Allows clicks to pass through to the image map areas */
+    display: none; /* Hidden by default */
+    z-index: 10; /* Make sure it appears above the image */
+}
+
+/* Optional: Style for the lot details sections */
+.lot-details {
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    border-radius: 5px;
 }
