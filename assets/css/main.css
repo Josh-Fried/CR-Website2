@@ -3702,6 +3702,10 @@ input, select, textarea {
 		text-align: center;
 		z-index: 1;
 		min-height: 100vh;
+		/* color: #4a403a;  */
+		/* color: #3d3d3d;  */
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
 	}
 
 		#intro input, #intro select, #intro textarea {
@@ -3724,6 +3728,7 @@ input, select, textarea {
 
 		#intro h1, #intro h2, #intro h3, #intro h4, #intro h5, #intro h6 {
 			color: var(--main-background-color);
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 		}
 
 		#intro blockquote {
