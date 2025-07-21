@@ -7170,6 +7170,7 @@ body.is-preload #about {
     /* No need for top/left/width/height here, JS sets them dynamically */
     background-color: transparent; /* SVG provides color */
     border: none; /* SVG provides border */
+	overflow: hidden;
 }
 
 .lot-highlight-container {
@@ -7186,10 +7187,11 @@ body.is-preload #about {
     position: absolute; /* Positioned absolutely over the body, like the highlight */
     top: 0;
     left: 0;
-    width: 100%; /* Will be overridden by JS to match image width */
-    height: 100%; /* Will be overridden by JS to match image height */
+    /* width: 100%; Will be overridden by JS to match image width */
+    /* height: 100%; Will be overridden by JS to match image height */
     z-index: 11; /* Make it higher than the highlight so it receives events first */
-    /* background-color: rgba(255, 0, 0, 0.1); /* Temporary: Use for debugging to see the overlay */
+    overflow: hidden;
+	/* background-color: rgba(255, 0, 0, 0.1); /* Temporary: Use for debugging to see the overlay */
 }
 
 .clickable-svg-overlay polygon {
