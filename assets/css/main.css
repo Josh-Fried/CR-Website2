@@ -7142,7 +7142,7 @@ body.is-preload #about {
 }
 
 #map-section {
-    position: relative; /* Essential for positioning the highlight overlay */
+     /* Essential for positioning the highlight overlay */
     display: inline-block; /* To make sure the parent container wraps the image correctly */
 }
 
@@ -7163,21 +7163,91 @@ body.is-preload #about {
 }
 
 .lot-highlight-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Cover the entire image area */
-    height: 100%; /* Cover the entire image area */
-    pointer-events: none; /* Allows clicks to pass through to the image map areas */
+    position: absolute; /* This is fundamental for JS positioning */
+    pointer-events: none; /* Allows clicks to pass through */
     display: none; /* Hidden by default */
-    z-index: 10; /* Make sure it appears above the image */
+    z-index: 10; /* Ensures it's on top */
+    /* No need for top/left/width/height here, JS sets them dynamically */
+    background-color: transparent; /* SVG provides color */
+    border: none; /* SVG provides border */
 }
 
-/* Optional: Style for the lot details sections */
-.lot-details {
-    margin-top: 50px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    border-radius: 5px;
+.lot-highlight-container {
+    position: absolute;
+    pointer-events: none; /* Allows mouse events to pass through to the element *below* it */
+    display: none;
+    z-index: 10;
+    background-color: transparent;
+    border: none;
+}
+
+/* NEW: Styles for the invisible SVG overlay that handles mouse events */
+.clickable-svg-overlay {
+    position: absolute; /* Positioned absolutely over the body, like the highlight */
+    top: 0;
+    left: 0;
+    width: 100%; /* Will be overridden by JS to match image width */
+    height: 100%; /* Will be overridden by JS to match image height */
+    z-index: 11; /* Make it higher than the highlight so it receives events first */
+    /* background-color: rgba(255, 0, 0, 0.1); /* Temporary: Use for debugging to see the overlay */
+}
+
+.clickable-svg-overlay polygon {
+    /* Styles for the invisible polygons within the SVG */
+    fill: transparent; /* Makes them invisible */
+    stroke: transparent; /* No border */
+    cursor: pointer; /* Changes cursor to pointer when over a lot */
+}
+
+.clickable-svg-overlay polygon:hover {
+    fill: rgba(255, 255, 0, 0.2); 
+}
+
+/* In your main.css */
+
+.lot-info-box {
+    position: absolute;
+    display: none; /* Hidden by default */
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px 20px; /* Internal spacing */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft shadow */
+    z-index: 1000; /* Ensure it's on top of everything */
+    min-width: 180px; /* Minimum width for readability */
+    max-width: 300px; /* Maximum width */
+    text-align: left; /* Text alignment */
+    pointer-events: none; /* Crucial: Allows mouse events to pass through, so it doesn't block mouseout from the polygon */
+    box-sizing: border-box; /* Include padding in width/height */
+    opacity: 0; /* Start with opacity 0 for fade effect */
+    transition: opacity 0.2s ease-in-out; /* Smooth fade transition */
+}
+
+/* Styles for when the info box is displayed */
+.lot-info-box[style*="display: block"] {
+    opacity: 1;
+}
+
+.lot-info-box h3 {
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-size: 1.1rem; /* Slightly smaller for tooltip heading */
+    font-weight: 700;
+    color: var(--main-text-color); /* Use your theme's main text color */
+    margin-top: 0;
+    margin-bottom: 0.5em; /* Space below heading */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.lot-info-box p {
+    font-family: "Merriweather", Georgia, serif;
+    font-size: 0.9rem; /* Smaller text for details */
+    color: #555; /* Slightly muted color for details */
+    margin-bottom: 0.3em; /* Tighten spacing between paragraphs */
+    line-height: 1.4;
+    text-align: left; /* Ensure paragraphs are left-aligned */
+}
+
+.lot-info-box p:last-child {
+    margin-bottom: 0; /* No margin below the last paragraph */
 }
