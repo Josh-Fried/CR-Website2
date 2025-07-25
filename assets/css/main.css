@@ -12,6 +12,9 @@
 	--main-text-color: #212931;
 	--secondary-color: #eeeeee;
 	--hover-color: #18bfef;
+	--green-color: #166534;
+
+	--rough-nav-bar-height: 79px;
 }
 
 html, body, div, span, applet, object,
@@ -113,7 +116,6 @@ input, select, textarea {
 		padding: 0;
 		width: 100%;
 		/* Prevent "bounce" scroll effect at the top/bottom of the page */
-		overscroll-behavior-y: contain;
 	}
 
 
@@ -178,13 +180,8 @@ input, select, textarea {
 		-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		border-bottom: dotted 1px;
 		text-decoration: none;
 	}
-
-		a:hover {
-			border-bottom-color: transparent;
-		}
 
 	strong, b {
 		font-weight: 600;
@@ -198,6 +195,10 @@ input, select, textarea {
 		text-align: justify;
 		margin: 0 0 2rem 0;
 	}
+
+	/* p, li, dl, dt, dd {
+    	font-size: clamp(1rem, 0.9rem + 0.25vw, 1.125rem); /* 16px -> 18px 
+	}		 */
 
 	h1, h2, h3, h4, h5, h6 {
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -214,25 +215,27 @@ input, select, textarea {
 			text-decoration: none;
 		}
 
+	
 	h1 {
-		font-size: 4rem;
+		font-size: clamp(2.5rem, 1.75rem + 3.5vw, 4rem);
 		line-height: 1.1;
-		margin: 0 0 2rem 0;
+		margin-bottom: 2rem;
 	}
 
 	h2 {
-		font-size: 1.75rem;
+		font-size: clamp(1.5rem, 1.35rem + 0.5vw, 1.75rem);
 		line-height: 1.3;
-		margin: 0 0 1.5rem 0;
+		margin-bottom: 1.5rem;
 	}
 
 	h3 {
-		font-size: 1.25rem;
+		font-size: clamp(1.1rem, 1rem + 0.5vw, 1.25rem);
 		margin: 0 0 1.5rem 0;
+
 	}
 
 	h4 {
-		font-size: 1rem;
+		font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1rem);
 	}
 
 	h5 {
@@ -252,6 +255,7 @@ input, select, textarea {
 	sup {
 		font-size: 0.8rem;
 		position: relative;
+		vertical-align: super;
 		top: -0.5rem;
 	}
 
@@ -2648,6 +2652,51 @@ input, select, textarea {
 			top: 0.75rem;
 		}
 
+		.image.bar {
+			/* Sizing: Full width and about 40% of the viewport height */
+            width: 100%;
+            min-height: 40vh; /* Adjust this value to make it taller or shorter */
+
+            /* Fallback in case the image fails to load */
+            background-color: #4682B4; /* Steel Blue */
+            
+            /* 2. Fix the background image relative to the viewport */
+            /* background-attachment: fixed; */
+
+            /* 3. Position and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* --- For the Text Overlay --- */
+            /* 4. Use relative positioning for the overlay */
+            /* position: relative; */
+            
+            /* 5. Use Flexbox to center the content vertically and horizontally */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			padding-left: 0px;
+			padding-right: 0px;
+			margin-left: 0px;
+		}
+
+		.image.bar.parallax {
+            background-attachment: fixed;
+			
+		}
+
+		.image.bar .title {
+            color: var(--main-background-color);
+            font-size: 3rem; /* Large, bold title */
+            font-weight: bold;
+            text-align: center;
+            z-index: 2; /* Ensures text is on top of the overlay */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Makes text pop */
+            padding: 0 20px; /* Prevents text from touching screen edges */
+        }
+
+
 		.image.fit {
 			display: block;
 			margin: 2.5rem 0;
@@ -2721,14 +2770,18 @@ input, select, textarea {
 			transform: scale(1.05);
 		}
 
+
+	.gallery-grid-3x3-container {
+		display: flex;
+		justify-content: center;
+	}
+
 	/* Container for the 3x3 grid */
 	.gallery-grid-3x3 {
 		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
-		gap: 10px; /* Adjust the space between images as you like (e.g., 5px, 15px, or 0px) */
-		/* You might want to add some padding around the whole grid too */
-		/* padding: 10px; */
+		gap: 10px; 
 	}
 
 	/* Each item in the grid - this will be our square container */
@@ -2739,6 +2792,7 @@ input, select, textarea {
 		overflow: hidden;    /* Ensures any part of the image that 'object-fit: cover' might push out of bounds is clipped */
 		background-color: #f0f0f0; /* Optional: A light background for cells if images don't load or have transparency */
 	}
+	
 
 	/* The image itself within the square item */
 	.gallery-item img {
@@ -2790,6 +2844,7 @@ input, select, textarea {
 		margin-top: 0;
 		margin-bottom: 0.5em; /* Space below the h2 if there's a p tag */
 		color: white;
+		font-size: clamp(1.1rem, 0.8rem + 1vw, 1.5rem);
 	}
 
 	.gallery-item .text-overlay p {
@@ -2798,6 +2853,38 @@ input, select, textarea {
 		color: white;
 	}
 
+	/* @media (max-width: 845px) {
+    	.gallery-grid-3x3 {
+        	grid-template-columns: repeat(2, 1fr); 
+			gap: 10px !important;
+    	}
+	} */
+
+	/* For Mobile Phones (screens LESS than 600px wide) */
+	/* @media (max-width: 530px) {
+		.gallery-grid-3x3 {
+			width: 100% !important;
+			gap: 10px !important;
+		}
+		.gallery-item .text-overlay h2 {
+			font-size: 0.8em;
+	}
+	} */
+
+	@media (max-width: 600px) {
+		.gallery-grid-3x3 {
+			/* grid-template-columns: 1fr;   */
+			grid-template-columns: repeat(2, 1fr); 
+		}
+		.gallery-item .text-overlay h2 {
+			/* font-size: 0.8em; */
+		}
+	.gallery-item:last-child:nth-child(odd) {
+		grid-column: 1 / -1;
+		justify-self: center;
+		width: 50%;
+		}
+	}
 
 		/* Video */
 
@@ -3526,6 +3613,7 @@ input, select, textarea {
 		} */
 
 		}
+		
 
 		/* Header Video  */
 
@@ -3546,6 +3634,13 @@ input, select, textarea {
 		}
 		
 		.video-background video {
+			display: block; /* Remove any potential bottom spacing */
+			width: 100%;
+			height: 100%;
+			object-fit: cover; /* Scale the video to cover the container */
+		}
+
+		.video-background img {
 			display: block; /* Remove any potential bottom spacing */
 			width: 100%;
 			height: 100%;
@@ -3607,6 +3702,10 @@ input, select, textarea {
 		text-align: center;
 		z-index: 1;
 		min-height: 100vh;
+		/* color: #4a403a;  */
+		/* color: #3d3d3d;  */
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
 	}
 
 		#intro input, #intro select, #intro textarea {
@@ -3629,6 +3728,7 @@ input, select, textarea {
 
 		#intro h1, #intro h2, #intro h3, #intro h4, #intro h5, #intro h6 {
 			color: var(--main-background-color);
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 		}
 
 		#intro blockquote {
@@ -4099,35 +4199,67 @@ input, select, textarea {
     width: 100%;
     top: 0;
     z-index: 1000; 
-}
+	/* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);  */
 
-.nav-header.active {
-	color: white;
-}
+	/* transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out; */
 
-.nav-header.scrolled.active {
-	color: var(--main-text-color);
+	/* Hidden  */
+	/* opacity: 1; */
+	/* visibility: hidden; */
+	/* transform: translateY(-120%); */
+	/* transition: opacity 0.6s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out;  */
+	/* transition:	transform .6s ease-in-out,
+				background-color .6s ease-in-out; */
+	transition: background-color .6s ease-in-out;
 }
-
 
 .nav-header.scrolled {
 	background-color: var(--main-background-color); 
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
 	
+	/* Visible  */
+	opacity: 1;
+	visibility: visible;
+	/* transform: translateY(0); */
+
 }
 
 .nav-header.scrolled .menu ul li a {
+	color:#333;
+	transition: color .6s ease-in-out;
+}
+
+.nav-header.scrolled .nav-title {
+	color:#333
+}
+
+.nav-header.scrolled .nav-logo-title {
 	color:#333
 }
 
 .nav-header.scrolled .nav-logo {
-	color:#333
+	filter: invert(0);
+	transition: filter .6s ease-in-out;
+}
+
+.nav-header.scrolled .logo-link span {
+	padding-right: 20px;
+	color: #333;
+}
+
+.nav-header.scrolled .logo-link span:hover {
+	color: #ddd;
 }
 
 
 .nav-header.scrolled 
 .menu ul li a:hover { /* Added focus for accessibility */
     color: #ddd !important;
+}
+
+.nav-header.scrolled 
+.menu ul li a:active { /* Added focus for accessibility */
+    color: #333;
 }
 
 .nav-menu {
@@ -4143,11 +4275,48 @@ input, select, textarea {
     border-bottom: none;
 }
 
-.nav-logo {
+.nav-title {
     margin: 0;
-    font-size: 1.8em; 
+    font-size: 1em; 
 	color: white;
+	/* color: transparent; */
 	text-align: center;
+	padding-left: 10px;
+}
+
+.nav-logo-title {
+	font-size: 0.8em;
+	color: white;
+	margin: 0;
+}
+
+.logo-link {
+    display: flex;         /* This is the key! It turns the link into a flex container. */
+    align-items: center;   /* This vertically centers the image and the text with each other. */
+    text-decoration: none; /* Removes the default underline from the link. */
+    margin-right: 15px; 
+
+
+	/* for title under */
+	/* flex-direction: column; */
+
+}
+
+.logo-link span {
+	padding-right: 20px;
+	color: white;
+
+}
+
+.logo-link span:hover {
+	color: #333;
+}
+
+/* 2. This styles your SVG image */
+.nav-logo {
+    height: 50px;      /* Set a specific height for your logo. Adjust as needed. */
+    width: auto;       /* Allows the width to scale automatically to maintain aspect ratio. */
+	filter: invert(1);
 }
 
 
@@ -4168,6 +4337,7 @@ input, select, textarea {
 
 .menu ul li a {
     color: white;
+	/* color: #333; */
     text-decoration: none;
     font-size: 1em; /* Adjust as needed */
     padding: 0.5em;
@@ -4177,6 +4347,248 @@ input, select, textarea {
 .menu ul li a:hover { /* Added focus for accessibility */
     color: #333 !important;
 }
+
+.menu ul li a:active { /* Added focus for accessibility */
+    color: white !important;
+}
+
+/* Nav Panel */
+
+	#navPanelToggle {
+		text-decoration: none;
+		-moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		display: none;
+		position: absolute;
+		top: 50%; /* Move the top of the button down to the vertical center */
+		right: 1rem;
+		transform: translateY(-50%);
+		border: 0;
+		color: white;
+		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-size: 0.9rem;
+		font-weight: 900;
+		letter-spacing: 0.075em;
+		padding: 0.375rem 1.25rem;
+		text-transform: uppercase;
+		z-index: 10001;
+		align-self: center;
+		justify-self: center;
+	}
+
+		#navPanelToggle:before {
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			display: inline-block;
+			font-style: normal;
+			font-variant: normal;
+			text-rendering: auto;
+			line-height: 1;
+			text-transform: none !important;
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 900;
+		}
+
+		#navPanelToggle:before {
+			content: '\f0c9';
+			margin-right: 0.5rem;
+		}
+
+		#navPanelToggle.alt {
+			background-color: rgba(255, 255, 255, 0.875);
+			box-shadow: 0 0.125rem 0.75rem 0 rgba(30, 37, 45, 0.25);
+		}
+
+			#navPanelToggle.alt:hover {
+				background-color: var(--main-background-color);
+			}
+
+		@media screen and (max-width: 980px) {
+
+			#navPanelToggle {
+				display: block;
+			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#navPanelToggle {
+				font-size: 0.8rem;
+				padding: 0.25rem 1rem;
+			}
+
+		}
+
+		.nav-header.scrolled #navPanelToggle {
+    		color: #333;
+			transition: color .6s ease-in-out;
+		}
+
+	#navPanel {
+		-moz-transform: translateX(20rem);
+		-webkit-transform: translateX(20rem);
+		-ms-transform: translateX(20rem);
+		transform: translateX(20rem);
+		-moz-transition: -moz-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+		-webkit-transition: -webkit-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+		-ms-transition: -ms-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+		transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+		display: none;
+		-webkit-overflow-scrolling: touch;
+		background: var(--main-background-color);
+		box-shadow: none;
+		color: var(--main-text-color);
+		height: 100%;
+		max-width: 80%;
+		overflow-y: auto;
+		padding: 3rem 2rem;
+		position: fixed;
+		right: 0;
+		top: 0;
+		visibility: hidden;
+		width: 20rem;
+		z-index: 10002;
+	}
+
+	#navPanel ul{
+		list-style: none;
+	}
+
+		#navPanel .links {
+			list-style: none;
+			padding-left: 0;
+		}
+
+			#navPanel .links li {
+				border-top: solid 2px var(--secondary-color);
+			}
+
+				#navPanel .links li a {
+					border-bottom: 0;
+					display: block;
+					font-family: "Source Sans Pro", Helvetica, sans-serif;
+					font-size: 0.9rem;
+					font-weight: 900;
+					letter-spacing: 0.075em;
+					padding: 0.75rem 0;
+					text-transform: uppercase;
+					border-bottom: none;
+				}
+
+				#navPanel li a{
+					border-bottom: none;
+				}
+
+				#navPanel li a:hover{
+					color: #ddd;
+				}
+
+				#navPanel .links li:first-child {
+					border-top: 0;
+				}
+
+		.nav-menu {
+			width: 90%; /* Adjust as needed */
+			/* max-width: 1200px;  */
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between; /* Pushes logo to left and nav to right */
+			align-items: center;
+		}
+
+		.nav-menu a #navPanel{
+			border-bottom: none;
+		}
+
+		#navPanel .close {
+			text-decoration: none;
+			-moz-transition: color 0.2s ease-in-out;
+			-webkit-transition: color 0.2s ease-in-out;
+			-ms-transition: color 0.2s ease-in-out;
+			transition: color 0.2s ease-in-out;
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			border: 0;
+			color: #909498;
+			cursor: pointer;
+			display: block;
+			height: 3.25rem;
+			line-height: 3.25rem;
+			padding-right: 1.25rem;
+			position: absolute;
+			right: 0;
+			text-align: right;
+			top: 0;
+			vertical-align: middle;
+			width: 7rem;
+		}
+
+			#navPanel .close:before {
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: antialiased;
+				display: inline-block;
+				font-style: normal;
+				font-variant: normal;
+				text-rendering: auto;
+				line-height: 1;
+				text-transform: none !important;
+				font-family: 'Font Awesome 5 Free';
+				font-weight: 900;
+			}
+
+			#navPanel .close:before {
+				content: '\f00d';
+				font-size: 1.25rem;
+			}
+
+			#navPanel .close:hover {
+				color: var(--main-text-color);
+			}
+
+			@media screen and (max-width: 736px) {
+
+				#navPanel .close {
+					height: 4rem;
+					line-height: 4rem;
+				}
+
+			}
+
+		@media screen and (max-width: 980px) {
+
+			#navPanel {
+				display: block;
+			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#navPanel {
+				padding: 2.5rem 1.75rem;
+			}
+
+		}
+
+	@media screen and (max-width: 980px) {
+
+		body.is-navPanel-visible #wrapper {
+			opacity: 0.5;
+		}
+
+		body.is-navPanel-visible #navPanel {
+			-moz-transform: translateX(0);
+			-webkit-transform: translateX(0);
+			-ms-transform: translateX(0);
+			transform: translateX(0);
+			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);
+			visibility: visible;
+		}
+
+
+	}
 
 /* Main */
 
@@ -4190,7 +4602,6 @@ input, select, textarea {
 
 		#main > * {
 			padding: 4rem 4rem 2rem 4rem ;
-			border-top: solid 2px var(--secondary-color);
 			margin: 0;
 		}
 
@@ -4276,6 +4687,10 @@ input, select, textarea {
 				.custom-grey-box-section .intro.box header.major p {
 					font-size: 0.95em;
 				}
+				sup {
+					font-size: 0.7em; /* Slightly smaller for larger screens if desired */
+				}
+				
 			}
 			
 			@media (max-width: 480px) {
@@ -4287,6 +4702,9 @@ input, select, textarea {
 				}
 				.custom-grey-box-section .intro.box header.major p {
 					font-size: 0.9em;
+				}
+				sup {
+					font-size: 0.9em; /* Slightly larger for readability on small screens */
 				}
 			}
 
@@ -4356,7 +4774,7 @@ input, select, textarea {
 			}
 
 			#main > .posts > article {
-				border-color: var(--secondary-color);
+				border-color: var(--main-background-color);
 				border-left-width: 2px;
 				border-style: solid;
 				border-top-width: 2px;
@@ -4449,7 +4867,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #f5f5f5;
+		background-color: var(--main-background-color);
 		color: #909498;
 		cursor: default;
 		position: relative;
@@ -4890,7 +5308,7 @@ input, select, textarea {
 		line-height: 1.5;
 		text-align: center;
 		text-transform: uppercase;
-		margin: 4rem auto 8rem auto;
+		margin: 0rem auto 2rem auto;
 		width: calc(100% - 4rem);
 		max-width: 72rem;
 		z-index: 2;
@@ -4959,7 +5377,7 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			#copyright {
-				margin: 4rem auto;
+				/* margin: 4rem auto; */
 			}
 
 		}
@@ -4978,241 +5396,6 @@ input, select, textarea {
 				}
 
 		}
-
-/* Nav Panel */
-
-	#navPanelToggle {
-		text-decoration: none;
-		-moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		display: none;
-		position: fixed;
-		top: 0.75rem;
-		right: 0.75rem;
-		border: 0;
-		color: white;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 0.9rem;
-		font-weight: 900;
-		letter-spacing: 0.075em;
-		padding: 0.375rem 1.25rem;
-		text-transform: uppercase;
-		z-index: 10001;
-	}
-
-		#navPanelToggle:before {
-			-moz-osx-font-smoothing: grayscale;
-			-webkit-font-smoothing: antialiased;
-			display: inline-block;
-			font-style: normal;
-			font-variant: normal;
-			text-rendering: auto;
-			line-height: 1;
-			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
-			font-weight: 900;
-		}
-
-		#navPanelToggle:before {
-			content: '\f0c9';
-			margin-right: 0.5rem;
-		}
-
-		#navPanelToggle.alt {
-			background-color: rgba(255, 255, 255, 0.875);
-			box-shadow: 0 0.125rem 0.75rem 0 rgba(30, 37, 45, 0.25);
-		}
-
-			#navPanelToggle.alt:hover {
-				background-color: var(--main-background-color);
-			}
-
-		@media screen and (max-width: 980px) {
-
-			#navPanelToggle {
-				display: block;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			#navPanelToggle {
-				font-size: 0.8rem;
-				padding: 0.25rem 1rem;
-			}
-
-		}
-
-		.nav-header.scrolled #navPanelToggle {
-    		color: #333;
-		}
-
-	#navPanel {
-		-moz-transform: translateX(20rem);
-		-webkit-transform: translateX(20rem);
-		-ms-transform: translateX(20rem);
-		transform: translateX(20rem);
-		-moz-transition: -moz-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
-		-webkit-transition: -webkit-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
-		-ms-transition: -ms-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
-		transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
-		display: none;
-		-webkit-overflow-scrolling: touch;
-		background: var(--main-background-color);
-		box-shadow: none;
-		color: var(--main-text-color);
-		height: 100%;
-		max-width: 80%;
-		overflow-y: auto;
-		padding: 3rem 2rem;
-		position: fixed;
-		right: 0;
-		top: 0;
-		visibility: hidden;
-		width: 20rem;
-		z-index: 10002;
-	}
-
-	#navPanel ul{
-		list-style: none;
-	}
-
-		#navPanel .links {
-			list-style: none;
-			padding-left: 0;
-		}
-
-			#navPanel .links li {
-				border-top: solid 2px var(--secondary-color);
-			}
-
-				#navPanel .links li a {
-					border-bottom: 0;
-					display: block;
-					font-family: "Source Sans Pro", Helvetica, sans-serif;
-					font-size: 0.9rem;
-					font-size: 0.9rem;
-					font-weight: 900;
-					letter-spacing: 0.075em;
-					padding: 0.75rem 0;
-					text-transform: uppercase;
-					border-bottom: none;
-				}
-
-				#navPanel li a{
-					border-bottom: none;
-				}
-
-				#navPanel li a:hover{
-					color: #ddd;
-				}
-
-				#navPanel .links li:first-child {
-					border-top: 0;
-				}
-
-		.nav-menu {
-			width: 90%; /* Adjust as needed */
-			/* max-width: 1200px;  */
-			margin: 0 auto;
-			display: flex;
-			justify-content: space-between; /* Pushes logo to left and nav to right */
-			align-items: center;
-		}
-
-		.nav-menu a #navPanel{
-			border-bottom: none;
-		}
-
-		#navPanel .close {
-			text-decoration: none;
-			-moz-transition: color 0.2s ease-in-out;
-			-webkit-transition: color 0.2s ease-in-out;
-			-ms-transition: color 0.2s ease-in-out;
-			transition: color 0.2s ease-in-out;
-			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-			border: 0;
-			color: #909498;
-			cursor: pointer;
-			display: block;
-			height: 3.25rem;
-			line-height: 3.25rem;
-			padding-right: 1.25rem;
-			position: absolute;
-			right: 0;
-			text-align: right;
-			top: 0;
-			vertical-align: middle;
-			width: 7rem;
-		}
-
-			#navPanel .close:before {
-				-moz-osx-font-smoothing: grayscale;
-				-webkit-font-smoothing: antialiased;
-				display: inline-block;
-				font-style: normal;
-				font-variant: normal;
-				text-rendering: auto;
-				line-height: 1;
-				text-transform: none !important;
-				font-family: 'Font Awesome 5 Free';
-				font-weight: 900;
-			}
-
-			#navPanel .close:before {
-				content: '\f00d';
-				font-size: 1.25rem;
-			}
-
-			#navPanel .close:hover {
-				color: var(--main-text-color);
-			}
-
-			@media screen and (max-width: 736px) {
-
-				#navPanel .close {
-					height: 4rem;
-					line-height: 4rem;
-				}
-
-			}
-
-		@media screen and (max-width: 980px) {
-
-			#navPanel {
-				display: block;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			#navPanel {
-				padding: 2.5rem 1.75rem;
-			}
-
-		}
-
-	@media screen and (max-width: 980px) {
-
-		body.is-navPanel-visible #wrapper {
-			opacity: 0.5;
-		}
-
-		body.is-navPanel-visible #navPanel {
-			-moz-transform: translateX(0);
-			-webkit-transform: translateX(0);
-			-ms-transform: translateX(0);
-			transform: translateX(0);
-			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);
-			visibility: visible;
-		}
-
-
-	}
 
 /* Carousel */
 
@@ -5238,13 +5421,14 @@ input, select, textarea {
 
 /* Styles for the card itself (image + text) */
 .slideshow-card {
+	
 	align-items: stretch; /* Makes image and card-info stretch to the card's height */
 	background-color: #ffffff;
 	border-radius: 0px;
 	overflow: hidden;
 	width: 100%; /* Default width for non-centered cards */
 	max-width: 750px; /* Adjust as needed */
-	height: 500px; /* Default height for non-centered cards - adjust as you like */
+	height: 65vh; /* Default height for non-centered cards - adjust as you like */
 	opacity: 0.75;
 	transform: scale(0.8); /* Non-centered cards are slightly smaller */
 	transition: opacity 0.6s ease-in-out,
@@ -5260,7 +5444,6 @@ input, select, textarea {
 	transform: scale(1); /* Card is its 'normal' scale within the (potentially scaled) slide-content */
 	width: 100%;   /* Expand width for centered card */
 	max-width: 900px; /* Adjust as needed */
-	height: 500px;  /* Expand height for centered card - adjust to your original 400px if preferred */
 }
 
 .slideshow-card img {
@@ -5269,6 +5452,7 @@ input, select, textarea {
 	object-fit: cover; /* Ensures image covers the area, might crop */
 	transition: height 0.6s ease-in-out; /* Smooth transition for height change */
 	margin-bottom: -2px;
+	flex-shrink: 0; /* Prevents image from shrinking */
 }
 
 .slick-center .slideshow-card img {
@@ -5277,29 +5461,39 @@ input, select, textarea {
 }
 
 .slideshow-card .card-info {
-	padding: 25px 30px;
-	width: 100%; /* Percentage of the card's width for the text info */
+	padding: 3vh 30px;
+	width:100%; /*Percentage of the card's width for the text info*/
+	height: 50%; /* Full height of the card */
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between; /* Distributes space between title, p, and button */
+	align-items: center; /* Centers content horizontally */
+	flex-grow: 1; /* Allows card-info to take available vertical space */
 }
 
 .slideshow-card .card-info h2 {
 	margin-top: 0; /* No space above heading */
-	margin-bottom: 15px; /* Space below heading */
+	margin-bottom: 10px; /* Space below heading */
+	padding-bottom: 10px;
 	color: black;
 	font-size: 1.6em; /* Adjust as needed */
 	font-weight: bold; /* Makes the title stand out */
+	flex-shrink: 0;
+}
+
+.slick-center .slideshow-card .card-info h2 {
+	margin-top: 0; /* No space above heading */
+	margin-bottom: 10px; /* Space below heading */
 }
 
 .slideshow-card .card-info p {
 	color: black;
 	opacity: 0; /* Full opacity for text */
 	line-height: 1.5;
-	font-size: 0.95em; /* Adjust as needed */
+	font-size: 2vh; /* Adjust as needed */
 	flex-grow: 1; /* Allows paragraph to take available vertical space */
-	margin-bottom: 15px; /* Space above button */
+	margin-bottom: 5px; /* Space above button */
 	transition: opacity .6s ease-in-out; /* Smooth transition for opacity change */
 	text-align: center;
 }
@@ -5320,6 +5514,7 @@ input, select, textarea {
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 0.85em;
+	flex-shrink: 0;
 	align-self: center; /* Aligns button to the left */
 	margin-top: auto; /* Pushes button to the bottom if content is short */
 	align-items: center; /* Centers button text */
@@ -5341,6 +5536,52 @@ input, select, textarea {
 	background-color: #333; /* Darker shade on hover */
 	color: white;
 	box-shadow: inset 0 0 0 2px #333;
+}
+
+@media screen and (max-width: 1280px){
+	.slideshow-card .card-info h2 {
+		/* font-size: 1.4em; */
+	}
+}
+
+@media screen and (max-width: 1080px){
+    /* --- START: Add this code for the HDM text swap --- */
+
+    /* 1. Target the original H2 on the specific card */
+    .hacienda-del-mar .card-info h2 .original-title {
+        display: none;
+    }
+
+    /* 2. Create the new "HDM" text with its own styles */
+    .hacienda-del-mar .card-info h2::before {
+        content: "HDM"; /* This creates the new text */
+		visibility: visible; 
+		width: 100%;
+		text-align: center;
+	}
+	.hacienda-del-mar .card-info h2 {
+        /* These values match your original .card-title-with-underline style */
+        padding-bottom: 10px; 
+        margin-bottom: 0px;
+    }
+
+	.slideshow-card .card-info p {
+		font-size: 0.9em;
+	}
+}
+
+@media screen and (max-width: 945px){
+	.slideshow-card .card-info h2 {
+		font-size: 1em;
+	}
+}
+
+@media screen and (max-width: 768px){
+	
+}
+
+@media screen and (max-width: 480px){
+	
 }
 
 
@@ -5706,6 +5947,38 @@ input, select, textarea {
     bottom: 0;            
 }
 
+.slideshow-card .card-title-with-underline {
+    position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
+    text-align: center;    
+}
+
+.slideshow-card .card-title-with-underline::after {
+    content: '';          /* Required for pseudo-elements to be generated */
+    display: block;      
+    width: 5vw;          
+    height: 3px;          
+    background-color: #333; 
+    position: absolute;   
+    left: 50%;            /* Start the left edge at the center of the title element */
+    transform: translateX(-50%); /* Shift it left by half its own width to truly center it */
+    bottom: 0;   
+    opacity: 0; /* Initially hidden */         
+    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
+}
+
+.slick-center .slideshow-card .card-title-with-underline::after {
+    opacity: 1; /* Adjust width for centered card */
+    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
+}
+
+.subtitle {
+	position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
+    margin-bottom: 20px;   
+    text-align: center; 
+	font-style: italic;
+	color: #333;
+}
+
 .side-title {
 	position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
     padding-bottom: 15px;  
@@ -5822,6 +6095,77 @@ input, select, textarea {
     color: #606770;
 }
 
+/* Perks Section  */
+
+	
+
+	#perks {
+		max-width: 1200px;
+		text-align: center;
+		margin: 0 auto; 
+		padding: 20px;
+	}
+
+	.perks-section h2 {
+		font-size: 2.5rem;
+		margin-bottom: 40px;
+		color: #333;
+	}
+
+	.perks-grid {
+		display: grid;
+		/* On larger screens, create 4 equal columns */
+		grid-template-columns: repeat(4, 1fr); 
+		gap: 30px; 
+	}
+
+	/* --- Individual Perk Block Styling --- */
+	.perk-block {
+		background-color: #ffffff;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px; /* Rounded corners */
+		padding: 40px 20px;
+		display: flex;
+		flex-direction: column; /* Stack icon and title vertically */
+		align-items: center; /* Center horizontally */
+		justify-content: center; /* Center vertically */
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+	
+	.perk-block:hover {
+		transform: translateY(-10px); /* Lifts the block up on hover */
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Adds a shadow on hover */
+	}
+
+	/* --- Icon Styling --- */
+	.perk-block .icon {
+		font-size: 3rem; /* Adjust icon size */
+		color: #333;  /* A nice blue color, change as you like */
+		margin-bottom: 20px;
+	}
+
+	/* --- Title Styling --- */
+	.perk-block h3 {
+		font-size: 1.2rem;
+		color: #333;
+		margin: 0;
+	}
+
+	/* --- Responsive Design --- */
+	/* For tablets: 2 columns */
+	@media (max-width: 992px) {
+		.perks-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	/* For mobile phones: 1 column */
+	@media (max-width: 576px) {
+		.perks-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
 
 /* About Section */
 
@@ -5884,4 +6228,1028 @@ body.is-preload #about {
 
     /* Move it back to its original position */
     transform: translateY(0);
+}
+
+
+
+#why-invest p {
+    /* font-size: clamp(1rem, 1.4vw, 1.25rem); */
+    /* line-height: 2; */
+}
+
+#why-invest .image.left,
+#why-invest .image.right {
+    max-width: 46%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    #why-invest .image.left,
+    #why-invest .image.right {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem;
+        max-width: 100%;
+    }
+
+    #why-invest p {
+        text-align: left; /* or justify, as preferred */
+    }
+}
+
+/* Sticky */
+
+.sticky-container {
+    display: flex;              /* Use flexbox to create two columns */
+    flex-direction: row-reverse;/* Puts the image column on the right */
+    align-items: flex-start;    /* Aligns columns to the top */
+    gap: 2em;                   /* Creates space between the image and text */
+    margin-top: 4em;            /* Adds some space above this new section */
+}
+
+.scrolling-text-column {
+    flex: 1;                    /* Allows the text column to take up available space */
+}
+
+.sticky-image-column {
+    flex: 1;                    /* Allows the image column to take up available space */
+    max-width: 50%;             /* Ensures the image column isn't too wide */
+}
+
+.image-wrapper-sticky {
+    position: -webkit-sticky;   /* For Safari compatibility */
+    position: sticky;           /* The magic! */
+    top: 100px;                 /* Sticks the image 100px from the top of the viewport */
+}
+
+.image-wrapper-sticky img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* General Properties Section Styling */
+#properties-section {
+    /* padding: 6rem 4rem 4rem 4rem; */
+    background-color: var(--main-background-color); 
+    /* border-top: solid 2px var(--secondary-color);  */
+}
+
+#properties-section .post {
+    padding: 0; /* Remove extra padding from .post if it's already on the article */
+}
+
+/* Header Styling */
+.properties-header-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.properties-header-icons svg {
+    color: #DAA520; /* Gold-like color for icons, adjust if you have a variable */
+    margin-right: 0.5rem;
+}
+
+.properties-header-icons span {
+    color: #B8860B; /* Darker gold-like color for text */
+    font-size: 0.875rem; /* Equivalent to text-sm */
+    font-weight: 500; /* Equivalent to font-medium */
+    text-transform: uppercase;
+    letter-spacing: 0.05em; /* Equivalent to tracking-wider */
+}
+
+#properties-section h2.title-with-underline {
+    color: var(--main-text-color); /* Your main text color */
+    font-size: 2.5rem; /* Equivalent to text-3xl md:text-4xl */
+    font-weight: 900; /* Equivalent to font-bold */
+    margin-bottom: 1.5rem;
+}
+
+#properties-section .center-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500rem; /* Equivalent to max-w-3xl */
+    color: #4A5568; /* Gray-600 */
+    font-size: 1.125rem; /* Equivalent to text-xl */
+    line-height: 1.6;
+}
+
+/* Properties Grid */
+.properties-grid {
+    display: flex;         /* Activates Flexbox */
+    flex-wrap: wrap;       /* Allows items to wrap to the next line */
+    justify-content: center; /* This is the key: It centers all items, including the last row */
+    gap: 1.5rem;           /* Sets the space between your cards */
+}
+
+.property-card {
+    background-color: white;
+    border-radius: 0.5rem; /* rounded-lg */
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    transition: transform 0.3s ease; /* transition-transform duration-300 */
+
+	display: flex;
+    flex-direction: column;
+    position: relative; 
+	flex-basis: calc(33.333% - 1.5rem);
+    min-width: 320px; /* Prevents cards from becoming too narrow */
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* For tablets (e.g., screen widths up to 980px) */
+@media (max-width: 1121px) {
+    .properties-grid .property-card {
+        /* This will create a 2-column layout */
+        flex-basis: calc(50% - 1.5rem);
+    }
+}
+
+/* For mobile devices (e.g., screen widths up to 768px) */
+@media (max-width: 779px) {
+    .properties-grid .property-card {
+        /* This will create a 1-column layout */
+        flex-basis: 100%;
+    }
+}
+
+.property-card:hover {
+    transform: translateY(-0.5rem); /* hover:-translate-y-2 */
+}
+
+.property-card-image-wrapper {
+    position: relative;
+}
+
+.property-card-image-wrapper img {
+    width: 100%;
+    height: 16rem; /* h-64 */
+    object-fit: cover;
+}
+
+.property-price-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #DAA520; /* Gold-500 */
+	background-color: var(--green-color);
+    color: white;
+    padding: 0.25rem 1rem; /* px-4 py-1 */
+    border-radius: 0.125rem; /* rounded-sm */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 700; /* font-bold */
+}
+
+.property-card-info {
+    padding: 1.5rem; /* p-6 */
+}
+
+.property-card-info h3 {
+    color: var(--main-text-color);
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 0.5rem; /* mb-2 */
+	text-align: center;
+}
+
+.property-card-info p {
+    color: #4A5568; /* Gray-600 */
+    margin-bottom: 1rem; /* mb-4 */
+    line-height: 1.5; /* Default paragraph line-height */
+	text-align: center;
+}
+
+/* .property-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    gap: .5rem; 
+    margin-bottom: 1.5rem; 
+} */
+
+.property-details-grid {
+    display: grid;
+    /* THE FIX: Forcing 2 columns instead of auto-fitting */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1rem; 
+    margin-bottom: 5.5rem; 
+}
+
+.property-details-grid .flex {
+    display: flex;
+    align-items: center;
+}
+
+.property-details-grid .text-ocean-700 {
+    color: #0851A6; /* Ocean-700 */
+    margin-right: 0.5rem; /* mr-2 */
+    font-weight: 500; /* font-medium */
+}
+
+.property-details-grid .text-gray-500 {
+    color: #6B7280; /* Gray-500 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+.property-details-grid svg {
+    color: #0A66C2; /* Ocean-600 */
+    margin-right: 0.5rem; /* mr-2 */
+}
+
+/* .property-tags-and-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.property-type-tag {
+    font-size: 0.75rem; 
+    padding: 0.25rem 0.5rem; 
+    background-color: #FDFCEF; 
+    color: #8C6A00;
+    border-radius: 0.25rem; 
+    white-space: nowrap;
+}
+
+.property-tags-and-link a {
+    color: #0A66C2; 
+    font-weight: 500; 
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-bottom: none; 
+}
+
+.property-tags-and-link a:hover {
+    color: #0851A6; 
+}
+
+.property-tags-and-link a svg {
+    margin-left: 0.25rem;
+} */
+
+.detail-item {
+	display: flex;
+	flex-direction: column; /* Stack label and value vertically */
+    align-items: center;
+}
+
+.detail-label {
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: #7f8c8d; /* A muted gray for the label */
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-bottom: 0.25rem;
+}
+
+.detail-value {
+	display: flex;
+	align-items: center;
+	font-size: 1rem;
+	color: #34495e;
+	font-weight: 500;
+}
+
+.detail-value .fas, .detail-value .lucide {
+	margin-right: 0.5rem;
+	color: #3498db; 
+    color: #0A66C2; 
+	width: 16px;
+	text-align: center;
+}
+
+.details-button-wrapper.right {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+
+.details-button-wrapper.center {
+    position: absolute;
+    bottom: 1.5rem; /* Keeps it at the same distance from the bottom */
+    left: 50%; /* Moves the left edge of the button to the center */
+    transform: translateX(-50%); /* Shifts the button left by half its own width */
+    right: auto; /* It's good practice to reset the opposite property */
+}
+
+/* This targets your new <a> tag with the class .details-button */
+.details-button {
+    background-color: #2d6a4f; /* Primary Green */
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+	white-space: nowrap;
+}
+
+.details-button:hover {
+    background-color: #40916c; /* Lighter green on hover */
+    color: white; 
+}
+
+/* Styles the arrow icon inside the button */
+.details-button svg {
+	color: currentColor;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.details-button:hover svg {
+    transform: translateX(3px);
+}
+
+/* --- View More Button Styles --- */
+.view-more-wrapper {
+    text-align: center; /* Centers the button horizontally */
+    margin-top: 3rem;   /* Adds space between the grid and the button */
+    padding-bottom: 2rem; /* Ensures space at the very bottom */
+}
+
+.view-more-button {
+    display: inline-block; /* Necessary for padding and margin */
+    background-color: #2d6a4f; /* Primary green from your theme */
+    color: white;
+    padding: 1rem 2.5rem; /* A large, clickable button */
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.view-more-button:hover {
+    background-color: #40916c; /* Lighter green on hover */
+	color: white;
+    transform: translateY(-3px); /* Gives a slight lift effect */
+}
+
+
+/* Responsive adjustments */
+@media (min-width: 768px) { /* md */
+    .properties-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .property-search-banner {
+        flex-direction: row; /* md:flex-row */
+        text-align: left;
+    }
+    .property-search-banner > div:last-child {
+        flex-grow: 1;
+    }
+    .contact-team-btn {
+        margin-left: auto; /* md:ml-auto */
+    }
+}
+
+@media (min-width: 1024px) { /* lg */
+    .properties-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/**
+ * Simple fade transition,
+ */
+ .mfp-fade.mfp-bg {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}
+
+#lot-layout .image.fit {
+    /* Use aspect-ratio for modern browsers */
+    aspect-ratio: 1 / 1; /* Makes the container perfectly square */
+    width: 100%; /* Ensure it takes full width of its column */
+    overflow: hidden; /* Important to clip overflowing image parts */
+    display: block; /* Ensures aspect-ratio applies correctly */
+}
+
+#lot-layout .image.fit img {
+    width: 100%;
+    height: 100%; /* Make image fill its parent container */
+    object-fit: cover; /* Crucial: crops the image to fit without distortion */
+    object-position: center; /* Centers the image within the container */
+}
+
+/* Contact Section Card */
+
+/* Main container to center the content */
+.contact-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contact-card {
+	width: 100%;
+	max-width: 56rem; /* Equivalent to max-w-4xl */
+	padding: 2rem; /* Equivalent to p-8 */
+	background-color: #ffffff;
+	border-radius: 0.75rem; /* Equivalent to rounded-xl */
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+}
+
+.contact-header {
+	text-align: center;
+}
+
+.contact-header h2 {
+	font-size: 1.875rem; /* Equivalent to text-3xl */
+	font-weight: 700; /* Equivalent to font-bold */
+	color: #1f2937; /* Equivalent to text-gray-800 */
+}
+
+.contact-header p {
+	margin-top: 1rem; /* Equivalent to mt-4 */
+	color: #4b5563; /* Equivalent to text-gray-600 */
+}
+
+/* Grid for contact details */
+.contact-grid {
+	margin-top: 3rem; /* Equivalent to mt-12 */
+	display: grid;
+	grid-template-columns: 1fr; /* Default to one column */
+	gap: 2rem; /* Equivalent to gap-8 */
+	text-align: center;
+}
+
+/* Icon wrapper styles */
+.icon-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 4rem; /* Equivalent to w-16 */
+	height: 4rem; /* Equivalent to h-16 */
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1rem; /* Equivalent to mb-4 */
+	background-color: #dcfce7; /* Equivalent to bg-green-100 */
+	border-radius: 9999px; /* Equivalent to rounded-full */
+	color: var(--green-color); /* Equivalent to text-green-700 */
+}
+
+.icon-wrapper i {
+	font-size: 2em; /* Makes the icon larger */
+}
+
+.contact-item h3 {
+	font-size: 1.25rem; /* Equivalent to text-xl */
+	font-weight: 600; /* Equivalent to font-semibold */
+	color: #1f2937; /* Equivalent to text-gray-800 */
+	text-align: center;
+}
+
+.contact-item p {
+	margin-top: 0.5rem; /* Equivalent to mt-2 */
+	color: #4b5563; /* Equivalent to text-gray-600 */
+	text-align: center;
+}
+
+.contact-item a {
+	color: #15803d; /* Equivalent to text-green-700 */
+	text-decoration: none;
+	transition: color 0.2s ease-in-out;
+	border-bottom: none;
+}
+
+.contact-item a:hover {
+	color: #14532d; /* Equivalent to hover:text-green-900 */
+	text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (min-width: 640px) { /* sm breakpoint */
+	.contact-header h2 {
+		font-size: 2.25rem; /* Equivalent to sm:text-4xl */
+	}
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+	.contact-grid {
+		grid-template-columns: repeat(3, 1fr); /* Equivalent to md:grid-cols-3 */
+	}
+}
+
+.contact-card-hdm-custom {
+	border-radius: 5rem;
+	box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+}
+
+.layout-card {
+	background-color: var(--main-background-color); /* semi-transparent tan */
+	border: 1px solid var(--secondary-color);
+	padding: 1rem;
+	margin: 1rem 0;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 10px rgba(0,0,0,0.05);
+	transition: transform 0.2s ease;
+}
+
+.layout-card.shrink-width {
+	padding: 2vw;
+	display: inline-block;
+	/* margin: 0 auto; */
+	text-align: center;
+}
+
+.layout-card:hover {
+	transform: scale(1.01);
+}
+
+.two-column-list {
+	display: inline-flex;
+	text-align: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 40px;
+}
+
+.two-column-list ul {
+	list-style-type: disc;
+	text-align: left;
+	margin: 0;
+	padding: 0 1rem;
+}
+
+.image-container {
+	width: 100%;
+	overflow: hidden; /* Ensures images don't spill out */
+	margin-bottom: 2rem;
+	border-radius: 0.5rem;
+	/* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); */
+}
+
+.image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* This is the general default */
+}
+
+/* --- 1. SINGLE IMAGE VIEW (Cover) --- */
+.single-image-view {
+	height: auto; 
+	width: 50%; 
+	margin-left: auto; 
+	margin-right: auto;
+}
+
+
+/* --- 2. TWO IMAGE VIEW (Desktop) --- */
+.two-image-view {
+	/* height: 40vh;  */
+	/* aspect-ratio: 16 / 7; */
+	display: flex;
+	flex-direction: row; /* Side-by-side by default */
+	gap: 0.5rem; /* Optional: adds a small gap between images */
+}
+
+.two-image-view .image-wrapper {
+	flex: 1; /* Each wrapper takes up equal space */
+	height: 100%;
+	overflow: hidden;
+	background-color: var(--main-background-color); /* A subtle background for letterboxing */
+}
+
+.two-image-view .image-wrapper a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.two-image-view .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* This will now work correctly */
+}
+
+/* --- 3. TWO IMAGE VIEW (Mobile) --- */
+@media (max-width: 768px) {
+	.two-image-view {
+		flex-direction: column; /* Stack images on top of each other */
+		height: auto; /* Let height be determined by content */
+		aspect-ratio: auto;
+	}
+
+	.two-image-view .image-wrapper {
+		height: 30vh; /* Each image now gets its own 30vh height */
+		width: 100%;
+	}
+
+	.single-image-view {
+		width: 100%; 
+		margin-top: -1.3rem;
+	}
+}
+
+/* --- 4. IMAGE CONTAIN VIEW --- */
+.image-contain-view {
+	height: 80vh; /* Set a large, but not full-screen, height */
+	background-color: var(--main-background-color); /* A subtle background for letterboxing */
+	
+	/* --- FIX: Add flex properties to center the image --- */
+	display: flex;
+	justify-content: center; /* Horizontally center */
+	align-items: center;    /* Vertically center */
+
+}
+
+.image-contain-view a {
+    display: flex; 
+    width: 100%;
+    height: 100%;
+	justify-content: center; /* Horizontally center */
+	align-items: center;    /* Vertically center */
+    /* The font-size and text-decoration lines prevent odd underlines */
+    font-size: 0; 
+    text-decoration: none;
+	border-bottom: none;
+
+}
+
+.image-contain-view img {
+	object-fit: contain; /* This is the key: it scales the image down to fit without cropping */
+	justify-content: center; /* Horizontally center */
+	align-items: center;    /* Vertically center */
+	
+	/* --- FIX: Ensure the image itself doesn't overflow its flex container --- */
+	/* These override the generic width/height 100% for this specific case */
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+
+}
+
+.onescreen-section {
+    height: calc(95vh - var(--rough-nav-bar-height));
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+}
+
+/* This is the key to making the layout fit */
+.onescreen-section .image-contain-view {
+    /* This makes the image container flexible, taking up remaining space */
+    flex: 1; 
+    
+    /* This prevents the container from overflowing if its content is large */
+    min-height: 0;
+
+    /* Ensure it uses the available width */
+    width: 100%; 
+}
+
+@media (max-width: 768px) {
+    /* --- Add these rules to disable the one-screen effect --- */
+
+    .onescreen-section {
+        /* Revert the height to be determined by content, not the viewport */
+        height: auto;
+    }
+}
+
+
+
+.feature-split-section {
+	display: flex; /* Enables Flexbox layout */
+	align-items: center; /* Vertically aligns items */
+	gap: 3.5rem; /* Space between the image and the text container */
+	margin-bottom: 5rem; /* Space between the two main sections */
+}
+
+/* This class reverses the order for the second section */
+.feature-split-section.reverse-layout {
+	flex-direction: row-reverse;
+	margin-bottom: 0rem;
+}
+
+/* The container for the image column */
+.feature-image-container {
+	flex-basis: 45%; /* Image column takes up 45% of the width */
+	flex-shrink: 0; /* Prevents the image from shrinking */
+}
+.feature-image-container img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 8px; /* Slightly rounded corners for a modern look */
+	/* box-shadow: 0 10px 25px rgba(0,0,0,0.1);  */
+	background-color: #c6dff7;
+}
+
+/* The container for the text content column */
+.feature-text-container {
+	flex-basis: 55%; /* Text column takes up 55% of the width */
+}
+
+/* Styling for each individual text item (e.g., Vision, Location) */
+.text-content-item {
+	margin-bottom: 2.5rem; /* Space between each text block */
+}
+.text-content-item:last-child {
+	margin-bottom: 0;
+}
+
+/* STYLING THE TITLE TO MAKE IT STICK OUT */
+.text-content-item h2 {
+	font-family: 'Playfair Display', serif;
+	font-size: 2.0rem;
+	font-weight: 700;
+	color: var(--main-text-color);
+	color: #4A5568;
+	line-height: 1.2;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 0 0 0.75rem 0; /* Space below the title */
+}
+
+/* STYLING THE PARAGRAPH FOR READABILITY */
+.text-content-item p {
+	/* font-family: 'Lato', sans-serif; */
+	font-size: 1.1rem;
+	line-height: 1.8;
+	color: #555;
+	margin: 0;
+}
+
+.property-specs-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem 2rem;
+	text-align: center;
+	justify-content: center;
+	font-size: 0.9em;
+	max-width: 600px;
+	/* width: 100%; */
+	margin: 0 auto;
+}
+
+.spec {
+	background-color: rgba(244, 236, 226, 0.5); /* semi-transparent tan */
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+	line-height: 1.3;
+}
+
+.label {
+	font-weight: 600;
+	color: #3b2f25; /* dark text for contrast, or use a var */
+	margin-right: 0.5rem;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 980px) {
+		.feature-split-section {
+		gap: 2rem;
+		}
+		.text-content-item h2 {
+		font-size: 2rem;
+		}
+		.property-specs-grid {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.feature-split-section,
+	.feature-split-section.reverse-layout {
+		/* Stack the columns on top of each other on mobile */
+		flex-direction: column;
+		gap: 2.5rem; 
+		margin-bottom: 4rem;
+	}
+	.property-specs-grid {
+		font-size: 0.8rem;
+	}
+}
+
+
+
+/* This is the main container that holds everything */
+.condo-layout-container {
+    display: flex;
+    justify-content: center; /* Centers the items */
+    align-items: flex-start; /* Aligns items to the top */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    gap: 40px; /* The space between the two items */
+}
+
+/* This is each individual card (Image + Specs) */
+.condo-item {
+    /* You might want to set a max-width consistent with your images/specs */
+    max-width: 500px;
+	margin-top: 2rem;
+}
+
+/* Add a media query for smaller screens */
+@media (max-width: 1024px) { /* Adjust this breakpoint as needed */
+    .condo-layout-container {
+        /* This will stack the .property-item divs vertically */
+        flex-direction: column;
+        align-items: center; /* Center the stacked items */
+    }
+}
+
+.condo-item .image-wrapper {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+	height: auto;
+	margin-bottom: 2rem;
+}
+.condo-item .image-wrapper h3 {
+    /* margin-bottom: 1rem; */
+	flex-grow: 1; /* Let title take remaining space */
+    text-align: center;
+}
+
+.condo-item .image-wrapper a {
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    /* Remove padding-bottom and let height be natural */
+}
+
+.condo-item .image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%; /* Prevent overflow */
+}
+
+.button.special-disabled {
+	background: #e7e7e7;
+	color: #a0a0a0;
+	border: none;
+	box-shadow: inset 2px 2px 5px #c4c4c4,
+				inset -2px -2px 5px #ffffff;
+	cursor: not-allowed;
+	position: relative;
+	pointer-events: none;
+	display: inline-block;
+
+	/* --- Larger Button Styles --- */
+	font-size: 1rem;      /* Increased font size */
+	height: 4rem;         /* Increased height */
+	line-height: 4rem;    /* Match height for vertical centering */
+	padding: 0 3rem 0 4rem; /* Increased padding, especially on the left for the icon */
+}
+
+.button.special-disabled::before {
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	content: '\f023'; /* lock icon */
+	position: absolute;
+	left: 1.5rem; /* Adjusted icon position */
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1.2rem; /* Increased icon size */
+	color: #a0a0a0;
+}
+
+#map-section {
+     /* Essential for positioning the highlight overlay */
+    display: inline-block; /* To make sure the parent container wraps the image correctly */
+}
+
+#community-map {
+    display: block; /* Remove extra space below image */
+    max-width: 100%; /* Make the image responsive */
+    height: auto;
+}
+
+/* Highlight overlay (initially hidden) */
+.lot-highlight {
+    position: absolute;
+    background-color: rgba(0, 123, 255, 0.5); /* Blue with 50% opacity */
+    border: 2px solid #007bff;
+    pointer-events: none; /* Allows clicks to pass through to the image map areas */
+    display: none; /* Hidden by default */
+    z-index: 10; /* Make sure it appears above the image */
+}
+
+.lot-highlight-container {
+    position: absolute; /* This is fundamental for JS positioning */
+    pointer-events: none; /* Allows clicks to pass through */
+    display: none; /* Hidden by default */
+    z-index: 10; /* Ensures it's on top */
+    /* No need for top/left/width/height here, JS sets them dynamically */
+    background-color: transparent; /* SVG provides color */
+    border: none; /* SVG provides border */
+	overflow: hidden;
+}
+
+.lot-highlight-container {
+    position: absolute;
+    pointer-events: none; /* Allows mouse events to pass through to the element *below* it */
+    display: none;
+    z-index: 10;
+    background-color: transparent;
+    border: none;
+}
+
+/* NEW: Styles for the invisible SVG overlay that handles mouse events */
+.clickable-svg-overlay {
+    position: absolute; /* Positioned absolutely over the body, like the highlight */
+    top: 0;
+    left: 0;
+    /* width: 100%; Will be overridden by JS to match image width */
+    /* height: 100%; Will be overridden by JS to match image height */
+    z-index: 11; /* Make it higher than the highlight so it receives events first */
+    overflow: hidden;
+	/* background-color: rgba(255, 0, 0, 0.1); /* Temporary: Use for debugging to see the overlay */
+}
+
+.clickable-svg-overlay polygon {
+    /* Styles for the invisible polygons within the SVG */
+    fill: transparent; /* Makes them invisible */
+    stroke: transparent; /* No border */
+    cursor: pointer; /* Changes cursor to pointer when over a lot */
+}
+
+.clickable-svg-overlay polygon:hover {
+    fill: rgba(255, 255, 0, 0.2); 
+}
+
+/* In your main.css */
+
+.lot-info-box {
+    position: absolute;
+    display: none; /* Hidden by default */
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px 20px; /* Internal spacing */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft shadow */
+    z-index: 1000; /* Ensure it's on top of everything */
+    min-width: 180px; /* Minimum width for readability */
+    max-width: 300px; /* Maximum width */
+    text-align: left; /* Text alignment */
+    pointer-events: none; /* Crucial: Allows mouse events to pass through, so it doesn't block mouseout from the polygon */
+    box-sizing: border-box; /* Include padding in width/height */
+    opacity: 0; /* Start with opacity 0 for fade effect */
+    transition: opacity 0.2s ease-in-out; /* Smooth fade transition */
+}
+
+/* Styles for when the info box is displayed */
+.lot-info-box[style*="display: block"] {
+    opacity: 1;
+}
+
+.lot-info-box h3 {
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-size: 1.1rem; /* Slightly smaller for tooltip heading */
+    font-weight: 700;
+    color: var(--main-text-color); /* Use your theme's main text color */
+    margin-top: 0;
+    margin-bottom: 0.5em; /* Space below heading */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.lot-info-box p {
+    font-family: "Merriweather", Georgia, serif;
+    font-size: 0.9rem; /* Smaller text for details */
+    color: #555; /* Slightly muted color for details */
+    margin-bottom: 0.3em; /* Tighten spacing between paragraphs */
+    line-height: 1.4;
+    text-align: left; /* Ensure paragraphs are left-aligned */
+}
+
+.lot-info-box p:last-child {
+    margin-bottom: 0; /* No margin below the last paragraph */
 }

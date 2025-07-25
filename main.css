@@ -1,0 +1,4028 @@
+@import url(fontawesome-all.min.css);
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900");
+
+/*
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+:root {
+	--main-background-color: #f4ece2;
+	--main-text-color: #212931;
+	--secondary-color: #eeeeee;
+	--hover-color: #18bfef;
+	--green-color: #166534;
+}
+
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;}
+
+body {
+	line-height: 1;
+	color: var(--secondary-color);
+	
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+	blockquote:before, blockquote:after, q:before, q:after {
+		content: '';
+		content: none;
+	}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	-webkit-text-size-adjust: none;
+}
+
+mark {
+	background-color: transparent;
+	color: inherit;
+}
+
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input, select, textarea {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+}
+
+/* Basic */
+
+	@-ms-viewport {
+		width: device-width;
+	}
+
+	body {
+		-ms-overflow-style: scrollbar;
+	}
+
+	@media screen and (max-width: 480px) {
+
+		html, body {
+			min-width: 320px;
+		}
+
+	}
+
+	html {
+		box-sizing: border-box;
+	}
+
+	*, *:before, *:after {
+		box-sizing: inherit;
+	}
+
+	
+	html, body {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		/* Prevent "bounce" scroll effect at the top/bottom of the page */
+	}
+
+
+	body {
+		background-color: #1e252d;
+	}
+
+		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+			-moz-animation: none !important;
+			-webkit-animation: none !important;
+			-ms-animation: none !important;
+			animation: none !important;
+			-moz-transition: none !important;
+			-webkit-transition: none !important;
+			-ms-transition: none !important;
+			transition: none !important;
+		}
+
+/* Type */
+
+	html {
+		font-size: 16pt;
+	}
+
+		@media screen and (max-width: 1680px) {
+
+			html {
+				font-size: 12pt;
+			}
+
+		}
+
+		@media screen and (max-width: 1280px) {
+
+			html {
+				font-size: 11pt;
+			}
+
+		}
+
+		@media screen and (max-width: 360px) {
+
+			html {
+				font-size: 10pt;
+			}
+
+		}
+
+	body {
+		color: var(--main-text-color);
+	}
+
+	body, input, select, textarea {
+		font-family: "Merriweather", Georgia, serif;
+		font-weight: 300;
+		font-size: 1rem;
+		line-height: 2.375;
+	}
+
+	a {
+		-moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+		border-bottom: dotted 1px;
+		text-decoration: none;
+	}
+
+		a:hover {
+			border-bottom-color: transparent;
+		}
+
+	strong, b {
+		font-weight: 600;
+	}
+
+	em, i {
+		font-style: italic;
+	}
+
+	p {
+		text-align: justify;
+		margin: 0 0 2rem 0;
+	}
+
+	/* p, li, dl, dt, dd {
+    	font-size: clamp(1rem, 0.9rem + 0.25vw, 1.125rem); /* 16px -> 18px 
+	}		 */
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-weight: 900;
+		line-height: 1.5;
+		letter-spacing: 0.075em;
+		text-transform: uppercase;
+		margin: 0 0 1rem 0;
+	}
+
+		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+			border-bottom: 0;
+			color: inherit;
+			text-decoration: none;
+		}
+
+	
+	h1 {
+		font-size: clamp(2.5rem, 1.75rem + 3.5vw, 4rem);
+		line-height: 1.1;
+		margin-bottom: 2rem;
+	}
+
+	h2 {
+		font-size: clamp(1.5rem, 1.35rem + 0.5vw, 1.75rem);
+		line-height: 1.3;
+		margin-bottom: 1.5rem;
+	}
+
+	h3 {
+		font-size: clamp(1.1rem, 1rem + 0.5vw, 1.25rem);
+		margin: 0 0 1.5rem 0;
+
+	}
+
+	h4 {
+		font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1rem);
+	}
+
+	h5 {
+		font-size: 0.9rem;
+	}
+
+	h6 {
+		font-size: 0.8rem;
+	}
+
+	sub {
+		font-size: 0.8rem;
+		position: relative;
+		top: 0.5rem;
+	}
+
+	sup {
+		font-size: 0.8rem;
+		position: relative;
+		vertical-align: super;
+		top: -0.5rem;
+	}
+
+	blockquote {
+		border-left: solid 4px;
+		font-style: italic;
+		margin: 0 0 2rem 0;
+		padding: 0.5rem 0 0.5rem 2rem;
+	}
+
+	code {
+		border: solid 2px;
+		font-family: "Courier New", monospace;
+		font-size: 0.9rem;
+		margin: 0 0.25rem;
+		padding: 0.25rem 0.65rem;
+	}
+
+	pre {
+		-webkit-overflow-scrolling: touch;
+		font-family: "Courier New", monospace;
+		font-size: 0.9rem;
+		margin: 0 0 2rem 0;
+	}
+
+		pre code {
+			display: block;
+			line-height: 1.75;
+			padding: 1rem 1.5rem;
+			overflow-x: auto;
+		}
+
+	hr {
+		border: 0;
+		border-bottom: solid 2px;
+		margin: 3rem 0;
+	}
+
+		hr.major {
+			margin: 5rem 0;
+		}
+
+	.align-left {
+		text-align: left;
+	}
+
+	.align-center {
+		text-align: center;
+	}
+
+	.align-right {
+		text-align: right;
+	}
+
+	input, select, textarea {
+		color: var(--main-text-color);
+	}
+
+	a {
+		color: var(--main-text-color);
+		border-bottom-color: rgba(33, 41, 49, 0.5);
+	}
+
+		a:hover {
+			border-bottom-color: transparent;
+			color: var(--hover-color);
+		}
+
+	strong, b {
+		color: var(--main-text-color);
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: var(--main-text-color);
+	}
+
+	blockquote {
+		border-left-color: var(--secondary-color);
+	}
+
+	code {
+		background: rgba(220, 220, 220, 0.25);
+		border-color: var(--secondary-color);
+	}
+
+	hr {
+		border-bottom-color: var(--secondary-color);
+	}
+
+/* Row */
+
+	.row {
+		display: flex;
+		flex-wrap: wrap;
+		box-sizing: border-box;
+		align-items: stretch;
+	}
+
+		.row > * {
+			box-sizing: border-box;
+		}
+
+		.row.gtr-uniform > * > :last-child {
+			margin-bottom: 0;
+		}
+
+		.row.aln-left {
+			justify-content: flex-start;
+		}
+
+		.row.aln-center {
+			justify-content: center;
+		}
+
+		.row.aln-right {
+			justify-content: flex-end;
+		}
+
+		.row.aln-top {
+			align-items: flex-start;
+		}
+
+		.row.aln-middle {
+			align-items: center;
+		}
+
+		.row.aln-bottom {
+			align-items: flex-end;
+		}
+
+		.row > .imp {
+			order: -1;
+		}
+
+		.row > .col-1 {
+			width: 8.33333%;
+		}
+
+		.row > .off-1 {
+			margin-left: 8.33333%;
+		}
+
+		.row > .col-2 {
+			width: 16.66667%;
+		}
+
+		.row > .off-2 {
+			margin-left: 16.66667%;
+		}
+
+		.row > .col-3 {
+			width: 25%;
+		}
+
+		.row > .off-3 {
+			margin-left: 25%;
+		}
+
+		.row > .col-4 {
+			width: 33.33333%;
+		}
+
+		.row > .off-4 {
+			margin-left: 33.33333%;
+		}
+
+		.row > .col-5 {
+			width: 41.66667%;
+		}
+
+		.row > .off-5 {
+			margin-left: 41.66667%;
+		}
+
+		.row > .col-6 {
+			width: 50%;
+		}
+
+		.row > .off-6 {
+			margin-left: 50%;
+		}
+
+		.row > .col-7 {
+			width: 58.33333%;
+		}
+
+		.row > .off-7 {
+			margin-left: 58.33333%;
+		}
+
+		.row > .col-8 {
+			width: 66.66667%;
+		}
+
+		.row > .off-8 {
+			margin-left: 66.66667%;
+		}
+
+		.row > .col-9 {
+			width: 75%;
+		}
+
+		.row > .off-9 {
+			margin-left: 75%;
+		}
+
+		.row > .col-10 {
+			width: 83.33333%;
+		}
+
+		.row > .off-10 {
+			margin-left: 83.33333%;
+		}
+
+		.row > .col-11 {
+			width: 91.66667%;
+		}
+
+		.row > .off-11 {
+			margin-left: 91.66667%;
+		}
+
+		.row > .col-12 {
+			width: 100%;
+		}
+
+		.row > .off-12 {
+			margin-left: 100%;
+		}
+
+		.row.gtr-0 {
+			margin-top: 0;
+			margin-left: 0rem;
+		}
+
+			.row.gtr-0 > * {
+				padding: 0 0 0 0rem;
+			}
+
+			.row.gtr-0.gtr-uniform {
+				margin-top: 0rem;
+			}
+
+				.row.gtr-0.gtr-uniform > * {
+					padding-top: 0rem;
+				}
+
+		.row.gtr-25 {
+			margin-top: 0;
+			margin-left: -0.375rem;
+		}
+
+			.row.gtr-25 > * {
+				padding: 0 0 0 0.375rem;
+			}
+
+			.row.gtr-25.gtr-uniform {
+				margin-top: -0.375rem;
+			}
+
+				.row.gtr-25.gtr-uniform > * {
+					padding-top: 0.375rem;
+				}
+
+		.row.gtr-50 {
+			margin-top: 0;
+			margin-left: -0.75rem;
+		}
+
+			.row.gtr-50 > * {
+				padding: 0 0 0 0.75rem;
+			}
+
+			.row.gtr-50.gtr-uniform {
+				margin-top: -0.75rem;
+			}
+
+				.row.gtr-50.gtr-uniform > * {
+					padding-top: 0.75rem;
+				}
+
+		.row {
+			margin-top: 0;
+			margin-left: -1.5rem;
+		}
+
+			.row > * {
+				padding: 0 0 0 1.5rem;
+			}
+
+			.row.gtr-uniform {
+				margin-top: -1.5rem;
+			}
+
+				.row.gtr-uniform > * {
+					padding-top: 1.5rem;
+				}
+
+		.row.gtr-150 {
+			margin-top: 0;
+			margin-left: -2.25rem;
+		}
+
+			.row.gtr-150 > * {
+				padding: 0 0 0 2.25rem;
+			}
+
+			.row.gtr-150.gtr-uniform {
+				margin-top: -2.25rem;
+			}
+
+				.row.gtr-150.gtr-uniform > * {
+					padding-top: 2.25rem;
+				}
+
+		.row.gtr-200 {
+			margin-top: 0;
+			margin-left: -3rem;
+		}
+
+			.row.gtr-200 > * {
+				padding: 0 0 0 3rem;
+			}
+
+			.row.gtr-200.gtr-uniform {
+				margin-top: -3rem;
+			}
+
+				.row.gtr-200.gtr-uniform > * {
+					padding-top: 3rem;
+				}
+
+		@media screen and (max-width: 1680px) {
+
+			.row {
+				display: flex;
+				flex-wrap: wrap;
+				box-sizing: border-box;
+				align-items: stretch;
+			}
+
+				.row > * {
+					box-sizing: border-box;
+				}
+
+				.row.gtr-uniform > * > :last-child {
+					margin-bottom: 0;
+				}
+
+				.row.aln-left {
+					justify-content: flex-start;
+				}
+
+				.row.aln-center {
+					justify-content: center;
+				}
+
+				.row.aln-right {
+					justify-content: flex-end;
+				}
+
+				.row.aln-top {
+					align-items: flex-start;
+				}
+
+				.row.aln-middle {
+					align-items: center;
+				}
+
+				.row.aln-bottom {
+					align-items: flex-end;
+				}
+
+				.row > .imp-xlarge {
+					order: -1;
+				}
+
+				.row > .col-1-xlarge {
+					width: 8.33333%;
+				}
+
+				.row > .off-1-xlarge {
+					margin-left: 8.33333%;
+				}
+
+				.row > .col-2-xlarge {
+					width: 16.66667%;
+				}
+
+				.row > .off-2-xlarge {
+					margin-left: 16.66667%;
+				}
+
+				.row > .col-3-xlarge {
+					width: 25%;
+				}
+
+				.row > .off-3-xlarge {
+					margin-left: 25%;
+				}
+
+				.row > .col-4-xlarge {
+					width: 33.33333%;
+				}
+
+				.row > .off-4-xlarge {
+					margin-left: 33.33333%;
+				}
+
+				.row > .col-5-xlarge {
+					width: 41.66667%;
+				}
+
+				.row > .off-5-xlarge {
+					margin-left: 41.66667%;
+				}
+
+				.row > .col-6-xlarge {
+					width: 50%;
+				}
+
+				.row > .off-6-xlarge {
+					margin-left: 50%;
+				}
+
+				.row > .col-7-xlarge {
+					width: 58.33333%;
+				}
+
+				.row > .off-7-xlarge {
+					margin-left: 58.33333%;
+				}
+
+				.row > .col-8-xlarge {
+					width: 66.66667%;
+				}
+
+				.row > .off-8-xlarge {
+					margin-left: 66.66667%;
+				}
+
+				.row > .col-9-xlarge {
+					width: 75%;
+				}
+
+				.row > .off-9-xlarge {
+					margin-left: 75%;
+				}
+
+				.row > .col-10-xlarge {
+					width: 83.33333%;
+				}
+
+				.row > .off-10-xlarge {
+					margin-left: 83.33333%;
+				}
+
+				.row > .col-11-xlarge {
+					width: 91.66667%;
+				}
+
+				.row > .off-11-xlarge {
+					margin-left: 91.66667%;
+				}
+
+				.row > .col-12-xlarge {
+					width: 100%;
+				}
+
+				.row > .off-12-xlarge {
+					margin-left: 100%;
+				}
+
+				.row.gtr-0 {
+					margin-top: 0;
+					margin-left: 0rem;
+				}
+
+					.row.gtr-0 > * {
+						padding: 0 0 0 0rem;
+					}
+
+					.row.gtr-0.gtr-uniform {
+						margin-top: 0rem;
+					}
+
+						.row.gtr-0.gtr-uniform > * {
+							padding-top: 0rem;
+						}
+
+				.row.gtr-25 {
+					margin-top: 0;
+					margin-left: -0.375rem;
+				}
+
+					.row.gtr-25 > * {
+						padding: 0 0 0 0.375rem;
+					}
+
+					.row.gtr-25.gtr-uniform {
+						margin-top: -0.375rem;
+					}
+
+						.row.gtr-25.gtr-uniform > * {
+							padding-top: 0.375rem;
+						}
+
+				.row.gtr-50 {
+					margin-top: 0;
+					margin-left: -0.75rem;
+				}
+
+					.row.gtr-50 > * {
+						padding: 0 0 0 0.75rem;
+					}
+
+					.row.gtr-50.gtr-uniform {
+						margin-top: -0.75rem;
+					}
+
+						.row.gtr-50.gtr-uniform > * {
+							padding-top: 0.75rem;
+						}
+
+				.row {
+					margin-top: 0;
+					margin-left: -1.5rem;
+				}
+
+					.row > * {
+						padding: 0 0 0 1.5rem;
+					}
+
+					.row.gtr-uniform {
+						margin-top: -1.5rem;
+					}
+
+						.row.gtr-uniform > * {
+							padding-top: 1.5rem;
+						}
+
+				.row.gtr-150 {
+					margin-top: 0;
+					margin-left: -2.25rem;
+				}
+
+					.row.gtr-150 > * {
+						padding: 0 0 0 2.25rem;
+					}
+
+					.row.gtr-150.gtr-uniform {
+						margin-top: -2.25rem;
+					}
+
+						.row.gtr-150.gtr-uniform > * {
+							padding-top: 2.25rem;
+						}
+
+				.row.gtr-200 {
+					margin-top: 0;
+					margin-left: -3rem;
+				}
+
+					.row.gtr-200 > * {
+						padding: 0 0 0 3rem;
+					}
+
+					.row.gtr-200.gtr-uniform {
+						margin-top: -3rem;
+					}
+
+						.row.gtr-200.gtr-uniform > * {
+							padding-top: 3rem;
+						}
+
+		}
+
+		@media screen and (max-width: 1280px) {
+
+			.row {
+				display: flex;
+				flex-wrap: wrap;
+				box-sizing: border-box;
+				align-items: stretch;
+			}
+
+				.row > * {
+					box-sizing: border-box;
+				}
+
+				.row.gtr-uniform > * > :last-child {
+					margin-bottom: 0;
+				}
+
+				.row.aln-left {
+					justify-content: flex-start;
+				}
+
+				.row.aln-center {
+					justify-content: center;
+				}
+
+				.row.aln-right {
+					justify-content: flex-end;
+				}
+
+				.row.aln-top {
+					align-items: flex-start;
+				}
+
+				.row.aln-middle {
+					align-items: center;
+				}
+
+				.row.aln-bottom {
+					align-items: flex-end;
+				}
+
+				.row > .imp-large {
+					order: -1;
+				}
+
+				.row > .col-1-large {
+					width: 8.33333%;
+				}
+
+				.row > .off-1-large {
+					margin-left: 8.33333%;
+				}
+
+				.row > .col-2-large {
+					width: 16.66667%;
+				}
+
+				.row > .off-2-large {
+					margin-left: 16.66667%;
+				}
+
+				.row > .col-3-large {
+					width: 25%;
+				}
+
+				.row > .off-3-large {
+					margin-left: 25%;
+				}
+
+				.row > .col-4-large {
+					width: 33.33333%;
+				}
+
+				.row > .off-4-large {
+					margin-left: 33.33333%;
+				}
+
+				.row > .col-5-large {
+					width: 41.66667%;
+				}
+
+				.row > .off-5-large {
+					margin-left: 41.66667%;
+				}
+
+				.row > .col-6-large {
+					width: 50%;
+				}
+
+				.row > .off-6-large {
+					margin-left: 50%;
+				}
+
+				.row > .col-7-large {
+					width: 58.33333%;
+				}
+
+				.row > .off-7-large {
+					margin-left: 58.33333%;
+				}
+
+				.row > .col-8-large {
+					width: 66.66667%;
+				}
+
+				.row > .off-8-large {
+					margin-left: 66.66667%;
+				}
+
+				.row > .col-9-large {
+					width: 75%;
+				}
+
+				.row > .off-9-large {
+					margin-left: 75%;
+				}
+
+				.row > .col-10-large {
+					width: 83.33333%;
+				}
+
+				.row > .off-10-large {
+					margin-left: 83.33333%;
+				}
+
+				.row > .col-11-large {
+					width: 91.66667%;
+				}
+
+				.row > .off-11-large {
+					margin-left: 91.66667%;
+				}
+
+				.row > .col-12-large {
+					width: 100%;
+				}
+
+				.row > .off-12-large {
+					margin-left: 100%;
+				}
+
+				.row.gtr-0 {
+					margin-top: 0;
+					margin-left: 0rem;
+				}
+
+					.row.gtr-0 > * {
+						padding: 0 0 0 0rem;
+					}
+
+					.row.gtr-0.gtr-uniform {
+						margin-top: 0rem;
+					}
+
+						.row.gtr-0.gtr-uniform > * {
+							padding-top: 0rem;
+						}
+
+				.row.gtr-25 {
+					margin-top: 0;
+					margin-left: -0.375rem;
+				}
+
+					.row.gtr-25 > * {
+						padding: 0 0 0 0.375rem;
+					}
+
+					.row.gtr-25.gtr-uniform {
+						margin-top: -0.375rem;
+					}
+
+						.row.gtr-25.gtr-uniform > * {
+							padding-top: 0.375rem;
+						}
+
+				.row.gtr-50 {
+					margin-top: 0;
+					margin-left: -0.75rem;
+				}
+
+					.row.gtr-50 > * {
+						padding: 0 0 0 0.75rem;
+					}
+
+					.row.gtr-50.gtr-uniform {
+						margin-top: -0.75rem;
+					}
+
+						.row.gtr-50.gtr-uniform > * {
+							padding-top: 0.75rem;
+						}
+
+				.row {
+					margin-top: 0;
+					margin-left: -1.5rem;
+				}
+
+					.row > * {
+						padding: 0 0 0 1.5rem;
+					}
+
+					.row.gtr-uniform {
+						margin-top: -1.5rem;
+					}
+
+						.row.gtr-uniform > * {
+							padding-top: 1.5rem;
+						}
+
+				.row.gtr-150 {
+					margin-top: 0;
+					margin-left: -2.25rem;
+				}
+
+					.row.gtr-150 > * {
+						padding: 0 0 0 2.25rem;
+					}
+
+					.row.gtr-150.gtr-uniform {
+						margin-top: -2.25rem;
+					}
+
+						.row.gtr-150.gtr-uniform > * {
+							padding-top: 2.25rem;
+						}
+
+				.row.gtr-200 {
+					margin-top: 0;
+					margin-left: -3rem;
+				}
+
+					.row.gtr-200 > * {
+						padding: 0 0 0 3rem;
+					}
+
+					.row.gtr-200.gtr-uniform {
+						margin-top: -3rem;
+					}
+
+						.row.gtr-200.gtr-uniform > * {
+							padding-top: 3rem;
+						}
+
+		}
+
+		@media screen and (max-width: 980px) {
+
+			.row {
+				display: flex;
+				flex-wrap: wrap;
+				box-sizing: border-box;
+				align-items: stretch;
+			}
+
+				.row > * {
+					box-sizing: border-box;
+				}
+
+				.row.gtr-uniform > * > :last-child {
+					margin-bottom: 0;
+				}
+
+				.row.aln-left {
+					justify-content: flex-start;
+				}
+
+				.row.aln-center {
+					justify-content: center;
+				}
+
+				.row.aln-right {
+					justify-content: flex-end;
+				}
+
+				.row.aln-top {
+					align-items: flex-start;
+				}
+
+				.row.aln-middle {
+					align-items: center;
+				}
+
+				.row.aln-bottom {
+					align-items: flex-end;
+				}
+
+				.row > .imp-medium {
+					order: -1;
+				}
+
+				.row > .col-1-medium {
+					width: 8.33333%;
+				}
+
+				.row > .off-1-medium {
+					margin-left: 8.33333%;
+				}
+
+				.row > .col-2-medium {
+					width: 16.66667%;
+				}
+
+				.row > .off-2-medium {
+					margin-left: 16.66667%;
+				}
+
+				.row > .col-3-medium {
+					width: 25%;
+				}
+
+				.row > .off-3-medium {
+					margin-left: 25%;
+				}
+
+				.row > .col-4-medium {
+					width: 33.33333%;
+				}
+
+				.row > .off-4-medium {
+					margin-left: 33.33333%;
+				}
+
+				.row > .col-5-medium {
+					width: 41.66667%;
+				}
+
+				.row > .off-5-medium {
+					margin-left: 41.66667%;
+				}
+
+				.row > .col-6-medium {
+					width: 50%;
+				}
+
+				.row > .off-6-medium {
+					margin-left: 50%;
+				}
+
+				.row > .col-7-medium {
+					width: 58.33333%;
+				}
+
+				.row > .off-7-medium {
+					margin-left: 58.33333%;
+				}
+
+				.row > .col-8-medium {
+					width: 66.66667%;
+				}
+
+				.row > .off-8-medium {
+					margin-left: 66.66667%;
+				}
+
+				.row > .col-9-medium {
+					width: 75%;
+				}
+
+				.row > .off-9-medium {
+					margin-left: 75%;
+				}
+
+				.row > .col-10-medium {
+					width: 83.33333%;
+				}
+
+				.row > .off-10-medium {
+					margin-left: 83.33333%;
+				}
+
+				.row > .col-11-medium {
+					width: 91.66667%;
+				}
+
+				.row > .off-11-medium {
+					margin-left: 91.66667%;
+				}
+
+				.row > .col-12-medium {
+					width: 100%;
+				}
+
+				.row > .off-12-medium {
+					margin-left: 100%;
+				}
+
+				.row.gtr-0 {
+					margin-top: 0;
+					margin-left: 0rem;
+				}
+
+					.row.gtr-0 > * {
+						padding: 0 0 0 0rem;
+					}
+
+					.row.gtr-0.gtr-uniform {
+						margin-top: 0rem;
+					}
+
+						.row.gtr-0.gtr-uniform > * {
+							padding-top: 0rem;
+						}
+
+				.row.gtr-25 {
+					margin-top: 0;
+					margin-left: -0.375rem;
+				}
+
+					.row.gtr-25 > * {
+						padding: 0 0 0 0.375rem;
+					}
+
+					.row.gtr-25.gtr-uniform {
+						margin-top: -0.375rem;
+					}
+
+						.row.gtr-25.gtr-uniform > * {
+							padding-top: 0.375rem;
+						}
+
+				.row.gtr-50 {
+					margin-top: 0;
+					margin-left: -0.75rem;
+				}
+
+					.row.gtr-50 > * {
+						padding: 0 0 0 0.75rem;
+					}
+
+					.row.gtr-50.gtr-uniform {
+						margin-top: -0.75rem;
+					}
+
+						.row.gtr-50.gtr-uniform > * {
+							padding-top: 0.75rem;
+						}
+
+				.row {
+					margin-top: 0;
+					margin-left: -1.5rem;
+				}
+
+					.row > * {
+						padding: 0 0 0 1.5rem;
+					}
+
+					.row.gtr-uniform {
+						margin-top: -1.5rem;
+					}
+
+						.row.gtr-uniform > * {
+							padding-top: 1.5rem;
+						}
+
+				.row.gtr-150 {
+					margin-top: 0;
+					margin-left: -2.25rem;
+				}
+
+					.row.gtr-150 > * {
+						padding: 0 0 0 2.25rem;
+					}
+
+					.row.gtr-150.gtr-uniform {
+						margin-top: -2.25rem;
+					}
+
+						.row.gtr-150.gtr-uniform > * {
+							padding-top: 2.25rem;
+						}
+
+				.row.gtr-200 {
+					margin-top: 0;
+					margin-left: -3rem;
+				}
+
+					.row.gtr-200 > * {
+						padding: 0 0 0 3rem;
+					}
+
+					.row.gtr-200.gtr-uniform {
+						margin-top: -3rem;
+					}
+
+						.row.gtr-200.gtr-uniform > * {
+							padding-top: 3rem;
+						}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			.row {
+				display: flex;
+				flex-wrap: wrap;
+				box-sizing: border-box;
+				align-items: stretch;
+			}
+
+				.row > * {
+					box-sizing: border-box;
+				}
+
+				.row.gtr-uniform > * > :last-child {
+					margin-bottom: 0;
+				}
+
+				.row.aln-left {
+					justify-content: flex-start;
+				}
+
+				.row.aln-center {
+					justify-content: center;
+				}
+
+				.row.aln-right {
+					justify-content: flex-end;
+				}
+
+				.row.aln-top {
+					align-items: flex-start;
+				}
+
+				.row.aln-middle {
+					align-items: center;
+				}
+
+				.row.aln-bottom {
+					align-items: flex-end;
+				}
+
+				.row > .imp-small {
+					order: -1;
+				}
+
+				.row > .col-1-small {
+					width: 8.33333%;
+				}
+
+				.row > .off-1-small {
+					margin-left: 8.33333%;
+				}
+
+				.row > .col-2-small {
+					width: 16.66667%;
+				}
+
+				.row > .off-2-small {
+					margin-left: 16.66667%;
+				}
+
+				.row > .col-3-small {
+					width: 25%;
+				}
+
+				.row > .off-3-small {
+					margin-left: 25%;
+				}
+
+				.row > .col-4-small {
+					width: 33.33333%;
+				}
+
+				.row > .off-4-small {
+					margin-left: 33.33333%;
+				}
+
+				.row > .col-5-small {
+					width: 41.66667%;
+				}
+
+				.row > .off-5-small {
+					margin-left: 41.66667%;
+				}
+
+				.row > .col-6-small {
+					width: 50%;
+				}
+
+				.row > .off-6-small {
+					margin-left: 50%;
+				}
+
+				.row > .col-7-small {
+					width: 58.33333%;
+				}
+
+				.row > .off-7-small {
+					margin-left: 58.33333%;
+				}
+
+				.row > .col-8-small {
+					width: 66.66667%;
+				}
+
+				.row > .off-8-small {
+					margin-left: 66.66667%;
+				}
+
+				.row > .col-9-small {
+					width: 75%;
+				}
+
+				.row > .off-9-small {
+					margin-left: 75%;
+				}
+
+				.row > .col-10-small {
+					width: 83.33333%;
+				}
+
+				.row > .off-10-small {
+					margin-left: 83.33333%;
+				}
+
+				.row > .col-11-small {
+					width: 91.66667%;
+				}
+
+				.row > .off-11-small {
+					margin-left: 91.66667%;
+				}
+
+				.row > .col-12-small {
+					width: 100%;
+				}
+
+				.row > .off-12-small {
+					margin-left: 100%;
+				}
+
+				.row.gtr-0 {
+					margin-top: 0;
+					margin-left: 0rem;
+				}
+
+					.row.gtr-0 > * {
+						padding: 0 0 0 0rem;
+					}
+
+					.row.gtr-0.gtr-uniform {
+						margin-top: 0rem;
+					}
+
+						.row.gtr-0.gtr-uniform > * {
+							padding-top: 0rem;
+						}
+
+				.row.gtr-25 {
+					margin-top: 0;
+					margin-left: -0.375rem;
+				}
+
+					.row.gtr-25 > * {
+						padding: 0 0 0 0.375rem;
+					}
+
+					.row.gtr-25.gtr-uniform {
+						margin-top: -0.375rem;
+					}
+
+						.row.gtr-25.gtr-uniform > * {
+							padding-top: 0.375rem;
+						}
+
+				.row.gtr-50 {
+					margin-top: 0;
+					margin-left: -0.75rem;
+				}
+
+					.row.gtr-50 > * {
+						padding: 0 0 0 0.75rem;
+					}
+
+					.row.gtr-50.gtr-uniform {
+						margin-top: -0.75rem;
+					}
+
+						.row.gtr-50.gtr-uniform > * {
+							padding-top: 0.75rem;
+						}
+
+				.row {
+					margin-top: 0;
+					margin-left: -1.5rem;
+				}
+
+					.row > * {
+						padding: 0 0 0 1.5rem;
+					}
+
+					.row.gtr-uniform {
+						margin-top: -1.5rem;
+					}
+
+						.row.gtr-uniform > * {
+							padding-top: 1.5rem;
+						}
+
+				.row.gtr-150 {
+					margin-top: 0;
+					margin-left: -2.25rem;
+				}
+
+					.row.gtr-150 > * {
+						padding: 0 0 0 2.25rem;
+					}
+
+					.row.gtr-150.gtr-uniform {
+						margin-top: -2.25rem;
+					}
+
+						.row.gtr-150.gtr-uniform > * {
+							padding-top: 2.25rem;
+						}
+
+				.row.gtr-200 {
+					margin-top: 0;
+					margin-left: -3rem;
+				}
+
+					.row.gtr-200 > * {
+						padding: 0 0 0 3rem;
+					}
+
+					.row.gtr-200.gtr-uniform {
+						margin-top: -3rem;
+					}
+
+						.row.gtr-200.gtr-uniform > * {
+							padding-top: 3rem;
+						}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			.row {
+				display: flex;
+				flex-wrap: wrap;
+				box-sizing: border-box;
+				align-items: stretch;
+			}
+
+				.row > * {
+					box-sizing: border-box;
+				}
+
+				.row.gtr-uniform > * > :last-child {
+					margin-bottom: 0;
+				}
+
+				.row.aln-left {
+					justify-content: flex-start;
+				}
+
+				.row.aln-center {
+					justify-content: center;
+				}
+
+				.row.aln-right {
+					justify-content: flex-end;
+				}
+
+				.row.aln-top {
+					align-items: flex-start;
+				}
+
+				.row.aln-middle {
+					align-items: center;
+				}
+
+				.row.aln-bottom {
+					align-items: flex-end;
+				}
+
+				.row > .imp-xsmall {
+					order: -1;
+				}
+
+				.row > .col-1-xsmall {
+					width: 8.33333%;
+				}
+
+				.row > .off-1-xsmall {
+					margin-left: 8.33333%;
+				}
+
+				.row > .col-2-xsmall {
+					width: 16.66667%;
+				}
+
+				.row > .off-2-xsmall {
+					margin-left: 16.66667%;
+				}
+
+				.row > .col-3-xsmall {
+					width: 25%;
+				}
+
+				.row > .off-3-xsmall {
+					margin-left: 25%;
+				}
+
+				.row > .col-4-xsmall {
+					width: 33.33333%;
+				}
+
+				.row > .off-4-xsmall {
+					margin-left: 33.33333%;
+				}
+
+				.row > .col-5-xsmall {
+					width: 41.66667%;
+				}
+
+				.row > .off-5-xsmall {
+					margin-left: 41.66667%;
+				}
+
+				.row > .col-6-xsmall {
+					width: 50%;
+				}
+
+				.row > .off-6-xsmall {
+					margin-left: 50%;
+				}
+
+				.row > .col-7-xsmall {
+					width: 58.33333%;
+				}
+
+				.row > .off-7-xsmall {
+					margin-left: 58.33333%;
+				}
+
+				.row > .col-8-xsmall {
+					width: 66.66667%;
+				}
+
+				.row > .off-8-xsmall {
+					margin-left: 66.66667%;
+				}
+
+				.row > .col-9-xsmall {
+					width: 75%;
+				}
+
+				.row > .off-9-xsmall {
+					margin-left: 75%;
+				}
+
+				.row > .col-10-xsmall {
+					width: 83.33333%;
+				}
+
+				.row > .off-10-xsmall {
+					margin-left: 83.33333%;
+				}
+
+				.row > .col-11-xsmall {
+					width: 91.66667%;
+				}
+
+				.row > .off-11-xsmall {
+					margin-left: 91.66667%;
+				}
+
+				.row > .col-12-xsmall {
+					width: 100%;
+				}
+
+				.row > .off-12-xsmall {
+					margin-left: 100%;
+				}
+
+				.row.gtr-0 {
+					margin-top: 0;
+					margin-left: 0rem;
+				}
+
+					.row.gtr-0 > * {
+						padding: 0 0 0 0rem;
+					}
+
+					.row.gtr-0.gtr-uniform {
+						margin-top: 0rem;
+					}
+
+						.row.gtr-0.gtr-uniform > * {
+							padding-top: 0rem;
+						}
+
+				.row.gtr-25 {
+					margin-top: 0;
+					margin-left: -0.375rem;
+				}
+
+					.row.gtr-25 > * {
+						padding: 0 0 0 0.375rem;
+					}
+
+					.row.gtr-25.gtr-uniform {
+						margin-top: -0.375rem;
+					}
+
+						.row.gtr-25.gtr-uniform > * {
+							padding-top: 0.375rem;
+						}
+
+				.row.gtr-50 {
+					margin-top: 0;
+					margin-left: -0.75rem;
+				}
+
+					.row.gtr-50 > * {
+						padding: 0 0 0 0.75rem;
+					}
+
+					.row.gtr-50.gtr-uniform {
+						margin-top: -0.75rem;
+					}
+
+						.row.gtr-50.gtr-uniform > * {
+							padding-top: 0.75rem;
+						}
+
+				.row {
+					margin-top: 0;
+					margin-left: -1.5rem;
+				}
+
+					.row > * {
+						padding: 0 0 0 1.5rem;
+					}
+
+					.row.gtr-uniform {
+						margin-top: -1.5rem;
+					}
+
+						.row.gtr-uniform > * {
+							padding-top: 1.5rem;
+						}
+
+				.row.gtr-150 {
+					margin-top: 0;
+					margin-left: -2.25rem;
+				}
+
+					.row.gtr-150 > * {
+						padding: 0 0 0 2.25rem;
+					}
+
+					.row.gtr-150.gtr-uniform {
+						margin-top: -2.25rem;
+					}
+
+						.row.gtr-150.gtr-uniform > * {
+							padding-top: 2.25rem;
+						}
+
+				.row.gtr-200 {
+					margin-top: 0;
+					margin-left: -3rem;
+				}
+
+					.row.gtr-200 > * {
+						padding: 0 0 0 3rem;
+					}
+
+					.row.gtr-200.gtr-uniform {
+						margin-top: -3rem;
+					}
+
+						.row.gtr-200.gtr-uniform > * {
+							padding-top: 3rem;
+						}
+
+		}
+
+		@media screen and (max-width: 360px) {
+
+			.row {
+				display: flex;
+				flex-wrap: wrap;
+				box-sizing: border-box;
+				align-items: stretch;
+			}
+
+				.row > * {
+					box-sizing: border-box;
+				}
+
+				.row.gtr-uniform > * > :last-child {
+					margin-bottom: 0;
+				}
+
+				.row.aln-left {
+					justify-content: flex-start;
+				}
+
+				.row.aln-center {
+					justify-content: center;
+				}
+
+				.row.aln-right {
+					justify-content: flex-end;
+				}
+
+				.row.aln-top {
+					align-items: flex-start;
+				}
+
+				.row.aln-middle {
+					align-items: center;
+				}
+
+				.row.aln-bottom {
+					align-items: flex-end;
+				}
+
+				.row > .imp-xxsmall {
+					order: -1;
+				}
+
+				.row > .col-1-xxsmall {
+					width: 8.33333%;
+				}
+
+				.row > .off-1-xxsmall {
+					margin-left: 8.33333%;
+				}
+
+				.row > .col-2-xxsmall {
+					width: 16.66667%;
+				}
+
+				.row > .off-2-xxsmall {
+					margin-left: 16.66667%;
+				}
+
+				.row > .col-3-xxsmall {
+					width: 25%;
+				}
+
+				.row > .off-3-xxsmall {
+					margin-left: 25%;
+				}
+
+				.row > .col-4-xxsmall {
+					width: 33.33333%;
+				}
+
+				.row > .off-4-xxsmall {
+					margin-left: 33.33333%;
+				}
+
+				.row > .col-5-xxsmall {
+					width: 41.66667%;
+				}
+
+				.row > .off-5-xxsmall {
+					margin-left: 41.66667%;
+				}
+
+				.row > .col-6-xxsmall {
+					width: 50%;
+				}
+
+				.row > .off-6-xxsmall {
+					margin-left: 50%;
+				}
+
+				.row > .col-7-xxsmall {
+					width: 58.33333%;
+				}
+
+				.row > .off-7-xxsmall {
+					margin-left: 58.33333%;
+				}
+
+				.row > .col-8-xxsmall {
+					width: 66.66667%;
+				}
+
+				.row > .off-8-xxsmall {
+					margin-left: 66.66667%;
+				}
+
+				.row > .col-9-xxsmall {
+					width: 75%;
+				}
+
+				.row > .off-9-xxsmall {
+					margin-left: 75%;
+				}
+
+				.row > .col-10-xxsmall {
+					width: 83.33333%;
+				}
+
+				.row > .off-10-xxsmall {
+					margin-left: 83.33333%;
+				}
+
+				.row > .col-11-xxsmall {
+					width: 91.66667%;
+				}
+
+				.row > .off-11-xxsmall {
+					margin-left: 91.66667%;
+				}
+
+				.row > .col-12-xxsmall {
+					width: 100%;
+				}
+
+				.row > .off-12-xxsmall {
+					margin-left: 100%;
+				}
+
+				.row.gtr-0 {
+					margin-top: 0;
+					margin-left: 0rem;
+				}
+
+					.row.gtr-0 > * {
+						padding: 0 0 0 0rem;
+					}
+
+					.row.gtr-0.gtr-uniform {
+						margin-top: 0rem;
+					}
+
+						.row.gtr-0.gtr-uniform > * {
+							padding-top: 0rem;
+						}
+
+				.row.gtr-25 {
+					margin-top: 0;
+					margin-left: -0.375rem;
+				}
+
+					.row.gtr-25 > * {
+						padding: 0 0 0 0.375rem;
+					}
+
+					.row.gtr-25.gtr-uniform {
+						margin-top: -0.375rem;
+					}
+
+						.row.gtr-25.gtr-uniform > * {
+							padding-top: 0.375rem;
+						}
+
+				.row.gtr-50 {
+					margin-top: 0;
+					margin-left: -0.75rem;
+				}
+
+					.row.gtr-50 > * {
+						padding: 0 0 0 0.75rem;
+					}
+
+					.row.gtr-50.gtr-uniform {
+						margin-top: -0.75rem;
+					}
+
+						.row.gtr-50.gtr-uniform > * {
+							padding-top: 0.75rem;
+						}
+
+				.row {
+					margin-top: 0;
+					margin-left: -1.5rem;
+				}
+
+					.row > * {
+						padding: 0 0 0 1.5rem;
+					}
+
+					.row.gtr-uniform {
+						margin-top: -1.5rem;
+					}
+
+						.row.gtr-uniform > * {
+							padding-top: 1.5rem;
+						}
+
+				.row.gtr-150 {
+					margin-top: 0;
+					margin-left: -2.25rem;
+				}
+
+					.row.gtr-150 > * {
+						padding: 0 0 0 2.25rem;
+					}
+
+					.row.gtr-150.gtr-uniform {
+						margin-top: -2.25rem;
+					}
+
+						.row.gtr-150.gtr-uniform > * {
+							padding-top: 2.25rem;
+						}
+
+				.row.gtr-200 {
+					margin-top: 0;
+					margin-left: -3rem;
+				}
+
+					.row.gtr-200 > * {
+						padding: 0 0 0 3rem;
+					}
+
+					.row.gtr-200.gtr-uniform {
+						margin-top: -3rem;
+					}
+
+						.row.gtr-200.gtr-uniform > * {
+							padding-top: 3rem;
+						}
+
+		}
+
+/* Box Class */
+
+	.box {
+		border: solid 2px;
+		margin: 2rem 0rem;
+		padding: 1.5rem;
+	}
+
+		.box > :last-child,
+		.box > :last-child > :last-child,
+		.box > :last-child > :last-child > :last-child {
+			margin-bottom: 0;
+		}
+
+		.box.alt {
+			border: 0;
+			border-radius: 0;
+			padding: 0;
+		}
+
+	.box {
+		border-color: var(--secondary-color);
+	}
+
+/* Button */
+
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
+	.button {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		-moz-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+		-webkit-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+		-ms-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+		transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+		border: 0;
+		border-radius: 0;
+		cursor: pointer;
+		display: inline-block;
+		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-size: 0.8rem;
+		font-weight: 900;
+		letter-spacing: 0.075em;
+		height: 3rem;
+		line-height: 3rem;
+		padding: 0 2rem;
+		text-align: center;
+		text-decoration: none;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
+
+		input[type="submit"].icon:before,
+		input[type="reset"].icon:before,
+		input[type="button"].icon:before,
+		button.icon:before,
+		.button.icon:before {
+			margin-right: 0.5rem;
+		}
+
+		input[type="submit"].icon.solo,
+		input[type="reset"].icon.solo,
+		input[type="button"].icon.solo,
+		button.icon.solo,
+		.button.icon.solo {
+			position: relative;
+			width: 4rem;
+			height: 4rem;
+			line-height: 4rem;
+			border-radius: 4rem;
+			text-indent: 4rem;
+			overflow: hidden;
+			padding: 0;
+			white-space: nowrap;
+		}
+
+			input[type="submit"].icon.solo:before,
+			input[type="reset"].icon.solo:before,
+			input[type="button"].icon.solo:before,
+			button.icon.solo:before,
+			.button.icon.solo:before {
+				position: absolute;
+				display: block;
+				top: 0;
+				left: 0;
+				width: inherit;
+				height: inherit;
+				line-height: inherit;
+				font-size: 1.25rem;
+				margin-right: 0;
+				text-align: center;
+				text-indent: 0;
+			}
+
+		input[type="submit"].fit,
+		input[type="reset"].fit,
+		input[type="button"].fit,
+		button.fit,
+		.button.fit {
+			width: 100%;
+		}
+
+		input[type="submit"].small,
+		input[type="reset"].small,
+		input[type="button"].small,
+		button.small,
+		.button.small {
+			font-size: 0.7rem;
+			height: 2.5rem;
+			line-height: 2.5rem;
+			padding: 0 1.5rem;
+		}
+
+		input[type="submit"].large,
+		input[type="reset"].large,
+		input[type="button"].large,
+		button.large,
+		.button.large {
+			font-size: 0.9rem;
+			height: 3.5rem;
+			line-height: 3.5rem;
+			padding: 0 2.75rem;
+		}
+
+		@media screen and (max-width: 980px) {
+
+			input[type="submit"],
+			input[type="reset"],
+			input[type="button"],
+			button,
+			.button {
+				font-size: 0.9rem;
+				height: 3.25rem;
+				line-height: 3.25rem;
+			}
+
+				input[type="submit"].large,
+				input[type="reset"].large,
+				input[type="button"].large,
+				button.large,
+				.button.large {
+					font-size: 1rem;
+					height: 3.75rem;
+					line-height: 3.75rem;
+				}
+
+		}
+
+		input[type="submit"].disabled, input[type="submit"]:disabled,
+		input[type="reset"].disabled,
+		input[type="reset"]:disabled,
+		input[type="button"].disabled,
+		input[type="button"]:disabled,
+		button.disabled,
+		button:disabled,
+		.button.disabled,
+		.button:disabled {
+			pointer-events: none;
+			opacity: 0.25;
+		}
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
+	.button {
+		background-color: transparent;
+		box-shadow: inset 0 0 0 2px var(--main-text-color);
+		color: var(--main-text-color);
+	}
+
+		input[type="submit"]:hover,
+		input[type="reset"]:hover,
+		input[type="button"]:hover,
+		button:hover,
+		.button:hover {
+			box-shadow: inset 0 0 0 2px var(--hover-color);
+			color: var(--hover-color);
+		}
+
+		input[type="submit"].primary,
+		input[type="reset"].primary,
+		input[type="button"].primary,
+		button.primary,
+		.button.primary {
+			background-color: var(--main-text-color);
+			box-shadow: none;
+			color: var(--main-background-color);
+		}
+
+			input[type="submit"].primary:hover,
+			input[type="reset"].primary:hover,
+			input[type="button"].primary:hover,
+			button.primary:hover,
+			.button.primary:hover {
+				background-color: var(--hover-color);
+			}
+
+/* Form */
+
+	form {
+		margin: 0 0 2rem 0;
+	}
+
+		form > :last-child {
+			margin-bottom: 0;
+		}
+
+		form > .fields {
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-wrap: wrap;
+			-webkit-flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			width: calc(100% + 3rem);
+			margin: -1.5rem 0 2rem -1.5rem;
+		}
+
+			form > .fields > .field {
+				-moz-flex-grow: 0;
+				-webkit-flex-grow: 0;
+				-ms-flex-grow: 0;
+				flex-grow: 0;
+				-moz-flex-shrink: 0;
+				-webkit-flex-shrink: 0;
+				-ms-flex-shrink: 0;
+				flex-shrink: 0;
+				padding: 1.5rem 0 0 1.5rem;
+				width: calc(100% - 1.5rem);
+			}
+
+				form > .fields > .field.half {
+					width: calc(50% - 0.75rem);
+				}
+
+				form > .fields > .field.third {
+					width: calc(100%/3 - 0.5rem);
+				}
+
+				form > .fields > .field.quarter {
+					width: calc(25% - 0.375rem);
+				}
+
+		@media screen and (max-width: 480px) {
+
+			form > .fields {
+				width: calc(100% + 3rem);
+				margin: -1.5rem 0 2rem -1.5rem;
+			}
+
+				form > .fields > .field {
+					padding: 1.5rem 0 0 1.5rem;
+					width: calc(100% - 1.5rem);
+				}
+
+					form > .fields > .field.half {
+						width: calc(100% - 1.5rem);
+					}
+
+					form > .fields > .field.third {
+						width: calc(100% - 1.5rem);
+					}
+
+					form > .fields > .field.quarter {
+						width: calc(100% - 1.5rem);
+					}
+
+		}
+
+	label {
+		display: block;
+		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-weight: 900;
+		line-height: 1.5;
+		letter-spacing: 0.075em;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		margin: 0 0 0.75rem 0;
+	}
+
+		@media screen and (max-width: 980px) {
+
+			label {
+				font-size: 0.9rem;
+			}
+
+		}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select,
+	textarea {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		background: transparent;
+		border-radius: 0;
+		border: solid 2px;
+		color: inherit;
+		display: block;
+		outline: 0;
+		padding: 0 1rem;
+		text-decoration: none;
+		width: 100%;
+	}
+
+		input[type="text"]:invalid,
+		input[type="password"]:invalid,
+		input[type="email"]:invalid,
+		select:invalid,
+		textarea:invalid {
+			box-shadow: none;
+		}
+
+	select {
+		background-size: 1.25rem;
+		background-repeat: no-repeat;
+		background-position: calc(100% - 1rem) center;
+		height: 3rem;
+		padding-right: 3rem;
+		text-overflow: ellipsis;
+	}
+
+		select:focus::-ms-value {
+			background-color: transparent;
+		}
+
+		select::-ms-expand {
+			display: none;
+		}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select {
+		height: 3rem;
+	}
+
+	textarea {
+		padding: 0.75rem 1rem;
+	}
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		display: block;
+		float: left;
+		margin-right: -2rem;
+		opacity: 0;
+		width: 1rem;
+		z-index: -1;
+	}
+
+		input[type="checkbox"] + label,
+		input[type="radio"] + label {
+			text-decoration: none;
+			cursor: pointer;
+			display: inline-block;
+			font-size: 1rem;
+			letter-spacing: 0;
+			font-family: "Merriweather", Georgia, serif;
+			text-transform: none;
+			font-weight: 300;
+			padding-left: 2.8rem;
+			padding-right: 1rem;
+			position: relative;
+		}
+
+			input[type="checkbox"] + label:before,
+			input[type="radio"] + label:before {
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: antialiased;
+				display: inline-block;
+				font-style: normal;
+				font-variant: normal;
+				text-rendering: auto;
+				line-height: 1;
+				text-transform: none !important;
+				font-family: 'Font Awesome 5 Free';
+				font-weight: 900;
+			}
+
+			input[type="checkbox"] + label:before,
+			input[type="radio"] + label:before {
+				border-radius: 0;
+				border: solid 2px;
+				content: '';
+				display: inline-block;
+				font-size: 0.8rem;
+				height: 1.8rem;
+				left: 0;
+				line-height: 1.65rem;
+				position: absolute;
+				text-align: center;
+				top: -0.125rem;
+				width: 1.8rem;
+			}
+
+		input[type="checkbox"]:checked + label:before,
+		input[type="radio"]:checked + label:before {
+			content: '\f00c';
+		}
+
+	input[type="checkbox"] + label:before {
+		border-radius: 0;
+	}
+
+	input[type="radio"] + label:before {
+		border-radius: 100%;
+	}
+
+	::-webkit-input-placeholder {
+		opacity: 1.0;
+	}
+
+	:-moz-placeholder {
+		opacity: 1.0;
+	}
+
+	::-moz-placeholder {
+		opacity: 1.0;
+	}
+
+	:-ms-input-placeholder {
+		opacity: 1.0;
+	}
+
+	label {
+		color: var(--main-text-color);
+	}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select,
+	textarea {
+		border-color: var(--secondary-color);
+	}
+
+		input[type="text"]:focus,
+		input[type="password"]:focus,
+		input[type="email"]:focus,
+		select:focus,
+		textarea:focus {
+			border-color: var(--hover-color);
+		}
+
+	select {
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23eeeeee' /%3E%3C/svg%3E");
+	}
+
+		select option {
+			background-color: var(--main-background-color);
+			color: var(--main-text-color);
+		}
+
+	.select-wrapper:before {
+		color: var(--secondary-color);
+	}
+
+	input[type="checkbox"] + label,
+	input[type="radio"] + label {
+		color: var(--main-text-color);
+	}
+
+		input[type="checkbox"] + label:before,
+		input[type="radio"] + label:before {
+			border-color: var(--secondary-color);
+		}
+
+	input[type="checkbox"]:checked + label:before,
+	input[type="radio"]:checked + label:before {
+		background-color: var(--main-text-color);
+		border-color: var(--main-text-color);
+		color: var(--main-background-color);
+	}
+
+	input[type="checkbox"]:focus + label:before,
+	input[type="radio"]:focus + label:before {
+		border-color: var(--hover-color);
+	}
+
+	::-webkit-input-placeholder {
+		color: #909498 !important;
+	}
+
+	:-moz-placeholder {
+		color: #909498 !important;
+	}
+
+	::-moz-placeholder {
+		color: #909498 !important;
+	}
+
+	:-ms-input-placeholder {
+		color: #909498 !important;
+	}
+
+	.formerize-placeholder {
+		color: #909498 !important;
+	}
+
+/* Icon */
+
+	.icon {
+		text-decoration: none;
+		border-bottom: none;
+		position: relative;
+	}
+
+		.icon:before {
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			display: inline-block;
+			font-style: normal;
+			font-variant: normal;
+			text-rendering: auto;
+			line-height: 1;
+			text-transform: none !important;
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 400;
+		}
+
+		.icon > .label {
+			display: none;
+		}
+
+		.icon:before {
+			line-height: inherit;
+		}
+
+		.icon.solid:before {
+			font-weight: 900;
+		}
+
+		.icon.brands:before {
+			font-family: 'Font Awesome 5 Brands';
+		}
+
+/* Image */
+
+	.image {
+		border: 0;
+		display: inline-block;
+		position: relative;
+	}
+
+		.image img {
+			display: block;
+		}
+
+		.image.left, .image.right {
+			max-width: 50%;
+			height: auto;
+		}
+
+			.image.left img, .image.right img {
+				width: 100%;
+			}
+
+			.image.left.smaller25, .image.right.smaller25 {
+				max-width: 25%;
+			}
+
+			.image.left.larger75, .image.right.larger75 {
+				max-width: 75%;
+			}
+
+
+		.image.left {
+			float: left;
+			margin: 0 2rem 2rem 0;
+			top: 0.75rem;
+		}
+
+		.image.right {
+			float: right;
+			margin: 0 0 2rem 2rem;
+			top: 0.75rem;
+		}
+
+		.image.bar {
+			/* Sizing: Full width and about 40% of the viewport height */
+            width: 100%;
+            min-height: 40vh; /* Adjust this value to make it taller or shorter */
+
+            /* Fallback in case the image fails to load */
+            background-color: #4682B4; /* Steel Blue */
+            
+            /* 2. Fix the background image relative to the viewport */
+            /* background-attachment: fixed; */
+
+            /* 3. Position and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            /* --- For the Text Overlay --- */
+            /* 4. Use relative positioning for the overlay */
+            /* position: relative; */
+            
+            /* 5. Use Flexbox to center the content vertically and horizontally */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			padding-left: 0px;
+			padding-right: 0px;
+			margin-left: 0px;
+		}
+
+		.image.bar.parallax {
+            background-attachment: fixed;
+			
+		}
+
+		.image.bar .title {
+            color: var(--main-background-color);
+            font-size: 3rem; /* Large, bold title */
+            font-weight: bold;
+            text-align: center;
+            z-index: 2; /* Ensures text is on top of the overlay */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Makes text pop */
+            padding: 0 20px; /* Prevents text from touching screen edges */
+        }
+
+
+		.image.fit {
+			display: block;
+			margin: 2.5rem 0;
+			width: 100%;
+		}
+
+			.image.fit:first-child {
+				margin-top: 0;
+			}
+
+			.image.fit img {
+				width: 100%;
+			}
+
+		image.block {
+			display: block;
+			margin: 2.5rem 0;
+			width: 100%;
+		}
+
+			.image.block:first-child {
+				margin-top: 0;
+			}
+
+			.image.block img {
+				width: 100%;
+			}
+		
+
+		.image.main {
+			display: block;
+			margin: 4rem 0;
+			width: 100%;
+		}
+
+			.image.main:first-child {
+				margin-top: 0;
+			}
+
+			.image.main img {
+				width: 100%;
+			}
+
+		@media screen and (max-width: 736px) {
+
+			.image.fit {
+				margin: 2rem 0;
+			}
+
+			.image.main {
+				margin: 2rem 0;
+			}
+
+		}
+
+	a.image {
+		overflow: hidden;
+	}
+
+		a.image img {
+			-moz-transition: -moz-transform 0.2s ease-out;
+			-webkit-transition: -webkit-transform 0.2s ease-out;
+			-ms-transition: -ms-transform 0.2s ease-out;
+			transition: transform 0.2s ease-out;
+		}
+
+		a.image:hover img {
+			-moz-transform: scale(1.05);
+			-webkit-transform: scale(1.05);
+			-ms-transform: scale(1.05);
+			transform: scale(1.05);
+		}
+
+
+	.gallery-grid-3x3-container {
+		display: flex;
+		justify-content: center;
+	}
+
+	/* Container for the 3x3 grid */
+	.gallery-grid-3x3 {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
+		gap: 10px; 
+	}
+
+	/* Each item in the grid - this will be our square container */
+	.gallery-item {
+		position: relative; /* For potential future absolute positioned elements inside, not strictly needed for this image setup */
+		width: 100%;      /* Takes the full width of its grid column */
+		aspect-ratio: 1 / 1; /* <<< This is the magic for making it square! (Height will equal width) */
+		overflow: hidden;    /* Ensures any part of the image that 'object-fit: cover' might push out of bounds is clipped */
+		background-color: #f0f0f0; /* Optional: A light background for cells if images don't load or have transparency */
+	}
+	
+
+	/* The image itself within the square item */
+	.gallery-item img {
+		display: block;  /* Removes any extra space below inline images */
+		width: 100%;     /* Make the image fill the width of the .gallery-item */
+		height: 100%;    /* Make the image fill the height of the .gallery-item */
+		object-fit: cover; /* <<< This is the other piece of magic! */
+						/* It scales the image to maintain its aspect ratio while
+							filling the element's entire content box. If the image's
+							aspect ratio doesn't match the square box, the image
+							will be clipped to fit (either width or height). */
+		object-position: center center; /* (Default) Ensures the image is centered before being cropped.
+										You can change this (e.g., 'center top', '25% 50%')
+										if you want to control which part of a non-square
+										image is prioritized. */
+	}
+
+	.gallery-item .text-overlay {
+		position: absolute; /* Positions the overlay relative to .gallery-item */
+		top: 0;             /* Starts the overlay at the top of the .gallery-item */
+		left: 0;            /* Starts the overlay at the left of the .gallery-item */
+		width: 100%;        /* Makes the overlay take the full width of .gallery-item */
+		height: 100%;       /* Makes the overlay take the full height of .gallery-item */
+
+		/* --- For centering the text content within the overlay --- */
+		display: flex;
+		flex-direction: column; /* Stacks children (like h2 and p) vertically */
+		justify-content: center; /* Vertically centers the text block */
+		align-items: center;   /* Horizontally centers the text block */
+		/* --- End of centering styles --- */
+
+		/* --- Text appearance --- */
+		color: white;         /* Example: white text */
+		text-align: center;   /* Centers the lines of text if they wrap */
+		padding: 15px;        /* Adds some space around the text inside the overlay */
+		box-sizing: border-box; /* Ensures padding doesn't make the overlay bigger than 100% width/height */
+		z-index: 1;           
+	}
+
+		/* --- Optional: Example to show text overlay on hover of the gallery item --- */
+		/*
+		.gallery-item:hover .text-overlay {
+			opacity: 1;
+		}
+		*/
+
+	/* Style for any text elements inside the overlay, if needed */
+	.gallery-item .text-overlay h2 {
+		margin-top: 0;
+		margin-bottom: 0.5em; /* Space below the h2 if there's a p tag */
+		color: white;
+		font-size: clamp(1.1rem, 0.8rem + 1vw, 1.5rem);
+	}
+
+	.gallery-item .text-overlay p {
+		margin: 0;
+		font-size: 0.9em; /* Example smaller font for descriptive text */
+		color: white;
+	}
+
+	/* @media (max-width: 845px) {
+    	.gallery-grid-3x3 {
+        	grid-template-columns: repeat(2, 1fr); 
+			gap: 10px !important;
+    	}
+	} */
+
+	/* For Mobile Phones (screens LESS than 600px wide) */
+	/* @media (max-width: 530px) {
+		.gallery-grid-3x3 {
+			width: 100% !important;
+			gap: 10px !important;
+		}
+		.gallery-item .text-overlay h2 {
+			font-size: 0.8em;
+	}
+	} */
+
+	@media (max-width: 600px) {
+		.gallery-grid-3x3 {
+			/* grid-template-columns: 1fr;   */
+			grid-template-columns: repeat(2, 1fr); 
+		}
+		.gallery-item .text-overlay h2 {
+			/* font-size: 0.8em; */
+		}
+	.gallery-item:last-child:nth-child(odd) {
+		grid-column: 1 / -1;
+		justify-self: center;
+		width: 50%;
+		}
+	}
+
+.title-with-underline {
+    position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
+    padding-bottom: 15px;  
+    margin-bottom: 20px;   
+    text-align: center;    
+}
+
+.title-with-underline::after {
+    content: '';          /* Required for pseudo-elements to be generated */
+    display: block;      
+    width: 300px;          
+    height: 1px;          
+    background-color: #333; 
+
+    position: absolute;   
+    left: 50%;            /* Start the left edge at the center of the title element */
+    transform: translateX(-50%); /* Shift it left by half its own width to truly center it */
+    bottom: 0;            
+}
+
+.slideshow-card .card-title-with-underline {
+    position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
+    text-align: center;    
+}
+
+.slideshow-card .card-title-with-underline::after {
+    content: '';          /* Required for pseudo-elements to be generated */
+    display: block;      
+    width: 5vw;          
+    height: 3px;          
+    background-color: #333; 
+    position: absolute;   
+    left: 50%;            /* Start the left edge at the center of the title element */
+    transform: translateX(-50%); /* Shift it left by half its own width to truly center it */
+    bottom: 0;   
+    opacity: 0; /* Initially hidden */         
+    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
+}
+
+.slick-center .slideshow-card .card-title-with-underline::after {
+    opacity: 1; /* Adjust width for centered card */
+    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
+}
+
+.subtitle {
+	position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
+    margin-bottom: 20px;   
+    text-align: center; 
+	font-style: italic;
+	color: #333;
+}
+
+.side-title {
+	position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
+    padding-bottom: 15px;  
+    margin-bottom: 20px;   
+    text-align: center;    
+}
+
+.center-text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.center-text p {
+	text-align: center;
+}
+
+
+.offering-memorandum p {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 0.8em;
+	line-height: 1.4; /* spacing out the lines a bit */
+	max-width: 800px;
+}
+
+.offering-memorandum strong {
+    color: #333; /* Make the bold text a bit darker */
+	font-size: 1.2em;
+}
+
+/* Rectangle Section  */
+
+.rectangle-section {
+    width: 100%;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.rectangle-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.rectangle-item {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rectangle-header {
+    display: flex;
+    align-items: flex-start; 
+    margin-bottom: 12px;
+    min-height: 3.5em;
+}
+
+.rectangle-icon {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rectangle-icon.has-background {
+    width: 40px;
+    height: 40px;
+    background-color: #8a817c; 
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.rectangle-icon i {
+    font-size: 1.25rem; 
+    color: var(--main-background-color);
+}
+
+.rectangle-icon.has-background i {
+    color: #f4ece2; 
+}
+
+.rectangle-title {
+    font-size: 1.25rem; 
+    line-height: 1.5em;
+    margin: 0;
+    color: #1c1e21;
+}
+
+.rectangle-subtitle {
+    font-size: 2.0rem;
+    margin: 0 0 10px 0; 
+    color: #606770;
+	/* color: #5a7d65; */
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.rectangle-description {
+    font-size: 0.5rem; /* Your original font size */
+    line-height: 1.6;
+    margin: 0;
+    color: #606770;
+}
+
+/* Perks Section  */
+
+	
+
+	#perks {
+		max-width: 1200px;
+		text-align: center;
+		margin: 0 auto; 
+		padding: 20px;
+	}
+
+	.perks-section h2 {
+		font-size: 2.5rem;
+		margin-bottom: 40px;
+		color: #333;
+	}
+
+	.perks-grid {
+		display: grid;
+		/* On larger screens, create 4 equal columns */
+		grid-template-columns: repeat(4, 1fr); 
+		gap: 30px; 
+	}
+
+	/* --- Individual Perk Block Styling --- */
+	.perk-block {
+		background-color: #ffffff;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px; /* Rounded corners */
+		padding: 40px 20px;
+		display: flex;
+		flex-direction: column; /* Stack icon and title vertically */
+		align-items: center; /* Center horizontally */
+		justify-content: center; /* Center vertically */
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+	
+	.perk-block:hover {
+		transform: translateY(-10px); /* Lifts the block up on hover */
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Adds a shadow on hover */
+	}
+
+	/* --- Icon Styling --- */
+	.perk-block .icon {
+		font-size: 3rem; /* Adjust icon size */
+		color: #333;  /* A nice blue color, change as you like */
+		margin-bottom: 20px;
+	}
+
+	/* --- Title Styling --- */
+	.perk-block h3 {
+		font-size: 1.2rem;
+		color: #333;
+		margin: 0;
+	}
+
+	/* --- Responsive Design --- */
+	/* For tablets: 2 columns */
+	@media (max-width: 992px) {
+		.perks-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	/* For mobile phones: 1 column */
+	@media (max-width: 576px) {
+		.perks-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+
+/* About Section */
+
+#about {
+    opacity: 1; /* Default state: visible */
+    transform: translateY(0); /* Default state: original position */
+
+    /* Define transitions for opacity and transform (mirroring #intro's entrance) */
+    -moz-transition: opacity 1s ease, -moz-transform 1s ease;
+    -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+    -ms-transition: opacity 1s ease, -ms-transform 1s ease;
+    transition: opacity 1s ease, transform 1s ease;
+    /* Any other existing #about styles would go here */
+}
+
+/* Initial state for #about when the page is preloading */
+/* This creates the "pop up and fade in" effect when 'is-preload' is removed */
+body.is-preload #about {
+    opacity: 0; /* Start transparent */
+    -moz-transform: translateY(2rem); /* Start 2rem lower (adjust as needed) */
+    -webkit-transform: translateY(2rem);
+    -ms-transform: translateY(2rem);
+    transform: translateY(2rem);
+}
+
+/* Styles for when #about is explicitly hidden */
+/* This creates the "pop out and fade out" effect when '.hidden' is added */
+#about.hidden {
+    opacity: 0; /* Fade out */
+    visibility: hidden; /* Make it non-interactive and non-visible like #intro.hidden */
+    -moz-transform: translateY(2rem); /* Move down 2rem (or adjust as needed) */
+    -webkit-transform: translateY(2rem);
+    -ms-transform: translateY(2rem);
+    transform: translateY(2rem);
+
+    /* Apply a similar faster transition for the hiding action, like #intro.hidden */
+    -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, visibility 0.5s;
+    -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease, visibility 0.5s;
+    -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, visibility 0.5s;
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+}
+
+/* Transistions  */
+.fade-in-up {
+    /* Make the element transparent */
+    opacity: 0;
+
+    /* Move it down by 30px */
+    transform: translateY(30px);
+
+    /* Define the smooth transition for opacity and transform */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* 2. The final "visible" state */
+/* We'll add this class with JavaScript when the element is in view */
+.fade-in-up.is-visible {
+    /* Make the element fully visible */
+    opacity: 1;
+
+    /* Move it back to its original position */
+    transform: translateY(0);
+}
+
+
+
+#why-invest p {
+    /* font-size: clamp(1rem, 1.4vw, 1.25rem); */
+    /* line-height: 2; */
+}
+
+#why-invest .image.left,
+#why-invest .image.right {
+    max-width: 46%;
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    #why-invest .image.left,
+    #why-invest .image.right {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem;
+        max-width: 100%;
+    }
+
+    #why-invest p {
+        text-align: left; /* or justify, as preferred */
+    }
+}
+
+/* Sticky */
+
+.sticky-container {
+    display: flex;              /* Use flexbox to create two columns */
+    flex-direction: row-reverse;/* Puts the image column on the right */
+    align-items: flex-start;    /* Aligns columns to the top */
+    gap: 2em;                   /* Creates space between the image and text */
+    margin-top: 4em;            /* Adds some space above this new section */
+}
+
+.scrolling-text-column {
+    flex: 1;                    /* Allows the text column to take up available space */
+}
+
+.sticky-image-column {
+    flex: 1;                    /* Allows the image column to take up available space */
+    max-width: 50%;             /* Ensures the image column isn't too wide */
+}
+
+.image-wrapper-sticky {
+    position: -webkit-sticky;   /* For Safari compatibility */
+    position: sticky;           /* The magic! */
+    top: 100px;                 /* Sticks the image 100px from the top of the viewport */
+}
+
+.image-wrapper-sticky img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* General Properties Section Styling */
+#properties-section {
+    /* padding: 6rem 4rem 4rem 4rem; */
+    background-color: var(--main-background-color); 
+    /* border-top: solid 2px var(--secondary-color);  */
+}
+
+#properties-section .post {
+    padding: 0; /* Remove extra padding from .post if it's already on the article */
+}
+
+/* Header Styling */
+.properties-header-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.properties-header-icons svg {
+    color: #DAA520; /* Gold-like color for icons, adjust if you have a variable */
+    margin-right: 0.5rem;
+}
+
+.properties-header-icons span {
+    color: #B8860B; /* Darker gold-like color for text */
+    font-size: 0.875rem; /* Equivalent to text-sm */
+    font-weight: 500; /* Equivalent to font-medium */
+    text-transform: uppercase;
+    letter-spacing: 0.05em; /* Equivalent to tracking-wider */
+}
+
+#properties-section h2.title-with-underline {
+    color: var(--main-text-color); /* Your main text color */
+    font-size: 2.5rem; /* Equivalent to text-3xl md:text-4xl */
+    font-weight: 900; /* Equivalent to font-bold */
+    margin-bottom: 1.5rem;
+}
+
+#properties-section .center-text {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500rem; /* Equivalent to max-w-3xl */
+    color: #4A5568; /* Gray-600 */
+    font-size: 1.125rem; /* Equivalent to text-xl */
+    line-height: 1.6;
+}
+
+/* Properties Grid */
+.properties-grid {
+    display: flex;         /* Activates Flexbox */
+    flex-wrap: wrap;       /* Allows items to wrap to the next line */
+    justify-content: center; /* This is the key: It centers all items, including the last row */
+    gap: 1.5rem;           /* Sets the space between your cards */
+}
+
+.property-card {
+    background-color: white;
+    border-radius: 0.5rem; /* rounded-lg */
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    transition: transform 0.3s ease; /* transition-transform duration-300 */
+
+	display: flex;
+    flex-direction: column;
+    position: relative; 
+	flex-basis: calc(33.333% - 1.5rem);
+    min-width: 320px; /* Prevents cards from becoming too narrow */
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* For tablets (e.g., screen widths up to 980px) */
+@media (max-width: 1121px) {
+    .properties-grid .property-card {
+        /* This will create a 2-column layout */
+        flex-basis: calc(50% - 1.5rem);
+    }
+}
+
+/* For mobile devices (e.g., screen widths up to 768px) */
+@media (max-width: 779px) {
+    .properties-grid .property-card {
+        /* This will create a 1-column layout */
+        flex-basis: 100%;
+    }
+}
+
+.property-card:hover {
+    transform: translateY(-0.5rem); /* hover:-translate-y-2 */
+}
+
+.property-card-image-wrapper {
+    position: relative;
+}
+
+.property-card-image-wrapper img {
+    width: 100%;
+    height: 16rem; /* h-64 */
+    object-fit: cover;
+}
+
+.property-price-tag {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #DAA520; /* Gold-500 */
+	background-color: var(--green-color);
+    color: white;
+    padding: 0.25rem 1rem; /* px-4 py-1 */
+    border-radius: 0.125rem; /* rounded-sm */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 700; /* font-bold */
+}
+
+.property-card-info {
+    padding: 1.5rem; /* p-6 */
+}
+
+.property-card-info h3 {
+    color: var(--main-text-color);
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 0.5rem; /* mb-2 */
+	text-align: center;
+}
+
+.property-card-info p {
+    color: #4A5568; /* Gray-600 */
+    margin-bottom: 1rem; /* mb-4 */
+    line-height: 1.5; /* Default paragraph line-height */
+	text-align: center;
+}
+
+/* .property-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    gap: .5rem; 
+    margin-bottom: 1.5rem; 
+} */
+
+.property-details-grid {
+    display: grid;
+    /* THE FIX: Forcing 2 columns instead of auto-fitting */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1rem; 
+    margin-bottom: 5.5rem; 
+}
+
+.property-details-grid .flex {
+    display: flex;
+    align-items: center;
+}
+
+.property-details-grid .text-ocean-700 {
+    color: #0851A6; /* Ocean-700 */
+    margin-right: 0.5rem; /* mr-2 */
+    font-weight: 500; /* font-medium */
+}
+
+.property-details-grid .text-gray-500 {
+    color: #6B7280; /* Gray-500 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+.property-details-grid svg {
+    color: #0A66C2; /* Ocean-600 */
+    margin-right: 0.5rem; /* mr-2 */
+}
+
+/* .property-tags-and-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.property-type-tag {
+    font-size: 0.75rem; 
+    padding: 0.25rem 0.5rem; 
+    background-color: #FDFCEF; 
+    color: #8C6A00;
+    border-radius: 0.25rem; 
+    white-space: nowrap;
+}
+
+.property-tags-and-link a {
+    color: #0A66C2; 
+    font-weight: 500; 
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-bottom: none; 
+}
+
+.property-tags-and-link a:hover {
+    color: #0851A6; 
+}
+
+.property-tags-and-link a svg {
+    margin-left: 0.25rem;
+} */
+
+.detail-item {
+	display: flex;
+	flex-direction: column; /* Stack label and value vertically */
+    align-items: center;
+}
+
+.detail-label {
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: #7f8c8d; /* A muted gray for the label */
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-bottom: 0.25rem;
+}
+
+.detail-value {
+	display: flex;
+	align-items: center;
+	font-size: 1rem;
+	color: #34495e;
+	font-weight: 500;
+}
+
+.detail-value .fas, .detail-value .lucide {
+	margin-right: 0.5rem;
+	color: #3498db; 
+    color: #0A66C2; 
+	width: 16px;
+	text-align: center;
+}
+
+.details-button-wrapper.right {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+
+.details-button-wrapper.center {
+    position: absolute;
+    bottom: 1.5rem; /* Keeps it at the same distance from the bottom */
+    left: 50%; /* Moves the left edge of the button to the center */
+    transform: translateX(-50%); /* Shifts the button left by half its own width */
+    right: auto; /* It's good practice to reset the opposite property */
+}
+
+/* This targets your new <a> tag with the class .details-button */
+.details-button {
+    background-color: #2d6a4f; /* Primary Green */
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+	white-space: nowrap;
+}
+
+.details-button:hover {
+    background-color: #40916c; /* Lighter green on hover */
+    color: white; 
+}
+
+/* Styles the arrow icon inside the button */
+.details-button svg {
+	color: currentColor;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.details-button:hover svg {
+    transform: translateX(3px);
+}
+
+/* --- View More Button Styles --- */
+.view-more-wrapper {
+    text-align: center; /* Centers the button horizontally */
+    margin-top: 3rem;   /* Adds space between the grid and the button */
+    padding-bottom: 2rem; /* Ensures space at the very bottom */
+}
+
+.view-more-button {
+    display: inline-block; /* Necessary for padding and margin */
+    background-color: #2d6a4f; /* Primary green from your theme */
+    color: white;
+    padding: 1rem 2.5rem; /* A large, clickable button */
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.view-more-button:hover {
+    background-color: #40916c; /* Lighter green on hover */
+	color: white;
+    transform: translateY(-3px); /* Gives a slight lift effect */
+}
+
+
+/* Responsive adjustments */
+@media (min-width: 768px) { /* md */
+    .properties-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .property-search-banner {
+        flex-direction: row; /* md:flex-row */
+        text-align: left;
+    }
+    .property-search-banner > div:last-child {
+        flex-grow: 1;
+    }
+    .contact-team-btn {
+        margin-left: auto; /* md:ml-auto */
+    }
+}
+
+@media (min-width: 1024px) { /* lg */
+    .properties-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/**
+ * Simple fade transition,
+ */
+ .mfp-fade.mfp-bg {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	-webkit-transition: all 0.15s ease-out; 
+	-moz-transition: all 0.15s ease-out; 
+	transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+}
+
+#lot-layout .image.fit {
+    /* Use aspect-ratio for modern browsers */
+    aspect-ratio: 1 / 1; /* Makes the container perfectly square */
+    width: 100%; /* Ensure it takes full width of its column */
+    overflow: hidden; /* Important to clip overflowing image parts */
+    display: block; /* Ensures aspect-ratio applies correctly */
+}
+
+#lot-layout .image.fit img {
+    width: 100%;
+    height: 100%; /* Make image fill its parent container */
+    object-fit: cover; /* Crucial: crops the image to fit without distortion */
+    object-position: center; /* Centers the image within the container */
+}
+
+/* Contact Section Card */
+
+/* Main container to center the content */
+.contact-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contact-card {
+	width: 100%;
+	max-width: 56rem; /* Equivalent to max-w-4xl */
+	padding: 2rem; /* Equivalent to p-8 */
+	background-color: #ffffff;
+	border-radius: 0.75rem; /* Equivalent to rounded-xl */
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+}
+
+.contact-header {
+	text-align: center;
+}
+
+.contact-header h2 {
+	font-size: 1.875rem; /* Equivalent to text-3xl */
+	font-weight: 700; /* Equivalent to font-bold */
+	color: #1f2937; /* Equivalent to text-gray-800 */
+}
+
+.contact-header p {
+	margin-top: 1rem; /* Equivalent to mt-4 */
+	color: #4b5563; /* Equivalent to text-gray-600 */
+}
+
+/* Grid for contact details */
+.contact-grid {
+	margin-top: 3rem; /* Equivalent to mt-12 */
+	display: grid;
+	grid-template-columns: 1fr; /* Default to one column */
+	gap: 2rem; /* Equivalent to gap-8 */
+	text-align: center;
+}
+
+/* Icon wrapper styles */
+.icon-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 4rem; /* Equivalent to w-16 */
+	height: 4rem; /* Equivalent to h-16 */
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1rem; /* Equivalent to mb-4 */
+	background-color: #dcfce7; /* Equivalent to bg-green-100 */
+	border-radius: 9999px; /* Equivalent to rounded-full */
+	color: var(--green-color); /* Equivalent to text-green-700 */
+}
+
+.icon-wrapper i {
+	font-size: 2em; /* Makes the icon larger */
+}
+
+.contact-item h3 {
+	font-size: 1.25rem; /* Equivalent to text-xl */
+	font-weight: 600; /* Equivalent to font-semibold */
+	color: #1f2937; /* Equivalent to text-gray-800 */
+	text-align: center;
+}
+
+.contact-item p {
+	margin-top: 0.5rem; /* Equivalent to mt-2 */
+	color: #4b5563; /* Equivalent to text-gray-600 */
+	text-align: center;
+}
+
+.contact-item a {
+	color: #15803d; /* Equivalent to text-green-700 */
+	text-decoration: none;
+	transition: color 0.2s ease-in-out;
+	border-bottom: none;
+}
+
+.contact-item a:hover {
+	color: #14532d; /* Equivalent to hover:text-green-900 */
+	text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (min-width: 640px) { /* sm breakpoint */
+	.contact-header h2 {
+		font-size: 2.25rem; /* Equivalent to sm:text-4xl */
+	}
+}
+
+@media (min-width: 768px) { /* md breakpoint */
+	.contact-grid {
+		grid-template-columns: repeat(3, 1fr); /* Equivalent to md:grid-cols-3 */
+	}
+}
+
+.contact-card-hdm-custom {
+	border-radius: 5rem;
+	box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+}
+
+.layout-card {
+	background-color: var(--main-background-color); /* semi-transparent tan */
+	border: 1px solid var(--secondary-color);
+	padding: 1rem;
+	margin: 1rem 0;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 10px rgba(0,0,0,0.05);
+	transition: transform 0.2s ease;
+}
+
+.layout-card.shrink-width {
+	padding: 2vw;
+	display: inline-block;
+	/* margin: 0 auto; */
+	text-align: center;
+}
+
+.layout-card:hover {
+	transform: scale(1.01);
+}
+
+.two-column-list {
+	display: inline-flex;
+	text-align: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 40px;
+}
+
+.two-column-list ul {
+	list-style-type: disc;
+	text-align: left;
+	margin: 0;
+	padding: 0 1rem;
+}
+
+
+.image-container {
+	width: 100%;
+	overflow: hidden; /* Ensures images don't spill out */
+	margin-bottom: 3rem;
+	border-radius: 0.5rem;
+	/* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); */
+}
+
+.image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* This is the general default */
+}
+
+/* --- 1. SINGLE IMAGE VIEW (Cover) --- */
+.single-image-view {
+	height: 40vh; /* Takes up 40% of the viewport height */
+}
+
+
+/* --- 2. TWO IMAGE VIEW (Desktop) --- */
+.two-image-view {
+	/* height: 40vh;  */
+	aspect-ratio: 16 / 7;
+	display: flex;
+	flex-direction: row; /* Side-by-side by default */
+	gap: 0.5rem; /* Optional: adds a small gap between images */
+}
+
+.two-image-view .image-wrapper {
+	flex: 1; /* Each wrapper takes up equal space */
+	height: 100%;
+	overflow: hidden;
+	background-color: var(--main-background-color); /* A subtle background for letterboxing */
+}
+
+/* --- FIX: New rule to make images 'contain' inside the two-image-view --- */
+.two-image-view .image-wrapper img {
+	object-fit: contain;
+}
+
+
+/* --- 3. TWO IMAGE VIEW (Mobile) --- */
+@media (max-width: 768px) {
+	.two-image-view {
+		flex-direction: column; /* Stack images on top of each other */
+		height: auto; /* Let height be determined by content */
+		aspect-ratio: auto;
+	}
+
+	.two-image-view .image-wrapper {
+		height: 30vh; /* Each image now gets its own 30vh height */
+		width: 100%;
+	}
+	/* --- FIX for underline on linked images --- */
+	.two-image-view .image-wrapper a {
+		/* display: block;
+		height: 100%;
+		text-decoration: none; */
+		border-bottom: none;
+	}
+}
+
+/* --- 4. IMAGE CONTAIN VIEW --- */
+.image-contain-view {
+		height: 80vh; /* Set a large, but not full-screen, height */
+		background-color: var(--main-background-color); /* A subtle background for letterboxing */
+		
+		/* --- FIX: Add flex properties to center the image --- */
+		display: flex;
+		justify-content: center; /* Horizontally center */
+		align-items: center;    /* Vertically center */
+}
+
+.image-contain-view img {
+	object-fit: contain; /* This is the key: it scales the image down to fit without cropping */
+	
+	/* --- FIX: Ensure the image itself doesn't overflow its flex container --- */
+	/* These override the generic width/height 100% for this specific case */
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.feature-split-section {
+	display: flex; /* Enables Flexbox layout */
+	align-items: center; /* Vertically aligns items */
+	gap: 3.5rem; /* Space between the image and the text container */
+	margin-bottom: 5rem; /* Space between the two main sections */
+}
+
+/* This class reverses the order for the second section */
+.feature-split-section.reverse-layout {
+	flex-direction: row-reverse;
+	margin-bottom: 0rem;
+}
+
+/* The container for the image column */
+.feature-image-container {
+	flex-basis: 45%; /* Image column takes up 45% of the width */
+	flex-shrink: 0; /* Prevents the image from shrinking */
+}
+.feature-image-container img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 8px; /* Slightly rounded corners for a modern look */
+	/* box-shadow: 0 10px 25px rgba(0,0,0,0.1);  */
+	background-color: lightblue;
+}
+
+/* The container for the text content column */
+.feature-text-container {
+	flex-basis: 55%; /* Text column takes up 55% of the width */
+}
+
+/* Styling for each individual text item (e.g., Vision, Location) */
+.text-content-item {
+	margin-bottom: 2.5rem; /* Space between each text block */
+}
+.text-content-item:last-child {
+	margin-bottom: 0;
+}
+
+/* STYLING THE TITLE TO MAKE IT STICK OUT */
+.text-content-item h2 {
+	font-family: 'Playfair Display', serif;
+	font-size: 2.0rem;
+	font-weight: 700;
+	color: var(--main-text-color);
+	color: #4A5568;
+	line-height: 1.2;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 0 0 0.75rem 0; /* Space below the title */
+}
+
+/* STYLING THE PARAGRAPH FOR READABILITY */
+.text-content-item p {
+	/* font-family: 'Lato', sans-serif; */
+	font-size: 1.1rem;
+	line-height: 1.8;
+	color: #555;
+	margin: 0;
+}
+
+.property-specs-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem 2rem;
+	text-align: center;
+	justify-content: center;
+	font-size: 1.2em;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+.spec {
+	background-color: rgba(244, 236, 226, 0.5); /* semi-transparent tan */
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.label {
+	font-weight: 600;
+	color: #3b2f25; /* dark text for contrast, or use a var */
+	margin-right: 0.5rem;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 980px) {
+		.feature-split-section {
+		gap: 2rem;
+		}
+		.text-content-item h2 {
+		font-size: 2rem;
+		}
+		.property-specs-grid {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 768px) {
+	.feature-split-section,
+	.feature-split-section.reverse-layout {
+		/* Stack the columns on top of each other on mobile */
+		flex-direction: column;
+		gap: 2.5rem; 
+		margin-bottom: 4rem;
+	}
+	.property-specs-grid {
+		font-size: 0.8rem;
+	}
+}
+
+/* Ensure the container has the padding, not the image-container itself if it's already on the article.post */
+.image-container.two-image-view {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    /* The padding-top: 10em; should be on the parent section or article if it applies to the whole section content */
+    /* If you want it only for this specific .image-container, keep it here: */
+    padding-top: 10em; 
+}
+
+.image-wrapper {
+    /* flex-basis controls initial size, flex-grow/shrink allow it to adapt */
+    flex: 1 1 400px; /* Base width 400px, but flexible */
+    min-width: 300px; /* Don't let it get too small on smaller screens */
+    max-width: 100%; /* Ensure it doesn't exceed its parent's width */
+
+    aspect-ratio: 4 / 3; /* THIS IS KEY for making the *container* maintain an aspect ratio */
+    
+    display: flex; /* Use flexbox for stacking title and image */
+    flex-direction: column; /* Stack h3 and the anchor vertically */
+    align-items: center; /* Center horizontally */
+    
+    overflow: hidden; /* Important: clips content if it overflows its fixed aspect ratio */
+    position: relative; /* If you add any absolute positioning later */
+}
+
+.image-wrapper h3 {
+    margin-bottom: 1rem; /* Space between title and image */
+    margin-top: 0; /* Override default h3 margin-top to avoid extra space */
+    text-align: center; /* Center the title */
+    width: 100%; /* Ensure title takes full width */
+}
+
+.image-wrapper a {
+    display: block; /* Make the anchor fill its parent's space */
+    width: 100%;
+    height: 100%; /* Make the anchor fill the .image-wrapper's height (which has the aspect-ratio) */
+    text-decoration: none; /* Remove underline */
+    border-bottom: none; /* Explicitly remove border */
+}
+
+.image-wrapper img {
+    width: 100%; /* Image fills the width of its parent <a> */
+    height: 100%; /* Image fills the height of its parent <a> */
+    object-fit: contain; /* CRUCIAL: Scales the image down to fit fully within the <a> without cropping. Will letterbox if aspect ratios don't match. */
+    display: block; /* Removes any extra space below the image */
+}
+
+/* Responsive adjustments for two-image-view, if not already robust */
+@media (max-width: 768px) {
+    .image-container.two-image-view {
+        flex-direction: column; /* Stack images vertically on mobile */
+        height: auto; /* Let height adjust based on stacked content */
+        padding-top: 5em; /* Adjust mobile padding as needed */
+    }
+
+    .image-container.two-image-view .image-wrapper {
+        height: 30vh; /* Give each stacked image a specific height on mobile */
+        min-width: unset; /* Remove min-width constraint for mobile stacking */
+    }
+}
+
+3,739 sq ft
