@@ -6441,7 +6441,7 @@ body.is-preload #about {
 
 .property-details-grid {
     display: grid;
-	grid-template-columns: repeat(3, 1fr); 
+	grid-template-columns: repeat(2, 1fr); 
     gap: 1rem; 
     /* margin-bottom: 5.5rem;  */
 }
@@ -6467,11 +6467,15 @@ body.is-preload #about {
     margin-right: 0.5rem; /* mr-2 */
 }
 
-.property-details-grid > div:nth-last-child(1) {
+.property-details-grid.five-items {
+	grid-template-columns: repeat(3, 1fr); /* Creates a 5-column grid */
+}
+
+.property-details-grid.five-items > div:nth-last-child(1) {
   grid-column: 2 / -1;
 }
 
-.property-details-grid > div:nth-last-child(2) {
+.property-details-grid.five-items > div:nth-last-child(2) {
   transform: translateX(50%);
 }
 
@@ -6541,16 +6545,22 @@ body.is-preload #about {
 }
 
 
-.button-container {
+.two-button-container {
   margin-top: 1.5rem;
   align-items: center;
   display: flex;
   justify-content: space-between;
 }
 
+.details-button-wrapper.center {
+    bottom: 1.5rem;
+	display: flex;
+	justify-content: center;
+	margin-top: 1.5rem;
+}
 
 /* This targets your new <a> tag with the class .details-button */
-.details-button, .price-request-button {
+.two-button-container .details-button, .price-request-button {
     background-color: #2d6a4f; /* Primary Green */
     color: white;
     padding: 0.8rem 1.2rem;
@@ -6562,6 +6572,20 @@ body.is-preload #about {
     transition: background-color 0.3s ease;
 	white-space: nowrap;
 	translate: 25%;
+}
+
+.details-button, .price-request-button {
+    background-color: #2d6a4f; /* Primary Green */
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+	white-space: nowrap;
+	justify-content: center;
 }
 
 .price-request-button { 
@@ -6585,13 +6609,13 @@ body.is-preload #about {
 }
 
 /* Styles the arrow icon inside the button */
-.details-button svg {
+.two-button-container .details-button svg {
 	color: currentColor;
     margin-left: 0.5rem;
     transition: transform 0.3s ease;
 }
 
-.details-button:hover svg {
+.two-button-container .details-button:hover svg {
     transform: translateX(3px);
 }
 
@@ -6953,6 +6977,7 @@ body.is-preload #about {
 	height: 100%;
 	overflow: hidden;
 	background-color: var(--main-background-color); /* A subtle background for letterboxing */
+	max-height: 440vh;
 }
 
 .two-image-view .image-wrapper a {
@@ -7151,6 +7176,10 @@ body.is-preload #about {
 	font-weight: 600;
 	color: #3b2f25; /* dark text for contrast, or use a var */
 	margin-right: 0.5rem;
+}
+
+.property-specs-grid.condo .label {
+	margin-right: 0;
 }
 
 /* --- MOBILE RESPONSIVENESS --- */
@@ -7400,36 +7429,46 @@ body.is-preload #about {
 .modal-content {
     background-color: #fefefe;
     padding: 2rem;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     width: 90%;
     max-width: 750px;
     position: relative;
-    height: 90%;
-    max-height: 80vh;  /* Sets the maximum height to 85% of the browser window's height */
-    overflow-y: auto;  /* Adds a scrollbar INSIDE the box only when the content is too tall */
+    /* height: 90%; */
+    max-height: 80vh;  
+    overflow-y: auto; 
 }
 
 /* The close button (X) in the corner */
 .modal-close {
     position: absolute;
     top: 10px;
-    right: 20px;
+    right: 50px;
     color: #aaa;
     font-size: 28px;
     font-weight: bold;
     border: none;
     background: none;
     cursor: pointer;
+	box-shadow: none;
+	padding: 0;
 }
 
 .modal-close:hover {
     color: #333;
+	box-shadow: none;
 }
 
 /* Form styles */
 .modal-content h3 {
     margin-top: 0;
+	margin-bottom: .5rem;
+}
+
+.modal-content p {
+    margin-top: 0;
+	margin-bottom: .5rem;
+	font-size: .75rem;
 }
 
 .form-group {
@@ -7440,6 +7479,7 @@ body.is-preload #about {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
+	font-size: .8;
 }
 
 .form-group input,
@@ -7448,7 +7488,7 @@ body.is-preload #about {
     padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: .75rem;
 }
 
 .submit-button {
@@ -7456,6 +7496,7 @@ body.is-preload #about {
     width: 100%;
     padding: 0.8rem;
     border: none;
+	box-shadow: none;
     /* border-radius: 4px; */
     background-color: #754d25; /* Your dark brown button color */
     color: white;
@@ -7470,12 +7511,16 @@ body.is-preload #about {
 .submit-button:hover {
     background-color: #8a6746;
 	color: white;
+	box-shadow: none;
+	/* border-color: white !important; */
+
 }
 
 .modal-content form {
     display: flex;
     flex-direction: column; /* Stack form elements vertically */
     height: 100%; /* Make the form fill the .modal-content height */
+	margin-bottom: 0;
 }
 
 /* Target the div we added the new class to */
@@ -7483,6 +7528,7 @@ body.is-preload #about {
     flex-grow: 1; /* This is the key: it tells this element to expand */
     display: flex;
     flex-direction: column;
+	max-height: 25vh;
 }
 
 /* Make the textarea inside also expand to fill its container */
@@ -7490,6 +7536,7 @@ body.is-preload #about {
     flex-grow: 1;
     resize: none; /* Optional: prevents user from resizing the textarea */
 }
+
 body.form-is-open {
     overflow: hidden;
 }
