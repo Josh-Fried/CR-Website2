@@ -7378,3 +7378,118 @@ body.is-preload #about {
 .lot-info-box p:last-child {
     margin-bottom: 0; /* No margin below the last paragraph */
 }
+
+
+/* --- Price Request Modal Styles --- */
+
+/* The dark background overlay */
+.modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 10005;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+/* The popup form container */
+.modal-content {
+    background-color: #fefefe;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 750px;
+    position: relative;
+    height: 90%;
+    max-height: 80vh;  /* Sets the maximum height to 85% of the browser window's height */
+    overflow-y: auto;  /* Adds a scrollbar INSIDE the box only when the content is too tall */
+}
+
+/* The close button (X) in the corner */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+/* Form styles */
+.modal-content h3 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.submit-button {
+    display: flex;
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    /* border-radius: 4px; */
+    background-color: #754d25; /* Your dark brown button color */
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+	align-items: center;
+	justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #8a6746;
+	color: white;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    height: 100%; /* Make the form fill the .modal-content height */
+}
+
+/* Target the div we added the new class to */
+.form-group-expand {
+    flex-grow: 1; /* This is the key: it tells this element to expand */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make the textarea inside also expand to fill its container */
+.form-group-expand textarea {
+    flex-grow: 1;
+    resize: none; /* Optional: prevents user from resizing the textarea */
+}
+body.form-is-open {
+    overflow: hidden;
+}
