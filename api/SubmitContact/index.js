@@ -1,9 +1,20 @@
 const { Connection, Request, TYPES } = require('tedious');
 
-module.exports = async function (context, req) {
-    // Get the database connection string from your application settings
-    const connectionString = process.env.DB_CONNECTION_STRING;
+// Helper function to wrap the database execution in a Promise
+function executeSql(connection, request) {
+    return new Promise((resolve, reject) => {
+        request.on('requestCompleted', () => {
+            resolve();
+        });
+        request.on('error', err => {
+            reject(err);
+        });
+        connection.execSql(request);
+    });
+}
 
+module.exports = async function (context, req) {
+    const connectionString = process.env.DB_CONNECTION_STRING;
     if (!connectionString) {
         context.res = { status: 500, body: "Database connection string is not configured." };
         return;
@@ -11,25 +22,14 @@ module.exports = async function (context, req) {
 
     const connection = new Connection(JSON.parse(connectionString));
 
-    // The connection is an asynchronous process, so we wrap it in a promise
-    const connect = () => new Promise((resolve, reject) => {
-        connection.on('connect', err => {
-            if (err) {
-                reject(err);
-            } else {
-                resolve();
-            }
-        });
-        connection.connect();
-    });
-
     try {
-        await connect();
+        // Connect to the database
+        await new Promise((resolve, reject) => {
+            connection.on('connect', err => err ? reject(err) : resolve());
+            connection.connect();
+        });
 
-        // Get the data from the form submission
         const { name, email, phone, brokerId } = req.body;
-
-        // Basic validation
         if (!name || !email) {
             context.res = { status: 400, body: "Name and email are required." };
             return;
@@ -40,25 +40,26 @@ module.exports = async function (context, req) {
             VALUES (@Name, @Email, @PhoneNumber, @BrokerID);
         `;
 
-        const request = new Request(sql, (err, rowCount) => {
-            if (err) {
-                context.res = { status: 500, body: `Database insert failed: ${err.message}` };
-            } else {
-                context.res = { status: 200, body: "Contact information submitted successfully." };
-            }
-            connection.close();
-        });
-
-        // Add parameters to the SQL query to prevent SQL injection attacks
+        const request = new Request(sql);
         request.addParameter('Name', TYPES.NVarChar, name);
         request.addParameter('Email', TYPES.NVarChar, email);
         request.addParameter('PhoneNumber', TYPES.NVarChar, phone);
-        // If brokerId is not provided, insert NULL into the database
         request.addParameter('BrokerID', TYPES.Int, brokerId ? parseInt(brokerId) : null);
 
-        connection.execSql(request);
+        // Execute the SQL and wait for it to finish
+        await executeSql(connection, request);
+
+        context.res = { status: 200, body: "Contact information submitted successfully." };
 
     } catch (err) {
-        context.res = { status: 500, body: `Connection failed: ${err.message}` };
+        // If any error occurs in the process, it will be caught here
+        context.res = { status: 500, body: `An error occurred: ${err.message}` };
+    } finally {
+        // Always close the connection
+        if (connection.closed) {
+            // Already closed
+        } else {
+            connection.close();
+        }
     }
 };
