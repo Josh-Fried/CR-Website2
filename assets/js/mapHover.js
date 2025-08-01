@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'map-image-main': { // Added a wrapper object for map properties
             mapType: 'main-parcel', // <-- NEW: Identify this map's type
             lots: [ // Moved lot data into a 'lots' array
-                { id: 'Lot5', name: 'The Point', href: 'lot5-section', units: '5 Houses', averagePrice: '$6,476,000', coords: '178,1333,171,1092,215,1071,263,1069,315,1054,353,1019,398,954,410,914,407,822,416,800,428,787,469,780,490,786,504,805,521,912,530,936,440,1063,424,1113,422,1161,448,1237,455,1313,474,1357,500,1384,540,1402,592,1405,570,1495,502,1474,346,1391' },
-                { id: 'Lot10', name: 'Cliffside', href: 'lot10-section', units: '7 Houses, 12 condos, 1 penthouse', averagePrice: '$6,712,000', coords: '822,741,835,609,925,414,1103,240,1113,248,1172,241,1196,274,1214,273,1231,316,1235,352,1228,456,1229,501,1243,549,1293,639,1300,669,1302,709,1292,762,1260,811,1228,844,1106,890,983,918' },
-                { id: 'Lot13', name: 'The Bluffs (Lot 13)', href: 'lot13-section', units: '2 Houses', averagePrice: '$6,467,000', coords: '1370,485,1531,451,1550,496,1576,513,1610,517,1612,572,1624,626,1565,641,1468,700,1402,543' },
-                { id: 'Lot14', name: 'The Bluffs (Lot 14)', href: 'lot14-section', units: '4 Houses', averagePrice: 'From $833,000', coords: '1368,465,1361,281,1373,113,1524,80,1576,254,1631,267,1648,305,1733,271,1752,269,1804,304,1806,316,1785,337,1673,394,1645,418,1633,442,1563,414,1550,430' }
+                { id: 'Lot5', name: 'The Point', href: 'maps.html#lot5-section', units: '5 Houses', sqft: '8,611 - 10,323', coords: '178,1333,171,1092,215,1071,263,1069,315,1054,353,1019,398,954,410,914,407,822,416,800,428,787,469,780,490,786,504,805,521,912,530,936,440,1063,424,1113,422,1161,448,1237,455,1313,474,1357,500,1384,540,1402,592,1405,570,1495,502,1474,346,1391' },
+                { id: 'Lot10', name: 'Cliffside', href: 'maps.html#lot10-section', units: '7 Houses, 12 condos, 2 penthouses', sqft: '1,378 - 11,173', coords: '822,741,835,609,925,414,1103,240,1113,248,1172,241,1196,274,1214,273,1231,316,1235,352,1228,456,1229,501,1243,549,1293,639,1300,669,1302,709,1292,762,1260,811,1228,844,1106,890,983,918' },
+                { id: 'Lot13', name: 'The Bluffs (Lot 13)', href: 'maps.html#lot13-section', units: '2 Houses', sqft: '6,566 - 9,900', coords: '1370,485,1531,451,1550,496,1576,513,1610,517,1612,572,1624,626,1565,641,1468,700,1402,543' },
+                { id: 'Lot14', name: 'The Bluffs (Lot 14)', href: 'maps.html#lot14-section', units: '4 Houses', sqft: '7,223 - 13,681', coords: '1368,465,1361,281,1373,113,1524,80,1576,254,1631,267,1648,305,1733,271,1752,269,1804,304,1806,316,1785,337,1673,394,1645,418,1633,442,1563,414,1550,430' }
             ]
         },
         'map-image-lot5': { // Added wrapper object and mapType
@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 { id: 'Home1', name: 'Cliffside Home 1', href: 'cliffside.html#lot10-1', beds: '5', baths: '5.5', sqft: '11.065', coords: '729,901,500,796,450,753,482,602,567,618,614,620,650,618,776,596,779,688,729,733' },
                 { id: 'Home2', name: 'Cliffside Home 2', href: 'cliffside.html#lot10-2', beds: '6', baths: '6.5', sqft: '11,173', coords: '729,900,729,734,779,689,776,595,988,547,988,983,909,977,817,941' },
                 { id: 'Home3', name: 'Cliffside Home 3', href: 'cliffside.html#lot10-3', beds: '4', baths: '4.5', sqft: '10,829', coords: '988,547,1100,523,1154,520,1247,520,1247,842,988,844' },
-                { id: 'SouthCondos', name: 'South Condos', href: 'cliffside.html#lot10-4', units: '4 Condos + 4 Condos + 1 Penthouse', beds: '2, 2, 3', baths: '2, 2.5, 3.5', sqft: '1,378, 2,099, 3,606', averagePrice: '$833,000, $1,268,000, $3,203,000', coords: '988,983,988,844,1247,842,1247,520,1519,538,1528,543,1537,554,1555,651,1562,684,1188,1001' }, // Note: no beds/baths for this apartment block example
-                { id: 'NorthCondos', name: 'North Condos', href: 'cliffside.html#lot10-5', units: '4 Condos + 1 Penthouse', beds: '2, 3', baths: '2.5, 3.5', sqft: '2,099, 3,606', averagePrice: '$1,268,000, $3,203,000', coords: '1076,444,1208,307,1208,62,1271,87,1314,114,1355,149,1386,183,1404,208,1424,244,1447,300,1496,428,1494,439,1490,448,1476,451,1238,435,1154,435' }, // Note: no beds/baths for this apartment block example
+                { id: 'SouthCondos', name: 'South Condos', href: 'cliffside.html#lot10-4', units: '4 Condos + 4 Condos + 1 Penthouse', beds: '2, 2, 3', baths: '2, 2.5, 3.5', sqft: '1,378, 2,099, 3,606', /*averagePrice: '$833,000, $1,268,000, $3,203,000',*/ coords: '988,983,988,844,1247,842,1247,520,1519,538,1528,543,1537,554,1555,651,1562,684,1188,1001' }, // Note: no beds/baths for this apartment block example
+                { id: 'NorthCondos', name: 'North Condos', href: 'cliffside.html#lot10-5', units: '4 Condos + 1 Penthouse', beds: '2, 3', baths: '2.5, 3.5', sqft: '2,099, 3,606', /*averagePrice: '$1,268,000, $3,203,000',*/ coords: '1076,444,1208,307,1208,62,1271,87,1314,114,1355,149,1386,183,1404,208,1424,244,1447,300,1496,428,1494,439,1490,448,1476,451,1238,435,1154,435' }, // Note: no beds/baths for this apartment block example
                 { id: 'Home4', name: 'Cliffside Home 4', href: 'cliffside.html#lot10-6', beds: '4', baths: '4.5', sqft: '9,924', coords: '952,470,952,74,1001,52,1044,45,1127,45,1168,52,1208,61,1208,306,1076,445' },
                 { id: 'Home5', name: 'Cliffside Home 5', href: 'cliffside.html#lot10-7', beds: '4', baths: '4.5', sqft: '9,063', coords: '698,527,698,188,740,176,790,158,952,75,952,469' },
                 { id: 'Home6', name: 'Cliffside Home 6', href: 'cliffside.html#lot10-8', beds: '4', baths: '4.5', sqft: '8,999', coords: '443,501,443,187,601,193,653,193,698,187,698,526,644,535,594,537,538,528' },
@@ -212,7 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check the mapType property
         if (lotData.mapType === 'main-parcel') {
             content += `<p><b>Units:</b> ${lotData.units}</p>`;
-            content += `<p><b>Avg. Price:</b> ${lotData.averagePrice}</p>`;
+            content += `<p><b>Sq Ft:</b> ${lotData.sqft}</p>`;
+            // content += `<p><b>Avg. Price:</b> ${lotData.averagePrice}</p>`;
         } else if (lotData.mapType === 'individual-lot') {
             // Add checks for beds, baths, sqft to ensure they exist before displaying
             if (lotData.units) content += `<p><b>Units:</b> ${lotData.units}</p>`;
