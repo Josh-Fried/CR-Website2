@@ -169,6 +169,7 @@ input, select, textarea {
 	}
 
 	body, input, select, textarea {
+		/* font-family: 'Open Sans',Helvetica,sans-serif; */
 		font-family: "Merriweather", Georgia, serif;
 		font-weight: 300;
 		font-size: 1rem;
@@ -202,6 +203,8 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		/* font-family: 'gilmer',Helvetica,sans-serif; */
+		-webkit-font-smoothing: antialiased;
 		font-weight: 900;
 		line-height: 1.5;
 		letter-spacing: 0.075em;
