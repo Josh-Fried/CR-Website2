@@ -2,6 +2,10 @@
   --wp--style--global--content-size: 1300px;
   --wp--style--global--wide-size: 1300px;
 }
+
+.col.span_3  {
+  padding: 0 0;
+}
 :where(body) {
   margin: 0;
 }
