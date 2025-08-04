@@ -1,6 +1,9 @@
 :root {
   --wp--style--global--content-size: 1300px;
   --wp--style--global--wide-size: 1300px;
+
+  --main-background-color: #f4ece2; /* Our Color */
+	/* --main-background-color: #ebe8df; /* Triada */
 }
 
 .col.span_3  {
@@ -2802,7 +2805,11 @@ body[data-footer-reveal="1"].box-rolling,
 .wpml-ls-statics-footer,
 body #header-outer,
 body[data-header-color="dark"] #header-outer {
-  background-color: #ebe8df !important;
+  background-color: var(--main-background-color) !important;
+}
+
+.container-wrap {
+  padding: 0 !important;
 }
 
 body h1 em,

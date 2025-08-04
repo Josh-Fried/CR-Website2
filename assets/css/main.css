@@ -8,8 +8,8 @@
 */
 
 :root {
-	--main-background-color: #f4ece2;
-	--main-background-color: #ebe8df;
+	--main-background-color: #f4ece2; /* Our Color */
+	/* --main-background-color: #ebe8df; /* Triada */
 	--main-text-color: #212931;
 	--secondary-color: #eeeeee;
 	--hover-color: #18bfef;
@@ -3693,10 +3693,14 @@ input, select, textarea {
 		-webkit-flex-direction: column;
 		-ms-flex-direction: column;
 		flex-direction: column;
-		-moz-justify-content: -moz-flex-end;
+		/* -moz-justify-content: -moz-flex-end;
 		-webkit-justify-content: -webkit-flex-end;
 		-ms-justify-content: -ms-flex-end;
-		justify-content: flex-end;
+		justify-content: flex-end; */
+		-moz-justify-content: -moz-center;
+		-webkit-justify-content: -webkit-fcenter;
+		-ms-justify-content: -ms-center;
+		justify-content: center;
 		-moz-transition: opacity 1s ease, -moz-transform 1s ease;
 		-webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
 		-ms-transition: opacity 1s ease, -ms-transform 1s ease;

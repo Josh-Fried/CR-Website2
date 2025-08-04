@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     
     const priceRequestForm = document.getElementById('price-request-form'); 
-    const requestButtons = document.querySelectorAll('.price-request-button');
+    const requestButtons = document.querySelectorAll('.price-request-button, .inquire-button');
     const closeButton = document.querySelector('.modal-close');
 
     function openForm() {
