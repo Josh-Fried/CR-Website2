@@ -21,35 +21,216 @@
 		<link rel="stylesheet" href="slick-1.8.1/slick/slick.css" />
 		<link rel="stylesheet" href="slick-1.8.1/slick/slick-theme.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+		<link rel="stylesheet" href="assets/css/WPengineCSS.css" />
 
+		<link rel="stylesheet" href="https://triadacollections.com/wp-content/themes/salient/css/build/grid-system.css?ver=17.0.7" type="text/css" media="all">
+<link rel="stylesheet" href="https://triadacollections.com/wp-content/themes/salient/css/build/style.css?ver=17.0.7" type="text/css" media="all">
+<link rel="stylesheet" href="https://triadacollections.com/wp-content/themes/salient/css/build/header/header-layout-centered-logo-between-menu-alt.css?ver=17.0.7" type="text/css" media="all">
+<link rel="stylesheet" href="https://triadacollections.com/wp-content/themes/salient/css/build/responsive.css?ver=17.0.7" type="text/css" media="all">
+<link rel="stylesheet" href="https://triadacollections.com/wp-content/themes/salient/css/build/skin-material.css?ver=17.0.7" type="text/css" media="all">
+<link rel="stylesheet" href="https://triadacollections.com/wp-content/uploads/salient/menu-dynamic.css?ver=47158" type="text/css" media="all">
+<link rel="stylesheet" href="https://triadacollections.com/wp-content/themes/salient/css/salient-dynamic-styles.css?ver=67398" type="text/css" media="all">
+<link rel="stylesheet" href="https://triadacollections.com/wp-content/themes/salient-child/style.css?ver=17.0.7" type="text/css" media="all">
+<link rel="stylesheet" href="https://triadacollections.com/wp-content/themes/salient/css/build/off-canvas/core.css?ver=17.0.7" type="text/css" media="all" />
+<link rel="stylesheet" href="https://triadacollections.com/wp-content/themes/salient/css/build/off-canvas/fullscreen-legacy.css?ver=17.0.7" type="text/css" media="all" />
+
+
+<style>
+    /* Keyframe animations for header entrance */
+    @keyframes header_nav_entrance_animation {
+        0% { opacity: 0.01; }
+        100% { opacity: 1; }
+    }
+    @keyframes header_nav_entrance_animation_2 {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(0); }
+    }
+    @media only screen and (min-width: 691px) {
+        #header-outer { opacity: 0.01; }
+        .no-js #header-outer { opacity: 1; }
+        #header-outer.entrance-animation {
+            animation: header_nav_entrance_animation 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+        #header-outer.entrance-animation #top {
+            animation: header_nav_entrance_animation_2 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+    }
+    
+    /* Custom CSS for header elements */
+	#header-outer {
+    z-index: 10000 !important;
+	}
+    body #header-outer,
+    body[data-header-color="dark"] #header-outer {
+        background-color: #ebe8df !important;
+    }
+    body #header-outer .menu-item-439 > a:hover:after {
+        background: #334032 !important;
+    }
+    #header-outer .menu-item-439 > a:after {
+        background: transparent !important;
+    }
+    #header-outer .menu-item-439 > a:hover:after {
+        background: #242424 !important;
+    }
+    body #header-outer[data-lhe="animated_underline"] #top nav > ul > li:not([class*="button_"]) > a .menu-title-text:after {
+        bottom: -16px;
+    }
+    #header-outer[data-lhe="animated_underline"]:not([data-format="left-header"]) nav > ul > li:not([class*="button_"]) > a .menu-title-text:after {
+        border-top-width: 2px;
+    }
+    
+    /* Mobile Menu Icons */
+    #top .slide-out-widget-area-toggle a span {
+        overflow: hidden;
+        width: 38px;
+    }
+    @media only screen and (min-width: 1px) and (max-width: 999px) {
+        #header-outer .slide-out-widget-area-toggle .lines,
+        #header-outer .slide-out-widget-area-toggle .lines-button,
+        #header-outer .slide-out-widget-area-toggle .lines:after,
+        #header-outer .slide-out-widget-area-toggle .lines:before {
+            width: 38px;
+        }
+    }
+    .slide-out-widget-area-toggle.mobile-icon .lines-button:after,
+    .slide-out-widget-area-toggle.mobile-icon .lines:after,
+    .slide-out-widget-area-toggle.mobile-icon .lines:before {
+        height: 2px !important;
+        width: 38px !important;
+    }
+    body[data-slide-out-widget-area-style*="fullscreen"] #top .menu-push-out .lines-button:after,
+    body[data-slide-out-widget-area-style*="fullscreen"] #top .menu-push-out .lines:after,
+    body[data-slide-out-widget-area-style*="fullscreen"] #top .menu-push-out .lines:before {
+        transform: translateX(40px) !important;
+    }
+</style>
+<script type="text/javascript">
+   document.documentElement.classList.remove("no-js");
+    document.documentElement.classList.add("js");
+</script>
+	</head>
+<body
+    class="home wp-singular page-template-default page page-id-691 wp-theme-salient wp-child-theme-salient-child material wpb-js-composer js-comp-ver-7.8.1 vc_responsive"
+    data-footer-reveal="false"
+    data-footer-reveal-shadow="none"
+    data-header-format="centered-logo-between-menu-alt"
+    data-body-border="off"
+    data-boxed-style=""
+    data-header-breakpoint="1280"
+    data-dropdown-style="minimal"
+    data-cae="easeOutQuart"
+    data-cad="1500"
+    data-megamenu-width="full-width"
+    data-aie="none"
+    data-ls="fancybox"
+    data-apte="standard"
+    data-hhun="0"
+    data-fancy-form-rcs="1"
+    data-form-style="default"
+    data-form-submit="regular"
+    data-is="minimal"
+    data-button-style="rounded"
+    data-user-account-button="false"
+    data-flex-cols="true"
+    data-col-gap="60px"
+    data-header-inherit-rc="false"
+    data-header-search="false"
+    data-animated-anchors="true"
+    data-ajax-transitions="false"
+    data-full-width-header="true"
+    data-slide-out-widget-area="true"
+    data-slide-out-widget-area-style="fullscreen-alt"
+    data-user-set-ocm="off"
+    data-loading-animation="none"
+    data-bg-header="true"
+    data-responsive="1"
+    data-ext-responsive="true"
+    data-ext-padding="100"
+    data-header-resize="1"
+    data-header-color="custom"
+    data-cart="false"
+    data-remove-m-parallax=""
+    data-remove-m-video-bgs=""
+    data-m-animate="1"
+    data-force-header-trans-color="dark"
+    data-smooth-scrolling="0"
+    data-permanent-transparent="false"
+  >
 		<!-- Wrapper -->
 		<div id="wrapper">
+			<!-- <div class="ocm-effect-wrap"> -->
+        <!-- <div class="ocm-effect-wrap-inner"> -->
 
-            <header class="nav-header">
-                <div class="nav-menu">
-                    <a href="josh.html"><h1 class="nav-logo">Papagayo Bay</h1></a>
-                    <nav class="menu">
-                        <ul>
-                            <li><a href="#about" class="scrolly">About</a></li>
-                            <li><a href="#map" class="scrolly">Map</a></li>
-                            <li><a href="#site-plan" class="scrolly">Site Plan</a></li>
-                            <!-- <li><a href="#house-renderings">House Renderings</a></li> -->
-                            <li><a href="#properties" class="scrolly">Properties</a></li> 
-                            <li><a href="#amenities" class="scrolly">Amenities</a></li>
-                            <li><a href="#investment" class="scrolly">Investment</a></li>
-                            <li><a href="#contact" class="scrolly">Contact</a></li>
-                            <li><a href="beach-club.html">Beach</a></li>
+            <div id="header-space" data-header-mobile-fixed="1"></div>
 
+<div id="header-outer" data-has-menu="true" data-header-button_style="default" data-using-pr-menu="true" data-mobile-fixed="1" data-ptnm="false" data-lhe="animated_underline" data-user-set-bg="#f4ece2" data-format="centered-logo-between-menu-alt" data-permanent-transparent="false" data-megamenu-rt="1" data-remove-fixed="0" data-header-resize="1" data-cart="false" data-transparency-option="1" data-box-shadow="none" data-shrink-num="25" data-using-secondary="0" data-using-logo="1" data-logo-height="100" data-m-logo-height="60" data-padding="24" data-full-width="true" data-condense="false" data-transparent-header="true" data-transparent-shadow-helper="false" data-remove-border="true" class="dark-slide">
+    <header id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col span_3">
+                    <a id="logo" href="https://triadacollections.com" data-supplied-ml="true">
+                        <img class="stnd skip-lazy default-logo dark-version" width="128" height="92" alt="Triada Collections" src="https://triadacollections.com/wp-content/uploads/2025/02/triada-logo-fullcolor-RGB-BAHAI-COSTARICA.svg" />
+                        <img class="mobile-only-logo skip-lazy" alt="Triada Collections" width="128" height="92" src="https://triadacollections.com/wp-content/uploads/2025/02/triada-logo-fullcolor-RGB-BAHAI-COSTARICA.svg" />
+                    </a>
+                </div><div class="col span_9 col_last">
+                    <div class="nectar-mobile-only mobile-header">
+                        <div class="inner"></div>
+                    </div>
+                    <div class="slide-out-widget-area-toggle mobile-icon fullscreen-alt" data-custom-color="false" data-icon-animation="simple-transform">
+                        <div>
+                            <a href="#slide-out-widget-area" role="button" aria-label="Navigation Menu" aria-expanded="false" class="closed">
+                                <span class="screen-reader-text">Menu</span>
+                                <span aria-hidden="true">
+                                    <i class="lines-button x2"> <i class="lines"></i> </i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <nav aria-label="Main Menu">
+                        <ul id="menu-main-menu-1" class="sf-menu">
+                            <li class="menu-item"><a href="#" aria-current="page">Discover</a></li>
+                            <li class="menu-item"><a href="#">Residences</a></li>
+                            <li class="menu-item"><a href="#">Location</a></li>
                         </ul>
                     </nav>
-                </div>
-            </header>
+                </div><div class="right-aligned-menu-items">
+                    <nav>
+                        <ul class="buttons sf-menu">
+                            <li class="menu-item"><a href="#">Amenities</a></li>
+                            <li class="menu-item"><a href="#">FAQ</a></li>
+                            <li class="button-style menu-item menu-item-btn-style-button-border_accent-color"><a href="#"><span>INQUIRE</span></a></li>
+                        </ul>
+                    </nav>
+                </div></div></div></header>
+</div>
+
+<div id="slide-out-widget-area-bg" class="fullscreen-alt medium">
+    <div class="bg-inner"></div>
+</div>
+
+<div id="slide-out-widget-area" class="fullscreen-alt">
+    <div class="inner-wrap">
+        <div class="inner">
+            <a class="slide_out_area_close" href="#"><span class="screen-reader-text">Close Menu</span><span class="close-wrap"><span class="close-line close-line1"></span><span class="close-line close-line2"></span></span></a>
+            <div class="off-canvas-menu-container mobile-only" role="navigation">
+                <ul class="menu">
+                    <li class="menu-item"><a href="#">Discover</a></li>
+                    <li class="menu-item"><a href="#">Residences</a></li>
+                    <li class="menu-item"><a href="#">Location</a></li>
+                    <li class="menu-item"><a href="#">Amenities</a></li>
+                    <li class="menu-item"><a href="#">FAQ</a></li>
+                    <li class="button-style menu-item"><a href="#">INQUIRE</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
 			<div class="header-video"><div class="video-background">
 				<video id="hero-video" autoplay loop muted playsinline poster="images/Bay1.jpg">
-					<source src="video/HeroRole.mp4" type="video/mp4">
+					<source src="video/HeroRle.mp4" type="video/mp4">
 					Your browser does not support the video format.
 				</video>
 				<!-- <div class="video-overlay">
@@ -60,245 +241,72 @@
 			<div id="intro">
 				<h1>Papagayo<br />
 				Bay</h1>
-				<p>Where Vision Meets Paradise</p>
-                <a href=#about class="button icon solid solo fa-arrow-down scrolly"></a>
-				<!-- <ul class="actions">
-					<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-				</ul> -->
+				<p>Where Luxury Meets Nature</p>
+                <a href=#project-overview class="button icon solid solo fa-arrow-down scrolly"></a>
 			</div>
-
-			<!-- Header -->
-			<!-- <header id="header">
-				<a href="index.html" class="logo">Papagayo Bay</a>
-			</header> -->
-	
 		</div>
-			
-		<!-- Nav -->
-			<!-- <nav id="nav">
-				<ul class="links">
-					<li class="active"><a href="index.html">This is Massively</a></li>
-					<li><a href="generic.html">Generic Page</a></li>
-					<li><a href="elements.html">Elements Reference</a></li>
-				</ul>
-			</nav> -->
 
 		<!-- Main -->
 			<div id="main">
 
-				<!-- About -->
-                <article id="about">
-				<!-- <div class="custom-grey-box-section"> -->
-					<article class="intro box">
-						<header class="major">
-							<h1 class="fade-in-up">Project<br />
-							Overview</h1>
-							<p class="fade-in-up">This project offers an exclusive investment opportunity to develop a significant 
-                                portfolio of luxury residences in the highly coveted Papagayo Bay, Costa Rica, 
-                                a premier destination renowned for its appeal to high-net-worth individuals. 
-                                We are strategically positioned to capitalize on the escalating regional demand 
-                                for premium second homes and vacation properties, a market segment demonstrating 
-                                consistent growth and robust value. This initiative offers investment partners 
-                                the opportunity to cultivate a high-performing portfolio of luxury properties, 
-                                poised for significant returns by leveraging the distinctive appeal of Papagayo Bay
-                                 and the robust dynamics of its high-end real estate market..</p>
-						</header>
+				<!-- Project Overview -->
+                <article id="project-overview">
+					<article class="intro">
+							<!-- <h1 class="fade-in-up title-with-underline">Papagayo Bay Residences</h1> -->
+							<h1 class="fade-in-up title-with-underline">Residences at Papagayo Bay</h1>
+							<p class="fade-in-up" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+								Standing barefoot with a drink in hand, overlooking the infinity edged pool from 
+								your elegant open-air terrace, as the last sliver of sunlight glitters off the calm 
+								waters of Papagayo Bay, you will begin to understand the Costa Rican ritual of sunset.
+								 Fully retractable glass walls welcome gentle ocean breezes into your elegant living 
+								 spaces. Your home’s open floor plan and modern amenities seamlessly blend luxury and tropical beauty. 
+								</p>
 					</article>
-				<!-- </div> -->
                 </article>
 
-
-                <article id="amenities" class="center-mode-carousel-wrapper">
-                    <div class="post">
-					<h1 class="title-with-underline"> Amenities </h1>
-					<article id="carousel-section" class="main special block-bg my-solid-color-section">
-						<div class="content-inner">
-						</div>
-						<div class="center-mode-slider-wrapper">
-							<div class="center-mode-slider ">
-								<div>
-									<div class="slide-content">
-										<div class="slideshow-card">
-											<img src="images/Bay1.jpg" alt="Scenic view of Papagayo Bay">
-											<div class="card-info">
-												<h2>Beach Club</h2>
-												<p>Expansive views of the serene Papagayo Bay, showcasing its beauty.</p>
-												<button>More Info</button>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div>
-									<div class="slide-content">
-										<div class="slideshow-card">
-											<img src="images/Beach1.jpg" alt="Lush green landscape">
-											<div class="card-info">
-												<h2>Waterfall</h2>
-												<p>Discover the vibrant green foliage and rich terrain surrounding the area.</p>
-												<button>Explore</button>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div>
-									<div class="slide-content">
-										<div class="slideshow-card">
-											<img src="images/HDM1.jpg" alt="View over a coastal town or resort area">
-											<div class="card-info">
-												<h2>Club House</h2>
-												<p>A glimpse of the charming local architecture nestled by the sea.</p>
-												<button>Details</button>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div>
-									<div class="slide-content">
-										<div class="slideshow-card">
-											<img src="images/Land1.jpg" alt="River meeting the ocean beach">
-											<div class="card-info">
-												<h2>Steak House</h2>
-												<p>The unique convergence where the freshwater river flows into the beach.</p>
-												<button>Discover</button>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div>
-									<div class="slide-content">
-										<div class="slideshow-card">
-											<img src="images/Land1.jpg" alt="River meeting the ocean beach">
-											<div class="card-info">
-												<h2>Steak House</h2>
-												<p>The unique convergence where the freshwater river flows into the beach.</p>
-												<button>Discover</button>
-											</div>
-										</div>
-									</div>
-								</div>
-
+				 <!-- House Renderings -->
+                <article id="HouseRenderings">
+					<div class="post">
+						<div class="gallery-grid-3x3">
+							<div class="gallery-item">
+								<img src="images/HouseRenderings/Terrace1.webp" alt="Terrace">
+							</div>
+							<div class="gallery-item">
+								<img src="images/HouseRenderings/LivingRoom1.webp" alt="Living Room">
+							</div>
+							<div class="gallery-item">
+								<img src="images/HouseRenderings/Bedroom2.webp" alt="Bedroom">
+							</div>
+							<div class="gallery-item">
+								<img src="images/HouseRenderings/Bathroom1.webp" alt="Bathroom">
+							</div>
+							<div class="gallery-item">
+								<img src="images/HouseRenderings/Hallway1.webp" alt="Hallway">
+							</div>
+							<div class="gallery-item">
+								<img src="images/HouseRenderings/Back2.webp" alt="Back of the House">
 							</div>
 						</div>
-					<div class="custom-slick-controls">
-						<div class="slick-counter"></div> </div>
-                    </div>
-				</article>
-
-                <!-- Map -->
-                <article id="map">
-                    <div class="post">
-                        <span class="image left"><img src="images/guanacaste_map.webp" alt="Map of Guanacaste region" /></span>
-                            <h1 class="side-title"> Guanacaste, <br> Costa Rica</h1>
-                        <p>In Costa Rica’s sun-blessed northwestern corner, Guanacaste Province embraces the coveted 
-                            Papagayo Bay with a distinct character all its own. This secluded gem, where vibrant cowboy
-                             culture meets coastal luxury, offers an unmatched combination: year-round sunshine, pristine
-                              beaches, lush tropical landscapes, incredible national parks, otherworldly sunsets, diverse
-                               wildlife, abundant outdoor activities, and rich traditions. From volcanic peaks to golden
-                                plains, every corner reveals why Guanacaste has become Costa Rica’s most sought-after 
-                                destination.</p>
-
-                    </div>
-                    <div class="post">
-                     <h1 class="title-with-underline"> Map </h1>
-                        <div class="center-text">
-                            <p>Unlike other popular Costa Rican destinations that require hours of travel along rugged terrain, 
-                            Papagayo Bay is easily accessible from Liberia International Airport by a quick 20-minute drive
-                             along paved roads. The airport is well connected and services direct flights with 24 
-                             international cities, 18 of which are in the U.S.</p>
-                        </div>
-                        <span class="image fit"><img src="images/resortMap.webp" alt=""/></span>
-                    </div>
-                </article>
-
-                <!-- Site Plan -->
-                <article id="site-plan">
-                    <div class="post">
-                        <h1 class="title-with-underline"> Site Plan </h1>
-                        <p><span class="image left"><img src="images/guanacaste_map.webp" alt="" /></span>
-                            Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus 
-                        euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis 
-                        volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis 
-                        sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. 
-                        Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat 
-                        ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget.
-                        tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis 
-                        iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum 
-                        ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.</p>
-                        <p><span class="image right "><img src="images/18-2024-07-20 Playa Panama 18.jpg" alt="" /></span>
-                            Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus 
-                        euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis 
-                        volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis 
-                        sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. 
-                        Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat 
-                        ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget.
-                        tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis 
-                        iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum 
-                        ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.</p>
-                    </div>
-			    </article>
-
-
-                <!-- Properties -->
-                <article id="properties">
-				<div class="post">
-					<h1 class="title-with-underline"> Properties </h1>
-					<div class="box">
-						<p>Felis sagittis eget tempus primis in faucibus vestibulum. Blandit adipiscing eu 
-							felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque 
-							praesent tincidunt felis sagittis eget. tempus euismod. Magna sed etiam ante ipsum 
-							primis in faucibus vestibulum. Blandit adipiscing eu ipsum primis in faucibus vestibulum.
-							Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus 
-							lorem ipsum dolor sit amet nullam. Integer ac pellentesque praesent tincidunt felis
-							sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus 
-							euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu
-							felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque 
-							praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis
-							in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing
-							accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum ante ipsum primis
-							in faucibus magna blandit adipiscing eu felis iaculis volutpat lorem ipsum dolor.</p>
 					</div>
-
-					<div class="gallery-grid-3x3">
-						<div class="gallery-item">
-							<img src="images/Bay1.jpg" alt="Description of image 1">
-						</div>
-						<div class="gallery-item">
-							<img src="images/76-2024-07-20 Playa Panama 76.jpg" alt="Description of image 2">
-						</div>
-						<div class="gallery-item">
-							<img src="images/Beach1.jpg" alt="Description of image 3">
-						</div>
-                    </div>
-                </div>
                 </article>
 
-
-
-				<!-- Amenities -->
-				<article id="amenities" class="center-mode-carousel-wrapper">
+				<!-- Luxury Living Carousel  -->
+                <article id="luxury-living" class="center-mode-carousel-wrapper" style="padding-left: 0px; padding-right: 0px;">
                     <div class="post">
-					<h1 class="title-with-underline"> Amenities </h1>
+					<h1 class="fade-in-up title-with-underline"> Luxury Living </h1>
 					<article id="carousel-section" class="main special block-bg my-solid-color-section">
 						<div class="content-inner">
-							<header class="major">
-								<h2>Our Photo Gallery</h2>
-								<p>A glimpse into Papagayo Bay</p>
-							</header>
 						</div>
 						<div class="center-mode-slider-wrapper">
 							<div class="center-mode-slider ">
 								<div>
 									<div class="slide-content">
 										<div class="slideshow-card">
-											<img src="images/Bay1.jpg" alt="Scenic view of Papagayo Bay">
+											<img src="images/beachClub.webp" alt="Rendering of the Beach Club">
 											<div class="card-info">
-												<h2>Bay View</h2>
-												<p>Expansive views of the serene Papagayo Bay, showcasing its beauty.</p>
-												<button>More Info</button>
+												<h2 class="card-title-with-underline">Beach Club</h2>
+												<p>Find unparalleled beachfront luxury at our exclusive Beach Club, offering pristine sands, exquisite dining, and bespoke services.</p>
+												<a href="beach-club.html">More Info</a>
 											</div>
 										</div>
 									</div>
@@ -307,11 +315,26 @@
 								<div>
 									<div class="slide-content">
 										<div class="slideshow-card">
-											<img src="images/Beach1.jpg" alt="Lush green landscape">
+											<img src="images/Waterfall Side.webp" alt="Lush green landscape">
 											<div class="card-info">
-												<h2>Lush Landscape</h2>
-												<p>Discover the vibrant green foliage and rich terrain surrounding the area.</p>
-												<button>Explore</button>
+												<h2 class="card-title-with-underline">Waterfall</h2>
+												<p>Discover the breathtaking beauty of our natural waterfalls, a tranquil oasis providing a majestic backdrop to your luxury escape.</p>
+												<a>Coming Soon</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div>
+									<div class="slide-content">
+										<div class="slideshow-card hacienda-del-mar">
+											<img src="images/16-2024-07-20 Playa Panama 16.webp" alt="River meeting the ocean beach">
+											<div class="card-info">
+												<h2 class="card-title-with-underline">
+													<span class="original-title">Hacienda Del Mar</span>
+												</h2>
+												<p>Discover an exclusive collection of luxury homes within Hacienda del Mar, where sophisticated architecture meets breathtaking ocean views.</p>
+												<a href="#properties-section">Visit</a>
 											</div>
 										</div>
 									</div>
@@ -320,11 +343,11 @@
 								<div>
 									<div class="slide-content">
 										<div class="slideshow-card">
-											<img src="images/HDM1.jpg" alt="View over a coastal town or resort area">
+											<img src="images/DJI_20250118104120_0034_D.webp" alt="River meeting the ocean beach">
 											<div class="card-info">
-												<h2>Coastal Living</h2>
-												<p>A glimpse of the charming local architecture nestled by the sea.</p>
-												<button>Details</button>
+												<h2 class="card-title-with-underline">Grassland</h2>
+												<p>Secure your legacy on Grassland, presenting exclusive lots for luxury homes, where natural beauty and endless horizons define your sanctuary.</p>
+												<a>Coming Soon</a>
 											</div>
 										</div>
 									</div>
@@ -333,343 +356,310 @@
 								<div>
 									<div class="slide-content">
 										<div class="slideshow-card">
-											<img src="images/Land1.jpg" alt="River meeting the ocean beach">
+											<img src="images/AreaGrowth.png" alt="River meeting the ocean beach">
 											<div class="card-info">
-												<h2>River Meets Ocean</h2>
-												<p>The unique convergence where the freshwater river flows into the beach.</p>
-												<button>Discover</button>
+												<h2 class="card-title-with-underline">Area Growth</h2>
+												<p>Be part of a flourishing luxury community where strategic development enhances both lifestyle and long-term value in Papagayo Bay.</p>
+												<a>Coming Soon</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div>
+									<div class="slide-content">
+										<div class="slideshow-card">
+											<img src="images/PeninsulaSteak-Desk.webp" alt="River meeting the ocean beach">
+											<div class="card-info">
+												<h2 class="card-title-with-underline">Restaurants</h2>
+												<p>Indulge in a diverse array of dining options, from casual beachfront fare to fine dining, all while immersed in the stunning ambiance of the bay.</p>
+												<a>Coming Soon</a>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					<div class="custom-slick-controls">
-						<div class="slick-counter"></div> </div>
+						<div class="custom-slick-controls">
+							<div class="slick-counter"></div> 
+						</div>
                     </div>
 				</article>
 
-                <article>
+				<!-- Experiences  -->
+				<article id="experiences">
                 <div class="post">
-                    <div class="gallery-grid-3x3">
+					<h1 class="title-with-underline fade-in-up"> Our Experiences </h1>
+					<div class="gallery-grid-3x3-container">
+                    <div class="gallery-grid-3x3" style="gap: clamp(10px, calc(-3.2px + 3.3vw), 30px); width: 80%; justify-self: center;">
 						<div class="gallery-item">
-							<img src="images/Nature Pools.webp" alt="Description of image 1">
+							<img src="images/Nature Pools.webp" alt="Nature Pools">
                             <div class="text-overlay">
                                 <h2>NATURE POOLS</h2>
                              </div>
 						</div>
 						<div class="gallery-item">
-							<img src="images/farmToTable.webp" alt="Description of image 2">
+							<img src="images/farmToTable.webp" alt="Garden">
                              <div class="text-overlay">
                                 <h2>FARM TO TABLE</h2>
                              </div>
 						</div>
 						<div class="gallery-item">
-							<img src="images/boatRental.webp" alt="Description of image 3">
+							<img src="images/WebPhotos/FishingBoat2.jpg" alt="Fishing Boat">
                              <div class="text-overlay">
-                                <h2>BOAT RENTAL</h2>
+                                <h2>FISHING</h2>
                              </div>
 						</div>
 						<div class="gallery-item">
-							<img src="images/golfService.webp" alt="Description of image 4">
+							<img src="images/WebPhotos/Volcano1.jpg" alt="Volcano">
                              <div class="text-overlay">
-                                <h2>GOLF CART SERVICE</h2>
+                                <h2>VOLCANOS</h2>
                              </div>
 						</div>
 						<div class="gallery-item">
-							<img src="images/hiking.webp" alt="Description of image 5">
+							<img src="images/WebPhotos/WalkingTrail1.jpg" alt="Walking Trail">
                              <div class="text-overlay">
-                                <h2>HIKING TRAILS</h2>
+                                <h2>NATURE TRAILS</h2>
                              </div>
 						</div>
 						<div class="gallery-item">
-							<img src="images/beachClub.webp" alt="Description of image 6">
+							<img src="images/WebPhotos/Snorkling1.jpg" alt="Snorkeling">
                              <div class="text-overlay">
-                                <h2>BEACH CLUB</h2>
+                                <h2>SNORKELING</h2>
+                             </div>
+						</div>
+						<div class="gallery-item">
+							<img src="images/WebPhotos/BlueZone1.jpg" alt="Healthy Old Man">
+                             <div class="text-overlay">
+                                <h2>BLUE ZONES</h2>
+                             </div>
+						</div>
+						<div class="gallery-item">
+							<img src="images/WebPhotos/Spa1.webp" alt="Spa">
+                             <div class="text-overlay">
+                                <h2>SPAS</h2>
+                             </div>
+						</div>
+						<div class="gallery-item">
+							<img src="images/WebPhotos/Surfing1.jpg" alt="Surfing">
+                             <div class="text-overlay">
+                                <h2>SURFING</h2>
                              </div>
 						</div>
 					</div>
-                    </div>
+					</div>
+                </div>
+                </article>
+
+				 <!-- Why Invest -->
+                <article id="why-invest">
+                <div class="post">
+                    <h1 class="title-with-underline"> Why Papagayo Bay </h1>
+                    <p style="max-width: 1000px; margin: 0 auto; text-align: center; padding-bottom: 2rem;">
+						Overlooking the calm waters of Costa Rica’s famed Papagayo Bay, our collection of exclusive
+						 homes and condos seamlessly integrate nature with luxurious indoor and outdoor living spaces.</p>
+
+                    
+                    <!-- SECTION 1: Image Left, Text Right -->
+                    <section class="feature-split-section">
+                        <div class="feature-image-container">
+                            <img src="images/guanacaste_map.webp" alt="Map of Guanacaste Costa Rica" />
+                        </div>
+                        <div class="feature-text-container">
+                            <div class="text-content-item">
+                                <!-- <h2>Our Vision</h2> -->
+                                <!-- <p>Overlooking the calm waters of Costa Rica’s famed Papagayo Bay, our collection of exclusive homes and condos seamlessly integrate nature with luxurious indoor and outdoor living spaces.</p> -->
+                            </div>
+                            <div class="text-content-item">
+                                <h2>Location</h2>
+                                <p>As the nearest luxury resort to Guanacaste’s international airport, our development delivers the perfect balance of convenience and escape - just 20 short minutes from landing to lounging on the beach.</p>
+                            </div>
+                            <div class="text-content-item">
+                                <h2>Amenities</h2>
+                                <p>Our exclusive residences enjoy easy access to world class diving, snorkeling, swimming, paddleboarding, boating and fishing with private amenities such as exclusive waterfall adventures, jungle tours, elegant beach club and on-site world class restaurants.</p>
+                            </div>
+							<!-- <div class="text-content-item">
+                                <h2>Ownership</h2>
+                                <p>Our elegant residences are built on fully titled, fee simple real property, differentiating us from other resorts in the area which offer homes on leased ground.</p>
+                            </div> -->
+                        </div>
+                    </section>
+                
+                    <!-- SECTION 2: Text Left, Image Right -->
+                    <section class="feature-split-section reverse-layout">
+                        <div class="feature-image-container">
+								<img src="images/18-2024-07-20 Playa Panama 18.jpg" alt="Image of Playa Panama" />
+                        </div>
+                        <div class="feature-text-container">
+                            <div class="text-content-item">
+                                <h2>Ownership</h2>
+                                <p>Our elegant residences are built on fully titled, fee simple real property, differentiating us from other resorts in the area which offer homes on leased ground.</p>
+                            </div>
+                             <div class="text-content-item">
+                                <h2>Value</h2>
+                                <p>Beyond Papagayo Bay’s natural beauty and convenience, the region offers exceptional investment potential. Real estate values in the Guanacaste region have consistently appreciated, driven by strong demand and preservation of Costa Rica’s natural beauty making our residences an exceptional long-term store of value. Papagayo Bay’s unique combination of luxury, serenity, sustainability, and economic growth provides discerning individuals a secure, generational asset and an elevated lifestyle rooted in wellness, nature and enduring value.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            	</article>
+
+				 <!-- Properties -->
+                    <article id="properties-section" class="fade-in-up" style="padding-bottom: 1rem;">
+                        <div class="post">
+                            <div class="text-center mb-4">
+                                <div class="properties-header-icons">
+                                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home text-gold-500 mr-2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> -->
+                                    <!-- <span class="text-sm text-gold-600 font-medium uppercase tracking-wider">Exclusive Offerings</span> -->
+                                </div>
+                                <h1 class="title-with-underline">Presenting Phase 1 Hacienda Del Mar</h1>
+                            </div>
+						</div>
                     </article>
-			
-			<!-- Section 1 -->
-			 <article id="section1">
-				<div class="post">
-					<h1 class="title-with-underline"> Land </h1>
-					<div class="box">
-						<p>Felis sagittis eget tempus primis in faucibus vestibulum. Blandit adipiscing eu 
-							felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque 
-							praesent tincidunt felis sagittis eget. tempus euismod. Magna sed etiam ante ipsum 
-							primis in faucibus vestibulum. Blandit adipiscing eu ipsum primis in faucibus vestibulum.
-							Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus 
-							lorem ipsum dolor sit amet nullam. Integer ac pellentesque praesent tincidunt felis
-							sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus 
-							euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu
-							felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque 
-							praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis
-							in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing
-							accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum ante ipsum primis
-							in faucibus magna blandit adipiscing eu felis iaculis volutpat lorem ipsum dolor.</p>
-					</div>
 
-					<div class="gallery-grid-3x3">
-						<div class="gallery-item">
-							<img src="images/Nature Pools.webp" alt="Description of image 1">
+					<section id="map-main-section" style="padding-top: 0rem;"> <div class="post"> 
+						<div class="image-container single-image-view" style="width: 70%;">
+							<div class="image-wrapper">
+								<img src="images/HouseLayouts/MasMap.png" alt="Community Lot Map" id="map-image-main"> 
+							</div>
 						</div>
-						<div class="gallery-item">
-							<img src="images/76-2024-07-20 Playa Panama 76.jpg" alt="Description of image 2">
 						</div>
-						<div class="gallery-item">
-							<img src="images/Beach1.jpg" alt="Description of image 3">
-						</div>
-						<div class="gallery-item">
-							<img src="images/74-2024-07-20 Playa Panama 74.jpg" alt="Description of image 4">
-						</div>
-						<div class="gallery-item">
-							<img src="images/45-2024-07-20 Playa Panama 45.jpg" alt="Description of image 5">
-						</div>
-						<div class="gallery-item">
-							<img src="images/59-2024-07-20 Playa Panama 59.jpg" alt="Description of image 6">
-						</div>
-						<div class="gallery-item">
-							<img src="images/73-2024-07-20 Playa Panama 73.jpg" alt="Description of image 7">
-						</div>
-						<div class="gallery-item">
-							<img src="images/63-2024-07-20 Playa Panama 63.jpg" alt="Description of image 8">
-						</div>
-						<div class="gallery-item">
-							<img src="images/HDM1.jpg" alt="Description of image 9">
-						</div>
-					</div>
+					</section>
+
+					<article id="properties-section" class="fade-in-up" style="padding-top: 0rem;">
+                        <div class="post">
+                            <div class="properties-grid">
+
+								<!-- Card 1: The Point -->
+                                <div class="property-card" data-type="beachfront villa">
+                                    <div class="property-card-image-wrapper">
+                                        <img src="images/HouseRenderings/Front1.webp" alt="The Point Residence House Rendering" class="w-full h-64 object-cover">
+                                    </div>
+                                    <div class="property-card-info">
+                                        <h3 class="font-display text-xl font-bold mb-2">The Point</h3>
+                                        <p class="text-gray-600 mb-4">Discover a world of unparalleled privacy in this exclusive residential enclave, offering five spectacular homes on over an acre of pristine ocean-view property.</p>
+                                        
+										<div class="property-details-grid">
+											<!-- Homes -->
+											<div class="detail-item">
+												<span class="detail-label">Homes</span>
+												<span class="detail-value"><i class="fas fa-home"></i> 5</span>
+											</div>
+											<!-- Condos -->
+											<div class="detail-item">
+												<span class="detail-label">Condos</span>
+												<span class="detail-value"><i class="fas fa-building"></i> 0</span>
+											</div>
+											<!-- Total Build Size -->
+											<div class="detail-item">
+												<span class="detail-label">Total Build Size</span>
+												<span class="detail-value"><i class="fas fa-ruler-combined"></i> 51,796 sq ft</span>
+											</div>
+											<!-- Total Lot Size -->
+											<div class="detail-item">
+												<span class="detail-label">Total Lot Size</span>
+												<span class="detail-value"><i class="fas fa-expand-arrows-alt"></i>4,816 m²</span>
+											</div>
+										</div>
+                    					<div class="details-button-wrapper center"><a href="the_point.html" class="details-button">View Properties<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+                                    </div>
+                                </div>
+
+								
+								<!-- Card 2: Cliffside -->
+                                <div class="property-card" data-type="oceanview villa">
+                                    <div class="property-card-image-wrapper">
+                                        <img src="images/HouseRenderings/Bedroom1.webp" alt="Bedroom" class="w-full h-64 object-cover">
+                                    </div>
+                                    <div class="property-card-info">
+                                        <h3 class="font-display text-xl font-bold mb-2">Cliffside</h3>
+                                        <p class="text-gray-600 mb-4">Experience the height of coastal luxury in this master-planned community, offering a limited collection of seven private homes and fourteen premium condominiums.</p>
+                                        
+                                        <div class="property-details-grid">
+											<!-- Homes -->
+											<div class="detail-item">
+												<span class="detail-label">Homes</span>
+												<span class="detail-value"><i class="fas fa-home"></i> 7</span>
+											</div>
+											<!-- Condos -->
+											<div class="detail-item">
+												<span class="detail-label">Condos</span>
+												<span class="detail-value"><i class="fas fa-building"></i> 14</span>
+											</div>
+											<!-- Total Build Size -->
+											<div class="detail-item">
+												<span class="detail-label">Total Build Size</span>
+												<span class="detail-value"><i class="fas fa-ruler-combined"></i> 101,373 sq ft</span>
+											</div>
+											<!-- Total Lot Size -->
+											<div class="detail-item">
+												<span class="detail-label">Total Lot Size</span>
+												<span class="detail-value"><i class="fas fa-expand-arrows-alt"></i> 23,128 m²</span>
+											</div>
+										</div>
+                                        
+                    					<div class="details-button-wrapper center"><a href="cliffside.html" class="details-button">View Properties<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+
+                                    </div>
+                                </div>
+
+									<!-- Card 3: The Bluffs  -->
+									<div class="property-card" data-type="investment oceanview">
+										<div class="property-card-image-wrapper">
+											<img src="images/HouseRenderings/Patio1.webp" alt="Patio" class="w-full h-64 object-cover">
+										</div>
+										<div class="property-card-info">
+											<h3 class="font-display text-xl font-bold mb-2">The Bluffs</h3>
+											<p class="text-gray-600 mb-4">Claim your place in this private sanctuary featuring six exquisitely designed luxury homes set against breathtaking some of the best ocean views in the area.</p>
+											
+											<div class="property-details-grid">
+											<!-- Homes -->
+											<div class="detail-item">
+												<span class="detail-label">Homes</span>
+												<span class="detail-value"><i class="fas fa-home"></i> 6</span>
+											</div>
+											<!-- Condos -->
+											<div class="detail-item">
+												<span class="detail-label">Condos</span>
+												<span class="detail-value"><i class="fas fa-building"></i> 0</span>
+											</div>
+											<!-- Total Build Size -->
+											<div class="detail-item">
+												<span class="detail-label">Total Build Size</span>
+												<span class="detail-value"><i class="fas fa-ruler-combined"></i> 57,401 sq ft</span>
+											</div>
+											<!-- Total Lot Size -->
+											<div class="detail-item">
+												<span class="detail-label">Total Lot Size</span>
+												<span class="detail-value"><i class="fas fa-expand-arrows-alt"></i> 5,342 m²</span>
+											</div>
+										</div>
+											
+                    					<div class="details-button-wrapper center"><a href="the_bluffs.html" class="details-button view-property">View Properties<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+
+										</div>
+                                    </div>
+                                </div>
+                            </div>
+                    </article>
+
+			<!-- Contact Us  -->
+
+				<div id="contact-placeholder"></div>
+
+				<div id="copyright">
+					<!-- <ul><li>&copy; Papagayo Bay</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul> -->
+					<ul><li>&copy;Papagayo Bay 2025</li><li>All Rights Reserved</a></li></ul>
 				</div>
-			 </article>
 
-			 <!-- Section 2 -->
-			 <article id="section2">
-				<div class="post">
-					<h1 class="title-with-underline"> Location </h1>
-					<p><span class="image left smaller25"><img src="images/guanacaste_map.webp" alt="" /></span>
-						Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus 
-					euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis 
-					volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis 
-					sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. 
-					Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat 
-					ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget.
-					 tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis 
-					 iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum 
-					 ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.</p>
-					<p><span class="image right smaller25"><img src="images/18-2024-07-20 Playa Panama 18.jpg" alt="" /></span>
-						Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus 
-					euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis 
-					volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis 
-					sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. 
-					Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat 
-					ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget.
-					 tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis 
-					 iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum 
-					 ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.</p>
-				</div>
-			 </article>
+			<!-- End of Main  -->
+            </div> 
 
-			  <!-- Section 3 -->
-			  <article id="section3">
-				<div class="post">
-					<h1 class="title-with-underline"> Climate </h1>
-					<p><span class="image left"><img src="images/64-2024-07-20 Playa Panama 64.jpg" alt="" /></span>
-						Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus 
-					euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis 
-					volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis 
-					sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. 
-					Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat 
-					ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget.
-					 tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis 
-					 iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum 
-					 ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.</p>
-				</div>
-			 </article>
-
-			  <!-- Section 4 -->
-			  <article id="section4">
-				<div class="post">
-					<h1 class="title-with-underline"> Ease of Access </h1>
-					<p><span class="image right"><img src="images/Land1.jpg" alt="" /></span>
-						Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus 
-					euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis 
-					volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis 
-					sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. 
-					Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat 
-					ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget.
-					 tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis 
-					 iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Vestibulum 
-					 ante ipsum primis in faucibus magna blandit adipiscing eu felis iaculis.</p>
-				</div>
-			 </article>
-
-			 <!-- Section 5 -->
-			 <!-- <article id="section5">
-				<div class="post">
-					<h1 class="title-with-underline"> Luxury Homes </h1>
-					<p>I want to do a three option thing here. </p>
-				</div>
-			 </article> -->
-
-			 <!-- Section 6 -->
-			 <article id="section6">
-				<div class="post">
-					<h1 class="title-with-underline"> The Plan </h1>
-					<p><span class="image left larger75"><img src="images/HDMMap1.png" alt="" /></span>
-						Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus 
-					euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis 
-					volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis 
-					sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. 
-					Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat 
-					ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget.
-					 tempus euismod. ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis 
-					 sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. tempus euismod. 
-					 Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat 
-					 ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget.
-					  tempus euismod. </p>
-				</div>
-			 </article>
-
-
-			 <!-- Investment -->
-			 <article id="investment">
-				<section class="rectangle-section">
-				<div class="post">
-					<h1 class="title-with-underline"> Investment Opportunity </h1>
-				<div class="rectangle-container">
-					<article class="rectangle-item">
-						<div class="rectangle-header">
-							 <span class="rectangle-icon has-background">
-								<!-- <i class="icon solid fa-arrow-trend-up"></i> -->
-								 <i class="fas fa-chart-line"></i> 
-
-							 </span>
-							<h3 class="rectangle-title">IRR</h3>
-						</div>
-						<h4 class="rectangle-subtitle">18.5%</h4>
-						<p class="rectangle-description">
-							Projected Internal Rate of Return
-						</p>
-					</article>
-
-					<article class="rectangle-item">
-						<div class="rectangle-header">
-							 <span class="rectangle-icon has-background">
-								<i class="icon solid fa-dollar-sign"></i>
-							 </span>
-							<h3 class="rectangle-title">cash on Cash</h3>
-						</div>
-						<h4 class="rectangle-subtitle">9.2%</h4>
-						<p class="rectangle-description">
-							Annual Cash on Cash Return
-						</p>
-					</article>
-
-					<article class="rectangle-item">
-						<div class="rectangle-header">
-							 <span class="rectangle-icon has-background">
-								<i class="icon solid fa-clock"></i>
-							 </span>
-							<h3 class="rectangle-title">Investment</h3>
-						</div>
-						<h4 class="rectangle-subtitle">$45M</h4>
-						<p class="rectangle-description">
-							Total Investment Sought
-						</p>
-					</article>
-
-					<article class="rectangle-item">
-						<div class="rectangle-header">
-							 <span class="rectangle-icon has-background">
-								<i class="icon solid fa-calendar"></i>
-							 </span>
-							<h3 class="rectangle-title">Exit Timeline</h3>
-						</div>
-						<h4 class="rectangle-subtitle">3 Years</h4>
-						<p class="rectangle-description">
-							Projected Exit Date: Q3 2028
-						</p>
-					</article>
-				</div>
-				</div>
-			</section>
-			 </article>
-
-			 <!-- Finances -->
-			 <article id="finances">
-				<section class="rectangle-section">
-				<div class="post">
-					<h1 class="title-with-underline"> Investment Opportunity </h1>
-				<div class="rectangle-container">
-					<article class="rectangle-item">
-						<div class="rectangle-header">
-							 <span class="rectangle-icon has-background">
-								<!-- <i class="icon solid fa-arrow-trend-up"></i> -->
-								 <i class="fas fa-chart-line"></i> 
-
-							 </span>
-							<h3 class="rectangle-title">Estimated Appreciation</h3>
-						</div>
-						<h4 class="rectangle-subtitle">6-8%</h4>
-						<p class="rectangle-description">
-							Property value increase per year
-						</p>
-					</article>
-
-					<article class="rectangle-item">
-						<div class="rectangle-header">
-							 <span class="rectangle-icon has-background">
-								<i class="icon solid fa-dollar-sign"></i>
-							 </span>
-							<h3 class="rectangle-title">Home Prices</h3>
-						</div>
-						<h4 class="rectangle-subtitle">600k-3.2M$</h4>
-						<p class="rectangle-description">
-							Views, placement, or space
-						</p>
-					</article>
-
-					<article class="rectangle-item">
-						<div class="rectangle-header">
-							 <span class="rectangle-icon has-background">
-								<i class="icon solid fa-clock"></i>
-							 </span>
-							<h3 class="rectangle-title">Build Time</h3>
-						</div>
-						<h4 class="rectangle-subtitle">6 Months</h4>
-						<p class="rectangle-description">
-							From investment to move-in
-						</p>
-					</article>
-
-					<article class="rectangle-item">
-						<div class="rectangle-header">
-							 <span class="rectangle-icon has-background">
-								<i class="icon solid fa-calendar"></i>
-							 </span>
-							<h3 class="rectangle-title">Re-rent Potential</h3>
-						</div>
-						<h4 class="rectangle-subtitle">215k/yr</h4>
-						<p class="rectangle-description">
-							Possible earnings using our part-time rental service
-						</p>
-					</article>
-				</div>
-				</div>
-			</section>
-			 </article>
-
-			<div id="contact"> 
-				<h1 class="title-with-underline"> Contact Us</h1>
-			</div>
-
-			</div>
 
 		<!-- Footer -->
-			<footer id="footer">
-				<section>
+			<!-- <footer id="footer"> -->
+				<!-- <section>
 					<form method="post" action="#">
 						<div class="fields">
 							<div class="field">
@@ -693,16 +683,16 @@
 				<section class="split contact">
 					<section class="alt">
 						<h3>Address</h3>
-						<p>1234 Somewhere Road #87257<br />
-						Nashville, TN 00000-0000</p>
+						<p>202 2nd Ave S, PO Box 1782, <br />
+						59403 Great Falls, MT</p>
 					</section>
 					<section>
 						<h3>Phone</h3>
-						<p><a >(000) 000-0000</a></p>
+						<p><a >+1 (406) 868-7002</a></p>
 					</section>
 					<section>
 						<h3>Email</h3>
-						<p><a >info@untitled.tld</a></p>
+						<p><a >brion@triadacollections.com</a></p>
 					</section>
 					<section>
 						<h3>Social</h3>
@@ -713,19 +703,14 @@
 							<li><a  class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 						</ul>
 					</section>
-				</section>
-			</footer>
-
-		<!-- Copyright -->
-			<div id="copyright">
-				<!-- <ul><li>&copy; Papagayo Bay</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul> -->
-				<ul><li>&copy; Papagayo Bay</li><li>2025</a></li></ul>
-			</div>
+				</section> -->
+				
+			<!-- </footer> -->
 
 	</div>
 
 	<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.scrollex.min.js"></script>
 		<script src="assets/js/jquery.scrolly.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>
@@ -733,8 +718,36 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script src="assets/js/animations.js"></script>
+		<script src="assets/js/mapHover.js"></script> 
 		<script src="slick-1.8.1/slick/slick.js"></script>
 		<script type="text/javascript" src="assets/js/alexCarousel.js"></script>
+		<script src="assets/js/loadContact.js"></script>
+
+<script src="https://triadacollections.com/wp-content/themes/salient/js/build/priority.js?ver=17.0.7"></script>
+<script src="https://triadacollections.com/wp-content/themes/salient/js/build/third-party/transit.min.js?ver=0.9.9"></script>
+<script src="https://triadacollections.com/wp-content/themes/salient/js/build/third-party/waypoints.js?ver=4.0.2"></script>
+<script src="https://triadacollections.com/wp-content/themes/salient/js/build/third-party/hoverintent.min.js?ver=1.9"></script>
+<script src="https://triadacollections.com/wp-content/themes/salient/js/build/third-party/superfish.js?ver=1.5.8"></script>
+
+<script src="https://triadacollections.com/wp-content/themes/salient/js/build/third-party/jquery.fancybox.js?ver=3.3.9"></script>
+
+<script type="text/javascript">
+    var nectarLove = { ajaxurl: "#", postID: "691", rooturl: "" };
+    var nectarOptions = {
+        delay_js: "false",
+        smooth_scroll: "true",
+        smooth_scroll_strength: "50",
+        header_entrance: "true",
+        body_border_func: "default",
+        dropdown_hover_intent: "default",
+        simplify_ocm_mobile: "0",
+        mobile_header_format: "default",
+        ls: "fancybox"
+    };
+    var nectar_front_i18n = { menu: "Menu", next: "Next", previous: "Previous", close: "Close" };
+</script>
+
+<script src="https://triadacollections.com/wp-content/themes/salient/js/build/init.js?ver=17.0.7"></script>
 
 	</body>
 </html>
