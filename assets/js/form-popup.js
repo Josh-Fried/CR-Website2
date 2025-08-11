@@ -37,14 +37,8 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
-<<<<<<< HEAD
-    // --- Your existing modal logic ---
-    const priceRequestForm = document.getElementById('price-request-form');
-    const requestButtons = document.querySelectorAll('.price-request-button');
-=======
     const priceRequestForm = document.getElementById('price-request-form'); 
     const requestButtons = document.querySelectorAll('.price-request-button, .inquire-button');
->>>>>>> main
     const closeButton = document.querySelector('.modal-close');
 
     function openForm() {
