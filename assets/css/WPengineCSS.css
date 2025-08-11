@@ -4,6 +4,8 @@
 
   --main-background-color: #f4ece2; /* Our Color */
 	/* --main-background-color: #ebe8df; /* Triada */
+	--main-text-color: #212931;
+
 }
 
 .col.span_3  {
@@ -2950,7 +2952,7 @@ body[data-slide-out-widget-area-style="simple"]
 
 #header-outer .sf-menu > .sfHover > ul,
 #header-outer .sf-menu > li:hover > ul {
-  top: 65% !important;
+  top: 70% !important;
 }
 
 /* Tabs info section */
@@ -3671,3 +3673,47 @@ body.material.mobile
     border-radius: 50%;
   }
 }
+
+/* --- Final Dropdown Style Block (Using Your Selector) --- */
+
+/* This uses your selector to style the dropdown box itself */
+body:not([data-header-format="left-header"]) #header-outer .sf-menu li ul {
+    background-color: var(--main-background-color) !important;
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+    padding: 10px 0 !important;
+    width: 220px !important;
+}
+
+/* This uses an equally specific selector to style the links inside */
+body:not([data-header-format="left-header"]) #header-outer #top .sf-menu li ul li.menu-item a {
+    color: var(--main-text-color) !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    padding: 10px 20px !important;
+    background: none !important;
+    transition: color 0.2s ease !important;
+}
+
+/* This handles the hover color for the links */
+body:not([data-header-format="left-header"]) #header-outer .sf-menu li ul li a:hover {
+    color: #ffffff !important;
+}
+
+/* --- The Final Dropdown Fix --- */
+
+/* This is the key fix: It forces the dropdown items and their links to be visible */
+body:not([data-header-format="left-header"]) #header-outer #top .sf-menu li ul li,
+body:not([data-header-format="left-header"]) #header-outer #top .sf-menu li ul li a {
+     /* Text Visibility Fixes */
+    font-size: 14px !important;      /* Explicitly set a font size */
+    text-indent: 0 !important;        /* Reset any text hiding */
+    opacity: 1 !important;            /* Ensure the link isn't transparent */
+    visibility: visible !important;   /* Ensure it is visible */
+}
+
+/* This styles the hover color for the links */
+body:not([data-header-format="left-header"]) #header-outer #top .sf-menu li ul li a:hover {
+    /* color: #ffffff !important; */
+}
+
