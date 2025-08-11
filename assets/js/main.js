@@ -137,10 +137,10 @@
 
 
     // --- CONSOLE LOGS FOR TESTING ---
-    console.log('Nav Bar Height:', navHeight);
-    console.log('Root Font Size:', rootFontSize + 'px');
-    console.log('Section Padding (' + sectionPaddingInRem + 'rem) in Pixels:', sectionPaddingInPixels);
-    console.log('Final Scroll Offset (Nav Height - Padding):', finalOffset);
+    // console.log('Nav Bar Height:', navHeight);
+    // console.log('Root Font Size:', rootFontSize + 'px');
+    // console.log('Section Padding (' + sectionPaddingInRem + 'rem) in Pixels:', sectionPaddingInPixels);
+    // console.log('Final Scroll Offset (Nav Height - Padding):', finalOffset);
 
 
     // 6. Initialize scrolly with the new, precisely calculated offset.

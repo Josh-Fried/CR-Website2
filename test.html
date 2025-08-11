@@ -54,12 +54,35 @@
     <link rel="stylesheet" href="https://triadacollections.com/wp-content/themes/salient/css/build/off-canvas/fullscreen-legacy.css?ver=17.0.7" type="text/css" media="all" />
     <link rel="stylesheet" href="assets/css/WPengineCSS.css" />
     
+    <style>
+        #ajax-content-wrap, .container-wrap { width: 100%; position: relative; }
+        #header-outer { z-index: 10000 !important; }
+
+        @keyframes header_nav_entrance_animation {0% { opacity: 0.01; } 100% { opacity: 1; }}
+        @keyframes header_nav_entrance_animation_2 {0% { transform: translateY(-100%); } 100% { transform: translateY(0); }}
+        @media only screen and (min-width: 691px) {
+            #header-outer { opacity: 0.01; }
+            .no-js #header-outer { opacity: 1; }
+            #header-outer.entrance-animation { animation: header_nav_entrance_animation 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+            #header-outer.entrance-animation #top { animation: header_nav_entrance_animation_2 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+        }
+        body #header-outer, body[data-header-color="dark"] #header-outer { background-color: #ebe8df !important; }
+        #top .slide-out-widget-area-toggle a span { overflow: hidden; width: 38px; }
+        @media only screen and (min-width: 1px) and (max-width: 999px) {
+            #header-outer .slide-out-widget-area-toggle .lines,
+            #header-outer .slide-out-widget-area-toggle .lines-button,
+            #header-outer .slide-out-widget-area-toggle .lines:after,
+            #header-outer .slide-out-widget-area-toggle .lines:before { width: 38px; }
+        }
+        .slide-out-widget-area-toggle.mobile-icon .lines-button:after, .slide-out-widget-area-toggle.mobile-icon .lines:after, .slide-out-widget-area-toggle.mobile-icon .lines:before { height: 2px !important; width: 38px !important; }
+        body[data-slide-out-widget-area-style*="fullscreen"] #top .menu-push-out .lines-button:after, body[data-slide-out-widget-area-style*="fullscreen"] #top .menu-push-out .lines:after, body[data-slide-out-widget-area-style*="fullscreen"] #top .menu-push-out .lines:before { transform: translateX(40px) !important; }
+    </style>
     <script type="text/javascript">
         document.documentElement.classList.add("js");
     </script>
 </head>
 
-	<body class="material" data-header-format="centered-logo-between-menu-alt" data-header-resize="1" data-transparent-header="false" data-header-color="" data-remove-border="true" data-smooth-scrolling="0" data-cad="1500" data-cae="easeOutQuart" data-aie="none" data-ls="fancybox">
+	<body class="material" data-header-format="centered-logo-between-menu-alt" data-header-resize="1" data-transparent-header="false" data-header-color="custom" data-remove-border="true" data-smooth-scrolling="0" data-cad="1500" data-cae="easeOutQuart" data-aie="none" data-ls="fancybox">
 
     <div class="ocm-effect-wrap">
         <div class="ocm-effect-wrap-inner">
@@ -94,7 +117,7 @@
 				data-transparent-header="false"
 				data-transparent-shadow-helper="false"
 				data-remove-border="true"
-				class=""
+				class="dark-slide"
 				>
 				<div id="search-outer" class="nectar">
 					<div id="search">
@@ -146,7 +169,7 @@
 						<div class="col span_3">
 						<a
 							id="logo"
-							href="./"
+							href="#"
 							data-supplied-ml-starting-dark="false"
 							data-supplied-ml-starting="false"
 							data-supplied-ml="true"
@@ -204,7 +227,7 @@
 								class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-691 current_page_item menu-item-has-icon nectar-regular-menu-item menu-item-711"
 							>
 								<a
-								href="./"
+								href=""
 								aria-current="page"
 								><img
 									width="128"
@@ -213,23 +236,23 @@
 									class="nectar-menu-icon-img"
 									alt=""
 									decoding="async"
-								/><span class="menu-title-text">Home</span></a
+								/><span class="menu-title-text">Discover</span></a
 								>
 							</li>
 							<li
 								id="menu-item-445"
 								class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-445"
 							>
-								<a href="#project-overview"
-								><span class="menu-title-text">Overview</span></a
+								<a href=""
+								><span class="menu-title-text">Residences</span></a
 								>
 							</li>
 							<li
 								id="menu-item-444"
 								class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-444"
 							>
-								<a href="#luxury-living"
-								><span class="menu-title-text">Luxury Living</span></a
+								<a href=""
+								><span class="menu-title-text">Location</span></a
 								>
 							</li>
 							</ul>
@@ -244,23 +267,23 @@
 								id="menu-item-554"
 								class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-554"
 							>
-								<a href="#experiences"
-								><span class="menu-title-text">Experiences</span></a
+								<a href=""
+								><span class="menu-title-text">Amenities</span></a
 								>
 							</li>
 							<li
 								id="menu-item-551"
 								class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-551"
 							>
-								<a href="#properties-section" class=""
-								><span class="menu-title-text">Residences</span></a
+								<a href=""
+								><span class="menu-title-text">FAQ</span></a
 								>
 							</li>
 							<li
 								id="menu-item-439"
 								class="button-style menu-item menu-item-type-custom menu-item-object-custom menu-item-btn-style-button-border_accent-color nectar-regular-menu-item menu-item-439"
 							>
-								<a href="#" class="inquire-button"
+								<a href=""
 								><span class="menu-title-text">INQUIRE</span></a
 								>
 							</li>
@@ -283,12 +306,12 @@
 								<a class="slide_out_area_close" href="#"><span class="screen-reader-text">Close Menu</span><span class="close-wrap"><span class="close-line close-line1"></span><span class="close-line close-line2"></span></span></a>
 								<div class="off-canvas-menu-container mobile-only" role="navigation">
 									<ul class="menu">
-										<li class="menu-item"><a href="./">Home</a></li>
-										<li class="menu-item"><a href="#project-overview">Overview</a></li>
-										<li class="menu-item"><a href="#luxury-living">Luxury Living</a></li>
-										<li class="menu-item"><a href="#expierences">Expierences</a></li>
-										<li class="menu-item"><a href="#properties-section">Residences</a></li>
-										<li class="button-style menu-item"><a href="#" class="inquire-button">INQUIRE</a></li>
+										<li class="menu-item"><a href="#">Discover</a></li>
+										<li class="menu-item"><a href="#">Residences</a></li>
+										<li class="menu-item"><a href="#">Location</a></li>
+										<li class="menu-item"><a href="#">Amenities</a></li>
+										<li class="menu-item"><a href="#">FAQ</a></li>
+										<li class="button-style menu-item"><a href="#">INQUIRE</a></li>
 									</ul>
 								</div>
 							</div>
@@ -307,7 +330,7 @@
 									<div id="intro">
 										<h1>Papagayo<br /> Bay</h1>
 										<p>Where Luxury Meets Nature</p>
-										<a href="#project-overview" class="button icon solid solo fa-arrow-down"></a>
+										<a href="#project-overview" class="button icon solid solo fa-arrow-down scrolly"></a>
 									</div>
 								</div>
 								<div id="main">
@@ -582,9 +605,9 @@
 							</article>
 
 							<section id="map-main-section" style="padding-top: 0rem;"> <div class="post"> 
-								<div class="image-container single-image-view" style="width: 50%;">
+								<div class="image-container single-image-view" style="width: 70%;">
 									<div class="image-wrapper">
-										<img src="images/HouseLayouts/MasMap.png" alt="Community Lot Map" id="map-image-main" class="interactive-map-image"> 
+										<img src="images/HouseLayouts/MasMap.png" alt="Community Lot Map" id="map-image-main"> 
 									</div>
 								</div>
 								</div>
@@ -775,33 +798,6 @@
 				
 			<!-- </footer> -->
 
-			 <div id="price-request-form" class="modal-overlay">
-            <div class="modal-content">
-                <button class="modal-close">&times;</button>
-                <h3>Request Price Information</h3>
-                <p>Please fill out the form below and we will get back to you shortly.</p>
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone (Optional)</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group form-group-expand">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="4" placeholder="I'm interested in..."></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Send Request</button>
-                </form>
-            </div>
-        </div>
-
 	</div>
 
 	<!-- Scripts -->
@@ -817,7 +813,6 @@
 		<script src="slick-1.8.1/slick/slick.js"></script>
 		<script type="text/javascript" src="assets/js/alexCarousel.js"></script>
 		<script src="assets/js/loadContact.js"></script>
-    	<script type="text/javascript" src="assets/js/form-popup.js"></script>
 
 		<!-- <script src="https://triadacollections.com/wp-content/themes/salient/js/build/priority.js?ver=17.0.7"></script> -->
     <!-- <script src="https://triadacollections.com/wp-content/themes/salient/js/build/third-party/transit.min.js?ver=0.9.9"></script> -->

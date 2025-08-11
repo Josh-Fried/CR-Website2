@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
         'map-image-main': { // Added a wrapper object for map properties
             mapType: 'main-parcel', // <-- NEW: Identify this map's type
             lots: [ // Moved lot data into a 'lots' array
-                { id: 'Lot5', name: 'The Point', href: 'lot5-section', units: '5 Houses', averagePrice: '$6,476,000', coords: '178,1333,171,1092,215,1071,263,1069,315,1054,353,1019,398,954,410,914,407,822,416,800,428,787,469,780,490,786,504,805,521,912,530,936,440,1063,424,1113,422,1161,448,1237,455,1313,474,1357,500,1384,540,1402,592,1405,570,1495,502,1474,346,1391' },
-                { id: 'Lot10', name: 'Cliffside', href: 'lot10-section', units: '7 Houses, 12 condos, 1 penthouse', averagePrice: '$6,712,000', coords: '822,741,835,609,925,414,1103,240,1113,248,1172,241,1196,274,1214,273,1231,316,1235,352,1228,456,1229,501,1243,549,1293,639,1300,669,1302,709,1292,762,1260,811,1228,844,1106,890,983,918' },
-                { id: 'Lot13', name: 'The Bluffs (Lot 13)', href: 'lot13-section', units: '2 Houses', averagePrice: '$6,467,000', coords: '1370,485,1531,451,1550,496,1576,513,1610,517,1612,572,1624,626,1565,641,1468,700,1402,543' },
-                { id: 'Lot14', name: 'The Bluffs (Lot 14)', href: 'lot14-section', units: '4 Houses', averagePrice: 'From $833,000', coords: '1368,465,1361,281,1373,113,1524,80,1576,254,1631,267,1648,305,1733,271,1752,269,1804,304,1806,316,1785,337,1673,394,1645,418,1633,442,1563,414,1550,430' }
+                { id: 'Lot5', name: 'The Point', href: 'maps.html#lot5-section', units: '5 Houses', sqft: '8,611 - 10,323', coords: '178,1333,171,1092,215,1071,263,1069,315,1054,353,1019,398,954,410,914,407,822,416,800,428,787,469,780,490,786,504,805,521,912,530,936,440,1063,424,1113,422,1161,448,1237,455,1313,474,1357,500,1384,540,1402,592,1405,570,1495,502,1474,346,1391' },
+                { id: 'Lot10', name: 'Cliffside', href: 'maps.html#lot10-section', units: '7 Houses, 12 condos, 2 penthouses', sqft: '1,378 - 11,173', coords: '822,741,835,609,925,414,1103,240,1113,248,1172,241,1196,274,1214,273,1231,316,1235,352,1228,456,1229,501,1243,549,1293,639,1300,669,1302,709,1292,762,1260,811,1228,844,1106,890,983,918' },
+                { id: 'Lot13', name: 'The Bluffs (Lot 13)', href: 'maps.html#lot13-section', units: '2 Houses', sqft: '6,566 - 9,900', coords: '1370,485,1531,451,1550,496,1576,513,1610,517,1612,572,1624,626,1565,641,1468,700,1402,543' },
+                { id: 'Lot14', name: 'The Bluffs (Lot 14)', href: 'maps.html#lot14-section', units: '4 Houses', sqft: '7,223 - 13,681', coords: '1368,465,1361,281,1373,113,1524,80,1576,254,1631,267,1648,305,1733,271,1752,269,1804,304,1806,316,1785,337,1673,394,1645,418,1633,442,1563,414,1550,430' }
             ]
         },
         'map-image-lot5': { // Added wrapper object and mapType
@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 { id: 'Home1', name: 'Cliffside Home 1', href: 'cliffside.html#lot10-1', beds: '5', baths: '5.5', sqft: '11.065', coords: '729,901,500,796,450,753,482,602,567,618,614,620,650,618,776,596,779,688,729,733' },
                 { id: 'Home2', name: 'Cliffside Home 2', href: 'cliffside.html#lot10-2', beds: '6', baths: '6.5', sqft: '11,173', coords: '729,900,729,734,779,689,776,595,988,547,988,983,909,977,817,941' },
                 { id: 'Home3', name: 'Cliffside Home 3', href: 'cliffside.html#lot10-3', beds: '4', baths: '4.5', sqft: '10,829', coords: '988,547,1100,523,1154,520,1247,520,1247,842,988,844' },
-                { id: 'SouthCondos', name: 'South Condos', href: 'cliffside.html#lot10-4', units: '4 Condos + 4 Condos + 1 Penthouse', beds: '2, 2, 3', baths: '2, 2.5, 3.5', sqft: '1,378, 2,099, 3,606', averagePrice: '$833,000, $1,268,000, $3,203,000', coords: '988,983,988,844,1247,842,1247,520,1519,538,1528,543,1537,554,1555,651,1562,684,1188,1001' }, // Note: no beds/baths for this apartment block example
-                { id: 'NorthCondos', name: 'North Condos', href: 'cliffside.html#lot10-5', units: '4 Condos + 1 Penthouse', beds: '2, 3', baths: '2.5, 3.5', sqft: '2,099, 3,606', averagePrice: '$1,268,000, $3,203,000', coords: '1076,444,1208,307,1208,62,1271,87,1314,114,1355,149,1386,183,1404,208,1424,244,1447,300,1496,428,1494,439,1490,448,1476,451,1238,435,1154,435' }, // Note: no beds/baths for this apartment block example
+                { id: 'SouthCondos', name: 'South Condos', href: 'cliffside.html#lot10-4', units: '4 Condos + 4 Condos + 1 Penthouse', beds: '2, 2, 3', baths: '2, 2.5, 3.5', sqft: '1,378, 2,099, 3,606', coords: '988,983,988,844,1247,842,1247,520,1519,538,1528,543,1537,554,1555,651,1562,684,1188,1001' },
+                { id: 'NorthCondos', name: 'North Condos', href: 'cliffside.html#lot10-5', units: '4 Condos + 1 Penthouse', beds: '2, 3', baths: '2.5, 3.5', sqft: '2,099, 3,606', coords: '1076,444,1208,307,1208,62,1271,87,1314,114,1355,149,1386,183,1404,208,1424,244,1447,300,1496,428,1494,439,1490,448,1476,451,1238,435,1154,435' },
                 { id: 'Home4', name: 'Cliffside Home 4', href: 'cliffside.html#lot10-6', beds: '4', baths: '4.5', sqft: '9,924', coords: '952,470,952,74,1001,52,1044,45,1127,45,1168,52,1208,61,1208,306,1076,445' },
                 { id: 'Home5', name: 'Cliffside Home 5', href: 'cliffside.html#lot10-7', beds: '4', baths: '4.5', sqft: '9,063', coords: '698,527,698,188,740,176,790,158,952,75,952,469' },
                 { id: 'Home6', name: 'Cliffside Home 6', href: 'cliffside.html#lot10-8', beds: '4', baths: '4.5', sqft: '8,999', coords: '443,501,443,187,601,193,653,193,698,187,698,526,644,535,594,537,538,528' },
@@ -60,22 +60,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initializeMapInteractivity(mapImageId) {
         const mapImage = document.getElementById(mapImageId);
+        // This check is now mostly redundant because we find the image first, but it's good practice.
         if (!mapImage) {
             console.error(`Map image with ID '${mapImageId}' not found.`);
             return;
         }
 
-        const mapConfig = allMapData[mapImageId]; // Get the map configuration object
+        const mapConfig = allMapData[mapImageId];
         if (!mapConfig || !mapConfig.lots) {
             console.warn(`No lot data found for map image ID: ${mapImageId}`);
             return;
         }
-        const currentMapLotData = mapConfig.lots; // Get the array of lots for this map
-        const mapType = mapConfig.mapType; // Get the map type
+        const currentMapLotData = mapConfig.lots;
+        const mapType = mapConfig.mapType;
 
-        // Create elements specific to this map's interactivity
         let highlightSVGContainer = document.createElement('div');
         highlightSVGContainer.classList.add('lot-highlight-container');
+        highlightSVGContainer.style.zIndex = '10'; // FIX FOR ISSUE 2
         document.body.appendChild(highlightSVGContainer);
 
         let clickableSVGOverlay = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -89,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function updateDimensions() {
             if (!mapImage.complete || mapImage.offsetWidth === 0 || mapImage.offsetHeight === 0) {
-                console.warn(`Image '${mapImageId}' not fully loaded or not rendered yet. Retrying...`);
                 requestAnimationFrame(updateDimensions);
                 return;
             }
@@ -102,9 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const imageRect = mapImage.getBoundingClientRect();
             imageAbsoluteLeft = imageRect.left + window.scrollX;
             imageAbsoluteTop = imageRect.top + window.scrollY;
-
-            // console.log(`[${mapImageId}] Image Dims - Natural:`, naturalWidth, naturalHeight, 'Current:', currentWidth, currentHeight);
-            // console.log(`[${mapImageId}] Image Absolute Pos:`, imageAbsoluteLeft, imageAbsoluteTop);
 
             highlightSVGContainer.style.width = currentWidth + 'px';
             highlightSVGContainer.style.height = currentHeight + 'px';
@@ -133,14 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 polygon.setAttribute('fill', 'transparent');
                 polygon.setAttribute('stroke', 'transparent');
                 
-                // Store all lot data as data attributes on the polygon
                 for (const key in lot) {
                     if (lot.hasOwnProperty(key)) {
                         polygon.dataset[key] = lot[key];
                     }
                 }
-                // Store the mapType on the polygon as well, for easy access in showInfoBox
-                polygon.dataset.mapType = mapType; // <-- NEW: Store map type here
+                polygon.dataset.mapType = mapType;
 
                 polygon.addEventListener('mouseover', (event) => {
                     const hoveredLot = event.target.dataset;
@@ -174,13 +169,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        requestAnimationFrame(updateDimensions); // Start the checking process for this map
-        mapImage.onload = updateDimensions; // Redundancy
+        requestAnimationFrame(updateDimensions);
+        mapImage.onload = updateDimensions;
     }
 
     function drawHighlight(coords, container) {
         container.innerHTML = '';
-
         const svgElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         svgElement.setAttribute('width', container.offsetWidth);
         svgElement.setAttribute('height', container.offsetHeight);
@@ -205,21 +199,17 @@ document.addEventListener('DOMContentLoaded', () => {
         container.innerHTML = '';
     }
 
-    // NEW: showInfoBox function handles different formats
     function showInfoBox(lotData, event, mapImageElement) {
         let content = `<h3>${lotData.name}</h3>`;
 
-        // Check the mapType property
         if (lotData.mapType === 'main-parcel') {
             content += `<p><b>Units:</b> ${lotData.units}</p>`;
-            content += `<p><b>Avg. Price:</b> ${lotData.averagePrice}</p>`;
+            content += `<p><b>Sq Ft:</b> ${lotData.sqft}</p>`;
         } else if (lotData.mapType === 'individual-lot') {
-            // Add checks for beds, baths, sqft to ensure they exist before displaying
             if (lotData.units) content += `<p><b>Units:</b> ${lotData.units}</p>`;
             if (lotData.beds) content += `<p><b>Beds:</b> ${lotData.beds}</p>`;
             if (lotData.baths) content += `<p><b>Baths:</b> ${lotData.baths}</p>`;
             if (lotData.sqft) content += `<p><b>Sq Ft:</b> ${lotData.sqft}</p>`;
-            // You can keep averagePrice here if it's relevant for individual lots too
             if (lotData.averagePrice) content += `<p><b>Price:</b> ${lotData.averagePrice}</p>`;
         }
 
@@ -246,15 +236,9 @@ document.addEventListener('DOMContentLoaded', () => {
         boxX -= boxWidth / 2;
         boxY -= boxHeight + offsetY;
 
-        if (boxX < window.scrollX + 10) {
-            boxX = window.scrollX + 10;
-        }
-        if (boxX + boxWidth + 10 > window.innerWidth + window.scrollX) {
-            boxX = window.innerWidth + window.scrollX - boxWidth - 10;
-        }
-        if (boxY < window.scrollY + 10) {
-            boxY = window.scrollY + 10;
-        }
+        if (boxX < window.scrollX + 10) boxX = window.scrollX + 10;
+        if (boxX + boxWidth + 10 > window.innerWidth + window.scrollX) boxX = window.innerWidth + window.scrollX - boxWidth - 10;
+        if (boxY < window.scrollY + 10) boxY = window.scrollY + 10;
         if (boxY + boxHeight + 10 > window.innerHeight + window.scrollY) {
             boxY = window.innerHeight + window.scrollY - boxHeight - 10;
             if (boxY < (mapImageElement.getBoundingClientRect().top + window.scrollY + mapImageElement.offsetHeight + offsetY)) { 
@@ -271,33 +255,42 @@ document.addEventListener('DOMContentLoaded', () => {
         infoBox.style.display = 'none';
     }
 
+    function reinitializeAllMaps() {
+        // Hide any visible elements
+        hideInfoBox();
+        document.querySelectorAll('.lot-highlight-container, .clickable-svg-overlay').forEach(el => el.remove());
+        
+        // Find all interactive maps on the current page
+        const mapsOnThisPage = document.querySelectorAll('.interactive-map-image');
+        
+        // Re-initialize only the maps found
+        mapsOnThisPage.forEach(mapImage => {
+            if (mapImage.id && allMapData[mapImage.id]) {
+                initializeMapInteractivity(mapImage.id);
+            }
+        });
+    }
+
     let resizeTimeout;
     window.addEventListener('resize', () => {
-        hideInfoBox();
-        document.querySelectorAll('.lot-highlight-container').forEach(container => hideHighlight(container));
-
         clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            Object.keys(allMapData).forEach(mapImageId => {
-                initializeMapInteractivity(mapImageId);
-            });
-        }, 100);
+        resizeTimeout = setTimeout(reinitializeAllMaps, 250);
     });
 
     let scrollTimeout;
     window.addEventListener('scroll', () => {
-        hideInfoBox();
-        document.querySelectorAll('.lot-highlight-container').forEach(container => hideHighlight(container));
-
         clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            Object.keys(allMapData).forEach(mapImageId => {
-                initializeMapInteractivity(mapImageId);
-            });
-        }, 100);
+        scrollTimeout = setTimeout(reinitializeAllMaps, 250);
     });
 
-    Object.keys(allMapData).forEach(mapImageId => {
-        initializeMapInteractivity(mapImageId);
+    // --- INITIALIZATION LOGIC ---
+    // Find all images on the current page that have our new class
+    const mapsOnThisPage = document.querySelectorAll('.interactive-map-image');
+
+    // Loop through only the maps that were actually found and initialize them
+    mapsOnThisPage.forEach(mapImage => {
+        if (mapImage.id && allMapData[mapImage.id]) {
+            initializeMapInteractivity(mapImage.id);
+        }
     });
 });
