@@ -8,47 +8,51 @@ window.addEventListener('DOMContentLoaded', () => {
     const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
 
     // Set the baseUrl based on the environment.
-    // If local, the base URL is an empty string. Otherwise, it's the production URL.
     const baseUrl = isLocal ? '' : productionBaseUrl;
 
-    // Find all video source elements on the page.
-    const videoSources = document.querySelectorAll('video > source');
+    // Find all video elements on the page.
+    const videos = document.querySelectorAll('video');
 
-    // Loop through each source and prepend the correct base URL.
-    videoSources.forEach(source => {
-        const originalSrc = source.getAttribute('src');
-        source.src = baseUrl + originalSrc;
+    // Loop through each video element.
+    videos.forEach(video => {
+        // Find the source element inside this video that has a "data-src" attribute.
+        const source = video.querySelector('source[data-src]');
+
+        // If a source with data-src was found...
+        if (source) {
+            // Get the relative path from the "data-src" attribute.
+            const relativePath = source.getAttribute('data-src');
+
+            // Build the full URL and set it as the REAL src.
+            source.src = baseUrl + relativePath;
+
+            // Tell the parent video element to load this new source.
+            video.load();
+        }
     });
-    
-    // Reload the videos to apply the new sources. This is important.
-    document.querySelectorAll('video').forEach(video => video.load());
 });
 
-// // This script will run on page load and fix all video paths.
-//     window.addEventListener('DOMContentLoaded', async () => {
-//         try {
-//             // 1. Fetch the base URL from our API.
-//             const response = await fetch('/api/GetConfig');
-//             const config = await response.json();
-//             const baseUrl = config.baseUrl;
+// window.addEventListener('DOMContentLoaded', () => {
+//     // Define the base URL for your production videos.
+//     const productionBaseUrl = 'https://papagayobay.blob.core.windows.net/';
 
-//             // Only proceed if a base URL was found.
-//             if (baseUrl !== undefined) {
-//                 // 2. Find ALL video source elements on the page.
-//                 const videoSources = document.querySelectorAll('video > source');
+//     // Check if the script is running on a local development server.
+//     const isLocal = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
 
-//                 // 3. Loop through each source and prepend the base URL.
-//                 videoSources.forEach(source => {
-//                     const originalSrc = source.getAttribute('src');
-//                     // Combine the base URL with the relative path.
-//                     source.src = baseUrl + originalSrc;
-//                 });
-                
-//                 // Reload the videos to apply the new sources
-//                 document.querySelectorAll('video').forEach(video => video.load());
-//             }
+//     // Set the baseUrl based on the environment.
+//     // If local, the base URL is an empty string. Otherwise, it's the production URL.
+//     const baseUrl = isLocal ? '' : productionBaseUrl;
 
-//         } catch (error) {
-//             console.error('Failed to configure video sources:', error);
-//         }
+//     // Find all video source elements on the page.
+//     const videoSources = document.querySelectorAll('video > source');
+
+//     // Loop through each source and prepend the correct base URL.
+//     videoSources.forEach(source => {
+//         const originalSrc = source.getAttribute('src');
+//         source.src = baseUrl + originalSrc;
 //     });
+    
+//     // Reload the videos to apply the new sources. This is important.
+//     document.querySelectorAll('video').forEach(video => video.load());
+// });
+
