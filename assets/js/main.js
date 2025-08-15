@@ -117,251 +117,94 @@
             }, 100);
         });
 
-    // Scrolly.
+    // --- Custom Smooth Scroll Solution with Logs ---
 
-    // 1. Get the dynamic height of the navigation bar.
-    var navHeight = $('.nav-header').innerHeight(); // Use the height function you confirmed works best.
+$(function() {
 
-    // 2. Get the root font size of the document to convert rem to pixels.
-    // This makes the calculation dynamic and robust.
-    var rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    var $header = $('#header-outer');
+    var largeHeaderHeight = $header.outerHeight();
+    var shrinkNum = $header.data('shrink-num');
+    var padding = $header.data('padding');
+    var heightDifference = parseInt(shrinkNum) + 2 * (padding - padding / 1.8);
+    var smallHeaderHeight = largeHeaderHeight - heightDifference;
 
-    // 3. Define the section's top padding in rem units.
-    var sectionPaddingInRem = 2; //Sometimes it 4rem but this seems to work!!!!!
+    // This is the click handler for all links with class="scrolly"
+    $('.scrolly').on('click', function(event) {
+        
+        event.preventDefault();
+        var target = $(this.hash);
 
-    // 4. Calculate what that rem value is in pixels.
-    var sectionPaddingInPixels = sectionPaddingInRem * rootFontSize;
+        if (target.length) {
+            
+            var rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+            var sectionPaddingInRem = 2; 
+            var sectionPaddingInPixels = sectionPaddingInRem * rootFontSize;
+            var finalOffset = smallHeaderHeight - sectionPaddingInPixels;
+            var targetPosition = target.offset().top - finalOffset;
 
-    // 5. Calculate the final offset by subtracting the padding from the nav height.
-    var finalOffset = navHeight - sectionPaddingInPixels;
-
-
-    // --- CONSOLE LOGS FOR TESTING ---
-    // console.log('Nav Bar Height:', navHeight);
-    // console.log('Root Font Size:', rootFontSize + 'px');
-    // console.log('Section Padding (' + sectionPaddingInRem + 'rem) in Pixels:', sectionPaddingInPixels);
-    // console.log('Final Scroll Offset (Nav Height - Padding):', finalOffset);
-
-
-    // 6. Initialize scrolly with the new, precisely calculated offset.
-    $('.scrolly').scrolly({
-        offset: finalOffset
+            $('html, body').animate({
+                scrollTop: targetPosition
+            }, 1000); 
+        }
     });
+
+});
 
     // Background.
         $wrapper._parallax(0.925);
 
-    // // Nav Panel.
+    // --- FINAL DYNAMIC NAVIGATION SCRIPT ---
+    var $desktopNavList = $('nav.menu > ul'); 
+    var $desktopNavContainer = $('nav.menu');
+    var $toggleAppendTarget = $('.nav-header');
+    var mobileBreakpoint = 768;
 
-    //  // Toggle.
-    //      $navPanelToggle = $(
-    //          '<a href="#navPanel" id="navPanelToggle">Menu</a>'
-    //      )
-    //          .appendTo($wrapper);
+    if ($desktopNavList.length > 0 && $toggleAppendTarget.length > 0) {
 
-    //      // Change toggle styling once we've scrolled past the header.
-    //          $header.scrollex({
-    //              bottom: '5vh',
-    //              enter: function() {
-    //                  $navPanelToggle.removeClass('alt');
-    //              },
-    //              leave: function() {
-    //                  $navPanelToggle.addClass('alt');
-    //              }
-    //          });
+        var $window = $(window),
+            $body = $('body');
 
-    //  // Panel.
-    //      $navPanel = $(
-    //          '<div id="navPanel">' +
-    //              '<nav>' +
-    //              '</nav>' +
-    //              '<a href="#navPanel" class="close"></a>' +
-    //          '</div>'
-    //      )
-    //          .appendTo($body)
-    //          .panel({
-    //              delay: 500,
-    //              hideOnClick: true,
-    //              hideOnSwipe: true,
-    //              resetScroll: true,
-    //              resetForms: true,
-    //              side: 'right',
-    //              target: $body,
-    //              visibleClass: 'is-navPanel-visible'
-    //          });
+        var $navPanelToggle = $('<a href="#navPanel" id="navPanelToggle">Menu</a>')
+                                .hide()
+                                .appendTo($toggleAppendTarget);
 
-    //      // Get inner.
-    //          $navPanelInner = $navPanel.children('nav');
+        var $navPanel = 
+        $('<div id="navPanel"><nav></nav><a href="#navPanel" class="close"></a></div>')
+            .appendTo($body)
+            .panel({
+                delay: 500, hideOnClick: true, hideOnSwipe: true, resetScroll: true, resetForms: true,
+                side: 'right', target: $body, visibleClass: 'is-navPanel-visible'
+            });
 
-    //      // Move nav content on breakpoint change.
-    //          var $navContent = $nav.children();
+        var $navPanelInner = $navPanel.children('nav');
 
-    //          breakpoints.on('>medium', function() {
+        var $clone = $desktopNavList.clone()
+            .css({
+                'position': 'absolute', 'top': '-9999px', 'left': '-9999px', 'z-index': '-100',
+                'display': 'flex', 'flex-direction': 'row', 'flex-wrap': 'nowrap',
+                'list-style-type': 'none', 'margin': '0', 'padding': '0',
+                'width': 'auto', 'height': 'auto'
+            })
+            .appendTo('body');
 
-    //              // NavPanel -> Nav.
-    //                  $navContent.appendTo($nav);
+        var initialListHeight = $clone.height();
+        $clone.remove();
 
-    //              // Flip icon classes.
-    //                  $nav.find('.icons, .icon')
-    //                      .removeClass('alt');
-
-    //          });
-
-    //          breakpoints.on('<=medium', function() {
-
-    //              // Nav -> NavPanel.
-    //                  $navContent.appendTo($navPanelInner);
-
-    //              // Flip icon classes.
-    //                  $navPanelInner.find('.icons, .icon')
-    //                      .addClass('alt');
-
-    //          });
-
-    //      // Hack: Disable transitions on WP.
-    //          if (browser.os == 'wp'
-    //          &&  browser.osVersion < 10)
-    //              $navPanel
-    //                  .css('transition', 'none');
-
-    // Nav Header
-
-    // --- Responsive Logic for your ".nav-header" ---
-
-// Configuration: Define the elements we're working with based on your HTML.
-// var $sourceNavContainer = $('nav.menu'); // This is your <nav class="menu"> which holds the links.
-// var $toggleAppendTarget = $('.nav-header'); // We will add the "Menu" button inside your main header.
-
-// // --- Main Setup (No need to edit below this line) ---
-
-// if ($sourceNavContainer.length > 0 && $toggleAppendTarget.length > 0) {
-
-//     var $window = $(window),
-//         $body = $('body');
-
-//     // 1. Create the "Menu" toggle button and add it to your header.
-//     var $navPanelToggle = $('<a href="#navPanel" id="navPanelToggle">Menu</a>')
-//                             .appendTo($toggleAppendTarget);
-
-//     // 2. Create the hidden slide-out panel.
-//     var $navPanel = $(
-//         '<div id="navPanel">' +
-//             '<nav></nav>' + // This <nav> is the destination for our links on mobile.
-//             '<a href="#navPanel" class="close"></a>' +
-//         '</div>'
-//     )
-//     .appendTo($body)
-//     .panel({
-//         delay: 500,
-//         hideOnClick: true,
-//         hideOnSwipe: true,
-//         resetScroll: true,
-//         resetForms: true,
-//         side: 'right',
-//         target: $body,
-//         visibleClass: 'is-navPanel-visible'
-//     });
-
-//     // 3. Get references to the new panel's inner nav and the content (the <ul>) of our source nav.
-//     var $navPanelInner = $navPanel.children('nav');
-//     var $navContent = $sourceNavContainer.children();
-
-//     // 4. Set up the breakpoint logic to move the content.
-//     breakpoints.on('>medium', function() {
-//         // When the screen is larger than 'medium'...
-//         // Move the content (your <ul>) back to its original desktop location.
-//         $navContent.appendTo($sourceNavContainer);
-//     });
-
-//     breakpoints.on('<=medium', function() {
-//         // When the screen is 'medium' or smaller...
-//         // Move the content (your <ul>) into the hidden slide-out panel.
-//         $navContent.appendTo($navPanelInner);
-//     });
-// }
-
-// --- FINAL DYNAMIC NAVIGATION SCRIPT ---
-
-// --- Configuration ---
-var $desktopNavList = $('nav.menu > ul'); // The <ul> list of links.
-var $desktopNavContainer = $('nav.menu');   // The original <nav> container for the list.
-var $toggleAppendTarget = $('.nav-header'); // Where the "Menu" button will be placed.
-var mobileBreakpoint = 768; // The screen width to always force mobile view.
-
-// --- Main Setup ---
-
-if ($desktopNavList.length > 0 && $toggleAppendTarget.length > 0) {
-
-    var $window = $(window),
-        $body = $('body');
-
-    // Create the button and panel from your original code.
-    var $navPanelToggle = $('<a href="#navPanel" id="navPanelToggle">Menu</a>')
-                            .hide()
-                            .appendTo($toggleAppendTarget);
-
-    var $navPanel = 
-    $('<div id="navPanel"><nav></nav><a href="#navPanel" class="close"></a></div>')
-        .appendTo($body)
-        .panel({
-            delay: 500, hideOnClick: true, hideOnSwipe: true, resetScroll: true, resetForms: true,
-            side: 'right', target: $body, visibleClass: 'is-navPanel-visible'
-        });
-
-    var $navPanelInner = $navPanel.children('nav');
-
-    // ============================================================================
-    //  THE ROBUST MEASUREMENT TECHNIQUE
-    // ============================================================================
-    // 1. Create an invisible clone to get the true single-line height.
-    var $clone = $desktopNavList.clone()
-        .css({
-            // Position it off-screen so it's invisible
-            'position': 'absolute',
-            'top': '-9999px',
-            'left': '-9999px',
-            'z-index': '-100',
-
-            // Force all the correct layout styles
-            'display': 'flex',
-            'flex-direction': 'row',
-            'flex-wrap': 'nowrap',
-            'list-style-type': 'none',
-            'margin': '0',
-            'padding': '0',
-            'width': 'auto',
-            'height': 'auto'
-        })
-        .appendTo('body');
-
-    // 2. Measure the clone to get our reliable baseline height.
-    var initialListHeight = $clone.height();
-    
-
-    // 3. Immediately remove the clone. This is instantaneous.
-    $clone.remove();
-    // ============================================================================
-
-    // The function that decides whether to show the desktop or mobile menu.
-    function checkNavLayout() {
-        // The Condition: Has the list wrapped OR is the window too narrow?
-        if (($desktopNavList.height() > initialListHeight + 5) || ($window.width() < mobileBreakpoint)) {
-            // --- Switch to Mobile Menu ---
-            $desktopNavContainer.hide();
-            $navPanelToggle.show();
-            $desktopNavList.appendTo($navPanelInner);
-        } else {
-            // --- Switch to Desktop Menu ---
-            $navPanelToggle.hide();
-            $desktopNavContainer.show();
-            $desktopNavList.appendTo($desktopNavContainer);
+        function checkNavLayout() {
+            if (($desktopNavList.height() > initialListHeight + 5) || ($window.width() < mobileBreakpoint)) {
+                $desktopNavContainer.hide();
+                $navPanelToggle.show();
+                $desktopNavList.appendTo($navPanelInner);
+            } else {
+                $navPanelToggle.hide();
+                $desktopNavContainer.show();
+                $desktopNavList.appendTo($desktopNavContainer);
+            }
         }
-    }
 
-    // Run the check on load and on every window resize.
-    $window.on('resize', checkNavLayout);
-    checkNavLayout();
-}
+        $window.on('resize', checkNavLayout);
+        checkNavLayout();
+    }
 
     // Intro.
         var $intro = $('#intro');
@@ -423,22 +266,18 @@ if ($desktopNavList.length > 0 && $toggleAppendTarget.length > 0) {
         }
 
     // Nav Menu
-    window.addEventListener('scroll', function() {
-        // Use a unique variable name to avoid any potential conflict.
-        // This should target the <header class="nav-header"> we created.
-        const headerElementForScrollEffect = document.querySelector('.nav-header');
+    // window.addEventListener('scroll', function() {
+    //     const headerElementForScrollEffect = document.querySelector('.nav-header');
 
-        if (!headerElementForScrollEffect) {
-            // If the specific nav-header isn't found, do nothing further for this function.
-            return;
-        }
+    //     if (!headerElementForScrollEffect) {
+    //         return;
+    //     }
 
-        if (window.scrollY > 1) {
-            headerElementForScrollEffect.classList.add('scrolled');
-        } else {
-            headerElementForScrollEffect.classList.remove('scrolled');
-        }
-    });
+    //     if (window.scrollY > 1) {
+    //         headerElementForScrollEffect.classList.add('scrolled');
+    //     } else {
+    //         headerElementForScrollEffect.classList.remove('scrolled');
+    //     }
+    // });
     
-
 })(jQuery);
