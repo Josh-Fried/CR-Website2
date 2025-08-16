@@ -3693,6 +3693,7 @@ body:not([data-header-format="left-header"]) #header-outer #top .sf-menu li ul l
     padding: 10px 20px !important;
     background: none !important;
     transition: color 0.2s ease !important;
+    top: -12px !important;
 }
 
 /* This handles the hover color for the links */
@@ -3716,4 +3717,3 @@ body:not([data-header-format="left-header"]) #header-outer #top .sf-menu li ul l
 body:not([data-header-format="left-header"]) #header-outer #top .sf-menu li ul li a:hover {
     /* color: #ffffff !important; */
 }
-
