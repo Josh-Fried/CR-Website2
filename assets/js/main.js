@@ -117,6 +117,7 @@
             }, 100);
         });
 
+    // Scrolly    
     // --- Custom Smooth Scroll Solution with Logs ---
 
 $(function() {
@@ -135,7 +136,6 @@ $(function() {
         var target = $(this.hash);
 
         if (target.length) {
-            
             var rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
             var sectionPaddingInRem = 2; 
             var sectionPaddingInPixels = sectionPaddingInRem * rootFontSize;
@@ -279,5 +279,115 @@ $(function() {
     //         headerElementForScrollEffect.classList.remove('scrolled');
     //     }
     // });
+
+    // No hash
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // =====================================================================
+        // This function replicates your jQuery code to dynamically calculate
+        // the header offset, accounting for its shrink behavior.
+        // =====================================================================
+        function getHeaderOffset() {
+            const header = document.querySelector('#header-outer');
+            if (!header) return 0;
+
+            const largeHeaderHeight = header.offsetHeight;
+            const shrinkNum = parseInt(header.dataset.shrinkNum) || 0;
+            const padding = parseInt(header.dataset.padding) || 0;
+
+            const heightDifference = shrinkNum + 2 * (padding - padding / 1.8);
+            const smallHeaderHeight = largeHeaderHeight - heightDifference;
+
+            // This replicates the "section padding" calculation from your original scrolly script.
+            const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
+            const sectionPaddingInRem = 2; // This value is taken from your scrolly script
+            const sectionPaddingInPixels = sectionPaddingInRem * rootFontSize;
+
+            // The final return value now correctly subtracts the section padding.
+            return smallHeaderHeight - sectionPaddingInPixels;
+        }
+        // =====================================================================
+        // PART 1: Handles Clicks on All Links
+        // It decides whether to scroll on the current page or navigate to a new one.
+        // =====================================================================
+        document.body.addEventListener('click', function(e) {
+            // Find the closest 'a' tag that was clicked
+            const link = e.target.closest('a');
+
+            // If no link was clicked, or it has no href, do nothing
+            if (!link || !link.getAttribute('href')) return;
+            
+            const isSamePage = link.pathname === window.location.pathname;
+            const hasHash = link.hash !== '';
+
+            if (hasHash) {
+                // Stop the browser's default action for any link with a hash
+                e.preventDefault();
+
+                if (isSamePage) {
+                    // --- BEHAVIOR FOR SAME-PAGE LINKS ---
+                    const targetElement = document.querySelector(link.hash);
+                    if (targetElement) {
+                        const offset = getHeaderOffset();
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({ top: targetPosition, behavior: 'auto' });
+                    }
+                } else {
+                    // --- BEHAVIOR FOR DIFFERENT-PAGE LINKS ---
+                    // Store the target ID in temporary browser memory
+                    localStorage.setItem('scrollToTarget', link.hash);
+                    // Navigate to the new page without the hash
+                    window.location.href = link.pathname;
+                }
+            }
+        });
+
+        // =====================================================================
+        // PART 2: Runs on Every Page Load
+        // Checks if we just arrived from another page with instructions to scroll.
+        // =====================================================================
+        const scrollTargetId = localStorage.getItem('scrollToTarget');
+        if (scrollTargetId) {
+            const targetElement = document.querySelector(scrollTargetId);
+            if (targetElement) {
+                // We wait a moment for the page to render, then scroll
+                setTimeout(() => {
+                    const offset = getHeaderOffset();
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: targetPosition, behavior: 'auto' });
+
+                    // Clean up the stored item so it doesn't fire again on a normal refresh
+                    localStorage.removeItem('scrollToTarget');
+                }, 100);
+            }
+        }
+    });
+
+
+/* --- Mobile Accordion Menu Logic (Final Version) --- */
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenu = document.querySelector('#slide-out-widget-area');
+    if (mobileMenu) {
+        const parentMenuItems = mobileMenu.querySelectorAll('.menu-item-has-children');
+
+        parentMenuItems.forEach(item => {
+            // Create a clickable arrow button
+            const toggle = document.createElement('span');
+            toggle.classList.add('submenu-toggle');
+            toggle.innerHTML = '<i class="arrow"></i>';
+
+            // Insert the arrow AFTER the link, but still inside the list item
+            item.querySelector('a').insertAdjacentElement('afterend', toggle);
+
+            // Add a click listener ONLY to the arrow
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault(); // Stop any other actions
+                e.stopPropagation(); // Stop the event from bubbling up
+                item.classList.toggle('open'); // Open/close the dropdown
+            });
+        });
+    }
+});
     
 })(jQuery);

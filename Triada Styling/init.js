@@ -828,7 +828,6 @@
           bt.winW >= 1e3
             ? n - (parseInt(_) + 2 * a)
             : n);
-            console.log("1. Header resize function is initializing. 2"); // QQQ
     }
     if (bt.winW >= 1e3 && t('#header-outer[data-condense="true"]').length > 0) {
       var i = t(
@@ -4744,7 +4743,6 @@
                 (t(".container-wrap").css("padding-bottom", "0px"),
                 t(".bottom_controls").css("margin-top", "0px"),
                 t("#call-to-action .triangle").remove()));
-                console.log("1. Header resize function is initializing. 3"); // QQQ
           }
       }),
       t(
@@ -12726,7 +12724,6 @@
       0 == bn.init && (bn.init = !0);
   }
   function yn() {
-    console.log("function yn");
     var e = bt.scrollTop,
       a = bt.winW,
       n = 30;
@@ -13057,7 +13054,6 @@
           t(".small-nav").length > 0
             ? d.outerHeight() + (parseInt(_) + 2 * e)
             : d.outerHeight();
-            console.log("1. Header resize function is initializing. 4"); // QQQ
       Math.abs(a - t("#header-space").height()) > 7 &&
         t("#header-space").css("height", a).addClass("calculated");
     }
@@ -13140,7 +13136,6 @@
         (a += t(".page-header-no-bg").height()),
       bt.winH - bt.adminBarHeight - e - bt.footerOuterHeight - 1 - a > 0)
     ) {
-      console.log("1. Header resize function is initializing. 5"); // QQQ
       var n =
         t('body:not(.material) #header-outer[data-header-resize="1"]').length >
         0
@@ -14345,7 +14340,6 @@
                   ? l.offset().top + 2 - h + bt.adminBarHeight
                   : l.offset().top - bt.adminBarHeight + 1;
             else {
-              console.log("1. Header resize function is initializing. 6"); // QQQ
               var s =
                 t('#header-outer[data-header-resize="0"]').length > 0
                   ? 0
@@ -14484,7 +14478,6 @@
           (e += parseInt(d.css("margin-top"))),
         t('#header-outer[data-shrink-num][data-header-resize="1"]').length > 0)
       ) {
-        console.log("1. Header resize function is initializing. 7"); // QQQ
         var a =
           parseInt(d.attr("data-padding")) -
           parseInt(d.attr("data-padding")) / 1.8;
@@ -15735,7 +15728,6 @@
             )
               ee(parseInt(a) + n + 2 - 2 * i, 0, "easeInOutQuint");
             else {
-              console.log("1. Header resize function is initializing. 8"); // QQQ
               var h =
                 t('#header-outer[data-header-resize="0"]').length > 0
                   ? 0
@@ -15915,7 +15907,6 @@
                               ? t(l).offset().top + 2 - h + bt.adminBarHeight
                               : t(l).offset().top - bt.adminBarHeight + 1;
                         else {
-                          console.log("1. Header resize function is initializing. 9"); // QQQ
                           var i =
                             t('#header-outer[data-header-resize="0"]').length >
                             0
