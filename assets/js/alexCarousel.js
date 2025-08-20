@@ -63,11 +63,20 @@ $(document).ready(function() {
                 }
             },
             {
+                // --- TABLET VIEW (980px and below) ---
+                // Here we switch to showing only one slide
+                breakpoint: 946,
+                settings: {
+                    slidesToShow: 1,
+                    centerPadding: '170px'
+                }
+            },
+            {
                 // --- MOBILE VIEW (736px and below) ---
                 breakpoint: 736,
                 settings: {
                     slidesToShow: 1,
-                    centerPadding: '50px'
+                    centerPadding: '100px'
                 }
             }
         ]
