@@ -2422,6 +2422,56 @@ body #header-outer .menu-item-439 > a:hover:after {
   background: #334032 !important;
 }
 
+body #slide-out-widget-area.fullscreen-alt .inner .off-canvas-menu-container li a.inquire-button:hover{
+  background-color: #334032 !important;
+  color: #fff !important; 
+}
+
+/* --- Mobile Accordion Menu Styles (Final Version) --- */
+#slide-out-widget-area .menu-item-has-children {
+    position: relative;
+}
+
+/* Style for the clickable arrow area */
+#slide-out-widget-area .submenu-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 60px; /* Increased clickable area */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Arrow icon itself */
+#slide-out-widget-area .submenu-toggle .arrow {
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hide sub-menus by default */
+#slide-out-widget-area .sub-menu {
+    display: none;
+    padding-left: 20px;
+    list-style: none;
+}
+
+/* When the parent is open, show the sub-menu */
+#slide-out-widget-area .menu-item.open > .sub-menu {
+    display: block;
+}
+
+/* When open, point the arrow up */
+#slide-out-widget-area .menu-item.open .submenu-toggle .arrow {
+    transform: rotate(-135deg);
+}
+
 .nectar-cta.see-though-no-arrow .link_wrap .link_text {
   padding-right: 0;
   letter-spacing: 0.05em;
@@ -2899,11 +2949,71 @@ body.material .menu-item-btn-style-button-border_accent-color a {
   }
 }
 
+/* Delete? */
+@media only screen and (min-width: 1000px) {
+  .slide-out-widget-area-toggle {
+    padding-right: 0 !important;
+  }
+}
+
+/*
+ * FINAL FIX: This uses your exact selector to lock the hamburger icon's
+ * vertical alignment when the header resizes above 1000px.
+*/
+@media only screen and (min-width: 1000px) {
+
+  #header-outer #top .slide-out-widget-area-toggle.mobile-icon i:before,
+  #header-outer #top .slide-out-widget-area-toggle.mobile-icon i:after {
+    /* This moves the top edge of each line to the container's vertical midpoint */
+    /* top: 50% !important; */
+    /* left: -2px; */
+    
+    /* This then shifts each line up by half of its own height (1px) 
+       to achieve perfect centering. */
+    /* margin-top: -1px !important;  */
+  }
+
+  #header-outer #top .slide-out-widget-area-toggle.mobile-icon i.lines-button.close {
+    right: 2px;
+  }
+  
+}
+
+/* Hamburger Arrow */
+/* Sets the hamburger color AFTER scrolling or by default */
+#header-outer #top .slide-out-widget-area-toggle.mobile-icon i,
+#header-outer #top .slide-out-widget-area-toggle.mobile-icon i:after,
+#header-outer #top .slide-out-widget-area-toggle.mobile-icon i:before {
+  background-color: #000 !important; 
+}
+
+#header-outer.transparent[data-permanent-transparent="false"] #top .slide-out-widget-area-toggle.mobile-icon i,
+#header-outer.transparent[data-permanent-transparent="false"] #top .slide-out-widget-area-toggle.mobile-icon i:after,
+#header-outer.transparent[data-permanent-transparent="false"] #top .slide-out-widget-area-toggle.mobile-icon i:before {
+  background-color: #000 !important;
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1280px) {
+  body:not(.mobile) #header-outer.transparent > #top .span_9 > .slide-out-widget-area-toggle .lines-button:after,
+  body:not(.mobile) #header-outer.transparent > #top .span_9 > .slide-out-widget-area-toggle .lines:before, 
+  body:not(.mobile) #header-outer.transparent > #top .span_9 > .slide-out-widget-area-toggle .lines:after {
+      background-color: #000 !important;
+  }
+}
+
+/* Hamburger Bar */
 .slide-out-widget-area-toggle.mobile-icon .lines-button:after,
 .slide-out-widget-area-toggle.mobile-icon .lines:after,
 .slide-out-widget-area-toggle.mobile-icon .lines:before {
   height: 2px !important;
   width: 38px !important;
+}
+
+/* Change hamburger menu icon color to black */
+.slide-out-widget-area-toggle .lines-button .lines,
+.slide-out-widget-area-toggle .lines-button::before,
+.slide-out-widget-area-toggle .lines-button::after {
+  background-color: #000 !important;
 }
 
 body[data-slide-out-widget-area-style*="fullscreen"]
@@ -2931,6 +3041,10 @@ body[data-slide-out-widget-area-style="simple"]
   .menu-push-out
   .lines:before {
   transform: translateX(40px) !important;
+}
+
+.slide-out-widget-area-toggle .close-wrap {
+  display: none !important;
 }
 
 /*  */
