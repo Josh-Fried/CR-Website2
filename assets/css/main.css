@@ -5499,7 +5499,7 @@ input, select, textarea {
 	color: black;
 	opacity: 0; /* Full opacity for text */
 	line-height: 1.5;
-	font-size: 2vh; /* Adjust as needed */
+	font-size: 1.6vh; /* Adjust as needed */
 	flex-grow: 1; /* Allows paragraph to take available vertical space */
 	margin-bottom: 5px; /* Space above button */
 	transition: opacity .6s ease-in-out; /* Smooth transition for opacity change */
@@ -5550,6 +5550,10 @@ input, select, textarea {
 	.slideshow-card .card-info h2 {
 		/* font-size: 1.4em; */
 	}
+
+	.slideshow-card .card-info p {
+		font-size: 1.4vh;
+	}
 }
 
 @media screen and (max-width: 1080px){
@@ -5574,7 +5578,7 @@ input, select, textarea {
     }
 
 	.slideshow-card .card-info p {
-		font-size: 0.9em;
+		font-size: 1.2vh;
 	}
 }
 
