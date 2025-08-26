@@ -11,8 +11,26 @@ $(document).ready(function() {
         }
     });
 
+      // Add this new block to your magnific popup script
+    $('.image-contain-view').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        image: {
+            titleSrc: 'title'
+        }
+    });
+
+    // Add this for your single-image popups
+    $('.single-image-view').magnificPopup({
+        delegate: 'a', // Looks for link tags to delegate the popup to
+        type: 'image',
+        image: {
+            titleSrc: 'title' // Uses the a-tag's title attribute as the caption
+        }
+    });
+
     // Two-image containers
-    $('.image-container.two-image-view').each(function() {
+    $('.two-image-view').each(function() {
         var $container = $(this);
         
         $container.magnificPopup({

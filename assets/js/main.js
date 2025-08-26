@@ -128,6 +128,7 @@ $(function() {
     var padding = $header.data('padding');
     var heightDifference = parseInt(shrinkNum) + 2 * (padding - padding / 1.8);
     var smallHeaderHeight = largeHeaderHeight - heightDifference;
+    console.log("Can you see this?");
 
     // This is the click handler for all links with class="scrolly"
     $('.scrolly').on('click', function(event) {
@@ -289,22 +290,23 @@ $(function() {
         // the header offset, accounting for its shrink behavior.
         // =====================================================================
         function getHeaderOffset() {
-            const header = document.querySelector('#header-outer');
-            if (!header) return 0;
+            let smallHeaderHeight;
+            const breakpoint = 960; // The screen width where the header changes
 
-            const largeHeaderHeight = header.offsetHeight;
-            const shrinkNum = parseInt(header.dataset.shrinkNum) || 0;
-            const padding = parseInt(header.dataset.padding) || 0;
+            // Check the current window width
+            if (window.innerWidth <= breakpoint) {
+                // USE THE HEIGHT FOR SMALL SCREENS (MOBILE/TABLET)
+                // IMPORTANT: Replace 80 with the measured height of your shrunken mobile header
+                smallHeaderHeight = 84; 
+            } else {
+                // USE THE HEIGHT FOR LARGE SCREENS (DESKTOP)
+                smallHeaderHeight = 102;
+            }
 
-            const heightDifference = shrinkNum + 2 * (padding - padding / 1.8);
-            const smallHeaderHeight = largeHeaderHeight - heightDifference;
-
-            // This replicates the "section padding" calculation from your original scrolly script.
+            // The rest of the function remains the same
             const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-            const sectionPaddingInRem = 2; // This value is taken from your scrolly script
-            const sectionPaddingInPixels = sectionPaddingInRem * rootFontSize;
-
-            // The final return value now correctly subtracts the section padding.
+            const sectionPaddingInPixels = 2 * rootFontSize;
+            
             return smallHeaderHeight - sectionPaddingInPixels;
         }
         // =====================================================================
