@@ -6396,7 +6396,7 @@ body.is-preload #about {
 /* --- RESPONSIVE ADJUSTMENTS --- */
 
 /* For tablets (e.g., screen widths up to 980px) */
-@media (max-width: 1121px) {
+@media (max-width: 1280px) {
     .properties-grid .property-card {
         /* This will create a 2-column layout */
         flex-basis: calc(50% - 1.5rem);
@@ -6404,7 +6404,7 @@ body.is-preload #about {
 }
 
 /* For mobile devices (e.g., screen widths up to 768px) */
-@media (max-width: 779px) {
+@media (max-width: 945px) {
     .properties-grid .property-card {
         /* This will create a 1-column layout */
         flex-basis: 100%;
@@ -6547,6 +6547,13 @@ body.is-preload #about {
 	
 }
 
+@media (max-width: 440px) {
+	.property-card-info {
+		padding: 0.5rem; 
+	}
+	
+}
+
 /* .property-details-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
@@ -6651,20 +6658,20 @@ body.is-preload #about {
 	white-space: nowrap; /* Prevents value from wrapping */
 }
 
+@media (max-width: 440px) {
+	.detail-value {
+		font-size: 0.75rem;
+	}
+}
+
 .detail-value .fas, .detail-value .lucide {
 	margin-right: 0.5rem;
 	color: #3498db; 
     color: #0A66C2; 
+	/* color: #754d25; */
+	color: #2d6a4f;
 	width: 16px;
 	text-align: center;
-}
-
-
-.two-button-container {
-  margin-top: 1.5rem;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
 }
 
 .details-button-wrapper.center {
@@ -6674,81 +6681,52 @@ body.is-preload #about {
 	margin-top: 1.5rem;
 }
 
-/* This targets your new <a> tag with the class .details-button */
-.two-button-container .details-button, .price-request-button {
-    background-color: #2d6a4f; /* Primary Green */
-    color: white;
-    padding: 0.8rem 1.2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    transition: background-color 0.3s ease;
-	white-space: nowrap;
-	translate: 25%;
+/* --- The Container --- */
+.two-button-container {
+  display: flex;
+  justify-content: center; /* This centers the group of buttons */
+  align-items: center; /* This keeps them vertically aligned */
+  gap: 1rem; /* This creates a consistent space BETWEEN the buttons */
+  margin-top: 1.5rem;
 }
 
-.details-button, .price-request-button {
-    background-color: #2d6a4f; /* Primary Green */
-    color: white;
-    padding: 0.8rem 1.2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    transition: background-color 0.3s ease;
-	white-space: nowrap;
-	justify-content: center;
-}
-
-.price-request-button { 
-  /* ... your existing styles like background-color, padding, etc. ... */
-  font-size: 1rem; /* Your text size remains the same */
-
-  /* Add this line to reduce the content area's height */
-  line-height: 1.2; 
-  /* margin-left: 2rem; */
-
-  position: sticky;
-  bottom: 24px; /* Distance from the bottom of the card */
-  right: 40%;   /* Position 25% from the right */
-  transform: translateX(50%); /* Center it horizontally */
-  align-items: center;
-}
-
-.details-button:hover {
-    background-color: #40916c; /* Lighter green on hover */
-    color: white; 
-}
-
-/* Styles the arrow icon inside the button */
-.two-button-container .details-button svg {
-	color: currentColor;
-    margin-left: 0.5rem;
-    transition: transform 0.3s ease;
-}
-
-.two-button-container .details-button:hover svg {
-    transform: translateX(3px);
-}
-
-/* --- Styles for your NEW 'Request Price' button --- */
+/* --- Base Styles for BOTH Buttons --- */
+/* This single rule applies the common styles to both buttons. */
+.details-button,
 .price-request-button {
-	/* 1. Dark brown background with white text */
-	background-color: #754d25; /* Classic Dark Brown */
-	color: #FFFFFF;
-	padding: 12px 40px; 
-	border-radius: 9999px;
-	margin-left: 1rem !important; 
+  background-color: #2d6a4f; /* Primary Green */
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #2d6a4f; /* Added for a smooth transition on the inverse style */
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease; /* Transition all properties for a smoother effect */
+  white-space: nowrap;
 }
 
-/* Hover effect for the 'Request Price' button */
+/* --- Inverse Style for the Price Button --- */
+.price-request-button.inverse {
+  background-color: #ffffff; /* White background */
+  color: #2d6a4f; /* Green text */
+}
+
+/* --- Hover States --- */
+.details-button:hover,
 .price-request-button:hover {
-    background-color: #8a6746;
-	color: white;
-    /* transform: translateY(-2px); */
+  background-color: white;
+  border-color: #2d6a4f; 
+  color: #2d6a4f;
+}
+
+/* Hover for the inverse button */
+.price-request-button.inverse:hover {
+  background-color: #2d6a4f; /* Green background on hover */
+  color: #ffffff; /* White text on hover */
+  border-color: #2d6a4f;
 }
 
 /* --- View More Button Styles --- */
@@ -6801,75 +6779,6 @@ body.is-preload #about {
     }
 }
 
-@media (max-width: 1350px) {
-	.details-button{
-		translate: 0%;
-	}
-
-	.price-request-button {
-		translate: 10%;
-	};
-
-}
-
-@media (max-width: 1121px) {
-	.details-button{
-		translate: 40%;
-	}
-
-	.price-request-button {
-		translate: 30%;
-	};
-
-}
-
-@media (max-width: 950px) {
-	.details-button{
-		translate: 10%;
-	}
-
-	.price-request-button {
-		translate: 15%;
-	};
-
-}
-
-@media (max-width: 779px) {
-	.details-button {
-		translate: 100%;
-	}
-
-	.price-request-button {
-		translate: 40%;
-	}
-}
-
-@media (max-width: 680px) {
-	.details-button{
-		translate: 80%;
-	}
-
-	/* .price-request-button {
-		translate: 60%;
-	}; */
-
-}
-
-@media (max-width: 520px) {
-	.details-button{
-		translate: 20%;
-	}
-	.price-request-button {
-		translate: 15%;
-
-	}
-}
-
-/* @media (max-width: 768px) {
-	.price-request-button {
-		margin-left: 0;
-	}
-} */
 
 /**
  * Simple fade transition,
