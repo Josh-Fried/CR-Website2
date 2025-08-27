@@ -5560,7 +5560,7 @@ input, select, textarea {
 	}
 }
 
-@media screen and (max-width: 1080px){
+@media screen and (max-width: 1268px){
     /* --- START: Add this code for the HDM text swap --- */
 
     /* 1. Target the original H2 on the specific card */
@@ -5588,12 +5588,29 @@ input, select, textarea {
 
 @media screen and (max-width: 945px){
 	.slideshow-card .card-info h2 {
-		font-size: 1em;
+		/* font-size: 1em; */
+	}
+	.slideshow-card .card-info p {
+		font-size: 2vh;
+	}
+}
+
+@media screen and (max-width: 850px){
+	.slideshow-card .card-info p {
+		font-size: 1.8vh;
 	}
 }
 
 @media screen and (max-width: 768px){
-	
+	.slideshow-card .card-info p {
+		font-size: 1.6vh;
+	}
+}
+
+@media screen and (max-width: 768px){
+	.slideshow-card .card-info p {
+		font-size: 1.6vh;
+	}
 }
 
 @media screen and (max-width: 480px){
@@ -7779,4 +7796,35 @@ body.is-preload #about {
 
 body.form-is-open {
     overflow: hidden;
+}
+
+.back-button {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  height: auto;   
+  line-height: normal; 
+
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  padding: 10px 15px;
+  background-color: #2d6a4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #40916c; /* A slightly lighter color for hover */
+  color: white;
+  box-shadow: none;
 }
