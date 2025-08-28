@@ -7132,7 +7132,6 @@ body.is-preload #about {
 	margin-right: auto;
 }
 
-
 /* --- 2. TWO IMAGE VIEW (Desktop) --- */
 .two-image-view {
 	/* max-height: 40vh;  */
@@ -7142,6 +7141,10 @@ body.is-preload #about {
 	display: flex;
 	flex-direction: row; 
 	gap: 0.5rem;
+}
+
+.two-image-view.maps {
+    aspect-ratio: 16 / 5; 
 }
 
 .two-image-view .image-wrapper {
