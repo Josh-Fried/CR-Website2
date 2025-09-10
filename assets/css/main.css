@@ -5965,6 +5965,9 @@ input, select, textarea {
     padding-bottom: 15px;  
     margin-bottom: 20px;   
     text-align: center;    
+	font-size: clamp(2.5rem, 1.75rem + 3.5vw, 4rem);
+	line-height: 1.5;
+
 }
 
 .title-with-underline::after {
