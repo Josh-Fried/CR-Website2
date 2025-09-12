@@ -5550,6 +5550,163 @@ input, select, textarea {
 	box-shadow: inset 0 0 0 2px #333;
 }
 
+.slideshow-card .card-title-with-underline {
+    position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
+    text-align: center;    
+}
+
+.slideshow-card .card-title-with-underline::after {
+    content: '';          /* Required for pseudo-elements to be generated */
+    display: block;      
+    width: 5vw;          
+    height: 3px;          
+    background-color: #333; 
+    position: absolute;   
+    left: 50%;            /* Start the left edge at the center of the title element */
+    transform: translateX(-50%); /* Shift it left by half its own width to truly center it */
+    bottom: 0;   
+    opacity: 0; /* Initially hidden */         
+    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
+}
+
+.slick-center .slideshow-card .card-title-with-underline::after {
+    opacity: 1; /* Adjust width for centered card */
+    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
+}
+
+/* Optional: Adjust arrow positioning if needed (from your original CSS) */
+.center-mode-slider .slick-prev,
+.center-mode-slider .slick-next {
+	z-index: 10; /* Ensure arrows are above slides */
+}
+.center-mode-slider .slick-prev {
+	left: 10px; /* Adjust as needed, e.g., closer to the edge of the carousel */
+}
+.center-mode-slider .slick-next {
+	right: 10px; /* Adjust as needed */
+}
+
+/* Ensure the carousel section has some padding (from your original CSS) */
+.carousel-section {
+	padding-top: 3em;
+	padding-bottom: 3em;
+	/* background: #f7f7f7; */ /* Optional: different background for this section */
+	overflow: hidden; /* Helps contain elements if arrows are positioned absolutely outside */
+}
+
+
+/* Center Carousel */
+
+.center-mode-carousel {
+    width: 100%; /* Adjust as needed */
+    margin: 0 auto; /* Center the carousel horizontally */
+    position: relative; /* For positioning Slick controls if needed */
+}
+
+/* Basic styling for the slides within the carousel */
+.center-mode-carousel > div {
+    text-align: center; /* Center the text/content within the slide */
+    height: auto; /* Let height adjust based on content */
+}
+
+.center-mode-carousel .slick-slide {
+    height: auto; /* Allow height to adjust */
+    overflow: hidden; /* Hide content outside the slide boundaries */
+}
+
+.center-mode-carousel img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Or 'cover' depending on desired behavior */
+}
+
+/* Carousel Counter & Arrows */
+.center-mode-slider .slick-arrow {
+    position: absolute;
+    top: auto; /* Override default top positioning */
+    /* This positions the ARROWS' BOTTOM EDGE relative to the CAROUSEL'S BOTTOM EDGE.
+       If .custom-slick-wrapper has padding-bottom: 80px, and arrows are 40px high,
+       bottom: -60px; places the arrow starting 60px below the carousel's content bottom,
+       landing it centered vertically in the 80px padding area.
+       (80px space - 40px arrow height = 40px free. 20px above, 20px below arrow).
+       So, bottom of arrow is at - (20px padding_below_arrow + 40px arrow_height) = -60px.
+    */
+    bottom: -65px; /* Adjust this value based on your wrapper's padding-bottom and arrow height */
+    width: 0px;
+    height: 0px;
+    z-index: 100; /* High z-index to ensure they are on top and clickable */
+
+    /* --- VISIBILITY STYLES (IMPORTANT) --- */
+    background-color: rgba(255, 255, 255, 0.8); /* Light semi-transparent background */
+    border: 0px solid #ccc; 
+    border-radius: 50%;     
+	/* border: none;
+	border-radius: 0%; */
+    cursor: pointer;
+    display: block !important; /* Ensure they are displayed */
+    opacity: 1 !important;   /* Ensure they are not transparent */
+    /* Reset any transforms that might hide them or misposition them from CDN */
+    transform: none;
+}
+
+.center-mode-slider .slick-arrow::before {
+    font-family: 'slick'; /* This is Slick's default font for icons */
+    font-size: 20px;      /* Size of the icon character */
+    color: #333333;       /* Dark color for the icon for visibility */
+    opacity: 1 !important;/* Ensure icon itself is visible */
+    line-height: 1;       /* Reset from CDN if it causes issues */
+
+    display: flex;	/* Centering the icon in the button */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.center-mode-slider .slick-arrow:hover {
+    background-color: rgba(255, 255, 255, 1); /* Slightly more opaque on hover */
+    border-color: #aaa;
+}
+.center-mode-slider .slick-arrow:hover::before {
+    color: #000000;
+}
+
+.center-mode-slider .slick-prev {
+    left: 50%; /* Start at the horizontal center of the carousel */
+    /* Then, move it left by its own width PLUS half the desired gap between arrows.
+       If arrow is 40px wide and you want a 20px gap, move left by (40px + 10px) = 50px.
+       So, transform: translateX(-50px);
+       A more robust way: transform it left by 100% of its own width (to align its right edge with 50% mark)
+       and then another few pixels for the gap.
+    */
+    transform: translateX(calc(-100% - 50px)); /* -100% of its own width, then -10px (half of a 20px gap) */
+}
+
+.center-mode-slider .slick-next {
+    left: 50%; /* Start at the horizontal center of the carousel */
+    /* Then, move it right by half the desired gap. */
+    transform: translateX(50px); /* 10px (half of a 20px gap) */
+}
+
+.custom-slick-controls {
+    position: absolute;
+    bottom: 35px; 
+    left: 50%;
+    transform: translateX(-50%); /* Center the counter div */
+    z-index: 90; /* Below arrows if they might overlap, but above other content */
+}
+
+.slick-counter {
+    font-size: 16px;
+    color: #444;
+    background-color: rgba(240, 240, 240, 0.7);
+    padding: 6px 12px;
+    border-radius: 15px;
+	
+    white-space: nowrap; /* Prevent wrapping if numbers get long */
+}
+
 @media screen and (max-width: 1280px){
 	.slideshow-card .card-info h2 {
 		/* font-size: 1.4em; */
@@ -5601,68 +5758,74 @@ input, select, textarea {
 	}
 }
 
+/* Mobile Carousel  */
 @media screen and (max-width: 768px){
-	.slideshow-card .card-info p {
-		font-size: 1.6vh;
+	.slick-center .slideshow-card .card-info p {
+	opacity: 0;
 	}
-}
 
-@media screen and (max-width: 768px){
-	.slideshow-card .card-info p {
-		font-size: 1.6vh;
+	.slideshow-card .card-info h2 {
+		font-size: 1.2rem;
 	}
+
+	.slick-center .slideshow-card .card-title-with-underline::after {
+    opacity: 0; 
+	}
+
+	/* Styles for the card when it is in the .slick-center slide */
+	.center-mode-slider .slick-center .slideshow-card {
+		align-items: stretch; /* Makes image and card-info stretch to the card's height */
+	background-color: #ffffff;
+	border-radius: 0px;
+	overflow: hidden;
+	width: 100%; /* Default width for non-centered cards */
+	max-width: 750px; /* Adjust as needed */
+	height: 50vh; /* Default height for non-centered cards - adjust as you like */
+	opacity: 1;
+	transform: scale(0.8); /* Non-centered cards are slightly smaller */
+	transition: opacity 0.6s ease-in-out,
+				transform 0.6s ease-in-out,
+				width 0.6s ease-in-out,
+				height 0.6s ease-in-out,
+				box-shadow 0.6s ease-in-out;
+	}
+
+	.slideshow-card {
+	height: 50vh; /* Default height for non-centered cards - adjust as you like */
+	}	
+
+	.slick-center .slideshow-card img {
+		width: 100%; /* Percentage of the card's width for the image */
+	height: 85%;
+	object-fit: cover; /* Ensures image covers the area, might crop */
+	transition: height 0.6s ease-in-out; /* Smooth transition for height change */
+	margin-bottom: -2px;
+	flex-shrink: 0; /* Prevents image from shrinking */
+	}
+
+	.content-inner {
+		padding: 0 0 !important;
+	}
+
+	.slick-list.draggable {
+		height: 0;
+	}
+
+	.center-mode-slider .slick-arrow {
+	bottom: -10px;
+	}
+	.custom-slick-controls {
+    bottom: 30px; 
+	}	
+
+	#main > .center-mode-carousel-wrapper {
+    position: relative;
+    padding-bottom: 60px !important;
+	}	
 }
 
 @media screen and (max-width: 480px){
 	
-}
-
-
-/* Optional: Adjust arrow positioning if needed (from your original CSS) */
-.center-mode-slider .slick-prev,
-.center-mode-slider .slick-next {
-	z-index: 10; /* Ensure arrows are above slides */
-}
-.center-mode-slider .slick-prev {
-	left: 10px; /* Adjust as needed, e.g., closer to the edge of the carousel */
-}
-.center-mode-slider .slick-next {
-	right: 10px; /* Adjust as needed */
-}
-
-/* Ensure the carousel section has some padding (from your original CSS) */
-.carousel-section {
-	padding-top: 3em;
-	padding-bottom: 3em;
-	/* background: #f7f7f7; */ /* Optional: different background for this section */
-	overflow: hidden; /* Helps contain elements if arrows are positioned absolutely outside */
-}
-
-
-/* Center Carousel */
-
-.center-mode-carousel {
-    width: 100%; /* Adjust as needed */
-    margin: 0 auto; /* Center the carousel horizontally */
-    position: relative; /* For positioning Slick controls if needed */
-}
-
-/* Basic styling for the slides within the carousel */
-.center-mode-carousel > div {
-    text-align: center; /* Center the text/content within the slide */
-    height: auto; /* Let height adjust based on content */
-}
-
-.center-mode-carousel .slick-slide {
-    height: auto; /* Allow height to adjust */
-    overflow: hidden; /* Hide content outside the slide boundaries */
-}
-
-.center-mode-carousel img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: contain; /* Or 'cover' depending on desired behavior */
 }
 
 /* Center Five Wide */
@@ -5813,92 +5976,6 @@ input, select, textarea {
 	padding: 10px;
 }
 
-/* Carousel Counter & Arrows */
-.center-mode-slider .slick-arrow {
-    position: absolute;
-    top: auto; /* Override default top positioning */
-    /* This positions the ARROWS' BOTTOM EDGE relative to the CAROUSEL'S BOTTOM EDGE.
-       If .custom-slick-wrapper has padding-bottom: 80px, and arrows are 40px high,
-       bottom: -60px; places the arrow starting 60px below the carousel's content bottom,
-       landing it centered vertically in the 80px padding area.
-       (80px space - 40px arrow height = 40px free. 20px above, 20px below arrow).
-       So, bottom of arrow is at - (20px padding_below_arrow + 40px arrow_height) = -60px.
-    */
-    bottom: -60px; /* Adjust this value based on your wrapper's padding-bottom and arrow height */
-    width: 0px;
-    height: 0px;
-    z-index: 100; /* High z-index to ensure they are on top and clickable */
-
-    /* --- VISIBILITY STYLES (IMPORTANT) --- */
-    background-color: rgba(255, 255, 255, 0.8); /* Light semi-transparent background */
-    border: 0px solid #ccc; 
-    border-radius: 50%;     
-	/* border: none;
-	border-radius: 0%; */
-    cursor: pointer;
-    display: block !important; /* Ensure they are displayed */
-    opacity: 1 !important;   /* Ensure they are not transparent */
-    /* Reset any transforms that might hide them or misposition them from CDN */
-    transform: none;
-}
-
-.center-mode-slider .slick-arrow::before {
-    font-family: 'slick'; /* This is Slick's default font for icons */
-    font-size: 20px;      /* Size of the icon character */
-    color: #333333;       /* Dark color for the icon for visibility */
-    opacity: 1 !important;/* Ensure icon itself is visible */
-    line-height: 1;       /* Reset from CDN if it causes issues */
-
-    display: flex;	/* Centering the icon in the button */
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-.center-mode-slider .slick-arrow:hover {
-    background-color: rgba(255, 255, 255, 1); /* Slightly more opaque on hover */
-    border-color: #aaa;
-}
-.center-mode-slider .slick-arrow:hover::before {
-    color: #000000;
-}
-
-.center-mode-slider .slick-prev {
-    left: 50%; /* Start at the horizontal center of the carousel */
-    /* Then, move it left by its own width PLUS half the desired gap between arrows.
-       If arrow is 40px wide and you want a 20px gap, move left by (40px + 10px) = 50px.
-       So, transform: translateX(-50px);
-       A more robust way: transform it left by 100% of its own width (to align its right edge with 50% mark)
-       and then another few pixels for the gap.
-    */
-    transform: translateX(calc(-100% - 50px)); /* -100% of its own width, then -10px (half of a 20px gap) */
-}
-
-.center-mode-slider .slick-next {
-    left: 50%; /* Start at the horizontal center of the carousel */
-    /* Then, move it right by half the desired gap. */
-    transform: translateX(50px); /* 10px (half of a 20px gap) */
-}
-
-.custom-slick-controls {
-    position: absolute;
-    bottom: 35px; 
-    left: 50%;
-    transform: translateX(-50%); /* Center the counter div */
-    z-index: 90; /* Below arrows if they might overlap, but above other content */
-}
-
-.slick-counter {
-    font-size: 16px;
-    color: #444;
-    background-color: rgba(240, 240, 240, 0.7);
-    padding: 6px 12px;
-    border-radius: 15px;
-	
-    white-space: nowrap; /* Prevent wrapping if numbers get long */
-}
-
 @media screen and (max-width: 1280px) {
     .center-mode-carousel.five-wide {
         height: 600px; /* 460 */
@@ -5981,30 +6058,6 @@ input, select, textarea {
     left: 50%;            /* Start the left edge at the center of the title element */
     transform: translateX(-50%); /* Shift it left by half its own width to truly center it */
     bottom: 0;            
-}
-
-.slideshow-card .card-title-with-underline {
-    position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
-    text-align: center;    
-}
-
-.slideshow-card .card-title-with-underline::after {
-    content: '';          /* Required for pseudo-elements to be generated */
-    display: block;      
-    width: 5vw;          
-    height: 3px;          
-    background-color: #333; 
-    position: absolute;   
-    left: 50%;            /* Start the left edge at the center of the title element */
-    transform: translateX(-50%); /* Shift it left by half its own width to truly center it */
-    bottom: 0;   
-    opacity: 0; /* Initially hidden */         
-    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
-}
-
-.slick-center .slideshow-card .card-title-with-underline::after {
-    opacity: 1; /* Adjust width for centered card */
-    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
 }
 
 .subtitle {
