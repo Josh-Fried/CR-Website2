@@ -391,5 +391,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menu = document.querySelector('#slide-out-widget-area .menu');
+    if (!menu) return;
+
+    const toggles = menu.querySelectorAll('.submenu-toggle');
+    const backButtons = menu.querySelectorAll('.sub-menu .back');
+
+    // --- 1. Handle Opening the Sub-menu ---
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault(); // Stop the link from navigating anywhere
+            const parentLi = toggle.closest('.menu-item-has-children');
+            
+            // Add classes to create the "new page" effect
+            menu.classList.add('submenu-is-active');
+            parentLi.classList.add('active-submenu-parent');
+        });
+    });
+
+    // --- 2. Handle the "Back" Button to Close the Sub-menu ---
+    backButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); // Stop the link from navigating
+            
+            // Remove classes to go back to the main menu
+            menu.classList.remove('submenu-is-active');
+            
+            const activeParent = menu.querySelector('.active-submenu-parent');
+            if (activeParent) {
+                activeParent.classList.remove('active-submenu-parent');
+            }
+        });
+    });
+});
     
 })(jQuery);
