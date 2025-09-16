@@ -5550,56 +5550,29 @@ input, select, textarea {
 	box-shadow: inset 0 0 0 2px #333;
 }
 
-@media screen and (max-width: 1280px){
-	.slideshow-card .card-info h2 {
-		/* font-size: 1.4em; */
-	}
-
-	.slideshow-card .card-info p {
-		font-size: 1.4vh;
-	}
+.slideshow-card .card-title-with-underline {
+    position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
+    text-align: center;    
 }
 
-@media screen and (max-width: 1080px){
-    /* --- START: Add this code for the HDM text swap --- */
-
-    /* 1. Target the original H2 on the specific card */
-    .hacienda-del-mar .card-info h2 .original-title {
-        display: none;
-    }
-
-    /* 2. Create the new "HDM" text with its own styles */
-    .hacienda-del-mar .card-info h2::before {
-        content: "HDM"; /* This creates the new text */
-		visibility: visible; 
-		width: 100%;
-		text-align: center;
-	}
-	.hacienda-del-mar .card-info h2 {
-        /* These values match your original .card-title-with-underline style */
-        padding-bottom: 10px; 
-        margin-bottom: 0px;
-    }
-
-	.slideshow-card .card-info p {
-		font-size: 1.2vh;
-	}
+.slideshow-card .card-title-with-underline::after {
+    content: '';          /* Required for pseudo-elements to be generated */
+    display: block;      
+    width: 5vw;          
+    height: 3px;          
+    background-color: #333; 
+    position: absolute;   
+    left: 50%;            /* Start the left edge at the center of the title element */
+    transform: translateX(-50%); /* Shift it left by half its own width to truly center it */
+    bottom: 0;   
+    opacity: 0; /* Initially hidden */         
+    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
 }
 
-@media screen and (max-width: 945px){
-	.slideshow-card .card-info h2 {
-		font-size: 1em;
-	}
+.slick-center .slideshow-card .card-title-with-underline::after {
+    opacity: 1; /* Adjust width for centered card */
+    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
 }
-
-@media screen and (max-width: 768px){
-	
-}
-
-@media screen and (max-width: 480px){
-	
-}
-
 
 /* Optional: Adjust arrow positioning if needed (from your original CSS) */
 .center-mode-slider .slick-prev,
@@ -5646,6 +5619,213 @@ input, select, textarea {
     width: 100%;
     height: auto;
     object-fit: contain; /* Or 'cover' depending on desired behavior */
+}
+
+/* Carousel Counter & Arrows */
+.center-mode-slider .slick-arrow {
+    position: absolute;
+    top: auto; /* Override default top positioning */
+    /* This positions the ARROWS' BOTTOM EDGE relative to the CAROUSEL'S BOTTOM EDGE.
+       If .custom-slick-wrapper has padding-bottom: 80px, and arrows are 40px high,
+       bottom: -60px; places the arrow starting 60px below the carousel's content bottom,
+       landing it centered vertically in the 80px padding area.
+       (80px space - 40px arrow height = 40px free. 20px above, 20px below arrow).
+       So, bottom of arrow is at - (20px padding_below_arrow + 40px arrow_height) = -60px.
+    */
+    bottom: -65px; /* Adjust this value based on your wrapper's padding-bottom and arrow height */
+    width: 0px;
+    height: 0px;
+    z-index: 100; /* High z-index to ensure they are on top and clickable */
+
+    /* --- VISIBILITY STYLES (IMPORTANT) --- */
+    background-color: rgba(255, 255, 255, 0.8); /* Light semi-transparent background */
+    border: 0px solid #ccc; 
+    border-radius: 50%;     
+	/* border: none;
+	border-radius: 0%; */
+    cursor: pointer;
+    display: block !important; /* Ensure they are displayed */
+    opacity: 1 !important;   /* Ensure they are not transparent */
+    /* Reset any transforms that might hide them or misposition them from CDN */
+    transform: none;
+}
+
+.center-mode-slider .slick-arrow::before {
+    font-family: 'slick'; /* This is Slick's default font for icons */
+    font-size: 20px;      /* Size of the icon character */
+    color: #333333;       /* Dark color for the icon for visibility */
+    opacity: 1 !important;/* Ensure icon itself is visible */
+    line-height: 1;       /* Reset from CDN if it causes issues */
+
+    display: flex;	/* Centering the icon in the button */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.center-mode-slider .slick-arrow:hover {
+    background-color: rgba(255, 255, 255, 1); /* Slightly more opaque on hover */
+    border-color: #aaa;
+}
+.center-mode-slider .slick-arrow:hover::before {
+    color: #000000;
+}
+
+.center-mode-slider .slick-prev {
+    left: 50%; /* Start at the horizontal center of the carousel */
+    /* Then, move it left by its own width PLUS half the desired gap between arrows.
+       If arrow is 40px wide and you want a 20px gap, move left by (40px + 10px) = 50px.
+       So, transform: translateX(-50px);
+       A more robust way: transform it left by 100% of its own width (to align its right edge with 50% mark)
+       and then another few pixels for the gap.
+    */
+    transform: translateX(calc(-100% - 50px)); /* -100% of its own width, then -10px (half of a 20px gap) */
+}
+
+.center-mode-slider .slick-next {
+    left: 50%; /* Start at the horizontal center of the carousel */
+    /* Then, move it right by half the desired gap. */
+    transform: translateX(50px); /* 10px (half of a 20px gap) */
+}
+
+.custom-slick-controls {
+    position: absolute;
+    bottom: 35px; 
+    left: 50%;
+    transform: translateX(-50%); /* Center the counter div */
+    z-index: 90; /* Below arrows if they might overlap, but above other content */
+}
+
+.slick-counter {
+    font-size: 16px;
+    color: #444;
+    background-color: rgba(240, 240, 240, 0.7);
+    padding: 6px 12px;
+    border-radius: 15px;
+	
+    white-space: nowrap; /* Prevent wrapping if numbers get long */
+}
+
+@media screen and (max-width: 1280px){
+	.slideshow-card .card-info h2 {
+		/* font-size: 1.4em; */
+	}
+
+	.slideshow-card .card-info p {
+		font-size: 1.4vh;
+	}
+}
+
+@media screen and (max-width: 1268px){
+    /* --- START: Add this code for the HDM text swap --- */
+
+    /* 1. Target the original H2 on the specific card */
+    .hacienda-del-mar .card-info h2 .original-title {
+        display: none;
+    }
+
+    /* 2. Create the new "HDM" text with its own styles */
+    .hacienda-del-mar .card-info h2::before {
+        content: "HDM"; /* This creates the new text */
+		visibility: visible; 
+		width: 100%;
+		text-align: center;
+	}
+	.hacienda-del-mar .card-info h2 {
+        /* These values match your original .card-title-with-underline style */
+        padding-bottom: 10px; 
+        margin-bottom: 0px;
+    }
+
+	.slideshow-card .card-info p {
+		font-size: 1.2vh;
+	}
+}
+
+@media screen and (max-width: 945px){
+	.slideshow-card .card-info h2 {
+		/* font-size: 1em; */
+	}
+	.slideshow-card .card-info p {
+		font-size: 2vh;
+	}
+}
+
+@media screen and (max-width: 850px){
+	.slideshow-card .card-info p {
+		font-size: 1.8vh;
+	}
+}
+
+/* Mobile Carousel  */
+@media screen and (max-width: 768px){
+	.slick-center .slideshow-card .card-info p {
+	opacity: 0;
+	}
+
+	.slideshow-card .card-info h2 {
+		font-size: 1.2rem;
+	}
+
+	.slick-center .slideshow-card .card-title-with-underline::after {
+    opacity: 0; 
+	}
+
+	/* Styles for the card when it is in the .slick-center slide */
+	.center-mode-slider .slick-center .slideshow-card {
+		align-items: stretch; /* Makes image and card-info stretch to the card's height */
+	background-color: #ffffff;
+	border-radius: 0px;
+	overflow: hidden;
+	width: 100%; /* Default width for non-centered cards */
+	max-width: 750px; /* Adjust as needed */
+	height: 50vh; /* Default height for non-centered cards - adjust as you like */
+	opacity: 1;
+	transform: scale(0.8); /* Non-centered cards are slightly smaller */
+	transition: opacity 0.6s ease-in-out,
+				transform 0.6s ease-in-out,
+				width 0.6s ease-in-out,
+				height 0.6s ease-in-out,
+				box-shadow 0.6s ease-in-out;
+	}
+
+	.slideshow-card {
+	height: 50vh; /* Default height for non-centered cards - adjust as you like */
+	}	
+
+	.slick-center .slideshow-card img {
+		width: 100%; /* Percentage of the card's width for the image */
+	height: 85%;
+	object-fit: cover; /* Ensures image covers the area, might crop */
+	transition: height 0.6s ease-in-out; /* Smooth transition for height change */
+	margin-bottom: -2px;
+	flex-shrink: 0; /* Prevents image from shrinking */
+	}
+
+	.content-inner {
+		padding: 0 0 !important;
+	}
+
+	.slick-list.draggable {
+		height: 0;
+	}
+
+	.center-mode-slider .slick-arrow {
+	bottom: -10px;
+	}
+	.custom-slick-controls {
+    bottom: 30px; 
+	}	
+
+	#main > .center-mode-carousel-wrapper {
+    position: relative;
+    padding-bottom: 60px !important;
+	}	
+}
+
+@media screen and (max-width: 480px){
+	
 }
 
 /* Center Five Wide */
@@ -5796,92 +5976,6 @@ input, select, textarea {
 	padding: 10px;
 }
 
-/* Carousel Counter & Arrows */
-.center-mode-slider .slick-arrow {
-    position: absolute;
-    top: auto; /* Override default top positioning */
-    /* This positions the ARROWS' BOTTOM EDGE relative to the CAROUSEL'S BOTTOM EDGE.
-       If .custom-slick-wrapper has padding-bottom: 80px, and arrows are 40px high,
-       bottom: -60px; places the arrow starting 60px below the carousel's content bottom,
-       landing it centered vertically in the 80px padding area.
-       (80px space - 40px arrow height = 40px free. 20px above, 20px below arrow).
-       So, bottom of arrow is at - (20px padding_below_arrow + 40px arrow_height) = -60px.
-    */
-    bottom: -60px; /* Adjust this value based on your wrapper's padding-bottom and arrow height */
-    width: 0px;
-    height: 0px;
-    z-index: 100; /* High z-index to ensure they are on top and clickable */
-
-    /* --- VISIBILITY STYLES (IMPORTANT) --- */
-    background-color: rgba(255, 255, 255, 0.8); /* Light semi-transparent background */
-    border: 0px solid #ccc; 
-    border-radius: 50%;     
-	/* border: none;
-	border-radius: 0%; */
-    cursor: pointer;
-    display: block !important; /* Ensure they are displayed */
-    opacity: 1 !important;   /* Ensure they are not transparent */
-    /* Reset any transforms that might hide them or misposition them from CDN */
-    transform: none;
-}
-
-.center-mode-slider .slick-arrow::before {
-    font-family: 'slick'; /* This is Slick's default font for icons */
-    font-size: 20px;      /* Size of the icon character */
-    color: #333333;       /* Dark color for the icon for visibility */
-    opacity: 1 !important;/* Ensure icon itself is visible */
-    line-height: 1;       /* Reset from CDN if it causes issues */
-
-    display: flex;	/* Centering the icon in the button */
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-.center-mode-slider .slick-arrow:hover {
-    background-color: rgba(255, 255, 255, 1); /* Slightly more opaque on hover */
-    border-color: #aaa;
-}
-.center-mode-slider .slick-arrow:hover::before {
-    color: #000000;
-}
-
-.center-mode-slider .slick-prev {
-    left: 50%; /* Start at the horizontal center of the carousel */
-    /* Then, move it left by its own width PLUS half the desired gap between arrows.
-       If arrow is 40px wide and you want a 20px gap, move left by (40px + 10px) = 50px.
-       So, transform: translateX(-50px);
-       A more robust way: transform it left by 100% of its own width (to align its right edge with 50% mark)
-       and then another few pixels for the gap.
-    */
-    transform: translateX(calc(-100% - 50px)); /* -100% of its own width, then -10px (half of a 20px gap) */
-}
-
-.center-mode-slider .slick-next {
-    left: 50%; /* Start at the horizontal center of the carousel */
-    /* Then, move it right by half the desired gap. */
-    transform: translateX(50px); /* 10px (half of a 20px gap) */
-}
-
-.custom-slick-controls {
-    position: absolute;
-    bottom: 35px; 
-    left: 50%;
-    transform: translateX(-50%); /* Center the counter div */
-    z-index: 90; /* Below arrows if they might overlap, but above other content */
-}
-
-.slick-counter {
-    font-size: 16px;
-    color: #444;
-    background-color: rgba(240, 240, 240, 0.7);
-    padding: 6px 12px;
-    border-radius: 15px;
-	
-    white-space: nowrap; /* Prevent wrapping if numbers get long */
-}
-
 @media screen and (max-width: 1280px) {
     .center-mode-carousel.five-wide {
         height: 600px; /* 460 */
@@ -5948,6 +6042,9 @@ input, select, textarea {
     padding-bottom: 15px;  
     margin-bottom: 20px;   
     text-align: center;    
+	font-size: clamp(2.5rem, 1.75rem + 3.5vw, 4rem);
+	line-height: 1.5;
+
 }
 
 .title-with-underline::after {
@@ -5961,30 +6058,6 @@ input, select, textarea {
     left: 50%;            /* Start the left edge at the center of the title element */
     transform: translateX(-50%); /* Shift it left by half its own width to truly center it */
     bottom: 0;            
-}
-
-.slideshow-card .card-title-with-underline {
-    position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
-    text-align: center;    
-}
-
-.slideshow-card .card-title-with-underline::after {
-    content: '';          /* Required for pseudo-elements to be generated */
-    display: block;      
-    width: 5vw;          
-    height: 3px;          
-    background-color: #333; 
-    position: absolute;   
-    left: 50%;            /* Start the left edge at the center of the title element */
-    transform: translateX(-50%); /* Shift it left by half its own width to truly center it */
-    bottom: 0;   
-    opacity: 0; /* Initially hidden */         
-    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
-}
-
-.slick-center .slideshow-card .card-title-with-underline::after {
-    opacity: 1; /* Adjust width for centered card */
-    transition: all 0.6s ease-in-out; /* Smooth transition for width change */
 }
 
 .subtitle {
@@ -6379,7 +6452,7 @@ body.is-preload #about {
 /* --- RESPONSIVE ADJUSTMENTS --- */
 
 /* For tablets (e.g., screen widths up to 980px) */
-@media (max-width: 1121px) {
+@media (max-width: 1280px) {
     .properties-grid .property-card {
         /* This will create a 2-column layout */
         flex-basis: calc(50% - 1.5rem);
@@ -6387,7 +6460,7 @@ body.is-preload #about {
 }
 
 /* For mobile devices (e.g., screen widths up to 768px) */
-@media (max-width: 779px) {
+@media (max-width: 945px) {
     .properties-grid .property-card {
         /* This will create a 1-column layout */
         flex-basis: 100%;
@@ -6530,6 +6603,13 @@ body.is-preload #about {
 	
 }
 
+@media (max-width: 440px) {
+	.property-card-info {
+		padding: 0.5rem; 
+	}
+	
+}
+
 /* .property-details-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
@@ -6634,20 +6714,20 @@ body.is-preload #about {
 	white-space: nowrap; /* Prevents value from wrapping */
 }
 
+@media (max-width: 440px) {
+	.detail-value {
+		font-size: 0.75rem;
+	}
+}
+
 .detail-value .fas, .detail-value .lucide {
 	margin-right: 0.5rem;
 	color: #3498db; 
     color: #0A66C2; 
+	/* color: #754d25; */
+	color: #2d6a4f;
 	width: 16px;
 	text-align: center;
-}
-
-
-.two-button-container {
-  margin-top: 1.5rem;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
 }
 
 .details-button-wrapper.center {
@@ -6657,81 +6737,52 @@ body.is-preload #about {
 	margin-top: 1.5rem;
 }
 
-/* This targets your new <a> tag with the class .details-button */
-.two-button-container .details-button, .price-request-button {
-    background-color: #2d6a4f; /* Primary Green */
-    color: white;
-    padding: 0.8rem 1.2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    transition: background-color 0.3s ease;
-	white-space: nowrap;
-	translate: 25%;
+/* --- The Container --- */
+.two-button-container {
+  display: flex;
+  justify-content: center; /* This centers the group of buttons */
+  align-items: center; /* This keeps them vertically aligned */
+  gap: 1rem; /* This creates a consistent space BETWEEN the buttons */
+  margin-top: 1.5rem;
 }
 
-.details-button, .price-request-button {
-    background-color: #2d6a4f; /* Primary Green */
-    color: white;
-    padding: 0.8rem 1.2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    transition: background-color 0.3s ease;
-	white-space: nowrap;
-	justify-content: center;
-}
-
-.price-request-button { 
-  /* ... your existing styles like background-color, padding, etc. ... */
-  font-size: 1rem; /* Your text size remains the same */
-
-  /* Add this line to reduce the content area's height */
-  line-height: 1.2; 
-  /* margin-left: 2rem; */
-
-  position: sticky;
-  bottom: 24px; /* Distance from the bottom of the card */
-  right: 40%;   /* Position 25% from the right */
-  transform: translateX(50%); /* Center it horizontally */
-  align-items: center;
-}
-
-.details-button:hover {
-    background-color: #40916c; /* Lighter green on hover */
-    color: white; 
-}
-
-/* Styles the arrow icon inside the button */
-.two-button-container .details-button svg {
-	color: currentColor;
-    margin-left: 0.5rem;
-    transition: transform 0.3s ease;
-}
-
-.two-button-container .details-button:hover svg {
-    transform: translateX(3px);
-}
-
-/* --- Styles for your NEW 'Request Price' button --- */
+/* --- Base Styles for BOTH Buttons --- */
+/* This single rule applies the common styles to both buttons. */
+.details-button,
 .price-request-button {
-	/* 1. Dark brown background with white text */
-	background-color: #754d25; /* Classic Dark Brown */
-	color: #FFFFFF;
-	padding: 12px 40px; 
-	border-radius: 9999px;
-	margin-left: 1rem !important; 
+  background-color: #2d6a4f; /* Primary Green */
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #2d6a4f; /* Added for a smooth transition on the inverse style */
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease; /* Transition all properties for a smoother effect */
+  white-space: nowrap;
 }
 
-/* Hover effect for the 'Request Price' button */
+/* --- Inverse Style for the Price Button --- */
+.price-request-button.inverse {
+  background-color: #ffffff; /* White background */
+  color: #2d6a4f; /* Green text */
+}
+
+/* --- Hover States --- */
+.details-button:hover,
 .price-request-button:hover {
-    background-color: #8a6746;
-	color: white;
-    /* transform: translateY(-2px); */
+  background-color: white;
+  border-color: #2d6a4f; 
+  color: #2d6a4f;
+}
+
+/* Hover for the inverse button */
+.price-request-button.inverse:hover {
+  background-color: #2d6a4f; /* Green background on hover */
+  color: #ffffff; /* White text on hover */
+  border-color: #2d6a4f;
 }
 
 /* --- View More Button Styles --- */
@@ -6784,75 +6835,6 @@ body.is-preload #about {
     }
 }
 
-@media (max-width: 1350px) {
-	.details-button{
-		translate: 0%;
-	}
-
-	.price-request-button {
-		translate: 10%;
-	};
-
-}
-
-@media (max-width: 1121px) {
-	.details-button{
-		translate: 40%;
-	}
-
-	.price-request-button {
-		translate: 30%;
-	};
-
-}
-
-@media (max-width: 950px) {
-	.details-button{
-		translate: 10%;
-	}
-
-	.price-request-button {
-		translate: 15%;
-	};
-
-}
-
-@media (max-width: 779px) {
-	.details-button {
-		translate: 100%;
-	}
-
-	.price-request-button {
-		translate: 40%;
-	}
-}
-
-@media (max-width: 680px) {
-	.details-button{
-		translate: 80%;
-	}
-
-	/* .price-request-button {
-		translate: 60%;
-	}; */
-
-}
-
-@media (max-width: 520px) {
-	.details-button{
-		translate: 20%;
-	}
-	.price-request-button {
-		translate: 15%;
-
-	}
-}
-
-/* @media (max-width: 768px) {
-	.price-request-button {
-		margin-left: 0;
-	}
-} */
 
 /**
  * Simple fade transition,
@@ -7206,20 +7188,25 @@ body.is-preload #about {
 	margin-right: auto;
 }
 
-
 /* --- 2. TWO IMAGE VIEW (Desktop) --- */
 .two-image-view {
-	/* height: 40vh;  */
-	/* aspect-ratio: 16 / 7; */
+	/* max-height: 40vh;  */
+	/* aspect-ratio: 16 / 15; */
+	/* max-width: 1200px;  */
+    aspect-ratio: 16 / 4; 
 	display: flex;
-	flex-direction: row; /* Side-by-side by default */
-	gap: 0.5rem; /* Optional: adds a small gap between images */
+	flex-direction: row; 
+	gap: 0.5rem;
+}
+
+.two-image-view.maps {
+    aspect-ratio: 16 / 5; 
 }
 
 .two-image-view .image-wrapper {
 	flex: 1; /* Each wrapper takes up equal space */
 	height: 100%;
-	overflow: hidden;
+	/* overflow: hidden; */
 	background-color: var(--main-background-color); /* A subtle background for letterboxing */
 	max-height: 440vh;
 }
@@ -7237,27 +7224,64 @@ body.is-preload #about {
 }
 
 /* --- 3. TWO IMAGE VIEW (Mobile) --- */
-@media (max-width: 768px) {
+@media (max-width: 1168px) {
 	.two-image-view {
 		flex-direction: column; /* Stack images on top of each other */
-		height: auto; /* Let height be determined by content */
-		aspect-ratio: auto;
+		height: auto; 
+		aspect-ratio: 4 / 3;
 	}
 
 	.two-image-view .image-wrapper {
-		height: 30vh; /* Each image now gets its own 30vh height */
 		width: 100%;
+		height: 20vh;
+	}
+}
+
+.three-image-view {
+    aspect-ratio: 16 / 4; 
+	display: flex;
+	flex-direction: row; 
+	gap: 0.5rem;
+}
+
+.three-image-view .image-wrapper {
+	flex: 1; /* Each wrapper takes up equal space */
+	height: 100%;
+	/* overflow: hidden; */
+	background-color: var(--main-background-color); /* A subtle background for letterboxing */
+	max-height: 440vh;
+}
+
+.three-image-view .image-wrapper a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.three-image-view .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* This will now work correctly */
+}
+
+/* --- 3. TWO IMAGE VIEW (Mobile) --- */
+@media (max-width: 1168px) {
+	.three-image-view {
+		flex-direction: column; /* Stack images on top of each other */
+		height: auto; 
+		aspect-ratio: 4 / 3;
 	}
 
-	.single-image-view {
-		width: 100%; 
-		/* margin-top: -1.3rem; */
+	.three-image-view .image-wrapper {
+		/* height: 30vh;  */
+		width: 100%;
+		height: 20vh;
 	}
 }
 
 /* --- 4. IMAGE CONTAIN VIEW --- */
 .image-contain-view {
-	height: 80vh; /* Set a large, but not full-screen, height */
+	aspect-ratio: 16 / 4; 
 	background-color: var(--main-background-color); /* A subtle background for letterboxing */
 	
 	/* --- FIX: Add flex properties to center the image --- */
@@ -7779,4 +7803,35 @@ body.is-preload #about {
 
 body.form-is-open {
     overflow: hidden;
+}
+
+.back-button {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  height: auto;   
+  line-height: normal; 
+
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  padding: 10px 15px;
+  background-color: #2d6a4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #40916c; /* A slightly lighter color for hover */
+  color: white;
+  box-shadow: none;
 }
