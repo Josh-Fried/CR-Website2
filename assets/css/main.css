@@ -7807,13 +7807,10 @@ body.form-is-open {
 
 .back-button {
   display: none;
-
   align-items: center;
   justify-content: center;
-
   height: auto;   
   line-height: normal; 
-
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -7834,4 +7831,170 @@ body.form-is-open {
   background-color: #40916c; /* A slightly lighter color for hover */
   color: white;
   box-shadow: none;
+}
+
+#gallery-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+  pointer-events: none;
+}
+body #gallery-popup-overlay.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+.gallery-popup-content {
+  position: relative;
+  background-color: #fff;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  width: 90%;
+  max-width: 1100px;
+  border-radius: 4px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+  max-height: 95vh;
+  overflow-y: auto;
+}
+body #gallery-popup-overlay.active .gallery-popup-content {
+  transform: scale(1);
+}
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: #333;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: none;
+}
+.popup-close:hover {
+  box-shadow: none;
+  color: #ddd;
+}
+#gallery-popup-overlay #popup-title {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+  color: #222;
+  border-bottom: none;
+}
+.popup-gallery-scroll-area {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+.popup-main-image-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.image-aspect-ratio-box {
+  position: relative !important;
+  width: 100% !important;
+  height: 0 !important;
+  padding-top: 56.25% !important;
+  background-color: #f0f0f0 !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+}
+#popup-main-image {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+.popup-main-image-container .nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: none !important;
+  color: white;
+  text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333;
+  opacity: 1;
+  transition: color 0.3s ease;
+}
+.popup-main-image-container #prev-btn {
+  left: 15px;
+}
+.popup-main-image-container #next-btn {
+  right: 15px;
+}
+.popup-main-image-container .nav-btn:hover {
+  color: #333;
+}
+.popup-thumbnail-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.popup-thumbnail {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: all 0.2s;
+  border-radius: 4px;
+}
+.popup-thumbnail:hover {
+  border-color: #ccc;
+}
+.popup-thumbnail.active {
+  border-color: #007aff;
+}
+#popup-specs-grid.property-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  text-align: left;
+}
+#popup-specs-grid .spec {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+  background-color: white;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #111;
+}
+#popup-specs-grid .spec .label {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.popup-action-area {
+  text-align: center;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
 }
