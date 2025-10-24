@@ -2890,6 +2890,27 @@ input, select, textarea {
 		}
 	}
 
+	.clickable { /* Using the class name you requested */
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        overflow: hidden;
+        
+        /* Base shadow from property-card */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        
+        /* Transition for the transform and shadow */
+        transition: transform 0.3s ease;
+    }
+
+    .clickable:hover {
+        /* Move up on hover, like property-card */
+        transform: translateY(-0.5rem);
+        
+        /* Add a more pronounced shadow on hover */
+        /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); shadow-xl */
+    }
+
 		/* Video */
 
 	.video {
