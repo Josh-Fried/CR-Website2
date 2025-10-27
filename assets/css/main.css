@@ -8020,9 +8020,6 @@ body #gallery-popup-overlay.active .gallery-popup-content {
   border-top: 1px solid #e0e0e0;
 }
 
-/* --- Add this to your main CSS file --- */
-
-/* 1. This is the main flex container */
 .flex-layout {
     display: flex;
     flex-wrap: wrap; /* Allows stacking on mobile */
@@ -8030,7 +8027,6 @@ body #gallery-popup-overlay.active .gallery-popup-content {
     gap: 40px; /* Creates space between the image and text */
 }
 
-/* 2. This styles the image column */
 .flex-layout .flex-image-column {
     flex: 1 1 500px; /* Allows it to grow/shrink from a 500px base */
     min-width: 45%; /* Tries to be about half the width */
@@ -8039,7 +8035,6 @@ body #gallery-popup-overlay.active .gallery-popup-content {
     border-radius: 8px; /* Optional: rounded corners */
 }
 
-/* 3. This makes the image fill and cover that window */
 .flex-layout .flex-image-column img {
     width: 100%;
     height: 100%;
@@ -8049,13 +8044,11 @@ body #gallery-popup-overlay.active .gallery-popup-content {
     object-position: center 60%; 
 }
 
-/* 4. This styles the text column */
 .flex-layout .flex-text-column {
     flex: 1 1 500px; /* Same flex values so they share space equally */
     min-width: 45%;
 }
 
-/* 5. This makes it stack vertically on mobile phones */
 @media (max-width: 991px) {
     /* The 'flex-wrap: wrap' on the parent will automatically
       stack the columns when they can't fit side-by-side.
