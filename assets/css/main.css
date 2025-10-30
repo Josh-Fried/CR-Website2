@@ -2788,6 +2788,75 @@ input, select, textarea {
 		gap: 10px; 
 	}
 
+	.gallery-grid-2x2-container {
+		display: flex;
+		justify-content: center;
+	}
+
+	.gallery-grid-2x2-container.left {
+		display: flex;
+		justify-content: left;
+	}
+
+	.gallery-grid-2x2-container.right {
+		display: flex;
+		justify-content: right;
+	}
+
+	/* Container for the 2x2 grid */
+	.gallery-grid-2x2 {
+		width: 50%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr); /* Creates 2 equal-width columns */
+		gap: 10px; 
+	}
+
+	.gallery-grid-3x1-container {
+		display: flex;
+		justify-content: center;
+	}
+
+	.gallery-grid-3x1-container.left {
+		display: flex;
+		justify-content: left;
+	}
+
+	.gallery-grid-3x1-container.left {
+		display: flex;
+		justify-content: right;
+	}
+
+	/* Container for the 2x2 grid */
+	.gallery-grid-3x1{
+		width: 50%;
+		display: grid;
+		grid-template-columns: repeat(1, 1fr); /* Creates 1 column */
+		gap: 10px; 
+	}
+
+	.gallery-item-3x1 {
+		position: relative;
+		width: 100%;      /* Takes the full width of its grid column */
+		aspect-ratio: 5 / 1; /* Makes it a wide rectangle */
+		overflow: hidden;    /* Ensures any part of the image that 'object-fit: cover' might push out of bounds is clipped */
+		background-color: #f0f0f0; /* Optional: A light background for cells if images don't load or have transparency */
+	}
+
+	.gallery-item-3x1 img {
+		display: block;  /* Removes any extra space below inline images */
+		width: 100%;     /* Make the image fill the width of the .gallery-item */
+		height: 100%;    /* Make the image fill the height of the .gallery-item */
+		object-fit: cover; /* <<< This is the other piece of magic! */
+						/* It scales the image to maintain its aspect ratio while
+							filling the element's entire content box. If the image's
+							aspect ratio doesn't match the square box, the image
+							will be clipped to fit (either width or height). */
+		object-position: center center; /* (Default) Ensures the image is centered before being cropped.
+										You can change this (e.g., 'center top', '25% 50%')
+										if you want to control which part of a non-square
+										image is prioritized. */
+	}
+
 	/* Each item in the grid - this will be our square container */
 	.gallery-item {
 		position: relative; /* For potential future absolute positioned elements inside, not strictly needed for this image setup */
@@ -2888,6 +2957,25 @@ input, select, textarea {
 		justify-self: center;
 		width: 50%;
 		}
+	}
+
+	/* The main container to hold the gallery and text side-by-side */
+	.gallery-with-text-layout {
+		display: flex;
+		flex-wrap: wrap; /* This makes it stack on small screens */
+		gap: 2rem;       /* Adds some space between the columns */
+	}
+
+	/* The column for your gallery */
+	.gallery-with-text-layout .gallery-column {
+		flex: 1 1 50%;    /* Tries to take up 50% of the width */
+		min-width: 300px; /* Ensures it doesn't get too squished */
+	}
+
+	/* The column for your text */
+	.gallery-with-text-layout .text-column {
+		flex: 1 1 45%;    /* Tries to take up the other 45% */
+		min-width: 300px; 
 	}
 
 	.clickable { /* Using the class name you requested */
