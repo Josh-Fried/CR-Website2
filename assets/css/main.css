@@ -2805,7 +2805,7 @@ input, select, textarea {
 
 	/* Container for the 2x2 grid */
 	.gallery-grid-2x2 {
-		width: 50%;
+		/* width: 40%; */
 		display: grid;
 		grid-template-columns: repeat(2, 1fr); /* Creates 2 equal-width columns */
 		gap: 10px; 
@@ -2957,25 +2957,6 @@ input, select, textarea {
 		justify-self: center;
 		width: 50%;
 		}
-	}
-
-	/* The main container to hold the gallery and text side-by-side */
-	.gallery-with-text-layout {
-		display: flex;
-		flex-wrap: wrap; /* This makes it stack on small screens */
-		gap: 2rem;       /* Adds some space between the columns */
-	}
-
-	/* The column for your gallery */
-	.gallery-with-text-layout .gallery-column {
-		flex: 1 1 50%;    /* Tries to take up 50% of the width */
-		min-width: 300px; /* Ensures it doesn't get too squished */
-	}
-
-	/* The column for your text */
-	.gallery-with-text-layout .text-column {
-		flex: 1 1 45%;    /* Tries to take up the other 45% */
-		min-width: 300px; 
 	}
 
 	.clickable { /* Using the class name you requested */
@@ -8130,6 +8111,17 @@ body #gallery-popup-overlay.active .gallery-popup-content {
     /* This vertically centers the image. Adjust '60%' (shows upper-middle)
        to '50%' (exact middle) or '40%' (lower-middle) */
     object-position: center 60%; 
+}
+
+.flex-layout .flex-grid-column {
+    flex: 1 1 500px; /* Allows it to grow/shrink from a 500px base */
+    min-width: 45%; /* Tries to be about half the width */
+}
+
+.flex-layout .flex-stacked-image-column {
+    flex: 1 1 500px; /* Allows it to grow/shrink from a 500px base */
+    min-width: 45%; /* Tries to be about half the width */
+	grid-template-columns: repeat(1, 1fr); /* Creates 1 column */
 }
 
 .flex-layout .flex-text-column {
