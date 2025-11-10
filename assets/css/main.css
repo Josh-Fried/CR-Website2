@@ -8123,3 +8123,60 @@ animation-delay: 1s;
 display: none;
 animation-play-state: paused;
 }
+
+
+.flex-layout {
+    display: flex;
+    flex-wrap: wrap; /* Allows stacking on mobile */
+    align-items: center; /* Vertically centers the content in both columns */
+    gap: 40px; /* Creates space between the image and text */
+}
+
+.flex-layout .flex-image-column {
+    flex: 1 1 500px; /* Allows it to grow/shrink from a 500px base */
+    min-width: 45%; /* Tries to be about half the width */
+    height: 600px;   /* This is your fixed "window" height */
+    overflow: hidden; /* This hides the top/bottom of the image */
+    border-radius: 8px; /* Optional: rounded corners */
+}
+
+.flex-layout .flex-image-column img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This is the "cover" magic */
+    /* This vertically centers the image. Adjust '60%' (shows upper-middle)
+       to '50%' (exact middle) or '40%' (lower-middle) */
+    object-position: center 60%; 
+}
+
+.flex-layout .flex-grid-column {
+    flex: 1 1 500px; /* Allows it to grow/shrink from a 500px base */
+    min-width: 45%; /* Tries to be about half the width */
+}
+
+.flex-layout .flex-stacked-image-column {
+    flex: 1 1 500px; /* Allows it to grow/shrink from a 500px base */
+    min-width: 45%; /* Tries to be about half the width */
+	grid-template-columns: repeat(1, 1fr); /* Creates 1 column */
+}
+
+.flex-layout .flex-text-column {
+    flex: 1 1 500px; /* Same flex values so they share space equally */
+    min-width: 45%;
+}
+
+@media (max-width: 991px) {
+    /* The 'flex-wrap: wrap' on the parent will automatically
+      stack the columns when they can't fit side-by-side.
+    */
+
+    /* Reset min-width for stacking */
+    .flex-layout .flex-image-column,
+    .flex-layout .flex-text-column {
+        min-width: 100%; 
+    }
+
+    .flex-layout .flex-image-column {
+        height: 350px; /* Adjust image height for mobile */
+    }
+}
