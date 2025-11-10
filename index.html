@@ -54,7 +54,11 @@
     <link rel="stylesheet" href="https://triadacollections.com/wp-content/themes/salient/css/build/off-canvas/core.css?ver=17.0.7" type="text/css" media="all" />
     <link rel="stylesheet" href="https://triadacollections.com/wp-content/themes/salient/css/build/off-canvas/fullscreen-legacy.css?ver=17.0.7" type="text/css" media="all" />
     <link rel="stylesheet" href="assets/css/WPengineCSS.css" />
-    
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
     <script type="text/javascript">
         document.documentElement.classList.add("js");
     </script>
@@ -62,6 +66,8 @@
 </head>
 
 	<body class="material" data-header-format="centered-logo-between-menu-alt" data-header-resize="1" data-transparent-header="false" data-header-color="" data-remove-border="true" data-smooth-scrolling="0" data-cad="1500" data-cae="easeOutQuart" data-aie="none" data-ls="fancybox">
+
+	<div id="map-overlay"></div>
 
     <div class="ocm-effect-wrap">
         <div class="ocm-effect-wrap-inner">
@@ -564,9 +570,12 @@
 							
 							<!-- SECTION 1: Image Left, Text Right -->
 							<section class="feature-split-section">
-								<div class="feature-image-container">
-									<img src="images/guanacaste_map.webp" alt="Map of Guanacaste Costa Rica" />
-								</div>
+								<!-- === MAPBOX MAP GOES HERE === -->
+                                <div class="feature-image-container">
+                                    <div id="map"></div>
+                                    <p class="map-click-prompt">Click map for interactive view</p>
+                                </div>
+                                <!-- === END MAPBOX MAP === -->
 								<div class="feature-text-container">
 									<div class="text-content-item">
 										<!-- <h2>Our Vision</h2> -->
@@ -963,5 +972,8 @@
 		
 		<script src="https://triadacollections.com/wp-content/plugins/js_composer_salient/assets/js/dist/js_composer_front.min.js?ver=7.8.1"></script>
 		<script src="Triada Styling/init.js"></script>
+    	
+		<script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script>
+        <script src="assets/js/mapbox.js"></script>
 	</body>
 </html>
