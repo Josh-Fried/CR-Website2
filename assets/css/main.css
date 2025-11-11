@@ -8143,6 +8143,8 @@ body #gallery-popup-overlay.active .gallery-popup-content {
     .flex-layout .flex-image-column {
         height: 350px; /* Adjust image height for mobile */
     }
+
+}
 /* Mapbox */
 
 #map {
