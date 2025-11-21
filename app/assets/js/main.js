@@ -128,7 +128,6 @@ $(function() {
     var padding = $header.data('padding');
     var heightDifference = parseInt(shrinkNum) + 2 * (padding - padding / 1.8);
     var smallHeaderHeight = largeHeaderHeight - heightDifference;
-    console.log("Can you see this?");
 
     // This is the click handler for all links with class="scrolly"
     $('.scrolly').on('click', function(event) {
@@ -280,91 +279,6 @@ $(function() {
     //         headerElementForScrollEffect.classList.remove('scrolled');
     //     }
     // });
-
-    // No hash
-
-    document.addEventListener('DOMContentLoaded', function() {
-
-        // =====================================================================
-        // This function replicates your jQuery code to dynamically calculate
-        // the header offset, accounting for its shrink behavior.
-        // =====================================================================
-        function getHeaderOffset() {
-            let smallHeaderHeight;
-            const breakpoint = 960; // The screen width where the header changes
-
-            // Check the current window width
-            if (window.innerWidth <= breakpoint) {
-                // USE THE HEIGHT FOR SMALL SCREENS (MOBILE/TABLET)
-                // IMPORTANT: Replace 80 with the measured height of your shrunken mobile header
-                smallHeaderHeight = 84; 
-            } else {
-                // USE THE HEIGHT FOR LARGE SCREENS (DESKTOP)
-                smallHeaderHeight = 102;
-            }
-
-            // The rest of the function remains the same
-            const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize);
-            const sectionPaddingInPixels = 2 * rootFontSize;
-            
-            return smallHeaderHeight - sectionPaddingInPixels;
-        }
-        // =====================================================================
-        // PART 1: Handles Clicks on All Links
-        // It decides whether to scroll on the current page or navigate to a new one.
-        // =====================================================================
-        document.body.addEventListener('click', function(e) {
-            // Find the closest 'a' tag that was clicked
-            const link = e.target.closest('a');
-
-            // If no link was clicked, or it has no href, do nothing
-            if (!link || !link.getAttribute('href')) return;
-            
-            const isSamePage = link.pathname === window.location.pathname;
-            const hasHash = link.hash !== '';
-
-            if (hasHash) {
-                // Stop the browser's default action for any link with a hash
-                e.preventDefault();
-
-                if (isSamePage) {
-                    // --- BEHAVIOR FOR SAME-PAGE LINKS ---
-                    const targetElement = document.querySelector(link.hash);
-                    if (targetElement) {
-                        const offset = getHeaderOffset();
-                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-                        window.scrollTo({ top: targetPosition, behavior: 'auto' });
-                    }
-                } else {
-                    // --- BEHAVIOR FOR DIFFERENT-PAGE LINKS ---
-                    // Store the target ID in temporary browser memory
-                    localStorage.setItem('scrollToTarget', link.hash);
-                    // Navigate to the new page without the hash
-                    window.location.href = link.pathname;
-                }
-            }
-        });
-
-        // =====================================================================
-        // PART 2: Runs on Every Page Load
-        // Checks if we just arrived from another page with instructions to scroll.
-        // =====================================================================
-        const scrollTargetId = localStorage.getItem('scrollToTarget');
-        if (scrollTargetId) {
-            const targetElement = document.querySelector(scrollTargetId);
-            if (targetElement) {
-                // We wait a moment for the page to render, then scroll
-                setTimeout(() => {
-                    const offset = getHeaderOffset();
-                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-                    window.scrollTo({ top: targetPosition, behavior: 'auto' });
-
-                    // Clean up the stored item so it doesn't fire again on a normal refresh
-                    localStorage.removeItem('scrollToTarget');
-                }, 100);
-            }
-        }
-    });
 
 
 /* --- Mobile Accordion Menu Logic (Final Version) --- */
