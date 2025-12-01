@@ -65,6 +65,10 @@ const NAV_BAR_HTML_TEMPLATE = `
                                             <a href="/#luxury-living"><span class="menu-title-text">Luxury Living</span></a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item submenu-link" data-path="/luxury-living/beach-club"><a href="/luxury-living/beach-club">Beach Club</a></li>
+                                                <li class="menu-item submenu-link" data-path="/luxury-living/waterfall"><a href="/luxury-living/waterfall">Waterfall</a></li>
+                                                <li class="menu-item submenu-link" data-path="/for-sale/the-horizon-house"><a href="/for-sale/the-horizon-house">The Horizon House</a></li>
+                                                <li class="menu-item submenu-link" data-path="/luxury-living/area-growth"><a href="/luxury-living/area-growth">Area Growth</a></li>
+                                                <li class="menu-item submenu-link" data-path="/luxury-living/restaurants"><a href="/luxury-living/restaurants">Restaurants</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -119,6 +123,10 @@ const NAV_BAR_HTML_TEMPLATE = `
                         <li class="menu-item has-children"><a class="ll" href="/#luxury-living">Luxury Living</a>
                             <ul class="sub-menu">
                                 <li class="menu-item"><a href="/luxury-living/beach-club">Beach Club</a></li>
+                                <li class="menu-item"><a href="/luxury-living/waterfall">Waterfall</a></li>
+                                <li class="menu-item"><a href="/for-sale/the-horizon-house">The Horizon House</a></li>
+                                <li class="menu-item"><a href="/luxury-living/area-growth">Area Growth</a></li>
+                                <li class="menu-item"><a href="/luxury-living/restaurants">Restaurants</a></li>                                
                             </ul>
                         </li>
                         <li class="menu-item"><a href="/#why-invest" class="">Why Us</a></li>
