@@ -1,11 +1,14 @@
 /**
  * nav-bar.js
- * FINAL COMPLETE VERSION
+ * FINAL WORKING VERSION
  * 1. Injects Navigation Bar
  * 2. Injects Inquire Modal
  * 3. Handles Scroll Animations & Active States
- * 4. Handles Modal Logic (Open/Close/Submit)
+ * 4. Handles Modal Logic
+ * 5. Handles Mobile Menu (jQuery Logic Only)
  */
+
+console.log("[NavBar Debug] Script file loaded.");
 
 // --- 0a. NAVIGATION HTML ---
 const NAV_BAR_HTML_TEMPLATE = `
@@ -97,48 +100,50 @@ const NAV_BAR_HTML_TEMPLATE = `
                     </div>
                 </header>
         </div>
-        <div id="slide-out-widget-area-bg" class="fullscreen-alt medium"><div class="bg-inner"></div></div>
-        <div id="slide-out-widget-area" class="fullscreen-alt">
-            <div class="inner-wrap">
-                <div class="inner">
-                    <a class="slide_out_area_close" href="#"><span class="screen-reader-text">Close Menu</span><span class="close-wrap"><span class="close-line close-line1"></span><span class="close-line close-line2"></span></span></a>
-                    <div class="off-canvas-menu-container mobile-only" role="navigation">
-                        <ul class="menu">
-                            <li class="menu-item"><a href="/">Home</a></li>
-                            <li class="menu-item has-children"><a class="residences" href="/for-sale/">Residences</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="/for-sale/">For Sale</a></li>
-                                    <li class="menu-item"><a href="/coming-soon/">Coming Soon</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item has-children"><a class="ll" href="/#luxury-living">Luxury Living</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="/luxury-living/beach-club">Beach Club</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item"><a href="/#why-invest" class="">Why Us</a></li>
-                            <li class="menu-item has-children"><a href="/#experiences">Experiences</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item"><a href="/experiences/nature-pools">Nature Pools</a></li>
-                                    <li class="menu-item"><a href="/experiences/farm-to-table">Farm to Table</a></li>
-                                    <li class="menu-item"><a href="/experiences/fishing">Fishing</a></li>
-                                    <li class="menu-item"><a href="/experiences/volcanoes">Volcanoes</a></li>
-                                    <li class="menu-item"><a href="/experiences/nature-trails">Nature Trails</a></li>
-                                    <li class="menu-item"><a href="/experiences/snorkeling">Snorkeling</a></li>
-                                    <li class="menu-item"><a href="/experiences/blue-zones">Blue Zones</a></li>
-                                    <li class="menu-item"><a href="/experiences/spas">Spas</a></li>
-                                    <li class="menu-item"><a href="/experiences/surfing">Surfing</a></li>
-                                </ul>
-                            </li>
-                            <li class="button-style menu-item"><a href="#" class="inquire-button">INQUIRE</a></li>
-                        </ul>
-                    </div>
+    </div> 
+
+    <div id="slide-out-widget-area-bg" class="fullscreen-alt medium slide-out-from-right"><div class="bg-inner"></div></div>
+    <div id="slide-out-widget-area" class="fullscreen-alt slide-out-from-right" data-dropdown-func="separate-dropdown-parent-link" data-back-txt="Back">
+        <div class="inner-wrap">
+            <div class="inner">
+                <a class="slide_out_area_close" href="#"><span class="screen-reader-text">Close Menu</span><span class="close-wrap"><span class="close-line close-line1"></span><span class="close-line close-line2"></span></span></a>
+                <div class="off-canvas-menu-container mobile-only" role="navigation">
+                    <ul class="menu">
+                        <li class="menu-item"><a href="/">Home</a></li>
+                        <li class="menu-item has-children"><a class="residences" href="/for-sale/">Residences</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item"><a href="/for-sale/">For Sale</a></li>
+                                <li class="menu-item"><a href="/coming-soon/">Coming Soon</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item has-children"><a class="ll" href="/#luxury-living">Luxury Living</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item"><a href="/luxury-living/beach-club">Beach Club</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item"><a href="/#why-invest" class="">Why Us</a></li>
+                        <li class="menu-item has-children"><a href="/#experiences">Experiences</a>
+                            <ul class="sub-menu">
+                                <li class="menu-item"><a href="/experiences/nature-pools">Nature Pools</a></li>
+                                <li class="menu-item"><a href="/experiences/farm-to-table">Farm to Table</a></li>
+                                <li class="menu-item"><a href="/experiences/fishing">Fishing</a></li>
+                                <li class="menu-item"><a href="/experiences/volcanoes">Volcanoes</a></li>
+                                <li class="menu-item"><a href="/experiences/nature-trails">Nature Trails</a></li>
+                                <li class="menu-item"><a href="/experiences/snorkeling">Snorkeling</a></li>
+                                <li class="menu-item"><a href="/experiences/blue-zones">Blue Zones</a></li>
+                                <li class="menu-item"><a href="/experiences/spas">Spas</a></li>
+                                <li class="menu-item"><a href="/experiences/surfing">Surfing</a></li>
+                            </ul>
+                        </li>
+                        <li class="button-style menu-item"><a href="#" class="inquire-button">INQUIRE</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
 `;
 
-// --- 0b. MODAL HTML (Moved Here) ---
+// --- 0b. MODAL HTML ---
 const INQUIRE_MODAL_HTML = `
     <div id="price-request-form" class="modal-overlay">
       <div class="modal-content">
@@ -169,7 +174,7 @@ const INQUIRE_MODAL_HTML = `
     </div>
 `;
 
-// --- 1. CORE LOGIC FUNCTIONS ---
+// --- 1. HELPER FUNCTIONS ---
 
 const normalizePath = (url) => {
   const path = new URL(url, window.location.origin).pathname;
@@ -180,11 +185,7 @@ const normalizePath = (url) => {
 
 function getHeaderOffset() {
   const breakpoint = 960;
-  const smallHeaderHeight = window.innerWidth <= breakpoint ? 84 : 102;
-  const rootFontSize = parseFloat(
-    getComputedStyle(document.documentElement).fontSize
-  );
-  return smallHeaderHeight + 2 * rootFontSize;
+  return window.innerWidth <= breakpoint ? 84 : 102;
 }
 
 const highlightCurrentMenuItem = () => {
@@ -227,35 +228,35 @@ const highlightCurrentMenuItem = () => {
   }
 };
 
+// --- 2. SCROLL & MODAL LOGIC ---
+
 const handleAnchorLinks = () => {
   document.body.addEventListener("click", function (e) {
     const link = e.target.closest("a");
     if (!link || !link.getAttribute("href")) return;
 
     const href = link.getAttribute("href");
+
+    if (href === "#slide-out-widget-area" || link.closest('.slide-out-widget-area-toggle') || link.classList.contains("inquire-button")) return;
+
     const hashMatch = href.match(/#.+/);
 
     if (hashMatch) {
       const hash = hashMatch[0];
-      if (
-        link.classList.contains("inquire-button") ||
-        link.getAttribute("href") === "#slide-out-widget-area"
-      )
-        return;
-
       e.preventDefault();
+
       const linkPath = href.split("#")[0];
       const currentPath = normalizePath(window.location.href);
-      const normalizedLinkPath = normalizePath(linkPath || "/");
+      const normalizedLinkPath = linkPath ? normalizePath(linkPath) : currentPath;
 
       if (normalizedLinkPath === currentPath) {
         const targetElement = document.querySelector(hash);
         if (targetElement) {
+          if (document.body.classList.contains('material-ocm-open')) {
+             if(typeof jQuery !== 'undefined') jQuery('.slide_out_area_close').click(); 
+          }
           const offset = getHeaderOffset();
-          const targetPosition =
-            targetElement.getBoundingClientRect().top +
-            window.pageYOffset -
-            offset;
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
           window.scrollTo({ top: targetPosition, behavior: "smooth" });
         }
       } else {
@@ -264,17 +265,14 @@ const handleAnchorLinks = () => {
       }
     }
   });
-
+  
   const scrollTargetId = localStorage.getItem("scrollToTarget");
   if (scrollTargetId && scrollTargetId.startsWith("#")) {
     const targetElement = document.querySelector(scrollTargetId);
     if (targetElement) {
       setTimeout(() => {
         const offset = getHeaderOffset();
-        const targetPosition =
-          targetElement.getBoundingClientRect().top +
-          window.pageYOffset -
-          offset;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
         window.scrollTo({ top: targetPosition, behavior: "smooth" });
         history.replaceState(null, null, scrollTargetId);
         localStorage.removeItem("scrollToTarget");
@@ -285,7 +283,6 @@ const handleAnchorLinks = () => {
   }
 };
 
-// --- 2. SCROLL ANIMATION LOGIC ---
 const handleScrollEffect = () => {
   const headerOuter = document.getElementById("header-outer");
   if (!headerOuter) return;
@@ -314,13 +311,10 @@ const handleScrollEffect = () => {
 
 // --- 3. MODAL LOGIC (Handles UI AND Submission) ---
 const handleInquireLogic = () => {
-  // 1. Inject the Modal HTML into the body
   document.body.insertAdjacentHTML("beforeend", INQUIRE_MODAL_HTML);
-
   const modal = document.getElementById("price-request-form");
   if (!modal) return;
 
-  // 2. Handle Opening (Event Delegation for Injected Buttons)
   document.body.addEventListener("click", (e) => {
     if (e.target.closest(".inquire-button")) {
       e.preventDefault();
@@ -329,7 +323,6 @@ const handleInquireLogic = () => {
     }
   });
 
-  // 3. Handle Closing
   const closeBtn = modal.querySelector(".modal-close");
   if (closeBtn) {
     closeBtn.addEventListener("click", (e) => {
@@ -345,7 +338,6 @@ const handleInquireLogic = () => {
     }
   });
 
-  // 4. Handle Form Submission (Replaces form-popup.js logic)
   const form = document.getElementById("contact-form-in-modal");
   const statusDiv = document.getElementById("form-status");
 
@@ -358,15 +350,12 @@ const handleInquireLogic = () => {
       btn.innerText = "Sending...";
       btn.disabled = true;
 
-      // Simulate backend call (Replace this with your actual Spring Boot fetch later)
       setTimeout(() => {
-        // Success state
         statusDiv.innerHTML =
           '<span style="color:green;">Thank you! We will be in touch soon.</span>';
         btn.innerText = "Sent";
         form.reset();
 
-        // Close modal after 2 seconds
         setTimeout(() => {
           modal.classList.remove("open");
           modal.style.display = "none";
@@ -379,23 +368,74 @@ const handleInquireLogic = () => {
   }
 };
 
+// --- 5. REPLICATED THEME INIT LOGIC (NEW) ---
+const initNectarMenuLogic = () => {
+    console.log("[NavBar Debug] initNectarMenuLogic called");
+    
+    if (typeof jQuery === 'undefined') {
+        console.error("[NavBar Debug] jQuery is NOT loaded. Theme logic will fail.");
+        return;
+    }
+    
+    var $ = jQuery;
+
+    // Check if elements exist
+    console.log("[NavBar Debug] Toggle buttons found:", $('.slide-out-widget-area-toggle a').length);
+    console.log("[NavBar Debug] Slide out area found:", $('#slide-out-widget-area').length);
+    
+    $('body').on('click', '.slide-out-widget-area-toggle a, .slide_out_area_close, #slide-out-widget-area-bg', function(e) {
+         console.log("[NavBar Debug] Click detected on mobile trigger");
+         e.preventDefault();
+         e.stopPropagation();
+         
+         var $body = jQuery('body');
+         var $widget = jQuery('#slide-out-widget-area');
+         var $bg = jQuery('#slide-out-widget-area-bg');
+         var $toggle = jQuery('.slide-out-widget-area-toggle a');
+         var $toggleWrap = jQuery('.slide-out-widget-area-toggle');
+
+         // Check current state
+         if ($body.hasClass('material-ocm-open')) {
+             console.log("[NavBar Debug] Closing menu...");
+             $body.removeClass('material-ocm-open nectar-no-flex-height');
+             $widget.removeClass('open material-open');
+             $bg.removeClass('open material-open');
+             $toggleWrap.removeClass('material-open');
+             $toggle.removeClass('open').addClass('closed').attr('aria-expanded', 'false');
+         } else {
+             console.log("[NavBar Debug] Opening menu...");
+             $body.addClass('material-ocm-open nectar-no-flex-height');
+             $widget.addClass('open material-open');
+             $bg.addClass('open material-open');
+             $toggleWrap.addClass('material-open');
+             $toggle.addClass('open').removeClass('closed').attr('aria-expanded', 'true');
+         }
+    });
+};
+
 // --- 4. INJECTION AND EXECUTION ---
 
 const injectNavBarAndActivate = () => {
+  console.log("[NavBar Debug] Injections started");
+
   // Inject Header
   document.body.insertAdjacentHTML("afterbegin", NAV_BAR_HTML_TEMPLATE);
+  console.log("[NavBar Debug] HTML Template Injected");
 
   // Call highlighting function
   highlightCurrentMenuItem();
 
   // Attach custom anchor handling logic
-  handleAnchorLinks();
+  handleAnchorLinks(); 
 
   // Attach Scroll Animation Logic
   handleScrollEffect();
 
   // This now injects the modal AND attaches the submit listener
   handleInquireLogic();
+  
+  // Call the theme init logic replacement (NEW)
+  initNectarMenuLogic();
 };
 
 document.addEventListener("DOMContentLoaded", injectNavBarAndActivate);

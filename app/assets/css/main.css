@@ -325,7 +325,7 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: var(--hover-color);
+			/* color: var(--hover-color); */
 		}
 
 	strong, b {
@@ -2243,8 +2243,8 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			box-shadow: inset 0 0 0 2px var(--hover-color);
-			color: var(--hover-color);
+			/* box-shadow: inset 0 0 0 2px var(--hover-color); */
+			/* color: var(--hover-color); */
 		}
 
 		input[type="submit"].primary,
@@ -2262,7 +2262,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: var(--hover-color);
+				/* background-color: var(--hover-color); */
 			}
 
 /* Form */
@@ -2519,7 +2519,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: var(--hover-color);
+			/* border-color: var(--hover-color); */
 		}
 
 	select {
@@ -2554,7 +2554,7 @@ input, select, textarea {
 
 	input[type="checkbox"]:focus + label:before,
 	input[type="radio"]:focus + label:before {
-		border-color: var(--hover-color);
+		/* border-color: var(--hover-color); */
 	}
 
 	::-webkit-input-placeholder {
@@ -3284,7 +3284,7 @@ input, select, textarea {
 	}
 
 	ul.icons li a.icon:hover:before {
-		color: var(--hover-color);
+		/* color: var(--hover-color); */
 	}
 
 	ul.icons.alt li .icon:before {
@@ -3292,7 +3292,7 @@ input, select, textarea {
 	}
 
 	ul.icons.alt li a.icon:hover:before {
-		box-shadow: inset 0 0 0 2px var(--hover-color);
+		/* box-shadow: inset 0 0 0 2px var(--hover-color); */
 	}
 
 /* Section/Article */
@@ -3591,14 +3591,14 @@ input, select, textarea {
 	}
 
 		.pagination a:hover {
-			color: var(--hover-color) !important;
-			border-color: var(--hover-color);
+			/* color: var(--hover-color) !important; */
+			/* border-color: var(--hover-color); */
 			z-index: 1;
 		}
 
 			.pagination a:hover + a,
 			.pagination a:hover + span {
-				border-left-color: var(--hover-color);
+				/* border-left-color: var(--hover-color); */
 			}
 
 		.pagination a.active {
@@ -3817,7 +3817,7 @@ input, select, textarea {
 
 			#intro a:hover {
 				border-bottom-color: transparent;
-				color: var(--hover-color) !important;
+				/* color: var(--hover-color) !important; */
 			}
 
 		#intro strong, #intro b {
@@ -3857,8 +3857,9 @@ input, select, textarea {
 			#intro input[type="button"]:hover,
 			#intro button:hover,
 			#intro .button:hover {
-				box-shadow: inset 0 0 0 2px var(--hover-color);
-				color: var(--hover-color);
+				/* Intro Hover HERE */
+				box-shadow: inset 0 0 0 2px #333;
+				color: #333;
 			}
 
 			#intro input[type="submit"].primary,
@@ -6854,7 +6855,13 @@ body.is-preload #about {
   white-space: nowrap;
 }
 
+.details-button.grey,
+.details-button.grey.inverse{
+	background-color: #f7f7f7;
+}
+
 /* --- Inverse Style for the Price Button --- */
+.details-button.inverse,
 .price-request-button.inverse {
   background-color: #ffffff; /* White background */
   color: #2d6a4f; /* Green text */
@@ -6869,6 +6876,7 @@ body.is-preload #about {
 }
 
 /* Hover for the inverse button */
+.details-button.inverse:hover,
 .price-request-button.inverse:hover {
   background-color: #2d6a4f; /* Green background on hover */
   color: #ffffff; /* White text on hover */

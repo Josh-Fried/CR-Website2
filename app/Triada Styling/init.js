@@ -1,4 +1,5 @@
 !(function (t, e, a) {
+  console.log("init Started");
   "use strict";
   var n,
     i,
@@ -6752,6 +6753,8 @@
       Fa();
   }
   function Pa() {
+    console.log("INIT.JS DEBUG: Pa (Open) Function Called");
+    
     if (
       (Ma(),
       ((bt.usingMobileBrowser || bt.usingIOS || bt.usingTouchDevice) &&
@@ -6987,6 +6990,8 @@
               s.on("scroll.headerResizeEffectOpaque", Cn)))));
   }
   function Ya() {
+    console.log("INIT.JS DEBUG: Ya (Close) Function Called");
+    // ... rest of existing code ...
     (bt.usingMobileBrowser ||
       bt.usingIOS ||
       bt.usingTouchDevice ||
