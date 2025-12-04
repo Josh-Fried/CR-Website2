@@ -153,33 +153,100 @@ const NAV_BAR_HTML_TEMPLATE = `
 
 // --- 0b. MODAL HTML ---
 const INQUIRE_MODAL_HTML = `
-    <div id="price-request-form" class="modal-overlay">
-      <div class="modal-content">
-        <button class="modal-close">&times;</button>
-        <h3>Request Price Information</h3>
-        <p>Please fill out the form below and we will get back to you shortly.</p>
-        <form id="contact-form-in-modal" action="#" method="POST">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone (Optional)</label>
-            <input type="tel" id="phone" name="phone" />
-          </div>
-          <div class="form-group form-group-expand">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" placeholder="I'm interested in..."></textarea>
-          </div>
-          <div id="form-status" style="text-align: center; margin-top: 10px"></div>
-          <button type="submit" class="submit-button">Send Request</button>
-        </form>
+<div id="contact-us-form" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <h3>Contact Us</h3>
+    <p style="margin-bottom: 25px;">Please fill out the form below and we will get back to you shortly.</p>
+    
+    <form id="contact-form-in-modal">
+      
+      <input type="hidden" id="time_zone" name="time_zone" value="">
+
+      <div class="form-row">
+        <div class="form-group half-width">
+            <label class="field-title" for="first_name">First Name *</label>
+            <input type="text" id="first_name" name="first_name" required />
+        </div>
+        <div class="form-group half-width">
+            <label class="field-title" for="last_name">Last Name *</label>
+            <input type="text" id="last_name" name="last_name" required />
+        </div>
       </div>
-    </div>
+
+      <div class="form-group">
+        <label class="field-title" for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label class="field-title" for="interested_in">Interested in: *</label>
+        <div class="select-wrapper">
+            <select id="interested_in" name="interested_in" required>
+                <option value="" disabled selected>Select Property Type</option>
+                <option value="Home">Home</option>
+                <option value="Condo Unit">Condo Unit</option>
+            </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="field-title" for="timeframe">Timeframe: *</label>
+        <div class="select-wrapper">
+            <select id="timeframe" name="timeframe" required>
+                <option value="" disabled selected>Select Timeframe</option>
+                <option value="0-6months">0-6 months</option>
+                <option value="7-12months">7-12 months</option>
+                <option value="13-18months">13-18 months</option>
+                <option value="19+ months">19+ months</option>
+            </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="field-title">Can we contact you via call/text?</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="contact_consent" value="Yes"> Yes
+          </label>
+          
+          <label class="radio-label">
+            <input type="radio" name="contact_consent" value="No"> No
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="field-title" for="cell_phone">Cell #</label>
+        <input type="tel" id="cell_phone" name="cell_phone" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+      </div>
+
+      <div class="form-group">
+        <label class="field-label" for="time_zone">Your Time Zone</label>
+        <input type="text" id="time_zone" name="time_zone" placeholder="e.g. EST, Pacific" />
+      </div>
+
+      <div class="form-group">
+        <label class="field-title" for="preferred_time">Preferred time to call</label>
+        <input type="text" id="preferred_time" name="preferred_time" placeholder="e.g. After 5pm" />
+      </div>
+
+      <p class="disclaimer">
+        ** We never sell or disclose any of your information to any outside organization, without your express permission.
+      </p>
+
+      <button type="submit" class="submit-button">Send Message</button>
+    </form>
+  </div>
+</div>
+
+// <script>
+//     document.addEventListener("DOMContentLoaded", function() {
+//         try {
+//             document.getElementById('time_zone').value = Intl.DateTimeFormat().resolvedOptions().timeZone;
+//         } catch(e) { console.log("Timezone detect failed"); }
+//     });
+// </script>
 `;
 
 // --- 1. HELPER FUNCTIONS ---
@@ -245,7 +312,12 @@ const handleAnchorLinks = () => {
 
     const href = link.getAttribute("href");
 
-    if (href === "#slide-out-widget-area" || link.closest('.slide-out-widget-area-toggle') || link.classList.contains("inquire-button")) return;
+    if (
+      href === "#slide-out-widget-area" ||
+      link.closest(".slide-out-widget-area-toggle") ||
+      link.classList.contains("inquire-button")
+    )
+      return;
 
     const hashMatch = href.match(/#.+/);
 
@@ -255,16 +327,22 @@ const handleAnchorLinks = () => {
 
       const linkPath = href.split("#")[0];
       const currentPath = normalizePath(window.location.href);
-      const normalizedLinkPath = linkPath ? normalizePath(linkPath) : currentPath;
+      const normalizedLinkPath = linkPath
+        ? normalizePath(linkPath)
+        : currentPath;
 
       if (normalizedLinkPath === currentPath) {
         const targetElement = document.querySelector(hash);
         if (targetElement) {
-          if (document.body.classList.contains('material-ocm-open')) {
-             if(typeof jQuery !== 'undefined') jQuery('.slide_out_area_close').click(); 
+          if (document.body.classList.contains("material-ocm-open")) {
+            if (typeof jQuery !== "undefined")
+              jQuery(".slide_out_area_close").click();
           }
           const offset = getHeaderOffset();
-          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+          const targetPosition =
+            targetElement.getBoundingClientRect().top +
+            window.pageYOffset -
+            offset;
           window.scrollTo({ top: targetPosition, behavior: "smooth" });
         }
       } else {
@@ -273,14 +351,17 @@ const handleAnchorLinks = () => {
       }
     }
   });
-  
+
   const scrollTargetId = localStorage.getItem("scrollToTarget");
   if (scrollTargetId && scrollTargetId.startsWith("#")) {
     const targetElement = document.querySelector(scrollTargetId);
     if (targetElement) {
       setTimeout(() => {
         const offset = getHeaderOffset();
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+        const targetPosition =
+          targetElement.getBoundingClientRect().top +
+          window.pageYOffset -
+          offset;
         window.scrollTo({ top: targetPosition, behavior: "smooth" });
         history.replaceState(null, null, scrollTargetId);
         localStorage.removeItem("scrollToTarget");
@@ -320,7 +401,7 @@ const handleScrollEffect = () => {
 // --- 3. MODAL LOGIC (Handles UI AND Submission) ---
 const handleInquireLogic = () => {
   document.body.insertAdjacentHTML("beforeend", INQUIRE_MODAL_HTML);
-  const modal = document.getElementById("price-request-form");
+  const modal = document.getElementById("contact-us-form");
   if (!modal) return;
 
   document.body.addEventListener("click", (e) => {
@@ -378,47 +459,65 @@ const handleInquireLogic = () => {
 
 // --- 5. REPLICATED THEME INIT LOGIC (NEW) ---
 const initNectarMenuLogic = () => {
-    console.log("[NavBar Debug] initNectarMenuLogic called");
-    
-    if (typeof jQuery === 'undefined') {
-        console.error("[NavBar Debug] jQuery is NOT loaded. Theme logic will fail.");
-        return;
+  console.log("[NavBar Debug] initNectarMenuLogic called");
+
+  if (typeof jQuery === "undefined") {
+    console.error(
+      "[NavBar Debug] jQuery is NOT loaded. Theme logic will fail."
+    );
+    return;
+  }
+
+  var $ = jQuery;
+
+  // Check if elements exist
+  console.log(
+    "[NavBar Debug] Toggle buttons found:",
+    $(".slide-out-widget-area-toggle a").length
+  );
+  console.log(
+    "[NavBar Debug] Slide out area found:",
+    $("#slide-out-widget-area").length
+  );
+
+  $("body").on(
+    "click",
+    ".slide-out-widget-area-toggle a, .slide_out_area_close, #slide-out-widget-area-bg",
+    function (e) {
+      console.log("[NavBar Debug] Click detected on mobile trigger");
+      e.preventDefault();
+      e.stopPropagation();
+
+      var $body = jQuery("body");
+      var $widget = jQuery("#slide-out-widget-area");
+      var $bg = jQuery("#slide-out-widget-area-bg");
+      var $toggle = jQuery(".slide-out-widget-area-toggle a");
+      var $toggleWrap = jQuery(".slide-out-widget-area-toggle");
+
+      // Check current state
+      if ($body.hasClass("material-ocm-open")) {
+        console.log("[NavBar Debug] Closing menu...");
+        $body.removeClass("material-ocm-open nectar-no-flex-height");
+        $widget.removeClass("open material-open");
+        $bg.removeClass("open material-open");
+        $toggleWrap.removeClass("material-open");
+        $toggle
+          .removeClass("open")
+          .addClass("closed")
+          .attr("aria-expanded", "false");
+      } else {
+        console.log("[NavBar Debug] Opening menu...");
+        $body.addClass("material-ocm-open nectar-no-flex-height");
+        $widget.addClass("open material-open");
+        $bg.addClass("open material-open");
+        $toggleWrap.addClass("material-open");
+        $toggle
+          .addClass("open")
+          .removeClass("closed")
+          .attr("aria-expanded", "true");
+      }
     }
-    
-    var $ = jQuery;
-
-    // Check if elements exist
-    console.log("[NavBar Debug] Toggle buttons found:", $('.slide-out-widget-area-toggle a').length);
-    console.log("[NavBar Debug] Slide out area found:", $('#slide-out-widget-area').length);
-    
-    $('body').on('click', '.slide-out-widget-area-toggle a, .slide_out_area_close, #slide-out-widget-area-bg', function(e) {
-         console.log("[NavBar Debug] Click detected on mobile trigger");
-         e.preventDefault();
-         e.stopPropagation();
-         
-         var $body = jQuery('body');
-         var $widget = jQuery('#slide-out-widget-area');
-         var $bg = jQuery('#slide-out-widget-area-bg');
-         var $toggle = jQuery('.slide-out-widget-area-toggle a');
-         var $toggleWrap = jQuery('.slide-out-widget-area-toggle');
-
-         // Check current state
-         if ($body.hasClass('material-ocm-open')) {
-             console.log("[NavBar Debug] Closing menu...");
-             $body.removeClass('material-ocm-open nectar-no-flex-height');
-             $widget.removeClass('open material-open');
-             $bg.removeClass('open material-open');
-             $toggleWrap.removeClass('material-open');
-             $toggle.removeClass('open').addClass('closed').attr('aria-expanded', 'false');
-         } else {
-             console.log("[NavBar Debug] Opening menu...");
-             $body.addClass('material-ocm-open nectar-no-flex-height');
-             $widget.addClass('open material-open');
-             $bg.addClass('open material-open');
-             $toggleWrap.addClass('material-open');
-             $toggle.addClass('open').removeClass('closed').attr('aria-expanded', 'true');
-         }
-    });
+  );
 };
 
 // --- 4. INJECTION AND EXECUTION ---
@@ -434,14 +533,14 @@ const injectNavBarAndActivate = () => {
   highlightCurrentMenuItem();
 
   // Attach custom anchor handling logic
-  handleAnchorLinks(); 
+  handleAnchorLinks();
 
   // Attach Scroll Animation Logic
   handleScrollEffect();
 
   // This now injects the modal AND attaches the submit listener
   handleInquireLogic();
-  
+
   // Call the theme init logic replacement (NEW)
   initNectarMenuLogic();
 };

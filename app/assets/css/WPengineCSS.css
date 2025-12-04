@@ -5,6 +5,8 @@
   --main-background-color: #f4ece2; /* Our Color */
 	/* --main-background-color: #ebe8df; /* Triada */
 	--main-text-color: #212931;
+	--green-color: #334032;
+
 
 }
 
@@ -3941,4 +3943,110 @@ body:not([data-header-format="left-header"]) #header-outer #top .sf-menu li ul l
   list-style: none;
   padding-left: 30px; /* Indent the sub-menu items */
   width: 100%;
+}
+
+/* --- Quote Section Specific Styles --- */
+
+/* 1. Section Container & Background */
+#quote-section {
+  position: relative;
+  background-color: #334032; /* The specific Footer Green you identified */
+  color: #fff;
+  /* Reduced top/bottom padding inside the green box */
+  padding: 60px 60px; 
+  /* Added padding OUTSIDE the box on the bottom */
+  margin-bottom: 60px; 
+  overflow: hidden;
+}
+
+/* 2. Layout (Side-by-Side) */
+#quote-section .content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Left Column (Text) */
+#quote-section .text-column {
+  width: 41%; 
+  padding-right: 5%;
+  box-sizing: border-box;
+}
+
+/* Right Column (Image) */
+#quote-section .image-column {
+  width: 58%; 
+  box-sizing: border-box;
+}
+
+/* 3. Typography (The Quote) */
+#quote-section .quote-container h2 {
+  font-family: "ivypresto-display", "Playfair Display", serif;
+  font-size: 3.3vw; 
+  line-height: 1.2; /* Slightly increased line-height for readability */
+  font-weight: 100; /* Lighter font weight requested */
+  font-style: italic;
+  color: #fff;
+  margin-bottom: 25px;
+  letter-spacing: 0.01em;
+}
+
+/* Author / Source Name */
+#quote-section .author-name p {
+  font-family: inherit;
+  font-size: 1.1rem;
+  color: #fff;
+  opacity: 0.9;
+  margin-top: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Divider Line */
+#quote-section .quote-divider {
+  height: 1px;
+  width: 50px;
+  background-color: rgba(255,255,255,0.4);
+  margin-bottom: 20px;
+}
+
+/* 4. Image Styling */
+#quote-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 5. Mobile Responsive Override */
+@media screen and (max-width: 999px) {
+  #quote-section {
+    padding: 40px 20px; /* Even less padding on mobile */
+    margin-bottom: 40px;
+  }
+  
+  #quote-section .content-wrapper {
+    flex-direction: column;
+  }
+
+  #quote-section .text-column,
+  #quote-section .image-column {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  #quote-section .text-column {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  #quote-section .quote-container h2 {
+    font-size: 28px; 
+  }
+  
+  #quote-section .quote-divider {
+    margin: 0 auto 20px auto; 
+  }
 }

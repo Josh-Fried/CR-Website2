@@ -10,7 +10,7 @@
 
 /* Put the fixed Bay image on the HTML element */
 html {
-    background-image: url('../../images/Bay1.jpg');
+    background-image: url('../../images/Bay1.webp');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;

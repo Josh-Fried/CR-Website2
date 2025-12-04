@@ -3630,7 +3630,7 @@ input, select, textarea {
 			height: 100%;
 			background-color: var(--main-background-color);
 			/* background-color: var(--main-text-color); */
-			/* background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/Bay1.jpg"); */
+			/* background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/Bay1.webp"); */
 			background-size: auto,								auto,														100% auto;
 			background-position: center,								center,														top center;
 			background-repeat: repeat,								no-repeat,													no-repeat;
@@ -8333,4 +8333,115 @@ animation-play-state: paused;
     .flex-layout .flex-image-column {
         height: 350px; /* Adjust image height for mobile */
     }
+}
+
+/* SHARED STYLES for inputs and selects */
+#contact-form-in-modal input[type="text"],
+#contact-form-in-modal input[type="email"],
+#contact-form-in-modal input[type="tel"],
+#contact-form-in-modal select {
+    width: 100%;
+    height: auto !important; /* Overrides theme fixed heights */
+    min-height: 50px; /* Increased height to stop text cutoff */
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: 400; /* Regular font weight */
+    font-family: inherit;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    line-height: 1.5; /* Gives text room to breathe */
+    background-color: #f7f7f7;
+    margin-bottom: 0;
+}
+
+/* DROPDOWN SPECIFIC STYLING */
+#contact-form-in-modal select {
+    padding-right: 40px; 
+    padding-bottom: 14px !important; /* Extra space for letters like 'y' and 'p' */
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 14px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* RADIO BUTTONS (YES/NO) LAYOUT */
+#contact-form-in-modal .radio-group {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+/* Wrapper for the button+text pair */
+#contact-form-in-modal .radio-label, 
+#contact-form-in-modal .radio-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* FORCE RADIO BUBBLE VISIBILITY */
+#contact-form-in-modal input[type="radio"] {
+    opacity: 1 !important;
+    appearance: auto !important;
+    -webkit-appearance: radio !important;
+    display: inline-block !important;
+    visibility: visible !important;
+    width: 20px !important;
+    height: 20px !important;
+    margin: 0 10px 0 0 !important;
+    position: static !important;
+    z-index: 100 !important;
+    cursor: pointer !important;
+    accent-color: #000 !important; /* Ensures the dot is black */
+}
+
+/* LAYOUT UTILITIES */
+#contact-form-in-modal .form-row {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+#contact-form-in-modal .half-width {
+    width: 48%;
+}
+#contact-form-in-modal .form-group {
+    margin-bottom: 20px;
+}
+#contact-form-in-modal label.field-title,
+#contact-form-in-modal .field-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+#contact-form-in-modal .disclaimer {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 20px;
+    line-height: 1.4;
+}
+#contact-form-in-modal .submit-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #000; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
 }
