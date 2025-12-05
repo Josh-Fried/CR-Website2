@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    const priceRequestForm = document.getElementById('price-request-form'); 
+    const priceRequestForm = document.getElementById('contact-us-form'); 
     const requestButtons = document.querySelectorAll('.price-request-button, .inquire-button');
     const closeButton = document.querySelector('.modal-close');
 
