@@ -8445,3 +8445,69 @@ animation-play-state: paused;
     cursor: pointer;
     margin-top: 15px;
 }
+
+.about-card {
+    background-color: #f4f9fc; /* Light blue background */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Reverses the layout so Text is Left, Image is Right */
+  .layout-reversed {
+    flex-direction: row-reverse;
+  }
+  
+  /* Adjustments for mobile to ensure it stacks correctly */
+  @media (max-width: 768px) {
+    .layout-reversed {
+      flex-direction: column-reverse; /* Image on top, text bottom on mobile */
+    }
+    .about-card {
+      padding: 20px;
+    }
+  }
+
+  /* Mosaic Grid for the 3 images */
+  .gallery-mosaic {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr; /* Left column wider than right */
+    grid-template-rows: repeat(2, 250px); /* Fixed height rows */
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .gallery-mosaic .gallery-item {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  .gallery-mosaic .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  
+  .gallery-mosaic .gallery-item img:hover {
+    transform: scale(1.03);
+  }
+
+  /* The first image takes up the whole left side */
+  .gallery-mosaic .gallery-item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+  
+  /* Mobile fallback for the gallery */
+  @media (max-width: 768px) {
+    .gallery-mosaic {
+      display: flex;
+      flex-direction: column;
+    }
+    .gallery-mosaic .gallery-item {
+      height: 300px; /* specific height for mobile */
+    }
+  }
