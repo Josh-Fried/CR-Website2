@@ -62,10 +62,13 @@
     <script type="text/javascript">
         document.documentElement.classList.add("js");
     </script>
+
+	<!-- CRM Link -->
+	<script type="text/javascript" src="https://util1.crmtool.net/lm_wfi.js"></script>
 	
 </head>
 
-	<body class="material" data-header-format="centered-logo-between-menu-alt" data-header-resize="1" data-transparent-header="false" data-header-color="" data-remove-border="true" data-smooth-scrolling="0" data-cad="1500" data-cae="easeOutQuart" data-aie="none" data-ls="fancybox">
+	<body class="material" data-header-format="centered-logo-between-menu-alt" data-header-resize="1" data-transparent-header="false" data-header-color="" data-remove-border="true" data-smooth-scrolling="0" data-cad="1500" data-cae="easeOutQuart" data-aie="none" data-ls="fancybox" onload='lm_InitWebForm()'>
 
 	<div id="map-overlay"></div>
 
@@ -826,7 +829,12 @@
     <h3>Contact Us</h3>
     <p style="margin-bottom: 25px;">Please fill out the form below and we will get back to you shortly.</p>
     
-    <form id="contact-form-in-modal">
+    <form id="contact-form-in-modal" onSubmit="return lm_SubmitWebForm()">
+		<input type='hidden' name="lm_CompanyID" value="31641">
+		<input type='hidden' name="lm_FormID" value="157">
+		<input type='hidden' name="lm_MappingID" value="1">
+		<input type='hidden' name="lm_FormKey" value="">
+		<input type='hidden' name="lm_FormResponsePage" value="http://www.papagayobay.com/">
       
       <input type="hidden" id="time_zone" name="time_zone" value="">
       <div class="form-row">
