@@ -829,15 +829,13 @@
     <h3>Contact Us</h3>
     <p style="margin-bottom: 25px;">Please fill out the form below and we will get back to you shortly.</p>
 
-	<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-    
-    <form id="contact-form-in-modal" name='frm' method='post' onSubmit="return lm_SubmitWebForm()">
+	<form id="contact-form-in-modal" name='frm' method='post' onSubmit="return lm_SubmitWebForm()">
 		<input type='hidden' name="lm_CompanyID" value="31641">
 		<input type='hidden' name="lm_FormID" value="157">
 		<input type='hidden' name="lm_MappingID" value="1">
 		<input type='hidden' name="lm_FormKey" value="">
-		<!-- <input type='hidden' name="lm_FormResponsePage" value="https://red-stone-06763141e-18.westus2.2.azurestaticapps.net/"> -->
-		<!-- <input type='hidden' name="lm_FormResponsePage" value="http://www.papagayobay.com/"> -->
+		<input type='hidden' name="lm_FormResponsePage" value="http://www.papagayobay.com/?status=success">
+		<!-- <input type='hidden' name="lm_FormResponsePage" value="http://127.0.0.1:5500/?status=success"> -->
 		
       
       <input type="hidden" id="time_zone" name="time_zone" value="">
@@ -904,6 +902,7 @@
       <p class="disclaimer">
         ** We never sell or disclose any of your information to any outside organization, without your express permission.
       </p>
+	  <div id="form-status"></div>
       <button type="submit" class="submit-button">Send Message</button>
     </form>
   </div>
