@@ -1,17 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     
+    // --- Existing Modal Logic (Keep this) ---
     const priceRequestForm = document.getElementById('contact-us-form'); 
     const requestButtons = document.querySelectorAll('.price-request-button, .inquire-button');
     const closeButton = document.querySelector('.modal-close');
 
     function openForm() {
-        priceRequestForm.style.display = 'flex';
-        document.body.classList.add('form-is-open');
+        if (priceRequestForm) {
+            priceRequestForm.style.display = 'flex';
+            document.body.classList.add('form-is-open');
+        }
     }
 
     function closeForm() {
-        priceRequestForm.style.display = 'none';
-        document.body.classList.remove('form-is-open');
+        if (priceRequestForm) {
+            priceRequestForm.style.display = 'none';
+            document.body.classList.remove('form-is-open');
+        }
     }
 
     requestButtons.forEach(button => {
@@ -21,62 +26,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    closeButton.addEventListener('click', closeForm);
+    if (closeButton) {
+        closeButton.addEventListener('click', closeForm);
+    }
 
-    priceRequestForm.addEventListener('click', function(event) {
-        if (event.target === priceRequestForm) {
-            closeForm();
-        }
-    });
+    if (priceRequestForm) {
+        priceRequestForm.addEventListener('click', function(event) {
+            if (event.target === priceRequestForm) {
+                closeForm();
+            }
+        });
+    }
 
-    // --- New form submission logic ---
+    // --- Updated Submission Logic for CRM Tool ---
     const form = document.getElementById('contact-form-in-modal');
     const formStatus = document.getElementById('form-status');
-    const submitButton = form.querySelector('.submit-button');
+    const hiddenIframe = document.getElementById('hidden_iframe');
 
-    form.addEventListener('submit', async (event) => {
-        // Prevent the default browser action of reloading the page
-        event.preventDefault();
+    if (form && formStatus && hiddenIframe) {
+        const submitButton = form.querySelector('.submit-button');
 
-        // Disable the submit button and show a "sending" message
-        submitButton.disabled = true;
-        submitButton.textContent = 'Sending...';
-        formStatus.textContent = ''; // Clear previous status
+        // 1. When the user clicks submit...
+        form.addEventListener('submit', function(event) {
+            // We do NOT preventDefault(). We want the form to submit to the iframe.
+            
+            // Update UI to show we are working
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+            }
+            formStatus.textContent = '';
+        });
 
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-
-        // You can add the brokerId from a cookie here if needed
-        // For example: data.brokerId = getCookie('referral_code');
-
-        try {
-            // Send the data to your serverless function
-            const response = await fetch('/api/SubmitContact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
-
-            if (response.ok) {
+        // 2. When the invisible iframe finishes loading, we know the CRM received the data.
+        hiddenIframe.addEventListener('load', function() {
+            // Check if the form was actually submitted (prevents triggering on page load)
+            if (submitButton && submitButton.disabled) {
                 formStatus.textContent = 'Thank you! Your message has been sent.';
                 formStatus.style.color = 'green';
-                form.reset(); // Clear the form fields
-                // Optionally, close the form after a short delay
-                setTimeout(closeForm, 3000); 
-            } else {
-                const errorText = await response.text();
-                formStatus.textContent = `An error occurred: ${errorText}`;
-                formStatus.style.color = 'red';
+                
+                form.reset(); // Clear the inputs
+
+                // Re-enable button
+                submitButton.textContent = 'Send Message';
+                submitButton.disabled = false;
+
+                // Close the modal after 3 seconds
+                setTimeout(closeForm, 3000);
             }
-        } catch (error) {
-            formStatus.textContent = 'A network error occurred. Please try again.';
-            formStatus.style.color = 'red';
-        } finally {
-            // Re-enable the submit button
-            submitButton.disabled = false;
-            submitButton.textContent = 'Send Request';
-        }
-    });
+        });
+    }
 });
