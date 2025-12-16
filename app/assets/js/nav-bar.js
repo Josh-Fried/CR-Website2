@@ -165,10 +165,14 @@ const INQUIRE_MODAL_HTML =
     <button class="modal-close">&times;</button>
     <h3>Contact Us</h3>
     <p style="margin-bottom: 25px;">Please fill out the form below and we will get back to you shortly.</p>
-    
-    <form id="contact-form-in-modal">
-      
-      <input type="hidden" id="time_zone" name="time_zone" value="">
+
+	<form id="contact-form-in-modal" name='frm' method='post' onSubmit="return lm_SubmitWebForm()">
+		<input type='hidden' name="lm_CompanyID" value="31641">
+		<input type='hidden' name="lm_FormID" value="157">
+		<input type='hidden' name="lm_MappingID" value="1">
+		<input type='hidden' name="lm_FormKey" value="">
+		<input type='hidden' name="lm_FormResponsePage" value="http://www.papagayobay.com/?status=success">
+		
       <div class="form-row">
         <div class="form-group half-width">
             <label class="field-title" for="first_name">First Name *</label>
@@ -232,6 +236,7 @@ const INQUIRE_MODAL_HTML =
       <p class="disclaimer">
         ** We never sell or disclose any of your information to any outside organization, without your express permission.
       </p>
+	  <div id="form-status"></div>
       <button type="submit" class="submit-button">Send Message</button>
     </form>
   </div>
@@ -408,83 +413,148 @@ const handleScrollEffect = () => {
 };
 
 function handleInquireLogic() {
-    // 1. Inject Modal if not exists
-    if(!document.getElementById('contact-us-form')) {
+    // 1. INJECT HTML IF MISSING
+    if (!document.getElementById('contact-us-form')) {
         document.body.insertAdjacentHTML('beforeend', INQUIRE_MODAL_HTML);
-    }
-    
-    // 2. Bind Listeners
-    const modal = document.getElementById("contact-us-form");
-    if (!modal) return;
+        
+        // We temporarily hijack it to capture the CRM's tracking pixel.
+        var contentBuffer = "";
+        var oldWrite = document.write; // Save original function
 
-    document.body.addEventListener("click", (e) => {
-        if (e.target.closest(".inquire-button")) {
-            e.preventDefault();
+        document.write = function(str) {
+            contentBuffer += str; // Capture the string (usually an <img> tag)
+        };
+
+        // Remove old script if exists
+        const oldScript = document.querySelector('script[src*="lm_wfi.js"]');
+        if (oldScript) oldScript.remove();
+
+        // Create and Inject Script
+        var script = document.createElement('script');
+        script.src = "https://util1.crmtool.net/lm_wfi.js";
+        script.type = "text/javascript";
+        
+        script.onload = function() {
+            // Restore original document.write
+            document.write = oldWrite;
             
-            // --- CRITICAL FIX: CLOSE THE MENU & UNLOCK BODY ---
-            // This removes the "overflow: hidden" from the body so the modal can scroll
-            var menu = document.getElementById("slide-out-widget-area");
-            var icon = document.querySelector(".slide-out-widget-area-toggle a");
-            
-            document.body.classList.remove("material-ocm-open"); // Unlocks Scroll
-            if(menu) menu.classList.remove("user-menu-open");    // Hides Menu Background
-            if(icon) { icon.classList.remove("open"); icon.classList.add("closed"); }
-            
-            // Reset Drill Down Animations
-            if(typeof jQuery !== 'undefined') {
-                 jQuery(".off-canvas-menu-container").removeClass("sub-view-active");
-                 jQuery(".mobile-sub-menu").removeClass("visible");
+            // If the script tried to write something (the tracker), inject it now
+            if(contentBuffer) {
+                console.log("[NavBar Debug] Injecting captured CRM Tracker");
+                var tempDiv = document.createElement('div');
+                tempDiv.innerHTML = contentBuffer;
+                tempDiv.style.display = 'none'; // Keep it hidden
+                document.body.appendChild(tempDiv);
             }
-            // --------------------------------------------------
+        };
 
-            modal.classList.add("open");
-            modal.style.display = "flex";
-        }
-    });
+        // Handle errors just in case
+        script.onerror = function() {
+            document.write = oldWrite;
+        };
 
-    const closeBtn = modal.querySelector(".modal-close");
-    if (closeBtn) {
-        closeBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            modal.classList.remove("open");
-            modal.style.display = "none";
-        });
+        document.body.appendChild(script);
+        // ---------------------------------------
     }
     
-    window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            modal.classList.remove("open");
-            modal.style.display = "none";
+    // 2. SETUP VARIABLES
+    const priceRequestForm = document.getElementById('contact-us-form'); 
+    const successInput = document.querySelector('input[name="lm_FormResponsePage"]');
+    const closeButton = document.querySelector('.modal-close');
+    const form = document.getElementById("contact-form-in-modal");
+
+    // 3. AUTO-SET RETURN URL
+    if (successInput) {
+        successInput.value = window.location.origin + window.location.pathname + '?status=success';
+    }
+
+    // 4. OPEN/CLOSE UTILITIES
+    function openForm() {
+        document.body.classList.remove("material-ocm-open");
+        const menu = document.getElementById("slide-out-widget-area");
+        if(menu) menu.classList.remove("user-menu-open");
+        const icon = document.querySelector(".slide-out-widget-area-toggle a");
+        if(icon) { icon.classList.remove("open"); icon.classList.add("closed"); }
+
+        if (priceRequestForm) {
+            priceRequestForm.classList.add('open');
+            priceRequestForm.style.display = 'flex';
+        }
+    }
+
+    function closeForm() {
+        if (priceRequestForm) {
+            priceRequestForm.classList.remove('open');
+            priceRequestForm.style.display = 'none';
+        }
+    }
+
+    // 5. "SENDING..." BUTTON STATE
+    // We do NOT preventDefault. We let Lasso handle the submission.
+    if (form) {
+        form.addEventListener("submit", function() {
+            const btn = form.querySelector('button[type="submit"]');
+            if(btn) {
+                btn.innerText = "Sending...";
+                btn.style.opacity = "0.7";
+                btn.style.cursor = "wait";
+            }
+        });
+    }
+
+    // 6. SUCCESS DETECTION
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('status') === 'success') {
+        openForm(); 
+        const modalContent = priceRequestForm.querySelector('.modal-content');
+        if (modalContent) {
+            const formEl = modalContent.querySelector('form');
+            const introText = modalContent.querySelector('p');
+            const title = modalContent.querySelector('h3');
+            
+            if (formEl) formEl.style.display = 'none';
+            if (introText) introText.style.display = 'none';
+            
+            if (title) {
+                title.textContent = 'Message Sent!';
+                title.style.color = '#2e7d32';
+            }
+
+            // Custom SVG Success Message
+            const successMsg = document.createElement('div');
+            successMsg.innerHTML = `
+                <div style="text-align: center; padding: 20px 0;">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 15px;">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <p style="font-size: 1.1em; line-height: 1.5;">
+                        Thank you for reaching out.<br>
+                        We have received your inquiry and will be in touch shortly.
+                    </p>
+                    <button class="submit-button" id="close-success-btn" style="margin-top: 20px;">Close</button>
+                </div>
+            `;
+            modalContent.appendChild(successMsg);
+
+            const newCloseBtn = successMsg.querySelector('#close-success-btn');
+            if (newCloseBtn) newCloseBtn.addEventListener('click', closeForm);
+        }
+        window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
+    // 7. EVENT LISTENERS
+    document.body.addEventListener("click", (e) => {
+        if (e.target.closest(".inquire-button") || e.target.closest(".price-request-button")) {
+            e.preventDefault();
+            openForm();
         }
     });
 
-    const form = document.getElementById("contact-form-in-modal");
-    const statusDiv = document.getElementById("form-status");
-
-    if (form) {
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const btn = form.querySelector('button[type="submit"]');
-            const originalText = btn.innerText;
-
-            btn.innerText = "Sending...";
-            btn.disabled = true;
-
-            setTimeout(() => {
-                statusDiv.innerHTML = '<span style="color:green;">Thank you! We will be in touch soon.</span>';
-                btn.innerText = "Sent";
-                form.reset();
-
-                setTimeout(() => {
-                    modal.classList.remove("open");
-                    modal.style.display = "none";
-                    statusDiv.innerHTML = ""; 
-                    btn.innerText = originalText; 
-                    btn.disabled = false;
-                }, 2000);
-            }, 1000);
-        });
-    }
+    if (closeButton) closeButton.addEventListener('click', closeForm);
+    window.addEventListener("click", (e) => {
+        if (e.target === priceRequestForm) closeForm();
+    });
 }
 
 function initNectarMenuLogic() {
