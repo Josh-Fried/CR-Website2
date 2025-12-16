@@ -5995,6 +5995,7 @@
         ));
   }
   function pa() {
+    console.log("Init.js: Pa() called");
     (ot = []),
       ua(),
       t(".nectar-post-grid-wrap").each(function (e) {
@@ -9843,6 +9844,7 @@
                 };
               return (
                 setTimeout(function () {
+                  console.log("Click?");
                   s.addClass(e.options.animationClasses.classin),
                     e.$menu.addClass(e.options.animationClasses.classout),
                     e.supportAnimations

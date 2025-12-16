@@ -284,6 +284,7 @@ $(function() {
 /* --- Mobile Accordion Menu Logic (Final Version) --- */
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenu = document.querySelector('#slide-out-widget-area');
+    console.log("main.js: accordian");
     if (mobileMenu) {
         const parentMenuItems = mobileMenu.querySelectorAll('.menu-item-has-children');
 
@@ -308,10 +309,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const menu = document.querySelector('#slide-out-widget-area .menu');
+    console.log("main.js: submenu start");
     if (!menu) return;
 
     const toggles = menu.querySelectorAll('.submenu-toggle');
     const backButtons = menu.querySelectorAll('.sub-menu .back');
+    console.log("main.js: submenu inside");
+
 
     // --- 1. Handle Opening the Sub-menu ---
     toggles.forEach(toggle => {
@@ -322,6 +326,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add classes to create the "new page" effect
             menu.classList.add('submenu-is-active');
             parentLi.classList.add('active-submenu-parent');
+    console.log("main.js: submenu active");
+
         });
     });
 
@@ -332,6 +338,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Remove classes to go back to the main menu
             menu.classList.remove('submenu-is-active');
+    console.log("main.js: submenu close");
+
             
             const activeParent = menu.querySelector('.active-submenu-parent');
             if (activeParent) {
