@@ -3,7 +3,7 @@
  * FINAL WORKING VERSION - With "Brute Force" Visibility CSS
  */
 
-console.log("[NavBar Debug] Script file loaded.");
+// console.log("[NavBar Debug] Script file loaded.");
 
 const NAV_STYLES = `
 <style>
@@ -710,14 +710,14 @@ const injectCriticalStyles = () => {
 // --- 4. INJECTION AND EXECUTION ---
 
 const injectNavBarAndActivate = () => {
-  console.log("[NavBar Debug] Injections started");
+  // console.log("[NavBar Debug] Injections started");
 
   // 1. Inject CSS first to prevent layout jumping
   injectCriticalStyles();
 
   // 2. Inject Header HTML
   document.body.insertAdjacentHTML("afterbegin", NAV_BAR_HTML_TEMPLATE);
-  console.log("[NavBar Debug] HTML Template Injected");
+  // console.log("[NavBar Debug] HTML Template Injected");
 
   // 3. Highlight current page link
   highlightCurrentMenuItem();

@@ -1,5 +1,5 @@
 !(function (t, e, a) {
-  console.log("init Started");
+  // console.log("init Started");
   "use strict";
   var n,
     i,
@@ -5995,7 +5995,7 @@
         ));
   }
   function pa() {
-    console.log("Init.js: Pa() called");
+    // console.log("Init.js: Pa() called");
     (ot = []),
       ua(),
       t(".nectar-post-grid-wrap").each(function (e) {
@@ -6754,7 +6754,7 @@
       Fa();
   }
   function Pa() {
-    console.log("INIT.JS DEBUG: Pa (Open) Function Called");
+    // console.log("INIT.JS DEBUG: Pa (Open) Function Called");
     
     if (
       (Ma(),
@@ -6991,8 +6991,7 @@
               s.on("scroll.headerResizeEffectOpaque", Cn)))));
   }
   function Ya() {
-    console.log("INIT.JS DEBUG: Ya (Close) Function Called");
-    // ... rest of existing code ...
+    // console.log("INIT.JS DEBUG: Ya (Close) Function Called");
     (bt.usingMobileBrowser ||
       bt.usingIOS ||
       bt.usingTouchDevice ||
@@ -9844,7 +9843,7 @@
                 };
               return (
                 setTimeout(function () {
-                  console.log("Click?");
+                  // console.log("Click?");
                   s.addClass(e.options.animationClasses.classin),
                     e.$menu.addClass(e.options.animationClasses.classout),
                     e.supportAnimations

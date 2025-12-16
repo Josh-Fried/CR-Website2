@@ -1,11 +1,19 @@
 /**
  * nav-bar.js
- * FINAL BUILD:
- * - Logic: Z-Index Swap (Guaranteed Open) + Drill Down (New Page Animation)
- * - Styles: No borders, Centered Text, 300px Width (As requested)
+ * Injects custom navigation, handles mobile menu logic, and integrates Lasso CRM modal.
+ *
+ * FUNCTIONS:
+ * - normalizePath: Standardizes URLs for comparison.
+ * - getHeaderOffset: Calculates header height for scroll positioning.
+ * - highlightCurrentMenuItem: Sets active CSS classes on menu links.
+ * - handleAnchorLinks: Manages smooth scrolling to #hashes.
+ * - handleScrollEffect: Toggles header shrinking on scroll.
+ * - handleInquireLogic: Injects/Validates CRM form, loads Lasso script, & manages modal state.
+ * - initNectarMenuLogic: Handles mobile menu toggle & sub-menu drill down.
+ * - executeNavBar: Main initialization function.
  */
 
-console.log("[NavBar Debug] Script file loaded.");
+// console.log("[NavBar Debug] Script file loaded.");
 
 // --- HTML WITH RENAMED SUB-MENUS ---
 const NAV_BAR_HTML_TEMPLATE = `
@@ -440,11 +448,18 @@ function handleInquireLogic() {
             
             // If the script tried to write something (the tracker), inject it now
             if(contentBuffer) {
-                console.log("[NavBar Debug] Injecting captured CRM Tracker");
                 var tempDiv = document.createElement('div');
                 tempDiv.innerHTML = contentBuffer;
                 tempDiv.style.display = 'none'; // Keep it hidden
-                document.body.appendChild(tempDiv);
+                
+                // --- FIX: INJECT INSIDE THE FORM, NOT THE BODY ---
+                var targetForm = document.getElementById("contact-form-in-modal");
+                if (targetForm) {
+                    targetForm.appendChild(tempDiv);
+                } else {
+                    console.error("CRM Error: Could not find form to inject tracking pixels");
+                }
+                // -------------------------------------------------
             }
         };
 
@@ -558,7 +573,7 @@ function handleInquireLogic() {
 }
 
 function initNectarMenuLogic() {
-    console.log("[NavBar Debug] Attaching Event Listeners (Delegation)");
+    // console.log("[NavBar Debug] Attaching Event Listeners (Delegation)");
     
     var $ = (typeof jQuery !== 'undefined') ? jQuery : null;
     if($) {
@@ -639,7 +654,7 @@ function executeNavBar() {
 
     // Inject Header
     document.body.insertAdjacentHTML("afterbegin", NAV_BAR_HTML_TEMPLATE);
-    console.log("[NavBar Debug] HTML Template Injected");
+    // console.log("[NavBar Debug] HTML Template Injected");
 
     // Call highlighting function
     highlightCurrentMenuItem();
