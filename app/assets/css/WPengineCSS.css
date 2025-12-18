@@ -2595,7 +2595,7 @@ body
   > li:not([class*="button_"])
   > a
   .menu-title-text:after {
-  bottom: -16px;
+  bottom: -12px;
 }
 
 #header-outer[data-lhe="animated_underline"]:not([data-format="left-header"])

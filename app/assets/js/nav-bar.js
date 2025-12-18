@@ -82,8 +82,8 @@ const NAV_BAR_HTML_TEMPLATE = `
                             <div class="right-aligned-menu-items">
                                 <nav>
                                     <ul class="buttons sf-menu" data-user-set-ocm="off">
-                                        <li id="menu-item-445" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-445" data-path="/#why-invest">
-                                            <a href="/#why-invest" class=""><span class="menu-title-text">Why Us</span></a>
+                                        <li id="menu-item-445" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-445" data-path="/#about-us">
+                                            <a href="/#about-us" class=""><span class="menu-title-text">About Us</span></a>
                                         </li>
                                         <li id="menu-item-554" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-554" data-path="/experiences">
                                             <a href="/#experiences"><span class="menu-title-text">Experiences</span></a>
@@ -142,7 +142,7 @@ const NAV_BAR_HTML_TEMPLATE = `
                                 </ul>
                             </li>
                             
-                            <li class="menu-item"><a href="/#why-invest" class="">Why Us</a></li>
+                            <li class="menu-item"><a href="/#about-us" class="">About Us</a></li>
                             
                             <li class="menu-item has-children">
                                 <a href="#" onclick="return false;">Experiences</a>
@@ -292,7 +292,7 @@ const highlightCurrentMenuItem = () => {
     effectivePath.startsWith("/coming-soon")
   )
     targetId = "menu-item-551";
-  else if (effectivePath === "/#why-invest") targetId = "menu-item-445";
+  else if (effectivePath === "/#about-us") targetId = "menu-item-445";
   else if (effectivePath === "/") targetId = "menu-item-711";
 
   const parentElement = document.getElementById(targetId);
