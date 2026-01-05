@@ -7543,8 +7543,6 @@ body.is-preload #about {
 }
 
 @media (max-width: 768px) {
-  /* --- Add these rules to disable the one-screen effect --- */
-
   .onescreen-section {
     /* Revert the height to be determined by content, not the viewport */
     height: auto;
@@ -7558,13 +7556,11 @@ body.is-preload #about {
   margin-bottom: 5rem; /* Space between the two main sections */
 }
 
-/* This class reverses the order for the second section */
 .feature-split-section.reverse-layout {
   flex-direction: row-reverse;
   margin-bottom: 0rem;
 }
 
-/* The container for the image column */
 .feature-image-container {
   flex-basis: 45%; /* Image column takes up 45% of the width */
   flex-shrink: 0; /* Prevents the image from shrinking */
@@ -7578,12 +7574,10 @@ body.is-preload #about {
   background-color: #c6dff7;
 }
 
-/* The container for the text content column */
 .feature-text-container {
   flex-basis: 55%; /* Text column takes up 55% of the width */
 }
 
-/* Styling for each individual text item (e.g., Vision, Location) */
 .text-content-item {
   margin-bottom: 2.5rem; /* Space between each text block */
 }
@@ -7591,11 +7585,10 @@ body.is-preload #about {
   margin-bottom: 0;
 }
 
-/* STYLING THE TITLE TO MAKE IT STICK OUT */
 .text-content-item h2 {
   font-family: "Playfair Display", serif;
   font-size: 2rem;
-  font-weight: 700;
+  /* font-weight: 700; */
   color: var(--main-text-color);
   color: #4a5568;
   line-height: 1.2;
@@ -7604,7 +7597,6 @@ body.is-preload #about {
   margin: 0 0 0.75rem 0; /* Space below the title */
 }
 
-/* STYLING THE PARAGRAPH FOR READABILITY */
 .text-content-item p {
   /* font-family: 'Lato', sans-serif; */
   font-size: 1.1rem;
@@ -8302,6 +8294,19 @@ body #gallery-popup-overlay.active .gallery-popup-content {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* NEW: Creates the X icon without changing HTML */
+#map-overlay::after {
+  content: "\00d7"; /* Unicode for a nice 'X' (multiplication sign) */
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 60px;
+  font-weight: 300; /* Makes it look sleeker */
+  line-height: 1;   /* Prevents vertical alignment issues */
+  pointer-events: none; /* Ensures the click registers on the div, not the pseudo-element */
 }
 
 /* New class to make the overlay visible */

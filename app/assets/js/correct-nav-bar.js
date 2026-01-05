@@ -279,7 +279,7 @@ const NAV_BAR_HTML_TEMPLATE = `
                                             <ul class="sub-menu">
                                                 <li class="menu-item submenu-link" data-path="/luxury-living/beach-club"><a href="/luxury-living/beach-club">Beach Club</a></li>
                                                 <li class="menu-item submenu-link" data-path="/luxury-living/waterfall"><a href="/luxury-living/waterfall">Waterfall</a></li>
-                                                <li class="menu-item submenu-link" data-path="/for-sale/the-horizon-house"><a href="/for-sale/the-horizon-house">The Horizon House</a></li>
+                                                <li class="menu-item submenu-link" data-path="/for-sale/casa-uno"><a href="/for-sale/casa-uno">Casa Uno</a></li>
                                                 <li class="menu-item submenu-link" data-path="/luxury-living/area-growth"><a href="/luxury-living/area-growth">Area Growth</a></li>
                                                 <li class="menu-item submenu-link" data-path="/luxury-living/restaurants"><a href="/luxury-living/restaurants">Restaurants</a></li>
                                             </ul>
@@ -341,7 +341,7 @@ const NAV_BAR_HTML_TEMPLATE = `
                                 <ul class="sub-menu">
                                     <li class="menu-item"><a href="/luxury-living/beach-club">Beach Club</a></li>
                                     <li class="menu-item"><a href="/luxury-living/waterfall">Waterfall</a></li>
-                                    <li class="menu-item"><a href="/for-sale/the-horizon-house">The Horizon House</a></li>
+                                    <li class="menu-item"><a href="/for-sale/casa-uno">Casa Uno</a></li>
                                     <li class="menu-item"><a href="/luxury-living/area-growth">Area Growth</a></li>
                                     <li class="menu-item"><a href="/luxury-living/restaurants">Restaurants</a></li>                                
                                 </ul>
