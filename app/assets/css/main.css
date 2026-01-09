@@ -3036,18 +3036,25 @@ a.image:hover img {
 
 @media (max-width: 600px) {
   .gallery-grid-3x3 {
-    /* grid-template-columns: 1fr;   */
-    grid-template-columns: repeat(2, 1fr);
+    width: 100% !important; /* Force full width */
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+    gap: 8px; /* Smaller gap allows images to be larger */
   }
+  
   .gallery-item .text-overlay h2 {
-    /* font-size: 0.8em; */
+    font-size: 1rem; /* Specific size for mobile */
   }
+
+  /* Make the last item span the full width (Big Banner) instead of being small/centered */
   .gallery-item:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: 50%;
+    grid-column: 1 / -1; /* Span all columns */
+    justify-self: stretch; 
+    width: 100%; /* Take up 100% space */
+    aspect-ratio: 2 / 1; /* Optional: Makes the last item a wide rectangle */
   }
 }
+
+
 
 .clickable {
   /* Using the class name you requested */
@@ -7550,10 +7557,10 @@ body.is-preload #about {
 }
 
 .feature-split-section {
-  display: flex; /* Enables Flexbox layout */
-  align-items: center; /* Vertically aligns items */
-  gap: 3.5rem; /* Space between the image and the text container */
-  margin-bottom: 5rem; /* Space between the two main sections */
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  margin-bottom: 5rem;
 }
 
 .feature-split-section.reverse-layout {
@@ -7562,25 +7569,26 @@ body.is-preload #about {
 }
 
 .feature-image-container {
-  flex-basis: 45%; /* Image column takes up 45% of the width */
-  flex-shrink: 0; /* Prevents the image from shrinking */
+  flex-basis: 45%;
+  flex-shrink: 0;
 }
+
 .feature-image-container img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px; /* Slightly rounded corners for a modern look */
-  /* box-shadow: 0 10px 25px rgba(0,0,0,0.1);  */
+  border-radius: 8px;
   background-color: #c6dff7;
 }
 
 .feature-text-container {
-  flex-basis: 55%; /* Text column takes up 55% of the width */
+  flex-basis: 55%;
 }
 
 .text-content-item {
-  margin-bottom: 2.5rem; /* Space between each text block */
+  margin-bottom: 2.5rem;
 }
+
 .text-content-item:last-child {
   margin-bottom: 0;
 }
@@ -7588,17 +7596,14 @@ body.is-preload #about {
 .text-content-item h2 {
   font-family: "Playfair Display", serif;
   font-size: 2rem;
-  /* font-weight: 700; */
-  color: var(--main-text-color);
   color: #4a5568;
   line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 0 0 0.75rem 0; /* Space below the title */
+  margin: 0 0 0.75rem 0;
 }
 
 .text-content-item p {
-  /* font-family: 'Lato', sans-serif; */
   font-size: 1.1rem;
   line-height: 1.8;
   color: #555;
@@ -7613,31 +7618,28 @@ body.is-preload #about {
   justify-content: center;
   font-size: 0.9em;
   max-width: 600px;
-  /* width: 100%; */
   margin: 0 auto;
 }
 
 .spec {
-  background-color: rgba(244, 236, 226, 0.5); /* semi-transparent tan */
+  background-color: rgba(244, 236, 226, 0.5);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   line-height: 1.3;
 }
 
-/* FIX THIS: from .property-spec-grid */
 .property-specs-grid > div:nth-last-child(1) {
   transform: translate(50%);
 }
 
-/* AND FIX THIS: from .property-spec-grid */
 .property-specs-grid > div:nth-last-child(2) {
   transform: translateX(50%);
 }
 
 .label {
   font-weight: 600;
-  color: #3b2f25; /* dark text for contrast, or use a var */
+  color: #3b2f25;
   margin-right: 0.5rem;
 }
 
@@ -7645,7 +7647,6 @@ body.is-preload #about {
   margin-right: 0;
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 980px) {
   .feature-split-section {
     gap: 2rem;
@@ -7661,13 +7662,27 @@ body.is-preload #about {
 @media (max-width: 768px) {
   .feature-split-section,
   .feature-split-section.reverse-layout {
-    /* Stack the columns on top of each other on mobile */
     flex-direction: column;
     gap: 2.5rem;
     margin-bottom: 4rem;
   }
+  
   .property-specs-grid {
     font-size: 0.8rem;
+  }
+
+  .feature-image-container {
+    width: 100%;
+    height: 500px !important; 
+    min-height: 500px;
+  }
+  
+  .feature-image-container img {
+    height: 100% !important;
+    width: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 
