@@ -1,0 +1,8775 @@
+@import url(fontawesome-all.min.css);
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900");
+
+/*
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+:root {
+  --main-background-color: #f4ece2; /* Our Color */
+  /* --main-background-color: #ebe8df; /* Triada */
+  --main-text-color: #212931;
+  --secondary-color: #eeeeee;
+  --hover-color: #18bfef;
+  --green-color: #166534;
+
+  --rough-nav-bar-height: 79px;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  color: var(--secondary-color);
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+}
+
+mark {
+  background-color: transparent;
+  color: inherit;
+}
+
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input,
+select,
+textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+}
+
+/* Basic */
+
+@-ms-viewport {
+  width: device-width;
+}
+
+body {
+  -ms-overflow-style: scrollbar;
+}
+
+@media screen and (max-width: 480px) {
+  html,
+  body {
+    min-width: 320px;
+  }
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /* Prevent "bounce" scroll effect at the top/bottom of the page */
+}
+
+body {
+  background-color: #1e252d;
+}
+
+body.is-preload *,
+body.is-preload *:before,
+body.is-preload *:after {
+  -moz-animation: none !important;
+  -webkit-animation: none !important;
+  -ms-animation: none !important;
+  animation: none !important;
+  -moz-transition: none !important;
+  -webkit-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+}
+
+/* Type */
+
+html {
+  font-size: 16pt;
+}
+
+@media screen and (max-width: 1680px) {
+  html {
+    font-size: 12pt;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  html {
+    font-size: 11pt;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 10pt;
+  }
+}
+
+body {
+  color: var(--main-text-color);
+}
+
+body,
+input,
+select,
+textarea {
+  /* font-family: 'Open Sans',Helvetica,sans-serif; */
+  font-family: "Merriweather", Georgia, serif;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 2.375;
+}
+
+a {
+  -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+p {
+  text-align: justify;
+  margin: 0 0 2rem 0;
+}
+
+/* p, li, dl, dt, dd {
+    	font-size: clamp(1rem, 0.9rem + 0.25vw, 1.125rem); /* 16px -> 18px 
+	}		 */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  /* font-family: 'gilmer',Helvetica,sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  font-weight: 900;
+  line-height: 1.5;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  border-bottom: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 1.75rem + 3.5vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 1.35rem + 0.5vw, 1.75rem);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.25rem);
+  margin: 0 0 1.5rem 0;
+}
+
+h4 {
+  font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1rem);
+}
+
+h5 {
+  font-size: 0.9rem;
+}
+
+h6 {
+  font-size: 0.8rem;
+}
+
+sub {
+  font-size: 0.8rem;
+  position: relative;
+  top: 0.5rem;
+}
+
+sup {
+  font-size: 0.8rem;
+  position: relative;
+  vertical-align: super;
+  top: -0.5rem;
+}
+
+blockquote {
+  border-left: solid 4px;
+  font-style: italic;
+  margin: 0 0 2rem 0;
+  padding: 0.5rem 0 0.5rem 2rem;
+}
+
+code {
+  border: solid 2px;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  margin: 0 0.25rem;
+  padding: 0.25rem 0.65rem;
+}
+
+pre {
+  -webkit-overflow-scrolling: touch;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  margin: 0 0 2rem 0;
+}
+
+pre code {
+  display: block;
+  line-height: 1.75;
+  padding: 1rem 1.5rem;
+  overflow-x: auto;
+}
+
+hr {
+  border: 0;
+  border-bottom: solid 2px;
+  margin: 3rem 0;
+}
+
+hr.major {
+  margin: 5rem 0;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+input,
+select,
+textarea {
+  color: var(--main-text-color);
+}
+
+a {
+  color: var(--main-text-color);
+  border-bottom-color: rgba(33, 41, 49, 0.5);
+}
+
+a:hover {
+  border-bottom-color: transparent;
+  /* color: var(--hover-color); */
+}
+
+strong,
+b {
+  color: var(--main-text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--main-text-color);
+}
+
+blockquote {
+  border-left-color: var(--secondary-color);
+}
+
+code {
+  background: rgba(220, 220, 220, 0.25);
+  border-color: var(--secondary-color);
+}
+
+hr {
+  border-bottom-color: var(--secondary-color);
+}
+
+/* Row */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+.row > * {
+  box-sizing: border-box;
+}
+
+.row.gtr-uniform > * > :last-child {
+  margin-bottom: 0;
+}
+
+.row.aln-left {
+  justify-content: flex-start;
+}
+
+.row.aln-center {
+  justify-content: center;
+}
+
+.row.aln-right {
+  justify-content: flex-end;
+}
+
+.row.aln-top {
+  align-items: flex-start;
+}
+
+.row.aln-middle {
+  align-items: center;
+}
+
+.row.aln-bottom {
+  align-items: flex-end;
+}
+
+.row > .imp {
+  order: -1;
+}
+
+.row > .col-1 {
+  width: 8.33333%;
+}
+
+.row > .off-1 {
+  margin-left: 8.33333%;
+}
+
+.row > .col-2 {
+  width: 16.66667%;
+}
+
+.row > .off-2 {
+  margin-left: 16.66667%;
+}
+
+.row > .col-3 {
+  width: 25%;
+}
+
+.row > .off-3 {
+  margin-left: 25%;
+}
+
+.row > .col-4 {
+  width: 33.33333%;
+}
+
+.row > .off-4 {
+  margin-left: 33.33333%;
+}
+
+.row > .col-5 {
+  width: 41.66667%;
+}
+
+.row > .off-5 {
+  margin-left: 41.66667%;
+}
+
+.row > .col-6 {
+  width: 50%;
+}
+
+.row > .off-6 {
+  margin-left: 50%;
+}
+
+.row > .col-7 {
+  width: 58.33333%;
+}
+
+.row > .off-7 {
+  margin-left: 58.33333%;
+}
+
+.row > .col-8 {
+  width: 66.66667%;
+}
+
+.row > .off-8 {
+  margin-left: 66.66667%;
+}
+
+.row > .col-9 {
+  width: 75%;
+}
+
+.row > .off-9 {
+  margin-left: 75%;
+}
+
+.row > .col-10 {
+  width: 83.33333%;
+}
+
+.row > .off-10 {
+  margin-left: 83.33333%;
+}
+
+.row > .col-11 {
+  width: 91.66667%;
+}
+
+.row > .off-11 {
+  margin-left: 91.66667%;
+}
+
+.row > .col-12 {
+  width: 100%;
+}
+
+.row > .off-12 {
+  margin-left: 100%;
+}
+
+.row.gtr-0 {
+  margin-top: 0;
+  margin-left: 0rem;
+}
+
+.row.gtr-0 > * {
+  padding: 0 0 0 0rem;
+}
+
+.row.gtr-0.gtr-uniform {
+  margin-top: 0rem;
+}
+
+.row.gtr-0.gtr-uniform > * {
+  padding-top: 0rem;
+}
+
+.row.gtr-25 {
+  margin-top: 0;
+  margin-left: -0.375rem;
+}
+
+.row.gtr-25 > * {
+  padding: 0 0 0 0.375rem;
+}
+
+.row.gtr-25.gtr-uniform {
+  margin-top: -0.375rem;
+}
+
+.row.gtr-25.gtr-uniform > * {
+  padding-top: 0.375rem;
+}
+
+.row.gtr-50 {
+  margin-top: 0;
+  margin-left: -0.75rem;
+}
+
+.row.gtr-50 > * {
+  padding: 0 0 0 0.75rem;
+}
+
+.row.gtr-50.gtr-uniform {
+  margin-top: -0.75rem;
+}
+
+.row.gtr-50.gtr-uniform > * {
+  padding-top: 0.75rem;
+}
+
+.row {
+  margin-top: 0;
+  margin-left: -1.5rem;
+}
+
+.row > * {
+  padding: 0 0 0 1.5rem;
+}
+
+.row.gtr-uniform {
+  margin-top: -1.5rem;
+}
+
+.row.gtr-uniform > * {
+  padding-top: 1.5rem;
+}
+
+.row.gtr-150 {
+  margin-top: 0;
+  margin-left: -2.25rem;
+}
+
+.row.gtr-150 > * {
+  padding: 0 0 0 2.25rem;
+}
+
+.row.gtr-150.gtr-uniform {
+  margin-top: -2.25rem;
+}
+
+.row.gtr-150.gtr-uniform > * {
+  padding-top: 2.25rem;
+}
+
+.row.gtr-200 {
+  margin-top: 0;
+  margin-left: -3rem;
+}
+
+.row.gtr-200 > * {
+  padding: 0 0 0 3rem;
+}
+
+.row.gtr-200.gtr-uniform {
+  margin-top: -3rem;
+}
+
+.row.gtr-200.gtr-uniform > * {
+  padding-top: 3rem;
+}
+
+@media screen and (max-width: 1680px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: stretch;
+  }
+
+  .row > * {
+    box-sizing: border-box;
+  }
+
+  .row.gtr-uniform > * > :last-child {
+    margin-bottom: 0;
+  }
+
+  .row.aln-left {
+    justify-content: flex-start;
+  }
+
+  .row.aln-center {
+    justify-content: center;
+  }
+
+  .row.aln-right {
+    justify-content: flex-end;
+  }
+
+  .row.aln-top {
+    align-items: flex-start;
+  }
+
+  .row.aln-middle {
+    align-items: center;
+  }
+
+  .row.aln-bottom {
+    align-items: flex-end;
+  }
+
+  .row > .imp-xlarge {
+    order: -1;
+  }
+
+  .row > .col-1-xlarge {
+    width: 8.33333%;
+  }
+
+  .row > .off-1-xlarge {
+    margin-left: 8.33333%;
+  }
+
+  .row > .col-2-xlarge {
+    width: 16.66667%;
+  }
+
+  .row > .off-2-xlarge {
+    margin-left: 16.66667%;
+  }
+
+  .row > .col-3-xlarge {
+    width: 25%;
+  }
+
+  .row > .off-3-xlarge {
+    margin-left: 25%;
+  }
+
+  .row > .col-4-xlarge {
+    width: 33.33333%;
+  }
+
+  .row > .off-4-xlarge {
+    margin-left: 33.33333%;
+  }
+
+  .row > .col-5-xlarge {
+    width: 41.66667%;
+  }
+
+  .row > .off-5-xlarge {
+    margin-left: 41.66667%;
+  }
+
+  .row > .col-6-xlarge {
+    width: 50%;
+  }
+
+  .row > .off-6-xlarge {
+    margin-left: 50%;
+  }
+
+  .row > .col-7-xlarge {
+    width: 58.33333%;
+  }
+
+  .row > .off-7-xlarge {
+    margin-left: 58.33333%;
+  }
+
+  .row > .col-8-xlarge {
+    width: 66.66667%;
+  }
+
+  .row > .off-8-xlarge {
+    margin-left: 66.66667%;
+  }
+
+  .row > .col-9-xlarge {
+    width: 75%;
+  }
+
+  .row > .off-9-xlarge {
+    margin-left: 75%;
+  }
+
+  .row > .col-10-xlarge {
+    width: 83.33333%;
+  }
+
+  .row > .off-10-xlarge {
+    margin-left: 83.33333%;
+  }
+
+  .row > .col-11-xlarge {
+    width: 91.66667%;
+  }
+
+  .row > .off-11-xlarge {
+    margin-left: 91.66667%;
+  }
+
+  .row > .col-12-xlarge {
+    width: 100%;
+  }
+
+  .row > .off-12-xlarge {
+    margin-left: 100%;
+  }
+
+  .row.gtr-0 {
+    margin-top: 0;
+    margin-left: 0rem;
+  }
+
+  .row.gtr-0 > * {
+    padding: 0 0 0 0rem;
+  }
+
+  .row.gtr-0.gtr-uniform {
+    margin-top: 0rem;
+  }
+
+  .row.gtr-0.gtr-uniform > * {
+    padding-top: 0rem;
+  }
+
+  .row.gtr-25 {
+    margin-top: 0;
+    margin-left: -0.375rem;
+  }
+
+  .row.gtr-25 > * {
+    padding: 0 0 0 0.375rem;
+  }
+
+  .row.gtr-25.gtr-uniform {
+    margin-top: -0.375rem;
+  }
+
+  .row.gtr-25.gtr-uniform > * {
+    padding-top: 0.375rem;
+  }
+
+  .row.gtr-50 {
+    margin-top: 0;
+    margin-left: -0.75rem;
+  }
+
+  .row.gtr-50 > * {
+    padding: 0 0 0 0.75rem;
+  }
+
+  .row.gtr-50.gtr-uniform {
+    margin-top: -0.75rem;
+  }
+
+  .row.gtr-50.gtr-uniform > * {
+    padding-top: 0.75rem;
+  }
+
+  .row {
+    margin-top: 0;
+    margin-left: -1.5rem;
+  }
+
+  .row > * {
+    padding: 0 0 0 1.5rem;
+  }
+
+  .row.gtr-uniform {
+    margin-top: -1.5rem;
+  }
+
+  .row.gtr-uniform > * {
+    padding-top: 1.5rem;
+  }
+
+  .row.gtr-150 {
+    margin-top: 0;
+    margin-left: -2.25rem;
+  }
+
+  .row.gtr-150 > * {
+    padding: 0 0 0 2.25rem;
+  }
+
+  .row.gtr-150.gtr-uniform {
+    margin-top: -2.25rem;
+  }
+
+  .row.gtr-150.gtr-uniform > * {
+    padding-top: 2.25rem;
+  }
+
+  .row.gtr-200 {
+    margin-top: 0;
+    margin-left: -3rem;
+  }
+
+  .row.gtr-200 > * {
+    padding: 0 0 0 3rem;
+  }
+
+  .row.gtr-200.gtr-uniform {
+    margin-top: -3rem;
+  }
+
+  .row.gtr-200.gtr-uniform > * {
+    padding-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: stretch;
+  }
+
+  .row > * {
+    box-sizing: border-box;
+  }
+
+  .row.gtr-uniform > * > :last-child {
+    margin-bottom: 0;
+  }
+
+  .row.aln-left {
+    justify-content: flex-start;
+  }
+
+  .row.aln-center {
+    justify-content: center;
+  }
+
+  .row.aln-right {
+    justify-content: flex-end;
+  }
+
+  .row.aln-top {
+    align-items: flex-start;
+  }
+
+  .row.aln-middle {
+    align-items: center;
+  }
+
+  .row.aln-bottom {
+    align-items: flex-end;
+  }
+
+  .row > .imp-large {
+    order: -1;
+  }
+
+  .row > .col-1-large {
+    width: 8.33333%;
+  }
+
+  .row > .off-1-large {
+    margin-left: 8.33333%;
+  }
+
+  .row > .col-2-large {
+    width: 16.66667%;
+  }
+
+  .row > .off-2-large {
+    margin-left: 16.66667%;
+  }
+
+  .row > .col-3-large {
+    width: 25%;
+  }
+
+  .row > .off-3-large {
+    margin-left: 25%;
+  }
+
+  .row > .col-4-large {
+    width: 33.33333%;
+  }
+
+  .row > .off-4-large {
+    margin-left: 33.33333%;
+  }
+
+  .row > .col-5-large {
+    width: 41.66667%;
+  }
+
+  .row > .off-5-large {
+    margin-left: 41.66667%;
+  }
+
+  .row > .col-6-large {
+    width: 50%;
+  }
+
+  .row > .off-6-large {
+    margin-left: 50%;
+  }
+
+  .row > .col-7-large {
+    width: 58.33333%;
+  }
+
+  .row > .off-7-large {
+    margin-left: 58.33333%;
+  }
+
+  .row > .col-8-large {
+    width: 66.66667%;
+  }
+
+  .row > .off-8-large {
+    margin-left: 66.66667%;
+  }
+
+  .row > .col-9-large {
+    width: 75%;
+  }
+
+  .row > .off-9-large {
+    margin-left: 75%;
+  }
+
+  .row > .col-10-large {
+    width: 83.33333%;
+  }
+
+  .row > .off-10-large {
+    margin-left: 83.33333%;
+  }
+
+  .row > .col-11-large {
+    width: 91.66667%;
+  }
+
+  .row > .off-11-large {
+    margin-left: 91.66667%;
+  }
+
+  .row > .col-12-large {
+    width: 100%;
+  }
+
+  .row > .off-12-large {
+    margin-left: 100%;
+  }
+
+  .row.gtr-0 {
+    margin-top: 0;
+    margin-left: 0rem;
+  }
+
+  .row.gtr-0 > * {
+    padding: 0 0 0 0rem;
+  }
+
+  .row.gtr-0.gtr-uniform {
+    margin-top: 0rem;
+  }
+
+  .row.gtr-0.gtr-uniform > * {
+    padding-top: 0rem;
+  }
+
+  .row.gtr-25 {
+    margin-top: 0;
+    margin-left: -0.375rem;
+  }
+
+  .row.gtr-25 > * {
+    padding: 0 0 0 0.375rem;
+  }
+
+  .row.gtr-25.gtr-uniform {
+    margin-top: -0.375rem;
+  }
+
+  .row.gtr-25.gtr-uniform > * {
+    padding-top: 0.375rem;
+  }
+
+  .row.gtr-50 {
+    margin-top: 0;
+    margin-left: -0.75rem;
+  }
+
+  .row.gtr-50 > * {
+    padding: 0 0 0 0.75rem;
+  }
+
+  .row.gtr-50.gtr-uniform {
+    margin-top: -0.75rem;
+  }
+
+  .row.gtr-50.gtr-uniform > * {
+    padding-top: 0.75rem;
+  }
+
+  .row {
+    margin-top: 0;
+    margin-left: -1.5rem;
+  }
+
+  .row > * {
+    padding: 0 0 0 1.5rem;
+  }
+
+  .row.gtr-uniform {
+    margin-top: -1.5rem;
+  }
+
+  .row.gtr-uniform > * {
+    padding-top: 1.5rem;
+  }
+
+  .row.gtr-150 {
+    margin-top: 0;
+    margin-left: -2.25rem;
+  }
+
+  .row.gtr-150 > * {
+    padding: 0 0 0 2.25rem;
+  }
+
+  .row.gtr-150.gtr-uniform {
+    margin-top: -2.25rem;
+  }
+
+  .row.gtr-150.gtr-uniform > * {
+    padding-top: 2.25rem;
+  }
+
+  .row.gtr-200 {
+    margin-top: 0;
+    margin-left: -3rem;
+  }
+
+  .row.gtr-200 > * {
+    padding: 0 0 0 3rem;
+  }
+
+  .row.gtr-200.gtr-uniform {
+    margin-top: -3rem;
+  }
+
+  .row.gtr-200.gtr-uniform > * {
+    padding-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: stretch;
+  }
+
+  .row > * {
+    box-sizing: border-box;
+  }
+
+  .row.gtr-uniform > * > :last-child {
+    margin-bottom: 0;
+  }
+
+  .row.aln-left {
+    justify-content: flex-start;
+  }
+
+  .row.aln-center {
+    justify-content: center;
+  }
+
+  .row.aln-right {
+    justify-content: flex-end;
+  }
+
+  .row.aln-top {
+    align-items: flex-start;
+  }
+
+  .row.aln-middle {
+    align-items: center;
+  }
+
+  .row.aln-bottom {
+    align-items: flex-end;
+  }
+
+  .row > .imp-medium {
+    order: -1;
+  }
+
+  .row > .col-1-medium {
+    width: 8.33333%;
+  }
+
+  .row > .off-1-medium {
+    margin-left: 8.33333%;
+  }
+
+  .row > .col-2-medium {
+    width: 16.66667%;
+  }
+
+  .row > .off-2-medium {
+    margin-left: 16.66667%;
+  }
+
+  .row > .col-3-medium {
+    width: 25%;
+  }
+
+  .row > .off-3-medium {
+    margin-left: 25%;
+  }
+
+  .row > .col-4-medium {
+    width: 33.33333%;
+  }
+
+  .row > .off-4-medium {
+    margin-left: 33.33333%;
+  }
+
+  .row > .col-5-medium {
+    width: 41.66667%;
+  }
+
+  .row > .off-5-medium {
+    margin-left: 41.66667%;
+  }
+
+  .row > .col-6-medium {
+    width: 50%;
+  }
+
+  .row > .off-6-medium {
+    margin-left: 50%;
+  }
+
+  .row > .col-7-medium {
+    width: 58.33333%;
+  }
+
+  .row > .off-7-medium {
+    margin-left: 58.33333%;
+  }
+
+  .row > .col-8-medium {
+    width: 66.66667%;
+  }
+
+  .row > .off-8-medium {
+    margin-left: 66.66667%;
+  }
+
+  .row > .col-9-medium {
+    width: 75%;
+  }
+
+  .row > .off-9-medium {
+    margin-left: 75%;
+  }
+
+  .row > .col-10-medium {
+    width: 83.33333%;
+  }
+
+  .row > .off-10-medium {
+    margin-left: 83.33333%;
+  }
+
+  .row > .col-11-medium {
+    width: 91.66667%;
+  }
+
+  .row > .off-11-medium {
+    margin-left: 91.66667%;
+  }
+
+  .row > .col-12-medium {
+    width: 100%;
+  }
+
+  .row > .off-12-medium {
+    margin-left: 100%;
+  }
+
+  .row.gtr-0 {
+    margin-top: 0;
+    margin-left: 0rem;
+  }
+
+  .row.gtr-0 > * {
+    padding: 0 0 0 0rem;
+  }
+
+  .row.gtr-0.gtr-uniform {
+    margin-top: 0rem;
+  }
+
+  .row.gtr-0.gtr-uniform > * {
+    padding-top: 0rem;
+  }
+
+  .row.gtr-25 {
+    margin-top: 0;
+    margin-left: -0.375rem;
+  }
+
+  .row.gtr-25 > * {
+    padding: 0 0 0 0.375rem;
+  }
+
+  .row.gtr-25.gtr-uniform {
+    margin-top: -0.375rem;
+  }
+
+  .row.gtr-25.gtr-uniform > * {
+    padding-top: 0.375rem;
+  }
+
+  .row.gtr-50 {
+    margin-top: 0;
+    margin-left: -0.75rem;
+  }
+
+  .row.gtr-50 > * {
+    padding: 0 0 0 0.75rem;
+  }
+
+  .row.gtr-50.gtr-uniform {
+    margin-top: -0.75rem;
+  }
+
+  .row.gtr-50.gtr-uniform > * {
+    padding-top: 0.75rem;
+  }
+
+  .row {
+    margin-top: 0;
+    margin-left: -1.5rem;
+  }
+
+  .row > * {
+    padding: 0 0 0 1.5rem;
+  }
+
+  .row.gtr-uniform {
+    margin-top: -1.5rem;
+  }
+
+  .row.gtr-uniform > * {
+    padding-top: 1.5rem;
+  }
+
+  .row.gtr-150 {
+    margin-top: 0;
+    margin-left: -2.25rem;
+  }
+
+  .row.gtr-150 > * {
+    padding: 0 0 0 2.25rem;
+  }
+
+  .row.gtr-150.gtr-uniform {
+    margin-top: -2.25rem;
+  }
+
+  .row.gtr-150.gtr-uniform > * {
+    padding-top: 2.25rem;
+  }
+
+  .row.gtr-200 {
+    margin-top: 0;
+    margin-left: -3rem;
+  }
+
+  .row.gtr-200 > * {
+    padding: 0 0 0 3rem;
+  }
+
+  .row.gtr-200.gtr-uniform {
+    margin-top: -3rem;
+  }
+
+  .row.gtr-200.gtr-uniform > * {
+    padding-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: stretch;
+  }
+
+  .row > * {
+    box-sizing: border-box;
+  }
+
+  .row.gtr-uniform > * > :last-child {
+    margin-bottom: 0;
+  }
+
+  .row.aln-left {
+    justify-content: flex-start;
+  }
+
+  .row.aln-center {
+    justify-content: center;
+  }
+
+  .row.aln-right {
+    justify-content: flex-end;
+  }
+
+  .row.aln-top {
+    align-items: flex-start;
+  }
+
+  .row.aln-middle {
+    align-items: center;
+  }
+
+  .row.aln-bottom {
+    align-items: flex-end;
+  }
+
+  .row > .imp-small {
+    order: -1;
+  }
+
+  .row > .col-1-small {
+    width: 8.33333%;
+  }
+
+  .row > .off-1-small {
+    margin-left: 8.33333%;
+  }
+
+  .row > .col-2-small {
+    width: 16.66667%;
+  }
+
+  .row > .off-2-small {
+    margin-left: 16.66667%;
+  }
+
+  .row > .col-3-small {
+    width: 25%;
+  }
+
+  .row > .off-3-small {
+    margin-left: 25%;
+  }
+
+  .row > .col-4-small {
+    width: 33.33333%;
+  }
+
+  .row > .off-4-small {
+    margin-left: 33.33333%;
+  }
+
+  .row > .col-5-small {
+    width: 41.66667%;
+  }
+
+  .row > .off-5-small {
+    margin-left: 41.66667%;
+  }
+
+  .row > .col-6-small {
+    width: 50%;
+  }
+
+  .row > .off-6-small {
+    margin-left: 50%;
+  }
+
+  .row > .col-7-small {
+    width: 58.33333%;
+  }
+
+  .row > .off-7-small {
+    margin-left: 58.33333%;
+  }
+
+  .row > .col-8-small {
+    width: 66.66667%;
+  }
+
+  .row > .off-8-small {
+    margin-left: 66.66667%;
+  }
+
+  .row > .col-9-small {
+    width: 75%;
+  }
+
+  .row > .off-9-small {
+    margin-left: 75%;
+  }
+
+  .row > .col-10-small {
+    width: 83.33333%;
+  }
+
+  .row > .off-10-small {
+    margin-left: 83.33333%;
+  }
+
+  .row > .col-11-small {
+    width: 91.66667%;
+  }
+
+  .row > .off-11-small {
+    margin-left: 91.66667%;
+  }
+
+  .row > .col-12-small {
+    width: 100%;
+  }
+
+  .row > .off-12-small {
+    margin-left: 100%;
+  }
+
+  .row.gtr-0 {
+    margin-top: 0;
+    margin-left: 0rem;
+  }
+
+  .row.gtr-0 > * {
+    padding: 0 0 0 0rem;
+  }
+
+  .row.gtr-0.gtr-uniform {
+    margin-top: 0rem;
+  }
+
+  .row.gtr-0.gtr-uniform > * {
+    padding-top: 0rem;
+  }
+
+  .row.gtr-25 {
+    margin-top: 0;
+    margin-left: -0.375rem;
+  }
+
+  .row.gtr-25 > * {
+    padding: 0 0 0 0.375rem;
+  }
+
+  .row.gtr-25.gtr-uniform {
+    margin-top: -0.375rem;
+  }
+
+  .row.gtr-25.gtr-uniform > * {
+    padding-top: 0.375rem;
+  }
+
+  .row.gtr-50 {
+    margin-top: 0;
+    margin-left: -0.75rem;
+  }
+
+  .row.gtr-50 > * {
+    padding: 0 0 0 0.75rem;
+  }
+
+  .row.gtr-50.gtr-uniform {
+    margin-top: -0.75rem;
+  }
+
+  .row.gtr-50.gtr-uniform > * {
+    padding-top: 0.75rem;
+  }
+
+  .row {
+    margin-top: 0;
+    margin-left: -1.5rem;
+  }
+
+  .row > * {
+    padding: 0 0 0 1.5rem;
+  }
+
+  .row.gtr-uniform {
+    margin-top: -1.5rem;
+  }
+
+  .row.gtr-uniform > * {
+    padding-top: 1.5rem;
+  }
+
+  .row.gtr-150 {
+    margin-top: 0;
+    margin-left: -2.25rem;
+  }
+
+  .row.gtr-150 > * {
+    padding: 0 0 0 2.25rem;
+  }
+
+  .row.gtr-150.gtr-uniform {
+    margin-top: -2.25rem;
+  }
+
+  .row.gtr-150.gtr-uniform > * {
+    padding-top: 2.25rem;
+  }
+
+  .row.gtr-200 {
+    margin-top: 0;
+    margin-left: -3rem;
+  }
+
+  .row.gtr-200 > * {
+    padding: 0 0 0 3rem;
+  }
+
+  .row.gtr-200.gtr-uniform {
+    margin-top: -3rem;
+  }
+
+  .row.gtr-200.gtr-uniform > * {
+    padding-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: stretch;
+  }
+
+  .row > * {
+    box-sizing: border-box;
+  }
+
+  .row.gtr-uniform > * > :last-child {
+    margin-bottom: 0;
+  }
+
+  .row.aln-left {
+    justify-content: flex-start;
+  }
+
+  .row.aln-center {
+    justify-content: center;
+  }
+
+  .row.aln-right {
+    justify-content: flex-end;
+  }
+
+  .row.aln-top {
+    align-items: flex-start;
+  }
+
+  .row.aln-middle {
+    align-items: center;
+  }
+
+  .row.aln-bottom {
+    align-items: flex-end;
+  }
+
+  .row > .imp-xsmall {
+    order: -1;
+  }
+
+  .row > .col-1-xsmall {
+    width: 8.33333%;
+  }
+
+  .row > .off-1-xsmall {
+    margin-left: 8.33333%;
+  }
+
+  .row > .col-2-xsmall {
+    width: 16.66667%;
+  }
+
+  .row > .off-2-xsmall {
+    margin-left: 16.66667%;
+  }
+
+  .row > .col-3-xsmall {
+    width: 25%;
+  }
+
+  .row > .off-3-xsmall {
+    margin-left: 25%;
+  }
+
+  .row > .col-4-xsmall {
+    width: 33.33333%;
+  }
+
+  .row > .off-4-xsmall {
+    margin-left: 33.33333%;
+  }
+
+  .row > .col-5-xsmall {
+    width: 41.66667%;
+  }
+
+  .row > .off-5-xsmall {
+    margin-left: 41.66667%;
+  }
+
+  .row > .col-6-xsmall {
+    width: 50%;
+  }
+
+  .row > .off-6-xsmall {
+    margin-left: 50%;
+  }
+
+  .row > .col-7-xsmall {
+    width: 58.33333%;
+  }
+
+  .row > .off-7-xsmall {
+    margin-left: 58.33333%;
+  }
+
+  .row > .col-8-xsmall {
+    width: 66.66667%;
+  }
+
+  .row > .off-8-xsmall {
+    margin-left: 66.66667%;
+  }
+
+  .row > .col-9-xsmall {
+    width: 75%;
+  }
+
+  .row > .off-9-xsmall {
+    margin-left: 75%;
+  }
+
+  .row > .col-10-xsmall {
+    width: 83.33333%;
+  }
+
+  .row > .off-10-xsmall {
+    margin-left: 83.33333%;
+  }
+
+  .row > .col-11-xsmall {
+    width: 91.66667%;
+  }
+
+  .row > .off-11-xsmall {
+    margin-left: 91.66667%;
+  }
+
+  .row > .col-12-xsmall {
+    width: 100%;
+  }
+
+  .row > .off-12-xsmall {
+    margin-left: 100%;
+  }
+
+  .row.gtr-0 {
+    margin-top: 0;
+    margin-left: 0rem;
+  }
+
+  .row.gtr-0 > * {
+    padding: 0 0 0 0rem;
+  }
+
+  .row.gtr-0.gtr-uniform {
+    margin-top: 0rem;
+  }
+
+  .row.gtr-0.gtr-uniform > * {
+    padding-top: 0rem;
+  }
+
+  .row.gtr-25 {
+    margin-top: 0;
+    margin-left: -0.375rem;
+  }
+
+  .row.gtr-25 > * {
+    padding: 0 0 0 0.375rem;
+  }
+
+  .row.gtr-25.gtr-uniform {
+    margin-top: -0.375rem;
+  }
+
+  .row.gtr-25.gtr-uniform > * {
+    padding-top: 0.375rem;
+  }
+
+  .row.gtr-50 {
+    margin-top: 0;
+    margin-left: -0.75rem;
+  }
+
+  .row.gtr-50 > * {
+    padding: 0 0 0 0.75rem;
+  }
+
+  .row.gtr-50.gtr-uniform {
+    margin-top: -0.75rem;
+  }
+
+  .row.gtr-50.gtr-uniform > * {
+    padding-top: 0.75rem;
+  }
+
+  .row {
+    margin-top: 0;
+    margin-left: -1.5rem;
+  }
+
+  .row > * {
+    padding: 0 0 0 1.5rem;
+  }
+
+  .row.gtr-uniform {
+    margin-top: -1.5rem;
+  }
+
+  .row.gtr-uniform > * {
+    padding-top: 1.5rem;
+  }
+
+  .row.gtr-150 {
+    margin-top: 0;
+    margin-left: -2.25rem;
+  }
+
+  .row.gtr-150 > * {
+    padding: 0 0 0 2.25rem;
+  }
+
+  .row.gtr-150.gtr-uniform {
+    margin-top: -2.25rem;
+  }
+
+  .row.gtr-150.gtr-uniform > * {
+    padding-top: 2.25rem;
+  }
+
+  .row.gtr-200 {
+    margin-top: 0;
+    margin-left: -3rem;
+  }
+
+  .row.gtr-200 > * {
+    padding: 0 0 0 3rem;
+  }
+
+  .row.gtr-200.gtr-uniform {
+    margin-top: -3rem;
+  }
+
+  .row.gtr-200.gtr-uniform > * {
+    padding-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: stretch;
+  }
+
+  .row > * {
+    box-sizing: border-box;
+  }
+
+  .row.gtr-uniform > * > :last-child {
+    margin-bottom: 0;
+  }
+
+  .row.aln-left {
+    justify-content: flex-start;
+  }
+
+  .row.aln-center {
+    justify-content: center;
+  }
+
+  .row.aln-right {
+    justify-content: flex-end;
+  }
+
+  .row.aln-top {
+    align-items: flex-start;
+  }
+
+  .row.aln-middle {
+    align-items: center;
+  }
+
+  .row.aln-bottom {
+    align-items: flex-end;
+  }
+
+  .row > .imp-xxsmall {
+    order: -1;
+  }
+
+  .row > .col-1-xxsmall {
+    width: 8.33333%;
+  }
+
+  .row > .off-1-xxsmall {
+    margin-left: 8.33333%;
+  }
+
+  .row > .col-2-xxsmall {
+    width: 16.66667%;
+  }
+
+  .row > .off-2-xxsmall {
+    margin-left: 16.66667%;
+  }
+
+  .row > .col-3-xxsmall {
+    width: 25%;
+  }
+
+  .row > .off-3-xxsmall {
+    margin-left: 25%;
+  }
+
+  .row > .col-4-xxsmall {
+    width: 33.33333%;
+  }
+
+  .row > .off-4-xxsmall {
+    margin-left: 33.33333%;
+  }
+
+  .row > .col-5-xxsmall {
+    width: 41.66667%;
+  }
+
+  .row > .off-5-xxsmall {
+    margin-left: 41.66667%;
+  }
+
+  .row > .col-6-xxsmall {
+    width: 50%;
+  }
+
+  .row > .off-6-xxsmall {
+    margin-left: 50%;
+  }
+
+  .row > .col-7-xxsmall {
+    width: 58.33333%;
+  }
+
+  .row > .off-7-xxsmall {
+    margin-left: 58.33333%;
+  }
+
+  .row > .col-8-xxsmall {
+    width: 66.66667%;
+  }
+
+  .row > .off-8-xxsmall {
+    margin-left: 66.66667%;
+  }
+
+  .row > .col-9-xxsmall {
+    width: 75%;
+  }
+
+  .row > .off-9-xxsmall {
+    margin-left: 75%;
+  }
+
+  .row > .col-10-xxsmall {
+    width: 83.33333%;
+  }
+
+  .row > .off-10-xxsmall {
+    margin-left: 83.33333%;
+  }
+
+  .row > .col-11-xxsmall {
+    width: 91.66667%;
+  }
+
+  .row > .off-11-xxsmall {
+    margin-left: 91.66667%;
+  }
+
+  .row > .col-12-xxsmall {
+    width: 100%;
+  }
+
+  .row > .off-12-xxsmall {
+    margin-left: 100%;
+  }
+
+  .row.gtr-0 {
+    margin-top: 0;
+    margin-left: 0rem;
+  }
+
+  .row.gtr-0 > * {
+    padding: 0 0 0 0rem;
+  }
+
+  .row.gtr-0.gtr-uniform {
+    margin-top: 0rem;
+  }
+
+  .row.gtr-0.gtr-uniform > * {
+    padding-top: 0rem;
+  }
+
+  .row.gtr-25 {
+    margin-top: 0;
+    margin-left: -0.375rem;
+  }
+
+  .row.gtr-25 > * {
+    padding: 0 0 0 0.375rem;
+  }
+
+  .row.gtr-25.gtr-uniform {
+    margin-top: -0.375rem;
+  }
+
+  .row.gtr-25.gtr-uniform > * {
+    padding-top: 0.375rem;
+  }
+
+  .row.gtr-50 {
+    margin-top: 0;
+    margin-left: -0.75rem;
+  }
+
+  .row.gtr-50 > * {
+    padding: 0 0 0 0.75rem;
+  }
+
+  .row.gtr-50.gtr-uniform {
+    margin-top: -0.75rem;
+  }
+
+  .row.gtr-50.gtr-uniform > * {
+    padding-top: 0.75rem;
+  }
+
+  .row {
+    margin-top: 0;
+    margin-left: -1.5rem;
+  }
+
+  .row > * {
+    padding: 0 0 0 1.5rem;
+  }
+
+  .row.gtr-uniform {
+    margin-top: -1.5rem;
+  }
+
+  .row.gtr-uniform > * {
+    padding-top: 1.5rem;
+  }
+
+  .row.gtr-150 {
+    margin-top: 0;
+    margin-left: -2.25rem;
+  }
+
+  .row.gtr-150 > * {
+    padding: 0 0 0 2.25rem;
+  }
+
+  .row.gtr-150.gtr-uniform {
+    margin-top: -2.25rem;
+  }
+
+  .row.gtr-150.gtr-uniform > * {
+    padding-top: 2.25rem;
+  }
+
+  .row.gtr-200 {
+    margin-top: 0;
+    margin-left: -3rem;
+  }
+
+  .row.gtr-200 > * {
+    padding: 0 0 0 3rem;
+  }
+
+  .row.gtr-200.gtr-uniform {
+    margin-top: -3rem;
+  }
+
+  .row.gtr-200.gtr-uniform > * {
+    padding-top: 3rem;
+  }
+}
+
+/* Box Class */
+
+.box {
+  border: solid 2px;
+  margin: 2rem 0rem;
+  padding: 1.5rem;
+}
+
+.box > :last-child,
+.box > :last-child > :last-child,
+.box > :last-child > :last-child > :last-child {
+  margin-bottom: 0;
+}
+
+.box.alt {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}
+
+.box {
+  border-color: var(--secondary-color);
+}
+
+/* Button */
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -moz-transition: background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  height: 3rem;
+  line-height: 3rem;
+  padding: 0 2rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+input[type="submit"].icon:before,
+input[type="reset"].icon:before,
+input[type="button"].icon:before,
+button.icon:before,
+.button.icon:before {
+  margin-right: 0.5rem;
+}
+
+input[type="submit"].icon.solo,
+input[type="reset"].icon.solo,
+input[type="button"].icon.solo,
+button.icon.solo,
+.button.icon.solo {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 4rem;
+  text-indent: 4rem;
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+}
+
+input[type="submit"].icon.solo:before,
+input[type="reset"].icon.solo:before,
+input[type="button"].icon.solo:before,
+button.icon.solo:before,
+.button.icon.solo:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  line-height: inherit;
+  font-size: 1.25rem;
+  margin-right: 0;
+  text-align: center;
+  text-indent: 0;
+}
+
+input[type="submit"].fit,
+input[type="reset"].fit,
+input[type="button"].fit,
+button.fit,
+.button.fit {
+  width: 100%;
+}
+
+input[type="submit"].small,
+input[type="reset"].small,
+input[type="button"].small,
+button.small,
+.button.small {
+  font-size: 0.7rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  padding: 0 1.5rem;
+}
+
+input[type="submit"].large,
+input[type="reset"].large,
+input[type="button"].large,
+button.large,
+.button.large {
+  font-size: 0.9rem;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  padding: 0 2.75rem;
+}
+
+@media screen and (max-width: 980px) {
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"],
+  button,
+  .button {
+    font-size: 0.9rem;
+    height: 3.25rem;
+    line-height: 3.25rem;
+  }
+
+  input[type="submit"].large,
+  input[type="reset"].large,
+  input[type="button"].large,
+  button.large,
+  .button.large {
+    font-size: 1rem;
+    height: 3.75rem;
+    line-height: 3.75rem;
+  }
+}
+
+input[type="submit"].disabled,
+input[type="submit"]:disabled,
+input[type="reset"].disabled,
+input[type="reset"]:disabled,
+input[type="button"].disabled,
+input[type="button"]:disabled,
+button.disabled,
+button:disabled,
+.button.disabled,
+.button:disabled {
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px var(--main-text-color);
+  color: var(--main-text-color);
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover,
+.button:hover {
+  /* box-shadow: inset 0 0 0 2px var(--hover-color); */
+  /* color: var(--hover-color); */
+}
+
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary,
+button.primary,
+.button.primary {
+  background-color: var(--main-text-color);
+  box-shadow: none;
+  color: var(--main-background-color);
+}
+
+input[type="submit"].primary:hover,
+input[type="reset"].primary:hover,
+input[type="button"].primary:hover,
+button.primary:hover,
+.button.primary:hover {
+  /* background-color: var(--hover-color); */
+}
+
+/* Form */
+
+form {
+  margin: 0 0 2rem 0;
+}
+
+form > :last-child {
+  margin-bottom: 0;
+}
+
+form > .fields {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: calc(100% + 3rem);
+  margin: -1.5rem 0 2rem -1.5rem;
+}
+
+form > .fields > .field {
+  -moz-flex-grow: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+  -moz-flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-shrink: 0;
+  flex-shrink: 0;
+  padding: 1.5rem 0 0 1.5rem;
+  width: calc(100% - 1.5rem);
+}
+
+form > .fields > .field.half {
+  width: calc(50% - 0.75rem);
+}
+
+form > .fields > .field.third {
+  width: calc(100% / 3 - 0.5rem);
+}
+
+form > .fields > .field.quarter {
+  width: calc(25% - 0.375rem);
+}
+
+@media screen and (max-width: 480px) {
+  form > .fields {
+    width: calc(100% + 3rem);
+    margin: -1.5rem 0 2rem -1.5rem;
+  }
+
+  form > .fields > .field {
+    padding: 1.5rem 0 0 1.5rem;
+    width: calc(100% - 1.5rem);
+  }
+
+  form > .fields > .field.half {
+    width: calc(100% - 1.5rem);
+  }
+
+  form > .fields > .field.third {
+    width: calc(100% - 1.5rem);
+  }
+
+  form > .fields > .field.quarter {
+    width: calc(100% - 1.5rem);
+  }
+}
+
+label {
+  display: block;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-weight: 900;
+  line-height: 1.5;
+  letter-spacing: 0.075em;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem 0;
+}
+
+@media screen and (max-width: 980px) {
+  label {
+    font-size: 0.9rem;
+  }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  background: transparent;
+  border-radius: 0;
+  border: solid 2px;
+  color: inherit;
+  display: block;
+  outline: 0;
+  padding: 0 1rem;
+  text-decoration: none;
+  width: 100%;
+}
+
+input[type="text"]:invalid,
+input[type="password"]:invalid,
+input[type="email"]:invalid,
+select:invalid,
+textarea:invalid {
+  box-shadow: none;
+}
+
+select {
+  background-size: 1.25rem;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1rem) center;
+  height: 3rem;
+  padding-right: 3rem;
+  text-overflow: ellipsis;
+}
+
+select:focus::-ms-value {
+  background-color: transparent;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  height: 3rem;
+}
+
+textarea {
+  padding: 0.75rem 1rem;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  display: block;
+  float: left;
+  margin-right: -2rem;
+  opacity: 0;
+  width: 1rem;
+  z-index: -1;
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  letter-spacing: 0;
+  font-family: "Merriweather", Georgia, serif;
+  text-transform: none;
+  font-weight: 300;
+  padding-left: 2.8rem;
+  padding-right: 1rem;
+  position: relative;
+}
+
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  text-transform: none !important;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+  border-radius: 0;
+  border: solid 2px;
+  content: "";
+  display: inline-block;
+  font-size: 0.8rem;
+  height: 1.8rem;
+  left: 0;
+  line-height: 1.65rem;
+  position: absolute;
+  text-align: center;
+  top: -0.125rem;
+  width: 1.8rem;
+}
+
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+  content: "\f00c";
+}
+
+input[type="checkbox"] + label:before {
+  border-radius: 0;
+}
+
+input[type="radio"] + label:before {
+  border-radius: 100%;
+}
+
+::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+:-moz-placeholder {
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  opacity: 1;
+}
+
+label {
+  color: var(--main-text-color);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+  border-color: var(--secondary-color);
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+  /* border-color: var(--hover-color); */
+}
+
+select {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23eeeeee' /%3E%3C/svg%3E");
+}
+
+select option {
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
+}
+
+.select-wrapper:before {
+  color: var(--secondary-color);
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  color: var(--main-text-color);
+}
+
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+  border-color: var(--secondary-color);
+}
+
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+  background-color: var(--main-text-color);
+  border-color: var(--main-text-color);
+  color: var(--main-background-color);
+}
+
+input[type="checkbox"]:focus + label:before,
+input[type="radio"]:focus + label:before {
+  /* border-color: var(--hover-color); */
+}
+
+::-webkit-input-placeholder {
+  color: #909498 !important;
+}
+
+:-moz-placeholder {
+  color: #909498 !important;
+}
+
+::-moz-placeholder {
+  color: #909498 !important;
+}
+
+:-ms-input-placeholder {
+  color: #909498 !important;
+}
+
+.formerize-placeholder {
+  color: #909498 !important;
+}
+
+/* Icon */
+
+.icon {
+  text-decoration: none;
+  border-bottom: none;
+  position: relative;
+}
+
+.icon:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  text-transform: none !important;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+
+.icon > .label {
+  display: none;
+}
+
+.icon:before {
+  line-height: inherit;
+}
+
+.icon.solid:before {
+  font-weight: 900;
+}
+
+.icon.brands:before {
+  font-family: "Font Awesome 5 Brands";
+}
+
+/* Image */
+
+.image {
+  border: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.image img {
+  display: block;
+}
+
+.image.left,
+.image.right {
+  max-width: 50%;
+  height: auto;
+}
+
+.image.left img,
+.image.right img {
+  width: 100%;
+}
+
+.image.left.smaller25,
+.image.right.smaller25 {
+  max-width: 25%;
+}
+
+.image.left.larger75,
+.image.right.larger75 {
+  max-width: 75%;
+}
+
+.image.left {
+  float: left;
+  margin: 0 2rem 2rem 0;
+  top: 0.75rem;
+}
+
+.image.right {
+  float: right;
+  margin: 0 0 2rem 2rem;
+  top: 0.75rem;
+}
+
+.image.bar {
+  /* Sizing: Full width and about 40% of the viewport height */
+  width: 100%;
+  min-height: 40vh; /* Adjust this value to make it taller or shorter */
+
+  /* Fallback in case the image fails to load */
+  background-color: #4682b4; /* Steel Blue */
+
+  /* 2. Fix the background image relative to the viewport */
+  /* background-attachment: fixed; */
+
+  /* 3. Position and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* --- For the Text Overlay --- */
+  /* 4. Use relative positioning for the overlay */
+  /* position: relative; */
+
+  /* 5. Use Flexbox to center the content vertically and horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px;
+}
+
+.image.bar.parallax {
+  background-attachment: fixed;
+}
+
+.image.bar .title {
+  color: var(--main-background-color);
+  font-size: 3rem; /* Large, bold title */
+  font-weight: bold;
+  text-align: center;
+  z-index: 2; /* Ensures text is on top of the overlay */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Makes text pop */
+  padding: 0 20px; /* Prevents text from touching screen edges */
+}
+
+.image.fit {
+  display: block;
+  margin: 2.5rem 0;
+  width: 100%;
+}
+
+.image.fit:first-child {
+  margin-top: 0;
+}
+
+.image.fit img {
+  width: 100%;
+}
+
+image.block {
+  display: block;
+  margin: 2.5rem 0;
+  width: 100%;
+}
+
+.image.block:first-child {
+  margin-top: 0;
+}
+
+.image.block img {
+  width: 100%;
+}
+
+.image.main {
+  display: block;
+  margin: 4rem 0;
+  width: 100%;
+}
+
+.image.main:first-child {
+  margin-top: 0;
+}
+
+.image.main img {
+  width: 100%;
+}
+
+@media screen and (max-width: 736px) {
+  .image.fit {
+    margin: 2rem 0;
+  }
+
+  .image.main {
+    margin: 2rem 0;
+  }
+}
+
+a.image {
+  overflow: hidden;
+}
+
+a.image img {
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+}
+
+a.image:hover img {
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.gallery-grid-3x3-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Container for the 3x3 grid */
+.gallery-grid-3x3 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
+  gap: 10px;
+}
+
+.gallery-grid-2x2-container {
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-grid-2x2-container.left {
+  display: flex;
+  justify-content: left;
+}
+
+.gallery-grid-2x2-container.right {
+  display: flex;
+  justify-content: right;
+}
+
+/* Container for the 2x2 grid */
+.gallery-grid-2x2 {
+  /* width: 40%; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates 2 equal-width columns */
+  gap: 10px;
+}
+
+.gallery-grid-3x1-container {
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-grid-3x1-container.left {
+  display: flex;
+  justify-content: left;
+}
+
+.gallery-grid-3x1-container.left {
+  display: flex;
+  justify-content: right;
+}
+
+/* Container for the 2x2 grid */
+.gallery-grid-3x1 {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Creates 1 column */
+  gap: 10px;
+}
+
+.gallery-item-3x1 {
+  position: relative;
+  width: 100%; /* Takes the full width of its grid column */
+  aspect-ratio: 5 / 1; /* Makes it a wide rectangle */
+  overflow: hidden; /* Ensures any part of the image that 'object-fit: cover' might push out of bounds is clipped */
+  background-color: #f0f0f0; /* Optional: A light background for cells if images don't load or have transparency */
+}
+
+.gallery-item-3x1 img {
+  display: block; /* Removes any extra space below inline images */
+  width: 100%; /* Make the image fill the width of the .gallery-item */
+  height: 100%; /* Make the image fill the height of the .gallery-item */
+  object-fit: cover; /* <<< This is the other piece of magic! */
+  /* It scales the image to maintain its aspect ratio while
+							filling the element's entire content box. If the image's
+							aspect ratio doesn't match the square box, the image
+							will be clipped to fit (either width or height). */
+  object-position: center center; /* (Default) Ensures the image is centered before being cropped.
+										You can change this (e.g., 'center top', '25% 50%')
+										if you want to control which part of a non-square
+										image is prioritized. */
+}
+
+/* Each item in the grid - this will be our square container */
+.gallery-item {
+  position: relative; /* For potential future absolute positioned elements inside, not strictly needed for this image setup */
+  width: 100%; /* Takes the full width of its grid column */
+  aspect-ratio: 1 / 1; /* <<< This is the magic for making it square! (Height will equal width) */
+  overflow: hidden; /* Ensures any part of the image that 'object-fit: cover' might push out of bounds is clipped */
+  background-color: #f0f0f0; /* Optional: A light background for cells if images don't load or have transparency */
+}
+
+/* The image itself within the square item */
+.gallery-item img {
+  display: block; /* Removes any extra space below inline images */
+  width: 100%; /* Make the image fill the width of the .gallery-item */
+  height: 100%; /* Make the image fill the height of the .gallery-item */
+  object-fit: cover; /* <<< This is the other piece of magic! */
+  /* It scales the image to maintain its aspect ratio while
+							filling the element's entire content box. If the image's
+							aspect ratio doesn't match the square box, the image
+							will be clipped to fit (either width or height). */
+  object-position: center center; /* (Default) Ensures the image is centered before being cropped.
+										You can change this (e.g., 'center top', '25% 50%')
+										if you want to control which part of a non-square
+										image is prioritized. */
+}
+
+.gallery-item .text-overlay {
+  position: absolute; /* Positions the overlay relative to .gallery-item */
+  top: 0; /* Starts the overlay at the top of the .gallery-item */
+  left: 0; /* Starts the overlay at the left of the .gallery-item */
+  width: 100%; /* Makes the overlay take the full width of .gallery-item */
+  height: 100%; /* Makes the overlay take the full height of .gallery-item */
+
+  /* --- For centering the text content within the overlay --- */
+  display: flex;
+  flex-direction: column; /* Stacks children (like h2 and p) vertically */
+  justify-content: center; /* Vertically centers the text block */
+  align-items: center; /* Horizontally centers the text block */
+  /* --- End of centering styles --- */
+
+  /* --- Text appearance --- */
+  color: white; /* Example: white text */
+  text-align: center; /* Centers the lines of text if they wrap */
+  padding: 15px; /* Adds some space around the text inside the overlay */
+  box-sizing: border-box; /* Ensures padding doesn't make the overlay bigger than 100% width/height */
+  z-index: 1;
+}
+
+/* --- Optional: Example to show text overlay on hover of the gallery item --- */
+/*
+		.gallery-item:hover .text-overlay {
+			opacity: 1;
+		}
+		*/
+
+/* Style for any text elements inside the overlay, if needed */
+.gallery-item .text-overlay h2 {
+  margin-top: 0;
+  margin-bottom: 0.5em; /* Space below the h2 if there's a p tag */
+  color: white;
+  font-size: clamp(1.1rem, 0.8rem + 1vw, 1.5rem);
+}
+
+.gallery-item .text-overlay p {
+  margin: 0;
+  font-size: 0.9em; /* Example smaller font for descriptive text */
+  color: white;
+}
+
+/* @media (max-width: 845px) {
+    	.gallery-grid-3x3 {
+        	grid-template-columns: repeat(2, 1fr); 
+			gap: 10px !important;
+    	}
+	} */
+
+/* For Mobile Phones (screens LESS than 600px wide) */
+/* @media (max-width: 530px) {
+		.gallery-grid-3x3 {
+			width: 100% !important;
+			gap: 10px !important;
+		}
+		.gallery-item .text-overlay h2 {
+			font-size: 0.8em;
+	}
+	} */
+
+@media (max-width: 600px) {
+  .gallery-grid-3x3 {
+    width: 100% !important; /* Force full width */
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns */
+    gap: 8px; /* Smaller gap allows images to be larger */
+  }
+  
+  .gallery-item .text-overlay h2 {
+    font-size: 1rem; /* Specific size for mobile */
+  }
+
+  /* Make the last item span the full width (Big Banner) instead of being small/centered */
+  .gallery-item:last-child:nth-child(odd) {
+    grid-column: 1 / -1; /* Span all columns */
+    justify-self: stretch; 
+    width: 100%; /* Take up 100% space */
+    aspect-ratio: 2 / 1; /* Optional: Makes the last item a wide rectangle */
+  }
+}
+
+
+
+.clickable {
+  /* Using the class name you requested */
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+
+  /* Base shadow from property-card */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+  /* Transition for the transform and shadow */
+  transition: transform 0.3s ease;
+}
+
+.clickable:hover {
+  /* Move up on hover, like property-card */
+  transform: translateY(-0.5rem);
+
+  /* Add a more pronounced shadow on hover */
+  /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); shadow-xl */
+}
+
+/* Video */
+
+.video {
+  border: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.video img {
+  display: block;
+}
+
+.video.left,
+.video.right {
+  max-width: 40%;
+}
+
+.video.left img,
+.video.right img {
+  width: 100%;
+}
+
+.video.left {
+  float: left;
+  margin: 0 2rem 2rem 0;
+  top: 0.75rem;
+}
+
+.video.right {
+  float: right;
+  margin: 0 0 2rem 2rem;
+  top: 0.75rem;
+}
+
+.video.fit {
+  display: block;
+  margin: 2.5rem 0;
+  width: 100%;
+}
+
+.video.fit:first-child {
+  margin-top: 0;
+}
+
+.video.fit img {
+  width: 100%;
+}
+
+.video.main {
+  display: block;
+  margin: 4rem 0;
+  width: 100%;
+}
+
+.video.main:first-child {
+  margin-top: 0;
+}
+
+.video.main img {
+  width: 100%;
+}
+
+@media screen and (max-width: 736px) {
+  .video.fit {
+    margin: 2rem 0;
+  }
+
+  .video.main {
+    margin: 2rem 0;
+  }
+}
+
+a.video {
+  overflow: hidden;
+}
+
+a.video img {
+  -moz-transition: -moz-transform 0.2s ease-out;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  -ms-transition: -ms-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+}
+
+a.video:hover img {
+  -moz-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+/* Actions */
+
+ul.actions {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  cursor: default;
+  list-style: none;
+  margin-left: -1rem;
+  padding-left: 0;
+}
+
+ul.actions li {
+  padding: 0 0 0 1rem;
+  vertical-align: middle;
+}
+
+ul.actions.special {
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  width: 100%;
+  margin-left: 0;
+}
+
+ul.actions.special li:first-child {
+  padding-left: 0;
+}
+
+ul.actions.stacked {
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: 0;
+}
+
+ul.actions.stacked li {
+  padding: 1.3rem 0 0 0;
+}
+
+ul.actions.stacked li:first-child {
+  padding-top: 0;
+}
+
+ul.actions.fit {
+  width: calc(100% + 1rem);
+}
+
+ul.actions.fit li {
+  -moz-flex-grow: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
+  -moz-flex-shrink: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-shrink: 1;
+  flex-shrink: 1;
+  width: 100%;
+}
+
+ul.actions.fit li > * {
+  width: 100%;
+}
+
+ul.actions.fit.stacked {
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  ul.actions:not(.fixed) {
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-left: 0;
+    width: 100% !important;
+  }
+
+  ul.actions:not(.fixed) li {
+    -moz-flex-grow: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-grow: 1;
+    flex-grow: 1;
+    -moz-flex-shrink: 1;
+    -webkit-flex-shrink: 1;
+    -ms-flex-shrink: 1;
+    flex-shrink: 1;
+    padding: 1rem 0 0 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  ul.actions:not(.fixed) li > * {
+    width: 100%;
+  }
+
+  ul.actions:not(.fixed) li:first-child {
+    padding-top: 0;
+  }
+
+  ul.actions:not(.fixed) li input[type="submit"],
+  ul.actions:not(.fixed) li input[type="reset"],
+  ul.actions:not(.fixed) li input[type="button"],
+  ul.actions:not(.fixed) li button,
+  ul.actions:not(.fixed) li .button {
+    width: 100%;
+  }
+
+  ul.actions:not(.fixed) li input[type="submit"].icon:before,
+  ul.actions:not(.fixed) li input[type="reset"].icon:before,
+  ul.actions:not(.fixed) li input[type="button"].icon:before,
+  ul.actions:not(.fixed) li button.icon:before,
+  ul.actions:not(.fixed) li .button.icon:before {
+    margin-left: -0.5rem;
+  }
+}
+
+/* Icons */
+
+ul.icons {
+  cursor: default;
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.icons li {
+  display: inline-block;
+  padding: 0 0.5rem 0 0;
+  vertical-align: middle;
+}
+
+ul.icons li:last-child {
+  padding-right: 0;
+}
+
+ul.icons li .icon:before {
+  width: 2.25rem;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  display: inline-block;
+  text-align: center;
+  border-radius: 100%;
+  font-size: 1.25rem;
+}
+
+ul.icons.alt li .icon:before {
+  -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  font-size: 1rem;
+}
+
+/* List */
+
+ol {
+  list-style: decimal;
+  margin: 0 0 2rem 0;
+  padding-left: 1.25rem;
+}
+
+ol li {
+  padding-left: 0.25rem;
+}
+
+ul {
+  list-style: disc;
+  margin: 0 0 2rem 0;
+  padding-left: 1rem;
+}
+
+ul li {
+  padding-left: 0.5rem;
+}
+
+ul.divided {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.divided li {
+  border-top: solid 1px;
+  padding: 0.5rem 0;
+}
+
+ul.divided li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+dl {
+  margin: 0 0 2rem 0;
+}
+
+dl dt {
+  display: block;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+dl dd {
+  margin-left: 2rem;
+}
+
+ul.divided li {
+  border-top-color: var(--secondary-color);
+}
+
+ul.icons li a.icon:hover:before {
+  /* color: var(--hover-color); */
+}
+
+ul.icons.alt li .icon:before {
+  box-shadow: inset 0 0 0 2px var(--secondary-color);
+}
+
+ul.icons.alt li a.icon:hover:before {
+  /* box-shadow: inset 0 0 0 2px var(--hover-color); */
+}
+
+/* Section/Article */
+
+section.special,
+article.special {
+  text-align: center;
+}
+
+header {
+  cursor: default;
+}
+
+header > .date {
+  display: block;
+  font-size: 0.8rem;
+  height: 1;
+  margin: 0 0 1rem 0;
+  position: relative;
+}
+
+header > p {
+  font-style: italic;
+}
+
+header > h1 + p {
+  font-size: 1.1rem;
+  margin-top: -0.5rem;
+  line-height: 2;
+}
+
+header > h2 + p {
+  font-size: 1rem;
+  margin-top: -0.75rem;
+}
+
+header > h3 + p {
+  font-size: 0.9rem;
+  margin-top: -0.75rem;
+}
+
+header > h4 + p {
+  font-size: 0.8rem;
+  margin-top: -0.75rem;
+}
+
+header.major {
+  margin: 0 0 4rem 0;
+  text-align: center;
+}
+
+header.major > :last-child {
+  margin-bottom: 0;
+}
+
+header.major > p {
+  margin-top: 0;
+  text-align: center;
+}
+
+header.major > .date {
+  font-size: 1rem;
+  margin: 0 0 4rem 0;
+}
+
+header.major > .date:before,
+header.major > .date:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: calc(50% - 6rem);
+  border-top: solid 2px;
+}
+
+header.major > .date:before {
+  left: 0;
+}
+
+header.major > .date:after {
+  right: 0;
+}
+
+@media screen and (max-width: 980px) {
+  header br {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  header.major {
+    margin: 0 0 2rem 0;
+  }
+}
+
+header.major .date:before,
+header.major .date:after {
+  border-top-color: var(--secondary-color);
+}
+
+/* Table */
+
+.table-wrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+}
+
+table {
+  margin: 0 0 2rem 0;
+  width: 100%;
+}
+
+table tbody tr {
+  border: solid 1px;
+  border-left: 0;
+  border-right: 0;
+}
+
+table td {
+  padding: 0.75rem 0.75rem;
+}
+
+table th {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  line-height: 1.5;
+  padding: 0 0.75rem 0.75rem 0.75rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 980px) {
+  table th {
+    font-size: 0.9rem;
+  }
+}
+
+table thead {
+  border-bottom: solid 2px;
+}
+
+table tfoot {
+  border-top: solid 2px;
+}
+
+table.alt {
+  border-collapse: separate;
+}
+
+table.alt tbody tr td {
+  border: solid 1px;
+  border-left-width: 0;
+  border-top-width: 0;
+}
+
+table.alt tbody tr td:first-child {
+  border-left-width: 1px;
+}
+
+table.alt tbody tr:first-child td {
+  border-top-width: 1px;
+}
+
+table.alt thead {
+  border-bottom: 0;
+}
+
+table.alt tfoot {
+  border-top: 0;
+}
+
+table tbody tr {
+  border-color: var(--secondary-color);
+}
+
+table tbody tr:nth-child(2n + 1) {
+  background-color: rgba(220, 220, 220, 0.25);
+}
+
+table th {
+  color: var(--main-text-color);
+}
+
+table thead {
+  border-bottom-color: var(--secondary-color);
+}
+
+table tfoot {
+  border-top-color: var(--secondary-color);
+}
+
+table.alt tbody tr td {
+  border-color: var(--secondary-color);
+}
+
+/* Pagination */
+
+.pagination {
+  display: -moz-inline-flex;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flex;
+  display: inline-flex;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  list-style: none;
+  margin: 0 0 2rem 2px;
+  padding: 0;
+}
+
+.pagination a,
+.pagination span {
+  -moz-transition: background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+  border: solid 2px;
+  display: inline-block;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 900;
+  height: 3rem;
+  letter-spacing: 0.075em;
+  line-height: calc(3rem - 4px);
+  margin-left: -2px;
+  min-width: 3rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.pagination .next,
+.pagination .previous {
+  text-decoration: none;
+  padding: 0 1.75rem;
+}
+
+.pagination .next:before,
+.pagination .previous:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  text-transform: none !important;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.pagination .next:before,
+.pagination .previous:before {
+  display: inline-block;
+  color: inherit !important;
+  line-height: inherit;
+}
+
+.pagination .previous:before {
+  content: "\f104";
+  margin-right: 0.9375em;
+}
+
+.pagination .next:before {
+  content: "\f105";
+  float: right;
+  margin-left: 0.9375em;
+}
+
+@media screen and (max-width: 980px) {
+  .pagination a,
+  .pagination span {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .pagination .page,
+  .pagination .extra {
+    display: none;
+  }
+}
+
+.pagination a,
+.pagination span {
+  border-color: var(--secondary-color);
+}
+
+.pagination a {
+  color: var(--main-text-color) !important;
+}
+
+.pagination a:hover {
+  /* color: var(--hover-color) !important; */
+  /* border-color: var(--hover-color); */
+  z-index: 1;
+}
+
+.pagination a:hover + a,
+.pagination a:hover + span {
+  /* border-left-color: var(--hover-color); */
+}
+
+.pagination a.active {
+  background-color: var(--secondary-color);
+}
+
+.pagination span {
+  color: var(--secondary-color);
+}
+
+/* Wrapper */
+
+#wrapper {
+  -moz-transition: opacity 0.5s ease;
+  -webkit-transition: opacity 0.5s ease;
+  -ms-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  background-color: var(--main-background-color);
+}
+
+#wrapper > .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-background-color);
+  /* background-color: var(--main-text-color); */
+  /* background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/Bay1.webp"); */
+  background-size: auto, auto, 100% auto;
+  background-position: center, center, top center;
+  background-repeat: repeat, no-repeat, no-repeat;
+  background-attachment: scroll, scroll, scroll;
+  z-index: -2; /* Behind the Video */
+}
+
+#wrapper > .bg.fixed {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* #wrapper.fade-in:before {
+			pointer-events: none;
+			-moz-transition: opacity 1s ease-in-out;
+			-webkit-transition: opacity 1s ease-in-out;
+			-ms-transition: opacity 1s ease-in-out;
+			transition: opacity 1s ease-in-out;
+			-moz-transition-delay: 0.75s;
+			-webkit-transition-delay: 0.75s;
+			-ms-transition-delay: 0.75s;
+			transition-delay: 0.75s;
+			background: #1e252d;
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			opacity: 0;
+			position: fixed;
+			top: 0;
+			width: 100%;
+		}
+
+		body.is-preload #wrapper.fade-in:before {
+			opacity: 1;
+		} */
+
+#wrapper > .video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Clip the video if it overflows (shouldn't with object-fit) */
+  z-index: -1; /* Keep it behind other content in the wrapper */
+}
+
+#wrapper > .video-background video {
+  display: block; /* Remove any potential bottom spacing */
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Scale the video to cover the container */
+}
+
+#wrapper > .video-background .video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Apply your overlay styles here */
+  background-image: url("../../images/overlay.png"),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  background-size: auto, auto;
+  background-position: center, center;
+  background-repeat: repeat, no-repeat;
+  pointer-events: none; /* Make the overlay non-interactive so clicks go through to the video (if needed) */
+}
+
+@media screen and (orientation: portrait) {
+  /* #wrapper > .bg {
+			background-size: auto,								auto,														auto 175%;
+		} */
+}
+
+/* Header Video  */
+
+.header-video {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.video-background {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Clip the video if it overflows (shouldn't with object-fit) */
+  z-index: -1; /* Keep it behind other content in the wrapper */
+}
+
+.video-background video {
+  display: block; /* Remove any potential bottom spacing */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Scale the video to cover the container */
+}
+
+.video-background img {
+  display: block; /* Remove any potential bottom spacing */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Scale the video to cover the container */
+}
+
+.video-background .video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Apply your overlay styles here */
+  background-image: url("../../images/overlay.png"),
+    /* Black at bottom */
+      linear-gradient(0deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.1));
+
+  /* linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5));*/
+
+  /* Initial - Basically No Gradient Below */
+  /* linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); */
+
+  background-size: auto, auto;
+  background-position: center, center;
+  background-repeat: repeat, no-repeat;
+  pointer-events: none; /* Make the overlay non-interactive so clicks go through to the video (if needed) */
+}
+
+/* Intro */
+
+#intro {
+  color: var(--main-background-color);
+  padding: 8rem 4rem 6rem 4rem;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  /* -moz-justify-content: -moz-flex-end;
+		-webkit-justify-content: -webkit-flex-end;
+		-ms-justify-content: -ms-flex-end;
+		justify-content: flex-end; */
+  -moz-justify-content: -moz-center;
+  -webkit-justify-content: -webkit-fcenter;
+  -ms-justify-content: -ms-center;
+  justify-content: center;
+  -moz-transition: opacity 1s ease, -moz-transform 1s ease;
+  -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+  -ms-transition: opacity 1s ease, -ms-transform 1s ease;
+  transition: opacity 1s ease, transform 1s ease;
+  position: relative;
+  cursor: default;
+  text-align: center;
+  z-index: 1;
+  min-height: 100vh;
+  /* color: #4a403a;  */
+  /* color: #3d3d3d;  */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#intro input,
+#intro select,
+#intro textarea {
+  color: var(--main-background-color);
+}
+
+#intro a {
+  color: var(--main-background-color);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+#intro a:hover {
+  border-bottom-color: transparent;
+  /* color: var(--hover-color) !important; */
+}
+
+#intro strong,
+#intro b {
+  color: var(--main-background-color);
+}
+
+#intro h1,
+#intro h2,
+#intro h3,
+#intro h4,
+#intro h5,
+#intro h6 {
+  color: var(--main-background-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#intro blockquote {
+  border-left-color: var(--main-background-color);
+}
+
+#intro code {
+  background: rgba(255, 255, 255, 0.075);
+  border-color: var(--main-background-color);
+}
+
+#intro hr {
+  border-bottom-color: var(--main-background-color);
+}
+
+#intro input[type="submit"],
+#intro input[type="reset"],
+#intro input[type="button"],
+#intro button,
+#intro .button {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px var(--main-background-color);
+  color: var(--main-background-color);
+}
+
+#intro input[type="submit"]:hover,
+#intro input[type="reset"]:hover,
+#intro input[type="button"]:hover,
+#intro button:hover,
+#intro .button:hover {
+  /* Intro Hover HERE */
+  box-shadow: inset 0 0 0 2px #333;
+  color: #333;
+}
+
+#intro input[type="submit"].primary,
+#intro input[type="reset"].primary,
+#intro input[type="button"].primary,
+#intro button.primary,
+#intro .button.primary {
+  background-color: var(--main-background-color);
+  box-shadow: none;
+  color: #1e252d;
+}
+
+#intro input[type="submit"].primary:hover,
+#intro input[type="reset"].primary:hover,
+#intro input[type="button"].primary:hover,
+#intro button.primary:hover,
+#intro .button.primary:hover {
+  background-color: var(--hover-color);
+}
+
+#intro h1 {
+  font-size: 5rem;
+  line-height: 1;
+}
+
+#intro p {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-top: -0.25rem;
+  text-align: center;
+}
+
+#intro + #header {
+  margin-top: -20rem;
+}
+
+#intro + #header .logo {
+  -moz-transform: translateY(2rem);
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+  opacity: 0;
+  visibility: hidden;
+}
+
+#intro.hidden {
+  pointer-events: none;
+  -moz-transform: translateY(2rem);
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+  -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, visibility 0.5s;
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease,
+    visibility 0.5s;
+  -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, visibility 0.5s;
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#intro.hidden + #header .logo {
+  -moz-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+body.is-preload #intro {
+  -moz-transform: translateY(2rem);
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+  opacity: 0;
+}
+
+body.is-preload #intro:not(.hidden) + #header + #nav {
+  -moz-transform: translateY(4rem);
+  -webkit-transform: translateY(4rem);
+  -ms-transform: translateY(4rem);
+  transform: translateY(4rem);
+  opacity: 0;
+}
+
+@media screen and (max-width: 980px) {
+  #intro {
+    padding: 4rem 4rem 2rem 4rem;
+    min-height: 90vh;
+  }
+
+  #intro p br {
+    display: none;
+  }
+
+  #intro + #header {
+    margin-top: -14rem;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #intro {
+    padding: 3rem 2rem 1rem 2rem;
+    min-height: 80vh;
+  }
+
+  #intro h1 {
+    font-size: 3.25rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  #intro p {
+    font-size: 1rem;
+    margin-top: 0rem;
+  }
+
+  #intro .actions {
+    display: none;
+  }
+}
+
+#intro > .video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Clip the video if it overflows (shouldn't with object-fit) */
+  z-index: -1; /* Keep it behind other content in the wrapper */
+}
+
+#intro > .video-background video {
+  display: block; /* Remove any potential bottom spacing */
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Scale the video to cover the container */
+}
+
+#intro > .video-background .video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Apply your overlay styles here */
+  background-image: url("../../images/overlay.png"),
+    /* Black at bottom */
+      linear-gradient(0deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.1));
+
+  /* linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5));*/
+
+  /* Initial - Basically No Gradient Below */
+  /* linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)); */
+
+  background-size: auto, auto;
+  background-position: center, center;
+  background-repeat: repeat, no-repeat;
+  pointer-events: none; /* Make the overlay non-interactive so clicks go through to the video (if needed) */
+}
+
+/* Header */
+
+#header {
+  color: var(--main-background-color);
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -moz-justify-content: -moz-flex-end;
+  -webkit-justify-content: -webkit-flex-end;
+  -ms-justify-content: -ms-flex-end;
+  justify-content: flex-end;
+  pointer-events: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 20rem;
+  padding-bottom: 8rem;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+#header input,
+#header select,
+#header textarea {
+  color: var(--main-background-color);
+}
+
+#header a {
+  color: var(--main-background-color);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+#header a:hover {
+  border-bottom-color: transparent;
+  color: var(--hover-color);
+}
+
+#header strong,
+#header b {
+  color: var(--main-background-color);
+}
+
+#header h1,
+#header h2,
+#header h3,
+#header h4,
+#header h5,
+#header h6 {
+  color: var(--main-background-color);
+}
+
+#header blockquote {
+  border-left-color: var(--main-background-color);
+}
+
+#header code {
+  background: rgba(255, 255, 255, 0.075);
+  border-color: var(--main-background-color);
+}
+
+#header hr {
+  border-bottom-color: var(--main-background-color);
+}
+
+#header .logo {
+  -moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out,
+    opacity 0.5s ease, -moz-transform 0.5s ease, visibility 0.5s;
+  -webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out,
+    opacity 0.5s ease, -webkit-transform 0.5s ease, visibility 0.5s;
+  -ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out,
+    opacity 0.5s ease, -ms-transform 0.5s ease, visibility 0.5s;
+  transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out,
+    opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+  pointer-events: auto;
+  border-style: solid;
+  border-color: var(--main-background-color);
+  border-width: 5px !important;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  line-height: 1;
+  padding: 1rem 1.75rem;
+  text-transform: uppercase;
+  visibility: visible;
+}
+
+#header .logo:hover {
+  border-color: var(--hover-color);
+  color: var(--hover-color);
+}
+
+@media screen and (max-width: 980px) {
+  #header {
+    height: 14rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #header {
+    padding-bottom: 3rem;
+  }
+
+  #header .logo {
+    font-size: 1.75rem;
+    border-width: 3px !important;
+  }
+}
+
+/* Nav */
+
+#nav {
+  color: var(--main-background-color);
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-transition: -moz-transform 1s ease, opacity 1s ease;
+  -webkit-transition: -webkit-transform 1s ease, opacity 1s ease;
+  -ms-transition: -ms-transform 1s ease, opacity 1s ease;
+  transition: transform 1s ease, opacity 1s ease;
+  background: rgba(255, 255, 255, 0.175);
+  height: 4rem;
+  line-height: 4rem;
+  margin: -4rem auto 0 auto;
+  overflow: hidden;
+  padding: 0 2rem 0 0;
+  position: relative;
+  width: calc(100% - 4rem);
+  max-width: 72rem;
+  z-index: 2;
+}
+
+#nav ul.divided li {
+  border-top-color: var(--main-background-color);
+}
+
+#nav ul.icons li a.icon:hover:before {
+  color: var(--hover-color);
+}
+
+#nav ul.icons.alt li .icon:before {
+  box-shadow: inset 0 0 0 2px var(--main-background-color);
+}
+
+#nav ul.icons.alt li a.icon:hover:before {
+  box-shadow: inset 0 0 0 2px var(--hover-color);
+}
+
+#nav input,
+#nav select,
+#nav textarea {
+  color: var(--main-background-color);
+}
+
+#nav a {
+  color: var(--main-background-color);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+#nav a:hover {
+  border-bottom-color: transparent;
+  color: var(--hover-color);
+}
+
+#nav strong,
+#nav b {
+  color: var(--main-background-color);
+}
+
+#nav h1,
+#nav h2,
+#nav h3,
+#nav h4,
+#nav h5,
+#nav h6 {
+  color: var(--main-background-color);
+}
+
+#nav blockquote {
+  border-left-color: var(--main-background-color);
+}
+
+#nav code {
+  background: rgba(255, 255, 255, 0.075);
+  border-color: var(--main-background-color);
+}
+
+#nav hr {
+  border-bottom-color: var(--main-background-color);
+}
+
+#nav ul.links {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-flex-grow: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
+  -moz-flex-shrink: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-shrink: 1;
+  flex-shrink: 1;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+  text-transform: uppercase;
+}
+
+#nav ul.links li {
+  display: block;
+  padding-left: 0;
+}
+
+#nav ul.links li a {
+  -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  display: block;
+  font-size: 0.8rem;
+  outline: none;
+  padding: 0 2rem;
+}
+
+#nav ul.links li a:hover {
+  color: inherit !important;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#nav ul.links li.active {
+  background-color: var(--main-background-color);
+}
+
+#nav ul.links li.active a {
+  color: #1e252d;
+}
+
+#nav ul.links li.active a:hover {
+  color: var(--hover-color);
+}
+
+#nav ul.icons {
+  -moz-flex-grow: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+  -moz-flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-shrink: 0;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 980px) {
+  #nav {
+    display: none;
+  }
+}
+
+/* Nav Menu */
+
+.nav-header {
+  background-color: transparent;
+  padding: 1em 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);  */
+
+  /* transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out; */
+
+  /* Hidden  */
+  /* opacity: 1; */
+  /* visibility: hidden; */
+  /* transform: translateY(-120%); */
+  /* transition: opacity 0.6s ease-in-out, transform 0.5s ease-in-out, background-color 0.5s ease-in-out;  */
+  /* transition:	transform .6s ease-in-out,
+				background-color .6s ease-in-out; */
+  transition: background-color 0.6s ease-in-out;
+}
+
+.nav-header.scrolled {
+  background-color: var(--main-background-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  /* Visible  */
+  opacity: 1;
+  visibility: visible;
+  /* transform: translateY(0); */
+}
+
+.nav-header.scrolled .menu ul li a {
+  color: #333;
+  transition: color 0.6s ease-in-out;
+}
+
+.nav-header.scrolled .nav-title {
+  color: #333;
+}
+
+.nav-header.scrolled .nav-logo-title {
+  color: #333;
+}
+
+.nav-header.scrolled .nav-logo {
+  filter: invert(0);
+  transition: filter 0.6s ease-in-out;
+}
+
+.nav-header.scrolled .logo-link span {
+  padding-right: 20px;
+  color: #333;
+}
+
+.nav-header.scrolled .logo-link span:hover {
+  color: #ddd;
+}
+
+.nav-header.scrolled .menu ul li a:hover {
+  /* Added focus for accessibility */
+  color: #ddd !important;
+}
+
+.nav-header.scrolled .menu ul li a:active {
+  /* Added focus for accessibility */
+  color: #333;
+}
+
+.nav-menu {
+  width: 90%; /* Adjust as needed */
+  /* max-width: 1200px;  */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Pushes logo to left and nav to right */
+  align-items: center;
+}
+
+.nav-menu a {
+  border-bottom: none;
+}
+
+.nav-title {
+  margin: 0;
+  font-size: 1em;
+  color: white;
+  /* color: transparent; */
+  text-align: center;
+  padding-left: 10px;
+}
+
+.nav-logo-title {
+  font-size: 0.8em;
+  color: white;
+  margin: 0;
+}
+
+.logo-link {
+  display: flex; /* This is the key! It turns the link into a flex container. */
+  align-items: center; /* This vertically centers the image and the text with each other. */
+  text-decoration: none; /* Removes the default underline from the link. */
+  margin-right: 15px;
+
+  /* for title under */
+  /* flex-direction: column; */
+}
+
+.logo-link span {
+  padding-right: 20px;
+  color: white;
+}
+
+.logo-link span:hover {
+  color: #333;
+}
+
+/* 2. This styles your SVG image */
+.nav-logo {
+  height: 50px; /* Set a specific height for your logo. Adjust as needed. */
+  width: auto; /* Allows the width to scale automatically to maintain aspect ratio. */
+  filter: invert(1);
+}
+
+.menu ul {
+  list-style-type: none; /* Removes bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Aligns nav items horizontally */
+}
+
+.menu ul li {
+  margin-left: 20px; /* Space between nav items */
+}
+
+.menu ul li:first-child {
+  margin-left: 0;
+}
+
+.menu ul li a {
+  color: white;
+  /* color: #333; */
+  text-decoration: none;
+  font-size: 1em; /* Adjust as needed */
+  padding: 0.5em;
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.menu ul li a:hover {
+  /* Added focus for accessibility */
+  color: #333 !important;
+}
+
+.menu ul li a:active {
+  /* Added focus for accessibility */
+  color: white !important;
+}
+
+/* Nav Panel */
+
+#navPanelToggle {
+  text-decoration: none;
+  -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  display: none;
+  position: absolute;
+  top: 50%; /* Move the top of the button down to the vertical center */
+  right: 1rem;
+  transform: translateY(-50%);
+  border: 0;
+  color: white;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  padding: 0.375rem 1.25rem;
+  text-transform: uppercase;
+  z-index: 10001;
+  align-self: center;
+  justify-self: center;
+}
+
+#navPanelToggle:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  text-transform: none !important;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+#navPanelToggle:before {
+  content: "\f0c9";
+  margin-right: 0.5rem;
+}
+
+#navPanelToggle.alt {
+  background-color: rgba(255, 255, 255, 0.875);
+  box-shadow: 0 0.125rem 0.75rem 0 rgba(30, 37, 45, 0.25);
+}
+
+#navPanelToggle.alt:hover {
+  background-color: var(--main-background-color);
+}
+
+@media screen and (max-width: 980px) {
+  #navPanelToggle {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #navPanelToggle {
+    font-size: 0.8rem;
+    padding: 0.25rem 1rem;
+  }
+}
+
+.nav-header.scrolled #navPanelToggle {
+  color: #333;
+  transition: color 0.6s ease-in-out;
+}
+
+#navPanel {
+  -moz-transform: translateX(20rem);
+  -webkit-transform: translateX(20rem);
+  -ms-transform: translateX(20rem);
+  transform: translateX(20rem);
+  -moz-transition: -moz-transform 0.5s ease, box-shadow 0.5s ease,
+    visibility 0.5s;
+  -webkit-transition: -webkit-transform 0.5s ease, box-shadow 0.5s ease,
+    visibility 0.5s;
+  -ms-transition: -ms-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+  display: none;
+  -webkit-overflow-scrolling: touch;
+  background: var(--main-background-color);
+  box-shadow: none;
+  color: var(--main-text-color);
+  height: 100%;
+  max-width: 80%;
+  overflow-y: auto;
+  padding: 3rem 2rem;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  width: 20rem;
+  z-index: 10002;
+}
+
+#navPanel ul {
+  list-style: none;
+}
+
+#navPanel .links {
+  list-style: none;
+  padding-left: 0;
+}
+
+#navPanel .links li {
+  border-top: solid 2px var(--secondary-color);
+}
+
+#navPanel .links li a {
+  border-bottom: 0;
+  display: block;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  padding: 0.75rem 0;
+  text-transform: uppercase;
+  border-bottom: none;
+}
+
+#navPanel li a {
+  border-bottom: none;
+}
+
+#navPanel li a:hover {
+  color: #ddd;
+}
+
+#navPanel .links li:first-child {
+  border-top: 0;
+}
+
+.nav-menu {
+  width: 90%; /* Adjust as needed */
+  /* max-width: 1200px;  */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* Pushes logo to left and nav to right */
+  align-items: center;
+}
+
+.nav-menu a #navPanel {
+  border-bottom: none;
+}
+
+#navPanel .close {
+  text-decoration: none;
+  -moz-transition: color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  border: 0;
+  color: #909498;
+  cursor: pointer;
+  display: block;
+  height: 3.25rem;
+  line-height: 3.25rem;
+  padding-right: 1.25rem;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 0;
+  vertical-align: middle;
+  width: 7rem;
+}
+
+#navPanel .close:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+  text-transform: none !important;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+#navPanel .close:before {
+  content: "\f00d";
+  font-size: 1.25rem;
+}
+
+#navPanel .close:hover {
+  color: var(--main-text-color);
+}
+
+@media screen and (max-width: 736px) {
+  #navPanel .close {
+    height: 4rem;
+    line-height: 4rem;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  #navPanel {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #navPanel {
+    padding: 2.5rem 1.75rem;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  body.is-navPanel-visible #wrapper {
+    opacity: 0.5;
+  }
+
+  body.is-navPanel-visible #navPanel {
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);
+    visibility: visible;
+  }
+}
+
+/* Main */
+
+#main {
+  background-color: var(--main-background-color);
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  z-index: 2;
+}
+
+#main > * {
+  padding: 2rem 4rem 2rem 4rem;
+  margin: 0;
+}
+
+#main > *:first-child {
+  border-top: 0;
+}
+
+#main > footer {
+  text-align: center;
+}
+
+.post {
+  /* padding: 8rem 8rem 6rem 8rem ; */
+  display: flow-root;
+}
+
+#main > section.post {
+  padding: 2rem 4rem 2rem 4rem;
+}
+
+#main > .post header.major > .date {
+  margin-top: -2rem;
+}
+
+#main > .post header.major > h1,
+#main > .post header.major h2 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin: 0 0 2rem 0;
+}
+
+#main > .post.featured {
+  text-align: center;
+}
+
+.custom-grey-box-section {
+  display: flex;
+  justify-content: center; /* Horizontally center the .intro.box */
+  align-items: center; /* Vertically center the .intro.box (if section has height) */
+  padding: 40px 20px; /* Space around the grey box */
+  /* background-color: #f0f0f0; */ /* Optional: If the page background behind the grey box needs a specific color */
+  box-sizing: border-box;
+  /* min-height: 50vh; */ /* Optional: Give the section some height for vertical centering demo */
+}
+
+/* Styles for your article.intro.box to make it a grey box */
+.custom-grey-box-section .intro.box {
+  background-color: #e9e9e9; /* The GREY background for the box */
+  padding: 30px 40px; /* Padding inside the grey box */
+  border-radius: 8px; /* Optional: rounded corners for the grey box */
+  max-width: 700px; /* Max width of the grey box */
+  width: 100%; /* Makes the box responsive */
+  text-align: center; /* Center the text content inside the grey box */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: a subtle shadow for depth */
+  color: #333; /* Default text color for content inside the grey box */
+  font-family: Arial, sans-serif; /* Example font, change as needed */
+}
+
+/* Styling for the H2 heading inside the grey box */
+.custom-grey-box-section .intro.box header.major h2 {
+  font-size: 2.2em; /* Adjust as needed */
+  font-weight: bold;
+  text-transform: uppercase; /* As per the image style inspiration */
+  color: #2c3e50; /* A darker color for the heading for good contrast */
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+/* Styling for the paragraph inside the grey box */
+.custom-grey-box-section .intro.box header.major p {
+  font-size: 1em; /* Adjust as needed */
+  color: #454545; /* Ensure good contrast on grey background */
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments (optional but recommended) */
+@media (max-width: 768px) {
+  .custom-grey-box-section .intro.box {
+    padding: 25px 30px;
+  }
+  .custom-grey-box-section .intro.box header.major h2 {
+    font-size: 1.8em;
+  }
+  .custom-grey-box-section .intro.box header.major p {
+    font-size: 0.95em;
+  }
+  sup {
+    font-size: 0.7em; /* Slightly smaller for larger screens if desired */
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-grey-box-section .intro.box {
+    padding: 20px;
+  }
+  .custom-grey-box-section .intro.box header.major h2 {
+    font-size: 1.6em;
+  }
+  .custom-grey-box-section .intro.box header.major p {
+    font-size: 0.9em;
+  }
+  sup {
+    font-size: 0.9em; /* Slightly larger for readability on small screens */
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  #main > .post {
+    padding: 6rem 4rem 4rem 4rem;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #main > .post {
+    padding: 4rem 2rem 2rem 2rem;
+  }
+
+  #main > .post header.major > .date {
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+  }
+
+  #main > .post header.major > h1,
+  #main > .post header.major h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: 0 0 1.5rem 0;
+  }
+}
+
+#main > .posts {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -moz-align-items: -moz-stretch;
+  -webkit-align-items: -webkit-stretch;
+  -ms-align-items: -ms-stretch;
+  align-items: stretch;
+  text-align: center;
+  width: 100%;
+  padding: 0;
+}
+
+#main > .posts > * {
+  -moz-flex-shrink: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-shrink: 1;
+  flex-shrink: 1;
+  -moz-flex-grow: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+}
+
+#main > .posts > * {
+  width: 50%;
+}
+
+#main > .posts > * {
+  padding: 4rem;
+  width: 50%;
+}
+
+#main > .posts > article {
+  border-color: var(--main-background-color);
+  border-left-width: 2px;
+  border-style: solid;
+  border-top-width: 2px;
+  text-align: center;
+}
+
+#main > .posts > article > :last-child {
+  margin-bottom: 0;
+}
+
+#main > .posts > article:nth-child(2n - 1) {
+  border-left-width: 0;
+}
+
+#main > .posts > article:nth-child(-n + 2) {
+  border-top-width: 0;
+}
+
+@media screen and (max-width: 980px) {
+  #main > .posts > * {
+    width: 50%;
+  }
+
+  #main > .posts > * {
+    padding: 2.5rem;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #main > .posts > * {
+    width: 100%;
+  }
+
+  #main > .posts > * {
+    padding: 2rem;
+    width: 100%;
+  }
+
+  #main > .posts > article:nth-child(2n - 1) {
+    border-left-width: 2px;
+  }
+
+  #main > .posts > article:nth-child(-n + 2) {
+    border-top-width: 2px;
+  }
+
+  #main > .posts > article:nth-child(n) {
+    border-left-width: 0;
+  }
+
+  #main > .posts > article:nth-child(-n + 1) {
+    border-top-width: 0;
+  }
+
+  #main > .posts > article .image {
+    max-width: 25rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #main > * {
+    padding: 2rem 2rem 0.1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #main {
+    width: 100%;
+  }
+}
+
+/* Footer */
+
+#footer {
+  color: #717981;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  background-color: var(--main-background-color);
+  color: #909498;
+  cursor: default;
+  position: relative;
+  margin: 0 auto;
+  width: calc(100% - 4rem);
+  max-width: 72rem;
+  z-index: 2;
+}
+
+#footer input,
+#footer select,
+#footer textarea {
+  color: #717981;
+}
+
+#footer a {
+  color: #717981;
+  border-bottom-color: rgba(113, 121, 129, 0.5);
+}
+
+#footer a:hover {
+  border-bottom-color: transparent;
+  color: var(--hover-color);
+}
+
+#footer strong,
+#footer b {
+  color: #717981;
+}
+
+#footer h1,
+#footer h2,
+#footer h3,
+#footer h4,
+#footer h5,
+#footer h6 {
+  color: #717981;
+}
+
+#footer blockquote {
+  border-left-color: #e2e2e2;
+}
+
+#footer code {
+  background: rgba(220, 220, 220, 0.5);
+  border-color: #e2e2e2;
+}
+
+#footer hr {
+  border-bottom-color: #e2e2e2;
+}
+
+#footer .box {
+  border-color: #e2e2e2;
+}
+
+#footer input[type="submit"],
+#footer input[type="reset"],
+#footer input[type="button"],
+#footer button,
+#footer .button {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px #717981;
+  color: #717981 !important;
+}
+
+#footer input[type="submit"]:hover,
+#footer input[type="reset"]:hover,
+#footer input[type="button"]:hover,
+#footer button:hover,
+#footer .button:hover {
+  box-shadow: inset 0 0 0 2px var(--hover-color);
+  color: var(--hover-color);
+}
+
+#footer input[type="submit"].primary,
+#footer input[type="reset"].primary,
+#footer input[type="button"].primary,
+#footer button.primary,
+#footer .button.primary {
+  background-color: #717981;
+  box-shadow: none;
+  color: #f5f5f5;
+}
+
+#footer input[type="submit"].primary:hover,
+#footer input[type="reset"].primary:hover,
+#footer input[type="button"].primary:hover,
+#footer button.primary:hover,
+#footer .button.primary:hover {
+  background-color: var(--hover-color);
+}
+
+#footer label {
+  color: #717981;
+}
+
+#footer input[type="text"],
+#footer input[type="password"],
+#footer input[type="email"],
+#footer select,
+#footer textarea {
+  border-color: #e2e2e2;
+}
+
+#footer input[type="text"]:focus,
+#footer input[type="password"]:focus,
+#footer input[type="email"]:focus,
+#footer select:focus,
+#footer textarea:focus {
+  border-color: var(--hover-color);
+}
+
+#footer select {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23e2e2e2' /%3E%3C/svg%3E");
+}
+
+#footer select option {
+  background-color: #f5f5f5;
+  color: #717981;
+}
+
+#footer .select-wrapper:before {
+  color: #e2e2e2;
+}
+
+#footer input[type="checkbox"] + label,
+#footer input[type="radio"] + label {
+  color: #717981;
+}
+
+#footer input[type="checkbox"] + label:before,
+#footer input[type="radio"] + label:before {
+  border-color: #e2e2e2;
+}
+
+#footer input[type="checkbox"]:checked + label:before,
+#footer input[type="radio"]:checked + label:before {
+  background-color: #717981;
+  border-color: #717981;
+  color: #f5f5f5;
+}
+
+#footer input[type="checkbox"]:focus + label:before,
+#footer input[type="radio"]:focus + label:before {
+  border-color: var(--hover-color);
+}
+
+#footer ::-webkit-input-placeholder {
+  color: #b3b7bb !important;
+}
+
+#footer :-moz-placeholder {
+  color: #b3b7bb !important;
+}
+
+#footer ::-moz-placeholder {
+  color: #b3b7bb !important;
+}
+
+#footer :-ms-input-placeholder {
+  color: #b3b7bb !important;
+}
+
+#footer .formerize-placeholder {
+  color: #b3b7bb !important;
+}
+
+#footer ul.divided li {
+  border-top-color: #e2e2e2;
+}
+
+#footer ul.icons li a.icon:hover:before {
+  color: var(--hover-color);
+}
+
+#footer ul.icons.alt li .icon:before {
+  box-shadow: inset 0 0 0 2px #e2e2e2;
+}
+
+#footer ul.icons.alt li a.icon:hover:before {
+  box-shadow: inset 0 0 0 2px var(--hover-color);
+}
+
+#footer header.major .date:before,
+#footer header.major .date:after {
+  border-top-color: #e2e2e2;
+}
+
+#footer table tbody tr {
+  border-color: #e2e2e2;
+}
+
+#footer table tbody tr:nth-child(2n + 1) {
+  background-color: rgba(220, 220, 220, 0.5);
+}
+
+#footer table th {
+  color: #717981;
+}
+
+#footer table thead {
+  border-bottom-color: #e2e2e2;
+}
+
+#footer table tfoot {
+  border-top-color: #e2e2e2;
+}
+
+#footer table.alt tbody tr td {
+  border-color: #e2e2e2;
+}
+
+#footer .pagination a,
+#footer .pagination span {
+  border-color: #e2e2e2;
+}
+
+#footer .pagination a {
+  color: #717981 !important;
+}
+
+#footer .pagination a:hover {
+  color: var(--hover-color);
+  border-color: var(--hover-color);
+  z-index: 1;
+}
+
+#footer .pagination a:hover + a,
+#footer .pagination a:hover + span {
+  border-left-color: var(--hover-color);
+}
+
+#footer .pagination a.active {
+  background-color: #e2e2e2;
+}
+
+#footer .pagination span {
+  color: #e2e2e2;
+}
+
+#footer > section {
+  -moz-flex-basis: 50%;
+  -webkit-flex-basis: 50%;
+  -ms-flex-basis: 50%;
+  flex-basis: 50%;
+  -moz-flex-grow: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
+  -moz-flex-shrink: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-shrink: 1;
+  flex-shrink: 1;
+  padding: 4rem 4rem 2rem 4rem;
+  border-left: solid 2px #e2e2e2;
+}
+
+#footer > section:first-child {
+  border-left: 0;
+}
+
+#footer > section.split {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0;
+}
+
+#footer > section.split > section {
+  padding: 3rem 4rem 1rem 4rem;
+  border-top: solid 2px #e2e2e2;
+}
+
+#footer > section.split > section:first-child {
+  padding: 5rem 4rem 1rem 4rem;
+  border-top: 0;
+}
+
+#footer > section.split > section:last-child {
+  padding: 3rem 4rem 3rem 4rem;
+}
+
+#footer > section.split.contact > section {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  padding: 3.15rem 4rem;
+}
+
+#footer > section.split.contact > section > * {
+  margin-bottom: 0;
+}
+
+#footer > section.split.contact > section > :first-child {
+  -moz-flex-shrink: 0;
+  -webkit-flex-shrink: 0;
+  -ms-flex-shrink: 0;
+  flex-shrink: 0;
+  -moz-flex-grow: 0;
+  -webkit-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+  width: 6rem;
+}
+
+#footer > section.split.contact > section > :last-child {
+  -moz-flex-shrink: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-shrink: 1;
+  flex-shrink: 1;
+  -moz-flex-grow: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
+}
+
+#footer > section.split.contact > section:first-child {
+  padding: 4rem 4rem 3rem 4rem;
+}
+
+#footer > section.split.contact > section:last-child {
+  padding: 3rem 4rem 4rem 4rem;
+}
+
+#footer > section.split.contact > section.alt {
+  -moz-align-items: -moz-flex-start;
+  -webkit-align-items: -webkit-flex-start;
+  -ms-align-items: -ms-flex-start;
+  align-items: flex-start;
+}
+
+#footer > section.split.contact > section.alt > :last-child {
+  margin-top: -0.325rem;
+}
+
+#footer form label,
+#footer h3,
+#footer p {
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 980px) {
+  #footer {
+    display: block;
+  }
+
+  #footer > section {
+    border-top: solid 2px #e2e2e2;
+  }
+
+  #footer > section:first-child {
+    border-top: 0;
+  }
+
+  #footer > section.split > section {
+    padding: 4rem 4rem 2rem 4rem;
+  }
+
+  #footer > section.split > section:first-child {
+    padding: 4rem 4rem 2rem 4rem;
+  }
+
+  #footer > section.split > section:last-child {
+    padding: 4rem 4rem 2rem 4rem;
+  }
+
+  #footer > section.split.contact > section {
+    padding: 4rem;
+  }
+
+  #footer > section.split.contact > section:first-child {
+    padding: 4rem;
+  }
+
+  #footer > section.split.contact > section:last-child {
+    padding: 4rem;
+  }
+
+  #footer form label,
+  #footer h3,
+  #footer p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #footer > section {
+    padding: 2rem 2rem 0.1rem 2rem;
+  }
+
+  #footer > section.split > section {
+    padding: 2rem 2rem 0.1rem 2rem;
+  }
+
+  #footer > section.split > section:first-child {
+    padding: 2rem 2rem 0.1rem 2rem;
+  }
+
+  #footer > section.split > section:last-child {
+    padding: 2rem 2rem 0.1rem 2rem;
+  }
+
+  #footer > section.split.contact > section {
+    padding: 2rem;
+  }
+
+  #footer > section.split.contact > section:first-child {
+    padding: 2rem;
+  }
+
+  #footer > section.split.contact > section:last-child {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #footer {
+    width: 100%;
+  }
+}
+
+#copyright {
+  color: var(--main-text-color);
+  position: relative;
+  /* color: rgba(255, 255, 255, 1); */
+  cursor: default;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0rem auto 2rem auto;
+  width: calc(100% - 4rem);
+  max-width: 72rem;
+  z-index: 2;
+}
+
+#copyright input,
+#copyright select,
+#copyright textarea {
+  color: var(--main-text-color);
+}
+
+#copyright a {
+  color: var(--main-text-color);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+#copyright a:hover {
+  border-bottom-color: transparent;
+  color: var(--hover-color);
+}
+
+#copyright strong,
+#copyright b {
+  color: var(--main-text-color);
+}
+
+#copyright h1,
+#copyright h2,
+#copyright h3,
+#copyright h4,
+#copyright h5,
+#copyright h6 {
+  color: var(--main-text-color);
+}
+
+#copyright blockquote {
+  border-left-color: var(--main-text-color);
+}
+
+#copyright code {
+  background: rgba(255, 255, 255, 0.075);
+  border-color: var(--main-background-color);
+}
+
+#copyright hr {
+  border-bottom-color: var(--main-text-color);
+}
+
+#copyright a {
+  color: inherit;
+  border-bottom-color: inherit;
+}
+
+#copyright ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+#copyright ul li {
+  border-left: solid 2px;
+  display: inline-block;
+  line-height: 1;
+  margin-left: 1rem;
+  padding-left: 1rem;
+}
+
+#copyright ul li:first-child {
+  border-left: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+@media screen and (max-width: 1280px) {
+  #copyright {
+    /* margin: 4rem auto; */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #copyright ul li {
+    border-left: 0;
+    margin: 1rem 0 0 0;
+    padding-left: 0;
+    display: block;
+  }
+
+  #copyright ul li:first-child {
+    margin-top: 0;
+  }
+}
+
+/* Carousel */
+
+/* Center mode slider */
+/* Container for each slide's content */
+
+.center-mode-slider .slide-content {
+  display: flex;
+  justify-content: center; /* Centers the slideshow-card horizontally */
+  align-items: center; /* Centers the slideshow-card vertically */
+  padding: 0px 0; /* Padding around the card if it's smaller than this container */
+  margin: 0px; /* Space between slides (handled by Slick) */
+  transition: transform 0s ease; /* For Slick's scaling of the slide area */
+  height: auto; /* Allow height to be determined by the card */
+}
+
+/* Style for the active (center) slide's container - scales the whole area */
+.center-mode-slider .slick-center .slide-content {
+  transform: scale(
+    1
+  ); /* Slightly enlarge the area of the centered slide. Adjust as preferred. */
+  height: 70%;
+  /* If you prefer all scaling on the card, set this to scale(1) */
+}
+
+/* Styles for the card itself (image + text) */
+.slideshow-card {
+  align-items: stretch; /* Makes image and card-info stretch to the card's height */
+  background-color: #ffffff;
+  border-radius: 0px;
+  overflow: hidden;
+  width: 100%; /* Default width for non-centered cards */
+  max-width: 750px; /* Adjust as needed */
+  height: 65vh; /* Default height for non-centered cards - adjust as you like */
+  opacity: 0.75;
+  transform: scale(0.8); /* Non-centered cards are slightly smaller */
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out,
+    width 0.6s ease-in-out, height 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+}
+
+/* Styles for the card when it is in the .slick-center slide */
+.center-mode-slider .slick-center .slideshow-card {
+  opacity: 1;
+  transform: scale(
+    1
+  ); /* Card is its 'normal' scale within the (potentially scaled) slide-content */
+  width: 100%; /* Expand width for centered card */
+  max-width: 900px; /* Adjust as needed */
+}
+
+.slideshow-card img {
+  width: 100%; /* Percentage of the card's width for the image */
+  height: 85%;
+  object-fit: cover; /* Ensures image covers the area, might crop */
+  transition: height 0.6s ease-in-out; /* Smooth transition for height change */
+  margin-bottom: -2px;
+  flex-shrink: 0; /* Prevents image from shrinking */
+}
+
+.slick-center .slideshow-card img {
+  height: 50%;
+  transition: height 0.6s ease-in-out; /* Smooth transition for height change */
+}
+
+.slideshow-card .card-info {
+  padding: 3vh 30px;
+  width: 100%; /*Percentage of the card's width for the text info*/
+  height: 50%; /* Full height of the card */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes space between title, p, and button */
+  align-items: center; /* Centers content horizontally */
+  flex-grow: 1; /* Allows card-info to take available vertical space */
+}
+
+.slideshow-card .card-info h2 {
+  margin-top: 0; /* No space above heading */
+  margin-bottom: 10px; /* Space below heading */
+  padding-bottom: 10px;
+  color: black;
+  font-size: 1.6em; /* Adjust as needed */
+  font-weight: bold; /* Makes the title stand out */
+  flex-shrink: 0;
+}
+
+.slick-center .slideshow-card .card-info h2 {
+  margin-top: 0; /* No space above heading */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+.slideshow-card .card-info p {
+  color: black;
+  opacity: 0; /* Full opacity for text */
+  line-height: 1.5;
+  font-size: 1.6vh; /* Adjust as needed */
+  flex-grow: 1; /* Allows paragraph to take available vertical space */
+  margin-bottom: 5px; /* Space above button */
+  transition: opacity 0.6s ease-in-out; /* Smooth transition for opacity change */
+  text-align: center;
+}
+
+.slick-center .slideshow-card .card-info p {
+  opacity: 1; /* Full opacity for text when centered */
+  transition: all 0.8s ease-in-out; /* Smooth transition for opacity change */
+}
+
+#main .slideshow-card .card-info a {
+  display: inline-flex; /* Allows for centering text */
+  padding: 12px 18px;
+  background-color: white; /* Example primary button color */
+  color: var(--main-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.85em;
+  flex-shrink: 0;
+  align-self: center; /* Aligns button to the left */
+  margin-top: auto; /* Pushes button to the bottom if content is short */
+  align-items: center; /* Centers button text */
+  box-shadow: inset 0 0 0 2px #333;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  height: 3rem;
+  line-height: 3rem;
+  padding: 0 2rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+#main .slideshow-card .card-info a:hover {
+  background-color: #333; /* Darker shade on hover */
+  color: white;
+  box-shadow: inset 0 0 0 2px #333;
+}
+
+.slideshow-card .card-title-with-underline {
+  position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
+  text-align: center;
+}
+
+.slideshow-card .card-title-with-underline::after {
+  content: ""; /* Required for pseudo-elements to be generated */
+  display: block;
+  width: 5vw;
+  height: 3px;
+  background-color: #333;
+  position: absolute;
+  left: 50%; /* Start the left edge at the center of the title element */
+  transform: translateX(
+    -50%
+  ); /* Shift it left by half its own width to truly center it */
+  bottom: 0;
+  opacity: 0; /* Initially hidden */
+  transition: all 0.6s ease-in-out; /* Smooth transition for width change */
+}
+
+.slick-center .slideshow-card .card-title-with-underline::after {
+  opacity: 1; /* Adjust width for centered card */
+  transition: all 0.6s ease-in-out; /* Smooth transition for width change */
+}
+
+/* Optional: Adjust arrow positioning if needed (from your original CSS) */
+.center-mode-slider .slick-prev,
+.center-mode-slider .slick-next {
+  z-index: 10; /* Ensure arrows are above slides */
+}
+.center-mode-slider .slick-prev {
+  left: 10px; /* Adjust as needed, e.g., closer to the edge of the carousel */
+}
+.center-mode-slider .slick-next {
+  right: 10px; /* Adjust as needed */
+}
+
+/* Ensure the carousel section has some padding (from your original CSS) */
+.carousel-section {
+  padding-top: 3em;
+  padding-bottom: 3em;
+  /* background: #f7f7f7; */ /* Optional: different background for this section */
+  overflow: hidden; /* Helps contain elements if arrows are positioned absolutely outside */
+}
+
+/* Center Carousel */
+
+.center-mode-carousel {
+  width: 100%; /* Adjust as needed */
+  margin: 0 auto; /* Center the carousel horizontally */
+  position: relative; /* For positioning Slick controls if needed */
+}
+
+/* Basic styling for the slides within the carousel */
+.center-mode-carousel > div {
+  text-align: center; /* Center the text/content within the slide */
+  height: auto; /* Let height adjust based on content */
+}
+
+.center-mode-carousel .slick-slide {
+  height: auto; /* Allow height to adjust */
+  overflow: hidden; /* Hide content outside the slide boundaries */
+}
+
+.center-mode-carousel img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Or 'cover' depending on desired behavior */
+}
+
+/* Carousel Counter & Arrows */
+.center-mode-slider .slick-arrow {
+  position: absolute;
+  top: auto; /* Override default top positioning */
+  /* This positions the ARROWS' BOTTOM EDGE relative to the CAROUSEL'S BOTTOM EDGE.
+       If .custom-slick-wrapper has padding-bottom: 80px, and arrows are 40px high,
+       bottom: -60px; places the arrow starting 60px below the carousel's content bottom,
+       landing it centered vertically in the 80px padding area.
+       (80px space - 40px arrow height = 40px free. 20px above, 20px below arrow).
+       So, bottom of arrow is at - (20px padding_below_arrow + 40px arrow_height) = -60px.
+    */
+  bottom: -65px; /* Adjust this value based on your wrapper's padding-bottom and arrow height */
+  width: 0px;
+  height: 0px;
+  z-index: 100; /* High z-index to ensure they are on top and clickable */
+
+  /* --- VISIBILITY STYLES (IMPORTANT) --- */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Light semi-transparent background */
+  border: 0px solid #ccc;
+  border-radius: 50%;
+  /* border: none;
+	border-radius: 0%; */
+  cursor: pointer;
+  display: block !important; /* Ensure they are displayed */
+  opacity: 1 !important; /* Ensure they are not transparent */
+  /* Reset any transforms that might hide them or misposition them from CDN */
+  transform: none;
+}
+
+.center-mode-slider .slick-arrow::before {
+  font-family: "slick"; /* This is Slick's default font for icons */
+  font-size: 20px; /* Size of the icon character */
+  color: #333333; /* Dark color for the icon for visibility */
+  opacity: 1 !important; /* Ensure icon itself is visible */
+  line-height: 1; /* Reset from CDN if it causes issues */
+
+  display: flex; /* Centering the icon in the button */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.center-mode-slider .slick-arrow:hover {
+  background-color: rgba(255, 255, 255, 1); /* Slightly more opaque on hover */
+  border-color: #aaa;
+}
+.center-mode-slider .slick-arrow:hover::before {
+  color: #000000;
+}
+
+.center-mode-slider .slick-prev {
+  left: 50%; /* Start at the horizontal center of the carousel */
+  /* Then, move it left by its own width PLUS half the desired gap between arrows.
+       If arrow is 40px wide and you want a 20px gap, move left by (40px + 10px) = 50px.
+       So, transform: translateX(-50px);
+       A more robust way: transform it left by 100% of its own width (to align its right edge with 50% mark)
+       and then another few pixels for the gap.
+    */
+  transform: translateX(
+    calc(-100% - 50px)
+  ); /* -100% of its own width, then -10px (half of a 20px gap) */
+}
+
+.center-mode-slider .slick-next {
+  left: 50%; /* Start at the horizontal center of the carousel */
+  /* Then, move it right by half the desired gap. */
+  transform: translateX(50px); /* 10px (half of a 20px gap) */
+}
+
+.custom-slick-controls {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%); /* Center the counter div */
+  z-index: 90; /* Below arrows if they might overlap, but above other content */
+}
+
+.slick-counter {
+  font-size: 16px;
+  color: #444;
+  background-color: rgba(240, 240, 240, 0.7);
+  padding: 6px 12px;
+  border-radius: 15px;
+
+  white-space: nowrap; /* Prevent wrapping if numbers get long */
+}
+
+@media screen and (max-width: 1280px) {
+  .slideshow-card .card-info h2 {
+    /* font-size: 1.4em; */
+  }
+
+  .slideshow-card .card-info p {
+    font-size: 1.4vh;
+  }
+}
+
+@media screen and (max-width: 1268px) {
+  /* --- START: Add this code for the HDM text swap --- */
+
+  /* 1. Target the original H2 on the specific card */
+  .hacienda-del-mar .card-info h2 .original-title {
+    display: none;
+  }
+
+  /* 2. Create the new "HDM" text with its own styles */
+  .hacienda-del-mar .card-info h2::before {
+    content: "HDM"; /* This creates the new text */
+    visibility: visible;
+    width: 100%;
+    text-align: center;
+  }
+  .hacienda-del-mar .card-info h2 {
+    /* These values match your original .card-title-with-underline style */
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+  }
+
+  .slideshow-card .card-info p {
+    font-size: 1.2vh;
+  }
+}
+
+@media screen and (max-width: 945px) {
+  .slideshow-card .card-info h2 {
+    /* font-size: 1em; */
+  }
+  .slideshow-card .card-info p {
+    font-size: 2vh;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .slideshow-card .card-info p {
+    font-size: 1.8vh;
+  }
+}
+
+/* Mobile Carousel  */
+@media screen and (max-width: 768px) {
+  .slick-center .slideshow-card .card-info p {
+    opacity: 0;
+  }
+
+  .slideshow-card .card-info h2 {
+    font-size: 1.2rem;
+  }
+
+  .slick-center .slideshow-card .card-title-with-underline::after {
+    opacity: 0;
+  }
+
+  /* Styles for the card when it is in the .slick-center slide */
+  .center-mode-slider .slick-center .slideshow-card {
+    align-items: stretch; /* Makes image and card-info stretch to the card's height */
+    background-color: #ffffff;
+    border-radius: 0px;
+    overflow: hidden;
+    width: 100%; /* Default width for non-centered cards */
+    max-width: 750px; /* Adjust as needed */
+    height: 50vh; /* Default height for non-centered cards - adjust as you like */
+    opacity: 1;
+    transform: scale(0.8); /* Non-centered cards are slightly smaller */
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out,
+      width 0.6s ease-in-out, height 0.6s ease-in-out,
+      box-shadow 0.6s ease-in-out;
+  }
+
+  .slideshow-card {
+    height: 50vh; /* Default height for non-centered cards - adjust as you like */
+  }
+
+  .slick-center .slideshow-card img {
+    width: 100%; /* Percentage of the card's width for the image */
+    height: 85%;
+    object-fit: cover; /* Ensures image covers the area, might crop */
+    transition: height 0.6s ease-in-out; /* Smooth transition for height change */
+    margin-bottom: -2px;
+    flex-shrink: 0; /* Prevents image from shrinking */
+  }
+
+  .content-inner {
+    padding: 0 0 !important;
+  }
+
+  .slick-list.draggable {
+    height: 0;
+  }
+
+  .center-mode-slider .slick-arrow {
+    bottom: -10px;
+  }
+  .custom-slick-controls {
+    bottom: 30px;
+  }
+
+  #main > .center-mode-carousel-wrapper {
+    position: relative;
+    padding-bottom: 60px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+}
+
+/* Center Five Wide */
+
+#main > .center-mode-carousel-wrapper {
+  position: relative;
+  padding-bottom: 120px;
+}
+
+.center-mode-carousel-wrapper > h2 {
+  text-align: center;
+}
+
+.center-mode-carousel.five-wide {
+  /* width: 80%; Adjust as needed for the overall width of the five-wide carousel */
+  margin: 0 auto;
+  position: relative;
+  height: 700px;
+  /* overflow: hidden; */
+}
+
+.center-mode-carousel.five-wide .slide.has-full-content {
+  width: 100%; /* Or a specific width if you prefer */
+  text-align: center; /* If you want title centered under image */
+  margin-bottom: 15px;
+}
+
+.center-mode-carousel.five-wide .slick-track {
+  display: flex; /* Slick usually sets this already */
+  align-items: center; /* <<< THIS IS THE KEY FOR VERTICAL ALIGNMENT OF SLIDES */
+  min-height: 100%; /* Ensure track itself can fill the .slick-list height */
+}
+
+.center-mode-carousel.five-wide .slick-list {
+  height: 100%;
+  /* padding: 0 50px; Adjust to control the visibility of side slides */
+}
+
+.center-mode-carousel.five-wide .slick-slide:not(.slick-center) {
+  /* Target only non-centered slides */
+  /* transform: scale(1); Removed transform */
+  opacity: 0.6; /* Slightly reduce opacity of non-centered slides */
+  /* transition: opacity 0.3s ease-in-out;  */
+  display: flex; /* Use flexbox for vertical centering */
+  flex-direction: column; /* Stack image, title, description */
+  align-items: center; /* Center items horizontally */
+  height: auto; /* Let the height adjust based on content */
+}
+
+.center-mode-carousel.five-wide .slide .image-title-wrapper {
+  text-align: center;
+  margin-bottom: 5px;
+  width: 100%; /* Ensure wrapper takes full width */
+}
+
+.center-mode-carousel.five-wide .slide:not(.slick-center) .image-container {
+  /* Target non-centered image containers */
+  width: 100%; /* Make image container full width */
+  height: 350px; /* Fixed height for non-centered images */
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.center-mode-carousel.five-wide .slide:not(.slick-center) .image-container img {
+  /* Target non-centered images */
+  position: absolute;
+  top: 0; /* Start from the top */
+  left: 25%; /* Shift to show the middle 50% */
+  width: 50%; /* Show only 50% of the width */
+  height: 100%; /* Make the height fill the container */
+  object-fit: cover; /* Ensure the covered area fills the container */
+}
+
+.center-mode-carousel.five-wide .slide:not(.slick-center) h3 {
+  /* Target non-centered titles */
+  font-size: 1em;
+  margin-bottom: 0;
+  width: 100%; /* Ensure title takes full width */
+  text-align: center;
+}
+
+.center-mode-carousel.five-wide .slide:not(.slick-center) p.description {
+  /* Target non-centered descriptions */
+  display: none; /* Hide description on non-centered slides */
+}
+.center-mode-carousel.five-wide .slide:not(.slick-center) .actions {
+  /* Target non-centered descriptions */
+  display: none; /* Hide description on non-centered slides */
+}
+
+.center-mode-carousel.five-wide .slick-center {
+  /* transform: scale(1.1); Removed transform */
+  opacity: 1;
+  /* transition: opacity 1.0s ease-out;  */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-mode-carousel.five-wide .slick-center .slide {
+  background-color: transparent;
+  border: none;
+  height: auto; /* Auto adjust height for the center slide */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Ensure the slide itself takes full width */
+}
+
+.center-mode-carousel.five-wide .slick-center .image-title-wrapper {
+  text-align: center;
+  margin-bottom: 10px;
+  width: 100%; /* Ensure wrapper takes full width */
+}
+
+.center-mode-carousel.five-wide .slick-center .image-container {
+  width: 100%; /* Make image container full width */
+  height: 350px; /* auto or 100% */
+  overflow: hidden;
+  margin-bottom: 0px;
+  /* background-color: rebeccapurple;  */
+}
+
+.center-mode-carousel.five-wide .slick-center .image-container img {
+  position: static; /* Show the full image */
+  width: 100%;
+  height: auto; /* New Didn't change wanted 100%*/
+  object-fit: contain; /* Ensure the full image is visible within the container */
+}
+
+.center-mode-carousel.five-wide .slick-center h3 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  width: 100%; /* Ensure title takes full width */
+  text-align: center;
+}
+
+.center-mode-carousel.five-wide .slick-center p.description {
+  display: block;
+  font-size: 1em;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  padding: 0px 15px;
+  text-align: center;
+  width: 100%; /* Ensure description takes full width */
+}
+
+.center-mode-carousel.five-wide .slick-center .actions {
+  text-align: center;
+  width: 100%; /* Ensure actions take full width */
+  /* background-color: palegoldenrod; */
+  padding: 10px;
+}
+
+@media screen and (max-width: 1280px) {
+  .center-mode-carousel.five-wide {
+    height: 600px; /* 460 */
+  }
+  .center-mode-carousel.five-wide .slick-center .image-container {
+    height: 450px; /* 320 */
+  }
+  .center-mode-carousel.five-wide .slide:not(.slick-center) .image-container {
+    height: 455px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  /* Switched to 1 slide */
+  .center-mode-carousel.five-wide {
+    height: 480px; /* 420 */
+  }
+  .center-mode-carousel.five-wide .slick-center .image-container {
+    height: 355px; /* 295 */
+  }
+  .center-mode-carousel.five-wide .slide:not(.slick-center) .image-container {
+    height: 360px;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  /* Switched to 1 slide */
+  .center-mode-carousel.five-wide {
+    height: 550px; /* 380 */
+  }
+  .center-mode-carousel.five-wide .slick-center .image-container {
+    height: 390px; /* 265 */
+  }
+  .center-mode-carousel.five-wide .slide:not(.slick-center) .image-container {
+    height: 395px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .center-mode-carousel.five-wide {
+    height: 400px; /* 340 */
+  }
+  .center-mode-carousel.five-wide .slick-center .image-container {
+    height: 145px; /* 240 */
+  }
+  .center-mode-carousel.five-wide .slide:not(.slick-center) .image-container {
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  /* Switched to 1 slide */
+  .center-mode-carousel.five-wide {
+    height: 360px; /* 300 */
+  }
+  .center-mode-carousel.five-wide .slick-center .image-container {
+    height: 140px; /* 210 */
+  }
+  .center-mode-carousel.five-wide .slide:not(.slick-center) .image-container {
+    height: 145px;
+  }
+}
+
+.title-with-underline {
+  position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: clamp(2.5rem, 1.75rem + 3.5vw, 4rem);
+  line-height: 1.5;
+}
+
+.title-with-underline::after {
+  content: ""; /* Required for pseudo-elements to be generated */
+  display: block;
+  width: 300px;
+  height: 1px;
+  background-color: #333;
+
+  position: absolute;
+  left: 50%; /* Start the left edge at the center of the title element */
+  transform: translateX(
+    -50%
+  ); /* Shift it left by half its own width to truly center it */
+  bottom: 0;
+}
+
+.subtitle {
+  position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
+  margin-bottom: 20px;
+  text-align: center;
+  font-style: italic;
+  color: #333;
+}
+
+.side-title {
+  position: relative; /* Needed for absolute positioning of the ::after pseudo-element */
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.center-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-text p {
+  text-align: center;
+}
+
+.offering-memorandum p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.8em;
+  line-height: 1.4; /* spacing out the lines a bit */
+  max-width: 800px;
+}
+
+.offering-memorandum strong {
+  color: #333; /* Make the bold text a bit darker */
+  font-size: 1.2em;
+}
+
+/* Rectangle Section  */
+
+.rectangle-section {
+  width: 100%;
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+.rectangle-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rectangle-item {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rectangle-header {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  min-height: 3.5em;
+}
+
+.rectangle-icon {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rectangle-icon.has-background {
+  width: 40px;
+  height: 40px;
+  background-color: #8a817c;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.rectangle-icon i {
+  font-size: 1.25rem;
+  color: var(--main-background-color);
+}
+
+.rectangle-icon.has-background i {
+  color: #f4ece2;
+}
+
+.rectangle-title {
+  font-size: 1.25rem;
+  line-height: 1.5em;
+  margin: 0;
+  color: #1c1e21;
+}
+
+.rectangle-subtitle {
+  font-size: 2rem;
+  margin: 0 0 10px 0;
+  color: #606770;
+  /* color: #5a7d65; */
+  font-weight: bold;
+  flex-grow: 1;
+}
+
+.rectangle-description {
+  font-size: 0.5rem; /* Your original font size */
+  line-height: 1.6;
+  margin: 0;
+  color: #606770;
+}
+
+/* Perks Section  */
+
+#perks {
+  max-width: 1200px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.perks-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.perks-grid {
+  display: grid;
+  /* On larger screens, create 4 equal columns */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* --- Individual Perk Block Styling --- */
+.perk-block {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px; /* Rounded corners */
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column; /* Stack icon and title vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.perk-block:hover {
+  transform: translateY(-10px); /* Lifts the block up on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Adds a shadow on hover */
+}
+
+/* --- Icon Styling --- */
+.perk-block .icon {
+  font-size: 3rem; /* Adjust icon size */
+  color: #333; /* A nice blue color, change as you like */
+  margin-bottom: 20px;
+}
+
+/* --- Title Styling --- */
+.perk-block h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+}
+
+/* --- Responsive Design --- */
+/* For tablets: 2 columns */
+@media (max-width: 992px) {
+  .perks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For mobile phones: 1 column */
+@media (max-width: 576px) {
+  .perks-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* About Section */
+
+#about {
+  opacity: 1; /* Default state: visible */
+  transform: translateY(0); /* Default state: original position */
+
+  /* Define transitions for opacity and transform (mirroring #intro's entrance) */
+  -moz-transition: opacity 1s ease, -moz-transform 1s ease;
+  -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+  -ms-transition: opacity 1s ease, -ms-transform 1s ease;
+  transition: opacity 1s ease, transform 1s ease;
+  /* Any other existing #about styles would go here */
+}
+
+/* Initial state for #about when the page is preloading */
+/* This creates the "pop up and fade in" effect when 'is-preload' is removed */
+body.is-preload #about {
+  opacity: 0; /* Start transparent */
+  -moz-transform: translateY(2rem); /* Start 2rem lower (adjust as needed) */
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+}
+
+/* Styles for when #about is explicitly hidden */
+/* This creates the "pop out and fade out" effect when '.hidden' is added */
+#about.hidden {
+  opacity: 0; /* Fade out */
+  visibility: hidden; /* Make it non-interactive and non-visible like #intro.hidden */
+  -moz-transform: translateY(2rem); /* Move down 2rem (or adjust as needed) */
+  -webkit-transform: translateY(2rem);
+  -ms-transform: translateY(2rem);
+  transform: translateY(2rem);
+
+  /* Apply a similar faster transition for the hiding action, like #intro.hidden */
+  -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, visibility 0.5s;
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease,
+    visibility 0.5s;
+  -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, visibility 0.5s;
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+}
+
+/* Transistions  */
+.fade-in-up {
+  /* Make the element transparent */
+  opacity: 0;
+
+  /* Move it down by 30px */
+  transform: translateY(30px);
+
+  /* Define the smooth transition for opacity and transform */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* 2. The final "visible" state */
+/* We'll add this class with JavaScript when the element is in view */
+.fade-in-up.is-visible {
+  /* Make the element fully visible */
+  opacity: 1;
+
+  /* Move it back to its original position */
+  transform: translateY(0);
+}
+
+#about-us p {
+  /* font-size: clamp(1rem, 1.4vw, 1.25rem); */
+  /* line-height: 2; */
+}
+
+#about-us .image.left,
+#about-us .image.right {
+  max-width: 46%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  #about-us .image.left,
+  #about-us .image.right {
+    float: none;
+    display: block;
+    margin: 0 auto 1rem;
+    max-width: 100%;
+  }
+
+  #about-us p {
+    text-align: left; /* or justify, as preferred */
+  }
+}
+
+/* Sticky */
+
+.sticky-container {
+  display: flex; /* Use flexbox to create two columns */
+  flex-direction: row-reverse; /* Puts the image column on the right */
+  align-items: flex-start; /* Aligns columns to the top */
+  gap: 2em; /* Creates space between the image and text */
+  margin-top: 4em; /* Adds some space above this new section */
+}
+
+.scrolling-text-column {
+  flex: 1; /* Allows the text column to take up available space */
+}
+
+.sticky-image-column {
+  flex: 1; /* Allows the image column to take up available space */
+  max-width: 50%; /* Ensures the image column isn't too wide */
+}
+
+.image-wrapper-sticky {
+  position: -webkit-sticky; /* For Safari compatibility */
+  position: sticky; /* The magic! */
+  top: 100px; /* Sticks the image 100px from the top of the viewport */
+}
+
+.image-wrapper-sticky img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* General Properties Section Styling */
+#properties-section {
+  /* padding: 6rem 4rem 4rem 4rem; */
+  background-color: var(--main-background-color);
+  /* border-top: solid 2px var(--secondary-color);  */
+}
+
+#properties-section .post {
+  padding: 0; /* Remove extra padding from .post if it's already on the article */
+}
+
+/* Header Styling */
+.properties-header-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.properties-header-icons svg {
+  color: #daa520; /* Gold-like color for icons, adjust if you have a variable */
+  margin-right: 0.5rem;
+}
+
+.properties-header-icons span {
+  color: #b8860b; /* Darker gold-like color for text */
+  font-size: 0.875rem; /* Equivalent to text-sm */
+  font-weight: 500; /* Equivalent to font-medium */
+  text-transform: uppercase;
+  letter-spacing: 0.05em; /* Equivalent to tracking-wider */
+}
+
+#properties-section h2.title-with-underline {
+  color: var(--main-text-color); /* Your main text color */
+  font-size: 2.5rem; /* Equivalent to text-3xl md:text-4xl */
+  font-weight: 900; /* Equivalent to font-bold */
+  margin-bottom: 1.5rem;
+}
+
+#properties-section .center-text {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500rem; /* Equivalent to max-w-3xl */
+  color: #4a5568; /* Gray-600 */
+  font-size: 1.125rem; /* Equivalent to text-xl */
+  line-height: 1.6;
+}
+
+/* Properties Grid */
+.properties-grid {
+  display: flex; /* Activates Flexbox */
+  flex-wrap: wrap; /* Allows items to wrap to the next line */
+  justify-content: center; /* This is the key: It centers all items, including the last row */
+  gap: 1.5rem; /* Sets the space between your cards */
+}
+
+.property-card {
+  background-color: white;
+  border-radius: 0.5rem; /* rounded-lg */
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  transition: transform 0.3s ease; /* transition-transform duration-300 */
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex-basis: calc(33.333% - 1.5rem);
+  min-width: 320px; /* Prevents cards from becoming too narrow */
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* For tablets (e.g., screen widths up to 980px) */
+@media (max-width: 1280px) {
+  .properties-grid .property-card {
+    /* This will create a 2-column layout */
+    flex-basis: calc(50% - 1.5rem);
+  }
+}
+
+/* For mobile devices (e.g., screen widths up to 768px) */
+@media (max-width: 945px) {
+  .properties-grid .property-card {
+    /* This will create a 1-column layout */
+    flex-basis: 100%;
+  }
+}
+
+.property-card:hover {
+  transform: translateY(-0.5rem); /* hover:-translate-y-2 */
+}
+
+.property-card-image-wrapper {
+  position: relative;
+}
+
+.property-card-image-wrapper img {
+  width: 100%;
+  height: 16rem; /* h-64 */
+  object-fit: cover;
+}
+
+.property-card-image-wrapper .img-contain img {
+  /* width: 100%; */
+  object-fit: contain; /* This makes the image cover the area without distortion */
+  object-position: center; /* Center the image within its frame */
+}
+
+.home-slide-carousel.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
+/* Styling for the slide count */
+.property-card-image-wrapper .slide-count {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+  z-index: 10;
+  font-weight: 500;
+}
+
+/* Custom Arrow Styling */
+.property-card .slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  color: #333; /* Better color if no white bg */
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease;
+  box-shadow: none !important;
+
+  color: white;
+  text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333,
+    1px 1px 0 #333;
+}
+
+.property-card .slick-prev-arrow {
+  left: 15px;
+}
+.property-card .slick-next-arrow {
+  right: 15px;
+}
+/* Show arrows on hover of the card */
+.property-card:hover .slick-arrow {
+  opacity: 1;
+}
+.property-card .slick-arrow:hover {
+  color: #000000;
+  color: #333;
+}
+/* Slick dots styling (back to being positioned on the image) */
+.property-card-image-wrapper .slick-dots {
+  bottom: 15px;
+}
+
+.property-card-image-wrapper .slick-dots li button:before {
+  font-size: 12px;
+  color: #fff;
+  opacity: 0.75;
+}
+
+.property-card-image-wrapper .slick-dots li.slick-active button:before {
+  color: #fff;
+  opacity: 1;
+}
+
+.property-card-image-wrapper .slick-dots li button {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.property-price-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #daa520; /* Gold-500 */
+  background-color: var(--green-color);
+  color: white;
+  padding: 0.25rem 1rem; /* px-4 py-1 */
+  border-radius: 0.125rem; /* rounded-sm */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 700; /* font-bold */
+}
+
+.property-card-info {
+  padding: 1.5rem; /* p-6 */
+  position: relative;
+}
+
+.property-card-info h3 {
+  color: var(--main-text-color);
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 0.5rem; /* mb-2 */
+  text-align: center;
+}
+
+.property-card-info p {
+  color: #4a5568; /* Gray-600 */
+  margin-bottom: 1rem; /* mb-4 */
+  line-height: 1.5; /* Default paragraph line-height */
+  text-align: center;
+}
+
+@media (max-width: 1175px) {
+  .property-card-info {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 440px) {
+  .property-card-info {
+    padding: 0.5rem;
+  }
+}
+
+/* .property-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    gap: .5rem; 
+    margin-bottom: 1.5rem; 
+} */
+
+.property-details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  /* margin-bottom: 5.5rem;  */
+}
+
+.property-details-grid .flex {
+  display: flex;
+  align-items: center;
+}
+
+.property-details-grid .text-ocean-700 {
+  color: #0851a6; /* Ocean-700 */
+  margin-right: 0.5rem; /* mr-2 */
+  font-weight: 500; /* font-medium */
+}
+
+.property-details-grid .text-gray-500 {
+  color: #6b7280; /* Gray-500 */
+  font-size: 0.875rem; /* text-sm */
+}
+
+.property-details-grid svg {
+  color: #0a66c2; /* Ocean-600 */
+  margin-right: 0.5rem; /* mr-2 */
+}
+
+.property-details-grid.five-items {
+  grid-template-columns: repeat(3, 1fr); /* Creates a 5-column grid */
+}
+
+.property-details-grid.five-items > div:nth-last-child(1) {
+  grid-column: 2 / -1;
+}
+
+.property-details-grid.five-items > div:nth-last-child(2) {
+  transform: translateX(50%);
+}
+
+/* .property-tags-and-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.property-type-tag {
+    font-size: 0.75rem; 
+    padding: 0.25rem 0.5rem; 
+    background-color: #FDFCEF; 
+    color: #8C6A00;
+    border-radius: 0.25rem; 
+    white-space: nowrap;
+}
+
+.property-tags-and-link a {
+    color: #0A66C2; 
+    font-weight: 500; 
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-bottom: none; 
+}
+
+.property-tags-and-link a:hover {
+    color: #0851A6; 
+}
+
+.property-tags-and-link a svg {
+    margin-left: 0.25rem;
+} */
+
+.detail-item {
+  display: flex;
+  flex-direction: column; /* Stack label and value vertically */
+  align-items: center;
+}
+
+.detail-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #7f8c8d; /* A muted gray for the label */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+  white-space: nowrap; /* Prevents label from wrapping */
+}
+
+.detail-value {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #34495e;
+  font-weight: 500;
+  white-space: nowrap; /* Prevents value from wrapping */
+}
+
+@media (max-width: 440px) {
+  .detail-value {
+    font-size: 0.75rem;
+  }
+}
+
+.detail-value .fas,
+.detail-value .lucide {
+  margin-right: 0.5rem;
+  color: #3498db;
+  color: #0a66c2;
+  /* color: #754d25; */
+  color: #2d6a4f;
+  width: 16px;
+  text-align: center;
+}
+
+.details-button-wrapper.center {
+  bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* --- The Container --- */
+.two-button-container {
+  display: flex;
+  justify-content: center; /* This centers the group of buttons */
+  align-items: center; /* This keeps them vertically aligned */
+  gap: 1rem; /* This creates a consistent space BETWEEN the buttons */
+  margin-top: 1.5rem;
+}
+
+/* --- Base Styles for BOTH Buttons --- */
+/* This single rule applies the common styles to both buttons. */
+.details-button,
+.price-request-button {
+  background-color: #2d6a4f; /* Primary Green */
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid #2d6a4f; /* Added for a smooth transition on the inverse style */
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease; /* Transition all properties for a smoother effect */
+  white-space: nowrap;
+}
+
+.details-button.grey,
+.details-button.grey.inverse {
+  background-color: #f7f7f7;
+}
+
+/* --- Inverse Style for the Price Button --- */
+.details-button.inverse,
+.price-request-button.inverse {
+  background-color: #ffffff; /* White background */
+  color: #2d6a4f; /* Green text */
+}
+
+/* --- Hover States --- */
+.details-button:hover,
+.price-request-button:hover {
+  background-color: white;
+  border-color: #2d6a4f;
+  color: #2d6a4f;
+}
+
+/* Hover for the inverse button */
+.details-button.inverse:hover,
+.price-request-button.inverse:hover {
+  background-color: #2d6a4f; /* Green background on hover */
+  color: #ffffff; /* White text on hover */
+  border-color: #2d6a4f;
+}
+
+/* --- View More Button Styles --- */
+.view-more-wrapper {
+  text-align: center; /* Centers the button horizontally */
+  margin-top: 3rem; /* Adds space between the grid and the button */
+  padding-bottom: 2rem; /* Ensures space at the very bottom */
+}
+
+.view-more-button {
+  display: inline-block; /* Necessary for padding and margin */
+  background-color: #2d6a4f; /* Primary green from your theme */
+  color: white;
+  padding: 1rem 2.5rem; /* A large, clickable button */
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.view-more-button:hover {
+  background-color: #40916c; /* Lighter green on hover */
+  color: white;
+  transform: translateY(-3px); /* Gives a slight lift effect */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  /* md */
+  .properties-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .property-search-banner {
+    flex-direction: row; /* md:flex-row */
+    text-align: left;
+  }
+  .property-search-banner > div:last-child {
+    flex-grow: 1;
+  }
+  .contact-team-btn {
+    margin-left: auto; /* md:ml-auto */
+  }
+}
+
+@media (min-width: 1024px) {
+  /* lg */
+  .properties-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/**
+ * Simple fade transition,
+ */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.15s ease-out !important;
+  -moz-transition: all 0.15s ease-out !important;
+  transition: all 0.15s ease-out !important;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8 !important;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0 !important;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0 !important;
+  -webkit-transition: all 0.15s ease-out !important;
+  -moz-transition: all 0.15s ease-out !important;
+  transition: all 0.15s ease-out !important;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1 !important;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0 !important;
+}
+
+/*
+ * FINAL Magnific Popup CSS - Stemless Arrows
+*/
+
+/* 1. Faded Background Overlay */
+.mfp-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0b0b0b;
+  opacity: 0.8;
+  z-index: 10001;
+}
+
+/* 2. Main Wrapper */
+.mfp-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10002;
+  outline: none !important;
+}
+
+/* 3. Image Centering and Sizing */
+.mfp-img {
+  max-width: 85vw !important;
+  max-height: 85vh !important;
+  margin: auto !important;
+  display: block !important;
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+
+/* 4. Close Button ('X') */
+.mfp-close {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  text-decoration: none;
+  text-align: center;
+  opacity: 0.8;
+  color: #fff;
+  font-style: normal;
+  font-size: 28px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  background: transparent !important;
+  border: none !important;
+  z-index: 10003;
+  box-shadow: none !important;
+}
+
+/* 5. Gallery Arrows (Left/Right) */
+.mfp-arrow {
+  position: absolute;
+  opacity: 0.8;
+  margin: 0;
+  top: 50%;
+  margin-top: -55px;
+  padding: 0;
+  width: 90px;
+  height: 110px;
+  cursor: pointer;
+  background: transparent !important;
+  border: none !important;
+  z-index: 10003;
+  box-shadow: none !important;
+  -webkit-appearance: none; /* Hides default browser styles */
+
+  /* Hides the default text/icon arrow */
+  font-size: 0;
+  line-height: 0;
+}
+
+/* 6. Hover Effects for Controls */
+.mfp-arrow:hover,
+.mfp-close:hover {
+  opacity: 1;
+  color: #fff;
+}
+
+.mfp-arrow-left {
+  left: 10px;
+}
+
+.mfp-arrow-right {
+  right: 10px;
+}
+
+/* 7. Creates the new, stemless chevron */
+.mfp-arrow:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: 48px;
+  margin-left: 35px;
+  border: medium inset transparent;
+}
+
+.mfp-arrow-left:after {
+  display: none !important;
+}
+
+.mfp-arrow-right:after {
+  display: none !important;
+}
+
+/* 8. Bottom Bar Styling */
+.mfp-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+.mfp-title {
+  text-align: left;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.mfp-counter {
+  text-align: right;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+#lot-layout .image.fit {
+  /* Use aspect-ratio for modern browsers */
+  aspect-ratio: 1 / 1; /* Makes the container perfectly square */
+  width: 100%; /* Ensure it takes full width of its column */
+  overflow: hidden; /* Important to clip overflowing image parts */
+  display: block; /* Ensures aspect-ratio applies correctly */
+}
+
+#lot-layout .image.fit img {
+  width: 100%;
+  height: 100%; /* Make image fill its parent container */
+  object-fit: cover; /* Crucial: crops the image to fit without distortion */
+  object-position: center; /* Centers the image within the container */
+}
+
+/* Contact Section Card */
+
+/* Main container to center the content */
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-card {
+  width: 100%;
+  max-width: 56rem; /* Equivalent to max-w-4xl */
+  padding: 2rem; /* Equivalent to p-8 */
+  background-color: #ffffff;
+  border-radius: 0.75rem; /* Equivalent to rounded-xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+}
+
+.contact-header {
+  text-align: center;
+}
+
+.contact-header h2 {
+  font-size: 1.875rem; /* Equivalent to text-3xl */
+  font-weight: 700; /* Equivalent to font-bold */
+  color: #1f2937; /* Equivalent to text-gray-800 */
+}
+
+.contact-header p {
+  margin-top: 1rem; /* Equivalent to mt-4 */
+  color: #4b5563; /* Equivalent to text-gray-600 */
+}
+
+/* Grid for contact details */
+.contact-grid {
+  margin-top: 3rem; /* Equivalent to mt-12 */
+  display: grid;
+  grid-template-columns: 1fr; /* Default to one column */
+  gap: 2rem; /* Equivalent to gap-8 */
+  text-align: center;
+}
+
+/* Icon wrapper styles */
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem; /* Equivalent to w-16 */
+  height: 4rem; /* Equivalent to h-16 */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem; /* Equivalent to mb-4 */
+  background-color: #dcfce7; /* Equivalent to bg-green-100 */
+  border-radius: 9999px; /* Equivalent to rounded-full */
+  color: var(--green-color); /* Equivalent to text-green-700 */
+}
+
+.icon-wrapper i {
+  font-size: 2em; /* Makes the icon larger */
+}
+
+.contact-item h3 {
+  font-size: 1.25rem; /* Equivalent to text-xl */
+  font-weight: 600; /* Equivalent to font-semibold */
+  color: #1f2937; /* Equivalent to text-gray-800 */
+  text-align: center;
+}
+
+.contact-item p {
+  margin-top: 0.5rem; /* Equivalent to mt-2 */
+  color: #4b5563; /* Equivalent to text-gray-600 */
+  text-align: center;
+}
+
+.contact-item a {
+  color: #15803d; /* Equivalent to text-green-700 */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  border-bottom: none;
+}
+
+.contact-item a:hover {
+  color: #14532d; /* Equivalent to hover:text-green-900 */
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (min-width: 640px) {
+  /* sm breakpoint */
+  .contact-header h2 {
+    font-size: 2.25rem; /* Equivalent to sm:text-4xl */
+  }
+}
+
+@media (min-width: 768px) {
+  /* md breakpoint */
+  .contact-grid {
+    grid-template-columns: repeat(3, 1fr); /* Equivalent to md:grid-cols-3 */
+  }
+}
+
+.contact-card-hdm-custom {
+  border-radius: 5rem;
+  box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+}
+
+.layout-card {
+  background-color: var(--main-background-color); /* semi-transparent tan */
+  border: 1px solid var(--secondary-color);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.layout-card.shrink-width {
+  padding: 2vw;
+  display: inline-block;
+  /* margin: 0 auto; */
+  text-align: center;
+}
+
+.layout-card:hover {
+  transform: scale(1.01);
+}
+
+.two-column-list {
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.two-column-list ul {
+  list-style-type: disc;
+  text-align: left;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.image-container {
+  width: 100%;
+  overflow: hidden; /* Ensures images don't spill out */
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  /* box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); */
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This is the general default */
+}
+
+/* --- 1. SINGLE IMAGE VIEW (Cover) --- */
+.single-image-view {
+  height: auto;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- 2. TWO IMAGE VIEW (Desktop) --- */
+.two-image-view {
+  /* max-height: 40vh;  */
+  /* aspect-ratio: 16 / 15; */
+  /* max-width: 1200px;  */
+  aspect-ratio: 16 / 4;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.two-image-view.maps {
+  aspect-ratio: 16 / 5;
+}
+
+.two-image-view .image-wrapper {
+  flex: 1; /* Each wrapper takes up equal space */
+  height: 100%;
+  /* overflow: hidden; */
+  background-color: var(
+    --main-background-color
+  ); /* A subtle background for letterboxing */
+  max-height: 440vh;
+}
+
+.two-image-view .image-wrapper a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.two-image-view .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* This will now work correctly */
+}
+
+/* --- 3. TWO IMAGE VIEW (Mobile) --- */
+@media (max-width: 1168px) {
+  .two-image-view {
+    flex-direction: column; /* Stack images on top of each other */
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .two-image-view .image-wrapper {
+    width: 100%;
+    height: 20vh;
+  }
+}
+
+.three-image-view {
+  aspect-ratio: 16 / 4;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.three-image-view .image-wrapper {
+  flex: 1; /* Each wrapper takes up equal space */
+  height: 100%;
+  /* overflow: hidden; */
+  background-color: var(
+    --main-background-color
+  ); /* A subtle background for letterboxing */
+  max-height: 440vh;
+}
+
+.three-image-view .image-wrapper a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.three-image-view .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* This will now work correctly */
+}
+
+/* --- 3. TWO IMAGE VIEW (Mobile) --- */
+@media (max-width: 1168px) {
+  .three-image-view {
+    flex-direction: column; /* Stack images on top of each other */
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .three-image-view .image-wrapper {
+    /* height: 30vh;  */
+    width: 100%;
+    height: 20vh;
+  }
+}
+
+/* --- 4. IMAGE CONTAIN VIEW --- */
+.image-contain-view {
+  aspect-ratio: 16 / 4;
+  background-color: var(
+    --main-background-color
+  ); /* A subtle background for letterboxing */
+
+  /* --- FIX: Add flex properties to center the image --- */
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+}
+
+.image-contain-view a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  /* The font-size and text-decoration lines prevent odd underlines */
+  font-size: 0;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.image-contain-view img {
+  object-fit: contain; /* This is the key: it scales the image down to fit without cropping */
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+
+  /* --- FIX: Ensure the image itself doesn't overflow its flex container --- */
+  /* These override the generic width/height 100% for this specific case */
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.onescreen-section {
+  height: calc(95vh - var(--rough-nav-bar-height));
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+}
+
+/* This is the key to making the layout fit */
+.onescreen-section .image-contain-view {
+  /* This makes the image container flexible, taking up remaining space */
+  flex: 1;
+
+  /* This prevents the container from overflowing if its content is large */
+  min-height: 0;
+
+  /* Ensure it uses the available width */
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .onescreen-section {
+    /* Revert the height to be determined by content, not the viewport */
+    height: auto;
+  }
+}
+
+.feature-split-section {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem;
+  margin-bottom: 5rem;
+}
+
+.feature-split-section.reverse-layout {
+  flex-direction: row-reverse;
+  margin-bottom: 0rem;
+}
+
+.feature-image-container {
+  flex-basis: 45%;
+  flex-shrink: 0;
+}
+
+.feature-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  background-color: #c6dff7;
+}
+
+.feature-text-container {
+  flex-basis: 55%;
+}
+
+.text-content-item {
+  margin-bottom: 2.5rem;
+}
+
+.text-content-item:last-child {
+  margin-bottom: 0;
+}
+
+.text-content-item h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: #4a5568;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 0.75rem 0;
+}
+
+.text-content-item p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin: 0;
+}
+
+.property-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem 2rem;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.9em;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.spec {
+  background-color: rgba(244, 236, 226, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  line-height: 1.3;
+}
+
+.property-specs-grid > div:nth-last-child(1) {
+  transform: translate(50%);
+}
+
+.property-specs-grid > div:nth-last-child(2) {
+  transform: translateX(50%);
+}
+
+.label {
+  font-weight: 600;
+  color: #3b2f25;
+  margin-right: 0.5rem;
+}
+
+.property-specs-grid.condo .label {
+  margin-right: 0;
+}
+
+@media (max-width: 980px) {
+  .feature-split-section {
+    gap: 2rem;
+  }
+  .text-content-item h2 {
+    font-size: 2rem;
+  }
+  .property-specs-grid {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-split-section,
+  .feature-split-section.reverse-layout {
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+  }
+  
+  .property-specs-grid {
+    font-size: 0.8rem;
+  }
+
+  .feature-image-container {
+    width: 100%;
+    height: 500px !important; 
+    min-height: 500px;
+  }
+  
+  .feature-image-container img {
+    height: 100% !important;
+    width: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+/* This is the main container that holds everything */
+.condo-layout-container {
+  display: flex;
+  justify-content: center; /* Centers the items */
+  align-items: flex-start; /* Aligns items to the top */
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  gap: 40px; /* The space between the two items */
+}
+
+/* This is each individual card (Image + Specs) */
+.condo-item {
+  /* You might want to set a max-width consistent with your images/specs */
+  max-width: 500px;
+  margin-top: 2rem;
+}
+
+/* Add a media query for smaller screens */
+@media (max-width: 1024px) {
+  /* Adjust this breakpoint as needed */
+  .condo-layout-container {
+    /* This will stack the .property-item divs vertically */
+    flex-direction: column;
+    align-items: center; /* Center the stacked items */
+  }
+}
+
+.condo-item .image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.condo-item .image-wrapper h3 {
+  text-align: center;
+  margin-bottom: 1rem; /* Add some space between title and image */
+}
+
+.condo-item .image-wrapper a {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Adjust this ratio as needed (e.g., 16/9, 1/1) */
+  overflow: hidden; /* Hides the parts of the image that are cropped */
+  background-color: var(--main-background-color); /* A placeholder color */
+}
+
+.condo-item .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top; /* This is the new line you need to add */
+}
+
+.button.special-disabled {
+  background: #e7e7e7;
+  color: #a0a0a0;
+  border: none;
+  box-shadow: inset 2px 2px 5px #c4c4c4, inset -2px -2px 5px #ffffff;
+  cursor: not-allowed;
+  position: relative;
+  pointer-events: none;
+  display: inline-block;
+
+  /* --- Larger Button Styles --- */
+  font-size: 1rem; /* Increased font size */
+  height: 4rem; /* Increased height */
+  line-height: 4rem; /* Match height for vertical centering */
+  padding: 0 3rem 0 4rem; /* Increased padding, especially on the left for the icon */
+}
+
+.button.special-disabled::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f023"; /* lock icon */
+  position: absolute;
+  left: 1.5rem; /* Adjusted icon position */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem; /* Increased icon size */
+  color: #a0a0a0;
+}
+
+#map-section {
+  /* Essential for positioning the highlight overlay */
+  display: inline-block; /* To make sure the parent container wraps the image correctly */
+}
+
+#community-map {
+  display: block; /* Remove extra space below image */
+  max-width: 100%; /* Make the image responsive */
+  height: auto;
+}
+
+/* Highlight overlay (initially hidden) */
+.lot-highlight {
+  position: absolute;
+  background-color: rgba(0, 123, 255, 0.5); /* Blue with 50% opacity */
+  border: 2px solid #007bff;
+  pointer-events: none; /* Allows clicks to pass through to the image map areas */
+  display: none; /* Hidden by default */
+  z-index: 10; /* Make sure it appears above the image */
+}
+
+.lot-highlight-container {
+  position: absolute; /* This is fundamental for JS positioning */
+  pointer-events: none; /* Allows clicks to pass through */
+  display: none; /* Hidden by default */
+  z-index: 10; /* Ensures it's on top */
+  /* No need for top/left/width/height here, JS sets them dynamically */
+  background-color: transparent; /* SVG provides color */
+  border: none; /* SVG provides border */
+  overflow: hidden;
+}
+
+.lot-highlight-container {
+  position: absolute;
+  pointer-events: none; /* Allows mouse events to pass through to the element *below* it */
+  display: none;
+  z-index: 10;
+  background-color: transparent;
+  border: none;
+}
+
+/* NEW: Styles for the invisible SVG overlay that handles mouse events */
+.clickable-svg-overlay {
+  position: absolute; /* Positioned absolutely over the body, like the highlight */
+  top: 0;
+  left: 0;
+  /* width: 100%; Will be overridden by JS to match image width */
+  /* height: 100%; Will be overridden by JS to match image height */
+  z-index: 11; /* Make it higher than the highlight so it receives events first */
+  overflow: hidden;
+  /* background-color: rgba(255, 0, 0, 0.1); /* Temporary: Use for debugging to see the overlay */
+}
+
+.clickable-svg-overlay polygon {
+  /* Styles for the invisible polygons within the SVG */
+  fill: transparent; /* Makes them invisible */
+  stroke: transparent; /* No border */
+  cursor: pointer; /* Changes cursor to pointer when over a lot */
+}
+
+.clickable-svg-overlay polygon:hover {
+  fill: rgba(255, 255, 0, 0.2);
+}
+
+/* In your main.css */
+
+.lot-info-box {
+  position: absolute;
+  display: none; /* Hidden by default */
+  background-color: #ffffff; /* White background */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px 20px; /* Internal spacing */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Soft shadow */
+  z-index: 1000; /* Ensure it's on top of everything */
+  min-width: 180px; /* Minimum width for readability */
+  max-width: 300px; /* Maximum width */
+  text-align: left; /* Text alignment */
+  pointer-events: none; /* Crucial: Allows mouse events to pass through, so it doesn't block mouseout from the polygon */
+  box-sizing: border-box; /* Include padding in width/height */
+  opacity: 0; /* Start with opacity 0 for fade effect */
+  transition: opacity 0.2s ease-in-out; /* Smooth fade transition */
+}
+
+/* Styles for when the info box is displayed */
+.lot-info-box[style*="display: block"] {
+  opacity: 1;
+}
+
+.lot-info-box h3 {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 1.1rem; /* Slightly smaller for tooltip heading */
+  font-weight: 700;
+  color: var(--main-text-color); /* Use your theme's main text color */
+  margin-top: 0;
+  margin-bottom: 0.5em; /* Space below heading */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.lot-info-box p {
+  font-family: "Merriweather", Georgia, serif;
+  font-size: 0.9rem; /* Smaller text for details */
+  color: #555; /* Slightly muted color for details */
+  margin-bottom: 0.3em; /* Tighten spacing between paragraphs */
+  line-height: 1.4;
+  text-align: left; /* Ensure paragraphs are left-aligned */
+}
+
+.lot-info-box p:last-child {
+  margin-bottom: 0; /* No margin below the last paragraph */
+}
+
+/* --- Price Request Modal Styles --- */
+
+/* The dark background overlay */
+.modal-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 10005;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+/* The popup form container */
+.modal-content {
+  background-color: #fefefe;
+  padding: 2rem;
+  /* border-radius: 8px; */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 750px;
+  position: relative;
+  /* height: 90%; */
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* The close button (X) in the corner */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  border: none;
+  background: none;
+  cursor: pointer;
+  box-shadow: none;
+  padding: 0;
+}
+
+.modal-close:hover {
+  color: #333;
+  box-shadow: none;
+}
+
+/* Form styles */
+.modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.modal-content p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 0.8;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.submit-button {
+  display: flex;
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  box-shadow: none;
+  /* border-radius: 4px; */
+  background-color: #754d25; /* Your dark brown button color */
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #8a6746;
+  color: white;
+  box-shadow: none;
+  /* border-color: white !important; */
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column; /* Stack form elements vertically */
+  height: 100%; /* Make the form fill the .modal-content height */
+  margin-bottom: 0;
+}
+
+/* Target the div we added the new class to */
+.form-group-expand {
+  flex-grow: 1; /* This is the key: it tells this element to expand */
+  display: flex;
+  flex-direction: column;
+  max-height: 25vh;
+}
+
+/* Make the textarea inside also expand to fill its container */
+.form-group-expand textarea {
+  flex-grow: 1;
+  resize: none; /* Optional: prevents user from resizing the textarea */
+}
+
+body.form-is-open {
+  overflow: hidden;
+}
+
+.back-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  line-height: normal;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  padding: 10px 15px;
+  background-color: #2d6a4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #40916c; /* A slightly lighter color for hover */
+  color: white;
+  box-shadow: none;
+}
+
+#gallery-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+  pointer-events: none;
+}
+body #gallery-popup-overlay.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+.gallery-popup-content {
+  position: relative;
+  background-color: #fff;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  width: 90%;
+  max-width: 1100px;
+  border-radius: 4px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+  max-height: 95vh;
+  overflow-y: auto;
+}
+body #gallery-popup-overlay.active .gallery-popup-content {
+  transform: scale(1);
+}
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: #333;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: none;
+}
+.popup-close:hover {
+  box-shadow: none;
+  color: #ddd;
+}
+#gallery-popup-overlay #popup-title {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+  color: #222;
+  border-bottom: none;
+}
+.popup-gallery-scroll-area {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+.popup-main-image-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.image-aspect-ratio-box {
+  position: relative !important;
+  width: 100% !important;
+  height: 0 !important;
+  padding-top: 56.25% !important;
+  background-color: #f0f0f0 !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+}
+#popup-main-image {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+.popup-main-image-container .nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: none !important;
+  color: white;
+  text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333,
+    1px 1px 0 #333;
+  opacity: 1;
+  transition: color 0.3s ease;
+}
+.popup-main-image-container #prev-btn {
+  left: 15px;
+}
+.popup-main-image-container #next-btn {
+  right: 15px;
+}
+.popup-main-image-container .nav-btn:hover {
+  color: #333;
+}
+.popup-thumbnail-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.popup-thumbnail {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: all 0.2s;
+  border-radius: 4px;
+}
+.popup-thumbnail:hover {
+  border-color: #ccc;
+}
+.popup-thumbnail.active {
+  border-color: #007aff;
+}
+#popup-specs-grid.property-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  text-align: left;
+}
+#popup-specs-grid .spec {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+  background-color: white;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #111;
+}
+#popup-specs-grid .spec .label {
+  font-size: 0.9em;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.popup-action-area {
+  text-align: center;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.flex-layout {
+  display: flex;
+  flex-wrap: wrap; /* Allows stacking on mobile */
+  align-items: center; /* Vertically centers the content in both columns */
+  gap: 40px; /* Creates space between the image and text */
+}
+
+.flex-layout .flex-image-column {
+  flex: 1 1 500px; /* Allows it to grow/shrink from a 500px base */
+  min-width: 45%; /* Tries to be about half the width */
+  height: 600px; /* This is your fixed "window" height */
+  overflow: hidden; /* This hides the top/bottom of the image */
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+.flex-layout .flex-image-column img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This is the "cover" magic */
+  /* This vertically centers the image. Adjust '60%' (shows upper-middle)
+       to '50%' (exact middle) or '40%' (lower-middle) */
+  object-position: center 60%;
+}
+
+.flex-layout .flex-grid-column {
+  flex: 1 1 500px; /* Allows it to grow/shrink from a 500px base */
+  min-width: 45%; /* Tries to be about half the width */
+}
+
+.flex-layout .flex-stacked-image-column {
+  flex: 1 1 500px; /* Allows it to grow/shrink from a 500px base */
+  min-width: 45%; /* Tries to be about half the width */
+  grid-template-columns: repeat(1, 1fr); /* Creates 1 column */
+}
+
+.flex-layout .flex-text-column {
+  flex: 1 1 500px; /* Same flex values so they share space equally */
+  min-width: 45%;
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  /* The 'flex-wrap: wrap' on the parent will automatically
+      stack the columns when they can't fit side-by-side.
+    */
+
+  /* Reset min-width for stacking */
+  .flex-layout .flex-image-column,
+  .flex-layout .flex-text-column {
+    min-width: 100%;
+  }
+
+  .flex-layout .flex-image-column {
+    height: 350px; /* Adjust image height for mobile */
+  }
+}
+/* Mapbox */
+
+#map {
+  /* The map will now fill its container. */
+  width: 100%;
+  height: 450px; /* Set a height for the initial view */
+  cursor: pointer;
+
+  /* Smooth transition for when it becomes fullscreen */
+  transition: all 0.5s ease;
+
+  z-index: 1; /* Keep it in the normal document flow */
+}
+
+/* Style for the enlarged, centered state */
+#map.fullscreen {
+  position: fixed; /* Lifts the map out of the page flow */
+  top: 50%;
+  left: 50%;
+  /* Use transform to perfectly center it */
+  transform: translate(-50%, -50%);
+  width: 90vw; /* 90% of the viewport width */
+  height: 90vh; /* 90% of the viewport height */
+  border: 3px solid white;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 200000; /* Increased z-index to be above theme header */
+  cursor: default; /* Change cursor back to normal for the enlarged map */
+}
+
+/* New style for the background overlay */
+#map-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  z-index: 10000; /* Just below the fullscreen map */
+  cursor: pointer;
+
+  /* Hide by default and set up for smooth transition */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* NEW: Creates the X icon without changing HTML */
+#map-overlay::after {
+  content: "\00d7"; /* Unicode for a nice 'X' (multiplication sign) */
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 60px;
+  font-weight: 300; /* Makes it look sleeker */
+  line-height: 1;   /* Prevents vertical alignment issues */
+  pointer-events: none; /* Ensures the click registers on the div, not the pseudo-element */
+}
+
+/* New class to make the overlay visible */
+#map-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Style for the pulsing marker */
+.pulsing-marker {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: transparent; /* White central dot */
+  border: 2px solid #18424d; /* Blue border */
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(0, 124, 191, 0.4);
+  position: relative;
+  z-index: 10;
+}
+
+/* New class to hide the marker */
+.pulsing-marker.hidden {
+  display: none;
+}
+
+.pulsing-marker::before,
+.pulsing-marker::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #18424d;
+  animation: pulse 2s infinite;
+  opacity: 0;
+}
+
+/* Style for the 'Click to enlarge' prompt under the map */
+.map-click-prompt {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 12px;
+  cursor: pointer;
+  padding-bottom: 10px; /* Added padding so it doesn't touch bottom */
+}
+
+.map-click-prompt.hidden {
+  display: none;
+}
+
+/* Second ring with a delay */
+.pulsing-marker::after {
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
+
+/* --- ADD THIS NEW RULE --- */
+#map.fullscreen .pulsing-marker,
+#map.fullscreen .pulsing-marker::before,
+#map.fullscreen .pulsing-marker::after {
+  display: none;
+  animation-play-state: paused;
+}
+
+.flex-layout {
+  display: flex;
+  flex-wrap: wrap; /* Allows stacking on mobile */
+  align-items: center; /* Vertically centers the content in both columns */
+  gap: 40px; /* Creates space between the image and text */
+}
+
+.flex-layout .flex-image-column {
+  flex: 1 1 500px; /* Allows it to grow/shrink from a 500px base */
+  min-width: 45%; /* Tries to be about half the width */
+  height: 600px; /* This is your fixed "window" height */
+  overflow: hidden; /* This hides the top/bottom of the image */
+  border-radius: 8px; /* Optional: rounded corners */
+}
+
+.flex-layout .flex-image-column img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This is the "cover" magic */
+  /* This vertically centers the image. Adjust '60%' (shows upper-middle)
+       to '50%' (exact middle) or '40%' (lower-middle) */
+  object-position: center 60%;
+}
+
+.flex-layout .flex-grid-column {
+  flex: 1 1 500px; /* Allows it to grow/shrink from a 500px base */
+  min-width: 45%; /* Tries to be about half the width */
+}
+
+.flex-layout .flex-stacked-image-column {
+  flex: 1 1 500px; /* Allows it to grow/shrink from a 500px base */
+  min-width: 45%; /* Tries to be about half the width */
+  grid-template-columns: repeat(1, 1fr); /* Creates 1 column */
+}
+
+.flex-layout .flex-text-column {
+  flex: 1 1 500px; /* Same flex values so they share space equally */
+  min-width: 45%;
+}
+
+@media (max-width: 991px) {
+  /* The 'flex-wrap: wrap' on the parent will automatically
+      stack the columns when they can't fit side-by-side.
+    */
+
+  /* Reset min-width for stacking */
+  .flex-layout .flex-image-column,
+  .flex-layout .flex-text-column {
+    min-width: 100%;
+  }
+
+  .flex-layout .flex-image-column {
+    height: 350px; /* Adjust image height for mobile */
+  }
+}
+
+/* SHARED STYLES for inputs and selects */
+#contact-form-in-modal input[type="text"],
+#contact-form-in-modal input[type="email"],
+#contact-form-in-modal input[type="tel"],
+#contact-form-in-modal select {
+  width: 100%;
+  height: auto !important; /* Overrides theme fixed heights */
+  min-height: 50px; /* Increased height to stop text cutoff */
+  padding: 12px 15px;
+  font-size: 16px;
+  font-weight: 400; /* Regular font weight */
+  font-family: inherit;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  line-height: 1.5; /* Gives text room to breathe */
+  background-color: #f7f7f7;
+  margin-bottom: 0;
+}
+
+/* DROPDOWN SPECIFIC STYLING */
+#contact-form-in-modal select {
+  padding-right: 40px;
+  padding-bottom: 14px !important; /* Extra space for letters like 'y' and 'p' */
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 14px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* RADIO BUTTONS (YES/NO) LAYOUT */
+#contact-form-in-modal .radio-group {
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+/* Wrapper for the button+text pair */
+#contact-form-in-modal .radio-label,
+#contact-form-in-modal .radio-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* FORCE RADIO BUBBLE VISIBILITY */
+#contact-form-in-modal input[type="radio"] {
+  opacity: 1 !important;
+  appearance: auto !important;
+  -webkit-appearance: radio !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin: 0 10px 0 0 !important;
+  position: static !important;
+  z-index: 100 !important;
+  cursor: pointer !important;
+  accent-color: #000 !important; /* Ensures the dot is black */
+}
+
+/* LAYOUT UTILITIES */
+#contact-form-in-modal .form-row {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+#contact-form-in-modal .half-width {
+  width: 48%;
+}
+#contact-form-in-modal .form-group {
+  margin-bottom: 20px;
+}
+#contact-form-in-modal label.field-title,
+#contact-form-in-modal .field-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#contact-form-in-modal .disclaimer {
+  font-size: 0.75rem;
+  color: #666;
+  margin-top: 20px;
+  line-height: 1.4;
+}
+#contact-form-in-modal .submit-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.about-card {
+  background-color: #f4f9fc; /* Light blue background */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Reverses the layout so Text is Left, Image is Right */
+.layout-reversed {
+  flex-direction: row-reverse;
+}
+
+/* Adjustments for mobile to ensure it stacks correctly */
+@media (max-width: 768px) {
+  .layout-reversed {
+    flex-direction: column-reverse; /* Image on top, text bottom on mobile */
+  }
+  .about-card {
+    padding: 20px;
+  }
+}
+
+/* Mosaic Grid for the 3 images */
+.gallery-mosaic {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr; /* Left column wider than right */
+  grid-template-rows: repeat(2, 250px); /* Fixed height rows */
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.gallery-mosaic .gallery-item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.gallery-mosaic .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-mosaic .gallery-item img:hover {
+  transform: scale(1.03);
+}
+
+/* The first image takes up the whole left side */
+.gallery-mosaic .gallery-item:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+/* Mobile fallback for the gallery */
+@media (max-width: 768px) {
+  .gallery-mosaic {
+    display: flex;
+    flex-direction: column;
+  }
+  .gallery-mosaic .gallery-item {
+    height: 300px; /* specific height for mobile */
+  }
+}
+
+/* --- NEW MOSAIC V2 LAYOUT --- */
+.gallery-mosaic-v2 {
+  display: grid;
+  /* Columns: Wide left (1.6fr), Narrower right (1fr) */
+  grid-template-columns: 1.6fr 1fr;
+  /* Rows: Top row height, Bottom row height */
+  grid-template-rows: 400px 450px;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 20px auto 0 auto;
+  padding-bottom: 80px;
+}
+
+/* Standard item styling */
+.gallery-mosaic-v2 .gallery-item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* Image styling */
+.gallery-mosaic-v2 .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+/* Hover effect */
+.gallery-mosaic-v2 .gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+/* --- Grid Placement Rules --- */
+
+/* Item 3: Bottom Full Width */
+/* Spans from column line 1 to the last line (-1), sits in row 2 */
+.gallery-mosaic-v2 .gallery-item:nth-child(3) {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+/* Mobile Fallback for V2 */
+@media (max-width: 850px) {
+  /* Turn grid into a vertical stack on mobile */
+  .gallery-mosaic-v2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px 60px 20px;
+    grid-template-rows: auto; /* Reset fixed grid rows */
+  }
+  .gallery-mosaic-v2 .gallery-item {
+    height: 300px; /* Standard mobile height for all items */
+  }
+}
+
+.narrative-section {
+  padding: 100px 20px;
+}
+
+.narrative-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.narrative-container h2 {
+  font-size: clamp(2.5rem, 1.75rem + 3.5vw, 4rem);
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* --- REFINED BADGE STYLE --- */
+.badge-coming-soon {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* Changed from light gray to darker tone matching paragraph */
+  color: #555;
+  /* Removed border */
+  border: none;
+  /* Added subtle background fill instead of white */
+  background-color: #f7f7f7;
+  padding: 8px 20px;
+  /* Softer rectangular radius instead of pill shape */
+  border-radius: 4px;
+  margin-bottom: 35px;
+  align-items: center;
+}
+
+.narrative-divider {
+  width: 60px;
+  height: 2px;
+  background-color: #333;
+  margin: 50px auto 0 auto;
+}
+
+/* 4. Clean Uniform Grid (Standard 3-column, NOT Mosaic) */
+.clean-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Equal Columns */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.clean-grid-item {
+  width: 100%;
+  height: 300px; /* Forces all images to be the same height */
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.clean-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crops image ensuring no stretching */
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.clean-grid-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Mobile fallback */
+@media (max-width: 850px) {
+  .clean-grid {
+    grid-template-columns: 1fr; /* Stack images on mobile */
+    padding: 0 20px 60px 20px;
+  }
+}

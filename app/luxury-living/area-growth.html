@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <title>Area Growth - Papagayo Bay</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <style>
+      img:is([sizes="auto" i], [sizes^="auto," i]) {
+        contain-intrinsic-size: 3000px 1500px;
+      }
+
+      /* Styling for the combined section list */
+      .spaced-feature-list ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .spaced-feature-list li {
+        margin-bottom: 8px;
+        color: #666;
+        line-height: 1.6;
+      }
+      .spaced-feature-list li strong {
+        color: #000;
+        font-size: 1.1rem;
+        display: block;
+        margin-bottom: 4px;
+        margin-top: 15px; /* Spacing between items */
+      }
+
+      /* Parallax Title Styles */
+      .parallax-title-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40vh;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        margin-bottom: 40px;
+      }
+      .parallax-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+      }
+      .parallax-title-text {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        font-family: "Playfair Display", serif;
+      }
+
+      @media screen and (max-width: 768px) {
+        .parallax-title-text {
+          font-size: 2rem;
+        }
+        .parallax-title-container {
+          height: 30vh;
+        }
+        /* Stack columns on mobile */
+        .row_col_wrap_12 {
+          flex-direction: column;
+        }
+        .vc_col-sm-6 {
+          width: 100% !important;
+        }
+      }
+    </style>
+    <link
+      rel="preload"
+      href="https://triadacollections.com/wp-content/themes/salient/css/fonts/icomoon.woff?v=1.6"
+      as="font"
+      type="font/woff"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="icon"
+      href="https://triadacollections.com/wp-content/uploads/2025/02/cropped-favicon-32x32.webp"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="https://triadacollections.com/wp-content/uploads/2025/02/cropped-favicon-192x192.webp"
+      sizes="192x192"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://triadacollections.com/wp-content/uploads/2025/02/cropped-favicon-180x180.webp"
+    />
+    <meta
+      name="msapplication-TileImage"
+      content="https://triadacollections.com/wp-content/uploads/2025/02/cropped-favicon-270x270.webp"
+    />
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/slick-1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="/slick-1.8.1/slick/slick-theme.css" />
+    <noscript
+      ><link rel="stylesheet" href="/assets/css/noscript.css"
+    /></noscript>
+    <link
+      rel="stylesheet"
+      href="https://triadacollections.com/wp-content/themes/salient/css/build/grid-system.css?ver=17.0.7"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="https://triadacollections.com/wp-content/themes/salient/css/build/style.css?ver=17.0.7"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="https://triadacollections.com/wp-content/themes/salient/css/build/header/header-layout-centered-logo-between-menu-alt.css?ver=17.0.7"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="https://triadacollections.com/wp-content/themes/salient/css/build/responsive.css?ver=17.0.7"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="https://triadacollections.com/wp-content/themes/salient/css/build/skin-material.css?ver=17.0.7"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="https://triadacollections.com/wp-content/uploads/salient/menu-dynamic.css?ver=47158"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="https://triadacollections.com/wp-content/themes/salient/css/salient-dynamic-styles.css?ver=67398"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="https://triadacollections.com/wp-content/themes/salient-child/style.css?ver=17.0.7"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="https://triadacollections.com/wp-content/themes/salient/css/build/off-canvas/core.css?ver=17.0.7"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="https://triadacollections.com/wp-content/themes/salient/css/build/off-canvas/fullscreen-legacy.css?ver=17.0.7"
+      type="text/css"
+      media="all"
+    />
+    <link rel="stylesheet" href="/assets/css/WPengineCSS.css" />
+
+    <script type="text/javascript">
+      document.documentElement.classList.add("js");
+    </script>
+  	
+
+</head>
+
+  	<body class="material" data-header-format="centered-logo-between-menu-alt" data-header-resize="1" data-transparent-header="false" data-header-color="" data-remove-border="true" data-smooth-scrolling="0" data-cad="1500" data-cae="easeOutQuart" data-aie="none" data-ls="fancybox" onLoad="lm_InitWebForm()">
+
+    <div id="ajax-content-wrap">
+      <div class="container-wrap" style="padding-top: 0px; padding-bottom: 0px">
+        <div id="wrapper">
+          <div id="main">
+            <div class="row">
+              <div
+                id="fws_6924ac56de5a2"
+                data-column-margin="default"
+                data-midnight="dark"
+                data-bottom-percent="5%"
+                class="wpb_row vc_row-fluid vc_row top-level full-width-content vc_row-o-equal-height vc_row-flex vc_row-o-content-top bottom_margin_0px right_padding_60px left_padding_60px nectar-overflow-hidden top_padding_tablet_110px top_padding_phone_110px bottom_padding_tablet_10pct bottom_padding_phone_15pct right_padding_tablet_30px right_padding_phone_20px left_padding_tablet_30px left_padding_phone_20px first-section loaded"
+                style="padding-top: 175px; padding-bottom: calc(100vw * 0.05)"
+              >
+                <div
+                  class="row-bg-wrap"
+                  data-bg-animation="none"
+                  data-bg-animation-delay=""
+                  data-bg-overlay="false"
+                >
+                  <div class="inner-wrap row-bg-layer">
+                    <div class="row-bg viewport-desktop" style=""></div>
+                  </div>
+                </div>
+                <div class="row_col_wrap_12 col span_12 dark center">
+                  <div
+                    style="margin-bottom: 0px"
+                    class="vc_col-sm-12 wpb_column column_container vc_column_container col el_spacing_0px"
+                    data-padding-pos="all"
+                    data-has-bg-color="false"
+                    data-bg-color=""
+                    data-bg-opacity="1"
+                    data-animation=""
+                    data-delay="0"
+                  >
+                    <div class="vc_column-inner">
+                      <div class="wpb_wrapper">
+                        <div
+                          id="fws_6924ac56ded73"
+                          data-midnight=""
+                          data-column-margin="none"
+                          class="wpb_row vc_row-fluid vc_row inner_row vc_custom_1750332899431 right_padding_0pct left_padding_0pct"
+                          style="z-index: 200"
+                        >
+                          <div class="row-bg-wrap">
+                            <div class="row-bg"></div>
+                          </div>
+                          <div class="row_col_wrap_12_inner col span_12 left">
+                            <div
+                              style="margin-bottom: 0px"
+                              class="vc_col-sm-12 wpb_column column_container vc_column_container col child_column centered-text force-desktop-text-align-center force-tablet-text-align-center force-phone-text-align-center el_spacing_0px"
+                              data-padding-pos="all"
+                              data-has-bg-color="false"
+                              data-bg-color=""
+                              data-bg-opacity="1"
+                              data-animation=""
+                              data-delay="0"
+                            >
+                              <div class="vc_column-inner">
+                                <div class="wpb_wrapper">
+                                  <div
+                                    class="nectar-split-heading font_size_4-583vw font_size_tablet_8vw font_size_phone_9-744vw font_line_height_0-9 no-bottom-margin markup-generated animated-in"
+                                    data-align="center"
+                                    data-m-align="center"
+                                    data-text-effect="default"
+                                    data-animation-type="line-reveal-by-space"
+                                    data-animation-delay="0"
+                                    data-animation-offset=""
+                                    data-m-rm-animation=""
+                                    data-stagger=""
+                                    data-custom-font-size="true"
+                                    style="
+                                      font-size: 4.583vw;
+                                      line-height: 5.0413vw;
+                                    "
+                                  >
+                                    <h1
+                                      style="color: #000000"
+                                      aria-label="A Flourishing "
+                                    >
+                                      <span>
+                                        <span
+                                          class="inner"
+                                          style="
+                                            transform: translate(0px, 0px);
+                                            opacity: 1;
+                                          "
+                                          >A Flourishing
+                                        </span>
+                                      </span>
+                                    </h1>
+                                  </div>
+                                  <div
+                                    class="nectar-split-heading font_size_4-583vw font_size_tablet_8vw font_size_phone_9-744vw font_line_height_0-9 no-bottom-margin markup-generated animated-in"
+                                    data-align="center"
+                                    data-m-align="center"
+                                    data-text-effect="default"
+                                    data-animation-type="line-reveal-by-space"
+                                    data-animation-delay="0"
+                                    data-animation-offset=""
+                                    data-m-rm-animation=""
+                                    data-stagger=""
+                                    data-custom-font-size="true"
+                                    style="
+                                      font-size: 4.583vw;
+                                      line-height: 5.0413vw;
+                                    "
+                                  >
+                                    <h1
+                                      style="color: #000000"
+                                      aria-label="Community "
+                                    >
+                                      <span>
+                                        <span
+                                          class="inner"
+                                          style="
+                                            transform: translate(0px, 0px);
+                                            opacity: 1;
+                                          "
+                                          >Community</span
+                                        >
+                                      </span>
+                                    </h1>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="vc_col-sm-12 wpb_column column_container vc_column_container col has-animation no-extra-padding inherit_tablet inherit_phone triggered-animation animated-in"
+                    data-padding-pos="all"
+                    data-has-bg-color="false"
+                    data-bg-color=""
+                    data-bg-opacity="1"
+                    data-animation="fade-in-from-bottom"
+                    data-delay="500"
+                    style="transform: none; opacity: 1"
+                  >
+                    <div class="vc_column-inner">
+                      <div class="wpb_wrapper">
+                        <div class="divider-wrap" data-alignment="default">
+                          <div style="height: 20px" class="divider"></div>
+                        </div>
+                        <div class="wpb_text_column wpb_content_element">
+                          <div class="wpb_wrapper">
+                            <p style="text-align: center">
+                              Be part of a flourishing luxury community where
+                              strategic development enhances both lifestyle and
+                              long-term value in Papagayo Bay. This is more than
+                              just a home; it is an opportunity to secure your
+                              place in one of the most coveted regions in
+                              Central America. With a focus on sustainable
+                              luxury and low-density living, our development
+                              ensures that your investment grows alongside the
+                              prestige of the area.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="fws_6924ac56e0133"
+                data-column-margin="default"
+                data-midnight="dark"
+                class="wpb_row vc_row-fluid vc_row full-width-content vc_row-o-equal-height vc_row-flex vc_row-o-content-top bottom_margin_0px right_padding_60px left_padding_60px right_padding_tablet_30px right_padding_phone_20px left_padding_tablet_30px left_padding_phone_20px"
+                style="padding-top: 0px; padding-bottom: 0px"
+              >
+                <div
+                  class="row-bg-wrap"
+                  data-bg-animation="none"
+                  data-bg-animation-delay=""
+                  data-bg-overlay="false"
+                >
+                  <div class="inner-wrap row-bg-layer">
+                    <div class="row-bg viewport-desktop" style=""></div>
+                  </div>
+                </div>
+                <div class="row_col_wrap_12 col span_12 dark center">
+                  <div
+                    style="margin-bottom: 0px; transform: none; opacity: 1"
+                    class="vc_col-sm-12 wpb_column column_container vc_column_container col has-animation triggered-animation animated-in"
+                    data-padding-pos="all"
+                    data-has-bg-color="false"
+                    data-bg-color=""
+                    data-bg-opacity="1"
+                    data-animation="fade-in-from-bottom"
+                    data-delay="550"
+                  >
+                    <div class="vc_column-inner">
+                      <div class="wpb_wrapper">
+                        <div
+                          class="img-with-aniamtion-wrap"
+                          data-max-width="100%"
+                          data-max-width-mobile="default"
+                          data-shadow="none"
+                          data-animation="none"
+                          style="margin-bottom: 0px"
+                        >
+                          <div class="inner">
+                            <div class="hover-wrap">
+                              <div class="hover-wrap-inner img-loaded">
+                                <img
+                                  fetchpriority="high"
+                                  decoding="async"
+                                  class="img-with-animation width-100 skip-lazy nectar-lazy loaded"
+                                  data-delay="0"
+                                  height="1165"
+                                  width="2560"
+                                  data-animation="none"
+                                  src="/images/newest copy.webp"
+                                  alt="Features"
+                                  sizes="(max-width: 2560px) 100vw, 2560px"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <section id="neighbors" style="padding: 32px 0px">
+              <article class="post">
+                <div
+                  class="fade-in-up center-text"
+                  style="
+                    padding-top: 15px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                  "
+                >
+                  <h2
+                    class="title-with-underline"
+                    style="
+                      text-align: center;
+                      width: 100%;
+                      display: block;
+                      margin-bottom: 20px;
+                    "
+                  >
+                    Surrounded by Excellence
+                  </h2>
+                  <p
+                    style="
+                      max-width: 1000px;
+                      margin: 0 auto;
+                      text-align: center;
+                    "
+                  >
+                    Papagayo Bay has become the chosen destination for the
+                    world's most prestigious hospitality brands. When you buy
+                    here, you are joining an exclusive neighborhood of 5-star
+                    excellence. We are located just minutes from iconic resorts,
+                    confirming the region's status as a global luxury hub.
+                  </p>
+                </div>
+              </article>
+            </section>
+
+            <div id="quote-section">
+              <div class="content-wrapper">
+                <div class="text-column">
+                  <div class="quote-container">
+                    <h2>
+                      “Forbes named Guanacaste, Costa Rica, one of the top
+                      luxury destinations for 2026.”
+                    </h2>
+                    <div class="quote-divider"></div>
+                    <div class="author-name">
+                      <p>– Forbes Magazine</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="image-column">
+                  <img
+                    src="https://triadacolls.wpenginepowered.com/wp-content/uploads/2025/06/Triada-Residences-Luxury-Homes-Gradient-Desktop.webp"
+                    alt="Guanacaste Costa Rica Luxury Destination"
+                    width="2066"
+                    height="1128"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <article
+              class="fade-in-up post flex-layout"
+              style="
+                margin-top: 60px;
+                margin-bottom: 60px;
+                display: flex;
+                align-items: center;
+                gap: 80px;
+              "
+            >
+              <div
+                class="flex-image-column"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 20px;
+                  height: auto;
+                "
+              >
+                <img
+                  src="/images/76-2024-07-20 Playa Panama 76.webp"
+                  alt="Strategic Advantages - Papagayo Bay"
+                  style="
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    border-radius: 4px;
+                  "
+                />
+                <img
+                  src="/images/Land1.webp"
+                  alt="Strategic Advantages - Papagayo Bay"
+                  style="
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    border-radius: 4px;
+                  "
+                />
+              </div>
+
+              <div class="flex-text-column">
+                <h2
+                  style="
+                    position: relative;
+                    margin-bottom: 20px;
+                    text-align: center;
+                  "
+                >
+                  Strategic Advantages
+                </h2>
+
+                <div
+                  class="spaced-feature-list"
+                  style="text-align: left; margin-top: 20px"
+                >
+                  <ul style="list-style: none; padding: 0; margin: 0">
+                    <li
+                      style="margin-bottom: 18px; color: #666; line-height: 1.6"
+                    >
+                      <strong
+                        style="
+                          color: #000;
+                          font-size: 1.1rem;
+                          display: block;
+                          margin-bottom: 4px;
+                        "
+                        >International Airport (LIR)</strong
+                      >
+                      Only 20 minutes away, offering direct flights to major US
+                      & European hubs.
+                    </li>
+                    <li
+                      style="margin-bottom: 18px; color: #666; line-height: 1.6"
+                    >
+                      <strong
+                        style="
+                          color: #000;
+                          font-size: 1.1rem;
+                          display: block;
+                          margin-bottom: 4px;
+                        "
+                        >Papagayo Marina</strong
+                      >
+                      World-class yachting facilities and deep-sea fishing at
+                      your doorstep.
+                    </li>
+                    <li
+                      style="margin-bottom: 18px; color: #666; line-height: 1.6"
+                    >
+                      <strong
+                        style="
+                          color: #000;
+                          font-size: 1.1rem;
+                          display: block;
+                          margin-bottom: 4px;
+                        "
+                        >Medical Infrastructure</strong
+                      >
+                      Top-tier private hospitals and wellness centers nearby.
+                    </li>
+                    <li
+                      style="margin-bottom: 18px; color: #666; line-height: 1.6"
+                    >
+                      <strong
+                        style="
+                          color: #000;
+                          font-size: 1.1rem;
+                          display: block;
+                          margin-bottom: 4px;
+                        "
+                        >Property Appreciation</strong
+                      >
+                      Consistently rising value driven by high demand and
+                      limited inventory.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <div id="contact-placeholder" style="padding-top: 2rem"></div>
+
+            <div id="copyright">
+              <ul>
+                <li>&copy;Papagayo Bay 2025</li>
+                <li>All Rights Reserved</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.scrollex.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/animations.js"></script>
+    <script src="/slick-1.8.1/slick/slick.js"></script>
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lotLayoutPopup.js"></script>
+    <script type="text/javascript" src="/assets/js/alexCarousel.js"></script>
+    <script src="/assets/js/loadContact.js"></script>
+
+    <script src="https://triadacollections.com/wp-content/themes/salient/js/build/priority.js?ver=17.0.7"></script>
+    <script src="https://triadacollections.com/wp-content/themes/salient/js/build/third-party/transit.min.js?ver=0.9.9"></script>
+    <script src="https://triadacollections.com/wp-content/themes/salient/js/build/third-party/waypoints.js?ver=4.0.2"></script>
+    <script src="https://triadacollections.com/wp-content/themes/salient/js/build/third-party/hoverintent.min.js?ver=1.9"></script>
+    <script src="https://triadacollections.com/wp-content/themes/salient/js/build/third-party/superfish.js?ver=1.5.8"></script>
+    <script src="https://triadacollections.com/wp-content/themes/salient/js/build/third-party/jquery.fancybox.js?ver=3.3.9"></script>
+
+    <script src="https://triadacollections.com/wp-content/plugins/js_composer_salient//assets/js/dist/js_composer_front.min.js?ver=7.8.1"></script>
+    <script src="/Triada Styling/init.js"></script>
+
+    <script src="/assets/js/nav-bar.js"></script>
+  </body>
+</html>
