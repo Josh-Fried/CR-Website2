@@ -360,7 +360,6 @@ function handleAnchorLinks() {
           window.scrollTo({ top: targetPosition, behavior: "smooth" });
         }
       } 
-      // IS DIFFERENT PAGE?
       else {
         // Save target to local storage and navigate
         e.preventDefault();
@@ -370,7 +369,7 @@ function handleAnchorLinks() {
     }
   });
 
-  // B. Handle Page Load Scrolling (if coming from another page)
+  // B. Handle Page Load Scrolling
   const scrollTargetId = localStorage.getItem("scrollToTarget");
   if (scrollTargetId && scrollTargetId.startsWith("#")) {
     // Wait slightly for page render
@@ -425,51 +424,39 @@ function handleInquireLogic() {
     if (!document.getElementById('contact-us-form')) {
         document.body.insertAdjacentHTML('beforeend', INQUIRE_MODAL_HTML);
         
-        // We temporarily hijack it to capture the CRM's tracking pixel.
+        // Lasso CRM Tracking Pixel Injection
         var contentBuffer = "";
-        var oldWrite = document.write; // Save original function
+        var oldWrite = document.write; 
 
         document.write = function(str) {
-            contentBuffer += str; // Capture the string (usually an <img> tag)
+            contentBuffer += str; 
         };
 
-        // Remove old script if exists
         const oldScript = document.querySelector('script[src*="lm_wfi.js"]');
         if (oldScript) oldScript.remove();
 
-        // Create and Inject Script
         var script = document.createElement('script');
         script.src = "https://util1.crmtool.net/lm_wfi.js";
         script.type = "text/javascript";
         
         script.onload = function() {
-            // Restore original document.write
             document.write = oldWrite;
-            
-            // If the script tried to write something (the tracker), inject it now
             if(contentBuffer) {
                 var tempDiv = document.createElement('div');
                 tempDiv.innerHTML = contentBuffer;
-                tempDiv.style.display = 'none'; // Keep it hidden
-                
-                // --- FIX: INJECT INSIDE THE FORM, NOT THE BODY ---
+                tempDiv.style.display = 'none'; 
                 var targetForm = document.getElementById("contact-form-in-modal");
                 if (targetForm) {
                     targetForm.appendChild(tempDiv);
-                } else {
-                    console.error("CRM Error: Could not find form to inject tracking pixels");
                 }
-                // -------------------------------------------------
             }
         };
 
-        // Handle errors just in case
         script.onerror = function() {
             document.write = oldWrite;
         };
 
         document.body.appendChild(script);
-        // ---------------------------------------
     }
     
     // 2. SETUP VARIABLES
@@ -501,11 +488,15 @@ function handleInquireLogic() {
         if (priceRequestForm) {
             priceRequestForm.classList.remove('open');
             priceRequestForm.style.display = 'none';
+            
+            // Clean up URL if the user arrived via a deep link (removes the hash)
+            if (window.location.hash === "#contact-us-form") {
+                history.pushState(null, null, window.location.pathname); 
+            }
         }
     }
 
     // 5. "SENDING..." BUTTON STATE
-    // We do NOT preventDefault. We let Lasso handle the submission.
     if (form) {
         form.addEventListener("submit", function() {
             const btn = form.querySelector('button[type="submit"]');
@@ -535,7 +526,6 @@ function handleInquireLogic() {
                 title.style.color = '#2e7d32';
             }
 
-            // Custom SVG Success Message
             const successMsg = document.createElement('div');
             successMsg.innerHTML = `
                 <div style="text-align: center; padding: 20px 0;">
@@ -570,6 +560,12 @@ function handleInquireLogic() {
     window.addEventListener("click", (e) => {
         if (e.target === priceRequestForm) closeForm();
     });
+
+    // 8. DEEP LINK CHECK
+    // If the URL has the hash, open the form immediately.
+    if (window.location.hash === "#contact-us-form") {
+        openForm();
+    }
 }
 
 function initNectarMenuLogic() {
