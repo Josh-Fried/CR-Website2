@@ -536,6 +536,7 @@ function handleInquireLogic() {
                     <p style="font-size: 1.1em; line-height: 1.5;">
                         Thank you for reaching out.<br>
                         We have received your inquiry and will be in touch shortly.
+                        Be sure to add <span style="color: #2e7d32; text-decoration: underline;">sales@triadacollections.com</span> to your Safe Senders List, and check your junk or spam folders for our emails.
                     </p>
                     <button class="submit-button" id="close-success-btn" style="margin-top: 20px;">Close</button>
                 </div>
