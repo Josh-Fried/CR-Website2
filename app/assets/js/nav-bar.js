@@ -82,8 +82,8 @@ const NAV_BAR_HTML_TEMPLATE = `
                             <div class="right-aligned-menu-items">
                                 <nav>
                                     <ul class="buttons sf-menu" data-user-set-ocm="off">
-                                        <li id="menu-item-445" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-445" data-path="/#about-us">
-                                            <a href="/#about-us" class=""><span class="menu-title-text">About Us</span></a>
+                                        <li id="menu-item-445" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-445" data-path="/meet-the-team">
+                                            <a href="/meet-the-team" class=""><span class="menu-title-text">Meet the Team</span></a>
                                         </li>
                                         <li id="menu-item-554" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-554" data-path="/experiences">
                                             <a href="/#experiences"><span class="menu-title-text">Experiences</span></a>
@@ -142,7 +142,7 @@ const NAV_BAR_HTML_TEMPLATE = `
                                 </ul>
                             </li>
                             
-                            <li class="menu-item"><a href="/#about-us" class="">About Us</a></li>
+                            <li class="menu-item"><a href="/meet-the-team" class="">Meet the Team</a></li>
                             
                             <li class="menu-item has-children">
                                 <a href="#" onclick="return false;">Experiences</a>
@@ -167,8 +167,7 @@ const NAV_BAR_HTML_TEMPLATE = `
     </div>
 `;
 
-const INQUIRE_MODAL_HTML = 
-`<div id="contact-us-form" class="modal-overlay">
+const INQUIRE_MODAL_HTML = `<div id="contact-us-form" class="modal-overlay">
   <div class="modal-content">
     <button class="modal-close">&times;</button>
     <h3>Contact Us</h3>
@@ -251,7 +250,6 @@ const INQUIRE_MODAL_HTML =
 </div>
 `;
 
-
 // --- HELPER FUNCTIONS ---
 
 const normalizePath = (url) => {
@@ -292,14 +290,15 @@ const highlightCurrentMenuItem = () => {
     effectivePath.startsWith("/coming-soon")
   )
     targetId = "menu-item-551";
-  else if (effectivePath === "/#about-us") targetId = "menu-item-445";
+  else if (effectivePath.startsWith("/meet-the-team"))
+    targetId = "menu-item-445";
   else if (effectivePath === "/") targetId = "menu-item-711";
 
   const parentElement = document.getElementById(targetId);
   if (parentElement) parentElement.classList.add("current-menu-item");
 
   const specificLink = document.querySelector(
-    `#menu-main-menu-1 li[data-path='${effectivePath}']`
+    `#menu-main-menu-1 li[data-path='${effectivePath}']`,
   );
   if (specificLink && specificLink !== parentElement) {
     specificLink.classList.add("current-menu-item", "current-page-item");
@@ -328,10 +327,12 @@ function handleAnchorLinks() {
     if (hashMatch) {
       const hash = hashMatch[0];
       const linkPath = href.split("#")[0];
-      
+
       // Normalize paths to check if we are on the same page
-      const currentPath = window.location.pathname.replace(/\/$/, ""); 
-      const normalizedLinkPath = linkPath ? linkPath.replace(document.location.origin, "").replace(/\/$/, "") : currentPath;
+      const currentPath = window.location.pathname.replace(/\/$/, "");
+      const normalizedLinkPath = linkPath
+        ? linkPath.replace(document.location.origin, "").replace(/\/$/, "")
+        : currentPath;
 
       // IS SAME PAGE?
       if (normalizedLinkPath === currentPath || normalizedLinkPath === "") {
@@ -341,26 +342,33 @@ function handleAnchorLinks() {
 
           // 1. Close Menu if Open
           if (document.body.classList.contains("material-ocm-open")) {
-             document.body.classList.remove("material-ocm-open");
-             var menu = document.getElementById("slide-out-widget-area");
-             if(menu) menu.classList.remove("user-menu-open");
-             
-             // Reset Hamburger Icon
-             var icon = document.querySelector(".slide-out-widget-area-toggle a");
-             if(icon) { icon.classList.remove("open"); icon.classList.add("closed"); }
+            document.body.classList.remove("material-ocm-open");
+            var menu = document.getElementById("slide-out-widget-area");
+            if (menu) menu.classList.remove("user-menu-open");
+
+            // Reset Hamburger Icon
+            var icon = document.querySelector(
+              ".slide-out-widget-area-toggle a",
+            );
+            if (icon) {
+              icon.classList.remove("open");
+              icon.classList.add("closed");
+            }
           }
 
           // 2. Scroll to Target
           // Helper to get offset (handling sticky headers)
           const header = document.getElementById("header-outer");
           const offset = header ? header.offsetHeight : 0;
-          
-          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-          
+
+          const targetPosition =
+            targetElement.getBoundingClientRect().top +
+            window.pageYOffset -
+            offset;
+
           window.scrollTo({ top: targetPosition, behavior: "smooth" });
         }
-      } 
-      else {
+      } else {
         // Save target to local storage and navigate
         e.preventDefault();
         localStorage.setItem("scrollToTarget", hash);
@@ -374,24 +382,26 @@ function handleAnchorLinks() {
   if (scrollTargetId && scrollTargetId.startsWith("#")) {
     // Wait slightly for page render
     setTimeout(() => {
-        const targetElement = document.querySelector(scrollTargetId);
-        if (targetElement) {
-            const header = document.getElementById("header-outer");
-            const offset = header ? header.offsetHeight : 0;
-            
-            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
-            window.scrollTo({ top: targetPosition, behavior: "smooth" });
-            
-            // Clean up URL and Storage
-            history.replaceState(null, null, window.location.pathname);
-            localStorage.removeItem("scrollToTarget");
-        }
+      const targetElement = document.querySelector(scrollTargetId);
+      if (targetElement) {
+        const header = document.getElementById("header-outer");
+        const offset = header ? header.offsetHeight : 0;
+
+        const targetPosition =
+          targetElement.getBoundingClientRect().top +
+          window.pageYOffset -
+          offset;
+        window.scrollTo({ top: targetPosition, behavior: "smooth" });
+
+        // Clean up URL and Storage
+        history.replaceState(null, null, window.location.pathname);
+        localStorage.removeItem("scrollToTarget");
+      }
     }, 300); // 300ms delay to ensure elements are loaded
   } else {
     localStorage.removeItem("scrollToTarget");
   }
 }
-
 
 const handleScrollEffect = () => {
   const headerOuter = document.getElementById("header-outer");
@@ -420,114 +430,120 @@ const handleScrollEffect = () => {
 };
 
 function handleInquireLogic() {
-    // 1. INJECT HTML IF MISSING
-    if (!document.getElementById('contact-us-form')) {
-        document.body.insertAdjacentHTML('beforeend', INQUIRE_MODAL_HTML);
-        
-        // Lasso CRM Tracking Pixel Injection
-        var contentBuffer = "";
-        var oldWrite = document.write; 
+  // 1. INJECT HTML IF MISSING
+  if (!document.getElementById("contact-us-form")) {
+    document.body.insertAdjacentHTML("beforeend", INQUIRE_MODAL_HTML);
 
-        document.write = function(str) {
-            contentBuffer += str; 
-        };
+    // Lasso CRM Tracking Pixel Injection
+    var contentBuffer = "";
+    var oldWrite = document.write;
 
-        const oldScript = document.querySelector('script[src*="lm_wfi.js"]');
-        if (oldScript) oldScript.remove();
+    document.write = function (str) {
+      contentBuffer += str;
+    };
 
-        var script = document.createElement('script');
-        script.src = "https://util1.crmtool.net/lm_wfi.js";
-        script.type = "text/javascript";
-        
-        script.onload = function() {
-            document.write = oldWrite;
-            if(contentBuffer) {
-                var tempDiv = document.createElement('div');
-                tempDiv.innerHTML = contentBuffer;
-                tempDiv.style.display = 'none'; 
-                var targetForm = document.getElementById("contact-form-in-modal");
-                if (targetForm) {
-                    targetForm.appendChild(tempDiv);
-                }
-            }
-        };
+    const oldScript = document.querySelector('script[src*="lm_wfi.js"]');
+    if (oldScript) oldScript.remove();
 
-        script.onerror = function() {
-            document.write = oldWrite;
-        };
+    var script = document.createElement("script");
+    script.src = "https://util1.crmtool.net/lm_wfi.js";
+    script.type = "text/javascript";
 
-        document.body.appendChild(script);
-    }
-    
-    // 2. SETUP VARIABLES
-    const priceRequestForm = document.getElementById('contact-us-form'); 
-    const successInput = document.querySelector('input[name="lm_FormResponsePage"]');
-    const closeButton = document.querySelector('.modal-close');
-    const form = document.getElementById("contact-form-in-modal");
-
-    // 3. AUTO-SET RETURN URL
-    if (successInput) {
-        successInput.value = window.location.origin + window.location.pathname + '?status=success';
-    }
-
-    // 4. OPEN/CLOSE UTILITIES
-    function openForm() {
-        document.body.classList.remove("material-ocm-open");
-        const menu = document.getElementById("slide-out-widget-area");
-        if(menu) menu.classList.remove("user-menu-open");
-        const icon = document.querySelector(".slide-out-widget-area-toggle a");
-        if(icon) { icon.classList.remove("open"); icon.classList.add("closed"); }
-
-        if (priceRequestForm) {
-            priceRequestForm.classList.add('open');
-            priceRequestForm.style.display = 'flex';
+    script.onload = function () {
+      document.write = oldWrite;
+      if (contentBuffer) {
+        var tempDiv = document.createElement("div");
+        tempDiv.innerHTML = contentBuffer;
+        tempDiv.style.display = "none";
+        var targetForm = document.getElementById("contact-form-in-modal");
+        if (targetForm) {
+          targetForm.appendChild(tempDiv);
         }
+      }
+    };
+
+    script.onerror = function () {
+      document.write = oldWrite;
+    };
+
+    document.body.appendChild(script);
+  }
+
+  // 2. SETUP VARIABLES
+  const priceRequestForm = document.getElementById("contact-us-form");
+  const successInput = document.querySelector(
+    'input[name="lm_FormResponsePage"]',
+  );
+  const closeButton = document.querySelector(".modal-close");
+  const form = document.getElementById("contact-form-in-modal");
+
+  // 3. AUTO-SET RETURN URL
+  if (successInput) {
+    successInput.value =
+      window.location.origin + window.location.pathname + "?status=success";
+  }
+
+  // 4. OPEN/CLOSE UTILITIES
+  function openForm() {
+    document.body.classList.remove("material-ocm-open");
+    const menu = document.getElementById("slide-out-widget-area");
+    if (menu) menu.classList.remove("user-menu-open");
+    const icon = document.querySelector(".slide-out-widget-area-toggle a");
+    if (icon) {
+      icon.classList.remove("open");
+      icon.classList.add("closed");
     }
 
-    function closeForm() {
-        if (priceRequestForm) {
-            priceRequestForm.classList.remove('open');
-            priceRequestForm.style.display = 'none';
-            
-            // Clean up URL if the user arrived via a deep link (removes the hash)
-            if (window.location.hash === "#contact-us-form") {
-                history.pushState(null, null, window.location.pathname); 
-            }
-        }
+    if (priceRequestForm) {
+      priceRequestForm.classList.add("open");
+      priceRequestForm.style.display = "flex";
     }
+  }
 
-    // 5. "SENDING..." BUTTON STATE
-    if (form) {
-        form.addEventListener("submit", function() {
-            const btn = form.querySelector('button[type="submit"]');
-            if(btn) {
-                btn.innerText = "Sending...";
-                btn.style.opacity = "0.7";
-                btn.style.cursor = "wait";
-            }
-        });
+  function closeForm() {
+    if (priceRequestForm) {
+      priceRequestForm.classList.remove("open");
+      priceRequestForm.style.display = "none";
+
+      // Clean up URL if the user arrived via a deep link (removes the hash)
+      if (window.location.hash === "#contact-us-form") {
+        history.pushState(null, null, window.location.pathname);
+      }
     }
+  }
 
-    // 6. SUCCESS DETECTION
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('status') === 'success') {
-        openForm(); 
-        const modalContent = priceRequestForm.querySelector('.modal-content');
-        if (modalContent) {
-            const formEl = modalContent.querySelector('form');
-            const introText = modalContent.querySelector('p');
-            const title = modalContent.querySelector('h3');
-            
-            if (formEl) formEl.style.display = 'none';
-            if (introText) introText.style.display = 'none';
-            
-            if (title) {
-                title.textContent = 'Message Sent!';
-                title.style.color = '#2e7d32';
-            }
+  // 5. "SENDING..." BUTTON STATE
+  if (form) {
+    form.addEventListener("submit", function () {
+      const btn = form.querySelector('button[type="submit"]');
+      if (btn) {
+        btn.innerText = "Sending...";
+        btn.style.opacity = "0.7";
+        btn.style.cursor = "wait";
+      }
+    });
+  }
 
-            const successMsg = document.createElement('div');
-            successMsg.innerHTML = `
+  // 6. SUCCESS DETECTION
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("status") === "success") {
+    openForm();
+    const modalContent = priceRequestForm.querySelector(".modal-content");
+    if (modalContent) {
+      const formEl = modalContent.querySelector("form");
+      const introText = modalContent.querySelector("p");
+      const title = modalContent.querySelector("h3");
+
+      if (formEl) formEl.style.display = "none";
+      if (introText) introText.style.display = "none";
+
+      if (title) {
+        title.textContent = "Message Sent!";
+        title.style.color = "#2e7d32";
+      }
+
+      const successMsg = document.createElement("div");
+      successMsg.innerHTML = `
                 <div style="text-align: center; padding: 20px 0;">
                     <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 15px;">
                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -541,136 +557,155 @@ function handleInquireLogic() {
                     <button class="submit-button" id="close-success-btn" style="margin-top: 20px;">Close</button>
                 </div>
             `;
-            modalContent.appendChild(successMsg);
+      modalContent.appendChild(successMsg);
 
-            const newCloseBtn = successMsg.querySelector('#close-success-btn');
-            if (newCloseBtn) newCloseBtn.addEventListener('click', closeForm);
-        }
-        window.history.replaceState({}, document.title, window.location.pathname);
+      const newCloseBtn = successMsg.querySelector("#close-success-btn");
+      if (newCloseBtn) newCloseBtn.addEventListener("click", closeForm);
     }
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
 
-    // 7. EVENT LISTENERS
-    document.body.addEventListener("click", (e) => {
-        if (e.target.closest(".inquire-button") || e.target.closest(".price-request-button")) {
-            e.preventDefault();
-            openForm();
-        }
-    });
-
-    if (closeButton) closeButton.addEventListener('click', closeForm);
-    window.addEventListener("click", (e) => {
-        if (e.target === priceRequestForm) closeForm();
-    });
-
-    // 8. DEEP LINK CHECK
-    // If the URL has the hash, open the form immediately.
-    if (window.location.hash === "#contact-us-form") {
-        openForm();
+  // 7. EVENT LISTENERS
+  document.body.addEventListener("click", (e) => {
+    if (
+      e.target.closest(".inquire-button") ||
+      e.target.closest(".price-request-button")
+    ) {
+      e.preventDefault();
+      openForm();
     }
+  });
+
+  if (closeButton) closeButton.addEventListener("click", closeForm);
+  window.addEventListener("click", (e) => {
+    if (e.target === priceRequestForm) closeForm();
+  });
+
+  // 8. DEEP LINK CHECK
+  // If the URL has the hash, open the form immediately.
+  if (window.location.hash === "#contact-us-form") {
+    openForm();
+  }
 }
 
 function initNectarMenuLogic() {
-    // console.log("[NavBar Debug] Attaching Event Listeners (Delegation)");
-    
-    var $ = (typeof jQuery !== 'undefined') ? jQuery : null;
-    if($) {
-        $(".off-canvas-menu-container .mobile-sub-menu").each(function() {
-            if($(this).find('.back-btn').length === 0) {
-                $(this).prepend('<li class="back-btn"></li>');
+  // console.log("[NavBar Debug] Attaching Event Listeners (Delegation)");
+
+  var $ = typeof jQuery !== "undefined" ? jQuery : null;
+  if ($) {
+    $(".off-canvas-menu-container .mobile-sub-menu").each(function () {
+      if ($(this).find(".back-btn").length === 0) {
+        $(this).prepend('<li class="back-btn"></li>');
+      }
+    });
+  }
+
+  // MAIN TOGGLE & DRILL DOWN LOGIC
+  document.addEventListener(
+    "click",
+    function (e) {
+      var toggle = e.target.closest(".slide-out-widget-area-toggle");
+      var closeBtn = e.target.closest(".slide_out_area_close");
+
+      if (toggle || closeBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+
+        var body = document.body;
+        var menu = document.getElementById("slide-out-widget-area");
+        var icon = document.querySelector(".slide-out-widget-area-toggle a");
+
+        if (menu.classList.contains("user-menu-open")) {
+          menu.classList.remove("user-menu-open");
+          body.classList.remove("material-ocm-open");
+          if (icon) {
+            icon.classList.remove("open");
+            icon.classList.add("closed");
+          }
+
+          setTimeout(() => {
+            if ($) {
+              $(".off-canvas-menu-container").removeClass("sub-view-active");
+              $(".mobile-sub-menu").removeClass("visible");
             }
+          }, 400);
+        } else {
+          menu.classList.add("user-menu-open");
+          body.classList.add("material-ocm-open");
+          if (icon) {
+            icon.classList.add("open");
+            icon.classList.remove("closed");
+          }
+        }
+        return;
+      }
+
+      // DRILL DOWN: PARENT LINK
+      var link = e.target.closest("#slide-out-widget-area .has-children > a");
+      if (link && $) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+
+        var parent = $(link).parent();
+        var submenu = parent.find("ul");
+
+        $(".mobile-sub-menu").removeClass("visible");
+        submenu.addClass("visible");
+
+        requestAnimationFrame(() => {
+          $(".off-canvas-menu-container").addClass("sub-view-active");
         });
-    }
+        return;
+      }
 
-    // MAIN TOGGLE & DRILL DOWN LOGIC
-    document.addEventListener("click", function(e) {
-        var toggle = e.target.closest(".slide-out-widget-area-toggle");
-        var closeBtn = e.target.closest(".slide_out_area_close");
-        
-        if (toggle || closeBtn) {
-            e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
-            
-            var body = document.body;
-            var menu = document.getElementById("slide-out-widget-area");
-            var icon = document.querySelector(".slide-out-widget-area-toggle a");
-
-            if (menu.classList.contains("user-menu-open")) {
-                menu.classList.remove("user-menu-open");
-                body.classList.remove("material-ocm-open");
-                if(icon) { icon.classList.remove("open"); icon.classList.add("closed"); }
-                
-                setTimeout(() => { 
-                    if($) {
-                        $(".off-canvas-menu-container").removeClass("sub-view-active");
-                        $(".mobile-sub-menu").removeClass("visible");
-                    }
-                }, 400);
-            } else {
-                menu.classList.add("user-menu-open");
-                body.classList.add("material-ocm-open");
-                if(icon) { icon.classList.add("open"); icon.classList.remove("closed"); }
-            }
-            return;
-        }
-
-        // DRILL DOWN: PARENT LINK
-        var link = e.target.closest("#slide-out-widget-area .has-children > a");
-        if (link && $) {
-            e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
-            
-            var parent = $(link).parent();
-            var submenu = parent.find("ul");
-            
-            $(".mobile-sub-menu").removeClass("visible");
-            submenu.addClass("visible");
-            
-            requestAnimationFrame(() => {
-                $(".off-canvas-menu-container").addClass("sub-view-active");
-            });
-            return;
-        }
-
-        // DRILL DOWN: BACK BUTTON
-        var back = e.target.closest(".back-btn");
-        if (back && $) {
-            e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
-            $(".off-canvas-menu-container").removeClass("sub-view-active");
-            setTimeout(function(){
-                $(".mobile-sub-menu").removeClass("visible");
-            }, 400);
-            return;
-        }
-    }, true); 
+      // DRILL DOWN: BACK BUTTON
+      var back = e.target.closest(".back-btn");
+      if (back && $) {
+        e.preventDefault();
+        e.stopPropagation();
+        e.stopImmediatePropagation();
+        $(".off-canvas-menu-container").removeClass("sub-view-active");
+        setTimeout(function () {
+          $(".mobile-sub-menu").removeClass("visible");
+        }, 400);
+        return;
+      }
+    },
+    true,
+  );
 }
 
 // --- EXECUTION ---
 function executeNavBar() {
-    var existingMenu = document.getElementById('slide-out-widget-area');
-    if(existingMenu) existingMenu.remove();
-    var existingHeader = document.getElementById('header-outer');
-    if(existingHeader) existingHeader.remove();
+  var existingMenu = document.getElementById("slide-out-widget-area");
+  if (existingMenu) existingMenu.remove();
+  var existingHeader = document.getElementById("header-outer");
+  if (existingHeader) existingHeader.remove();
 
-    // Inject Header
-    document.body.insertAdjacentHTML("afterbegin", NAV_BAR_HTML_TEMPLATE);
-    // console.log("[NavBar Debug] HTML Template Injected");
+  // Inject Header
+  document.body.insertAdjacentHTML("afterbegin", NAV_BAR_HTML_TEMPLATE);
+  // console.log("[NavBar Debug] HTML Template Injected");
 
-    // Call highlighting function
-    highlightCurrentMenuItem();
+  // Call highlighting function
+  highlightCurrentMenuItem();
 
-    // Attach custom anchor handling logic
-    handleAnchorLinks();
+  // Attach custom anchor handling logic
+  handleAnchorLinks();
 
-    // Attach Scroll Animation Logic
-    handleScrollEffect();
+  // Attach Scroll Animation Logic
+  handleScrollEffect();
 
-    // This now injects the modal AND attaches the submit listener
-    handleInquireLogic();
+  // This now injects the modal AND attaches the submit listener
+  handleInquireLogic();
 
-    // Call the theme init logic replacement (NEW)
-    initNectarMenuLogic();
+  // Call the theme init logic replacement (NEW)
+  initNectarMenuLogic();
 }
 
-if (document.readyState === 'loading') {
-    document.addEventListener("DOMContentLoaded", executeNavBar);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", executeNavBar);
 } else {
-    executeNavBar();
+  executeNavBar();
 }
