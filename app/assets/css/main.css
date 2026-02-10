@@ -264,14 +264,26 @@ textarea {
 }
 
 a {
-  -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
-    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
-    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
-    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
-    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  -moz-transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  -webkit-transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  -ms-transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
   text-decoration: none;
 }
 
@@ -2193,13 +2205,21 @@ button,
   -webkit-appearance: none;
   -ms-appearance: none;
   appearance: none;
-  -moz-transition: background-color 0.2s ease-in-out,
-    box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
-  -webkit-transition: background-color 0.2s ease-in-out,
-    box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
-  -ms-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+  -moz-transition:
+    background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
     color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+  -webkit-transition:
+    background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  -ms-transition:
+    background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  transition:
+    background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
     color 0.2s ease-in-out;
   border: 0;
   border-radius: 0;
@@ -3040,7 +3060,7 @@ a.image:hover img {
     grid-template-columns: repeat(2, 1fr); /* 2 Columns */
     gap: 8px; /* Smaller gap allows images to be larger */
   }
-  
+
   .gallery-item .text-overlay h2 {
     font-size: 1rem; /* Specific size for mobile */
   }
@@ -3048,13 +3068,11 @@ a.image:hover img {
   /* Make the last item span the full width (Big Banner) instead of being small/centered */
   .gallery-item:last-child:nth-child(odd) {
     grid-column: 1 / -1; /* Span all columns */
-    justify-self: stretch; 
+    justify-self: stretch;
     width: 100%; /* Take up 100% space */
     aspect-ratio: 2 / 1; /* Optional: Makes the last item a wide rectangle */
   }
 }
-
-
 
 .clickable {
   /* Using the class name you requested */
@@ -3317,14 +3335,26 @@ ul.icons li .icon:before {
 }
 
 ul.icons.alt li .icon:before {
-  -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
-    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
-    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
-    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
-    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  -moz-transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  -webkit-transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  -ms-transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
   font-size: 1rem;
 }
 
@@ -3609,17 +3639,26 @@ table.alt tbody tr td {
 
 .pagination a,
 .pagination span {
-  -moz-transition: background-color 0.2s ease-in-out,
-    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+  -moz-transition:
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
     color 0.2s ease-in-out;
-  -webkit-transition: background-color 0.2s ease-in-out,
-    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+  -webkit-transition:
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
     color 0.2s ease-in-out;
-  -ms-transition: background-color 0.2s ease-in-out,
-    border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+  -ms-transition:
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
     color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
-    box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition:
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
+    color 0.2s ease-in-out;
   border: solid 2px;
   display: inline-block;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -3738,8 +3777,14 @@ table.alt tbody tr td {
   background-color: var(--main-background-color);
   /* background-color: var(--main-text-color); */
   /* background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/Bay1.webp"); */
-  background-size: auto, auto, 100% auto;
-  background-position: center, center, top center;
+  background-size:
+    auto,
+    auto,
+    100% auto;
+  background-position:
+    center,
+    center,
+    top center;
   background-repeat: repeat, no-repeat, no-repeat;
   background-attachment: scroll, scroll, scroll;
   z-index: -2; /* Behind the Video */
@@ -3800,7 +3845,8 @@ table.alt tbody tr td {
   width: 100%;
   height: 100%;
   /* Apply your overlay styles here */
-  background-image: url("../../images/overlay.png"),
+  background-image:
+    url("../../images/overlay.png"),
     linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   background-size: auto, auto;
   background-position: center, center;
@@ -3853,9 +3899,10 @@ table.alt tbody tr td {
   width: 100%;
   height: 100%;
   /* Apply your overlay styles here */
-  background-image: url("../../images/overlay.png"),
+  background-image:
+    url("../../images/overlay.png"),
     /* Black at bottom */
-      linear-gradient(0deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.1));
+    linear-gradient(0deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.1));
 
   /* linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5));*/
 
@@ -3893,10 +3940,18 @@ table.alt tbody tr td {
   -webkit-justify-content: -webkit-fcenter;
   -ms-justify-content: -ms-center;
   justify-content: center;
-  -moz-transition: opacity 1s ease, -moz-transform 1s ease;
-  -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
-  -ms-transition: opacity 1s ease, -ms-transform 1s ease;
-  transition: opacity 1s ease, transform 1s ease;
+  -moz-transition:
+    opacity 1s ease,
+    -moz-transform 1s ease;
+  -webkit-transition:
+    opacity 1s ease,
+    -webkit-transform 1s ease;
+  -ms-transition:
+    opacity 1s ease,
+    -ms-transform 1s ease;
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
   position: relative;
   cursor: default;
   text-align: center;
@@ -4020,11 +4075,22 @@ table.alt tbody tr td {
   -webkit-transform: translateY(2rem);
   -ms-transform: translateY(2rem);
   transform: translateY(2rem);
-  -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, visibility 0.5s;
-  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease,
+  -moz-transition:
+    opacity 0.5s ease,
+    -moz-transform 0.5s ease,
     visibility 0.5s;
-  -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, visibility 0.5s;
-  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+  -webkit-transition:
+    opacity 0.5s ease,
+    -webkit-transform 0.5s ease,
+    visibility 0.5s;
+  -ms-transition:
+    opacity 0.5s ease,
+    -ms-transform 0.5s ease,
+    visibility 0.5s;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    visibility 0.5s;
   opacity: 0;
   visibility: hidden;
 }
@@ -4115,9 +4181,10 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   width: 100%;
   height: 100%;
   /* Apply your overlay styles here */
-  background-image: url("../../images/overlay.png"),
+  background-image:
+    url("../../images/overlay.png"),
     /* Black at bottom */
-      linear-gradient(0deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.1));
+    linear-gradient(0deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.1));
 
   /* linear-gradient(0deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5));*/
 
@@ -4206,14 +4273,30 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 }
 
 #header .logo {
-  -moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out,
-    opacity 0.5s ease, -moz-transform 0.5s ease, visibility 0.5s;
-  -webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out,
-    opacity 0.5s ease, -webkit-transform 0.5s ease, visibility 0.5s;
-  -ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out,
-    opacity 0.5s ease, -ms-transform 0.5s ease, visibility 0.5s;
-  transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out,
-    opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+  -moz-transition:
+    border-color 0.2s ease-in-out,
+    color 0.2s ease-in-out,
+    opacity 0.5s ease,
+    -moz-transform 0.5s ease,
+    visibility 0.5s;
+  -webkit-transition:
+    border-color 0.2s ease-in-out,
+    color 0.2s ease-in-out,
+    opacity 0.5s ease,
+    -webkit-transform 0.5s ease,
+    visibility 0.5s;
+  -ms-transition:
+    border-color 0.2s ease-in-out,
+    color 0.2s ease-in-out,
+    opacity 0.5s ease,
+    -ms-transform 0.5s ease,
+    visibility 0.5s;
+  transition:
+    border-color 0.2s ease-in-out,
+    color 0.2s ease-in-out,
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    visibility 0.5s;
   pointer-events: auto;
   border-style: solid;
   border-color: var(--main-background-color);
@@ -4259,10 +4342,18 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  -moz-transition: -moz-transform 1s ease, opacity 1s ease;
-  -webkit-transition: -webkit-transform 1s ease, opacity 1s ease;
-  -ms-transition: -ms-transform 1s ease, opacity 1s ease;
-  transition: transform 1s ease, opacity 1s ease;
+  -moz-transition:
+    -moz-transform 1s ease,
+    opacity 1s ease;
+  -webkit-transition:
+    -webkit-transform 1s ease,
+    opacity 1s ease;
+  -ms-transition:
+    -ms-transform 1s ease,
+    opacity 1s ease;
+  transition:
+    transform 1s ease,
+    opacity 1s ease;
   background: rgba(255, 255, 255, 0.175);
   height: 4rem;
   line-height: 4rem;
@@ -4362,10 +4453,18 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 }
 
 #nav ul.links li a {
-  -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -moz-transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  -webkit-transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  -ms-transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
   display: block;
   font-size: 0.8rem;
   outline: none;
@@ -4569,13 +4668,21 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 
 #navPanelToggle {
   text-decoration: none;
-  -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+  -moz-transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
     box-shadow 0.2s ease-in-out;
-  -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+  -webkit-transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
     box-shadow 0.2s ease-in-out;
-  -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+  -ms-transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
     box-shadow 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
     box-shadow 0.2s ease-in-out;
   display: none;
   position: absolute;
@@ -4645,12 +4752,22 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   -webkit-transform: translateX(20rem);
   -ms-transform: translateX(20rem);
   transform: translateX(20rem);
-  -moz-transition: -moz-transform 0.5s ease, box-shadow 0.5s ease,
+  -moz-transition:
+    -moz-transform 0.5s ease,
+    box-shadow 0.5s ease,
     visibility 0.5s;
-  -webkit-transition: -webkit-transform 0.5s ease, box-shadow 0.5s ease,
+  -webkit-transition:
+    -webkit-transform 0.5s ease,
+    box-shadow 0.5s ease,
     visibility 0.5s;
-  -ms-transition: -ms-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
-  transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
+  -ms-transition:
+    -ms-transform 0.5s ease,
+    box-shadow 0.5s ease,
+    visibility 0.5s;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease,
+    visibility 0.5s;
   display: none;
   -webkit-overflow-scrolling: touch;
   background: var(--main-background-color);
@@ -5636,8 +5753,12 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   height: 65vh; /* Default height for non-centered cards - adjust as you like */
   opacity: 0.75;
   transform: scale(0.8); /* Non-centered cards are slightly smaller */
-  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out,
-    width 0.6s ease-in-out, height 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+  transition:
+    opacity 0.6s ease-in-out,
+    transform 0.6s ease-in-out,
+    width 0.6s ease-in-out,
+    height 0.6s ease-in-out,
+    box-shadow 0.6s ease-in-out;
 }
 
 /* Styles for the card when it is in the .slick-center slide */
@@ -5982,8 +6103,11 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
     height: 50vh; /* Default height for non-centered cards - adjust as you like */
     opacity: 1;
     transform: scale(0.8); /* Non-centered cards are slightly smaller */
-    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out,
-      width 0.6s ease-in-out, height 0.6s ease-in-out,
+    transition:
+      opacity 0.6s ease-in-out,
+      transform 0.6s ease-in-out,
+      width 0.6s ease-in-out,
+      height 0.6s ease-in-out,
       box-shadow 0.6s ease-in-out;
   }
 
@@ -6419,7 +6543,9 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   flex-direction: column; /* Stack icon and title vertically */
   align-items: center; /* Center horizontally */
   justify-content: center; /* Center vertically */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .perk-block:hover {
@@ -6463,10 +6589,18 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   transform: translateY(0); /* Default state: original position */
 
   /* Define transitions for opacity and transform (mirroring #intro's entrance) */
-  -moz-transition: opacity 1s ease, -moz-transform 1s ease;
-  -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
-  -ms-transition: opacity 1s ease, -ms-transform 1s ease;
-  transition: opacity 1s ease, transform 1s ease;
+  -moz-transition:
+    opacity 1s ease,
+    -moz-transform 1s ease;
+  -webkit-transition:
+    opacity 1s ease,
+    -webkit-transform 1s ease;
+  -ms-transition:
+    opacity 1s ease,
+    -ms-transform 1s ease;
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
   /* Any other existing #about styles would go here */
 }
 
@@ -6491,11 +6625,22 @@ body.is-preload #about {
   transform: translateY(2rem);
 
   /* Apply a similar faster transition for the hiding action, like #intro.hidden */
-  -moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, visibility 0.5s;
-  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease,
+  -moz-transition:
+    opacity 0.5s ease,
+    -moz-transform 0.5s ease,
     visibility 0.5s;
-  -ms-transition: opacity 0.5s ease, -ms-transform 0.5s ease, visibility 0.5s;
-  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+  -webkit-transition:
+    opacity 0.5s ease,
+    -webkit-transform 0.5s ease,
+    visibility 0.5s;
+  -ms-transition:
+    opacity 0.5s ease,
+    -ms-transform 0.5s ease,
+    visibility 0.5s;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    visibility 0.5s;
 }
 
 /* Transistions  */
@@ -6507,7 +6652,9 @@ body.is-preload #about {
   transform: translateY(30px);
 
   /* Define the smooth transition for opacity and transform */
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
 }
 
 /* 2. The final "visible" state */
@@ -6637,7 +6784,8 @@ body.is-preload #about {
   background-color: white;
   border-radius: 0.5rem; /* rounded-lg */
   overflow: hidden;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
   transition: transform 0.3s ease; /* transition-transform duration-300 */
 
@@ -6723,7 +6871,10 @@ body.is-preload #about {
   box-shadow: none !important;
 
   color: white;
-  text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333,
+  text-shadow:
+    -1px -1px 0 #333,
+    1px -1px 0 #333,
+    -1px 1px 0 #333,
     1px 1px 0 #333;
 }
 
@@ -7006,7 +7157,9 @@ body.is-preload #about {
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -7246,7 +7399,8 @@ body.is-preload #about {
   padding: 2rem; /* Equivalent to p-8 */
   background-color: #ffffff;
   border-radius: 0.75rem; /* Equivalent to rounded-xl */
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
 }
 
@@ -7335,7 +7489,8 @@ body.is-preload #about {
 
 .contact-card-hdm-custom {
   border-radius: 5rem;
-  box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 10px 15px 5px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
 }
 
@@ -7666,17 +7821,17 @@ body.is-preload #about {
     gap: 2.5rem;
     margin-bottom: 4rem;
   }
-  
+
   .property-specs-grid {
     font-size: 0.8rem;
   }
 
   .feature-image-container {
     width: 100%;
-    height: 500px !important; 
+    height: 500px !important;
     min-height: 500px;
   }
-  
+
   .feature-image-container img {
     height: 100% !important;
     width: 100% !important;
@@ -7744,7 +7899,9 @@ body.is-preload #about {
   background: #e7e7e7;
   color: #a0a0a0;
   border: none;
-  box-shadow: inset 2px 2px 5px #c4c4c4, inset -2px -2px 5px #ffffff;
+  box-shadow:
+    inset 2px 2px 5px #c4c4c4,
+    inset -2px -2px 5px #ffffff;
   cursor: not-allowed;
   position: relative;
   pointer-events: none;
@@ -8055,7 +8212,9 @@ body.form-is-open {
   padding: 20px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0s 0.3s;
+  transition:
+    opacity 0.3s ease,
+    visibility 0s 0.3s;
   pointer-events: none;
 }
 body #gallery-popup-overlay.active {
@@ -8144,7 +8303,10 @@ body #gallery-popup-overlay.active .gallery-popup-content {
   cursor: pointer;
   box-shadow: none !important;
   color: white;
-  text-shadow: -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333,
+  text-shadow:
+    -1px -1px 0 #333,
+    1px -1px 0 #333,
+    -1px 1px 0 #333,
     1px 1px 0 #333;
   opacity: 1;
   transition: color 0.3s ease;
@@ -8308,7 +8470,9 @@ body #gallery-popup-overlay.active .gallery-popup-content {
   /* Hide by default and set up for smooth transition */
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
 }
 
 /* NEW: Creates the X icon without changing HTML */
@@ -8320,7 +8484,7 @@ body #gallery-popup-overlay.active .gallery-popup-content {
   color: white;
   font-size: 60px;
   font-weight: 300; /* Makes it look sleeker */
-  line-height: 1;   /* Prevents vertical alignment issues */
+  line-height: 1; /* Prevents vertical alignment issues */
   pointer-events: none; /* Ensures the click registers on the div, not the pseudo-element */
 }
 
@@ -8772,4 +8936,168 @@ body #gallery-popup-overlay.active .gallery-popup-content {
     grid-template-columns: 1fr; /* Stack images on mobile */
     padding: 0 20px 60px 20px;
   }
+}
+
+/* Team Grid Container */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem; /* Matches your property grid gap */
+  margin-top: 2rem;
+}
+
+/* Individual Card Styling */
+.team-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  /* Using your existing shadow styles */
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+
+  /* Grid Logic: 3 per row on desktop */
+  flex-basis: calc(33.333% - 2rem);
+  min-width: 300px;
+}
+
+.team-card:hover {
+  transform: translateY(-0.5rem);
+}
+
+/* Image Wrapper */
+.team-image-wrapper {
+  position: relative;
+  width: 100%;
+  /* Aspect ratio for portraits */
+  height: 22rem;
+  overflow: hidden;
+}
+
+.team-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top; /* Focus on faces */
+  transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-image-wrapper img {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Info Area */
+.team-card-info {
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1; /* Ensures buttons align at bottom if titles vary in length */
+}
+
+.team-card-info h3 {
+  color: var(--main-text-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.team-card-info .job-title {
+  color: #6b7280; /* Gray-500 from your stylesheet */
+  font-family: "Merriweather", Georgia, serif;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Button overrides to fit card */
+.team-card-info .button {
+  margin-top: auto; /* Pushes button to bottom */
+  width: auto;
+  min-width: 120px;
+}
+
+/* Responsive Adjustments using your breakpoints */
+@media (max-width: 1280px) {
+  .team-card {
+    flex-basis: calc(50% - 2rem); /* 2 per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .team-card {
+    flex-basis: 100%; /* 1 per row */
+  }
+
+  .team-image-wrapper {
+    height: 18rem; /* Slightly smaller images on mobile */
+  }
+}
+@media (min-width: 768px) {
+  #bio-split-layout {
+    display: grid !important;
+    grid-template-columns: 1fr 2fr !important; /* 1 part Image, 2 parts Text */
+    gap: 50px !important; /* Clean gap between them */
+    align-items: start !important;
+    margin-top: 0 !important;
+  }
+
+  #bio-split-layout .flex-image-column,
+  #bio-split-layout .flex-text-column {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    flex: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  #bio-split-layout {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+  }
+}
+
+.bio-hero-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/4; /* Keeps portrait shape consistent */
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.team-return {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.team-return:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.about-card h2 {
+  margin-top: 1rem;
+}
+
+.bio-title {
+  color: #888;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-top: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
 }
