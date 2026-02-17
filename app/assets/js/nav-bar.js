@@ -27,7 +27,7 @@ const NAV_BAR_HTML_TEMPLATE = `
                             <div id="search-box">
                                 <div class="inner-wrap">
                                     <div class="col span_12">
-                                        <form role="search" action="https://triadacollections.com/" method="GET">
+                                        <form role="search" action="https://triadacolls.wpenginepowered.com//" method="GET">
                                             <input type="text" name="s" id="s" value="" aria-label="Search" placeholder="Search" />
                                             <span>Hit enter to search or ESC to close</span>
                                         </form>
@@ -45,8 +45,8 @@ const NAV_BAR_HTML_TEMPLATE = `
                         <div class="row">
                             <div class="col span_3">
                                 <a id="logo" href="/" data-supplied-ml-starting-dark="false" data-supplied-ml-starting="false" data-supplied-ml="true">
-                                    <img class="stnd skip-lazy default-logo dark-version" width="128" height="92" alt="Triada Collections" src="https://triadacollections.com/wp-content/uploads/2025/02/triada-logo-fullcolor-RGB-BAHAI-COSTARICA.svg" />
-                                    <img class="mobile-only-logo skip-lazy" alt="Triada Collections" width="128" height="92" src="https://triadacollections.com/wp-content/uploads/2025/02/triada-logo-fullcolor-RGB-BAHAI-COSTARICA.svg" />
+                                    <img class="stnd skip-lazy default-logo dark-version" width="128" height="92" alt="Triada Collections" src="https://triadacolls.wpenginepowered.com//wp-content/uploads/2025/02/triada-logo-fullcolor-RGB-BAHAI-COSTARICA.svg" />
+                                    <img class="mobile-only-logo skip-lazy" alt="Triada Collections" width="128" height="92" src="https://triadacolls.wpenginepowered.com//wp-content/uploads/2025/02/triada-logo-fullcolor-RGB-BAHAI-COSTARICA.svg" />
                                 </a>
                             </div>
                             <div class="col span_9 col_last">
@@ -57,7 +57,7 @@ const NAV_BAR_HTML_TEMPLATE = `
                                 <nav aria-label="Main Menu">
                                     <ul id="menu-main-menu-1" class="sf-menu">
                                         <li id="menu-item-711" class="menu-item menu-item-type-post_type menu-item-object-page page_item page-item-691 menu-item-has-icon nectar-regular-menu-item menu-item-711" data-path="/">
-                                            <a href="/" aria-current="page" class=""><img width="128" height="92" src="https://triadacollections.com/wp-content/uploads/2025/02/triada-logo-fullcolor-RGB-BAHAI-COSTARICA.svg" class="nectar-menu-icon-img" alt="" decoding="async" /><span class="menu-title-text">Home</span></a>
+                                            <a href="/" aria-current="page" class=""><img width="128" height="92" src="https://triadacolls.wpenginepowered.com//wp-content/uploads/2025/02/triada-logo-fullcolor-RGB-BAHAI-COSTARICA.svg" class="nectar-menu-icon-img" alt="" decoding="async" /><span class="menu-title-text">Home</span></a>
                                         </li>
                                         <li id="menu-item-551" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-551 menu-item-has-children" data-path="RESIDENCES_PARENT_ROOT">
                                             <a href="/for-sale/"><span class="menu-title-text">Residences</span></a>
