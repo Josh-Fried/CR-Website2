@@ -2356,7 +2356,7 @@ div[data-style="minimal"] .toggle > .toggle-title i:after {
 
 @font-face {
   font-family: "gilmer";
-  src: url("https://triadacollections.com/wp-content/themes/salient-child/fonts/gilmer-light.woff2")
+  src: url("https://triadacolls.wpenginepowered.com//wp-content/themes/salient-child/fonts/gilmer-light.woff2")
     format("woff2");
   font-weight: 300;
   font-style: normal;
@@ -2366,7 +2366,7 @@ div[data-style="minimal"] .toggle > .toggle-title i:after {
 
 @font-face {
   font-family: "gilmer";
-  src: url("https://triadacollections.com/wp-content/themes/salient-child/fonts/gilmer-regular.woff2")
+  src: url("https://triadacolls.wpenginepowered.com//wp-content/themes/salient-child/fonts/gilmer-regular.woff2")
     format("woff2");
   font-weight: 400;
   font-style: normal;
@@ -2376,7 +2376,7 @@ div[data-style="minimal"] .toggle > .toggle-title i:after {
 
 @font-face {
   font-family: "gilmer";
-  src: url("https://triadacollections.com/wp-content/themes/salient-child/fonts/gilmer-medium.woff2")
+  src: url("https://triadacolls.wpenginepowered.com//wp-content/themes/salient-child/fonts/gilmer-medium.woff2")
     format("woff2");
   font-weight: 500;
   font-style: normal;
@@ -2386,7 +2386,7 @@ div[data-style="minimal"] .toggle > .toggle-title i:after {
 
 @font-face {
   font-family: "gilmer";
-  src: url("https://triadacollections.com/wp-content/themes/salient-child/fonts/gilmer-bold.woff2")
+  src: url("https://triadacolls.wpenginepowered.com//wp-content/themes/salient-child/fonts/gilmer-bold.woff2")
     format("woff2");
   font-weight: 700;
   font-style: normal;
@@ -2396,7 +2396,7 @@ div[data-style="minimal"] .toggle > .toggle-title i:after {
 
 @font-face {
   font-family: "gilmer";
-  src: url("https://triadacollections.com/wp-content/themes/salient-child/fonts/gilmer-heavy.woff2")
+  src: url("https://triadacolls.wpenginepowered.com//wp-content/themes/salient-child/fonts/gilmer-heavy.woff2")
     format("woff2");
   font-weight: 900;
   font-style: normal;
@@ -3334,7 +3334,7 @@ body[data-slide-out-widget-area-style="simple"]
 
 .nectar-flickity[data-controls*="arrows_overlaid"]
   .flickity-prev-next-button.previous::before {
-  content: url("https://triadacollections.com/wp-content/uploads/2025/05/Left-arrow-desk.svg");
+  content: url("https://triadacolls.wpenginepowered.com//wp-content/uploads/2025/05/Left-arrow-desk.svg");
   position: absolute;
   left: 0;
   top: 50%;
@@ -3374,7 +3374,7 @@ body[data-slide-out-widget-area-style="simple"]
 
 .nectar-flickity[data-controls*="arrows_overlaid"]
   .flickity-prev-next-button.next::before {
-  content: url("https://triadacollections.com/wp-content/uploads/2025/05/Right-arrow-desk.svg");
+  content: url("https://triadacolls.wpenginepowered.com//wp-content/uploads/2025/05/Right-arrow-desk.svg");
   position: absolute;
   left: 0;
   top: 50%;
@@ -3738,7 +3738,7 @@ body[data-fancy-form-rcs="1"]
   margin-left: 0 !important;
   border-color: #fff !important;
   cursor: pointer;
-  background-image: url("https://triadacollections.com/wp-content/uploads/2025/02/Arrow-3.svg");
+  background-image: url("https://triadacolls.wpenginepowered.com//wp-content/uploads/2025/02/Arrow-3.svg");
   background-repeat: no-repeat;
   background-position: right center;
   background-size: 30px 30px;
@@ -3828,7 +3828,7 @@ body.material.mobile
 }
 
 .hover-wrap-inner [data-fancybox]::before {
-  content: url("https://triadacollections.com/wp-content/uploads/2025/05/zoom.svg");
+  content: url("https://triadacolls.wpenginepowered.com//wp-content/uploads/2025/05/zoom.svg");
   width: 24px;
   height: 24px;
   position: absolute;
