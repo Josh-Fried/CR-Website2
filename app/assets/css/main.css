@@ -9101,3 +9101,55 @@ body #gallery-popup-overlay.active .gallery-popup-content {
   letter-spacing: 1px;
   text-align: center;
 }
+
+/* The Overlap Twist Layout */
+.overlap-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.overlap-image-wrapper {
+  width: 60%;
+  position: relative;
+  z-index: 1;
+}
+
+.overlap-image-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.overlap-text-card {
+  width: 45%; /* Slightly less than half */
+  background-color: #fff;
+  padding: 50px;
+  margin-left: -10%; /* This creates the overlap */
+  z-index: 2;
+  border-radius: 4px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+/* Mobile Responsive for Overlap */
+@media (max-width: 900px) {
+  .overlap-container {
+    flex-direction: column;
+  }
+  .overlap-image-wrapper {
+    width: 100%;
+  }
+  .overlap-text-card {
+    width: 90%;
+    margin-left: 0;
+    margin-top: -40px; /* Pulls text up over image on mobile */
+    padding: 30px;
+  }
+}
