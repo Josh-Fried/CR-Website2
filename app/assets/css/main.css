@@ -5615,6 +5615,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 
 #copyright {
   color: var(--main-text-color);
+  padding: 2rem 4rem 2rem 4rem;
   position: relative;
   /* color: rgba(255, 255, 255, 1); */
   cursor: default;
@@ -7426,6 +7427,10 @@ body.is-preload #about {
   grid-template-columns: 1fr; /* Default to one column */
   gap: 2rem; /* Equivalent to gap-8 */
   text-align: center;
+}
+
+#contact-placeholder { 
+  padding-bottom: 0;
 }
 
 /* Icon wrapper styles */
