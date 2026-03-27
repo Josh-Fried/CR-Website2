@@ -471,7 +471,7 @@ hr {
 
 /* Row */
 
-.row {
+/* .row {
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
@@ -2168,7 +2168,7 @@ hr {
   .row.gtr-200.gtr-uniform > * {
     padding-top: 3rem;
   }
-}
+} */
 
 /* Box Class */
 
@@ -9156,5 +9156,13 @@ body #gallery-popup-overlay.active .gallery-popup-content {
     margin-left: 0;
     margin-top: -40px; /* Pulls text up over image on mobile */
     padding: 30px;
+  }
+}
+.spaced-feature-list li {
+  margin-bottom: 18px;
+}
+@media (max-width: 767px) {
+  .hide-on-mobile {
+    display: none !important;
   }
 }
