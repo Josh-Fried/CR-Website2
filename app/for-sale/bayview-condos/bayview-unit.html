@@ -270,7 +270,7 @@
     if (unitId) {
       try {
         console.log("4. Attempting to fetch units.json...");
-        const response = await fetch('/for-sale/bayview-condos/units.json');
+        const response = await fetch('/for-sale/bayview-condos/bayview-units.json');
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -305,7 +305,7 @@
   });
 </script>
     <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assetsjs/jquery.scrollex.min.js"></script>
+    <script src="/assets/js/jquery.scrollex.min.js"></script>
     <script src="/assets/js/jquery.scrolly.min.js"></script>
     <script src="/assets/js/browser.min.js"></script>
     <script src="/assets/js/breakpoints.min.js"></script>
