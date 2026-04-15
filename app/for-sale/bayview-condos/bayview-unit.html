@@ -254,36 +254,56 @@
     </div>
     
     <script>
-      document.addEventListener("DOMContentLoaded", async () => {
-        const pathSegments = window.location.pathname.split('/').filter(Boolean);
-        const building = pathSegments[pathSegments.length - 2]; 
-        const room = pathSegments[pathSegments.length - 1];
-        const unitId = `${building}${room}`; 
+  document.addEventListener("DOMContentLoaded", async () => {
+    console.log("1. Script started.");
+    
+    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+    console.log("2. Path segments:", pathSegments);
 
-        if (unitId) {
-          try {
-            const response = await fetch('/for-sale/bayview-condos/bayview-units.json');
-            const units = await response.json();
-            const unitData = units[unitId];
+    const building = pathSegments[pathSegments.length - 2]; 
+    const room = pathSegments[pathSegments.length - 1];
+    
+    // Convert to uppercase to prevent case-sensitive JSON errors
+    const unitId = `${building}${room}`.toUpperCase(); 
+    console.log("3. Target Unit ID:", unitId);
 
-            if (unitData) {
-              document.getElementById('page-title').innerText = `Bayview Unit ${unitId} - Papagayo Bay`;
-              document.getElementById('unit-title').innerText = unitData.title;
-              document.getElementById('unit-price').innerText = unitData.price;
-              document.getElementById('unit-beds-baths').innerText = `${unitData.beds} / ${unitData.baths}`;
-              document.getElementById('unit-sqft').innerText = `${unitData.sqft} sq ft`;
-              document.getElementById('unit-description').innerText = unitData.description;
-              document.getElementById('layout-subtitle').innerText = `Explore the architectural flow and spatial design of Unit ${unitId}.`;
-              document.getElementById('hero-image').src = unitData.heroImage;
-              document.getElementById('layout-image').src = unitData.layoutImage;
-            }
-          } catch (error) {
-            console.error("Error loading unit data", error);
-          }
+    if (unitId) {
+      try {
+        console.log("4. Attempting to fetch units.json...");
+        const response = await fetch('/for-sale/bayview-condos/units.json');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
-      });
-    </script>
+        
+        const units = await response.json();
+        console.log("5. Successfully loaded JSON data.");
 
+        const unitData = units[unitId];
+
+        if (unitData) {
+          console.log("6. Found matching unit data:", unitData);
+          document.getElementById('page-title').innerText = `Bayview Unit ${unitId} - Papagayo Bay`;
+          document.getElementById('unit-title').innerText = unitData.title;
+          document.getElementById('unit-price').innerText = unitData.price;
+          document.getElementById('unit-beds-baths').innerText = `${unitData.beds} / ${unitData.baths}`;
+          document.getElementById('unit-sqft').innerText = `${unitData.sqft} sq ft`;
+          document.getElementById('unit-description').innerText = unitData.description;
+          document.getElementById('layout-subtitle').innerText = `Explore the architectural flow and spatial design of Unit ${unitId}.`;
+          document.getElementById('hero-image').src = unitData.heroImage;
+          document.getElementById('layout-image').src = unitData.layoutImage;
+          console.log("7. DOM successfully updated.");
+        } else {
+          console.error(`ERROR: Unit ID '${unitId}' not found in the JSON file.`);
+        }
+      } catch (error) {
+        console.error("ERROR loading or parsing data:", error);
+      }
+    } else {
+        console.error("ERROR: Could not build a Unit ID from the URL.");
+    }
+  });
+</script>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assetsjs/jquery.scrollex.min.js"></script>
     <script src="/assets/js/jquery.scrolly.min.js"></script>
