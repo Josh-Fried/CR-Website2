@@ -1,7 +1,7 @@
 {
   "routes": [
     {
-      "route": "/for-sale/bayview-condos/*/*",
+      "route": "/for-sale/bayview-condos/*",
       "rewrite": "/for-sale/bayview-condos/bayview-unit.html"
     }
   ]
