@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <title id="page-title">Bayview Unit - Papagayo Bay</title>
+
+    <meta name="robots" content="index, follow">
+    <meta property="og:site_name" content="Papagayo Bay">
+    <style>
+      img:is([sizes="auto" i], [sizes^="auto," i]) {
+        contain-intrinsic-size: 3000px 1500px;
+      }
+    </style>
+    <link
+      rel="icon"
+      href="/Triada Styling/cropped-favicon-32x32.webp"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="/Triada Styling/cropped-favicon-192x192.webp"
+      sizes="192x192"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/Triada Styling/cropped-favicon-180x180.webp"
+    />
+    <meta
+      name="msapplication-TileImage"
+      content="/Triada Styling/cropped-favicon-270x270.webp"
+    />
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/slick-1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="/slick-1.8.1/slick/slick-theme.css" />
+    <noscript
+      ><link rel="stylesheet" href="/assets/css/noscript.css"
+    /></noscript>
+    <link
+      rel="stylesheet"
+      href="/Triada Styling/style.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="/Triada Styling/header-layout-centered-logo-between-menu-alt.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="/Triada Styling/responsive.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="/Triada Styling/skin-material.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="/Triada Styling/menu-dynamic.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="/Triada Styling/salient-dynamic-styles.css"
+      type="text/css"
+      media="all"
+    />
+    <link rel="stylesheet" href="/assets/css/WPengineCSS.css" />
+
+    <script type="text/javascript">
+      document.documentElement.classList.add("js");
+    </script>
+
+    <style>
+      .hero-split-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 6rem 20px 4rem 20px;
+        gap: 50px;
+      }
+
+      .hero-left-stats {
+        flex: 1;
+        min-width: 350px;
+        max-width: 500px;
+      }
+
+      .hero-right-view {
+        flex: 1.5;
+        min-width: 350px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin: 30px 0;
+      }
+
+      .stat-box {
+        background: #f7f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        border: 1px solid #eaeaea;
+      }
+
+      .stat-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: #888; }
+      .stat-value { font-size: 1.4rem; font-weight: bold; color: #333; margin-top: 5px;}
+      .status-available { color: #1e8e3e; }
+
+      .info-text { font-size: 1.1rem; line-height: 1.6; color: #444; margin-bottom: 30px; }
+
+      #hero-view-container {
+        position: relative;
+        width: 100%;
+        height: 400px; 
+      }
+
+      #hero-carousel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      #hero-carousel .slick-list,
+      #hero-carousel .slick-track,
+      #hero-carousel .slick-slide,
+      #hero-carousel .slick-slide > div {
+        height: 100% !important;
+      }
+
+      #hero-carousel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      #hero-carousel.slick-dotted.slick-slider {
+        margin-bottom: 0;
+      }
+
+      #hero-view-container .slide-count {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 14px;
+        z-index: 10;
+        font-weight: 500;
+      }
+
+      #hero-view-container .slick-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background: transparent; 
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        cursor: pointer;
+        opacity: 0; 
+        transition: opacity 0.3s ease;
+        box-shadow: none !important;
+
+        color: white;
+        text-shadow:
+          -1px -1px 0 #333,
+          1px -1px 0 #333,
+          -1px 1px 0 #333,
+          1px 1px 0 #333;
+      }
+
+      #hero-view-container .slick-prev-arrow {
+        left: 15px;
+      }
+
+      #hero-view-container .slick-next-arrow {
+        right: 15px;
+      }
+
+      #hero-view-container:hover .slick-arrow {
+        opacity: 1;
+      }
+
+      #hero-view-container .slick-arrow:hover {
+        color: #ccc;
+      }
+
+      #hero-view-container .slick-dots {
+        bottom: 15px;
+        position: absolute;
+      }
+
+      #hero-view-container .slick-dots li button:before {
+        font-size: 12px;
+        color: #fff;
+        opacity: 0.75;
+      }
+
+      #hero-view-container .slick-dots li.slick-active button:before {
+        color: #fff;
+        opacity: 1;
+      }
+
+      #hero-view-container .slick-dots li button {
+        box-shadow: none !important;
+        outline: none !important;
+      }
+
+      .image-gallery-section {
+        max-width: 1400px;
+        margin: 0 auto 4rem auto;
+        padding: 0 20px;
+      }
+
+      .image-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .image-gallery-grid img {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      }
+      
+      .layout-grid {
+        display: flex; 
+        gap: 30px; 
+        justify-content: center; 
+        flex-wrap: wrap; 
+        margin-top: 40px;
+      }
+      .layout-grid img {
+        width: 45%; 
+        min-width: 320px; 
+        border: 1px solid #eaeaea; 
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      }
+
+      @media (max-width: 900px) {
+        .hero-split-container { 
+          flex-direction: column-reverse; 
+          padding-top: 4rem; 
+          align-items: center; 
+        }
+        
+        .hero-left-stats { 
+          max-width: 100%; 
+          text-align: center; 
+        }
+        
+        .stats-grid { 
+          text-align: left; 
+        }
+
+        #hero-view-container {
+          height: 300px !important;
+          width: 100%;
+          max-width: 600px;
+        }
+      }
+    </style>
+
+  </head>
+
+  <body
+    class="material"
+    data-header-format="centered-logo-between-menu-alt"
+    data-header-resize="1"
+    data-transparent-header="false"
+    data-header-color=""
+    data-remove-border="true"
+    data-smooth-scrolling="0"
+    data-cad="1500"
+    data-cae="easeOutQuart"
+    data-aie="none"
+    data-ls="fancybox"
+    onLoad="lm_InitWebForm()"
+  >
+    <div id="ajax-content-wrap">
+      <div class="container-wrap">
+        <div id="wrapper">
+          <div id="main">
+            
+            <section id="hero-split" class="fade-in-up">
+              <div class="hero-split-container">
+                
+                <div class="hero-left-stats">
+                  <h1 id="unit-title" style="font-size: 3.5rem; margin-top: 1rem; margin-bottom: 5px; line-height: 1.1;"></h1>
+                  <p style="color: #666; font-size: 1.2rem; margin-bottom: 0;">The Bayview Collection at Triada</p>
+                  
+                  <div class="stats-grid">
+                    <div class="stat-box">
+                      <div class="stat-label">Price</div>
+                      <div id="unit-price" class="stat-value"></div>
+                    </div>
+                    <div class="stat-box">
+                      <div class="stat-label">Bed / Bath</div>
+                      <div id="unit-beds-baths" class="stat-value"></div>
+                    </div>
+                    <div class="stat-box">
+                      <div class="stat-label">Floors</div>
+                      <div class="stat-value">1</div>
+                    </div>
+                    <div class="stat-box">
+                      <div class="stat-label">Build Area</div>
+                      <div id="unit-sqft" class="stat-value"></div>
+                    </div>
+                  </div>
+
+                  <div id="unit-description" class="info-text"></div>
+
+                  <a href="#" class="details-button inquire-button" style="padding: 15px 40px; font-size: 1.1rem; display: inline-block;">Inquire</a>
+                </div>
+
+                <div class="hero-right-view" id="hero-view-container">
+                  <div class="slide-count"></div>
+                  <div id="hero-carousel"></div>
+                </div>
+
+              </div>
+            </section>
+
+            <section id="layout-images" class="fade-in-up" style="padding: 1rem 20px; max-width: 1400px; margin: 0 auto; text-align: center; border-top: 1px solid #eaeaea;">
+              <h2 style="font-size: 2.5rem; margin-bottom: 10px;">Floor Plans & Layout</h2>
+              <p id="layout-subtitle" style="color: #666; margin: 0 auto; text-align: center;"></p>
+              
+              <div class="layout-grid">
+                 <img src="/images/Bayviewtemplayout.png" alt="Main Level Floor Plan" />
+                 <img id="layout-image" src="" alt="Unit View">
+              </div>
+            </section>
+
+            <div id="contact-placeholder"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.scrollex.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/animations.js"></script>
+    <script src="/slick-1.8.1/slick/slick.js"></script>
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lotLayoutPopup.js"></script>
+    <script type="text/javascript" src="/assets/js/alexCarousel.js"></script>
+    <script src="/assets/js/loadContact.js"></script>
+
+    <script src="/Triada Styling/transit.min.js"></script>
+    <script src="/Triada Styling/superfish.js"></script>
+    <script src="/Triada Styling/init.js"></script>
+
+    <script src="/assets/js/nav-bar.js"></script>
+
+    <script>
+      $(document).ready(async function() {
+        console.log("1. Script started.");
+        
+        const pathSegments = window.location.pathname.split('/').filter(Boolean);
+        console.log("2. Path segments:", pathSegments);
+
+        const building = pathSegments[pathSegments.length - 2]; 
+        const room = pathSegments[pathSegments.length - 1];
+        const unitId = `${building}${room}`.toUpperCase(); 
+        console.log("3. Target Unit ID:", unitId);
+
+        if (unitId) {
+          try {
+            console.log("4. Attempting to fetch units.json...");
+            const response = await fetch('/for-sale/bayview-condos/bayview-units.json');
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const units = await response.json();
+            console.log("5. Successfully loaded JSON data.");
+
+            const unitData = units[unitId];
+
+            if (unitData) {
+              console.log("6. Found matching unit data:", unitData);
+              document.getElementById('page-title').innerText = `Bayview Unit ${unitId} - Papagayo Bay`;
+              document.getElementById('unit-title').innerText = unitData.title;
+              document.getElementById('unit-price').innerText = unitData.price;
+              document.getElementById('unit-beds-baths').innerText = `${unitData.beds} / ${unitData.baths}`;
+              document.getElementById('unit-sqft').innerText = `${unitData.sqft} sq ft`;
+              document.getElementById('unit-description').innerText = unitData.description;
+              document.getElementById('layout-subtitle').innerText = `Explore the architectural flow and spatial design of Unit ${unitId}.`;
+              document.getElementById('layout-image').src = unitData.layoutImage;
+
+              const $carousel = $('#hero-carousel');
+              
+              const imagesToLoad = unitData.carouselImages || [];
+
+              if (imagesToLoad.length > 0) {
+                  imagesToLoad.forEach(imgSrc => {
+                      if (imgSrc) {
+                          $carousel.append(`<img src="${imgSrc}" alt="View of ${unitId}">`);
+                      }
+                  });
+
+                  var $heroView = $('#hero-view-container');
+                  var $slideCount = $heroView.find('.slide-count');
+
+                  var updateCount = function(event, slick, currentSlide) {
+                      var i = (currentSlide ? currentSlide : 0) + 1;
+                      $slideCount.text(i + ' / ' + slick.slideCount);
+                  };
+
+                  $carousel.on('init reInit afterChange', updateCount);
+
+                  $carousel.slick({
+                      dots: true,
+                      arrows: true,
+                      prevArrow: '<button type="button" class="slick-prev-arrow">&#10094;</button>',
+                      nextArrow: '<button type="button" class="slick-next-arrow">&#10095;</button>',
+                      infinite: true,
+                      speed: 500,
+                      fade: true,
+                      cssEase: 'linear',
+                      autoplay: false, 
+                      autoplaySpeed: 2000,
+                      slidesToShow: 1,
+                      slidesToScroll: 1
+                  });
+
+                  $heroView.data('autoplay-enabled', true);
+
+                  $heroView.hover(function() {
+                      if ($(this).data('autoplay-enabled')) {
+                          $carousel.slick('slickPlay');
+                      }
+                  }, function() {
+                      $carousel.slick('slickPause');
+                      $(this).data('autoplay-enabled', true);
+                  });
+
+                  $carousel.find('.slick-arrow, .slick-dots button').on('click', function() {
+                      $heroView.data('autoplay-enabled', false);
+                      $carousel.slick('slickPause');
+                  });
+
+                  console.log("7. DOM and Carousel successfully updated.");
+              } else {
+                  $('#hero-view-container .slide-count').hide();
+                  console.log("7. No images found in JSON. Carousel container left blank.");
+              }
+            } else {
+              console.error(`ERROR: Unit ID '${unitId}' not found in the JSON file.`);
+            }
+          } catch (error) {
+            console.error("ERROR loading or parsing data:", error);
+          }
+        } else {
+            console.error("ERROR: Could not build a Unit ID from the URL.");
+        }
+      });
+    </script>
+  </body>
+</html>
