@@ -1,22 +1,22 @@
 {
   "A101": {
     "title": "Unit A101",
-    "price": "$1,895,000",
+    "price": "$1,495,000",
     "beds": 3,
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit A101 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front1.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "A102": {
     "title": "Unit A102",
-    "price": "$1,895,000",
+    "price": "$1,495,000",
     "beds": 3,
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit A102 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front2.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "A201": {
@@ -26,7 +26,7 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit A201 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front1.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "A202": {
@@ -36,7 +36,7 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit A202 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front2.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "A301": {
@@ -46,7 +46,7 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit A301 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
-    "heroImage": "/images/HouseRenderings/Front1.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "A302": {
@@ -56,27 +56,27 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit A302 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
-    "heroImage": "/images/HouseRenderings/Front2.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "B101": {
     "title": "Unit B101",
-    "price": "$1,895,000",
+    "price": "$1,495,000",
     "beds": 3,
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit B101 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front1.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "B102": {
     "title": "Unit B102",
-    "price": "$1,895,000",
+    "price": "$1,495,000",
     "beds": 3,
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit B102 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front2.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "B201": {
@@ -86,7 +86,7 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit B201 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front1.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "B202": {
@@ -96,7 +96,7 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit B202 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front2.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "B301": {
@@ -106,7 +106,7 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit B301 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
-    "heroImage": "/images/HouseRenderings/Front1.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "B302": {
@@ -116,27 +116,27 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit B302 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
-    "heroImage": "/images/HouseRenderings/Front2.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "C101": {
     "title": "Unit C101",
-    "price": "$1,895,000",
+    "price": "$1,495,000",
     "beds": 3,
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit C101 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front1.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "C102": {
     "title": "Unit C102",
-    "price": "$1,895,000",
+    "price": "$1,495,000",
     "beds": 3,
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit C102 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front2.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "C201": {
@@ -146,7 +146,7 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit C201 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front1.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "C202": {
@@ -156,7 +156,7 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit C202 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front2.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "C301": {
@@ -166,7 +166,7 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit C301 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
-    "heroImage": "/images/HouseRenderings/Front1.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "C302": {
@@ -176,27 +176,27 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit C302 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
-    "heroImage": "/images/HouseRenderings/Front2.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "D101": {
     "title": "Unit D101",
-    "price": "$1,895,000",
+    "price": "$1,495,000",
     "beds": 3,
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit D101 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front1.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "D102": {
     "title": "Unit D102",
-    "price": "$1,895,000",
+    "price": "$1,495,000",
     "beds": 3,
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit D102 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front2.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "D201": {
@@ -206,7 +206,7 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit D201 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front1.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "D202": {
@@ -216,7 +216,7 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit D202 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
-    "heroImage": "/images/HouseRenderings/Front2.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "D301": {
@@ -226,7 +226,7 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit D301 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
-    "heroImage": "/images/HouseRenderings/Front1.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   },
   "D302": {
@@ -236,7 +236,7 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit D302 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
-    "heroImage": "/images/HouseRenderings/Front2.webp",
+    "heroImage": "",
     "layoutImage": "/images/Bayviewtemplayout.png"
   }
 }
