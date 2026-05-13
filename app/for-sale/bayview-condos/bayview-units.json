@@ -6,10 +6,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit A101 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 101.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 101.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 101.webp"
   },
   "A102": {
     "title": "Unit A102",
@@ -18,10 +19,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit A102 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 102.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 102.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 102.webp"
   },
   "A201": {
     "title": "Unit A201",
@@ -30,10 +32,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit A201 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "sold",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 201.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 201.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 201.webp"
   },
   "A202": {
     "title": "Unit A202",
@@ -42,10 +45,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit A202 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "sold",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 202.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 202.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 202.webp"
   },
   "A301": {
     "title": "Unit A301",
@@ -54,10 +58,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit A301 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 301.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 301.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 301.webp"
   },
   "A302": {
     "title": "Unit A302",
@@ -66,10 +71,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit A302 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 302.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 302.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/a/A 302.webp"
   },
   "B101": {
     "title": "Unit B101",
@@ -78,10 +84,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit B101 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 101.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 101.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 101.webp"
   },
   "B102": {
     "title": "Unit B102",
@@ -90,10 +97,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit B102 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 102.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 102.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 102.webp"
   },
   "B201": {
     "title": "Unit B201",
@@ -102,10 +110,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit B201 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 201.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 201.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 201.webp"
   },
   "B202": {
     "title": "Unit B202",
@@ -114,10 +123,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit B202 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 202.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 202.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 202.webp"
   },
   "B301": {
     "title": "Unit B301",
@@ -126,10 +136,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit B301 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 301.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 301.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 301.webp"
   },
   "B302": {
     "title": "Unit B302",
@@ -138,10 +149,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit B302 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 302.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 302.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/b/B 302.webp"
   },
   "C101": {
     "title": "Unit C101",
@@ -150,10 +162,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit C101 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 101.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 101.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 101.webp"
   },
   "C102": {
     "title": "Unit C102",
@@ -162,10 +175,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit C102 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 102.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 102.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 102.webp"
   },
   "C201": {
     "title": "Unit C201",
@@ -174,10 +188,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit C201 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 201.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 201.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 201.webp"
   },
   "C202": {
     "title": "Unit C202",
@@ -186,10 +201,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit C202 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 202.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 202.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 202.webp"
   },
   "C301": {
     "title": "Unit C301",
@@ -198,10 +214,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit C301 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 301.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 301.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 301.webp"
   },
   "C302": {
     "title": "Unit C302",
@@ -210,10 +227,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit C302 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 302.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 302.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/c/C 302.webp"
   },
   "D101": {
     "title": "Unit D101",
@@ -222,10 +240,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit D101 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 101.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 101.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 101.webp"
   },
   "D102": {
     "title": "Unit D102",
@@ -234,10 +253,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit D102 offers unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 102.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 102.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 102.webp"
   },
   "D201": {
     "title": "Unit D201",
@@ -246,10 +266,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit D201 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 201.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 201.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 201.webp"
   },
   "D202": {
     "title": "Unit D202",
@@ -258,10 +279,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit D202 offers elevated, unobstructed panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace, blurring the lines between indoor and outdoor tropical living.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 202.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 202.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 202.webp"
   },
   "D301": {
     "title": "Unit D301",
@@ -270,10 +292,11 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit D301 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 301.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 301.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 301.webp"
   },
   "D302": {
     "title": "Unit D302",
@@ -282,9 +305,10 @@
     "baths": 3,
     "sqft": "2,254",
     "description": "Positioned perfectly within the Bayview Collection, Unit D302 is a penthouse-level residence offering the ultimate panoramic views of the Pacific Ocean. This luxury condominium features an open-concept living area that flows seamlessly onto a massive private terrace.",
+    "status": "available",
     "carouselImages": [
       "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 302.webp"
     ],
-    "layoutImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 302.webp"
+    "cardImage": "https://papagayobay.blob.core.windows.net/images/bay-view-condos/d/D 302.webp"
   }
 }

@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
     />
-    <title id="page-title">Bayview Unit - Papagayo Bay</title>
+    <title id="page-title">Bay View Unit - Papagayo Bay</title>
 
     <meta name="robots" content="index, follow">
     <meta property="og:site_name" content="Papagayo Bay">
@@ -319,7 +319,7 @@
                 
                 <div class="hero-left-stats">
                   <h1 id="unit-title" style="font-size: 3.5rem; margin-top: 1rem; margin-bottom: 5px; line-height: 1.1;"></h1>
-                  <p style="color: #666; font-size: 1.2rem; margin-bottom: 0;">The Bayview Collection at Triada</p>
+                  <p style="color: #666; font-size: 1.2rem; margin-bottom: 0;">The Bay View Collection at Triada</p>
                   
                   <div class="stats-grid">
                     <div class="stat-box">
@@ -330,10 +330,10 @@
                       <div class="stat-label">Bed / Bath</div>
                       <div id="unit-beds-baths" class="stat-value"></div>
                     </div>
-                    <div class="stat-box">
+                    <!-- <div class="stat-box">
                       <div class="stat-label">Floors</div>
                       <div class="stat-value">1</div>
-                    </div>
+                    </div> -->
                     <div class="stat-box">
                       <div class="stat-label">Build Area</div>
                       <div id="unit-sqft" class="stat-value"></div>
@@ -359,7 +359,6 @@
               
               <div class="layout-grid">
                  <img src="/images/Bayviewtemplayout.png" alt="Main Level Floor Plan" />
-                 <img id="layout-image" src="" alt="Unit View">
               </div>
             </section>
 
@@ -417,14 +416,13 @@
 
             if (unitData) {
               console.log("6. Found matching unit data:", unitData);
-              document.getElementById('page-title').innerText = `Bayview Unit ${unitId} - Papagayo Bay`;
+              document.getElementById('page-title').innerText = `Bay View Unit ${unitId} - Papagayo Bay`;
               document.getElementById('unit-title').innerText = unitData.title;
               document.getElementById('unit-price').innerText = unitData.price;
               document.getElementById('unit-beds-baths').innerText = `${unitData.beds} / ${unitData.baths}`;
               document.getElementById('unit-sqft').innerText = `${unitData.sqft} sq ft`;
               document.getElementById('unit-description').innerText = unitData.description;
               document.getElementById('layout-subtitle').innerText = `Explore the architectural flow and spatial design of Unit ${unitId}.`;
-              document.getElementById('layout-image').src = unitData.layoutImage;
 
               const $carousel = $('#hero-carousel');
               
