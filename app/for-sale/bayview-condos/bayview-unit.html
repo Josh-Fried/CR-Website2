@@ -430,7 +430,10 @@
               
               const imagesToLoad = unitData.carouselImages || [];
 
-              if (imagesToLoad.length > 0) {
+              if (imagesToLoad.length === 1) {
+                  $carousel.append(`<img src="${imagesToLoad[0]}" alt="View of ${unitId}">`);
+                  $('#hero-view-container .slide-count').hide();
+              } else if (imagesToLoad.length > 1) {
                   imagesToLoad.forEach(imgSrc => {
                       if (imgSrc) {
                           $carousel.append(`<img src="${imgSrc}" alt="View of ${unitId}">`);
@@ -477,11 +480,8 @@
                       $heroView.data('autoplay-enabled', false);
                       $carousel.slick('slickPause');
                   });
-
-                  console.log("7. DOM and Carousel successfully updated.");
               } else {
                   $('#hero-view-container .slide-count').hide();
-                  console.log("7. No images found in JSON. Carousel container left blank.");
               }
             } else {
               console.error(`ERROR: Unit ID '${unitId}' not found in the JSON file.`);
