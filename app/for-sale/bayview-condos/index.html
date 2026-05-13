@@ -1256,11 +1256,11 @@
                 $badge = $card.find(".status-badge");
               }
 
-              $card.removeClass("sold sold-grey");
+              $card.removeClass("sold-grey");
               $badge.removeClass("sold available");
 
               if (unitData.status === "sold") {
-                $card.addClass("sold sold-grey");
+                $card.addClass("sold-grey");
                 $badge.addClass("sold").text("Sold");
               } else {
                 $badge.addClass("available").text("Available");
