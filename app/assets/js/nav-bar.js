@@ -50,6 +50,7 @@ const NAV_BAR_HTML_TEMPLATE = `
                                         <li id="menu-item-444" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-444" data-path="/luxury-living">
                                             <a href="/#luxury-living"><span class="menu-title-text">Luxury Living</span></a>
                                             <ul class="sub-menu">
+                                                <li class="menu-item submenu-link" data-path="/for-sale/bayview-condos"><a href="/for-sale/bayview-condos">Bay View Condos</a></li>
                                                 <li class="menu-item submenu-link" data-path="/luxury-living/beach-club"><a href="/luxury-living/beach-club">Beach Club</a></li>
                                                 <li class="menu-item submenu-link" data-path="/luxury-living/waterfall"><a href="/luxury-living/waterfall">Waterfall</a></li>
                                                 <li class="menu-item submenu-link" data-path="/for-sale/casa-uno"><a href="/for-sale/casa-uno">Casa Uno</a></li>
@@ -115,6 +116,7 @@ const NAV_BAR_HTML_TEMPLATE = `
                             <li class="menu-item has-children">
                                 <a href="#" onclick="return false;">Luxury Living</a> 
                                 <ul class="mobile-sub-menu">
+                                    <li class="menu-item"><a href="/for-sale/bayview-condos">Bay View Condos</a></li>
                                     <li class="menu-item"><a href="/luxury-living/beach-club">Beach Club</a></li>
                                     <li class="menu-item"><a href="/luxury-living/waterfall">Waterfall</a></li>
                                     <li class="menu-item"><a href="/for-sale/casa-uno">Casa Uno</a></li>
