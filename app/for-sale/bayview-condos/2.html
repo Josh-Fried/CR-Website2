@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <title>For Sale - Papagayo Bay</title>
+    
+    <meta name="robots" content="index, follow">
+    <meta property="og:site_name" content="Papagayo Bay">
+    <link rel="canonical" href="https://papagayobay.com/for-sale">
+    <meta property="og:title" content="Available Luxury Residences & Condos for Sale | Papagayo Bay">
+    <meta content="en" name="og:locale">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://papagayobay.com/for-sale">
+    <meta property="og:image" content="https://papagayobay.com/images/Bay1.webp">
+    <meta name="description" content="Browse our current inventory of luxury homes, oceanview condos, and titled land for sale at Papagayo Bay. Find your perfect investment property in Guanacaste, Costa Rica." />
+    <meta property="og:description" content="Browse our current inventory of luxury homes, oceanview condos, and titled land for sale at Papagayo Bay. Find your perfect investment property in Guanacaste, Costa Rica." />
+      
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Available Luxury Residences & Condos for Sale | Papagayo Bay">
+    <meta name="twitter:description" content="Browse our current inventory of luxury homes, oceanview condos, and titled land for sale at Papagayo Bay. Find your perfect investment property in Guanacaste, Costa Rica.">
+    <meta name="twitter:image" content="https://papagayobay.com/images/Bay1.webp">
+    <style>
+      img:is([sizes="auto" i], [sizes^="auto," i]) {
+        contain-intrinsic-size: 3000px 1500px;
+      }
+    </style>
+    <link
+      rel="icon"
+      href="/Triada Styling/cropped-favicon-32x32.webp"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="/Triada Styling/cropped-favicon-192x192.webp"
+      sizes="192x192"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/Triada Styling/cropped-favicon-180x180.webp"
+    />
+    <meta
+      name="msapplication-TileImage"
+      content="/Triada Styling/cropped-favicon-270x270.webp"
+    />
+
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/slick-1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="/slick-1.8.1/slick/slick-theme.css" />
+    <noscript
+      ><link rel="stylesheet" href="/assets/css/noscript.css"
+    /></noscript>
+    <link
+      rel="stylesheet"
+      href="/Triada Styling/style.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="/Triada Styling/header-layout-centered-logo-between-menu-alt.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="/Triada Styling/responsive.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="/Triada Styling/skin-material.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="/Triada Styling/menu-dynamic.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      href="/Triada Styling/salient-dynamic-styles.css"
+      type="text/css"
+      media="all"
+    />
+    <link rel="stylesheet" href="/assets/css/WPengineCSS.css" />
+
+    <script type="text/javascript">
+      document.documentElement.classList.add("js");
+    </script>
+
+    <style>
+      img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px; }
+      
+      .properties-grid {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 20px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .property-card {
+        width: 350px;
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .property-card:hover:not(.sold) {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+      }
+
+      .property-card-image-wrapper {
+        position: relative;
+        height: 230px;
+        overflow: hidden;
+      }
+
+      .property-card-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: filter 0.3s ease;
+      }
+
+      .property-card-info {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .property-card-info h3 {
+        margin: 0 0 10px 0;
+        font-size: 1.25rem;
+        font-family: inherit;
+      }
+
+      .property-card-info p {
+        margin: 0 0 20px 0;
+        color: #666;
+        font-size: 0.95rem;
+      }
+
+      .property-card.sold .property-card-image-wrapper img {
+        filter: grayscale(100%) opacity(0.6);
+      }
+      
+      .property-card.sold .property-card-info {
+        opacity: 0.5;
+      }
+
+      .property-card.sold .property-card-image-wrapper::after {
+        content: "SOLD";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-15deg);
+        color: #d93025;
+        font-size: 3.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border: 6px solid #d93025;
+        padding: 10px 25px;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 2;
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      }
+
+      .property-card.sold .details-button {
+        background-color: #ccc !important;
+        color: #666 !important;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+
+      .interactive-map-container {
+        position: relative;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto 4rem auto;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      }
+
+      .interactive-map-image {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .interactive-map-svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .map-polygon {
+        fill: rgba(255, 255, 255, 0);
+        stroke: rgba(255, 255, 255, 0);
+        stroke-width: 2;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+      .map-polygon:hover {
+        fill: rgba(255, 255, 255, 0.4); 
+        stroke: rgba(255, 255, 255, 0.9); 
+      }
+
+      .hotspot-map-container {
+        position: relative;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto 4rem auto;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      }
+
+      .hotspot-map-image {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .map-hotspot {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .hotspot-dot {
+        width: 16px;
+        height: 16px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        position: relative;
+        transition: transform 0.2s ease;
+      }
+
+      .hotspot-dot::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        z-index: -1;
+        animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      }
+
+      .map-hotspot:hover .hotspot-dot {
+        transform: scale(1.2);
+        background-color: #d93025;
+      }
+
+      .hotspot-tooltip {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-10px);
+        background: rgba(0, 0, 0, 0.85);
+        color: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        font-weight: bold;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease;
+        pointer-events: none;
+      }
+
+      .map-hotspot:hover .hotspot-tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(-5px);
+      }
+
+      @keyframes pulse-ring {
+        0% { width: 16px; height: 16px; opacity: 1; }
+        100% { width: 45px; height: 45px; opacity: 0; }
+      }
+
+      .map-svg-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+      }
+
+      .interactive-region {
+        cursor: pointer;
+        outline: none;
+      }
+
+      .pop-out-group {
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+      }
+
+      .interactive-region.is-hovered .pop-out-group {
+        transform: scale(1.08) !important;
+        filter: drop-shadow(0px 15px 25px rgba(0,0,0,0.85)) !important;
+        animation-play-state: paused !important;
+      }
+
+      .hit-area {
+        fill: transparent;
+        stroke: transparent;
+      }
+
+      .pulse-active .pop-out-group {
+        animation: image-pulse 8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      }
+
+      .delay-1 .pop-out-group { animation-delay: 0s; }
+      .delay-2 .pop-out-group { animation-delay: 2.6s; }
+      .delay-3 .pop-out-group { animation-delay: 5.3s; }
+
+      @keyframes image-pulse {
+        0%, 85%, 100% {
+          transform: scale(1);
+          filter: drop-shadow(0px 0px 0px rgba(0,0,0,0));
+        }
+        92% {
+          transform: scale(1.03);
+          filter: drop-shadow(0px 8px 12px rgba(0,0,0,0.5));
+        }
+      }
+
+      .pin-tooltip {
+        position: fixed;
+        transform: translate(-50%, -100%);
+        background: rgba(255, 255, 255, 0.95);
+        color: #222;
+        padding: 10px 15px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: normal;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease, visibility 0.2s ease;
+        pointer-events: none;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        z-index: 100;
+      }
+
+      .pin-tooltip strong {
+        font-size: 1rem;
+        color: #000;
+      }
+
+      .pin-tooltip .price {
+        color: #666;
+        font-size: 0.8rem;
+      }
+
+      .pin-tooltip::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 6px;
+        border-style: solid;
+        border-color: rgba(255, 255, 255, 0.95) transparent transparent transparent;
+      }
+     .inventory-list-container {
+    max-width: 1000px;
+    margin: 0 auto 6rem auto;
+    padding: 0 20px;
+    font-family: inherit;
+  }
+
+  .building-group {
+    margin-bottom: 4rem;
+  }
+
+  .building-group h2 {
+    font-size: 2rem;
+    color: #222;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+  }
+
+  .inventory-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 15px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s ease;
+  }
+
+  .inventory-row:hover:not(.sold) {
+    background: #f9f9f9;
+  }
+
+  .row-title {
+    flex: 1;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #222;
+    margin: 0;
+  }
+
+  .row-stats {
+    flex: 2.5;
+    display: flex;
+    justify-content: space-between;
+    color: #555;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0 20px;
+  }
+
+  .row-stats span {
+    flex: 1;
+    text-align: center;
+  }
+
+  .row-action {
+    flex: 1;
+    text-align: right;
+  }
+
+  .details-button {
+    display: inline-block;
+  }
+
+  .inventory-row.sold {
+    opacity: 0.5;
+    background: #fafafa;
+  }
+
+  .inventory-row.sold .row-title,
+  .inventory-row.sold .row-stats span {
+    text-decoration: line-through;
+  }
+
+  .inventory-row.sold .details-button {
+    background-color: #ccc !important;
+    color: #777 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  @media (max-width: 768px) {
+    .inventory-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    .row-title {
+      border-bottom: 1px solid #eee;
+      width: 100%;
+      padding-bottom: 10px;
+    }
+    .row-stats {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 0;
+      width: 100%;
+    }
+    .row-stats span {
+      text-align: left;
+    }
+    .row-action {
+      width: 100%;
+    }
+    .row-action .details-button {
+      display: block;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+    </style>
+
+  </head>
+
+  <body
+    class="material"
+    data-header-format="centered-logo-between-menu-alt"
+    data-header-resize="1"
+    data-transparent-header="false"
+    data-header-color=""
+    data-remove-border="true"
+    data-smooth-scrolling="0"
+    data-cad="1500"
+    data-cae="easeOutQuart"
+    data-aie="none"
+    data-ls="fancybox"
+    onLoad="lm_InitWebForm()"
+  >
+    <div id="ajax-content-wrap">
+      <div class="container-wrap">
+        <div id="wrapper">
+          <div id="main">
+            <article id="properties-section" class="fade-in-up" style="padding-top: 10rem; padding-bottom: 4rem;">
+              
+
+                <h1 class="title-with-underline" style="text-align: center; margin-bottom: 50px;">Current Availability</h1>
+
+<div class="inventory-list-container">
+  
+  <div class="building-group">
+    <h2>Building A</h2>
+    
+    <div class="inventory-row">
+      <div class="row-title">Unit A101</div>
+      <div class="row-stats">
+        <span>$1,250,000</span>
+        <span>3 Bed</span>
+        <span>3.5 Bath</span>
+        <span>2,400 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unitA101" class="details-button">View Details</a>
+      </div>
+    </div>
+
+    <div class="inventory-row">
+      <div class="row-title">Unit A201</div>
+      <div class="row-stats">
+        <span>$1,300,000</span>
+        <span>4 Bed</span>
+        <span>4 Bath</span>
+        <span>2,800 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-a1-201" class="details-button">View Details</a>
+      </div>
+    </div>
+
+    <div class="inventory-row sold">
+      <div class="row-title">Unit A301</div>
+      <div class="row-stats">
+        <span>$1,450,000</span>
+        <span>4 Bed</span>
+        <span>4.5 Bath</span>
+        <span>3,100 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="#" class="details-button">Sold</a>
+      </div>
+    </div>
+
+    <div class="inventory-row">
+      <div class="row-title">Unit A102</div>
+      <div class="row-stats">
+        <span>$950,000</span>
+        <span>3 Bed</span>
+        <span>3 Bath</span>
+        <span>2,100 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-a2-101" class="details-button">View Details</a>
+      </div>
+    </div>
+
+    <div class="inventory-row">
+      <div class="row-title">Unit A202</div>
+      <div class="row-stats">
+        <span>$980,000</span>
+        <span>3 Bed</span>
+        <span>3 Bath</span>
+        <span>2,100 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-a2-201" class="details-button">View Details</a>
+      </div>
+    </div>
+
+    <div class="inventory-row">
+      <div class="row-title">Unit A302</div>
+      <div class="row-stats">
+        <span>$1,100,000</span>
+        <span>3 Bed</span>
+        <span>3.5 Bath</span>
+        <span>2,500 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-a2-301" class="details-button">View Details</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="building-group">
+    <h2>Building B</h2>
+    
+    <div class="inventory-row sold">
+      <div class="row-title">Unit B101</div>
+      <div class="row-stats">
+        <span>$1,250,000</span>
+        <span>3 Bed</span>
+        <span>3.5 Bath</span>
+        <span>2,400 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="#" class="details-button">Sold</a>
+      </div>
+    </div>
+
+    <div class="inventory-row">
+      <div class="row-title">Unit B201</div>
+      <div class="row-stats">
+        <span>$1,300,000</span>
+        <span>4 Bed</span>
+        <span>4 Bath</span>
+        <span>2,800 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-b1-201" class="details-button">View Details</a>
+      </div>
+    </div>
+
+    <div class="inventory-row">
+      <div class="row-title">Unit B301</div>
+      <div class="row-stats">
+        <span>$1,450,000</span>
+        <span>4 Bed</span>
+        <span>4.5 Bath</span>
+        <span>3,100 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-b1-301" class="details-button">View Details</a>
+      </div>
+    </div>
+
+    <div class="inventory-row">
+      <div class="row-title">Unit B102</div>
+      <div class="row-stats">
+        <span>$950,000</span>
+        <span>3 Bed</span>
+        <span>3 Bath</span>
+        <span>2,100 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-b2-101" class="details-button">View Details</a>
+      </div>
+    </div>
+
+    <div class="inventory-row sold">
+      <div class="row-title">Unit B202</div>
+      <div class="row-stats">
+        <span>$980,000</span>
+        <span>3 Bed</span>
+        <span>3 Bath</span>
+        <span>2,100 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="#" class="details-button">Sold</a>
+      </div>
+    </div>
+
+    <div class="inventory-row">
+      <div class="row-title">Unit B302</div>
+      <div class="row-stats">
+        <span>$1,100,000</span>
+        <span>3 Bed</span>
+        <span>3.5 Bath</span>
+        <span>2,500 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-b2-301" class="details-button">View Details</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="building-group">
+    <h2>Building C</h2>
+    
+    <div class="inventory-row">
+      <div class="row-title">Unit C101</div>
+      <div class="row-stats">
+        <span>$1,600,000</span>
+        <span>5 Bed</span>
+        <span>5 Bath</span>
+        <span>3,800 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-c1-101" class="details-button">View Details</a>
+      </div>
+    </div>
+
+    <div class="inventory-row sold">
+      <div class="row-title">Unit C201</div>
+      <div class="row-stats">
+        <span>$1,600,000</span>
+        <span>5 Bed</span>
+        <span>5 Bath</span>
+        <span>3,800 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="#" class="details-button">Sold</a>
+      </div>
+    </div>
+
+    <div class="inventory-row">
+      <div class="row-title">Unit C301</div>
+      <div class="row-stats">
+        <span>$1,750,000</span>
+        <span>5 Bed</span>
+        <span>5.5 Bath</span>
+        <span>4,200 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-c1-301" class="details-button">View Details</a>
+      </div>
+    </div>
+
+    <div class="inventory-row">
+      <div class="row-title">Unit C102</div>
+      <div class="row-stats">
+        <span>$1,200,000</span>
+        <span>4 Bed</span>
+        <span>4 Bath</span>
+        <span>2,900 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-c2-101" class="details-button">View Details</a>
+      </div>
+    </div>
+
+    <div class="inventory-row">
+      <div class="row-title">Unit C202</div>
+      <div class="row-stats">
+        <span>$1,200,000</span>
+        <span>4 Bed</span>
+        <span>4 Bath</span>
+        <span>2,900 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-c2-201" class="details-button">View Details</a>
+      </div>
+    </div>
+
+    <div class="inventory-row sold">
+      <div class="row-title">Unit C302</div>
+      <div class="row-stats">
+        <span>$1,250,000</span>
+        <span>4 Bed</span>
+        <span>4 Bath</span>
+        <span>3,000 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="#" class="details-button">Sold</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="building-group">
+    <h2>Building D</h2>
+    
+    <div class="inventory-row">
+      <div class="row-title">Unit D101</div>
+      <div class="row-stats">
+        <span>$1,800,000</span>
+        <span>5 Bed</span>
+        <span>5.5 Bath</span>
+        <span>4,300 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-d1-101" class="details-button">View Details</a>
+      </div>
+    </div>
+
+    <div class="inventory-row">
+      <div class="row-title">Unit D201</div>
+      <div class="row-stats">
+        <span>$1,950,000</span>
+        <span>6 Bed</span>
+        <span>6 Bath</span>
+        <span>4,800 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-d1-201" class="details-button">View Details</a>
+      </div>
+    </div>
+
+    <div class="inventory-row">
+      <div class="row-title">Unit D301</div>
+      <div class="row-stats">
+        <span>$2,100,000</span>
+        <span>6 Bed</span>
+        <span>6.5 Bath</span>
+        <span>5,100 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-d1-301" class="details-button">View Details</a>
+      </div>
+    </div>
+
+    <div class="inventory-row sold">
+      <div class="row-title">Unit D102</div>
+      <div class="row-stats">
+        <span>$3,500,000</span>
+        <span>6 Bed</span>
+        <span>7 Bath</span>
+        <span>6,000 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="#" class="details-button">Sold</a>
+      </div>
+    </div>
+
+    <div class="inventory-row">
+      <div class="row-title">Unit D202</div>
+      <div class="row-stats">
+        <span>$3,800,000</span>
+        <span>7 Bed</span>
+        <span>7.5 Bath</span>
+        <span>6,500 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-d2-201" class="details-button">View Details</a>
+      </div>
+    </div>
+
+    <div class="inventory-row">
+      <div class="row-title">Unit D302</div>
+      <div class="row-stats">
+        <span>$3,850,000</span>
+        <span>7 Bed</span>
+        <span>7.5 Bath</span>
+        <span>6,500 sq ft</span>
+      </div>
+      <div class="row-action">
+        <a href="/for-sale/bayview-condos/unit-d2-301" class="details-button">View Details</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+                
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const tooltip = document.getElementById('map-tooltip');
+        const ttTitle = document.getElementById('tt-title');
+        const ttPrice = document.getElementById('tt-price');
+        const regions = document.querySelectorAll('.interactive-region');
+
+        regions.forEach(region => {
+          region.addEventListener('mouseenter', (e) => {
+            if (region.parentNode.lastElementChild !== region) {
+              region.parentNode.appendChild(region);
+            }
+            
+            void region.offsetWidth; 
+            region.classList.add('is-hovered');
+            
+            ttTitle.textContent = region.getAttribute('data-title');
+            ttPrice.textContent = region.getAttribute('data-price');
+            tooltip.style.opacity = '1';
+            tooltip.style.visibility = 'visible';
+          });
+
+          region.addEventListener('mousemove', (e) => {
+            tooltip.style.left = e.clientX + 'px';
+            tooltip.style.top = (e.clientY - 15) + 'px'; 
+          });
+
+          region.addEventListener('mouseleave', () => {
+            region.classList.remove('is-hovered');
+            tooltip.style.opacity = '0';
+            tooltip.style.visibility = 'hidden';
+          });
+        });
+      });
+    </script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assetsjs/jquery.scrollex.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/animations.js"></script>
+    <script src="/slick-1.8.1/slick/slick.js"></script>
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="/assets/js/lotLayoutPopup.js"></script>
+    <script type="text/javascript" src="/assets/js/alexCarousel.js"></script>
+    <script src="/assets/js/loadContact.js"></script>
+
+    <script src="/Triada Styling/transit.min.js"></script>
+    <script src="/Triada Styling/superfish.js"></script>
+    <script src="/Triada Styling/init.js"></script>
+
+    <script src="/assets/js/nav-bar.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "route": "/for-sale/bayview-condos",
+      "rewrite": "/for-sale/bayview-condos/index.html"
+    },
+    {
+      "route": "/for-sale/bayview-condos/bayview-units.json",
+      "rewrite": "/for-sale/bayview-condos/bayview-units.json"
+    },
+    {
+      "route": "/for-sale/bayview-condos/*",
+      "rewrite": "/for-sale/bayview-condos/bayview-unit.html"
+    }
+  ]
+}
